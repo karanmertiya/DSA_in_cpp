@@ -1,6 +1,3 @@
-# SDE Sheet - Basic Maths
+# Basic Maths
 
-
-[View Revision Table](Revision_Table.md)
-
-[View Master Sheet Revision Table](../Revision_Table.md)
+Includes mathematical edge case handling and data-type agnostic algorithms.

@@ -27,3 +27,4 @@ int main() {
     printPattern(5);
     return 0;
 }
+

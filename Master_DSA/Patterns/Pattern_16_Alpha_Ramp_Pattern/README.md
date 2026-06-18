@@ -1,16 +1,3 @@
-# Pattern 16 Alpha Ramp Pattern
+# pattern_16_alpha_ramp_pattern
 
-**Tags:** `Striver A Z`
-
-## Problem Description
 Given an integer N, print an alpha-ramp pattern.
-
-## Examples
-```text
-Example 1:
-Input: N = 3
-Output:
-A
-B B
-C C C
-```

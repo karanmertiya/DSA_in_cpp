@@ -1,6 +1,3 @@
-# SDE Sheet - Patterns
+# Patterns
 
-
-[View Revision Table](Revision_Table.md)
-
-[View Master Sheet Revision Table](../Revision_Table.md)
+Contains all logical nested loop patterns.

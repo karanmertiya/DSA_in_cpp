@@ -1,16 +1,3 @@
-# Pattern 15 Reverse Letter Triangle
+# pattern_15_reverse_letter_triangle
 
-**Tags:** `Striver A Z`
-
-## Problem Description
 Given an integer N, print a reverse letter triangle.
-
-## Examples
-```text
-Example 1:
-Input: N = 3
-Output:
-A B C
-A B
-A
-```

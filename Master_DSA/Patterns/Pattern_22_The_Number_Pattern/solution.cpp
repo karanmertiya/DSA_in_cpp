@@ -22,3 +22,4 @@ int main() {
     printPattern(4);
     return 0;
 }
+

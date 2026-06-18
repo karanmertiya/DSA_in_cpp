@@ -1,20 +1,20 @@
-# SDE Sheet - Basic Maths Revision Table
+# Basic Maths Revision Table
 
 <table border="1">
   <thead>
     <tr>
-      <th>S.No</th>
-      <th>Problem Name</th>
-      <th>Example</th>
-      <th>Common Constraints</th>
-      <th>Approach Type</th>
-      <th>Time</th>
-      <th>Space</th>
-      <th>Specific Conditions / Edge Cases</th>
-      <th>Logic</th>
+      <th rowspan="2" style="width: 5%;">S.No</th>
+      <th rowspan="2" style="width: 15%;">Problem Name</th>
+      <th rowspan="2" style="width: 25%;">Example & Constraints</th>
+      <th rowspan="2" style="width: 10%;">Complexity</th>
+      <th colspan="2" style="width: 20%;">Conditions & Edge Cases</th>
+      <th rowspan="2" style="width: 25%;">Logic</th>
+    </tr>
+    <tr>
+      <th>Dependencies / Setup</th>
+      <th>Edge Case Handling</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td colspan="9" style="text-align:center;">No problems in this section.</td></tr>
   </tbody>
 </table>
