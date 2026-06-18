@@ -1,3 +1,3 @@
 # Patterns
-
-Contains all logical nested loop patterns.
+## Core Concept
+Iterative control flow utilizing nested logic (rows and columns) to print geometric spatial layouts.
