@@ -1,6 +1,6 @@
 // Time Complexity: O(log N) (Constraint)
 // Space Complexity: O(1) (Constraint)
-// Explanation: Compare target with the middle element. If smaller, search the left half. If larger, search the right half.
+// Explanation: Standard Iterative approach. Maintain `low` and `high` boundaries, shrinking the search space by half.
 
 #include <vector>
 

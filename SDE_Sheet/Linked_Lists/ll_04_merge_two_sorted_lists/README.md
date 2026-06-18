@@ -1,0 +1,3 @@
+# ll_04_merge_two_sorted_lists
+
+Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/merge-two-sorted-lists/' target='_blank'>LeetCode 21</a>
