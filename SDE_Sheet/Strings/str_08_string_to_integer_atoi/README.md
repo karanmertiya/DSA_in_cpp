@@ -1,0 +1,3 @@
+# str_08_string_to_integer_atoi
+
+Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/string-to-integer-atoi/' target='_blank'>LeetCode 8</a>
