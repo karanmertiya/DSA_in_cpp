@@ -1,0 +1,3 @@
+# sw_15_subarrays_with_k_different_integers
+
+Given an integer array nums and an integer k, return the number of good subarrays of nums. A good array is an array where the number of different integers in that array is exactly k.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/subarrays-with-k-different-integers/' target='_blank'>LeetCode 992</a>

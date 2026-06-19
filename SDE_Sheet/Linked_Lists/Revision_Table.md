@@ -97,5 +97,41 @@
       <td><b>No intersection:</b> Both pointers will reach NULL simultaneously after swapping lists once.</td>
       <td><b>Explanation:</b> Two pointers. Pointer A traverses list A, then jumps to list B. Pointer B traverses list B, then jumps to list A. They traverse the same total distance (A+B) and will meet at the intersection, or at NULL.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {&#10;    if(!headA || !headB) return NULL;&#10;    ListNode *a = headA, *b = headB;&#10;    while(a != b) {&#10;        a = a ? a-&gt;next : headB;&#10;        b = b ? b-&gt;next : headA;&#10;    }&#10;    return a;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>10</td>
+      <td>Ll 29 Reverse A Linked List In Groups Of Given Size<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Recursive approach.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N/k) recursive stack</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Reverse the first k nodes iteratively. The next node becomes the head of the remaining list. Recursively call the function for the rest of the list and attach it to the tail of the reversed group (which is `head`). Return the new head.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct node *reverse (struct node *head, int k) {&#10;    if(!head) return NULL;&#10;    struct node* curr = head, *prev = NULL, *next = NULL;&#10;    int count = 0;&#10;    while(curr &amp;&amp; count &lt; k) {&#10;        next = curr-&gt;next;&#10;        curr-&gt;next = prev;&#10;        prev = curr;&#10;        curr = next;&#10;        count++;&#10;    }&#10;    if(next) head-&gt;next = reverse(next, k);&#10;    return prev;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Ll 30 Detect Loop In Linked List<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Floyd's Cycle Detection.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Floyd's Cycle Detection algorithm (Tortoise and Hare). Move `slow` by 1 and `fast` by 2. If they meet, a loop exists. If `fast` reaches NULL, there is no loop.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool detectLoop(Node* head) {&#10;    Node* slow = head, *fast = head;&#10;    while(fast &amp;&amp; fast-&gt;next) {&#10;        slow = slow-&gt;next;&#10;        fast = fast-&gt;next-&gt;next;&#10;        if(slow == fast) return true;&#10;    }&#10;    return false;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Ll 36 Add Two Numbers Represented By Linked Lists<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Reverse, Add, Reverse.</td>
+      <td><b>Time:</b> O(max(N, M))<br><b>Space:</b> O(max(N, M))</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Reverse both linked lists. Traverse both lists simultaneously, adding the data values of corresponding nodes along with the carry. Create new nodes for the sum and append them to the result list. Finally, reverse the result list.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node* reverse(struct Node* head) {&#10;    Node* prev = NULL, *curr = head, *next = NULL;&#10;    while(curr) {&#10;        next = curr-&gt;next;&#10;        curr-&gt;next = prev;&#10;        prev = curr;&#10;        curr = next;&#10;    }&#10;    return prev;&#10;}&#10;struct Node* addTwoLists(struct Node* first, struct Node* second) {&#10;    first = reverse(first);&#10;    second = reverse(second);&#10;    Node* dummy = new Node(0), *temp = dummy;&#10;    int carry = 0;&#10;    while(first || second || carry) {&#10;        int sum = carry;&#10;        if(first) { sum += first-&gt;data; first = first-&gt;next; }&#10;        if(second) { sum += second-&gt;data; second = second-&gt;next; }&#10;        carry = sum / 10;&#10;        temp-&gt;next = new Node(sum % 10);&#10;        temp = temp-&gt;next;&#10;    }&#10;    return reverse(dummy-&gt;next);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Ll 38 Intersection Point In Y Shaped Linked Lists<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Two Pointers.</td>
+      <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use two pointers `a` and `b`. Traverse both lists. When `a` reaches the end, redirect it to `head2`. When `b` reaches the end, redirect it to `head1`. They will meet at the intersection point or both become NULL.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int intersectPoint(Node* head1, Node* head2) {&#10;    Node* a = head1, *b = head2;&#10;    while(a != b) {&#10;        a = (a) ? a-&gt;next : head2;&#10;        b = (b) ? b-&gt;next : head1;&#10;    }&#10;    if(a) return a-&gt;data;&#10;    return -1;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

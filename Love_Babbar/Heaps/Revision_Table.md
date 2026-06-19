@@ -403,5 +403,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Count frequencies using a hash map. Maintain a min-heap of size K storing `(frequency, element)`. Push each pair into the heap. If size > K, pop. The remaining elements in the heap are the top K frequent.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; topKFrequent(vector&lt;int&gt;&amp; nums, int k) {&#10;    unordered_map&lt;int, int&gt; count;&#10;    for(int num : nums) count[num]++;&#10;    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt; pq;&#10;    for(auto it : count) {&#10;        pq.push({it.second, it.first});&#10;        if(pq.size() &gt; k) pq.pop();&#10;    }&#10;    vector&lt;int&gt; ans;&#10;    while(!pq.empty()) {&#10;        ans.push_back(pq.top().second);&#10;        pq.pop();&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>44</td>
+      <td>Heaps 05 Kth Smallest Element<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/kth-smallest-element5635/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Max Heap.</td>
+      <td><b>Time:</b> O(N log K)<br><b>Space:</b> O(K)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a Max Heap of size K. Iterate through the array. For the first K elements, insert them into the heap. For the remaining elements, if the element is smaller than the top of the heap, pop the top and insert the element. The top of the heap will be the Kth smallest element.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int kthSmallest(int arr[], int l, int r, int k) {&#10;    priority_queue&lt;int&gt; pq;&#10;    for(int i = l; i &lt;= r; i++) {&#10;        if(pq.size() &lt; k) pq.push(arr[i]);&#10;        else if(arr[i] &lt; pq.top()) {&#10;            pq.pop();&#10;            pq.push(arr[i]);&#10;        }&#10;    }&#10;    return pq.top();&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>Heaps 06 Kth Largest Element In A Stream<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/kth-largest-element-in-a-stream2220/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Min Heap.</td>
+      <td><b>Time:</b> O(N log K)<br><b>Space:</b> O(K)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain a Min Heap of size K. As elements arrive, add them to the heap if the heap has less than K elements. If the heap has K elements and the new element is greater than the top, pop the top and insert the new element. Print the top if heap size is K, else -1.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; kthLargest(int k, int arr[], int n) {&#10;    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;&#10;    vector&lt;int&gt; ans;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(pq.size() &lt; k) pq.push(arr[i]);&#10;        else if(arr[i] &gt; pq.top()) {&#10;            pq.pop();&#10;            pq.push(arr[i]);&#10;        }&#10;        if(pq.size() &lt; k) ans.push_back(-1);&#10;        else ans.push_back(pq.top());&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>Heaps 07 Merge Two Binary Max Heaps<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/merge-two-binary-max-heap0144/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Append and Heapify.</td>
+      <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(N + M)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a new array by appending the two arrays. Then call `heapify` starting from the last non-leaf node `(n/2 - 1)` down to the root `0`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void heapify(vector&lt;int&gt;&amp; arr, int n, int i) {&#10;    int largest = i, l = 2 * i + 1, r = 2 * i + 2;&#10;    if(l &lt; n &amp;&amp; arr[l] &gt; arr[largest]) largest = l;&#10;    if(r &lt; n &amp;&amp; arr[r] &gt; arr[largest]) largest = r;&#10;    if(largest != i) {&#10;        swap(arr[i], arr[largest]);&#10;        heapify(arr, n, largest);&#10;    }&#10;}&#10;vector&lt;int&gt; mergeHeaps(vector&lt;int&gt; &amp;a, vector&lt;int&gt; &amp;b, int n, int m) {&#10;    vector&lt;int&gt; ans;&#10;    for(int i : a) ans.push_back(i);&#10;    for(int i : b) ans.push_back(i);&#10;    int total = n + m;&#10;    for(int i = total / 2 - 1; i &gt;= 0; i--) {&#10;        heapify(ans, total, i);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>Heaps 08 Kth Largest Sum Contiguous Subarray<br><br></b> <a href='https://www.geeksforgeeks.org/k-th-largest-sum-contiguous-subarray/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Prefix sum + Min Heap.</td>
+      <td><b>Time:</b> O(N^2 log K)<br><b>Space:</b> O(N + K)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through all possible subarrays and calculate their sums using a prefix sum array. Maintain a Min Heap of size K to keep track of the top K sums. At the end, the top of the Min Heap is the K-th largest sum.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int kthLargestSum(int arr[], int n, int k) {&#10;    vector&lt;int&gt; sum(n + 1, 0);&#10;    for(int i = 1; i &lt;= n; i++) sum[i] = sum[i - 1] + arr[i - 1];&#10;    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        for(int j = i; j &lt;= n; j++) {&#10;            int x = sum[j] - sum[i - 1];&#10;            if(pq.size() &lt; k) pq.push(x);&#10;            else if(x &gt; pq.top()) {&#10;                pq.pop();&#10;                pq.push(x);&#10;            }&#10;        }&#10;    }&#10;    return pq.top();&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>Heaps 09 Reorganize String<br><br></b> <a href='https://leetcode.com/problems/reorganize-string/' target='_blank'>LeetCode 767</a></td>
+      <td><b>Example 1:</b> Max Heap.</td>
+      <td><b>Time:</b> O(N log 26)<br><b>Space:</b> O(26)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Count character frequencies. Use a Max Heap storing `(freq, char)`. Pop the top element, add it to the result, decrement its frequency, and temporarily store it (so it can't be picked in the next iteration). If the stored element has `freq > 0`, push it back. If the heap is empty but the stored element is not, it's impossible.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string reorganizeString(string s) {&#10;    unordered_map&lt;char, int&gt; count;&#10;    for(char c : s) count[c]++;&#10;    priority_queue&lt;pair&lt;int, char&gt;&gt; pq;&#10;    for(auto it : count) pq.push({it.second, it.first});&#10;    string res = &quot;&quot;;&#10;    pair&lt;int, char&gt; prev = {-1, &#x27;#&#x27;};&#10;    while(!pq.empty()) {&#10;        auto curr = pq.top(); pq.pop();&#10;        res += curr.second;&#10;        curr.first--;&#10;        if(prev.first &gt; 0) pq.push(prev);&#10;        prev = curr;&#10;    }&#10;    return res.length() == s.length() ? res : &quot;&quot;;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>Heaps 10 Merge K Sorted Arrays<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/merge-k-sorted-arrays/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Min Heap.</td>
+      <td><b>Time:</b> O(K^2 log K)<br><b>Space:</b> O(K)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a Min Heap to store the first element of each array along with its 2D index. Extract the minimum element, add it to the result, and insert the next element from the same array into the Min Heap.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; mergeKArrays(vector&lt;vector&lt;int&gt;&gt; arr, int K) {&#10;    priority_queue&lt;pair&lt;int, pair&lt;int, int&gt;&gt;, vector&lt;pair&lt;int, pair&lt;int, int&gt;&gt;&gt;, greater&lt;pair&lt;int, pair&lt;int, int&gt;&gt;&gt;&gt; pq;&#10;    for(int i = 0; i &lt; K; i++) pq.push({arr[i][0], {i, 0}});&#10;    vector&lt;int&gt; ans;&#10;    while(!pq.empty()) {&#10;        auto curr = pq.top(); pq.pop();&#10;        ans.push_back(curr.first);&#10;        int i = curr.second.first, j = curr.second.second;&#10;        if(j + 1 &lt; K) pq.push({arr[i][j + 1], {i, j + 1}});&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>Heaps 11 Smallest Range In K Lists<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-smallest-range-containing-elements-from-k-lists/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Min Heap + Sliding Window.</td>
+      <td><b>Time:</b> O(N * K log K)<br><b>Space:</b> O(K)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Similar to merging K sorted arrays, use a Min Heap storing `(value, list_idx, element_idx)`. Also maintain the `max_val` seen so far among the current elements. The range is `[min_heap_top, max_val]`. Update the range if the difference is smaller. Pop the min and push the next element from the same list, updating `max_val`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">pair&lt;int,int&gt; findSmallestRange(int KSortedArray[][N], int n, int k) {&#10;    priority_queue&lt;pair&lt;int, pair&lt;int, int&gt;&gt;, vector&lt;pair&lt;int, pair&lt;int, int&gt;&gt;&gt;, greater&lt;pair&lt;int, pair&lt;int, int&gt;&gt;&gt;&gt; pq;&#10;    int max_val = INT_MIN, range_min = INT_MAX, range_max = INT_MAX, range = INT_MAX;&#10;    for(int i = 0; i &lt; k; i++) {&#10;        pq.push({KSortedArray[i][0], {i, 0}});&#10;        max_val = max(max_val, KSortedArray[i][0]);&#10;    }&#10;    while(true) {&#10;        auto curr = pq.top(); pq.pop();&#10;        int min_val = curr.first, r = curr.second.first, c = curr.second.second;&#10;        if(max_val - min_val &lt; range) {&#10;            range = max_val - min_val;&#10;            range_min = min_val;&#10;            range_max = max_val;&#10;        }&#10;        if(c + 1 == n) break;&#10;        pq.push({KSortedArray[r][c + 1], {r, c + 1}});&#10;        max_val = max(max_val, KSortedArray[r][c + 1]);&#10;    }&#10;    return {range_min, range_max};&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>Heaps 12 Minimum Cost Of Ropes<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Min Heap.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a Min Heap to always pick the two smallest ropes. Add their sum to the total cost and insert the merged rope back into the heap. Repeat until one rope is left.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long minCost(long long arr[], long long n) {&#10;    priority_queue&lt;long long, vector&lt;long long&gt;, greater&lt;long long&gt;&gt; pq;&#10;    for(long long i = 0; i &lt; n; i++) pq.push(arr[i]);&#10;    long long cost = 0;&#10;    while(pq.size() &gt; 1) {&#10;        long long a = pq.top(); pq.pop();&#10;        long long b = pq.top(); pq.pop();&#10;        cost += (a + b);&#10;        pq.push(a + b);&#10;    }&#10;    return cost;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>Heaps 13 Convert Bst To Min Heap<br><br></b> <a href='https://www.geeksforgeeks.org/convert-bst-min-heap/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Inorder + Preorder.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Since a BST inorder gives sorted values, store the inorder traversal in an array. The requirement says left subtree elements < right subtree elements, which matches a Preorder traversal (Root, Left, Right) since we want the smallest element at the root. So do a Preorder traversal of the tree and replace nodes with array elements.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void inorder(Node* root, vector&lt;int&gt;&amp; arr) {&#10;    if(!root) return;&#10;    inorder(root-&gt;left, arr);&#10;    arr.push_back(root-&gt;data);&#10;    inorder(root-&gt;right, arr);&#10;}&#10;void preorderFill(Node* root, vector&lt;int&gt;&amp; arr, int&amp; i) {&#10;    if(!root) return;&#10;    root-&gt;data = arr[i++];&#10;    preorderFill(root-&gt;left, arr, i);&#10;    preorderFill(root-&gt;right, arr, i);&#10;}&#10;void convertToMinHeapUtil(Node* root) {&#10;    vector&lt;int&gt; arr;&#10;    inorder(root, arr);&#10;    int i = 0;&#10;    preorderFill(root, arr, i);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>Heaps 14 Check If A Binary Tree Is Heap<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/is-binary-tree-heap/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Recursion.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use recursion to check two properties: 1. Is it a Complete Binary Tree? (Count nodes and ensure index of any node is < total count). 2. Is it a Max Heap? (Parent data >= children data).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countNodes(Node* root) {&#10;    if(!root) return 0;&#10;    return 1 + countNodes(root-&gt;left) + countNodes(root-&gt;right);&#10;}&#10;bool isCBT(Node* root, int index, int count) {&#10;    if(!root) return true;&#10;    if(index &gt;= count) return false;&#10;    return isCBT(root-&gt;left, 2 * index + 1, count) &amp;&amp; isCBT(root-&gt;right, 2 * index + 2, count);&#10;}&#10;bool isMaxOrder(Node* root) {&#10;    if(!root-&gt;left &amp;&amp; !root-&gt;right) return true;&#10;    if(!root-&gt;right) return root-&gt;data &gt;= root-&gt;left-&gt;data;&#10;    return (root-&gt;data &gt;= root-&gt;left-&gt;data &amp;&amp; root-&gt;data &gt;= root-&gt;right-&gt;data) &amp;&amp; isMaxOrder(root-&gt;left) &amp;&amp; isMaxOrder(root-&gt;right);&#10;}&#10;bool isHeap(struct Node* tree) {&#10;    int count = countNodes(tree);&#10;    return isCBT(tree, 0, count) &amp;&amp; isMaxOrder(tree);&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

@@ -124,5 +124,23 @@
       <td>-</td>
       <td><b>Explanation:</b> Kosaraju's Algo: 1) Sort nodes by finish time (Topo Sort DFS). 2) Transpose the graph (reverse edges). 3) DFS on transposed graph in order of finish time.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void dfs(int node, vector&lt;int&gt;&amp; vis, vector&lt;vector&lt;int&gt;&gt;&amp; adj, stack&lt;int&gt;&amp; st) {&#10;    vis[node] = 1;&#10;    for(auto it: adj[node]) if(!vis[it]) dfs(it, vis, adj, st);&#10;    st.push(node);&#10;}&#10;void dfs3(int node, vector&lt;int&gt;&amp; vis, vector&lt;int&gt; adjT[]) {&#10;    vis[node] = 1;&#10;    for(auto it: adjT[node]) if(!vis[it]) dfs3(it, vis, adjT);&#10;}&#10;int kosaraju(int V, vector&lt;vector&lt;int&gt;&gt;&amp; adj) {&#10;    vector&lt;int&gt; vis(V, 0);&#10;    stack&lt;int&gt; st;&#10;    for(int i=0; i&lt;V; i++) if(!vis[i]) dfs(i, vis, adj, st);&#10;    vector&lt;int&gt; adjT[V];&#10;    for(int i=0; i&lt;V; i++) {&#10;        vis[i] = 0;&#10;        for(auto it: adj[i]) adjT[it].push_back(i);&#10;    }&#10;    int scc = 0;&#10;    while(!st.empty()) {&#10;        int node = st.top(); st.pop();&#10;        if(!vis[node]) {&#10;            scc++; dfs3(node, vis, adjT);&#10;        }&#10;    }&#10;    return scc;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>13</td>
+      <td>Graph 17 Bipartite Graph<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/bipartite-graph/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Graph Coloring (BFS).</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
+      <td>-</td>
+      <td>Disconnected components</td>
+      <td><b>Explanation:</b> Use BFS to color the graph with 2 colors (0 and 1). Start with a node, color it 0. All its neighbors must be colored 1, their neighbors 0, and so on. If we ever find an adjacent node with the same color, the graph is not bipartite.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool checkBipartite(int start, vector&lt;int&gt; adj[], vector&lt;int&gt;&amp; color) {&#10;    queue&lt;int&gt; q;&#10;    q.push(start);&#10;    color[start] = 0;&#10;    while(!q.empty()) {&#10;        int node = q.front(); q.pop();&#10;        for(int nbr : adj[node]) {&#10;            if(color[nbr] == -1) {&#10;                color[nbr] = 1 - color[node];&#10;                q.push(nbr);&#10;            } else if(color[nbr] == color[node]) return false;&#10;        }&#10;    }&#10;    return true;&#10;}&#10;bool isBipartite(int V, vector&lt;int&gt;adj[]){&#10;    vector&lt;int&gt; color(V, -1);&#10;    for(int i = 0; i &lt; V; i++) {&#10;        if(color[i] == -1) {&#10;            if(!checkBipartite(i, adj, color)) return false;&#10;        }&#10;    }&#10;    return true;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Graph 22 Number Of Islands<br><br></b> <a href='https://leetcode.com/problems/number-of-islands/' target='_blank'>LeetCode 200</a></td>
+      <td><b>Example 1:</b> DFS.</td>
+      <td><b>Time:</b> O(M * N)<br><b>Space:</b> O(M * N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through each cell. When a '1' is found, increment the island count and start a DFS/BFS to mark all connected '1's as '0' (visited).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void dfs(vector&lt;vector&lt;char&gt;&gt;&amp; grid, int r, int c) {&#10;    if(r &lt; 0 || r &gt;= grid.size() || c &lt; 0 || c &gt;= grid[0].size() || grid[r][c] == &#x27;0&#x27;) return;&#10;    grid[r][c] = &#x27;0&#x27;;&#10;    dfs(grid, r - 1, c);&#10;    dfs(grid, r + 1, c);&#10;    dfs(grid, r, c - 1);&#10;    dfs(grid, r, c + 1);&#10;}&#10;int numIslands(vector&lt;vector&lt;char&gt;&gt;&amp; grid) {&#10;    int count = 0;&#10;    for(int i = 0; i &lt; grid.size(); i++) {&#10;        for(int j = 0; j &lt; grid[0].size(); j++) {&#10;            if(grid[i][j] == &#x27;1&#x27;) {&#10;                count++;&#10;                dfs(grid, i, j);&#10;            }&#10;        }&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

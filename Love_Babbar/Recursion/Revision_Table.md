@@ -529,5 +529,14 @@
       <td>-</td>
       <td><b>Explanation:</b> Iterate from current index. For each prefix, if it is in the dictionary, add it to the current sentence string, add a space, and recur for the suffix. If we reach the end of the string, add the current sentence to the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(string&amp; s, int idx, string curr, unordered_set&lt;string&gt;&amp; dict, vector&lt;string&gt;&amp; ans) {&#10;    if(idx == s.length()) {&#10;        curr.pop_back(); // Remove last space&#10;        ans.push_back(curr);&#10;        return;&#10;    }&#10;    for(int i = idx; i &lt; s.length(); i++) {&#10;        string word = s.substr(idx, i - idx + 1);&#10;        if(dict.find(word) != dict.end()) {&#10;            solve(s, i + 1, curr + word + &quot; &quot;, dict, ans);&#10;        }&#10;    }&#10;}&#10;vector&lt;string&gt; wordBreak(int n, vector&lt;string&gt;&amp; dict, string s) {&#10;    unordered_set&lt;string&gt; st(dict.begin(), dict.end());&#10;    vector&lt;string&gt; ans;&#10;    solve(s, 0, &quot;&quot;, st, ans);&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>58</td>
+      <td>Rec 10 Sort A Stack Using Recursion<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/sort-a-stack/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Recursive sort and insert.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>Stack</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Recursively pop elements until the stack is empty. When returning from the recursive call, use another recursive function `sortedInsert` to insert the popped element into its correct sorted position in the stack.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void sortedInsert(stack&lt;int&gt;&amp; s, int element) {&#10;    if(s.empty() || element &gt; s.top()) {&#10;        s.push(element);&#10;        return;&#10;    }&#10;    int num = s.top();&#10;    s.pop();&#10;    sortedInsert(s, element);&#10;    s.push(num);&#10;}&#10;void sortStack(stack&lt;int&gt;&amp; s) {&#10;    if(s.empty()) return;&#10;    int num = s.top();&#10;    s.pop();&#10;    sortStack(s);&#10;    sortedInsert(s, num);&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
