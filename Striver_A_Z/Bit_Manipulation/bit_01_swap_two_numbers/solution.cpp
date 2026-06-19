@@ -9,16 +9,3 @@ void swapArithmetic(int &a, int &b) {
     a = a - b;
 }
 
-// Time Complexity: O(1) (Constraint)
-// Space Complexity: O(1)
-// Explanation: Use XOR bitwise operation. XOR of a number with itself is 0, and with 0 is the number itself.
-
-void swapOptimal(int &a, int &b) {
-    // Optimal Bitwise XOR swap. Immune to value overflow.
-    if (&a != &b) { // Prevent zeroing out if same memory address
-        a = a ^ b;
-        b = a ^ b;
-        a = a ^ b;
-    }
-}
-

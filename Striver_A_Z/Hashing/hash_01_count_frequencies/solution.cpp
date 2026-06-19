@@ -19,17 +19,3 @@ void countFreqBrute(std::vector<int>& arr) {
     }
 }
 
-// Time Complexity: O(N) (Constraint)
-// Space Complexity: O(N) (Trade-off)
-// Explanation: Use a Hash Map to store the frequencies in a single pass.
-
-#include <vector>
-#include <unordered_map>
-
-void countFreqOptimal(std::vector<int>& arr) {
-    std::unordered_map<int, int> freq;
-    for(int num : arr) {
-        freq[num]++;
-    }
-}
-

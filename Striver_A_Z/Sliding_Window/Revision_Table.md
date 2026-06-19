@@ -18,60 +18,30 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Sw 01 Max Sum Subarray Size K<br><br></b> <a href='https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1' target='_blank'>GeeksforGeeks</a></td>
-      <td rowspan="1"><b>Example 1:</b> Input: arr = [2, 1, 5, 1, 3, 2], K = 3, Output: 9 ([5, 1, 3])<br><br><b>Note (Constraint):</b> Fixed size sliding window.</td>
-      <td><b>Time:</b> O(N) (Constraint)<br><b>Space:</b> O(1) (Constraint)</td>
+      <td rowspan="1">Sw 02 Longest Substring Without Repeating Characters<br><br></b> <a href='https://leetcode.com/problems/longest-substring-without-repeating-characters/' target='_blank'>LeetCode 3</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: s = "abcabcbb", Output: 3 ("abc")</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(min(N, M))</td>
+      <td><code>std::vector</code> for frequency array</td>
+      <td><b>Pointer Leap:</b> `left` can only jump forward, thus `std::max(left, ...)` prevents `left` from going backward if an old duplicate is found.</td>
+      <td><b>Explanation:</b> Sliding window with a Hash Map storing the latest index of each character. Move `left` pointer to `max(left, map[char] + 1)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;string&gt;&#10;#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;int lengthOfLongestSubstring(std::string s) {&#10;    std::vector&lt;int&gt; mpp(256, -1);&#10;    int left = 0, right = 0, max_len = 0;&#10;    while(right &lt; s.length()) {&#10;        if(mpp[s[right]] != -1) {&#10;            left = std::max(left, mpp[s[right]] + 1);&#10;        }&#10;        mpp[s[right]] = right;&#10;        max_len = std::max(max_len, right - left + 1);&#10;        right++;&#10;    }&#10;    return max_len;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">2</td>
+      <td rowspan="1">Sw 03 Trapping Rain Water<br><br></b> <a href='https://leetcode.com/problems/trapping-rain-water/' target='_blank'>LeetCode 42</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: height = [0,1,0,2,1,0,1,3,2,1,2,1], Output: 6</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>-</td>
-      <td><b>Initial Window:</b> Calculate the first K elements manually before starting the sliding loop.</td>
-      <td><b>Explanation:</b> Fixed Sliding Window: Maintain a window of size K. Slide it by adding the next element and subtracting the first element of the previous window.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;&#10;long long maximumSumSubarray(int K, std::vector&lt;int&gt;&amp; arr) {&#10;    long long max_sum = 0, current_sum = 0;&#10;    for(int i=0; i&lt;K; i++) current_sum += arr[i];&#10;    max_sum = current_sum;&#10;    &#10;    for(int i=K; i&lt;arr.size(); i++) {&#10;        current_sum += arr[i] - arr[i-K];&#10;        max_sum = std::max(max_sum, current_sum);&#10;    }&#10;    return max_sum;&#10;}</code></pre></details></td>
+      <td><b>Local Maxima:</b> Water trapped at `i` relies on the absolute minimum of the highest bars to its left and right.</td>
+      <td><b>Explanation:</b> Two pointers `left` and `right`. Maintain `left_max` and `right_max`. Move the pointer pointing to the smaller max, adding trapped water.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;int trap(std::vector&lt;int&gt;&amp; height) {&#10;    int n = height.size();&#10;    int left = 0, right = n - 1;&#10;    int res = 0, maxLeft = 0, maxRight = 0;&#10;    while (left &lt;= right) {&#10;        if (height[left] &lt;= height[right]) {&#10;            if (height[left] &gt;= maxLeft) maxLeft = height[left];&#10;            else res += maxLeft - height[left];&#10;            left++;&#10;        } else {&#10;            if (height[right] &gt;= maxRight) maxRight = height[right];&#10;            else res += maxRight - height[right];&#10;            right--;&#10;        }&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="2">2</td>
-      <td rowspan="2">Sw 02 Longest Substring Without Repeating<br><br></b> <a href='https://leetcode.com/problems/longest-substring-without-repeating-characters/' target='_blank'>LeetCode 3</a></td>
-      <td rowspan="2"><b>Example 1:</b> Input: s = "abcabcbb", Output: 3 ("abc")<br><br><b>Note (Constraint):</b> Variable size sliding window.</td>
-      <td><b>Time:</b> O(2N) &cong; O(N) (Trade-off)<br><b>Space:</b> O(N) (Trade-off)</td>
-      <td><code>std::unordered_set</code></td>
-      <td><b>Shrink Loop:</b> `while(set.contains)` ensures all characters up to the duplicate are removed from the left pointer.</td>
-      <td><b>Explanation:</b> Use a Hash Set to track characters in the current window. If a duplicate is found, shrink the window from the left.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;string&gt;&#10;#include &lt;unordered_set&gt;&#10;#include &lt;algorithm&gt;&#10;&#10;int lengthOfLongestSubstringBetter(std::string s) {&#10;    std::unordered_set&lt;char&gt; charSet;&#10;    int left = 0, max_len = 0;&#10;    for(int right = 0; right &lt; s.length(); right++) {&#10;        while(charSet.find(s[right]) != charSet.end()) {&#10;            charSet.erase(s[left]);&#10;            left++;&#10;        }&#10;        charSet.insert(s[right]);&#10;        max_len = std::max(max_len, right - left + 1);&#10;    }&#10;    return max_len;&#10;}</code></pre></details></td>
-    </tr>
-    <tr>
-      <td><b>Time:</b> O(N) (Constraint)<br><b>Space:</b> O(1) (Constraint)</td>
-      <td>Fixed Array size 256</td>
-      <td><b>Direct Jump:</b> Only jump `left` if the found duplicate index is within the current window (`>= left`).</td>
-      <td><b>Explanation:</b> Optimal: Store the latest index of each character in a Hash Map. Jump `left` directly to `map[char] + 1`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;string&gt;&#10;#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;&#10;int lengthOfLongestSubstringOptimal(std::string s) {&#10;    std::vector&lt;int&gt; charIndex(256, -1);&#10;    int left = 0, max_len = 0;&#10;    for(int right = 0; right &lt; s.length(); right++) {&#10;        if(charIndex[s[right]] != -1) {&#10;            left = std::max(left, charIndex[s[right]] + 1);&#10;        }&#10;        charIndex[s[right]] = right;&#10;        max_len = std::max(max_len, right - left + 1);&#10;    }&#10;    return max_len;&#10;}</code></pre></details></td>
-    </tr>
-    <tr>
-      <td rowspan="2">3</td>
-      <td rowspan="2">Sw 03 Max Consecutive Ones Iii<br><br></b> <a href='https://leetcode.com/problems/max-consecutive-ones-iii/' target='_blank'>LeetCode 1004</a></td>
-      <td rowspan="2"><b>Example 1:</b> Input: nums = [1,1,1,0,0,0,1,1,1,1,0], k = 2, Output: 6<br><br><b>Note (Constraint):</b> Sliding window maintaining at most K zeros.</td>
-      <td><b>Time:</b> O(2N) (Trade-off)<br><b>Space:</b> O(1)</td>
-      <td>-</td>
-      <td><b>While Loop Shrink:</b> Inner loop safely processes `O(N)` times across the entire algorithm lifecycle.</td>
-      <td><b>Explanation:</b> Maintain a window counting zeros. If zeros exceed K, shrink from left.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;&#10;int longestOnesBetter(std::vector&lt;int&gt;&amp; nums, int k) {&#10;    int left = 0, zeros = 0, max_len = 0;&#10;    for(int right = 0; right &lt; nums.size(); right++) {&#10;        if(nums[right] == 0) zeros++;&#10;        while(zeros &gt; k) {&#10;            if(nums[left] == 0) zeros--;&#10;            left++;&#10;        }&#10;        max_len = std::max(max_len, right - left + 1);&#10;    }&#10;    return max_len;&#10;}</code></pre></details></td>
-    </tr>
-    <tr>
-      <td><b>Time:</b> O(N) (Constraint)<br><b>Space:</b> O(1)</td>
-      <td>-</td>
-      <td><b>Non-shrinking Window:</b> By changing `while` to `if`, the window stops growing but never shrinks, ending perfectly on the max length.</td>
-      <td><b>Explanation:</b> Optimal: Never shrink the window, only slide it when invalid. This retains the `max_len` automatically.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;vector&gt;&#10;&#10;int longestOnesOptimal(std::vector&lt;int&gt;&amp; nums, int k) {&#10;    int left = 0, zeros = 0;&#10;    for(int right = 0; right &lt; nums.size(); right++) {&#10;        if(nums[right] == 0) zeros++;&#10;        if(zeros &gt; k) {&#10;            if(nums[left] == 0) zeros--;&#10;            left++;&#10;        }&#10;    }&#10;    return nums.size() - left;&#10;}</code></pre></details></td>
-    </tr>
-    <tr>
-      <td rowspan="1">4</td>
-      <td rowspan="1">Sw 04 Longest Repeating Character Replacement<br><br></b> <a href='https://leetcode.com/problems/longest-repeating-character-replacement/' target='_blank'>LeetCode 424</a></td>
-      <td rowspan="1"><b>Example 1:</b> Input: s = "AABABBA", k = 1, Output: 4 ("AABA" -> "AAAA")<br><br><b>Note (Constraint):</b> All Uppercase English letters.</td>
-      <td><b>Time:</b> O(N) (Constraint)<br><b>Space:</b> O(1) (Constraint)</td>
-      <td>Fixed Array size 26</td>
-      <td><b>Max Freq Preservation:</b> Even if the character drops out, keeping the historical `max_freq` prevents the window from shrinking, acting identically to Max Consecutive Ones logic.</td>
-      <td><b>Explanation:</b> Sliding window tracking the `max_frequency_count` inside the window. If `window_len - max_freq > k`, slide the window.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;string&gt;&#10;#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;&#10;int characterReplacement(std::string s, int k) {&#10;    std::vector&lt;int&gt; count(26, 0);&#10;    int left = 0, max_freq = 0;&#10;    for(int right = 0; right &lt; s.length(); right++) {&#10;        max_freq = std::max(max_freq, ++count[s[right] - &#x27;A&#x27;]);&#10;        int window_len = right - left + 1;&#10;        if(window_len - max_freq &gt; k) {&#10;            count[s[left] - &#x27;A&#x27;]--;&#10;            left++;&#10;        }&#10;    }&#10;    return s.length() - left;&#10;}</code></pre></details></td>
-    </tr>
-    <tr>
-      <td rowspan="1">5</td>
-      <td rowspan="1">Sw 05 Minimum Window Substring<br><br></b> <a href='https://leetcode.com/problems/minimum-window-substring/' target='_blank'>LeetCode 76</a></td>
-      <td rowspan="1"><b>Example 1:</b> Input: s = "ADOBECODEBANC", t = "ABC", Output: "BANC"<br><br><b>Note (Constraint):</b> Hardest sliding window. Require tracking multiple character requirements.</td>
-      <td><b>Time:</b> O(N) (Constraint)<br><b>Space:</b> O(1)</td>
-      <td>Fixed Array size 256</td>
-      <td><b>Negative Counts:</b> When expanding, unneeded characters get negative counts in the map. Shrinking recovers them.</td>
-      <td><b>Explanation:</b> Use a map to count required characters of `t`. Expand right pointer until `required == 0`. Then shrink left pointer to find minimum valid window.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;string&gt;&#10;#include &lt;vector&gt;&#10;&#10;std::string minWindow(std::string s, std::string t) {&#10;    std::vector&lt;int&gt; map(256, 0);&#10;    for(char c : t) map[c]++;&#10;    &#10;    int left = 0, right = 0, required = t.length();&#10;    int min_len = 1e9, start_idx = -1;&#10;    &#10;    while(right &lt; s.length()) {&#10;        if(map[s[right]] &gt; 0) required--;&#10;        map[s[right]]--;&#10;        &#10;        while(required == 0) {&#10;            if(right - left + 1 &lt; min_len) {&#10;                min_len = right - left + 1;&#10;                start_idx = left;&#10;            }&#10;            map[s[left]]++;&#10;            if(map[s[left]] &gt; 0) required++;&#10;            left++;&#10;        }&#10;        right++;&#10;    }&#10;    return start_idx == -1 ? &quot;&quot; : s.substr(start_idx, min_len);&#10;}</code></pre></details></td>
+      <td rowspan="1">3</td>
+      <td rowspan="1">Sw 04 Container With Most Water<br><br></b> <a href='https://leetcode.com/problems/container-with-most-water/' target='_blank'>LeetCode 11</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: height = [1,8,6,2,5,4,8,3,7], Output: 49</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td><code>std::max</code>, <code>std::min</code></td>
+      <td><b>Width vs Height Tradeoff:</b> By starting at maximum width, we only decrease width. Thus, we must only abandon a height if we hope to find a taller one.</td>
+      <td><b>Explanation:</b> Two Pointers from ends. Area is `min(h[left], h[right]) * width`. Move the pointer with the smaller height to seek a potentially taller line.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;int maxArea(std::vector&lt;int&gt;&amp; height) {&#10;    int left = 0, right = height.size() - 1;&#10;    int max_area = 0;&#10;    while(left &lt; right) {&#10;        int area = std::min(height[left], height[right]) * (right - left);&#10;        max_area = std::max(max_area, area);&#10;        if(height[left] &lt; height[right]) left++;&#10;        else right--;&#10;    }&#10;    return max_area;&#10;}</code></pre></details></td>
     </tr>
   </tbody>
 </table>

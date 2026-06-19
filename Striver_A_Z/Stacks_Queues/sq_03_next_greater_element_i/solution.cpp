@@ -1,22 +1,21 @@
-// Time Complexity: O(N) (Constraint)
+// Time Complexity: O(N + M)
 // Space Complexity: O(N)
-// Explanation: Iterate backwards maintaining a strictly decreasing Monotonic Stack. The top of the stack is the next greater element.
+// Explanation: Monotonic Stack traversing `nums2` from right to left. Maintain stack of elements in decreasing order.
 
 #include <vector>
 #include <stack>
-
-std::vector<int> nextGreaterElement(std::vector<int>& nums) {
-    std::vector<int> res(nums.size(), -1);
+#include <unordered_map>
+std::vector<int> nextGreaterElement(std::vector<int>& nums1, std::vector<int>& nums2) {
+    std::unordered_map<int, int> mpp;
     std::stack<int> st;
-    for (int i = nums.size() - 1; i >= 0; i--) {
-        while (!st.empty() && st.top() <= nums[i]) {
-            st.pop();
-        }
-        if (!st.empty()) {
-            res[i] = st.top();
-        }
-        st.push(nums[i]);
+    for(int i = nums2.size() - 1; i >= 0; i--) {
+        while(!st.empty() && st.top() <= nums2[i]) st.pop();
+        if(st.empty()) mpp[nums2[i]] = -1;
+        else mpp[nums2[i]] = st.top();
+        st.push(nums2[i]);
     }
-    return res;
+    std::vector<int> ans;
+    for(int num : nums1) ans.push_back(mpp[num]);
+    return ans;
 }
 

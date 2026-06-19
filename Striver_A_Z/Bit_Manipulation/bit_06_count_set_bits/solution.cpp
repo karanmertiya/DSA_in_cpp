@@ -12,17 +12,3 @@ int hammingWeightBrute(uint32_t n) {
     return count;
 }
 
-// Time Complexity: O(Set Bits) (Constraint)
-// Space Complexity: O(1)
-// Explanation: Brian Kernighan's Algorithm: Strip the lowest set bit using `N & (N-1)` until N reaches 0.
-
-int hammingWeightOptimal(uint32_t n) {
-    int count = 0;
-    while (n != 0) {
-        // Strips the rightmost set bit dynamically
-        n = n & (n - 1);
-        count++;
-    }
-    return count;
-}
-

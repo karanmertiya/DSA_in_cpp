@@ -1,0 +1,24 @@
+// Time Complexity: O(N log N)
+// Space Complexity: O(N)
+// Explanation: Divide and Conquer. Split array into halves until size 1. Merge sorted halves using a temporary array.
+
+#include <vector>
+void merge(std::vector<int>& arr, int low, int mid, int high) {
+    std::vector<int> temp;
+    int left = low, right = mid + 1;
+    while(left <= mid && right <= high) {
+        if(arr[left] <= arr[right]) temp.push_back(arr[left++]);
+        else temp.push_back(arr[right++]);
+    }
+    while(left <= mid) temp.push_back(arr[left++]);
+    while(right <= high) temp.push_back(arr[right++]);
+    for(int i = low; i <= high; i++) arr[i] = temp[i - low];
+}
+void mergeSort(std::vector<int>& arr, int low, int high) {
+    if(low >= high) return;
+    int mid = low + (high - low) / 2;
+    mergeSort(arr, low, mid);
+    mergeSort(arr, mid + 1, high);
+    merge(arr, low, mid, high);
+}
+
