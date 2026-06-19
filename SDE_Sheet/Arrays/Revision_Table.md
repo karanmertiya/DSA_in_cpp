@@ -205,5 +205,14 @@
       <td><b>Last Permutation:</b> Dip not found, reverse the whole array.</td>
       <td><b>Explanation:</b> Find first dip from right (i). Find element just larger than nums[i] from right (j). Swap them and reverse the array from i+1 to end.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void nextPermutation(vector&lt;int&gt;&amp; nums) {&#10;    int n = nums.size(), k, l;&#10;    for(k = n - 2; k &gt;= 0; k--) if(nums[k] &lt; nums[k+1]) break;&#10;    if(k &lt; 0) {&#10;        reverse(nums.begin(), nums.end());&#10;    } else {&#10;        for(l = n - 1; l &gt; k; l--) if(nums[l] &gt; nums[k]) break;&#10;        swap(nums[k], nums[l]);&#10;        reverse(nums.begin() + k + 1, nums.end());&#10;    }&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">22</td>
+      <td rowspan="1">Array 13 Pascals Triangle<br><br></b> <a href='https://leetcode.com/problems/pascals-triangle/' target='_blank'>LeetCode 118</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: numRows = 5, Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterative approach. Construct each row from the previous row. First and last elements are 1. Middle elements are sum of elements right above them.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; generate(int numRows) {&#10;    vector&lt;vector&lt;int&gt;&gt; res;&#10;    for(int i=0; i&lt;numRows; i++) {&#10;        vector&lt;int&gt; row(i+1, 1);&#10;        for(int j=1; j&lt;i; j++) {&#10;            row[j] = res[i-1][j-1] + res[i-1][j];&#10;        }&#10;        res.push_back(row);&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

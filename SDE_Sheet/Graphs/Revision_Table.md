@@ -70,5 +70,23 @@
       <td><b>Cycles:</b> If cycle exists, result will not contain all V elements.</td>
       <td><b>Explanation:</b> Kahn's Algorithm (BFS) using in-degrees. Add nodes with 0 in-degree to a queue. Pop, append to result, and decrement in-degrees of neighbors.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; topoSort(int V, vector&lt;int&gt; adj[]) {&#10;    vector&lt;int&gt; indegree(V, 0);&#10;    for(int i=0; i&lt;V; ++i) {&#10;        for(auto it: adj[i]) indegree[it]++;&#10;    }&#10;    queue&lt;int&gt; q;&#10;    for(int i=0; i&lt;V; ++i) if(indegree[i] == 0) q.push(i);&#10;    vector&lt;int&gt; topo;&#10;    while(!q.empty()) {&#10;        int node = q.front(); q.pop();&#10;        topo.push_back(node);&#10;        for(auto it: adj[node]) {&#10;            indegree[it]--;&#10;            if(indegree[it] == 0) q.push(it);&#10;        }&#10;    }&#10;    return topo;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">7</td>
+      <td rowspan="1">Graph 08 Number Of Islands<br><br></b> <a href='https://leetcode.com/problems/number-of-islands/' target='_blank'>LeetCode 200</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: grid=[['1','1','0','0','0'],...], Output: 1</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M) auxiliary</td>
+      <td>-</td>
+      <td><b>Empty Grid:</b> Returns 0.</td>
+      <td><b>Explanation:</b> Traverse grid. Whenever a '1' is found, increment counter and trigger BFS/DFS to sink the island (mark '0').<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void dfs(vector&lt;vector&lt;char&gt;&gt;&amp; grid, int r, int c) {&#10;    if(r&lt;0 || c&lt;0 || r&gt;=grid.size() || c&gt;=grid[0].size() || grid[r][c] == &#x27;0&#x27;) return;&#10;    grid[r][c] = &#x27;0&#x27;;&#10;    dfs(grid, r+1, c); dfs(grid, r-1, c); dfs(grid, r, c+1); dfs(grid, r, c-1);&#10;}&#10;int numIslands(vector&lt;vector&lt;char&gt;&gt;&amp; grid) {&#10;    int count = 0;&#10;    for(int i=0; i&lt;grid.size(); i++) {&#10;        for(int j=0; j&lt;grid[0].size(); j++) {&#10;            if(grid[i][j] == &#x27;1&#x27;) { count++; dfs(grid, i, j); }&#10;        }&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">8</td>
+      <td rowspan="1">Graph 09 Course Schedule<br><br></b> <a href='https://leetcode.com/problems/course-schedule/' target='_blank'>LeetCode 207</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: numCourses = 2, prerequisites = [[1,0]], Output: true</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
+      <td>-</td>
+      <td><b>Multiple components:</b> Still works because we enqueue all 0-indegree nodes.</td>
+      <td><b>Explanation:</b> Kahn's BFS or DFS cycle detection. Here Kahn's BFS is used. If topological sort contains all V vertices, then true.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool canFinish(int V, vector&lt;vector&lt;int&gt;&gt;&amp; prerequisites) {&#10;    vector&lt;vector&lt;int&gt;&gt; adj(V);&#10;    vector&lt;int&gt; indegree(V, 0);&#10;    for(auto it: prerequisites) {&#10;        adj[it[1]].push_back(it[0]);&#10;        indegree[it[0]]++;&#10;    }&#10;    queue&lt;int&gt; q;&#10;    for(int i=0; i&lt;V; i++) if(indegree[i] == 0) q.push(i);&#10;    int count = 0;&#10;    while(!q.empty()) {&#10;        int node = q.front(); q.pop(); count++;&#10;        for(auto it: adj[node]) {&#10;            indegree[it]--;&#10;            if(indegree[it] == 0) q.push(it);&#10;        }&#10;    }&#10;    return count == V;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
