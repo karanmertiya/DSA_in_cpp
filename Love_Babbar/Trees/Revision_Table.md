@@ -331,5 +331,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Traverse BST. If `curr.val > node.val`, then `curr` is a potential successor, store it and move left to find smaller. Else, move right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* inOrderSuccessor(TreeNode *root, TreeNode *x) {&#10;    TreeNode* successor = NULL;&#10;    while(root) {&#10;        if(root-&gt;val &lt;= x-&gt;val) {&#10;            root = root-&gt;right;&#10;        } else {&#10;            successor = root;&#10;            root = root-&gt;left;&#10;        }&#10;    }&#10;    return successor;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">36</td>
+      <td rowspan="1">Tree 35 Two Sum Iv Input Is A Bst<br><br></b> <a href='https://leetcode.com/problems/two-sum-iv-input-is-a-bst/' target='_blank'>LeetCode 653</a></td>
+      <td rowspan="1"><b>Example 1:</b> BST Iterator two pointer.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use two BST iterators: one for normal inorder (next) and one for reverse inorder (before). Apply two-pointer approach like in a sorted array.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class BSTIterator {&#10;    stack&lt;TreeNode*&gt; st;&#10;    bool reverse;&#10;    void pushAll(TreeNode* node) {&#10;        while(node) {&#10;            st.push(node);&#10;            if(reverse) node = node-&gt;right;&#10;            else node = node-&gt;left;&#10;        }&#10;    }&#10;public:&#10;    BSTIterator(TreeNode* root, bool isReverse) {&#10;        reverse = isReverse;&#10;        pushAll(root);&#10;    }&#10;    int next() {&#10;        TreeNode* tmpNode = st.top();&#10;        st.pop();&#10;        if(reverse) pushAll(tmpNode-&gt;left);&#10;        else pushAll(tmpNode-&gt;right);&#10;        return tmpNode-&gt;val;&#10;    }&#10;};&#10;bool findTarget(TreeNode* root, int k) {&#10;    if(!root) return false;&#10;    BSTIterator l(root, false);&#10;    BSTIterator r(root, true);&#10;    int i = l.next();&#10;    int j = r.next();&#10;    while(i &lt; j) {&#10;        if(i + j == k) return true;&#10;        else if(i + j &lt; k) i = l.next();&#10;        else j = r.next();&#10;    }&#10;    return false;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">37</td>
+      <td rowspan="1">Tree 36 Recover Binary Search Tree<br><br></b> <a href='https://leetcode.com/problems/recover-binary-search-tree/' target='_blank'>LeetCode 99</a></td>
+      <td rowspan="1"><b>Example 1:</b> Inorder traversal tracking anomalies.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Inorder traversal of BST gives sorted array. If two are swapped, there will be 1 or 2 anomalies where `prev->val > curr->val`. First anomaly: `first = prev`, `middle = curr`. Second anomaly: `last = curr`. Swap `first` and `last` (or `first` and `middle` if adjacent).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode *first, *prev, *middle, *last;&#10;void inorder(TreeNode* root) {&#10;    if(root == NULL) return;&#10;    inorder(root-&gt;left);&#10;    if(prev != NULL &amp;&amp; (root-&gt;val &lt; prev-&gt;val)) {&#10;        if(first == NULL) {&#10;            first = prev;&#10;            middle = root;&#10;        } else {&#10;            last = root;&#10;        }&#10;    }&#10;    prev = root;&#10;    inorder(root-&gt;right);&#10;}&#10;void recoverTree(TreeNode* root) {&#10;    first = middle = last = NULL;&#10;    prev = new TreeNode(INT_MIN);&#10;    inorder(root);&#10;    if(first &amp;&amp; last) swap(first-&gt;val, last-&gt;val);&#10;    else if(first &amp;&amp; middle) swap(first-&gt;val, middle-&gt;val);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">38</td>
+      <td rowspan="1">Tree 37 Largest Bst In Binary Tree<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/largest-bst/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Bottom-up verification.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Return `[minNode, maxNode, maxSize]` from each subtree. For current node, if `left.max < node.val < right.min`, it's a BST. Return `[min(node.val, left.min), max(node.val, right.max), left.size + right.size + 1]`. Else, it's not a BST, return `[-inf, inf, max(left.size, right.size)]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class NodeValue {&#10;public:&#10;    int maxNode, minNode, maxSize;&#10;    NodeValue(int minNode, int maxNode, int maxSize) {&#10;        this-&gt;maxNode = maxNode;&#10;        this-&gt;minNode = minNode;&#10;        this-&gt;maxSize = maxSize;&#10;    }&#10;};&#10;NodeValue largestBSTSubtreeHelper(Node* root) {&#10;    if(!root) return NodeValue(INT_MAX, INT_MIN, 0);&#10;    auto left = largestBSTSubtreeHelper(root-&gt;left);&#10;    auto right = largestBSTSubtreeHelper(root-&gt;right);&#10;    if(left.maxNode &lt; root-&gt;data &amp;&amp; root-&gt;data &lt; right.minNode) {&#10;        return NodeValue(min(root-&gt;data, left.minNode), max(root-&gt;data, right.maxNode), left.maxSize + right.maxSize + 1);&#10;    }&#10;    return NodeValue(INT_MIN, INT_MAX, max(left.maxSize, right.maxSize));&#10;}&#10;int largestBst(Node *root) {&#10;    return largestBSTSubtreeHelper(root).maxSize;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">39</td>
+      <td rowspan="1">Tree 38 Binary Search Tree Iterator<br><br></b> <a href='https://leetcode.com/problems/binary-search-tree-iterator/' target='_blank'>LeetCode 173</a></td>
+      <td rowspan="1"><b>Example 1:</b> Stack based partial inorder.</td>
+      <td><b>Time:</b> O(1) average per call<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain a stack of nodes. In constructor, push all left children of root. In `next()`, pop top, value is answer, if popped node has right child, push it and all its left children. `hasNext()` checks if stack is not empty.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class BSTIterator {&#10;    stack&lt;TreeNode*&gt; st;&#10;    void pushAll(TreeNode* node) {&#10;        for(; node != NULL; st.push(node), node = node-&gt;left);&#10;    }&#10;public:&#10;    BSTIterator(TreeNode* root) {&#10;        pushAll(root);&#10;    }&#10;    int next() {&#10;        TreeNode* tmpNode = st.top();&#10;        st.pop();&#10;        pushAll(tmpNode-&gt;right);&#10;        return tmpNode-&gt;val;&#10;    }&#10;    bool hasNext() {&#10;        return !st.empty();&#10;    }&#10;};</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">40</td>
+      <td rowspan="1">Tree 39 Maximum Sum Bst In Binary Tree<br><br></b> <a href='https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/' target='_blank'>LeetCode 1373</a></td>
+      <td rowspan="1"><b>Example 1:</b> Similar to largest BST.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Bottom-up traversal. Return `[isBST, minNode, maxNode, sum]`. Update global max sum when valid BST is found.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Info {&#10;    bool isBST;&#10;    int minNode, maxNode, sum;&#10;};&#10;int maxSum = 0;&#10;Info solve(TreeNode* root) {&#10;    if(!root) return {true, INT_MAX, INT_MIN, 0};&#10;    Info left = solve(root-&gt;left);&#10;    Info right = solve(root-&gt;right);&#10;    if(left.isBST &amp;&amp; right.isBST &amp;&amp; left.maxNode &lt; root-&gt;val &amp;&amp; root-&gt;val &lt; right.minNode) {&#10;        int currSum = left.sum + right.sum + root-&gt;val;&#10;        maxSum = max(maxSum, currSum);&#10;        return {true, min(root-&gt;val, left.minNode), max(root-&gt;val, right.maxNode), currSum};&#10;    }&#10;    return {false, INT_MIN, INT_MAX, max(left.sum, right.sum)};&#10;}&#10;int maxSumBST(TreeNode* root) {&#10;    maxSum = 0;&#10;    solve(root);&#10;    return maxSum &gt; 0 ? maxSum : 0;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">41</td>
+      <td rowspan="1">Tree 40 Kth Largest Element In A Bst<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/kth-largest-element-in-bst/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Reverse inorder traversal.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Kth largest is Kth element in reverse inorder traversal (Right, Root, Left). Maintain a counter `k`. When visiting a node, decrement `k`. If `k == 0`, current node is the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int ans = -1;&#10;void reverseInorder(Node* root, int&amp; k) {&#10;    if(!root || k == 0) return;&#10;    reverseInorder(root-&gt;right, k);&#10;    k--;&#10;    if(k == 0) {&#10;        ans = root-&gt;data;&#10;        return;&#10;    }&#10;    reverseInorder(root-&gt;left, k);&#10;}&#10;int kthLargest(Node *root, int K) {&#10;    ans = -1;&#10;    reverseInorder(root, K);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">42</td>
+      <td rowspan="1">Tree 41 Predecessor And Successor In Bst<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/predecessor-and-successor/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Search down the tree.</td>
+      <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> For Successor: search for key. If node->val <= key, go right. If node->val > key, update succ = node, go left. For Predecessor: If node->val >= key, go left. If node->val < key, update pred = node, go right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void findPreSuc(Node* root, Node*&amp; pre, Node*&amp; suc, int key) {&#10;    Node* curr = root;&#10;    while(curr) {&#10;        if(curr-&gt;key &gt; key) {&#10;            suc = curr;&#10;            curr = curr-&gt;left;&#10;        } else {&#10;            curr = curr-&gt;right;&#10;        }&#10;    }&#10;    curr = root;&#10;    while(curr) {&#10;        if(curr-&gt;key &lt; key) {&#10;            pre = curr;&#10;            curr = curr-&gt;right;&#10;        } else {&#10;            curr = curr-&gt;left;&#10;        }&#10;    }&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">43</td>
+      <td rowspan="1">Tree 42 Construct Bst From Preorder Traversal<br><br></b> <a href='https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/' target='_blank'>LeetCode 1008</a></td>
+      <td rowspan="1"><b>Example 1:</b> Upper bound tracking.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use an upper bound value. `build(preorder, index, bound)`: If index >= len or preorder[index] > bound, return NULL. Create root with preorder[index]. `root->left = build(..., root->val)`. `root->right = build(..., bound)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* bstFromPreorder(vector&lt;int&gt;&amp; preorder) {&#10;    int i = 0;&#10;    return build(preorder, i, INT_MAX);&#10;}&#10;TreeNode* build(vector&lt;int&gt;&amp; A, int&amp; i, int bound) {&#10;    if(i == A.size() || A[i] &gt; bound) return NULL;&#10;    TreeNode* root = new TreeNode(A[i++]);&#10;    root-&gt;left = build(A, i, root-&gt;val);&#10;    root-&gt;right = build(A, i, bound);&#10;    return root;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">44</td>
+      <td rowspan="1">Tree 43 All Nodes Distance K In Binary Tree<br><br></b> <a href='https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/' target='_blank'>LeetCode 863</a></td>
+      <td rowspan="1"><b>Example 1:</b> Convert to graph or use parent pointers.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <unordered_map>\n#include <queue>\n#include <unordered_set></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Perform BFS/DFS to map each node to its parent. Then, start a BFS from the target node, visiting left, right, and parent. Track visited nodes. After `k` levels in BFS, the current queue holds the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void markParents(TreeNode* root, unordered_map&lt;TreeNode*, TreeNode*&gt;&amp; parent_track) {&#10;    queue&lt;TreeNode*&gt; queue;&#10;    queue.push(root);&#10;    while(!queue.empty()) {&#10;        TreeNode* current = queue.front();&#10;        queue.pop();&#10;        if(current-&gt;left) {&#10;            parent_track[current-&gt;left] = current;&#10;            queue.push(current-&gt;left);&#10;        }&#10;        if(current-&gt;right) {&#10;            parent_track[current-&gt;right] = current;&#10;            queue.push(current-&gt;right);&#10;        }&#10;    }&#10;}&#10;vector&lt;int&gt; distanceK(TreeNode* root, TreeNode* target, int k) {&#10;    unordered_map&lt;TreeNode*, TreeNode*&gt; parent_track;&#10;    markParents(root, parent_track);&#10;    unordered_map&lt;TreeNode*, bool&gt; visited;&#10;    queue&lt;TreeNode*&gt; queue;&#10;    queue.push(target);&#10;    visited[target] = true;&#10;    int curr_level = 0;&#10;    while(!queue.empty()) {&#10;        int size = queue.size();&#10;        if(curr_level++ == k) break;&#10;        for(int i=0; i&lt;size; i++) {&#10;            TreeNode* current = queue.front();&#10;            queue.pop();&#10;            if(current-&gt;left &amp;&amp; !visited[current-&gt;left]) {&#10;                queue.push(current-&gt;left);&#10;                visited[current-&gt;left] = true;&#10;            }&#10;            if(current-&gt;right &amp;&amp; !visited[current-&gt;right]) {&#10;                queue.push(current-&gt;right);&#10;                visited[current-&gt;right] = true;&#10;            }&#10;            if(parent_track[current] &amp;&amp; !visited[parent_track[current]]) {&#10;                queue.push(parent_track[current]);&#10;                visited[parent_track[current]] = true;&#10;            }&#10;        }&#10;    }&#10;    vector&lt;int&gt; result;&#10;    while(!queue.empty()) {&#10;        TreeNode* current = queue.front(); queue.pop();&#10;        result.push_back(current-&gt;val);&#10;    }&#10;    return result;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">45</td>
+      <td rowspan="1">Tree 44 Amount Of Time For Binary Tree To Be Infected<br><br></b> <a href='https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/' target='_blank'>LeetCode 2385</a></td>
+      <td rowspan="1"><b>Example 1:</b> Parent pointers and BFS.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Same as 'Distance K' problem. Map parents. Find the start node. Perform BFS from start node. The time taken is the number of levels in BFS until all reachable nodes are visited.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* markParents(TreeNode* root, unordered_map&lt;TreeNode*, TreeNode*&gt;&amp; m, int start) {&#10;    queue&lt;TreeNode*&gt; q;&#10;    q.push(root);&#10;    TreeNode* res;&#10;    while(!q.empty()) {&#10;        TreeNode* node = q.front(); q.pop();&#10;        if(node-&gt;val == start) res = node;&#10;        if(node-&gt;left) {&#10;            m[node-&gt;left] = node;&#10;            q.push(node-&gt;left);&#10;        }&#10;        if(node-&gt;right) {&#10;            m[node-&gt;right] = node;&#10;            q.push(node-&gt;right);&#10;        }&#10;    }&#10;    return res;&#10;}&#10;int amountOfTime(TreeNode* root, int start) {&#10;    unordered_map&lt;TreeNode*, TreeNode*&gt; m;&#10;    TreeNode* target = markParents(root, m, start);&#10;    unordered_map&lt;TreeNode*, int&gt; vis;&#10;    queue&lt;TreeNode*&gt; q;&#10;    q.push(target);&#10;    vis[target] = 1;&#10;    int maxi = 0;&#10;    while(!q.empty()) {&#10;        int sz = q.size();&#10;        int fl = 0;&#10;        for(int i=0; i&lt;sz; i++) {&#10;            auto node = q.front(); q.pop();&#10;            if(node-&gt;left &amp;&amp; !vis[node-&gt;left]) {&#10;                fl = 1;&#10;                vis[node-&gt;left] = 1;&#10;                q.push(node-&gt;left);&#10;            }&#10;            if(node-&gt;right &amp;&amp; !vis[node-&gt;right]) {&#10;                fl = 1;&#10;                vis[node-&gt;right] = 1;&#10;                q.push(node-&gt;right);&#10;            }&#10;            if(m[node] &amp;&amp; !vis[m[node]]) {&#10;                fl = 1;&#10;                vis[m[node]] = 1;&#10;                q.push(m[node]);&#10;            }&#10;        }&#10;        if(fl) maxi++;&#10;    }&#10;    return maxi;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
