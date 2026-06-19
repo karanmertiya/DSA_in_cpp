@@ -169,5 +169,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Backtracking. Create a mapping of digit to letters. Iterate through digits, for each digit loop through its mapped letters, append to current string, and recurse.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(int ind, string digits, string mapping[], string path, vector&lt;string&gt;&amp; ans) {&#10;    if(ind == digits.length()) {&#10;        ans.push_back(path);&#10;        return;&#10;    }&#10;    int number = digits[ind] - &#x27;0&#x27;;&#10;    string value = mapping[number];&#10;    for(int i = 0; i &lt; value.length(); i++) {&#10;        solve(ind + 1, digits, mapping, path + value[i], ans);&#10;    }&#10;}&#10;vector&lt;string&gt; letterCombinations(string digits) {&#10;    if(digits.length() == 0) return {};&#10;    vector&lt;string&gt; ans;&#10;    string mapping[10] = {&quot;&quot;, &quot;&quot;, &quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;, &quot;jkl&quot;, &quot;mno&quot;, &quot;pqrs&quot;, &quot;tuv&quot;, &quot;wxyz&quot;};&#10;    solve(0, digits, mapping, &quot;&quot;, ans);&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">18</td>
+      <td rowspan="1">Rec 18 Rat In A Maze<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Backtracking.</td>
+      <td><b>Time:</b> O(4^(N^2))<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use backtracking to explore paths in lexicographical order: Down, Left, Right, Up (DLRU). Maintain a visited array. If destination is reached, add path to answers. Backtrack by unmarking visited.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(int i, int j, vector&lt;vector&lt;int&gt;&gt; &amp;a, int n, vector&lt;string&gt; &amp;ans, string move, vector&lt;vector&lt;int&gt;&gt; &amp;vis) {&#10;    if(i == n-1 &amp;&amp; j == n-1) {&#10;        ans.push_back(move);&#10;        return;&#10;    }&#10;    string dir = &quot;DLRU&quot;;&#10;    int di[] = {1, 0, 0, -1};&#10;    int dj[] = {0, -1, 1, 0};&#10;    for(int ind = 0; ind &lt; 4; ind++) {&#10;        int nexti = i + di[ind];&#10;        int nextj = j + dj[ind];&#10;        if(nexti &gt;= 0 &amp;&amp; nextj &gt;= 0 &amp;&amp; nexti &lt; n &amp;&amp; nextj &lt; n &amp;&amp; !vis[nexti][nextj] &amp;&amp; a[nexti][nextj] == 1) {&#10;            vis[i][j] = 1;&#10;            solve(nexti, nextj, a, n, ans, move + dir[ind], vis);&#10;            vis[i][j] = 0;&#10;        }&#10;    }&#10;}&#10;vector&lt;string&gt; findPath(vector&lt;vector&lt;int&gt;&gt; &amp;m, int n) {&#10;    vector&lt;string&gt; ans;&#10;    vector&lt;vector&lt;int&gt;&gt; vis(n, vector&lt;int&gt;(n, 0));&#10;    if(m[0][0] == 1) solve(0, 0, m, n, ans, &quot;&quot;, vis);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">19</td>
+      <td rowspan="1">Rec 19 Word Break Ii<br><br></b> <a href='https://leetcode.com/problems/word-break-ii/' target='_blank'>LeetCode 140</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursion + Memoization.</td>
+      <td><b>Time:</b> O(N * 2^N)<br><b>Space:</b> O(2^N * N)</td>
+      <td><code>#include <unordered_set>\n#include <unordered_map></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Backtracking. For each index, try all possible prefixes. If prefix is in dict, recursively break the remaining string. Use memoization or DP to store answers for a substring to avoid recomputation.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">unordered_map&lt;string, vector&lt;string&gt;&gt; dp;&#10;vector&lt;string&gt; wordBreak(string s, vector&lt;string&gt;&amp; wordDict) {&#10;    unordered_set&lt;string&gt; dict(wordDict.begin(), wordDict.end());&#10;    return helper(s, dict);&#10;}&#10;vector&lt;string&gt; helper(string s, unordered_set&lt;string&gt;&amp; dict) {&#10;    if(dp.find(s) != dp.end()) return dp[s];&#10;    vector&lt;string&gt; res;&#10;    if(dict.find(s) != dict.end()) res.push_back(s);&#10;    for(int i=1; i&lt;s.length(); i++) {&#10;        string right = s.substr(i);&#10;        if(dict.find(right) != dict.end()) {&#10;            vector&lt;string&gt; left_res = helper(s.substr(0, i), dict);&#10;            for(string l : left_res) res.push_back(l + &quot; &quot; + right);&#10;        }&#10;    }&#10;    return dp[s] = res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">20</td>
+      <td rowspan="1">Rec 20 M Coloring Problem<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Graph coloring backtracking.</td>
+      <td><b>Time:</b> O(M^N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Try coloring each node from `1` to `M`. Before coloring, check if it's safe (no adjacent node has same color). If safe, color it and recurse for next node. Backtrack if no color works.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isSafe(int node, int color[], bool graph[101][101], int n, int col) {&#10;    for(int k=0; k&lt;n; k++) {&#10;        if(k != node &amp;&amp; graph[k][node] == 1 &amp;&amp; color[k] == col) return false;&#10;    }&#10;    return true;&#10;}&#10;bool solve(int node, int color[], int m, int N, bool graph[101][101]) {&#10;    if(node == N) return true;&#10;    for(int i=1; i&lt;=m; i++) {&#10;        if(isSafe(node, color, graph, N, i)) {&#10;            color[node] = i;&#10;            if(solve(node + 1, color, m, N, graph)) return true;&#10;            color[node] = 0;&#10;        }&#10;    }&#10;    return false;&#10;}&#10;bool graphColoring(bool graph[101][101], int m, int N) {&#10;    int color[N] = {0};&#10;    return solve(0, color, m, N, graph);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">21</td>
+      <td rowspan="1">Rec 21 Sudoku Solver<br><br></b> <a href='https://leetcode.com/problems/sudoku-solver/' target='_blank'>LeetCode 37</a></td>
+      <td rowspan="1"><b>Example 1:</b> Classic backtracking.</td>
+      <td><b>Time:</b> O(9^(N^2))<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through matrix. If empty, try '1' to '9'. Check `isValid` (row, col, 3x3 box). If valid, set it and recurse. If recursion returns true, puzzle solved. Else backtrack. If loop ends without returning true, return false.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isValid(vector&lt;vector&lt;char&gt;&gt;&amp; board, int row, int col, char c) {&#10;    for(int i=0; i&lt;9; i++) {&#10;        if(board[i][col] == c) return false;&#10;        if(board[row][i] == c) return false;&#10;        if(board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c) return false;&#10;    }&#10;    return true;&#10;}&#10;bool solve(vector&lt;vector&lt;char&gt;&gt;&amp; board) {&#10;    for(int i=0; i&lt;board.size(); i++) {&#10;        for(int j=0; j&lt;board[0].size(); j++) {&#10;            if(board[i][j] == &#x27;.&#x27;) {&#10;                for(char c=&#x27;1&#x27;; c&lt;=&#x27;9&#x27;; c++) {&#10;                    if(isValid(board, i, j, c)) {&#10;                        board[i][j] = c;&#10;                        if(solve(board) == true) return true;&#10;                        else board[i][j] = &#x27;.&#x27;;&#10;                    }&#10;                }&#10;                return false;&#10;            }&#10;        }&#10;    }&#10;    return true;&#10;}&#10;void solveSudoku(vector&lt;vector&lt;char&gt;&gt;&amp; board) {&#10;    solve(board);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">22</td>
+      <td rowspan="1">Rec 22 N Queens<br><br></b> <a href='https://leetcode.com/problems/n-queens/' target='_blank'>LeetCode 51</a></td>
+      <td rowspan="1"><b>Example 1:</b> Backtracking on board.</td>
+      <td><b>Time:</b> O(N!)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Place queens column by column. Keep track of safe rows and diagonals using hashing arrays: `leftRow`, `lowerDiagonal`, `upperDiagonal`. If safe, place queen, update hashes, and recurse.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(int col, vector&lt;string&gt;&amp; board, vector&lt;vector&lt;string&gt;&gt;&amp; ans, vector&lt;int&gt;&amp; leftRow, vector&lt;int&gt;&amp; upperDiagonal, vector&lt;int&gt;&amp; lowerDiagonal, int n) {&#10;    if(col == n) {&#10;        ans.push_back(board);&#10;        return;&#10;    }&#10;    for(int row=0; row&lt;n; row++) {&#10;        if(leftRow[row] == 0 &amp;&amp; lowerDiagonal[row + col] == 0 &amp;&amp; upperDiagonal[n - 1 + col - row] == 0) {&#10;            board[row][col] = &#x27;Q&#x27;;&#10;            leftRow[row] = 1;&#10;            lowerDiagonal[row + col] = 1;&#10;            upperDiagonal[n - 1 + col - row] = 1;&#10;            solve(col + 1, board, ans, leftRow, upperDiagonal, lowerDiagonal, n);&#10;            board[row][col] = &#x27;.&#x27;;&#10;            leftRow[row] = 0;&#10;            lowerDiagonal[row + col] = 0;&#10;            upperDiagonal[n - 1 + col - row] = 0;&#10;        }&#10;    }&#10;}&#10;vector&lt;vector&lt;string&gt;&gt; solveNQueens(int n) {&#10;    vector&lt;vector&lt;string&gt;&gt; ans;&#10;    vector&lt;string&gt; board(n);&#10;    string s(n, &#x27;.&#x27;);&#10;    for(int i=0; i&lt;n; i++) board[i] = s;&#10;    vector&lt;int&gt; leftRow(n, 0), upperDiagonal(2 * n - 1, 0), lowerDiagonal(2 * n - 1, 0);&#10;    solve(0, board, ans, leftRow, upperDiagonal, lowerDiagonal, n);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">23</td>
+      <td rowspan="1">Rec 23 Permutations Of A String Or Array<br><br></b> <a href='https://leetcode.com/problems/permutations/' target='_blank'>LeetCode 46</a></td>
+      <td rowspan="1"><b>Example 1:</b> Backtracking swap.</td>
+      <td><b>Time:</b> O(N! * N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate `i` from `index` to `n-1`. Swap `nums[index]` and `nums[i]`, then recurse for `index + 1`. Swap back to backtrack.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void recurPermute(int index, vector&lt;int&gt;&amp; nums, vector&lt;vector&lt;int&gt;&gt;&amp; ans) {&#10;    if(index == nums.size()) {&#10;        ans.push_back(nums);&#10;        return;&#10;    }&#10;    for(int i = index; i &lt; nums.size(); i++) {&#10;        swap(nums[index], nums[i]);&#10;        recurPermute(index + 1, nums, ans);&#10;        swap(nums[index], nums[i]);&#10;    }&#10;}&#10;vector&lt;vector&lt;int&gt;&gt; permute(vector&lt;int&gt;&amp; nums) {&#10;    vector&lt;vector&lt;int&gt;&gt; ans;&#10;    recurPermute(0, nums, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">24</td>
+      <td rowspan="1">Rec 24 Combination Sum Ii<br><br></b> <a href='https://leetcode.com/problems/combination-sum-ii/' target='_blank'>LeetCode 40</a></td>
+      <td rowspan="1"><b>Example 1:</b> `candidates = [10,1,2,7,6,1,5], target = 8`.</td>
+      <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(N * X) where X is number of combinations</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort candidates. Recursively pick combinations. If `i > ind` and `candidates[i] == candidates[i-1]`, skip to avoid duplicates. If `target - candidates[i] >= 0`, pick it.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void findCombinations(int ind, int target, vector&lt;int&gt;&amp; arr, vector&lt;vector&lt;int&gt;&gt;&amp; ans, vector&lt;int&gt;&amp; ds) {&#10;    if(target == 0) {&#10;        ans.push_back(ds);&#10;        return;&#10;    }&#10;    for(int i=ind; i&lt;arr.size(); i++) {&#10;        if(i &gt; ind &amp;&amp; arr[i] == arr[i-1]) continue;&#10;        if(arr[i] &gt; target) break;&#10;        ds.push_back(arr[i]);&#10;        findCombinations(i + 1, target - arr[i], arr, ans, ds);&#10;        ds.pop_back();&#10;    }&#10;}&#10;vector&lt;vector&lt;int&gt;&gt; combinationSum2(vector&lt;int&gt;&amp; candidates, int target) {&#10;    sort(candidates.begin(), candidates.end());&#10;    vector&lt;vector&lt;int&gt;&gt; ans;&#10;    vector&lt;int&gt; ds;&#10;    findCombinations(0, target, candidates, ans, ds);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">25</td>
+      <td rowspan="1">Rec 25 Subset Sum I<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/subset-sums2234/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Take / Not Take.</td>
+      <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(2^N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Recursively either include `arr[ind]` in sum, or exclude it. If `ind == N`, add `sum` to result array.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void func(int ind, int sum, vector&lt;int&gt;&amp; arr, int N, vector&lt;int&gt;&amp; sumSubset) {&#10;    if(ind == N) {&#10;        sumSubset.push_back(sum);&#10;        return;&#10;    }&#10;    func(ind + 1, sum + arr[ind], arr, N, sumSubset);&#10;    func(ind + 1, sum, arr, N, sumSubset);&#10;}&#10;vector&lt;int&gt; subsetSums(vector&lt;int&gt; arr, int N) {&#10;    vector&lt;int&gt; sumSubset;&#10;    func(0, 0, arr, N, sumSubset);&#10;    sort(sumSubset.begin(), sumSubset.end());&#10;    return sumSubset;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">26</td>
+      <td rowspan="1">Rec 26 Subset Sum Ii<br><br></b> <a href='https://leetcode.com/problems/subsets-ii/' target='_blank'>LeetCode 90</a></td>
+      <td rowspan="1"><b>Example 1:</b> Subset skip duplicates.</td>
+      <td><b>Time:</b> O(2^N * N)<br><b>Space:</b> O(2^N * K)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort array. Recursive call adds current `ds` to `ans`. Then iterate `i` from `ind` to `n`. Skip if `i > ind` and `nums[i] == nums[i-1]`. Add to `ds`, recurse for `i+1`, pop from `ds`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void findSubsets(int ind, vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; ds, vector&lt;vector&lt;int&gt;&gt;&amp; ans) {&#10;    ans.push_back(ds);&#10;    for(int i=ind; i&lt;nums.size(); i++) {&#10;        if(i != ind &amp;&amp; nums[i] == nums[i-1]) continue;&#10;        ds.push_back(nums[i]);&#10;        findSubsets(i + 1, nums, ds, ans);&#10;        ds.pop_back();&#10;    }&#10;}&#10;vector&lt;vector&lt;int&gt;&gt; subsetsWithDup(vector&lt;int&gt;&amp; nums) {&#10;    vector&lt;vector&lt;int&gt;&gt; ans;&#10;    vector&lt;int&gt; ds;&#10;    sort(nums.begin(), nums.end());&#10;    findSubsets(0, nums, ds, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">27</td>
+      <td rowspan="1">Rec 27 Palindrome Partitioning<br><br></b> <a href='https://leetcode.com/problems/palindrome-partitioning/' target='_blank'>LeetCode 131</a></td>
+      <td rowspan="1"><b>Example 1:</b> Valid palindrome checks on prefix.</td>
+      <td><b>Time:</b> O(N * 2^N)<br><b>Space:</b> O(N * X)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Recurse through string. For index `i`, check substring `s[index...i]`. If it is palindrome, add it to current list, and recurse for `i+1`. Backtrack after recursion.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPalindrome(string s, int start, int end) {&#10;    while(start &lt;= end) {&#10;        if(s[start++] != s[end--]) return false;&#10;    }&#10;    return true;&#10;}&#10;void func(int index, string s, vector&lt;string&gt;&amp; path, vector&lt;vector&lt;string&gt;&gt;&amp; res) {&#10;    if(index == s.size()) {&#10;        res.push_back(path);&#10;        return;&#10;    }&#10;    for(int i=index; i&lt;s.size(); ++i) {&#10;        if(isPalindrome(s, index, i)) {&#10;            path.push_back(s.substr(index, i - index + 1));&#10;            func(i + 1, s, path, res);&#10;            path.pop_back();&#10;        }&#10;    }&#10;}&#10;vector&lt;vector&lt;string&gt;&gt; partition(string s) {&#10;    vector&lt;vector&lt;string&gt;&gt; res;&#10;    vector&lt;string&gt; path;&#10;    func(0, s, path, res);&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

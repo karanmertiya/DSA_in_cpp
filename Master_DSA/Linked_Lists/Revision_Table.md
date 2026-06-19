@@ -205,5 +205,95 @@
       <td><b>k > length:</b> Fill remaining parts with null.</td>
       <td><b>Explanation:</b> First, calculate the length of the list. Then, determine base size `len / k` and extra nodes `len % k`. Iterate through the list, breaking it into parts of appropriate sizes.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;ListNode*&gt; splitListToParts(ListNode* head, int k) {&#10;    int len = 0;&#10;    ListNode* curr = head;&#10;    while(curr) { len++; curr = curr-&gt;next; }&#10;    int partSize = len / k, extra = len % k;&#10;    vector&lt;ListNode*&gt; ans;&#10;    curr = head;&#10;    for(int i=0; i&lt;k; i++) {&#10;        ans.push_back(curr);&#10;        int currentPartSize = partSize + (extra &gt; 0 ? 1 : 0);&#10;        extra--;&#10;        for(int j=0; j&lt;currentPartSize - 1; j++) {&#10;            if(curr) curr = curr-&gt;next;&#10;        }&#10;        if(curr) {&#10;            ListNode* nextPart = curr-&gt;next;&#10;            curr-&gt;next = NULL;&#10;            curr = nextPart;&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">22</td>
+      <td rowspan="1">Ll 26 Reverse Nodes In K Group<br><br></b> <a href='https://leetcode.com/problems/reverse-nodes-in-k-group/' target='_blank'>LeetCode 25</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive/Iterative k-reverse.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Count nodes. While `count >= k`, reverse `k` nodes. Keep track of previous group's tail to connect to current group's head. If `< k` nodes remain, just connect them.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* reverseKGroup(ListNode* head, int k) {&#10;    if(head == NULL || k == 1) return head;&#10;    ListNode* dummy = new ListNode(0);&#10;    dummy-&gt;next = head;&#10;    ListNode *cur = dummy, *nex = dummy, *pre = dummy;&#10;    int count = 0;&#10;    while(cur-&gt;next != NULL) {&#10;        cur = cur-&gt;next;&#10;        count++;&#10;    }&#10;    while(count &gt;= k) {&#10;        cur = pre-&gt;next;&#10;        nex = cur-&gt;next;&#10;        for(int i=1; i&lt;k; i++) {&#10;            cur-&gt;next = nex-&gt;next;&#10;            nex-&gt;next = pre-&gt;next;&#10;            pre-&gt;next = nex;&#10;            nex = cur-&gt;next;&#10;        }&#10;        pre = cur;&#10;        count -= k;&#10;    }&#10;    return dummy-&gt;next;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">23</td>
+      <td rowspan="1">Ll 27 Rotate List<br><br></b> <a href='https://leetcode.com/problems/rotate-list/' target='_blank'>LeetCode 61</a></td>
+      <td rowspan="1"><b>Example 1:</b> Find tail and break.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Compute length `N` of list. Connect tail to head to form a cycle. Find `k = k % N`. Move `N - k` steps from head. The new head is `current->next`. Break the cycle by setting `current->next = NULL`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* rotateRight(ListNode* head, int k) {&#10;    if(!head || !head-&gt;next || k == 0) return head;&#10;    ListNode* cur = head;&#10;    int len = 1;&#10;    while(cur-&gt;next &amp;&amp; ++len) cur = cur-&gt;next;&#10;    cur-&gt;next = head;&#10;    k = k % len;&#10;    k = len - k;&#10;    while(k--) cur = cur-&gt;next;&#10;    head = cur-&gt;next;&#10;    cur-&gt;next = NULL;&#10;    return head;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">24</td>
+      <td rowspan="1">Ll 28 Flattening A Linked List<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Merge two sorted lists bottom-up.</td>
+      <td><b>Time:</b> O(N * M) total nodes<br><b>Space:</b> O(N) aux space for recursion</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Recursively go to the end of the `next` pointers. Merge the last two lists using the `bottom` pointers, just like merging two sorted linked lists. Return the merged head upwards.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    int data;&#10;    Node *next, *bottom;&#10;    Node(int x) { data = x; next = NULL; bottom = NULL; }&#10;};&#10;Node* mergeTwoLists(Node* a, Node* b) {&#10;    Node* temp = new Node(0);&#10;    Node* res = temp;&#10;    while(a != NULL &amp;&amp; b != NULL) {&#10;        if(a-&gt;data &lt; b-&gt;data) {&#10;            temp-&gt;bottom = a;&#10;            temp = temp-&gt;bottom;&#10;            a = a-&gt;bottom;&#10;        } else {&#10;            temp-&gt;bottom = b;&#10;            temp = temp-&gt;bottom;&#10;            b = b-&gt;bottom;&#10;        }&#10;    }&#10;    if(a) temp-&gt;bottom = a;&#10;    else temp-&gt;bottom = b;&#10;    return res-&gt;bottom;&#10;}&#10;Node *flatten(Node *root) {&#10;    if(root == NULL || root-&gt;next == NULL) return root;&#10;    root-&gt;next = flatten(root-&gt;next);&#10;    root = mergeTwoLists(root, root-&gt;next);&#10;    return root;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">25</td>
+      <td rowspan="1">Ll 29 Copy List With Random Pointer<br><br></b> <a href='https://leetcode.com/problems/copy-list-with-random-pointer/' target='_blank'>LeetCode 138</a></td>
+      <td rowspan="1"><b>Example 1:</b> Insert copies in-between.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate list. For each node, insert a copy node right after it. Then, iterate again and set `copy->random = original->random->next`. Finally, separate the original list and the copy list.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class Node {&#10;public:&#10;    int val;&#10;    Node* next;&#10;    Node* random;&#10;    Node(int _val) { val = _val; next = NULL; random = NULL; }&#10;};&#10;Node* copyRandomList(Node* head) {&#10;    if(!head) return NULL;&#10;    Node* iter = head;&#10;    Node* front = head;&#10;    while(iter != NULL) {&#10;        front = iter-&gt;next;&#10;        Node* copy = new Node(iter-&gt;val);&#10;        iter-&gt;next = copy;&#10;        copy-&gt;next = front;&#10;        iter = front;&#10;    }&#10;    iter = head;&#10;    while(iter != NULL) {&#10;        if(iter-&gt;random != NULL) {&#10;            iter-&gt;next-&gt;random = iter-&gt;random-&gt;next;&#10;        }&#10;        iter = iter-&gt;next-&gt;next;&#10;    }&#10;    iter = head;&#10;    Node* pseudoHead = new Node(0);&#10;    Node* copy = pseudoHead;&#10;    while(iter != NULL) {&#10;        front = iter-&gt;next-&gt;next;&#10;        copy-&gt;next = iter-&gt;next;&#10;        iter-&gt;next = front;&#10;        copy = copy-&gt;next;&#10;        iter = front;&#10;    }&#10;    return pseudoHead-&gt;next;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">26</td>
+      <td rowspan="1">Ll 30 Add Two Numbers Ii<br><br></b> <a href='https://leetcode.com/problems/add-two-numbers-ii/' target='_blank'>LeetCode 445</a></td>
+      <td rowspan="1"><b>Example 1:</b> Stack or reverse.</td>
+      <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(N + M)</td>
+      <td><code>#include <stack></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use two stacks to store the digits of the lists. Pop from stacks, add along with carry, and construct the new list by inserting at the head.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {&#10;    stack&lt;int&gt; s1, s2;&#10;    while(l1) { s1.push(l1-&gt;val); l1 = l1-&gt;next; }&#10;    while(l2) { s2.push(l2-&gt;val); l2 = l2-&gt;next; }&#10;    int carry = 0;&#10;    ListNode* head = NULL;&#10;    while(!s1.empty() || !s2.empty() || carry) {&#10;        int sum = carry;&#10;        if(!s1.empty()) { sum += s1.top(); s1.pop(); }&#10;        if(!s2.empty()) { sum += s2.top(); s2.pop(); }&#10;        ListNode* node = new ListNode(sum % 10);&#10;        node-&gt;next = head;&#10;        head = node;&#10;        carry = sum / 10;&#10;    }&#10;    return head;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">27</td>
+      <td rowspan="1">Ll 31 Split Linked List In Parts<br><br></b> <a href='https://leetcode.com/problems/split-linked-list-in-parts/' target='_blank'>LeetCode 725</a></td>
+      <td rowspan="1"><b>Example 1:</b> Calculate lengths.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(k)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Count total nodes `N`. Each part will have at least `N // k` nodes, and the first `N % k` parts will have one extra node. Iterate and break the links.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;ListNode*&gt; splitListToParts(ListNode* head, int k) {&#10;    vector&lt;ListNode*&gt; ans(k, NULL);&#10;    int n = 0;&#10;    for(ListNode* node = head; node; node = node-&gt;next) n++;&#10;    int part = n / k, extra = n % k;&#10;    ListNode* node = head, *prev = NULL;&#10;    for(int i = 0; node &amp;&amp; i &lt; k; i++, extra--) {&#10;        ans[i] = node;&#10;        for(int j = 0; j &lt; part + (extra &gt; 0); j++) {&#10;            prev = node;&#10;            node = node-&gt;next;&#10;        }&#10;        if(prev) prev-&gt;next = NULL;&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">28</td>
+      <td rowspan="1">Ll 32 Insertion Sort List<br><br></b> <a href='https://leetcode.com/problems/insertion-sort-list/' target='_blank'>LeetCode 147</a></td>
+      <td rowspan="1"><b>Example 1:</b> Dummy head.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a dummy head for the sorted part. For each node in the original list, iterate through the sorted part to find its correct position and insert it.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* insertionSortList(ListNode* head) {&#10;    ListNode* dummy = new ListNode(0);&#10;    ListNode* curr = head;&#10;    while(curr) {&#10;        ListNode* prev = dummy;&#10;        while(prev-&gt;next &amp;&amp; prev-&gt;next-&gt;val &lt;= curr-&gt;val) {&#10;            prev = prev-&gt;next;&#10;        }&#10;        ListNode* next = curr-&gt;next;&#10;        curr-&gt;next = prev-&gt;next;&#10;        prev-&gt;next = curr;&#10;        curr = next;&#10;    }&#10;    return dummy-&gt;next;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">29</td>
+      <td rowspan="1">Ll 33 Sort List<br><br></b> <a href='https://leetcode.com/problems/sort-list/' target='_blank'>LeetCode 148</a></td>
+      <td rowspan="1"><b>Example 1:</b> Merge sort.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(log N) due to recursion stack</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Merge sort for linked lists. Find mid using fast and slow pointers, split list into two, recursively sort, and merge the two sorted halves.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* merge(ListNode* l1, ListNode* l2) {&#10;    ListNode* dummy = new ListNode(0);&#10;    ListNode* tail = dummy;&#10;    while(l1 &amp;&amp; l2) {&#10;        if(l1-&gt;val &lt; l2-&gt;val) { tail-&gt;next = l1; l1 = l1-&gt;next; }&#10;        else { tail-&gt;next = l2; l2 = l2-&gt;next; }&#10;        tail = tail-&gt;next;&#10;    }&#10;    if(l1) tail-&gt;next = l1;&#10;    if(l2) tail-&gt;next = l2;&#10;    return dummy-&gt;next;&#10;}&#10;ListNode* sortList(ListNode* head) {&#10;    if(!head || !head-&gt;next) return head;&#10;    ListNode* slow = head;&#10;    ListNode* fast = head-&gt;next;&#10;    while(fast &amp;&amp; fast-&gt;next) {&#10;        slow = slow-&gt;next;&#10;        fast = fast-&gt;next-&gt;next;&#10;    }&#10;    ListNode* mid = slow-&gt;next;&#10;    slow-&gt;next = NULL;&#10;    ListNode* left = sortList(head);&#10;    ListNode* right = sortList(mid);&#10;    return merge(left, right);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">30</td>
+      <td rowspan="1">Ll 34 Partition List<br><br></b> <a href='https://leetcode.com/problems/partition-list/' target='_blank'>LeetCode 86</a></td>
+      <td rowspan="1"><b>Example 1:</b> Two lists then join.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain two separate linked lists: `before` and `after` with their own dummy heads. Iterate through original list, appending to `before` or `after` based on value. Then link `before` tail to `after` head.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* partition(ListNode* head, int x) {&#10;    ListNode* before_head = new ListNode(0);&#10;    ListNode* before = before_head;&#10;    ListNode* after_head = new ListNode(0);&#10;    ListNode* after = after_head;&#10;    while(head) {&#10;        if(head-&gt;val &lt; x) {&#10;            before-&gt;next = head;&#10;            before = before-&gt;next;&#10;        } else {&#10;            after-&gt;next = head;&#10;            after = after-&gt;next;&#10;        }&#10;        head = head-&gt;next;&#10;    }&#10;    after-&gt;next = NULL;&#10;    before-&gt;next = after_head-&gt;next;&#10;    return before_head-&gt;next;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">31</td>
+      <td rowspan="1">Ll 35 Swap Nodes In Pairs<br><br></b> <a href='https://leetcode.com/problems/swap-nodes-in-pairs/' target='_blank'>LeetCode 24</a></td>
+      <td rowspan="1"><b>Example 1:</b> Iterative with dummy.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a dummy node. Maintain a `prev` pointer. While `prev->next` and `prev->next->next` exist, swap them and move `prev` two steps ahead.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* swapPairs(ListNode* head) {&#10;    ListNode* dummy = new ListNode(0);&#10;    dummy-&gt;next = head;&#10;    ListNode* prev = dummy;&#10;    while(prev-&gt;next &amp;&amp; prev-&gt;next-&gt;next) {&#10;        ListNode* first = prev-&gt;next;&#10;        ListNode* second = prev-&gt;next-&gt;next;&#10;        first-&gt;next = second-&gt;next;&#10;        second-&gt;next = first;&#10;        prev-&gt;next = second;&#10;        prev = first;&#10;    }&#10;    return dummy-&gt;next;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

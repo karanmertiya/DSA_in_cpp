@@ -1,0 +1,19 @@
+// Time Complexity: O(2^N)
+// Space Complexity: O(2^N)
+// Explanation: Recursively either include `arr[ind]` in sum, or exclude it. If `ind == N`, add `sum` to result array.
+
+void func(int ind, int sum, vector<int>& arr, int N, vector<int>& sumSubset) {
+    if(ind == N) {
+        sumSubset.push_back(sum);
+        return;
+    }
+    func(ind + 1, sum + arr[ind], arr, N, sumSubset);
+    func(ind + 1, sum, arr, N, sumSubset);
+}
+vector<int> subsetSums(vector<int> arr, int N) {
+    vector<int> sumSubset;
+    func(0, 0, arr, N, sumSubset);
+    sort(sumSubset.begin(), sumSubset.end());
+    return sumSubset;
+}
+
