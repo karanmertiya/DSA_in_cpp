@@ -286,5 +286,95 @@
       <td><b>Odd/Even Length:</b> Handle average for even total length.</td>
       <td><b>Explanation:</b> Binary search on the smaller array to find a partition such that left halves of both arrays contain half of total elements, and `maxLeft <= minRight`. Use `INT_MIN` and `INT_MAX` for out-of-bound partitions.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {&#10;    if(nums1.size() &gt; nums2.size()) return findMedianSortedArrays(nums2, nums1);&#10;    int n1 = nums1.size(), n2 = nums2.size();&#10;    int low = 0, high = n1;&#10;    while(low &lt;= high) {&#10;        int cut1 = (low + high) / 2;&#10;        int cut2 = (n1 + n2 + 1) / 2 - cut1;&#10;        int left1 = cut1 == 0 ? INT_MIN : nums1[cut1-1];&#10;        int left2 = cut2 == 0 ? INT_MIN : nums2[cut2-1];&#10;        int right1 = cut1 == n1 ? INT_MAX : nums1[cut1];&#10;        int right2 = cut2 == n2 ? INT_MAX : nums2[cut2];&#10;        if(left1 &lt;= right2 &amp;&amp; left2 &lt;= right1) {&#10;            if((n1 + n2) % 2 == 0) return (max(left1, left2) + min(right1, right2)) / 2.0;&#10;            else return max(left1, left2);&#10;        } else if(left1 &gt; right2) {&#10;            high = cut1 - 1;&#10;        } else {&#10;            low = cut1 + 1;&#10;        }&#10;    }&#10;    return 0.0;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">31</td>
+      <td rowspan="1">Bs 35 Median Of Two Sorted Arrays<br><br></b> <a href='https://leetcode.com/problems/median-of-two-sorted-arrays/' target='_blank'>LeetCode 4</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary search on smaller array.</td>
+      <td><b>Time:</b> O(log(min(N, M)))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Ensure `nums1` is the smaller array. Partition both arrays such that the left half has `(n+m+1)/2` elements. Use binary search on `nums1` to find the correct partition where `max(left1) <= min(right2)` and `max(left2) <= min(right1)`. The median depends on whether total elements is odd or even.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {&#10;    if(nums1.size() &gt; nums2.size()) return findMedianSortedArrays(nums2, nums1);&#10;    int n = nums1.size(), m = nums2.size();&#10;    int low = 0, high = n;&#10;    while(low &lt;= high) {&#10;        int cut1 = (low + high) / 2;&#10;        int cut2 = (n + m + 1) / 2 - cut1;&#10;        int left1 = cut1 == 0 ? INT_MIN : nums1[cut1-1];&#10;        int left2 = cut2 == 0 ? INT_MIN : nums2[cut2-1];&#10;        int right1 = cut1 == n ? INT_MAX : nums1[cut1];&#10;        int right2 = cut2 == m ? INT_MAX : nums2[cut2];&#10;        if(left1 &lt;= right2 &amp;&amp; left2 &lt;= right1) {&#10;            if((n + m) % 2 == 0) return (max(left1, left2) + min(right1, right2)) / 2.0;&#10;            else return max(left1, left2);&#10;        } else if(left1 &gt; right2) {&#10;            high = cut1 - 1;&#10;        } else {&#10;            low = cut1 + 1;&#10;        }&#10;    }&#10;    return 0.0;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">32</td>
+      <td rowspan="1">Bs 36 Kth Element Of Two Sorted Arrays<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Generalization of median.</td>
+      <td><b>Time:</b> O(log(min(N, M, K)))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Similar to Median of 2 sorted arrays. Apply binary search on the smaller array. The partition requires `cut1 + cut2 = k`. Boundaries for `cut1` are `max(0, k - m)` and `min(k, n)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int kthElement(int arr1[], int arr2[], int n, int m, int k) {&#10;    if(n &gt; m) return kthElement(arr2, arr1, m, n, k);&#10;    int low = max(0, k - m), high = min(k, n);&#10;    while(low &lt;= high) {&#10;        int cut1 = (low + high) / 2;&#10;        int cut2 = k - cut1;&#10;        int left1 = cut1 == 0 ? INT_MIN : arr1[cut1-1];&#10;        int left2 = cut2 == 0 ? INT_MIN : arr2[cut2-1];&#10;        int right1 = cut1 == n ? INT_MAX : arr1[cut1];&#10;        int right2 = cut2 == m ? INT_MAX : arr2[cut2];&#10;        if(left1 &lt;= right2 &amp;&amp; left2 &lt;= right1) {&#10;            return max(left1, left2);&#10;        } else if(left1 &gt; right2) {&#10;            high = cut1 - 1;&#10;        } else {&#10;            low = cut1 + 1;&#10;        }&#10;    }&#10;    return 1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">33</td>
+      <td rowspan="1">Bs 37 Search In A 2D Matrix Ii<br><br></b> <a href='https://leetcode.com/problems/search-a-2d-matrix-ii/' target='_blank'>LeetCode 240</a></td>
+      <td rowspan="1"><b>Example 1:</b> Start from top right.</td>
+      <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Start from the top-right corner. If `target == current`, return true. If `target < current`, move left (`c--`). If `target > current`, move down (`r++`).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) {&#10;    int r = 0, c = matrix[0].size() - 1;&#10;    while(r &lt; matrix.size() &amp;&amp; c &gt;= 0) {&#10;        if(matrix[r][c] == target) return true;&#10;        else if(matrix[r][c] &gt; target) c--;&#10;        else r++;&#10;    }&#10;    return false;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">34</td>
+      <td rowspan="1">Bs 38 Find A Peak Element Ii<br><br></b> <a href='https://leetcode.com/problems/find-a-peak-element-ii/' target='_blank'>LeetCode 1901</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary search on columns.</td>
+      <td><b>Time:</b> O(N log M)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary search on columns. Find middle column, find max element in this column. Compare it with its left and right neighbors. If it's > both, it's a peak. If left is greater, peak exists in left half. Else, peak exists in right half.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxElemRow(vector&lt;vector&lt;int&gt;&gt;&amp; mat, int col) {&#10;    int maxVal = -1, row = -1;&#10;    for(int i=0; i&lt;mat.size(); i++) {&#10;        if(mat[i][col] &gt; maxVal) {&#10;            maxVal = mat[i][col];&#10;            row = i;&#10;        }&#10;    }&#10;    return row;&#10;}&#10;vector&lt;int&gt; findPeakGrid(vector&lt;vector&lt;int&gt;&gt;&amp; mat) {&#10;    int n = mat.size(), m = mat[0].size();&#10;    int low = 0, high = m - 1;&#10;    while(low &lt;= high) {&#10;        int mid = (low + high) / 2;&#10;        int row = maxElemRow(mat, mid);&#10;        int left = mid - 1 &gt;= 0 ? mat[row][mid-1] : -1;&#10;        int right = mid + 1 &lt; m ? mat[row][mid+1] : -1;&#10;        if(mat[row][mid] &gt; left &amp;&amp; mat[row][mid] &gt; right) return {row, mid};&#10;        else if(mat[row][mid] &lt; left) high = mid - 1;&#10;        else low = mid + 1;&#10;    }&#10;    return {-1, -1};&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">35</td>
+      <td rowspan="1">Bs 39 Matrix Median<br><br></b> <a href='https://www.interviewbit.com/problems/matrix-median/' target='_blank'>InterviewBit</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary search on answer range.</td>
+      <td><b>Time:</b> O(32 * N log M)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary search on the value range `[1, 10^9]`. For a candidate `mid`, count how many numbers are `<= mid` across all rows using `upper_bound`. If count `> (N*M)/2`, `mid` could be median, search lower. Else search higher.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countSmallerThanMid(vector&lt;int&gt;&amp; row, int mid) {&#10;    int l = 0, h = row.size() - 1;&#10;    while(l &lt;= h) {&#10;        int md = (l + h) / 2;&#10;        if(row[md] &lt;= mid) l = md + 1;&#10;        else h = md - 1;&#10;    }&#10;    return l;&#10;}&#10;int findMedian(vector&lt;vector&lt;int&gt; &gt; &amp;A) {&#10;    int low = 1, high = 1e9;&#10;    int n = A.size(), m = A[0].size();&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        int cnt = 0;&#10;        for(int i=0; i&lt;n; i++) {&#10;            cnt += countSmallerThanMid(A[i], mid);&#10;        }&#10;        if(cnt &lt;= (n * m) / 2) low = mid + 1;&#10;        else high = mid - 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">36</td>
+      <td rowspan="1">Bs 40 Kth Smallest Number In Multiplication Table<br><br></b> <a href='https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/' target='_blank'>LeetCode 668</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary Search on answer.</td>
+      <td><b>Time:</b> O(m * log(m*n))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary search on range `[1, m*n]`. For a value `mid`, the number of elements `<= mid` in row `i` is `min(mid / i, n)`. Sum this for all rows to get total count. If count >= k, search left. Else search right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findKthNumber(int m, int n, int k) {&#10;    int low = 1, high = m * n;&#10;    while(low &lt; high) {&#10;        int mid = low + (high - low) / 2;&#10;        int count = 0;&#10;        for(int i=1; i&lt;=m; i++) {&#10;            count += min(mid / i, n);&#10;        }&#10;        if(count &gt;= k) high = mid;&#10;        else low = mid + 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">37</td>
+      <td rowspan="1">Bs 41 Find K Th Smallest Pair Distance<br><br></b> <a href='https://leetcode.com/problems/find-k-th-smallest-pair-distance/' target='_blank'>LeetCode 719</a></td>
+      <td rowspan="1"><b>Example 1:</b> Sort and binary search on distance.</td>
+      <td><b>Time:</b> O(N log N + N log(max_dist))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort array. Binary search on distance `[0, nums.back() - nums.front()]`. For a candidate `mid`, count pairs with distance `<= mid` using a sliding window. If count >= k, search left. Else search right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countPairs(vector&lt;int&gt;&amp; nums, int mid) {&#10;    int count = 0, l = 0;&#10;    for(int r = 0; r &lt; nums.size(); r++) {&#10;        while(nums[r] - nums[l] &gt; mid) l++;&#10;        count += (r - l);&#10;    }&#10;    return count;&#10;}&#10;int smallestDistancePair(vector&lt;int&gt;&amp; nums, int k) {&#10;    sort(nums.begin(), nums.end());&#10;    int low = 0, high = nums.back() - nums.front();&#10;    while(low &lt; high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(countPairs(nums, mid) &gt;= k) high = mid;&#10;        else low = mid + 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">38</td>
+      <td rowspan="1">Bs 42 Split Array Largest Sum<br><br></b> <a href='https://leetcode.com/problems/split-array-largest-sum/' target='_blank'>LeetCode 410</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary search on answer.</td>
+      <td><b>Time:</b> O(N log(sum - max))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary search the max subarray sum `[max(nums), sum(nums)]`. For a `mid`, greedily split array. If subarrays needed `<= k`, `mid` is possible, search lower. Else search higher.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int splitArray(vector&lt;int&gt;&amp; nums, int k) {&#10;    int low = 0, high = 0;&#10;    for(int n : nums) {&#10;        low = max(low, n);&#10;        high += n;&#10;    }&#10;    while(low &lt; high) {&#10;        int mid = low + (high - low) / 2;&#10;        int pieces = 1, currentSum = 0;&#10;        for(int n : nums) {&#10;            if(currentSum + n &gt; mid) {&#10;                currentSum = n;&#10;                pieces++;&#10;            } else {&#10;                currentSum += n;&#10;            }&#10;        }&#10;        if(pieces &lt;= k) high = mid;&#10;        else low = mid + 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">39</td>
+      <td rowspan="1">Bs 43 Minimum Number Of Days To Make M Bouquets<br><br></b> <a href='https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/' target='_blank'>LeetCode 1482</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary search on days.</td>
+      <td><b>Time:</b> O(N log(max_day))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If `m * k > n`, return -1. Binary search on days `[min(bloomDay), max(bloomDay)]`. For a given day, count adjacent bloomed flowers. Every `k` consecutive bloomed flowers make 1 bouquet. If total bouquets >= m, search left. Else search right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minDays(vector&lt;int&gt;&amp; bloomDay, int m, int k) {&#10;    long long val = 1LL * m * k;&#10;    if(val &gt; bloomDay.size()) return -1;&#10;    int low = *min_element(bloomDay.begin(), bloomDay.end());&#10;    int high = *max_element(bloomDay.begin(), bloomDay.end());&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        int bouquets = 0, count = 0;&#10;        for(int i=0; i&lt;bloomDay.size(); i++) {&#10;            if(bloomDay[i] &lt;= mid) {&#10;                count++;&#10;                if(count == k) {&#10;                    bouquets++;&#10;                    count = 0;&#10;                }&#10;            } else {&#10;                count = 0;&#10;            }&#10;        }&#10;        if(bouquets &gt;= m) high = mid - 1;&#10;        else low = mid + 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">40</td>
+      <td rowspan="1">Bs 44 Capacity To Ship Packages Within D Days<br><br></b> <a href='https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/' target='_blank'>LeetCode 1011</a></td>
+      <td rowspan="1"><b>Example 1:</b> Same as split array.</td>
+      <td><b>Time:</b> O(N log(sum - max))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary search on capacity `[max(weights), sum(weights)]`. For a `mid` capacity, greedily load packages. If a package makes sum > capacity, increment days and start new load. If `days <= D`, search left. Else search right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int shipWithinDays(vector&lt;int&gt;&amp; weights, int days) {&#10;    int low = *max_element(weights.begin(), weights.end());&#10;    int high = 0;&#10;    for(int w : weights) high += w;&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        int d = 1, load = 0;&#10;        for(int w : weights) {&#10;            if(load + w &gt; mid) {&#10;                d++;&#10;                load = w;&#10;            } else {&#10;                load += w;&#10;            }&#10;        }&#10;        if(d &lt;= days) high = mid - 1;&#10;        else low = mid + 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

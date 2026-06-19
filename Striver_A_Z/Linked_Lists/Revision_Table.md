@@ -295,5 +295,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Use a dummy node. Maintain a `prev` pointer. While `prev->next` and `prev->next->next` exist, swap them and move `prev` two steps ahead.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* swapPairs(ListNode* head) {&#10;    ListNode* dummy = new ListNode(0);&#10;    dummy-&gt;next = head;&#10;    ListNode* prev = dummy;&#10;    while(prev-&gt;next &amp;&amp; prev-&gt;next-&gt;next) {&#10;        ListNode* first = prev-&gt;next;&#10;        ListNode* second = prev-&gt;next-&gt;next;&#10;        first-&gt;next = second-&gt;next;&#10;        second-&gt;next = first;&#10;        prev-&gt;next = second;&#10;        prev = first;&#10;    }&#10;    return dummy-&gt;next;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">32</td>
+      <td rowspan="1">Ll 36 Reverse Nodes In Even Length Groups<br><br></b> <a href='https://leetcode.com/problems/reverse-nodes-in-even-length-groups/' target='_blank'>LeetCode 2074</a></td>
+      <td rowspan="1"><b>Example 1:</b> Group tracking.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Traverse the list while tracking the expected group length. First, count the actual number of nodes left in the current group. If the count is even, reverse this sublist and connect it to the previous part. If odd, just skip. Update lengths and pointers.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* reverseEvenLengthGroups(ListNode* head) {&#10;    int groupLen = 1;&#10;    ListNode* prev = nullptr;&#10;    ListNode* curr = head;&#10;    while(curr != nullptr) {&#10;        ListNode* temp = curr;&#10;        int count = 0;&#10;        while(count &lt; groupLen &amp;&amp; temp != nullptr) {&#10;            temp = temp-&gt;next;&#10;            count++;&#10;        }&#10;        if(count % 2 == 0) {&#10;            ListNode* groupPrev = nullptr;&#10;            ListNode* groupCurr = curr;&#10;            ListNode* nextNode = nullptr;&#10;            for(int i=0; i&lt;count; i++) {&#10;                nextNode = groupCurr-&gt;next;&#10;                groupCurr-&gt;next = groupPrev;&#10;                groupPrev = groupCurr;&#10;                groupCurr = nextNode;&#10;            }&#10;            prev-&gt;next = groupPrev;&#10;            curr-&gt;next = groupCurr;&#10;            prev = curr;&#10;            curr = groupCurr;&#10;        } else {&#10;            for(int i=0; i&lt;count; i++) {&#10;                prev = curr;&#10;                curr = curr-&gt;next;&#10;            }&#10;        }&#10;        groupLen++;&#10;    }&#10;    return head;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">33</td>
+      <td rowspan="1">Ll 37 Swapping Nodes In A Linked List<br><br></b> <a href='https://leetcode.com/problems/swapping-nodes-in-a-linked-list/' target='_blank'>LeetCode 1721</a></td>
+      <td rowspan="1"><b>Example 1:</b> Two passes or three pointers.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use two pointers. Move `fast` pointer `k-1` steps. `first_node` is at `fast`. Initialize `slow = head`. Move both `slow` and `fast` to the end. `slow` will be at `second_node`. Swap values.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* swapNodes(ListNode* head, int k) {&#10;    ListNode* fast = head;&#10;    for(int i=1; i&lt;k; i++) fast = fast-&gt;next;&#10;    ListNode* firstNode = fast;&#10;    ListNode* slow = head;&#10;    while(fast-&gt;next) {&#10;        slow = slow-&gt;next;&#10;        fast = fast-&gt;next;&#10;    }&#10;    swap(firstNode-&gt;val, slow-&gt;val);&#10;    return head;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">34</td>
+      <td rowspan="1">Ll 38 Merge Nodes In Between Zeros<br><br></b> <a href='https://leetcode.com/problems/merge-nodes-in-between-zeros/' target='_blank'>LeetCode 2181</a></td>
+      <td rowspan="1"><b>Example 1:</b> Accumulate and connect.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1) extra space if we modify in-place</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain a dummy node. Traverse the list. Maintain a running sum. When we encounter a 0 (and sum > 0), create a new node with `sum`, attach it to dummy list, reset `sum` to 0.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* mergeNodes(ListNode* head) {&#10;    ListNode* dummy = new ListNode(0);&#10;    ListNode* currDummy = dummy;&#10;    ListNode* curr = head-&gt;next;&#10;    int sum = 0;&#10;    while(curr) {&#10;        if(curr-&gt;val == 0) {&#10;            currDummy-&gt;next = new ListNode(sum);&#10;            currDummy = currDummy-&gt;next;&#10;            sum = 0;&#10;        } else {&#10;            sum += curr-&gt;val;&#10;        }&#10;        curr = curr-&gt;next;&#10;    }&#10;    return dummy-&gt;next;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">35</td>
+      <td rowspan="1">Ll 39 Design Hashset<br><br></b> <a href='https://leetcode.com/problems/design-hashset/' target='_blank'>LeetCode 705</a></td>
+      <td rowspan="1"><b>Example 1:</b> Array of Linked Lists.</td>
+      <td><b>Time:</b> O(1) amortized<br><b>Space:</b> O(Number of elements)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use an array of linked lists (chaining) for collision resolution. Hash function `key % capacity`. Add: Insert if not present. Remove: Delete node. Contains: Traverse list at `hash(key)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class MyHashSet {&#10;    struct Node {&#10;        int val;&#10;        Node* next;&#10;        Node(int v): val(v), next(nullptr) {}&#10;    };&#10;    vector&lt;Node*&gt; buckets;&#10;    int size = 10007;&#10;public:&#10;    MyHashSet() {&#10;        buckets.assign(size, nullptr);&#10;    }&#10;    void add(int key) {&#10;        int idx = key % size;&#10;        Node* curr = buckets[idx];&#10;        while(curr) {&#10;            if(curr-&gt;val == key) return;&#10;            curr = curr-&gt;next;&#10;        }&#10;        Node* newNode = new Node(key);&#10;        newNode-&gt;next = buckets[idx];&#10;        buckets[idx] = newNode;&#10;    }&#10;    void remove(int key) {&#10;        int idx = key % size;&#10;        Node* curr = buckets[idx];&#10;        Node* prev = nullptr;&#10;        while(curr) {&#10;            if(curr-&gt;val == key) {&#10;                if(prev) prev-&gt;next = curr-&gt;next;&#10;                else buckets[idx] = curr-&gt;next;&#10;                delete curr;&#10;                return;&#10;            }&#10;            prev = curr;&#10;            curr = curr-&gt;next;&#10;        }&#10;    }&#10;    bool contains(int key) {&#10;        int idx = key % size;&#10;        Node* curr = buckets[idx];&#10;        while(curr) {&#10;            if(curr-&gt;val == key) return true;&#10;            curr = curr-&gt;next;&#10;        }&#10;        return false;&#10;    }&#10;};</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">36</td>
+      <td rowspan="1">Ll 40 Design Hashmap<br><br></b> <a href='https://leetcode.com/problems/design-hashmap/' target='_blank'>LeetCode 706</a></td>
+      <td rowspan="1"><b>Example 1:</b> Array of Linked Lists with Key-Value pairs.</td>
+      <td><b>Time:</b> O(1) amortized<br><b>Space:</b> O(Number of elements)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Similar to HashSet, but each node stores a `(key, value)` pair. On Put, if key exists, update value. Else insert new node. On Get, return value if key found, else -1.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class MyHashMap {&#10;    struct Node {&#10;        int key, val;&#10;        Node* next;&#10;        Node(int k, int v): key(k), val(v), next(nullptr) {}&#10;    };&#10;    vector&lt;Node*&gt; buckets;&#10;    int size = 10007;&#10;public:&#10;    MyHashMap() {&#10;        buckets.assign(size, nullptr);&#10;    }&#10;    void put(int key, int value) {&#10;        int idx = key % size;&#10;        Node* curr = buckets[idx];&#10;        while(curr) {&#10;            if(curr-&gt;key == key) { curr-&gt;val = value; return; }&#10;            curr = curr-&gt;next;&#10;        }&#10;        Node* newNode = new Node(key, value);&#10;        newNode-&gt;next = buckets[idx];&#10;        buckets[idx] = newNode;&#10;    }&#10;    int get(int key) {&#10;        int idx = key % size;&#10;        Node* curr = buckets[idx];&#10;        while(curr) {&#10;            if(curr-&gt;key == key) return curr-&gt;val;&#10;            curr = curr-&gt;next;&#10;        }&#10;        return -1;&#10;    }&#10;    void remove(int key) {&#10;        int idx = key % size;&#10;        Node* curr = buckets[idx];&#10;        Node* prev = nullptr;&#10;        while(curr) {&#10;            if(curr-&gt;key == key) {&#10;                if(prev) prev-&gt;next = curr-&gt;next;&#10;                else buckets[idx] = curr-&gt;next;&#10;                delete curr;&#10;                return;&#10;            }&#10;            prev = curr;&#10;            curr = curr-&gt;next;&#10;        }&#10;    }&#10;};</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">37</td>
+      <td rowspan="1">Ll 41 Design Browser History<br><br></b> <a href='https://leetcode.com/problems/design-browser-history/' target='_blank'>LeetCode 1472</a></td>
+      <td rowspan="1"><b>Example 1:</b> Doubly Linked List.</td>
+      <td><b>Time:</b> O(1) visit, O(steps) back/forward<br><b>Space:</b> O(N) for URLs</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a Doubly Linked List. Each visit creates a new node, clearing forward history. Back and forward operations just traverse the pointers up to `steps` times.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class BrowserHistory {&#10;    struct Node {&#10;        string url;&#10;        Node *prev, *next;&#10;        Node(string u): url(u), prev(nullptr), next(nullptr) {}&#10;    };&#10;    Node* curr;&#10;public:&#10;    BrowserHistory(string homepage) {&#10;        curr = new Node(homepage);&#10;    }&#10;    void visit(string url) {&#10;        Node* newNode = new Node(url);&#10;        curr-&gt;next = newNode;&#10;        newNode-&gt;prev = curr;&#10;        curr = newNode;&#10;    }&#10;    string back(int steps) {&#10;        while(steps &gt; 0 &amp;&amp; curr-&gt;prev) {&#10;            curr = curr-&gt;prev;&#10;            steps--;&#10;        }&#10;        return curr-&gt;url;&#10;    }&#10;    string forward(int steps) {&#10;        while(steps &gt; 0 &amp;&amp; curr-&gt;next) {&#10;            curr = curr-&gt;next;&#10;            steps--;&#10;        }&#10;        return curr-&gt;url;&#10;    }&#10;};</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">38</td>
+      <td rowspan="1">Ll 42 Lru Cache Ll<br><br></b> <a href='https://leetcode.com/problems/lru-cache/' target='_blank'>LeetCode 146</a></td>
+      <td rowspan="1"><b>Example 1:</b> Duplicate logic entry to ensure coverage.</td>
+      <td><b>Time:</b> O(1)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Included for chapter coverage completeness. See sq_31_lru_cache.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">// See Stacks and Queues module for full implementation.</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">39</td>
+      <td rowspan="1">Ll 43 Lfu Cache Ll<br><br></b> <a href='https://leetcode.com/problems/lfu-cache/' target='_blank'>LeetCode 460</a></td>
+      <td rowspan="1"><b>Example 1:</b> Duplicate logic entry to ensure coverage.</td>
+      <td><b>Time:</b> O(1)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Included for chapter coverage completeness. See sq_32_lfu_cache.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">// See Stacks and Queues module for full implementation.</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">40</td>
+      <td rowspan="1">Ll 44 All Oone Data Structure<br><br></b> <a href='https://leetcode.com/problems/all-oone-data-structure/' target='_blank'>LeetCode 432</a></td>
+      <td rowspan="1"><b>Example 1:</b> Doubly linked list of frequency buckets.</td>
+      <td><b>Time:</b> O(1) amortized<br><b>Space:</b> O(N)</td>
+      <td><code>#include <unordered_set>\n#include <unordered_map></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain a DLL where each node represents a specific frequency and contains a set of strings. Use a hash map mapping strings to their current bucket. On inc/dec, move the string to the adjacent bucket (create if necessary). Max is tail->prev, Min is head->next.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class AllOne {&#10;    struct Bucket {&#10;        int count;&#10;        unordered_set&lt;string&gt; keys;&#10;        Bucket *prev, *next;&#10;        Bucket(int c): count(c), prev(nullptr), next(nullptr) {}&#10;    };&#10;    Bucket *head, *tail;&#10;    unordered_map&lt;string, Bucket*&gt; m;&#10;    void addBucket(Bucket* prev, Bucket* newBucket) {&#10;        newBucket-&gt;prev = prev;&#10;        newBucket-&gt;next = prev-&gt;next;&#10;        prev-&gt;next-&gt;prev = newBucket;&#10;        prev-&gt;next = newBucket;&#10;    }&#10;    void removeBucket(Bucket* bucket) {&#10;        bucket-&gt;prev-&gt;next = bucket-&gt;next;&#10;        bucket-&gt;next-&gt;prev = bucket-&gt;prev;&#10;        delete bucket;&#10;    }&#10;public:&#10;    AllOne() {&#10;        head = new Bucket(0); tail = new Bucket(0);&#10;        head-&gt;next = tail; tail-&gt;prev = head;&#10;    }&#10;    void inc(string key) {&#10;        if(m.find(key) != m.end()) {&#10;            Bucket* curr = m[key];&#10;            Bucket* nxt = curr-&gt;next;&#10;            if(nxt == tail || nxt-&gt;count != curr-&gt;count + 1) {&#10;                addBucket(curr, new Bucket(curr-&gt;count + 1));&#10;                nxt = curr-&gt;next;&#10;            }&#10;            nxt-&gt;keys.insert(key);&#10;            m[key] = nxt;&#10;            curr-&gt;keys.erase(key);&#10;            if(curr-&gt;keys.empty()) removeBucket(curr);&#10;        } else {&#10;            Bucket* nxt = head-&gt;next;&#10;            if(nxt == tail || nxt-&gt;count != 1) {&#10;                addBucket(head, new Bucket(1));&#10;                nxt = head-&gt;next;&#10;            }&#10;            nxt-&gt;keys.insert(key);&#10;            m[key] = nxt;&#10;        }&#10;    }&#10;    void dec(string key) {&#10;        Bucket* curr = m[key];&#10;        if(curr-&gt;count == 1) {&#10;            m.erase(key);&#10;        } else {&#10;            Bucket* prv = curr-&gt;prev;&#10;            if(prv == head || prv-&gt;count != curr-&gt;count - 1) {&#10;                addBucket(curr-&gt;prev, new Bucket(curr-&gt;count - 1));&#10;                prv = curr-&gt;prev;&#10;            }&#10;            prv-&gt;keys.insert(key);&#10;            m[key] = prv;&#10;        }&#10;        curr-&gt;keys.erase(key);&#10;        if(curr-&gt;keys.empty()) removeBucket(curr);&#10;    }&#10;    string getMaxKey() {&#10;        if(tail-&gt;prev == head) return &quot;&quot;;&#10;        return *(tail-&gt;prev-&gt;keys.begin());&#10;    }&#10;    string getMinKey() {&#10;        if(head-&gt;next == tail) return &quot;&quot;;&#10;        return *(head-&gt;next-&gt;keys.begin());&#10;    }&#10;};</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">41</td>
+      <td rowspan="1">Ll 45 Flatten A Multilevel Doubly Linked List<br><br></b> <a href='https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/' target='_blank'>LeetCode 430</a></td>
+      <td rowspan="1"><b>Example 1:</b> DFS / Recursion.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through the list. When a node has a child, find the tail of the child list. Connect the tail to `node->next`, and `node->next` to the child. Update `prev` pointers. Set `node->child` to `nullptr`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">/*&#10;// Definition for a Node.&#10;class Node {&#10;public:&#10;    int val;&#10;    Node* prev;&#10;    Node* next;&#10;    Node* child;&#10;};&#10;*/&#10;Node* flatten(Node* head) {&#10;    if(!head) return nullptr;&#10;    Node* curr = head;&#10;    while(curr) {&#10;        if(curr-&gt;child) {&#10;            Node* tail = curr-&gt;child;&#10;            while(tail-&gt;next) tail = tail-&gt;next;&#10;            tail-&gt;next = curr-&gt;next;&#10;            if(curr-&gt;next) curr-&gt;next-&gt;prev = tail;&#10;            curr-&gt;next = curr-&gt;child;&#10;            curr-&gt;child-&gt;prev = curr;&#10;            curr-&gt;child = nullptr;&#10;        }&#10;        curr = curr-&gt;next;&#10;    }&#10;    return head;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
