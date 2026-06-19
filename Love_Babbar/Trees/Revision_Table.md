@@ -691,5 +691,95 @@
       <td>-</td>
       <td><b>Explanation:</b> 1. Find LCA of the two nodes. 2. Find distance from LCA to node 1. 3. Find distance from LCA to node 2. 4. Return the sum.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* lca(Node* root, int a, int b) {&#10;    if(!root || root-&gt;data == a || root-&gt;data == b) return root;&#10;    Node* left = lca(root-&gt;left, a, b);&#10;    Node* right = lca(root-&gt;right, a, b);&#10;    if(!left) return right;&#10;    if(!right) return left;&#10;    return root;&#10;}&#10;int findDist(Node* root, int val, int dist) {&#10;    if(!root) return -1;&#10;    if(root-&gt;data == val) return dist;&#10;    int d = findDist(root-&gt;left, val, dist + 1);&#10;    if(d != -1) return d;&#10;    return findDist(root-&gt;right, val, dist + 1);&#10;}&#10;int findDist(Node* root, int a, int b) {&#10;    Node* lca_node = lca(root, a, b);&#10;    int d1 = findDist(lca_node, a, 0);&#10;    int d2 = findDist(lca_node, b, 0);&#10;    return d1 + d2;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>76</td>
+      <td>Tree 26 Construct Binary Tree From String With Bracket Representation<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/construct-binary-tree-from-string-with-bracket-representation/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Recursive approach.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a recursive function. Read the number (handling negatives and multi-digits) to create the node. If the next character is `(`, make a recursive call for the left child. If there's another `(`, make a recursive call for the right child. Return the node.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* constructTree(string s, int&amp; i) {&#10;    if(i &gt;= s.length()) return NULL;&#10;    int num = 0, sign = 1;&#10;    if(s[i] == &#x27;-&#x27;) { sign = -1; i++; }&#10;    while(i &lt; s.length() &amp;&amp; isdigit(s[i])) {&#10;        num = num * 10 + (s[i] - &#x27;0&#x27;);&#10;        i++;&#10;    }&#10;    Node* root = new Node(num * sign);&#10;    if(i &lt; s.length() &amp;&amp; s[i] == &#x27;(&#x27;) {&#10;        i++;&#10;        root-&gt;left = constructTree(s, i);&#10;        i++;&#10;    }&#10;    if(i &lt; s.length() &amp;&amp; s[i] == &#x27;(&#x27;) {&#10;        i++;&#10;        root-&gt;right = constructTree(s, i);&#10;        i++;&#10;    }&#10;    return root;&#10;}&#10;Node* treeFromString(string str) {&#10;    int i = 0;&#10;    return constructTree(str, i);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>77</td>
+      <td>Tree 27 Binary Tree To Cdll<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/binary-tree-to-cdll/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Inorder traversal.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Perform an inorder traversal. Maintain a `prev` pointer. If `prev` is NULL, it's the `head`. Else, set `prev->right = curr` and `curr->left = prev`. Update `prev = curr`. Finally, connect `head` and `prev` (the tail).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void inorder(Node* root, Node*&amp; prev, Node*&amp; head) {&#10;    if(!root) return;&#10;    inorder(root-&gt;left, prev, head);&#10;    if(!head) head = root;&#10;    else {&#10;        prev-&gt;right = root;&#10;        root-&gt;left = prev;&#10;    }&#10;    prev = root;&#10;    inorder(root-&gt;right, prev, head);&#10;}&#10;Node* bTreeToCList(Node* root) {&#10;    Node* head = NULL;&#10;    Node* prev = NULL;&#10;    inorder(root, prev, head);&#10;    if(head &amp;&amp; prev) {&#10;        head-&gt;left = prev;&#10;        prev-&gt;right = head;&#10;    }&#10;    return head;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>78</td>
+      <td>Tree 28 Transform To Sum Tree<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/transform-to-sum-tree/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Postorder traversal.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a postorder traversal. For a node, store its original value. Update the node's value to the sum of its left and right subtrees. Return the old value plus the new value to the parent.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int toSumTreeUtil(Node* root) {&#10;    if(!root) return 0;&#10;    int old_val = root-&gt;data;&#10;    root-&gt;data = toSumTreeUtil(root-&gt;left) + toSumTreeUtil(root-&gt;right);&#10;    return root-&gt;data + old_val;&#10;}&#10;void toSumTree(Node *node) {&#10;    toSumTreeUtil(node);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>79</td>
+      <td>Tree 29 Construct Tree From Inorder And Preorder<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/construct-tree-1/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Hash map for fast search.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> The first element in preorder is the root. Find this root in inorder using a hash map. Elements to the left in inorder form the left subtree, elements to the right form the right subtree. Recurse.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* buildTreeUtil(int in[], int pre[], int inSt, int inEnd, int&amp; preIdx, unordered_map&lt;int, int&gt;&amp; mp) {&#10;    if(inSt &gt; inEnd) return NULL;&#10;    int curr = pre[preIdx++];&#10;    Node* tNode = new Node(curr);&#10;    if(inSt == inEnd) return tNode;&#10;    int inIdx = mp[curr];&#10;    tNode-&gt;left = buildTreeUtil(in, pre, inSt, inIdx - 1, preIdx, mp);&#10;    tNode-&gt;right = buildTreeUtil(in, pre, inIdx + 1, inEnd, preIdx, mp);&#10;    return tNode;&#10;}&#10;Node* buildTree(int in[], int pre[], int n) {&#10;    unordered_map&lt;int, int&gt; mp;&#10;    for(int i = 0; i &lt; n; i++) mp[in[i]] = i;&#10;    int preIdx = 0;&#10;    return buildTreeUtil(in, pre, 0, n - 1, preIdx, mp);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>80</td>
+      <td>Tree 30 Minimum Swap Required To Convert Binary Tree To Binary Search Tree<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-swap-required-to-convert-binary-tree-to-binary-search-tree/0' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Graph cycle detection on Inorder.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> The inorder traversal of a BST is sorted. First, get the inorder traversal of the given complete binary tree using array indices. Then, the problem reduces to finding the minimum swaps to sort an array. Use graph cycles to find min swaps.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void inorder(vector&lt;int&gt;&amp; a, vector&lt;int&gt;&amp; v, int n, int index) {&#10;    if(index &gt;= n) return;&#10;    inorder(a, v, n, 2 * index + 1);&#10;    v.push_back(a[index]);&#10;    inorder(a, v, n, 2 * index + 2);&#10;}&#10;int minSwaps(vector&lt;int&gt;&amp; A, int n) {&#10;    vector&lt;int&gt; v;&#10;    inorder(A, v, n, 0);&#10;    vector&lt;pair&lt;int, int&gt;&gt; t(n);&#10;    for(int i = 0; i &lt; n; i++) t[i] = {v[i], i};&#10;    sort(t.begin(), t.end());&#10;    int ans = 0;&#10;    vector&lt;bool&gt; vis(n, false);&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(vis[i] || t[i].second == i) continue;&#10;        int cycle_size = 0, j = i;&#10;        while(!vis[j]) {&#10;            vis[j] = true;&#10;            j = t[j].second;&#10;            cycle_size++;&#10;        }&#10;        if(cycle_size &gt; 0) ans += (cycle_size - 1);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>81</td>
+      <td>Tree 31 Check If Binary Tree Is Sum Tree Or Not<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/sum-tree/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Recursive check.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a recursive function. A leaf node is always a SumTree. For an internal node, calculate the sum of its left and right subtrees. If its value equals the sum, and both subtrees are SumTrees, return true.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">pair&lt;bool, int&gt; isSumTreeFast(Node* root) {&#10;    if(!root) return {true, 0};&#10;    if(!root-&gt;left &amp;&amp; !root-&gt;right) return {true, root-&gt;data};&#10;    pair&lt;bool, int&gt; leftAns = isSumTreeFast(root-&gt;left);&#10;    pair&lt;bool, int&gt; rightAns = isSumTreeFast(root-&gt;right);&#10;    bool isSum = (root-&gt;data == leftAns.second + rightAns.second);&#10;    if(leftAns.first &amp;&amp; rightAns.first &amp;&amp; isSum) {&#10;        return {true, 2 * root-&gt;data};&#10;    } else {&#10;        return {false, 0};&#10;    }&#10;}&#10;bool isSumTree(Node* root) {&#10;    return isSumTreeFast(root).first;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>82</td>
+      <td>Tree 32 Check If All Leaf Nodes Are At Same Level Or Not<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/leaf-at-same-level/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Recursive check with global variable.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Traverse the tree, maintaining the current level. The first time a leaf is encountered, store its level. For subsequent leaves, compare their level with the stored level. If any mismatch occurs, return false.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool checkUtil(Node* root, int level, int&amp; leafLevel) {&#10;    if(!root) return true;&#10;    if(!root-&gt;left &amp;&amp; !root-&gt;right) {&#10;        if(leafLevel == 0) {&#10;            leafLevel = level;&#10;            return true;&#10;        }&#10;        return (level == leafLevel);&#10;    }&#10;    return checkUtil(root-&gt;left, level + 1, leafLevel) &amp;&amp; checkUtil(root-&gt;right, level + 1, leafLevel);&#10;}&#10;bool check(Node *root) {&#10;    int leafLevel = 0;&#10;    return checkUtil(root, 1, leafLevel);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>83</td>
+      <td>Tree 33 Check If A Binary Tree Contains Duplicate Subtrees Of Size 2 Or More<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/duplicate-subtree-in-binary-tree/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> String serialization.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>Hash Map</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Serialize each subtree into a string. Use a hash map to store the frequencies of the serialized strings. If any string (of length > 3 to ignore leaves) has a frequency > 1, a duplicate subtree exists.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string solve(Node* root, unordered_map&lt;string, int&gt;&amp; m) {&#10;    if(!root) return &quot;$&quot;;&#10;    string s = &quot;&quot;;&#10;    if(!root-&gt;left &amp;&amp; !root-&gt;right) {&#10;        s += to_string(root-&gt;data);&#10;        return s;&#10;    }&#10;    s = s + to_string(root-&gt;data) + &quot;-&quot; + solve(root-&gt;left, m) + &quot;-&quot; + solve(root-&gt;right, m);&#10;    m[s]++;&#10;    return s;&#10;}&#10;int dupSub(Node *root) {&#10;    unordered_map&lt;string, int&gt; m;&#10;    solve(root, m);&#10;    for(auto it : m) {&#10;        if(it.second &gt;= 2) return 1;&#10;    }&#10;    return 0;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>84</td>
+      <td>Tree 34 Check If 2 Trees Are Mirror Or Not<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/check-mirror-in-n-ary-tree1528/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Stack and Queue.</td>
+      <td><b>Time:</b> O(E)<br><b>Space:</b> O(E)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Store the children of the first tree in a stack (LIFO) and the children of the second tree in a queue (FIFO) for each node using hash maps. Then compare if the stack top matches the queue front for all nodes.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int checkMirrorTree(int n, int e, int A[], int B[]) {&#10;    unordered_map&lt;int, stack&lt;int&gt;&gt; s;&#10;    unordered_map&lt;int, queue&lt;int&gt;&gt; q;&#10;    for(int i = 0; i &lt; 2 * e; i += 2) {&#10;        s[A[i]].push(A[i+1]);&#10;        q[B[i]].push(B[i+1]);&#10;    }&#10;    for(auto it : s) {&#10;        int node = it.first;&#10;        while(!s[node].empty() &amp;&amp; !q[node].empty()) {&#10;            if(s[node].top() != q[node].front()) return 0;&#10;            s[node].pop();&#10;            q[node].pop();&#10;        }&#10;        if(!s[node].empty() || !q[node].empty()) return 0;&#10;    }&#10;    return 1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>85</td>
+      <td>Tree 35 Sum Of Nodes On The Longest Path From Root To Leaf Node<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/sum-of-the-longest-bloodline-of-a-tree/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DFS.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use DFS. Keep track of the maximum length and the maximum sum. At each node, check if the current length is greater than max length. If so, update max length and max sum. If lengths are equal, update max sum if current sum is greater.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(Node* root, int sum, int&amp; maxSum, int len, int&amp; maxLen) {&#10;    if(!root) {&#10;        if(len &gt; maxLen) {&#10;            maxLen = len;&#10;            maxSum = sum;&#10;        } else if(len == maxLen) {&#10;            maxSum = max(sum, maxSum);&#10;        }&#10;        return;&#10;    }&#10;    sum = sum + root-&gt;data;&#10;    solve(root-&gt;left, sum, maxSum, len + 1, maxLen);&#10;    solve(root-&gt;right, sum, maxSum, len + 1, maxLen);&#10;}&#10;int sumOfLongRootToLeafPath(Node *root) {&#10;    int len = 0, maxLen = 0;&#10;    int sum = 0, maxSum = INT_MIN;&#10;    solve(root, sum, maxSum, len, maxLen);&#10;    return maxSum;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

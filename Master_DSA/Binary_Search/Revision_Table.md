@@ -466,5 +466,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Ensure arr1 is smaller. Binary search on arr1. `cut1` is between `max(0, k-m)` and `min(k, n)`. `cut2 = k - cut1`. Compare `l1 <= r2` and `l2 <= r1`. If so, return `max(l1, l2)`. Else adjust `low` and `high`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int kthElement(int arr1[], int arr2[], int n, int m, int k) {&#10;    if(n &gt; m) return kthElement(arr2, arr1, m, n, k);&#10;    int low = max(0, k - m), high = min(k, n);&#10;    while(low &lt;= high) {&#10;        int cut1 = (low + high) / 2;&#10;        int cut2 = k - cut1;&#10;        int l1 = cut1 == 0 ? INT_MIN : arr1[cut1 - 1];&#10;        int l2 = cut2 == 0 ? INT_MIN : arr2[cut2 - 1];&#10;        int r1 = cut1 == n ? INT_MAX : arr1[cut1];&#10;        int r2 = cut2 == m ? INT_MAX : arr2[cut2];&#10;        if(l1 &lt;= r2 &amp;&amp; l2 &lt;= r1) return max(l1, l2);&#10;        else if(l1 &gt; r2) high = cut1 - 1;&#10;        else low = cut1 + 1;&#10;    }&#10;    return 1;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>51</td>
+      <td>Bs 09 Search In Rotated Sorted Array<br><br></b> <a href='https://leetcode.com/problems/search-in-rotated-sorted-array/' target='_blank'>LeetCode 33</a></td>
+      <td><b>Example 1:</b> Binary Search.</td>
+      <td><b>Time:</b> O(log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Find which half is sorted. If left half is sorted, check if target lies in it. If yes, search left, else search right. If right half is sorted, check if target lies in it. If yes, search right, else search left.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int search(vector&lt;int&gt;&amp; nums, int target) {&#10;    int low = 0, high = nums.size() - 1;&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(nums[mid] == target) return mid;&#10;        if(nums[low] &lt;= nums[mid]) {&#10;            if(target &gt;= nums[low] &amp;&amp; target &lt; nums[mid]) high = mid - 1;&#10;            else low = mid + 1;&#10;        } else {&#10;            if(target &gt; nums[mid] &amp;&amp; target &lt;= nums[high]) low = mid + 1;&#10;            else high = mid - 1;&#10;        }&#10;    }&#10;    return -1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>Bs 10 Find First And Last Position Of Element In Sorted Array<br><br></b> <a href='https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/' target='_blank'>LeetCode 34</a></td>
+      <td><b>Example 1:</b> Two Binary Searches.</td>
+      <td><b>Time:</b> O(log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Binary Search twice. Once to find the first occurrence (when nums[mid] == target, high = mid - 1 but record mid) and once to find the last occurrence (when nums[mid] == target, low = mid + 1 but record mid).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; searchRange(vector&lt;int&gt;&amp; nums, int target) {&#10;    vector&lt;int&gt; res = {-1, -1};&#10;    int low = 0, high = nums.size() - 1;&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(nums[mid] == target) {&#10;            res[0] = mid;&#10;            high = mid - 1;&#10;        } else if(nums[mid] &lt; target) low = mid + 1;&#10;        else high = mid - 1;&#10;    }&#10;    low = 0, high = nums.size() - 1;&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(nums[mid] == target) {&#10;            res[1] = mid;&#10;            low = mid + 1;&#10;        } else if(nums[mid] &lt; target) low = mid + 1;&#10;        else high = mid - 1;&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>Bs 11 Value Equal To Index Value<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/value-equal-to-index-value1330/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Linear scan.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through the array. If the value at `i` is equal to `i + 1`, append it to the result array.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; valueEqualToIndex(int arr[], int n) {&#10;    vector&lt;int&gt; ans;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(arr[i] == i + 1) ans.push_back(arr[i]);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>Bs 12 Count Squares<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/count-squares3649/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Square root.</td>
+      <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> The number of perfect squares less than `N` is equal to `sqrt(N - 1)` rounded down.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countSquares(int N) {&#10;    return sqrt(N - 1);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>Bs 13 Middle Of Three<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/middle-of-three2926/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Simple if-else.</td>
+      <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Compare the numbers. If A is between B and C, return A. If B is between A and C, return B. Else return C.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int middle(int A, int B, int C) {&#10;    if((A &lt; B &amp;&amp; B &lt; C) || (C &lt; B &amp;&amp; B &lt; A)) return B;&#10;    if((B &lt; A &amp;&amp; A &lt; C) || (C &lt; A &amp;&amp; A &lt; B)) return A;&#10;    return C;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>Bs 14 Find Missing And Repeating<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-missing-and-repeating2512/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Math or XOR.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use the array elements as indices. For each element `abs(Arr[i])`, negate the value at index `abs(Arr[i]) - 1`. If the value is already negative, it's the repeating element. After the loop, the index with a positive value corresponds to the missing element.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; findTwoElement(vector&lt;int&gt; arr, int n) {&#10;    vector&lt;int&gt; ans(2);&#10;    for(int i = 0; i &lt; n; i++) {&#10;        int val = abs(arr[i]);&#10;        if(arr[val - 1] &lt; 0) ans[0] = val;&#10;        else arr[val - 1] = -arr[val - 1];&#10;    }&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(arr[i] &gt; 0) {&#10;            ans[1] = i + 1;&#10;            break;&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>Bs 15 Majority Element<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/majority-element-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Moore's Voting Algorithm.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Moore's Voting Algorithm to find a candidate for majority element. Then count the occurrences of the candidate in the array to verify if it appears more than N/2 times.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int majorityElement(int a[], int size) {&#10;    int count = 0, candidate = -1;&#10;    for(int i = 0; i &lt; size; i++) {&#10;        if(count == 0) {&#10;            candidate = a[i];&#10;            count = 1;&#10;        } else if(a[i] == candidate) count++;&#10;        else count--;&#10;    }&#10;    count = 0;&#10;    for(int i = 0; i &lt; size; i++) {&#10;        if(a[i] == candidate) count++;&#10;    }&#10;    if(count &gt; size / 2) return candidate;&#10;    return -1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>Bs 16 Searching In An Array Where Adjacent Differ By At Most K<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/searching-in-an-array-where-adjacent-differ-by-at-most-k0456/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Jump Search.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Instead of linear search, we can jump ahead. The minimum jump we can make from index `i` to reach `x` is `abs(arr[i] - x) / k`. We jump this amount and check if we found it. Make sure jump is at least 1.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int search(int arr[], int n, int x, int k) {&#10;    int i = 0;&#10;    while(i &lt; n) {&#10;        if(arr[i] == x) return i;&#10;        i = i + max(1, abs(arr[i] - x) / k);&#10;    }&#10;    return -1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>Bs 17 Find A Pair With The Given Difference<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-pair-given-difference1559/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sort and two pointers.</td>
+      <td><b>Time:</b> O(L log L)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort the array. Use two pointers `i = 0` and `j = 1`. If `arr[j] - arr[i] == N` and `i != j`, return true. If difference < N, `j++`. Else `i++`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool findPair(int arr[], int size, int n){&#10;    sort(arr, arr + size);&#10;    int i = 0, j = 1;&#10;    while(i &lt; size &amp;&amp; j &lt; size) {&#10;        if(i != j &amp;&amp; arr[j] - arr[i] == n) return true;&#10;        else if(arr[j] - arr[i] &lt; n) j++;&#10;        else i++;&#10;    }&#10;    return false;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>Bs 18 Find Four Elements That Sum To A Given Value<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-all-four-sum-numbers1732/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Two loops and two pointers.</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort the array. Use two nested loops for the first two elements. Then use two pointers for the remaining two elements to find the target sum. Skip duplicates at all levels.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; fourSum(vector&lt;int&gt; &amp;arr, int k) {&#10;    vector&lt;vector&lt;int&gt;&gt; ans;&#10;    int n = arr.size();&#10;    sort(arr.begin(), arr.end());&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(i &gt; 0 &amp;&amp; arr[i] == arr[i-1]) continue;&#10;        for(int j = i + 1; j &lt; n; j++) {&#10;            if(j &gt; i + 1 &amp;&amp; arr[j] == arr[j-1]) continue;&#10;            int left = j + 1, right = n - 1;&#10;            while(left &lt; right) {&#10;                long long sum = (long long)arr[i] + arr[j] + arr[left] + arr[right];&#10;                if(sum == k) {&#10;                    ans.push_back({arr[i], arr[j], arr[left], arr[right]});&#10;                    left++; right--;&#10;                    while(left &lt; right &amp;&amp; arr[left] == arr[left-1]) left++;&#10;                    while(left &lt; right &amp;&amp; arr[right] == arr[right+1]) right--;&#10;                } else if(sum &lt; k) left++;&#10;                else right--;&#10;            }&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

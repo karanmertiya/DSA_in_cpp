@@ -268,5 +268,95 @@
       <td>Odd length string</td>
       <td><b>Explanation:</b> Remove all balanced brackets using a stack. The remaining string will be of the form `}}...{{...`. The required reversals will be `ceil(open_count/2) + ceil(close_count/2)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countRev(string s) {&#10;    if(s.length() % 2 != 0) return -1;&#10;    stack&lt;char&gt; st;&#10;    for(char c : s) {&#10;        if(c == &#x27;{&#x27;) st.push(c);&#10;        else {&#10;            if(!st.empty() &amp;&amp; st.top() == &#x27;{&#x27;) st.pop();&#10;            else st.push(c);&#10;        }&#10;    }&#10;    int open = 0, close = 0;&#10;    while(!st.empty()) {&#10;        if(st.top() == &#x27;{&#x27;) open++;&#10;        else close++;&#10;        st.pop();&#10;    }&#10;    return ceil(open / 2.0) + ceil(close / 2.0);&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>29</td>
+      <td>Str 21 Minimum Number Of Bracket Reversals Needed To Make An Expression Balanced<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/count-the-reversals0401/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Stack logic.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Stack</td>
+      <td>Odd length</td>
+      <td><b>Explanation:</b> If the length of string is odd, return -1. Remove all balanced parts. The remaining string looks like `}}}{{{`. The number of reversals needed is `ceil(close/2) + ceil(open/2)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countRev(string s) {&#10;    if(s.length() % 2 != 0) return -1;&#10;    stack&lt;char&gt; st;&#10;    for(char c : s) {&#10;        if(c == &#x27;{&#x27;) st.push(c);&#10;        else {&#10;            if(!st.empty() &amp;&amp; st.top() == &#x27;{&#x27;) st.pop();&#10;            else st.push(c);&#10;        }&#10;    }&#10;    int open = 0, close = 0;&#10;    while(!st.empty()) {&#10;        if(st.top() == &#x27;{&#x27;) open++;&#10;        else close++;&#10;        st.pop();&#10;    }&#10;    return ceil(open / 2.0) + ceil(close / 2.0);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>Str 22 Count Palindromic Subsequences<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/count-palindromic-subsequences/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Dynamic Programming.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use DP. `dp[i][j]` stores the count of palindromic subsequences in `str[i..j]`. If `str[i] == str[j]`, `dp[i][j] = dp[i+1][j] + dp[i][j-1] + 1`. Else, `dp[i][j] = dp[i+1][j] + dp[i][j-1] - dp[i+1][j-1]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long int countPS(string str) {&#10;    long long int MOD = 1e9 + 7;&#10;    int n = str.length();&#10;    vector&lt;vector&lt;long long int&gt;&gt; dp(n, vector&lt;long long int&gt;(n, 0));&#10;    for(int i = 0; i &lt; n; i++) dp[i][i] = 1;&#10;    for(int len = 2; len &lt;= n; len++) {&#10;        for(int i = 0; i &lt;= n - len; i++) {&#10;            int j = i + len - 1;&#10;            if(str[i] == str[j]) dp[i][j] = (dp[i+1][j] + dp[i][j-1] + 1) % MOD;&#10;            else dp[i][j] = (dp[i+1][j] + dp[i][j-1] - dp[i+1][j-1] + MOD) % MOD;&#10;        }&#10;    }&#10;    return dp[0][n - 1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>Str 23 Count Of Number Of Given String In 2D Character Array<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/count-occurences-of-a-given-word-in-a-2-d-array/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DFS.</td>
+      <td><b>Time:</b> O(R * C * 4^L)<br><b>Space:</b> O(L)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use DFS. For each cell, if it matches the first character of the word, start a DFS to look for the rest of the word in all 4 directions. Keep track of visited cells.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int dfs(vector&lt;vector&lt;char&gt;&gt;&amp; mat, string&amp; target, int r, int c, int idx) {&#10;    if(idx == target.length()) return 1;&#10;    if(r &lt; 0 || r &gt;= mat.size() || c &lt; 0 || c &gt;= mat[0].size() || mat[r][c] != target[idx]) return 0;&#10;    char temp = mat[r][c];&#10;    mat[r][c] = &#x27;#&#x27;;&#10;    int found = dfs(mat, target, r + 1, c, idx + 1) +&#10;                dfs(mat, target, r - 1, c, idx + 1) +&#10;                dfs(mat, target, r, c + 1, idx + 1) +&#10;                dfs(mat, target, r, c - 1, idx + 1);&#10;    mat[r][c] = temp;&#10;    return found;&#10;}&#10;int findOccurrence(vector&lt;vector&lt;char&gt;&gt;&amp; mat, string target) {&#10;    int count = 0;&#10;    for(int i = 0; i &lt; mat.size(); i++) {&#10;        for(int j = 0; j &lt; mat[0].size(); j++) {&#10;            if(mat[i][j] == target[0]) {&#10;                count += dfs(mat, target, i, j, 0);&#10;            }&#10;        }&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>Str 24 Search A Word In A 2D Grid Of Characters<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-the-string-in-grid0111/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> 8 Directions Loop.</td>
+      <td><b>Time:</b> O(N * M * 8 * L)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through the grid. For each matching starting character, check all 8 directions to see if the full word exists in a straight line.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; searchWord(vector&lt;vector&lt;char&gt;&gt; grid, string word){&#10;    int R = grid.size(), C = grid[0].size(), L = word.length();&#10;    int dr[] = {-1, -1, -1, 0, 0, 1, 1, 1};&#10;    int dc[] = {-1, 0, 1, -1, 1, -1, 0, 1};&#10;    vector&lt;vector&lt;int&gt;&gt; ans;&#10;    for(int r = 0; r &lt; R; r++) {&#10;        for(int c = 0; c &lt; C; c++) {&#10;            if(grid[r][c] == word[0]) {&#10;                for(int dir = 0; dir &lt; 8; dir++) {&#10;                    int k, currR = r + dr[dir], currC = c + dc[dir];&#10;                    for(k = 1; k &lt; L; k++) {&#10;                        if(currR &lt; 0 || currR &gt;= R || currC &lt; 0 || currC &gt;= C) break;&#10;                        if(grid[currR][currC] != word[k]) break;&#10;                        currR += dr[dir]; currC += dc[dir];&#10;                    }&#10;                    if(k == L) {&#10;                        ans.push_back({r, c});&#10;                        break;&#10;                    }&#10;                }&#10;            }&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>Str 25 Boyer Moore Algorithm For Pattern Searching<br><br></b> <a href='https://www.geeksforgeeks.org/boyer-moore-algorithm-for-pattern-searching/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Bad Character Heuristic.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(256)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a Bad Character table for the pattern, which stores the last occurrence of each character. Align pattern with text. Compare from right to left. If mismatch, shift the pattern so that the mismatched character in text aligns with its last occurrence in the pattern. If not present, shift pattern past it.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void search(string txt, string pat) {&#10;    int m = pat.length(), n = txt.length();&#10;    int badChar[256];&#10;    for(int i = 0; i &lt; 256; i++) badChar[i] = -1;&#10;    for(int i = 0; i &lt; m; i++) badChar[(int)pat[i]] = i;&#10;    int s = 0;&#10;    while(s &lt;= (n - m)) {&#10;        int j = m - 1;&#10;        while(j &gt;= 0 &amp;&amp; pat[j] == txt[s + j]) j--;&#10;        if(j &lt; 0) {&#10;            cout &lt;&lt; &quot;Pattern occurs at shift = &quot; &lt;&lt; s &lt;&lt; endl;&#10;            s += (s + m &lt; n) ? m - badChar[txt[s + m]] : 1;&#10;        } else {&#10;            s += max(1, j - badChar[txt[s + j]]);&#10;        }&#10;    }&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>Str 26 Roman Number To Integer<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/roman-number-to-integer3201/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Value mapping.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Map each Roman numeral to its integer value. Iterate from right to left. If a character is smaller than its right character, subtract its value, else add it.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int romanToDecimal(string &amp;str) {&#10;    unordered_map&lt;char, int&gt; m = {{&#x27;I&#x27;, 1}, {&#x27;V&#x27;, 5}, {&#x27;X&#x27;, 10}, {&#x27;L&#x27;, 50}, {&#x27;C&#x27;, 100}, {&#x27;D&#x27;, 500}, {&#x27;M&#x27;, 1000}};&#10;    int ans = 0, n = str.length();&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(i + 1 &lt; n &amp;&amp; m[str[i]] &lt; m[str[i+1]]) ans -= m[str[i]];&#10;        else ans += m[str[i]];&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>Str 27 Longest Common Prefix<br><br></b> <a href='https://leetcode.com/problems/longest-common-prefix/' target='_blank'>LeetCode 14</a></td>
+      <td><b>Example 1:</b> Sort array.</td>
+      <td><b>Time:</b> O(N log N * M)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>Empty Array</td>
+      <td><b>Explanation:</b> Sort the array of strings. Compare the first and the last string in the sorted array, as they will be the most different. The common prefix of these two will be the common prefix for all.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string longestCommonPrefix(vector&lt;string&gt;&amp; strs) {&#10;    if(strs.empty()) return &quot;&quot;;&#10;    sort(strs.begin(), strs.end());&#10;    string first = strs[0], last = strs[strs.size() - 1];&#10;    int i = 0;&#10;    while(i &lt; first.length() &amp;&amp; first[i] == last[i]) i++;&#10;    return first.substr(0, i);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>Str 28 Number Of Flips To Make Binary String Alternate<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/min-number-of-flips3210/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Two target strings.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> There are only two possible alternating strings for length N: starting with '0' (`010101...`) and starting with '1' (`101010...`). Count the differences between the given string and both of these. The minimum count is the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minFlips(string S) {&#10;    int count1 = 0, count2 = 0;&#10;    for(int i = 0; i &lt; S.length(); i++) {&#10;        if(i % 2 == 0) {&#10;            if(S[i] != &#x27;0&#x27;) count1++;&#10;            if(S[i] != &#x27;1&#x27;) count2++;&#10;        } else {&#10;            if(S[i] != &#x27;1&#x27;) count1++;&#10;            if(S[i] != &#x27;0&#x27;) count2++;&#10;        }&#10;    }&#10;    return min(count1, count2);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>Str 29 Find The First Repeated Word In String<br><br></b> <a href='https://www.geeksforgeeks.org/find-first-repeated-word-string/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> HashSet.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Hash Set</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Split the string into words. Iterate through the words. If a word is already in the hash set, it is the first repeated word. Return it. Else, add it to the hash set.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string firstRepeatedWord(string s) {&#10;    unordered_set&lt;string&gt; st;&#10;    string word = &quot;&quot;;&#10;    for(int i = 0; i &lt; s.length(); i++) {&#10;        if(s[i] == &#x27; &#x27; || s[i] == &#x27;\t&#x27; || s[i] == &#x27;,&#x27; || s[i] == &#x27;:&#x27; || s[i] == &#x27;.&#x27; || s[i] == &#x27;-&#x27;) {&#10;            if(word != &quot;&quot;) {&#10;                if(st.find(word) != st.end()) return word;&#10;                st.insert(word);&#10;                word = &quot;&quot;;&#10;            }&#10;        } else word += s[i];&#10;    }&#10;    if(word != &quot;&quot; &amp;&amp; st.find(word) != st.end()) return word;&#10;    return &quot;No Repetition&quot;;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>Str 30 Minimum Swaps For Bracket Balancing<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-swaps-for-bracket-balancing2704/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Track balance.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Keep track of the number of opening and closing brackets, and an `imbalance` counter. When encountering `[`, decrease imbalance. When encountering `]`, increase imbalance. The number of swaps is updated when an imbalance is found and we find the next `[`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minimumNumberOfSwaps(string S){&#10;    int open = 0, close = 0, fault = 0, ans = 0;&#10;    for(int i = 0; i &lt; S.length(); i++) {&#10;        if(S[i] == &#x27;]&#x27;) {&#10;            close++;&#10;            fault = close - open;&#10;        } else {&#10;            open++;&#10;            if(fault &gt; 0) {&#10;                ans += fault;&#10;                fault--;&#10;            }&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

@@ -655,5 +655,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Store `(start, end, index)`. Sort by end time. Pick the first meeting. For subsequent meetings, if `start > last_picked_end`, pick it and update `last_picked_end`. Return sorted indices.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Meeting { int s, e, pos; };&#10;bool comp(Meeting a, Meeting b) {&#10;    if(a.e == b.e) return a.pos &lt; b.pos;&#10;    return a.e &lt; b.e;&#10;}&#10;vector&lt;int&gt; maxMeetings(int N, vector&lt;int&gt;&amp; S, vector&lt;int&gt;&amp; F) {&#10;    vector&lt;Meeting&gt; m(N);&#10;    for(int i = 0; i &lt; N; i++) { m[i].s = S[i]; m[i].e = F[i]; m[i].pos = i + 1; }&#10;    sort(m.begin(), m.end(), comp);&#10;    vector&lt;int&gt; ans;&#10;    ans.push_back(m[0].pos);&#10;    int last_e = m[0].e;&#10;    for(int i = 1; i &lt; N; i++) {&#10;        if(m[i].s &gt; last_e) {&#10;            ans.push_back(m[i].pos);&#10;            last_e = m[i].e;&#10;        }&#10;    }&#10;    sort(ans.begin(), ans.end());&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>72</td>
+      <td>Arr 46 Trapping Rain Water<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Two Pointers.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use two pointers, left and right. Maintain left_max and right_max. If `arr[left] <= arr[right]`, the water trapped depends on left_max. If `arr[left] > left_max`, update left_max, else add `left_max - arr[left]` to answer and increment left. Repeat for right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long trappingWater(int arr[], int n) {&#10;    int left = 0, right = n - 1;&#10;    int left_max = 0, right_max = 0;&#10;    long long res = 0;&#10;    while(left &lt;= right) {&#10;        if(arr[left] &lt;= arr[right]) {&#10;            if(arr[left] &gt;= left_max) left_max = arr[left];&#10;            else res += left_max - arr[left];&#10;            left++;&#10;        } else {&#10;            if(arr[right] &gt;= right_max) right_max = arr[right];&#10;            else res += right_max - arr[right];&#10;            right--;&#10;        }&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>73</td>
+      <td>Arr 47 Chocolate Distribution Problem<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sort and Slide.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort the array. Find the minimum difference between `A[i+M-1]` and `A[i]` for all possible `i` from `0` to `N-M`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long findMinDiff(vector&lt;long long&gt; a, long long n, long long m){&#10;    sort(a.begin(), a.end());&#10;    long long min_diff = LLONG_MAX;&#10;    for(int i = 0; i + m - 1 &lt; n; i++) {&#10;        if(a[i + m - 1] - a[i] &lt; min_diff) {&#10;            min_diff = a[i + m - 1] - a[i];&#10;        }&#10;    }&#10;    return min_diff;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>74</td>
+      <td>Arr 48 Smallest Subarray With Sum Greater Than X<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sliding Window.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a sliding window. Add elements to `curr_sum` and increment `end`. When `curr_sum > x`, update `min_len` and subtract `arr[start]`, increment `start`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int smallestSubWithSum(int arr[], int n, int x) {&#10;    int curr_sum = 0, min_len = n + 1;&#10;    int start = 0, end = 0;&#10;    while(end &lt; n) {&#10;        while(curr_sum &lt;= x &amp;&amp; end &lt; n) curr_sum += arr[end++];&#10;        while(curr_sum &gt; x &amp;&amp; start &lt; n) {&#10;            min_len = min(min_len, end - start);&#10;            curr_sum -= arr[start++];&#10;        }&#10;    }&#10;    return (min_len == n + 1) ? 0 : min_len;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>Arr 49 Three Way Partitioning<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/three-way-partitioning/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Dutch National Flag algorithm.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use three pointers: `low`, `mid`, `high`. If `arr[mid] < a`, swap `arr[low]` and `arr[mid]`, increment both. If `arr[mid] > b`, swap `arr[mid]` and `arr[high]`, decrement `high`. Else increment `mid`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void threeWayPartition(vector&lt;int&gt;&amp; array, int a, int b) {&#10;    int low = 0, mid = 0, high = array.size() - 1;&#10;    while(mid &lt;= high) {&#10;        if(array[mid] &lt; a) {&#10;            swap(array[low], array[mid]);&#10;            low++; mid++;&#10;        } else if(array[mid] &gt; b) {&#10;            swap(array[mid], array[high]);&#10;            high--;&#10;        } else {&#10;            mid++;&#10;        }&#10;    }&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>76</td>
+      <td>Arr 50 Minimum Swaps And K Together<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-swaps-required-to-bring-all-elements-less-than-or-equal-to-k-together4847/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sliding Window.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> First count all elements <= k (let's say `cnt`). This will be the window size. Find elements > k in the first window. Then slide the window, updating the number of elements > k. The minimum among all windows is the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minSwap(int arr[], int n, int k) {&#10;    int cnt = 0;&#10;    for(int i = 0; i &lt; n; i++) if(arr[i] &lt;= k) cnt++;&#10;    int bad = 0;&#10;    for(int i = 0; i &lt; cnt; i++) if(arr[i] &gt; k) bad++;&#10;    int ans = bad;&#10;    for(int i = 0, j = cnt; j &lt; n; i++, j++) {&#10;        if(arr[i] &gt; k) bad--;&#10;        if(arr[j] &gt; k) bad++;&#10;        ans = min(ans, bad);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>77</td>
+      <td>Arr 51 Palindromic Array<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/palindromic-array-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Check individual numbers.</td>
+      <td><b>Time:</b> O(N * d)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through each number in the array. For each number, reverse its digits to check if it's a palindrome. If any number is not, return 0. If all are, return 1.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPalindrome(int N) {&#10;    int rev = 0, temp = N;&#10;    while(temp &gt; 0) {&#10;        rev = rev * 10 + temp % 10;&#10;        temp /= 10;&#10;    }&#10;    return rev == N;&#10;}&#10;int PalinArray(int a[], int n) {&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(!isPalindrome(a[i])) return 0;&#10;    }&#10;    return 1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>78</td>
+      <td>Arr 52 Find The Median<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-the-median0527/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sort array.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort the array. If the size is odd, the median is the middle element. If the size is even, the median is the average of the two middle elements.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int find_median(vector&lt;int&gt; v) {&#10;    sort(v.begin(), v.end());&#10;    int n = v.size();&#10;    if(n % 2 != 0) return v[n / 2];&#10;    else return (v[n / 2 - 1] + v[n / 2]) / 2;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>79</td>
+      <td>Arr 53 Median Of Two Sorted Arrays Of Different Sizes<br><br></b> <a href='https://leetcode.com/problems/median-of-two-sorted-arrays/' target='_blank'>LeetCode 4</a></td>
+      <td><b>Example 1:</b> Binary Search.</td>
+      <td><b>Time:</b> O(log(min(N, M)))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Binary Search on the smaller array. Partition both arrays such that the number of elements on the left side is equal to or one more than the right side. Check if `maxLeftX <= minRightY` and `maxLeftY <= minRightX`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {&#10;    if(nums1.size() &gt; nums2.size()) return findMedianSortedArrays(nums2, nums1);&#10;    int x = nums1.size(), y = nums2.size();&#10;    int low = 0, high = x;&#10;    while(low &lt;= high) {&#10;        int partitionX = (low + high) / 2;&#10;        int partitionY = (x + y + 1) / 2 - partitionX;&#10;        int maxLeftX = (partitionX == 0) ? INT_MIN : nums1[partitionX - 1];&#10;        int minRightX = (partitionX == x) ? INT_MAX : nums1[partitionX];&#10;        int maxLeftY = (partitionY == 0) ? INT_MIN : nums2[partitionY - 1];&#10;        int minRightY = (partitionY == y) ? INT_MAX : nums2[partitionY];&#10;        if(maxLeftX &lt;= minRightY &amp;&amp; maxLeftY &lt;= minRightX) {&#10;            if((x + y) % 2 == 0) return ((double)max(maxLeftX, maxLeftY) + min(minRightX, minRightY)) / 2;&#10;            else return max(maxLeftX, maxLeftY);&#10;        } else if(maxLeftX &gt; minRightY) high = partitionX - 1;&#10;        else low = partitionX + 1;&#10;    }&#10;    return 0.0;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>80</td>
+      <td>Arr 54 Count More Than N K Occurences<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/count-element-occurences/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> HashMap.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Hash Map</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Store the frequencies of all elements in a hash map. Iterate through the hash map and count the number of elements having frequency greater than `N/k`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countOccurence(int arr[], int n, int k) {&#10;    unordered_map&lt;int, int&gt; count;&#10;    for(int i = 0; i &lt; n; i++) count[arr[i]]++;&#10;    int res = 0;&#10;    int target = n / k;&#10;    for(auto it : count) {&#10;        if(it.second &gt; target) res++;&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>81</td>
+      <td>Arr 55 Find Maximum Product Subarray<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/maximum-product-subarray3604/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Prefix and suffix loop.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>Zero in array</td>
+      <td><b>Explanation:</b> Iterate from left to right calculating prefix product, and from right to left calculating suffix product. If either is 0, reset it to 1. Track the max across all steps.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long maxProduct(vector&lt;int&gt; arr, int n) {&#10;    long long max_prod = INT_MIN;&#10;    long long pref = 1, suff = 1;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(pref == 0) pref = 1;&#10;        if(suff == 0) suff = 1;&#10;        pref *= arr[i];&#10;        suff *= arr[n - i - 1];&#10;        max_prod = max({max_prod, pref, suff});&#10;    }&#10;    return max_prod;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

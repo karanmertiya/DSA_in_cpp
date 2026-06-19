@@ -682,5 +682,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Use a greedy approach. Maintain `maxReach`, `step`, and `jump`. If `i == n - 1`, return `jump`. If `arr[0] == 0`, return -1. Otherwise, decrement `step`. If `step == 0`, `jump++`, `step = maxReach - i`. If `i >= maxReach`, it's impossible.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minJumps(int arr[], int n){&#10;    if(n &lt;= 1) return 0;&#10;    if(arr[0] == 0) return -1;&#10;    int maxReach = arr[0], step = arr[0], jump = 1;&#10;    for(int i = 1; i &lt; n; i++) {&#10;        if(i == n - 1) return jump;&#10;        maxReach = max(maxReach, i + arr[i]);&#10;        step--;&#10;        if(step == 0) {&#10;            jump++;&#10;            if(i &gt;= maxReach) return -1;&#10;            step = maxReach - i;&#10;        }&#10;    }&#10;    return -1;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>75</td>
+      <td>Dp 24 Maximum Sum Increasing Subsequence<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/maximum-sum-increasing-subsequence4749/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP (LIS variant).</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Variation of LIS. Create an array `msis` initialized with the given array values. For each `i` from 1 to `n-1`, for each `j` from 0 to `i-1`, if `arr[i] > arr[j]` and `msis[i] < msis[j] + arr[i]`, update `msis[i]`. The max in `msis` is the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxSumIS(int arr[], int n) {&#10;    vector&lt;int&gt; msis(arr, arr + n);&#10;    int max_sum = msis[0];&#10;    for(int i = 1; i &lt; n; i++) {&#10;        for(int j = 0; j &lt; i; j++) {&#10;            if(arr[i] &gt; arr[j] &amp;&amp; msis[i] &lt; msis[j] + arr[i]) {&#10;                msis[i] = msis[j] + arr[i];&#10;            }&#10;        }&#10;        max_sum = max(max_sum, msis[i]);&#10;    }&#10;    return max_sum;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>76</td>
+      <td>Dp 25 Count All Subsequences Having Product Less Than K<br><br></b> <a href='https://www.geeksforgeeks.org/count-subsequences-product-less-k/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP.</td>
+      <td><b>Time:</b> O(N * K)<br><b>Space:</b> O(N * K)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a 2D DP array where `dp[i][j]` is the number of subsequences of first `i` elements with product less than or equal to `j`. `dp[i][j] = dp[i-1][j] + dp[i-1][j/arr[i-1]] + 1`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countSubsequences(vector&lt;int&gt;&amp; a, int k) {&#10;    int n = a.size();&#10;    vector&lt;vector&lt;int&gt;&gt; dp(n + 1, vector&lt;int&gt;(k + 1, 0));&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        for(int j = 1; j &lt;= k; j++) {&#10;            dp[i][j] = dp[i - 1][j];&#10;            if(a[i - 1] &lt;= j &amp;&amp; a[i - 1] &gt; 0) {&#10;                dp[i][j] += dp[i - 1][j / a[i - 1]] + 1;&#10;            }&#10;        }&#10;    }&#10;    return dp[n][k];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>77</td>
+      <td>Dp 26 Longest Subsequence Such That Difference Between Adjacents Is One<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/longest-subsequence-such-that-difference-between-adjacents-is-one4724/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP (LIS variant).</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a 1D DP array `dp` where `dp[i]` is the length of the longest subsequence ending at `i`. For each `i`, check all `j < i`. If `abs(A[i] - A[j]) == 1`, update `dp[i] = max(dp[i], dp[j] + 1)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int longestSubsequence(int N, int A[]) {&#10;    vector&lt;int&gt; dp(N, 1);&#10;    int ans = 1;&#10;    for(int i = 1; i &lt; N; i++) {&#10;        for(int j = 0; j &lt; i; j++) {&#10;            if(abs(A[i] - A[j]) == 1) {&#10;                dp[i] = max(dp[i], dp[j] + 1);&#10;            }&#10;        }&#10;        ans = max(ans, dp[i]);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>78</td>
+      <td>Dp 27 Maximum Subsequence Sum Such That No Three Are Consecutive<br><br></b> <a href='https://www.geeksforgeeks.org/maximum-subsequence-sum-such-that-no-three-are-consecutive/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a DP array. `dp[i]` is the max sum considering up to index `i`. For `i`, the max sum is `max(dp[i-1] (exclude i), dp[i-2] + arr[i] (exclude i-1), dp[i-3] + arr[i] + arr[i-1] (exclude i-2))`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxSum(vector&lt;int&gt;&amp; arr) {&#10;    int n = arr.size();&#10;    if(n == 0) return 0;&#10;    if(n == 1) return arr[0];&#10;    if(n == 2) return arr[0] + arr[1];&#10;    vector&lt;int&gt; dp(n, 0);&#10;    dp[0] = arr[0];&#10;    dp[1] = arr[0] + arr[1];&#10;    dp[2] = max({dp[1], arr[0] + arr[2], arr[1] + arr[2]});&#10;    for(int i = 3; i &lt; n; i++) {&#10;        dp[i] = max({dp[i-1], dp[i-2] + arr[i], dp[i-3] + arr[i] + arr[i-1]});&#10;    }&#10;    return dp[n-1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>79</td>
+      <td>Dp 28 Egg Dropping Puzzle<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP + Binary Search / Math.</td>
+      <td><b>Time:</b> O(N * K log K)<br><b>Space:</b> O(N * K)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use DP. `dp[i][j]` is the min attempts with `i` eggs and `j` floors. Try dropping from every floor `x` from 1 to `j`. `res = 1 + max(dp[i-1][x-1] (breaks), dp[i][j-x] (doesn't break))`. Optimize this nested loop using Binary Search or use a different state `dp[m][k]` = floors checked with `m` moves and `k` eggs.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int eggDrop(int n, int k) {&#10;    vector&lt;vector&lt;int&gt;&gt; dp(k + 1, vector&lt;int&gt;(n + 1, 0));&#10;    int m = 0;&#10;    while(dp[m][n] &lt; k) {&#10;        m++;&#10;        for(int x = 1; x &lt;= n; x++) {&#10;            dp[m][x] = 1 + dp[m-1][x-1] + dp[m-1][x];&#10;        }&#10;    }&#10;    return m;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>80</td>
+      <td>Dp 29 Maximum Length Chain Of Pairs<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/max-length-chain/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sort and Greedy / DP.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> This is exactly the Activity Selection Problem. Sort the pairs by their second element. Iterate through the sorted pairs and keep track of the end of the last selected pair. If the next pair's start is > last end, select it.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct val {&#10;    int first;&#10;    int second;&#10;};&#10;bool compare(struct val a, struct val b) {&#10;    return a.second &lt; b.second;&#10;}&#10;int maxChainLen(struct val p[], int n) {&#10;    sort(p, p + n, compare);&#10;    int count = 1;&#10;    int last_end = p[0].second;&#10;    for(int i = 1; i &lt; n; i++) {&#10;        if(p[i].first &gt; last_end) {&#10;            count++;&#10;            last_end = p[i].second;&#10;        }&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>81</td>
+      <td>Dp 30 Maximum Size Square Sub Matrix With All 1S<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/largest-square-formed-in-a-matrix0806/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(M)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use DP. `dp[i][j]` stores the size of the maximum square ending at cell `(i, j)`. If `mat[i][j] == 1`, `dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxSquare(int n, int m, vector&lt;vector&lt;int&gt;&gt; mat) {&#10;    vector&lt;int&gt; prev(m, 0), curr(m, 0);&#10;    int ans = 0;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        for(int j = 0; j &lt; m; j++) {&#10;            if(mat[i][j] == 1) {&#10;                if(i == 0 || j == 0) curr[j] = 1;&#10;                else curr[j] = min({prev[j], curr[j-1], prev[j-1]}) + 1;&#10;                ans = max(ans, curr[j]);&#10;            } else curr[j] = 0;&#10;        }&#10;        prev = curr;&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>82</td>
+      <td>Dp 31 Maximum Profit By Buying And Selling A Share At Most Twice<br><br></b> <a href='https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/' target='_blank'>LeetCode 123</a></td>
+      <td><b>Example 1:</b> 4 states DP.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Track 4 states: `buy1`, `sell1`, `buy2`, `sell2`. Initialize buys to negative infinity, sells to 0. Update them for each price. `buy1 = max(buy1, -price)`, `sell1 = max(sell1, buy1 + price)`, `buy2 = max(buy2, sell1 - price)`, `sell2 = max(sell2, buy2 + price)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxProfit(vector&lt;int&gt;&amp; prices) {&#10;    int buy1 = INT_MIN, sell1 = 0;&#10;    int buy2 = INT_MIN, sell2 = 0;&#10;    for(int price : prices) {&#10;        buy1 = max(buy1, -price);&#10;        sell1 = max(sell1, buy1 + price);&#10;        buy2 = max(buy2, sell1 - price);&#10;        sell2 = max(sell2, buy2 + price);&#10;    }&#10;    return sell2;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>83</td>
+      <td>Dp 32 Optimal Strategy For A Game<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/optimal-strategy-for-a-game-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If you pick `i`, opponent picks `i+1` or `j`, leaving you with `(i+2, j)` or `(i+1, j-1)`. Opponent plays optimally to minimize your profit. So you get `A[i] + min(dp(i+2, j), dp(i+1, j-1))`. Similarly for picking `j`. Take the max of these two choices.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long maximumAmount(int arr[], int n) {&#10;    vector&lt;vector&lt;long long&gt;&gt; dp(n, vector&lt;long long&gt;(n, 0));&#10;    for(int gap = 0; gap &lt; n; gap++) {&#10;        for(int i = 0, j = gap; j &lt; n; i++, j++) {&#10;            long long x = ((i + 2) &lt;= j) ? dp[i+2][j] : 0;&#10;            long long y = ((i + 1) &lt;= (j - 1)) ? dp[i+1][j-1] : 0;&#10;            long long z = (i &lt;= (j - 2)) ? dp[i][j-2] : 0;&#10;            dp[i][j] = max(arr[i] + min(x, y), arr[j] + min(y, z));&#10;        }&#10;    }&#10;    return dp[0][n-1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>84</td>
+      <td>Dp 33 Boolean Parenthesization Problem<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/boolean-parenthesization5610/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> MCM DP variant.</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a 3D DP array `dp[i][j][isTrue]` representing the number of ways to evaluate the substring from `i` to `j` to `isTrue`. Iterate over all possible split points `k` with an operator. Combine the True and False counts from left and right halves based on the operator.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countWays(int N, string S) {&#10;    vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt; dp(N, vector&lt;vector&lt;int&gt;&gt;(N, vector&lt;int&gt;(2, 0)));&#10;    for(int i = 0; i &lt; N; i += 2) {&#10;        dp[i][i][1] = (S[i] == &#x27;T&#x27;);&#10;        dp[i][i][0] = (S[i] == &#x27;F&#x27;);&#10;    }&#10;    for(int len = 3; len &lt;= N; len += 2) {&#10;        for(int i = 0; i &lt;= N - len; i += 2) {&#10;            int j = i + len - 1;&#10;            for(int k = i + 1; k &lt; j; k += 2) {&#10;                int lt = dp[i][k-1][1], lf = dp[i][k-1][0];&#10;                int rt = dp[k+1][j][1], rf = dp[k+1][j][0];&#10;                if(S[k] == &#x27;&amp;&#x27;) {&#10;                    dp[i][j][1] = (dp[i][j][1] + (lt * rt) % 1003) % 1003;&#10;                    dp[i][j][0] = (dp[i][j][0] + (lt * rf) % 1003 + (lf * rt) % 1003 + (lf * rf) % 1003) % 1003;&#10;                } else if(S[k] == &#x27;|&#x27;) {&#10;                    dp[i][j][1] = (dp[i][j][1] + (lt * rt) % 1003 + (lt * rf) % 1003 + (lf * rt) % 1003) % 1003;&#10;                    dp[i][j][0] = (dp[i][j][0] + (lf * rf) % 1003) % 1003;&#10;                } else if(S[k] == &#x27;^&#x27;) {&#10;                    dp[i][j][1] = (dp[i][j][1] + (lt * rf) % 1003 + (lf * rt) % 1003) % 1003;&#10;                    dp[i][j][0] = (dp[i][j][0] + (lt * rt) % 1003 + (lf * rf) % 1003) % 1003;&#10;                }&#10;            }&#10;        }&#10;    }&#10;    return dp[0][N-1][1];&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

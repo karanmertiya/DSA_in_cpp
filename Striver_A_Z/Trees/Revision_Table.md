@@ -637,5 +637,14 @@
       <td>-</td>
       <td><b>Explanation:</b> If root is null or root matches n1 or n2, return root. Recurse for left and right. If both return non-null, root is LCA. If one returns non-null, return that one.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {&#10;    if(root == NULL || root == p || root == q) return root;&#10;    TreeNode* left = lowestCommonAncestor(root-&gt;left, p, q);&#10;    TreeNode* right = lowestCommonAncestor(root-&gt;right, p, q);&#10;    if(left == NULL) return right;&#10;    else if(right == NULL) return left;&#10;    else return root;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>70</td>
+      <td>Tree 29 Construct Tree From Inorder And Preorder<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/construct-tree-1/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Hash map for fast search.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> The first element in preorder is the root. Find this root in inorder using a hash map. Elements to the left in inorder form the left subtree, elements to the right form the right subtree. Recurse.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* buildTreeUtil(int in[], int pre[], int inSt, int inEnd, int&amp; preIdx, unordered_map&lt;int, int&gt;&amp; mp) {&#10;    if(inSt &gt; inEnd) return NULL;&#10;    int curr = pre[preIdx++];&#10;    Node* tNode = new Node(curr);&#10;    if(inSt == inEnd) return tNode;&#10;    int inIdx = mp[curr];&#10;    tNode-&gt;left = buildTreeUtil(in, pre, inSt, inIdx - 1, preIdx, mp);&#10;    tNode-&gt;right = buildTreeUtil(in, pre, inIdx + 1, inEnd, preIdx, mp);&#10;    return tNode;&#10;}&#10;Node* buildTree(int in[], int pre[], int n) {&#10;    unordered_map&lt;int, int&gt; mp;&#10;    for(int i = 0; i &lt; n; i++) mp[in[i]] = i;&#10;    int preIdx = 0;&#10;    return buildTreeUtil(in, pre, 0, n - 1, preIdx, mp);&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
