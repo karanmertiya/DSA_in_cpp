@@ -106,5 +106,95 @@
       <td><b>M > N:</b> Impossible to allocate at least one book to each student, return -1.</td>
       <td><b>Explanation:</b> Binary Search on Answer. The search space for pages is from `max(A)` to `sum(A)`. For a given `mid`, check if books can be allocated to `<= M` students without any student exceeding `mid` pages.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPossible(int A[], int N, int M, int maxPages) {&#10;    int students = 1, currentPages = 0;&#10;    for(int i=0; i&lt;N; i++) {&#10;        if(A[i] &gt; maxPages) return false;&#10;        if(currentPages + A[i] &gt; maxPages) {&#10;            students++; currentPages = A[i];&#10;        } else {&#10;            currentPages += A[i];&#10;        }&#10;    }&#10;    return students &lt;= M;&#10;}&#10;int findPages(int A[], int N, int M) {&#10;    if(M &gt; N) return -1;&#10;    int low = 0, high = 0, ans = -1;&#10;    for(int i=0; i&lt;N; i++) { low = max(low, A[i]); high += A[i]; }&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(isPossible(A, N, M, mid)) {&#10;            ans = mid; high = mid - 1;&#10;        } else low = mid + 1;&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">11</td>
+      <td rowspan="1">Bs 10 Kth Element Of Two Sorted Arrays<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: arr1 = [2, 3, 6, 7, 9], arr2 = [1, 4, 8, 10], k = 5, Output: 6</td>
+      <td><b>Time:</b> O(log(min(n, m)))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary search on the smaller array. Similar to Median of two sorted arrays, but the left partition size is strictly `k`. Search space for `cut1` is `[max(0, k-m), min(k, n)]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int kthElement(int arr1[], int arr2[], int n, int m, int k) {&#10;    if(n &gt; m) return kthElement(arr2, arr1, m, n, k);&#10;    int low = max(0, k - m), high = min(k, n);&#10;    while(low &lt;= high) {&#10;        int cut1 = (low + high) / 2;&#10;        int cut2 = k - cut1;&#10;        int left1 = cut1 == 0 ? INT_MIN : arr1[cut1-1];&#10;        int left2 = cut2 == 0 ? INT_MIN : arr2[cut2-1];&#10;        int right1 = cut1 == n ? INT_MAX : arr1[cut1];&#10;        int right2 = cut2 == m ? INT_MAX : arr2[cut2];&#10;        if(left1 &lt;= right2 &amp;&amp; left2 &lt;= right1) return max(left1, left2);&#10;        else if(left1 &gt; right2) high = cut1 - 1;&#10;        else low = cut1 + 1;&#10;    }&#10;    return 1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">12</td>
+      <td rowspan="1">Bs 11 Find Minimum In Rotated Sorted Array<br><br></b> <a href='https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/' target='_blank'>LeetCode 153</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: nums = [3,4,5,1,2], Output: 1</td>
+      <td><b>Time:</b> O(log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary Search. If `nums[low] <= nums[high]`, the array is sorted, return `nums[low]`. Else, if `nums[low] <= nums[mid]`, the left half is sorted, the minimum is in the right half.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findMin(vector&lt;int&gt;&amp; nums) {&#10;    int low = 0, high = nums.size() - 1;&#10;    int ans = INT_MAX;&#10;    while(low &lt;= high) {&#10;        int mid = (low + high) / 2;&#10;        if(nums[low] &lt;= nums[high]) { ans = min(ans, nums[low]); break; }&#10;        if(nums[low] &lt;= nums[mid]) { ans = min(ans, nums[low]); low = mid + 1; }&#10;        else { ans = min(ans, nums[mid]); high = mid - 1; }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">13</td>
+      <td rowspan="1">Bs 12 Search In Rotated Sorted Array<br><br></b> <a href='https://leetcode.com/problems/search-in-rotated-sorted-array/' target='_blank'>LeetCode 33</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: nums = [4,5,6,7,0,1,2], target = 0, Output: 4</td>
+      <td><b>Time:</b> O(log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary Search. Identify which half is sorted. If left half is sorted and target is in its range, move `high = mid - 1`, else `low = mid + 1`. Symmetrically for right half.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int search(vector&lt;int&gt;&amp; nums, int target) {&#10;    int low = 0, high = nums.size() - 1;&#10;    while(low &lt;= high) {&#10;        int mid = (low + high) / 2;&#10;        if(nums[mid] == target) return mid;&#10;        if(nums[low] &lt;= nums[mid]) {&#10;            if(nums[low] &lt;= target &amp;&amp; target &lt;= nums[mid]) high = mid - 1;&#10;            else low = mid + 1;&#10;        } else {&#10;            if(nums[mid] &lt;= target &amp;&amp; target &lt;= nums[high]) low = mid + 1;&#10;            else high = mid - 1;&#10;        }&#10;    }&#10;    return -1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">14</td>
+      <td rowspan="1">Bs 13 Search In Rotated Sorted Array Ii<br><br></b> <a href='https://leetcode.com/problems/search-in-rotated-sorted-array-ii/' target='_blank'>LeetCode 81</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: nums = [2,5,6,0,0,1,2], target = 0, Output: true</td>
+      <td><b>Time:</b> O(log N) average, O(N) worst case<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td><b>Duplicates causing ambiguity:</b> Shrink bounds safely.</td>
+      <td><b>Explanation:</b> If `nums[low] == nums[mid] == nums[high]`, shrink the search space by `low++` and `high--`. Otherwise, proceed with the standard rotated binary search.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool search(vector&lt;int&gt;&amp; nums, int target) {&#10;    int low = 0, high = nums.size() - 1;&#10;    while(low &lt;= high) {&#10;        int mid = (low + high) / 2;&#10;        if(nums[mid] == target) return true;&#10;        if(nums[low] == nums[mid] &amp;&amp; nums[mid] == nums[high]) {&#10;            low++; high--; continue;&#10;        }&#10;        if(nums[low] &lt;= nums[mid]) {&#10;            if(nums[low] &lt;= target &amp;&amp; target &lt;= nums[mid]) high = mid - 1;&#10;            else low = mid + 1;&#10;        } else {&#10;            if(nums[mid] &lt;= target &amp;&amp; target &lt;= nums[high]) low = mid + 1;&#10;            else high = mid - 1;&#10;        }&#10;    }&#10;    return false;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">15</td>
+      <td rowspan="1">Bs 14 Find Peak Element<br><br></b> <a href='https://leetcode.com/problems/find-peak-element/' target='_blank'>LeetCode 162</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: nums = [1,2,3,1], Output: 2</td>
+      <td><b>Time:</b> O(log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary Search. If `nums[mid] > nums[mid + 1]`, we are on a descending slope, so a peak must be to the left (or is `mid`). Else, we are on an ascending slope, peak is to the right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findPeakElement(vector&lt;int&gt;&amp; nums) {&#10;    int low = 0, high = nums.size() - 1;&#10;    while(low &lt; high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(nums[mid] &gt; nums[mid + 1]) high = mid;&#10;        else low = mid + 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">16</td>
+      <td rowspan="1">Bs 15 Find First And Last Position Of Element In Sorted Array<br><br></b> <a href='https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/' target='_blank'>LeetCode 34</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: nums = [5,7,7,8,8,10], target = 8, Output: [3,4]</td>
+      <td><b>Time:</b> O(log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use lower_bound for the first occurrence. Use upper_bound - 1 for the last occurrence. Validate if the target actually exists at the lower_bound index.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; searchRange(vector&lt;int&gt;&amp; nums, int target) {&#10;    auto lb = lower_bound(nums.begin(), nums.end(), target);&#10;    auto ub = upper_bound(nums.begin(), nums.end(), target);&#10;    if(lb == nums.end() || *lb != target) return {-1, -1};&#10;    return {(int)(lb - nums.begin()), (int)(ub - nums.begin() - 1)};&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">17</td>
+      <td rowspan="1">Bs 16 Koko Eating Bananas<br><br></b> <a href='https://leetcode.com/problems/koko-eating-bananas/' target='_blank'>LeetCode 875</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: piles = [3,6,7,11], h = 8, Output: 4</td>
+      <td><b>Time:</b> O(N log(max(P)))<br><b>Space:</b> O(1)</td>
+      <td><code>#include <math.h></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary search on the answer. Minimum speed is 1, maximum is `max(piles)`. For a given speed `mid`, calculate total hours `sum(ceil(pile / mid))`. If `<= h`, search lower half.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long getHours(vector&lt;int&gt;&amp; piles, int speed) {&#10;    long long totalHours = 0;&#10;    for(int p : piles) totalHours += ceil((double)p / speed);&#10;    return totalHours;&#10;}&#10;int minEatingSpeed(vector&lt;int&gt;&amp; piles, int h) {&#10;    int low = 1, high = 0;&#10;    for(int p : piles) high = max(high, p);&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(getHours(piles, mid) &lt;= h) high = mid - 1;&#10;        else low = mid + 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">18</td>
+      <td rowspan="1">Bs 17 Minimum Days To Make M Bouquets<br><br></b> <a href='https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/' target='_blank'>LeetCode 1482</a></td>
+      <td rowspan="1"><b>Example 1:</b> Find day threshold.</td>
+      <td><b>Time:</b> O(N log(maxD - minD))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary search on days from `min(bloom)` to `max(bloom)`. Count consecutive bloomed flowers, if it reaches `k`, form a bouquet. Return minimum valid day.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPossible(vector&lt;int&gt;&amp; bloomDay, int m, int k, int day) {&#10;    int count = 0, bouquets = 0;&#10;    for(int d : bloomDay) {&#10;        if(d &lt;= day) count++;&#10;        else {&#10;            bouquets += count / k;&#10;            count = 0;&#10;        }&#10;    }&#10;    bouquets += count / k;&#10;    return bouquets &gt;= m;&#10;}&#10;int minDays(vector&lt;int&gt;&amp; bloomDay, int m, int k) {&#10;    if((long long)m * k &gt; bloomDay.size()) return -1;&#10;    int low = 1e9, high = 0;&#10;    for(int d : bloomDay) { low = min(low, d); high = max(high, d); }&#10;    int ans = -1;&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(isPossible(bloomDay, m, k, mid)) { ans = mid; high = mid - 1; }&#10;        else low = mid + 1;&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">19</td>
+      <td rowspan="1">Bs 18 Find The Smallest Divisor Given A Threshold<br><br></b> <a href='https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/' target='_blank'>LeetCode 1283</a></td>
+      <td rowspan="1"><b>Example 1:</b> Summing ceils.</td>
+      <td><b>Time:</b> O(N log(max(nums)))<br><b>Space:</b> O(1)</td>
+      <td><code>#include <math.h></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary search the divisor from 1 to `max(nums)`. Compute `sum(ceil(num / mid))`. If sum <= threshold, shrink high.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int smallestDivisor(vector&lt;int&gt;&amp; nums, int threshold) {&#10;    int low = 1, high = *max_element(nums.begin(), nums.end());&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        long long sum = 0;&#10;        for(int num : nums) sum += ceil((double)num / mid);&#10;        if(sum &lt;= threshold) high = mid - 1;&#10;        else low = mid + 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">20</td>
+      <td rowspan="1">Bs 19 Capacity To Ship Packages Within D Days<br><br></b> <a href='https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/' target='_blank'>LeetCode 1011</a></td>
+      <td rowspan="1"><b>Example 1:</b> Find ship capacity.</td>
+      <td><b>Time:</b> O(N log(sum - max))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Binary search on capacity. Low = `max(weights)`, High = `sum(weights)`. Iterate through packages and accumulate weight, increment day if limit is exceeded.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool canShip(vector&lt;int&gt;&amp; weights, int days, int cap) {&#10;    int d = 1, load = 0;&#10;    for(int w : weights) {&#10;        if(load + w &gt; cap) { d++; load = w; }&#10;        else load += w;&#10;    }&#10;    return d &lt;= days;&#10;}&#10;int shipWithinDays(vector&lt;int&gt;&amp; weights, int days) {&#10;    int low = 0, high = 0;&#10;    for(int w : weights) { low = max(low, w); high += w; }&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(canShip(weights, days, mid)) high = mid - 1;&#10;        else low = mid + 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

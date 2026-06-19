@@ -151,5 +151,95 @@
       <td>-</td>
       <td><b>Explanation:</b> 1) Add root if not leaf. 2) Traverse left boundary (excluding leaves). 3) Inorder traverse all leaves. 4) Traverse right boundary, reverse it, then add to answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isLeaf(TreeNode* root) { return !root-&gt;left &amp;&amp; !root-&gt;right; }&#10;void addLeft(TreeNode* root, vector&lt;int&gt;&amp; res) {&#10;    TreeNode* cur = root-&gt;left;&#10;    while(cur) {&#10;        if(!isLeaf(cur)) res.push_back(cur-&gt;val);&#10;        if(cur-&gt;left) cur = cur-&gt;left;&#10;        else cur = cur-&gt;right;&#10;    }&#10;}&#10;void addRight(TreeNode* root, vector&lt;int&gt;&amp; res) {&#10;    TreeNode* cur = root-&gt;right;&#10;    vector&lt;int&gt; tmp;&#10;    while(cur) {&#10;        if(!isLeaf(cur)) tmp.push_back(cur-&gt;val);&#10;        if(cur-&gt;right) cur = cur-&gt;right;&#10;        else cur = cur-&gt;left;&#10;    }&#10;    for(int i = tmp.size()-1; i&gt;=0; --i) res.push_back(tmp[i]);&#10;}&#10;void addLeaves(TreeNode* root, vector&lt;int&gt;&amp; res) {&#10;    if(isLeaf(root)) { res.push_back(root-&gt;val); return; }&#10;    if(root-&gt;left) addLeaves(root-&gt;left, res);&#10;    if(root-&gt;right) addLeaves(root-&gt;right, res);&#10;}&#10;vector&lt;int&gt; boundary(TreeNode *root) {&#10;    vector&lt;int&gt; res;&#10;    if(!root) return res;&#10;    if(!isLeaf(root)) res.push_back(root-&gt;val);&#10;    addLeft(root, res); addLeaves(root, res); addRight(root, res);&#10;    return res;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">16</td>
+      <td rowspan="1">Tree 16 Zigzag Traversal<br><br></b> <a href='https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/' target='_blank'>LeetCode 103</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: root = [3,9,20,null,null,15,7], Output: [[3],[20,9],[15,7]]</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <queue></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Standard BFS Level Order Traversal with a boolean flag `leftToRight`. After finishing a level, if the flag is false, reverse the level array before adding to the result.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; zigzagLevelOrder(TreeNode* root) {&#10;    vector&lt;vector&lt;int&gt;&gt; result;&#10;    if(!root) return result;&#10;    queue&lt;TreeNode*&gt; q;&#10;    q.push(root);&#10;    bool leftToRight = true;&#10;    while(!q.empty()) {&#10;        int size = q.size();&#10;        vector&lt;int&gt; row(size);&#10;        for(int i=0; i&lt;size; i++) {&#10;            TreeNode* node = q.front(); q.pop();&#10;            int index = leftToRight ? i : (size - 1 - i);&#10;            row[index] = node-&gt;val;&#10;            if(node-&gt;left) q.push(node-&gt;left);&#10;            if(node-&gt;right) q.push(node-&gt;right);&#10;        }&#10;        leftToRight = !leftToRight;&#10;        result.push_back(row);&#10;    }&#10;    return result;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">17</td>
+      <td rowspan="1">Tree 17 Vertical Order Traversal<br><br></b> <a href='https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/' target='_blank'>LeetCode 987</a></td>
+      <td rowspan="1"><b>Example 1:</b> Output: [[9],[3,15],[20],[7]]</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <map>\n#include <queue>\n#include <set></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a map structure: `map<int, map<int, multiset<int>>>` to store nodes mapped by their horizontal distance and level. BFS traversal ensures levels are processed top-down.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; verticalTraversal(TreeNode* root) {&#10;    map&lt;int, map&lt;int, multiset&lt;int&gt;&gt;&gt; nodes;&#10;    queue&lt;pair&lt;TreeNode*, pair&lt;int, int&gt;&gt;&gt; todo;&#10;    todo.push({root, {0, 0}});&#10;    while(!todo.empty()) {&#10;        auto p = todo.front(); todo.pop();&#10;        TreeNode* node = p.first;&#10;        int x = p.second.first, y = p.second.second;&#10;        nodes[x][y].insert(node-&gt;val);&#10;        if(node-&gt;left) todo.push({node-&gt;left, {x - 1, y + 1}});&#10;        if(node-&gt;right) todo.push({node-&gt;right, {x + 1, y + 1}});&#10;    }&#10;    vector&lt;vector&lt;int&gt;&gt; ans;&#10;    for(auto p : nodes) {&#10;        vector&lt;int&gt; col;&#10;        for(auto q : p.second) {&#10;            col.insert(col.end(), q.second.begin(), q.second.end());&#10;        }&#10;        ans.push_back(col);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">18</td>
+      <td rowspan="1">Tree 18 Top View<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Return list of values.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <map>\n#include <queue></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> BFS traversal maintaining horizontal distance (HD) from root. Use a map `hd -> value`. Only insert into the map if the HD is not already present, ensuring the top-most node is recorded.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; topView(Node *root) {&#10;    vector&lt;int&gt; ans;&#10;    if(root == NULL) return ans;&#10;    map&lt;int, int&gt; mpp;&#10;    queue&lt;pair&lt;Node*, int&gt;&gt; q;&#10;    q.push({root, 0});&#10;    while(!q.empty()) {&#10;        auto it = q.front(); q.pop();&#10;        Node* node = it.first;&#10;        int line = it.second;&#10;        if(mpp.find(line) == mpp.end()) mpp[line] = node-&gt;data;&#10;        if(node-&gt;left != NULL) q.push({node-&gt;left, line - 1});&#10;        if(node-&gt;right != NULL) q.push({node-&gt;right, line + 1});&#10;    }&#10;    for(auto it : mpp) ans.push_back(it.second);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">19</td>
+      <td rowspan="1">Tree 19 Bottom View<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Return list of values.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <map>\n#include <queue></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> BFS traversal maintaining horizontal distance (HD). Map `hd -> value`. Always update the map value for a given HD so that the last node encountered (bottom-most) overrides previous ones.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; bottomView(Node *root) {&#10;    vector&lt;int&gt; ans;&#10;    if(root == NULL) return ans;&#10;    map&lt;int, int&gt; mpp;&#10;    queue&lt;pair&lt;Node*, int&gt;&gt; q;&#10;    q.push({root, 0});&#10;    while(!q.empty()) {&#10;        auto it = q.front(); q.pop();&#10;        Node* node = it.first;&#10;        int line = it.second;&#10;        mpp[line] = node-&gt;data;&#10;        if(node-&gt;left != NULL) q.push({node-&gt;left, line - 1});&#10;        if(node-&gt;right != NULL) q.push({node-&gt;right, line + 1});&#10;    }&#10;    for(auto it : mpp) ans.push_back(it.second);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">20</td>
+      <td rowspan="1">Tree 20 Right View<br><br></b> <a href='https://leetcode.com/problems/binary-tree-right-side-view/' target='_blank'>LeetCode 199</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: root = [1,2,3,null,5,null,4], Output: [1,3,4]</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> DFS Traversing right child before left child. Maintain the current level. If `level == result.size()`, append the node value to the result list.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void recursion(TreeNode *root, int level, vector&lt;int&gt; &amp;res) {&#10;    if(root==NULL) return ;&#10;    if(res.size() == level) res.push_back(root-&gt;val);&#10;    recursion(root-&gt;right, level + 1, res);&#10;    recursion(root-&gt;left, level + 1, res);&#10;}&#10;vector&lt;int&gt; rightSideView(TreeNode *root) {&#10;    vector&lt;int&gt; res;&#10;    recursion(root, 0, res);&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">21</td>
+      <td rowspan="1">Tree 21 Left View<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Print left-most node at each level.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> DFS Traversing left child before right child. Maintain the current level. If `level == result.size()`, append the node value to the result list.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void recursion(Node *root, int level, vector&lt;int&gt; &amp;res) {&#10;    if(root==NULL) return ;&#10;    if(res.size() == level) res.push_back(root-&gt;data);&#10;    recursion(root-&gt;left, level + 1, res);&#10;    recursion(root-&gt;right, level + 1, res);&#10;}&#10;vector&lt;int&gt; leftView(Node *root) {&#10;    vector&lt;int&gt; res;&#10;    recursion(root, 0, res);&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">22</td>
+      <td rowspan="1">Tree 22 Construct Tree From Inorder And Preorder<br><br></b> <a href='https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/' target='_blank'>LeetCode 105</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7], Output: [3,9,20,null,null,15,7]</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <unordered_map></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Store inorder indices in a HashMap. The first element in preorder is the root. Find this root in inorder map to determine left subtree size. Recursively build left and right subtrees by slicing array indices.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* buildTree(vector&lt;int&gt;&amp; preorder, int preStart, int preEnd, vector&lt;int&gt;&amp; inorder, int inStart, int inEnd, map&lt;int, int&gt;&amp; inMap) {&#10;    if(preStart &gt; preEnd || inStart &gt; inEnd) return NULL;&#10;    TreeNode* root = new TreeNode(preorder[preStart]);&#10;    int inRoot = inMap[root-&gt;val];&#10;    int numsLeft = inRoot - inStart;&#10;    root-&gt;left = buildTree(preorder, preStart + 1, preStart + numsLeft, inorder, inStart, inRoot - 1, inMap);&#10;    root-&gt;right = buildTree(preorder, preStart + numsLeft + 1, preEnd, inorder, inRoot + 1, inEnd, inMap);&#10;    return root;&#10;}&#10;TreeNode* buildTree(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder) {&#10;    map&lt;int, int&gt; inMap;&#10;    for(int i = 0; i &lt; inorder.size(); i++) inMap[inorder[i]] = i;&#10;    TreeNode* root = buildTree(preorder, 0, preorder.size() - 1, inorder, 0, inorder.size() - 1, inMap);&#10;    return root;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">23</td>
+      <td rowspan="1">Tree 23 Construct Tree From Inorder And Postorder<br><br></b> <a href='https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/' target='_blank'>LeetCode 106</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: inorder = [9,3,15,20,7], postorder = [9,15,7,20,3], Output: [3,9,20,null,null,15,7]</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <unordered_map></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Store inorder indices in a HashMap. The last element in postorder is the root. Find this root in inorder map to determine left subtree size. Recursively build left and right subtrees by slicing array indices.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* buildTree(vector&lt;int&gt;&amp; inorder, int inStart, int inEnd, vector&lt;int&gt;&amp; postorder, int postStart, int postEnd, map&lt;int, int&gt;&amp; inMap) {&#10;    if(inStart &gt; inEnd || postStart &gt; postEnd) return NULL;&#10;    TreeNode* root = new TreeNode(postorder[postEnd]);&#10;    int inRoot = inMap[root-&gt;val];&#10;    int numsLeft = inRoot - inStart;&#10;    root-&gt;left = buildTree(inorder, inStart, inRoot - 1, postorder, postStart, postStart + numsLeft - 1, inMap);&#10;    root-&gt;right = buildTree(inorder, inRoot + 1, inEnd, postorder, postStart + numsLeft, postEnd - 1, inMap);&#10;    return root;&#10;}&#10;TreeNode* buildTree(vector&lt;int&gt;&amp; inorder, vector&lt;int&gt;&amp; postorder) {&#10;    map&lt;int, int&gt; inMap;&#10;    for(int i = 0; i &lt; inorder.size(); i++) inMap[inorder[i]] = i;&#10;    TreeNode* root = buildTree(inorder, 0, inorder.size() - 1, postorder, 0, postorder.size() - 1, inMap);&#10;    return root;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">24</td>
+      <td rowspan="1">Tree 24 Serialize And Deserialize Binary Tree<br><br></b> <a href='https://leetcode.com/problems/serialize-and-deserialize-binary-tree/' target='_blank'>LeetCode 297</a></td>
+      <td rowspan="1"><b>Example 1:</b> Serialization/Deserialization.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <queue>\n#include <sstream></code></td>
+      <td><b>Empty Tree:</b> Serialized string is empty. Deserialize returns null.</td>
+      <td><b>Explanation:</b> Use Level Order Traversal (BFS) using a queue. For serialization, append '#' for null nodes. For deserialization, split string by comma and use a queue to reconstruct the tree structure level by level.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class Codec {&#10;public:&#10;    string serialize(TreeNode* root) {&#10;        if(!root) return &quot;&quot;;&#10;        string s = &quot;&quot;; queue&lt;TreeNode*&gt; q;&#10;        q.push(root);&#10;        while(!q.empty()) {&#10;            TreeNode* curNode = q.front(); q.pop();&#10;            if(curNode==NULL) s.append(&quot;#,&quot;);&#10;            else { s.append(to_string(curNode-&gt;val) + &quot;,&quot;); q.push(curNode-&gt;left); q.push(curNode-&gt;right); }&#10;        }&#10;        return s;&#10;    }&#10;    TreeNode* deserialize(string data) {&#10;        if(data.empty()) return NULL;&#10;        stringstream s(data); string str;&#10;        getline(s, str, &#x27;,&#x27;);&#10;        TreeNode* root = new TreeNode(stoi(str));&#10;        queue&lt;TreeNode*&gt; q; q.push(root);&#10;        while(!q.empty()) {&#10;            TreeNode* node = q.front(); q.pop();&#10;            getline(s, str, &#x27;,&#x27;);&#10;            if(str == &quot;#&quot;) node-&gt;left = NULL;&#10;            else { TreeNode* leftNode = new TreeNode(stoi(str)); node-&gt;left = leftNode; q.push(leftNode); }&#10;            getline(s, str, &#x27;,&#x27;);&#10;            if(str == &quot;#&quot;) node-&gt;right = NULL;&#10;            else { TreeNode* rightNode = new TreeNode(stoi(str)); node-&gt;right = rightNode; q.push(rightNode); }&#10;        }&#10;        return root;&#10;    }&#10;};</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">25</td>
+      <td rowspan="1">Tree 25 Lowest Common Ancestor<br><br></b> <a href='https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/' target='_blank'>LeetCode 236</a></td>
+      <td rowspan="1"><b>Example 1:</b> Return the LCA node.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> DFS traversal. If the current node is p or q, return the current node. Recurse left and right. If both left and right return non-null, the current node is the LCA. If one returns non-null, return that one.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {&#10;    if(root == NULL || root == p || root == q) return root;&#10;    TreeNode* left = lowestCommonAncestor(root-&gt;left, p, q);&#10;    TreeNode* right = lowestCommonAncestor(root-&gt;right, p, q);&#10;    if(left == NULL) return right;&#10;    else if(right == NULL) return left;&#10;    else return root;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
