@@ -88,5 +88,23 @@
       <td>-</td>
       <td><b>Explanation:</b> Treat the 2D matrix as a 1D flattened array. The element at `index` is at `matrix[index / cols][index % cols]`. Perform standard binary search.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) {&#10;    if(matrix.empty() || matrix[0].empty()) return false;&#10;    int m = matrix.size(), n = matrix[0].size();&#10;    int left = 0, right = m * n - 1;&#10;    while(left &lt;= right) {&#10;        int mid = left + (right - left) / 2;&#10;        int val = matrix[mid / n][mid % n];&#10;        if(val == target) return true;&#10;        if(val &lt; target) left = mid + 1;&#10;        else right = mid - 1;&#10;    }&#10;    return false;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">9</td>
+      <td rowspan="1">Bs 07 Median Of Two Sorted Arrays<br><br></b> <a href='https://leetcode.com/problems/median-of-two-sorted-arrays/' target='_blank'>LeetCode 4</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: nums1 = [1,3], nums2 = [2], Output: 2.00000</td>
+      <td><b>Time:</b> O(log(min(m, n)))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td><b>Different sizes / One empty:</b> Always binary search on the smaller array to avoid out-of-bounds.</td>
+      <td><b>Explanation:</b> Binary Search on the smaller array. Partition both arrays such that the left half has `(m+n+1)/2` elements. Find the valid partition where `max(left1) <= min(right2)` and `max(left2) <= min(right1)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {&#10;    if(nums1.size() &gt; nums2.size()) return findMedianSortedArrays(nums2, nums1);&#10;    int n1 = nums1.size(), n2 = nums2.size();&#10;    int low = 0, high = n1;&#10;    while(low &lt;= high) {&#10;        int cut1 = (low + high) / 2;&#10;        int cut2 = (n1 + n2 + 1) / 2 - cut1;&#10;        int left1 = cut1 == 0 ? INT_MIN : nums1[cut1-1];&#10;        int left2 = cut2 == 0 ? INT_MIN : nums2[cut2-1];&#10;        int right1 = cut1 == n1 ? INT_MAX : nums1[cut1];&#10;        int right2 = cut2 == n2 ? INT_MAX : nums2[cut2];&#10;        if(left1 &lt;= right2 &amp;&amp; left2 &lt;= right1) {&#10;            if((n1 + n2) % 2 == 0) return (max(left1, left2) + min(right1, right2)) / 2.0;&#10;            else return max(left1, left2);&#10;        }&#10;        else if(left1 &gt; right2) high = cut1 - 1;&#10;        else low = cut1 + 1;&#10;    }&#10;    return 0.0;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">10</td>
+      <td rowspan="1">Bs 08 Allocate Minimum Number Of Pages<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: N=4, A=[12,34,67,90], M=2, Output: 113</td>
+      <td><b>Time:</b> O(N * log(sum(A) - max(A)))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td><b>M > N:</b> Impossible to allocate at least one book to each student, return -1.</td>
+      <td><b>Explanation:</b> Binary Search on Answer. The search space for pages is from `max(A)` to `sum(A)`. For a given `mid`, check if books can be allocated to `<= M` students without any student exceeding `mid` pages.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPossible(int A[], int N, int M, int maxPages) {&#10;    int students = 1, currentPages = 0;&#10;    for(int i=0; i&lt;N; i++) {&#10;        if(A[i] &gt; maxPages) return false;&#10;        if(currentPages + A[i] &gt; maxPages) {&#10;            students++; currentPages = A[i];&#10;        } else {&#10;            currentPages += A[i];&#10;        }&#10;    }&#10;    return students &lt;= M;&#10;}&#10;int findPages(int A[], int N, int M) {&#10;    if(M &gt; N) return -1;&#10;    int low = 0, high = 0, ans = -1;&#10;    for(int i=0; i&lt;N; i++) { low = max(low, A[i]); high += A[i]; }&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(isPossible(A, N, M, mid)) {&#10;            ans = mid; high = mid - 1;&#10;        } else low = mid + 1;&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
