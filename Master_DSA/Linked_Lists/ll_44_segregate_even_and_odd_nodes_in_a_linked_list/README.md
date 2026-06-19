@@ -1,0 +1,3 @@
+# ll_44_segregate_even_and_odd_nodes_in_a_linked_list
+
+Given a link list of size N, modify the list such that all the even numbers appear before all the odd numbers in the modified list. The order of appearance of numbers within each segregation should be same as that in the original list.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list5035/1' target='_blank'>GFG</a>

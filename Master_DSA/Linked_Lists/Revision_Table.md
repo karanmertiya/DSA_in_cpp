@@ -385,5 +385,86 @@
       <td>-</td>
       <td><b>Explanation:</b> Iterate through the list. When a node has a child, find the tail of the child list. Connect the tail to `node->next`, and `node->next` to the child. Update `prev` pointers. Set `node->child` to `nullptr`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">/*&#10;// Definition for a Node.&#10;class Node {&#10;public:&#10;    int val;&#10;    Node* prev;&#10;    Node* next;&#10;    Node* child;&#10;};&#10;*/&#10;Node* flatten(Node* head) {&#10;    if(!head) return nullptr;&#10;    Node* curr = head;&#10;    while(curr) {&#10;        if(curr-&gt;child) {&#10;            Node* tail = curr-&gt;child;&#10;            while(tail-&gt;next) tail = tail-&gt;next;&#10;            tail-&gt;next = curr-&gt;next;&#10;            if(curr-&gt;next) curr-&gt;next-&gt;prev = tail;&#10;            curr-&gt;next = curr-&gt;child;&#10;            curr-&gt;child-&gt;prev = curr;&#10;            curr-&gt;child = nullptr;&#10;        }&#10;        curr = curr-&gt;next;&#10;    }&#10;    return head;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">42</td>
+      <td rowspan="1">Ll 42 Multiply Two Linked Lists<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/multiply-two-linked-lists/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Traverse and compute numbers.</td>
+      <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Traverse the first linked list and compute the number it represents modulo 10^9+7. Do the same for the second linked list. Multiply the two numbers and return the result modulo 10^9+7.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long multiplyTwoLists(Node *l1, Node *l2) {&#10;    long long num1 = 0, num2 = 0;&#10;    long long mod = 1e9 + 7;&#10;    while(l1) {&#10;        num1 = (num1 * 10 + l1-&gt;data) % mod;&#10;        l1 = l1-&gt;next;&#10;    }&#10;    while(l2) {&#10;        num2 = (num2 * 10 + l2-&gt;data) % mod;&#10;        l2 = l2-&gt;next;&#10;    }&#10;    return (num1 * num2) % mod;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">43</td>
+      <td rowspan="1">Ll 43 Delete Nodes Having Greater Value On Right<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/delete-nodes-having-greater-value-on-right/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Reverse, filter, reverse.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Reverse the linked list. Traverse the reversed list and keep track of the maximum value seen so far. If a node's value is less than the maximum, delete it. Otherwise, update the maximum. Finally, reverse the list again.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* reverseList(Node* head) {&#10;    Node* prev = NULL, *curr = head, *next = NULL;&#10;    while(curr) {&#10;        next = curr-&gt;next;&#10;        curr-&gt;next = prev;&#10;        prev = curr;&#10;        curr = next;&#10;    }&#10;    return prev;&#10;}&#10;Node *compute(Node *head) {&#10;    head = reverseList(head);&#10;    Node* curr = head;&#10;    int max_val = head-&gt;data;&#10;    while(curr &amp;&amp; curr-&gt;next) {&#10;        if(curr-&gt;next-&gt;data &lt; max_val) {&#10;            Node* temp = curr-&gt;next;&#10;            curr-&gt;next = temp-&gt;next;&#10;            delete temp;&#10;        } else {&#10;            curr = curr-&gt;next;&#10;            max_val = curr-&gt;data;&#10;        }&#10;    }&#10;    return reverseList(head);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">44</td>
+      <td rowspan="1">Ll 44 Segregate Even And Odd Nodes In A Linked List<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list5035/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Two pointers for even and odd.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create two dummy nodes, one for the even list and one for the odd list. Traverse the original list and append even nodes to the even list and odd nodes to the odd list. Finally, connect the end of the even list to the head of the odd list and terminate the odd list with NULL.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* divide(int N, Node *head) {&#10;    Node* evenStart = NULL, *evenEnd = NULL;&#10;    Node* oddStart = NULL, *oddEnd = NULL;&#10;    Node* curr = head;&#10;    while(curr) {&#10;        int val = curr-&gt;data;&#10;        if(val % 2 == 0) {&#10;            if(!evenStart) { evenStart = curr; evenEnd = evenStart; }&#10;            else { evenEnd-&gt;next = curr; evenEnd = evenEnd-&gt;next; }&#10;        } else {&#10;            if(!oddStart) { oddStart = curr; oddEnd = oddStart; }&#10;            else { oddEnd-&gt;next = curr; oddEnd = oddEnd-&gt;next; }&#10;        }&#10;        curr = curr-&gt;next;&#10;    }&#10;    if(!oddStart || !evenStart) return head;&#10;    evenEnd-&gt;next = oddStart;&#10;    oddEnd-&gt;next = NULL;&#10;    return evenStart;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">45</td>
+      <td rowspan="1">Ll 45 Nth Node From End Of Linked List<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Two pointers.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use two pointers, `fast` and `slow`. Move `fast` `N` steps ahead. If `fast` becomes NULL before `N` steps, return -1 (N > length). Then move both `fast` and `slow` one step at a time until `fast` reaches the end. `slow` will be pointing to the Nth node from the end.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int getNthFromLast(Node *head, int n) {&#10;    Node* fast = head;&#10;    Node* slow = head;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(!fast) return -1;&#10;        fast = fast-&gt;next;&#10;    }&#10;    while(fast) {&#10;        slow = slow-&gt;next;&#10;        fast = fast-&gt;next;&#10;    }&#10;    return slow-&gt;data;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">46</td>
+      <td rowspan="1">Ll 46 First Non Repeating Character In A Stream<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/first-non-repeating-character-in-a-stream1216/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Queue and frequency array.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <queue></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a queue to maintain the order of characters and an array to keep track of their frequencies. For each character, increment its frequency and push it to the queue. Then, while the queue is not empty and the frequency of the front character is greater than 1, pop it. If the queue is empty, append '#', else append the front character.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string FirstNonRepeating(string A) {&#10;    vector&lt;int&gt; freq(26, 0);&#10;    queue&lt;char&gt; q;&#10;    string res = &quot;&quot;;&#10;    for(char c : A) {&#10;        freq[c - &#x27;a&#x27;]++;&#10;        q.push(c);&#10;        while(!q.empty() &amp;&amp; freq[q.front() - &#x27;a&#x27;] &gt; 1) q.pop();&#10;        if(q.empty()) res += &#x27;#&#x27;;&#10;        else res += q.front();&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">47</td>
+      <td rowspan="1">Ll 47 Clone A Linked List With Next And Random Pointer<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Interleaving lists.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a copy of each node and insert it immediately after the original node. Then, set the random pointers for the copied nodes (`curr->next->arb = curr->arb ? curr->arb->next : NULL`). Finally, separate the original and copied lists.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node *copyList(Node *head) {&#10;    if(!head) return NULL;&#10;    Node* curr = head;&#10;    while(curr) {&#10;        Node* temp = new Node(curr-&gt;data);&#10;        temp-&gt;next = curr-&gt;next;&#10;        curr-&gt;next = temp;&#10;        curr = temp-&gt;next;&#10;    }&#10;    curr = head;&#10;    while(curr) {&#10;        if(curr-&gt;arb) curr-&gt;next-&gt;arb = curr-&gt;arb-&gt;next;&#10;        curr = curr-&gt;next-&gt;next;&#10;    }&#10;    curr = head;&#10;    Node* copyHead = head-&gt;next, *copyCurr = copyHead;&#10;    while(curr) {&#10;        curr-&gt;next = curr-&gt;next-&gt;next;&#10;        if(copyCurr-&gt;next) copyCurr-&gt;next = copyCurr-&gt;next-&gt;next;&#10;        curr = curr-&gt;next;&#10;        copyCurr = copyCurr-&gt;next;&#10;    }&#10;    return copyHead;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">48</td>
+      <td rowspan="1">Ll 48 Merge K Sorted Linked Lists<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/merge-k-sorted-linked-lists/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Min-Heap.</td>
+      <td><b>Time:</b> O(N * K * log K)<br><b>Space:</b> O(K)</td>
+      <td><code>#include <queue></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a min-heap and push the head of each linked list into it. Pop the minimum element, append it to the result list, and if the popped node has a next node, push the next node into the heap. Continue until the heap is empty.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct compare {&#10;    bool operator()(Node* a, Node* b) {&#10;        return a-&gt;data &gt; b-&gt;data;&#10;    }&#10;};&#10;Node * mergeKLists(Node *arr[], int K) {&#10;    priority_queue&lt;Node*, vector&lt;Node*&gt;, compare&gt; pq;&#10;    for(int i = 0; i &lt; K; i++) {&#10;        if(arr[i]) pq.push(arr[i]);&#10;    }&#10;    Node* dummy = new Node(0);&#10;    Node* tail = dummy;&#10;    while(!pq.empty()) {&#10;        Node* curr = pq.top();&#10;        pq.pop();&#10;        tail-&gt;next = curr;&#10;        tail = tail-&gt;next;&#10;        if(curr-&gt;next) pq.push(curr-&gt;next);&#10;    }&#10;    return dummy-&gt;next;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">49</td>
+      <td rowspan="1">Ll 49 Flattening A Linked List<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive merging.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N) for recursion</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Recursively flatten the `next` list, then merge the current list (`bottom`) with the flattened `next` list using a `merge` function similar to merging two sorted linked lists.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* merge(Node* a, Node* b) {&#10;    if(!a) return b;&#10;    if(!b) return a;&#10;    Node* res;&#10;    if(a-&gt;data &lt; b-&gt;data) {&#10;        res = a;&#10;        res-&gt;bottom = merge(a-&gt;bottom, b);&#10;    } else {&#10;        res = b;&#10;        res-&gt;bottom = merge(a, b-&gt;bottom);&#10;    }&#10;    res-&gt;next = NULL;&#10;    return res;&#10;}&#10;Node *flatten(Node *root) {&#10;    if(!root || !root-&gt;next) return root;&#10;    root-&gt;next = flatten(root-&gt;next);&#10;    root = merge(root, root-&gt;next);&#10;    return root;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">50</td>
+      <td rowspan="1">Ll 50 Reverse A Linked List In Groups Of Given Size<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive grouping.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N/K)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Reverse the first `k` nodes of the linked list iteratively. After reversing, the `head` pointer will be the end of the reversed group, and `curr` will point to the next node. Recursively call the function for `curr` and set `head->next` to the result.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct node *reverse (struct node *head, int k) {&#10;    if(!head) return NULL;&#10;    struct node* curr = head, *prev = NULL, *next = NULL;&#10;    int count = 0;&#10;    while(curr &amp;&amp; count &lt; k) {&#10;        next = curr-&gt;next;&#10;        curr-&gt;next = prev;&#10;        prev = curr;&#10;        curr = next;&#10;        count++;&#10;    }&#10;    if(next) head-&gt;next = reverse(next, k);&#10;    return prev;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

@@ -187,5 +187,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Create a prefix XOR array. Query answer for `[L, R]` is `prefix[R] ^ prefix[L-1]`. If `L == 0`, answer is `prefix[R]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; xorQueries(vector&lt;int&gt;&amp; arr, vector&lt;vector&lt;int&gt;&gt;&amp; queries) {&#10;    vector&lt;int&gt; pref(arr.size());&#10;    pref[0] = arr[0];&#10;    for(int i=1; i&lt;arr.size(); i++) pref[i] = pref[i-1] ^ arr[i];&#10;    vector&lt;int&gt; ans;&#10;    for(auto q : queries) {&#10;        if(q[0] == 0) ans.push_back(pref[q[1]]);&#10;        else ans.push_back(pref[q[1]] ^ pref[q[0]-1]);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">20</td>
+      <td rowspan="1">Bm 20 Count Set Bits In An Integer<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/set-bits0143/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Brian Kernighan's algorithm.</td>
+      <td><b>Time:</b> O(log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Brian Kernighan's algorithm: `n = n & (n - 1)` unsets the rightmost set bit. Keep doing this until `n` becomes 0 and count the operations.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int setBits(int N) {&#10;    int count = 0;&#10;    while(N &gt; 0) {&#10;        N = N &amp; (N - 1);&#10;        count++;&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">21</td>
+      <td rowspan="1">Bm 21 Find The Two Non Repeating Elements In An Array Of Repeating Elements<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/finding-the-numbers0215/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> XOR and rightmost set bit.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> 1. XOR all elements to get `x ^ y`. 2. Find the rightmost set bit in `x ^ y` using `(x ^ y) & -(x ^ y)`. 3. Divide elements into two groups based on this bit. 4. XOR elements in each group to get `x` and `y`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; singleNumber(vector&lt;int&gt; nums) {&#10;    long long XOR = 0;&#10;    for(int n : nums) XOR ^= n;&#10;    long long rightmost_set_bit = XOR &amp; ~(XOR - 1);&#10;    int x = 0, y = 0;&#10;    for(int n : nums) {&#10;        if(n &amp; rightmost_set_bit) x ^= n;&#10;        else y ^= n;&#10;    }&#10;    if(x &gt; y) swap(x, y);&#10;    return {x, y};&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">22</td>
+      <td rowspan="1">Bm 22 Count Number Of Bits To Be Flipped To Convert A To B<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/bit-difference-1587115620/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Count set bits in XOR.</td>
+      <td><b>Time:</b> O(log(A^B))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Take the XOR of A and B (`A ^ B`). The number of set bits in the result is the number of bits that need to be flipped. Use Brian Kernighan's algorithm to count.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countBitsFlip(int a, int b){&#10;    int n = a ^ b;&#10;    int count = 0;&#10;    while(n &gt; 0) {&#10;        n = n &amp; (n - 1);&#10;        count++;&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">23</td>
+      <td rowspan="1">Bm 23 Count Total Set Bits In All Numbers From 1 To N<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/count-total-set-bits-1587115620/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive approach based on largest power of 2.</td>
+      <td><b>Time:</b> O(log N)<br><b>Space:</b> O(log N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Find largest power of 2 <= n (`x`). Bits up to `2^x - 1` are `x * 2^(x-1)`. The MSB of remaining numbers is `n - 2^x + 1`. Then recursively call for `n - 2^x`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int largestPowerOf2inRange(int n) {&#10;    int x = 0;&#10;    while((1 &lt;&lt; x) &lt;= n) x++;&#10;    return x - 1;&#10;}&#10;int countSetBits(int n) {&#10;    if(n &lt;= 0) return 0;&#10;    int x = largestPowerOf2inRange(n);&#10;    int bitsUpTo2x = x * (1 &lt;&lt; (x - 1));&#10;    int msbOfRest = n - (1 &lt;&lt; x) + 1;&#10;    int rest = n - (1 &lt;&lt; x);&#10;    return bitsUpTo2x + msbOfRest + countSetBits(rest);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">24</td>
+      <td rowspan="1">Bm 24 Program To Find Whether A No Is Power Of Two<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/power-of-2-1587115620/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Bitwise AND.</td>
+      <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If `N` is a power of 2, it has only 1 set bit. `N & (N - 1)` unsets the rightmost set bit. So if `N` is a power of 2, `N & (N - 1)` will be 0.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPowerofTwo(long long n){&#10;    if(n == 0) return false;&#10;    return (n &amp; (n - 1)) == 0;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">25</td>
+      <td rowspan="1">Bm 25 Find Position Of The Only Set Bit<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-position-of-set-bit3706/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Log base 2.</td>
+      <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> First, check if `N` is a power of 2 using `N & (N - 1) == 0`. If yes, the position is `log2(N) + 1`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findPosition(int N) {&#10;    if(N == 0 || (N &amp; (N - 1)) != 0) return -1;&#10;    return log2(N) + 1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">26</td>
+      <td rowspan="1">Bm 26 Copy Set Bits In A Range<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/copy-set-bits-in-range0623/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Masking.</td>
+      <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a mask of length `r - l + 1` with all 1s. Shift this mask left by `l - 1`. Apply this mask to `y` using AND (`y & mask`). Finally, OR the result with `x`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int setSetBit(int x, int y, int l, int r){&#10;    int maskLen = r - l + 1;&#10;    int mask = ((1 &lt;&lt; maskLen) - 1) &lt;&lt; (l - 1);&#10;    int yMasked = y &amp; mask;&#10;    return x | yMasked;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">27</td>
+      <td rowspan="1">Bm 27 Divide Two Integers Without Using Multiplication Division And Mod Operator<br><br></b> <a href='https://leetcode.com/problems/divide-two-integers/' target='_blank'>LeetCode 29</a></td>
+      <td rowspan="1"><b>Example 1:</b> Bit shifting.</td>
+      <td><b>Time:</b> O(log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Keep shifting `divisor` left by `i` bits until it's just smaller than `dividend`. Subtract `divisor << i` from `dividend` and add `1 << i` to the `quotient`. Repeat.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int divide(int dividend, int divisor) {&#10;    if(dividend == INT_MIN &amp;&amp; divisor == -1) return INT_MAX;&#10;    long long a = abs((long long)dividend);&#10;    long long b = abs((long long)divisor);&#10;    int res = 0;&#10;    while(a - b &gt;= 0) {&#10;        int x = 0;&#10;        while(a - (b &lt;&lt; 1 &lt;&lt; x) &gt;= 0) x++;&#10;        res += 1 &lt;&lt; x;&#10;        a -= b &lt;&lt; x;&#10;    }&#10;    return (dividend &gt; 0) == (divisor &gt; 0) ? res : -res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">28</td>
+      <td rowspan="1">Bm 28 Calculate Square Of A Number Without Using And Pow<br><br></b> <a href='https://www.geeksforgeeks.org/calculate-square-of-a-number-without-using-and-pow/' target='_blank'>Article</a></td>
+      <td rowspan="1"><b>Example 1:</b> Bit shifting and adding.</td>
+      <td><b>Time:</b> O(log N)<br><b>Space:</b> O(log N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If `n` is even, `n = 2*x`, then `n^2 = 4*x^2 = (x^2) << 2`. If `n` is odd, `n = 2*x + 1`, then `n^2 = 4*x^2 + 4*x + 1 = ((x^2 + x) << 2) + 1`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int square(int n) {&#10;    if(n == 0) return 0;&#10;    if(n &lt; 0) n = -n;&#10;    int x = n &gt;&gt; 1;&#10;    if(n &amp; 1) return ((square(x) &lt;&lt; 2) + (x &lt;&lt; 2) + 1);&#10;    else return (square(x) &lt;&lt; 2);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">29</td>
+      <td rowspan="1">Bm 29 Power Set<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/power-set4302/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Bit manipulation (0 to 2^N - 1).</td>
+      <td><b>Time:</b> O(N * 2^N)<br><b>Space:</b> O(N * 2^N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate from 1 to `(1 << n) - 1`. For each number, its binary representation indicates which characters of the string to include. Example: 011 means include 1st and 2nd char.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;string&gt; AllPossibleStrings(string s){&#10;    int n = s.length();&#10;    vector&lt;string&gt; res;&#10;    for(int i = 1; i &lt; (1 &lt;&lt; n); i++) {&#10;        string sub = &quot;&quot;;&#10;        for(int j = 0; j &lt; n; j++) {&#10;            if(i &amp; (1 &lt;&lt; j)) sub += s[j];&#10;        }&#10;        res.push_back(sub);&#10;    }&#10;    sort(res.begin(), res.end());&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
