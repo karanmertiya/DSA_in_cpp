@@ -421,5 +421,167 @@
       <td>-</td>
       <td><b>Explanation:</b> Same as 'Distance K' problem. Map parents. Find the start node. Perform BFS from start node. The time taken is the number of levels in BFS until all reachable nodes are visited.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* markParents(TreeNode* root, unordered_map&lt;TreeNode*, TreeNode*&gt;&amp; m, int start) {&#10;    queue&lt;TreeNode*&gt; q;&#10;    q.push(root);&#10;    TreeNode* res;&#10;    while(!q.empty()) {&#10;        TreeNode* node = q.front(); q.pop();&#10;        if(node-&gt;val == start) res = node;&#10;        if(node-&gt;left) {&#10;            m[node-&gt;left] = node;&#10;            q.push(node-&gt;left);&#10;        }&#10;        if(node-&gt;right) {&#10;            m[node-&gt;right] = node;&#10;            q.push(node-&gt;right);&#10;        }&#10;    }&#10;    return res;&#10;}&#10;int amountOfTime(TreeNode* root, int start) {&#10;    unordered_map&lt;TreeNode*, TreeNode*&gt; m;&#10;    TreeNode* target = markParents(root, m, start);&#10;    unordered_map&lt;TreeNode*, int&gt; vis;&#10;    queue&lt;TreeNode*&gt; q;&#10;    q.push(target);&#10;    vis[target] = 1;&#10;    int maxi = 0;&#10;    while(!q.empty()) {&#10;        int sz = q.size();&#10;        int fl = 0;&#10;        for(int i=0; i&lt;sz; i++) {&#10;            auto node = q.front(); q.pop();&#10;            if(node-&gt;left &amp;&amp; !vis[node-&gt;left]) {&#10;                fl = 1;&#10;                vis[node-&gt;left] = 1;&#10;                q.push(node-&gt;left);&#10;            }&#10;            if(node-&gt;right &amp;&amp; !vis[node-&gt;right]) {&#10;                fl = 1;&#10;                vis[node-&gt;right] = 1;&#10;                q.push(node-&gt;right);&#10;            }&#10;            if(m[node] &amp;&amp; !vis[m[node]]) {&#10;                fl = 1;&#10;                vis[m[node]] = 1;&#10;                q.push(m[node]);&#10;            }&#10;        }&#10;        if(fl) maxi++;&#10;    }&#10;    return maxi;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">46</td>
+      <td rowspan="1">Tree 45 Count Complete Tree Nodes<br><br></b> <a href='https://leetcode.com/problems/count-complete-tree-nodes/' target='_blank'>LeetCode 222</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive with Height check.</td>
+      <td><b>Time:</b> O(log^2 N)<br><b>Space:</b> O(log N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Compute the left height (following left child) and right height (following right child) of the tree. If they are equal, the tree is a full binary tree, and the number of nodes is `2^h - 1`. If they are not equal, recursively count the nodes in the left and right subtrees and add 1 for the root.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int getLeftHeight(TreeNode* node) {&#10;    int h = 0;&#10;    while(node) {&#10;        h++;&#10;        node = node-&gt;left;&#10;    }&#10;    return h;&#10;}&#10;int getRightHeight(TreeNode* node) {&#10;    int h = 0;&#10;    while(node) {&#10;        h++;&#10;        node = node-&gt;right;&#10;    }&#10;    return h;&#10;}&#10;int countNodes(TreeNode* root) {&#10;    if(!root) return 0;&#10;    int lh = getLeftHeight(root);&#10;    int rh = getRightHeight(root);&#10;    if(lh == rh) return (1 &lt;&lt; lh) - 1;&#10;    return 1 + countNodes(root-&gt;left) + countNodes(root-&gt;right);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">47</td>
+      <td rowspan="1">Tree 46 Serialize And Deserialize Binary Tree<br><br></b> <a href='https://leetcode.com/problems/serialize-and-deserialize-binary-tree/' target='_blank'>LeetCode 297</a></td>
+      <td rowspan="1"><b>Example 1:</b> Level-order traversal (BFS) with a queue.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <queue>\n#include <sstream></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Serialize: Use a queue for BFS. For every node, if it's not null, append its value and push its children. If null, append 'null' or '#'. Deserialize: Split the string. Use a queue. The first element is the root. For each node popped from the queue, read the next two elements from the list to form its left and right children, push non-null children to the queue.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class Codec {&#10;public:&#10;    string serialize(TreeNode* root) {&#10;        if(!root) return &quot;&quot;;&#10;        string s = &quot;&quot;;&#10;        queue&lt;TreeNode*&gt; q;&#10;        q.push(root);&#10;        while(!q.empty()) {&#10;            TreeNode* curNode = q.front(); q.pop();&#10;            if(curNode == NULL) s.append(&quot;#,&quot;);&#10;            else {&#10;                s.append(to_string(curNode-&gt;val) + &quot;,&quot;);&#10;                q.push(curNode-&gt;left);&#10;                q.push(curNode-&gt;right);&#10;            }&#10;        }&#10;        return s;&#10;    }&#10;    TreeNode* deserialize(string data) {&#10;        if(data.size() == 0) return NULL;&#10;        stringstream s(data);&#10;        string str;&#10;        getline(s, str, &#x27;,&#x27;);&#10;        TreeNode* root = new TreeNode(stoi(str));&#10;        queue&lt;TreeNode*&gt; q;&#10;        q.push(root);&#10;        while(!q.empty()) {&#10;            TreeNode* node = q.front(); q.pop();&#10;            getline(s, str, &#x27;,&#x27;);&#10;            if(str == &quot;#&quot;) {&#10;                node-&gt;left = NULL;&#10;            } else {&#10;                TreeNode* leftNode = new TreeNode(stoi(str));&#10;                node-&gt;left = leftNode;&#10;                q.push(leftNode);&#10;            }&#10;            getline(s, str, &#x27;,&#x27;);&#10;            if(str == &quot;#&quot;) {&#10;                node-&gt;right = NULL;&#10;            } else {&#10;                TreeNode* rightNode = new TreeNode(stoi(str));&#10;                node-&gt;right = rightNode;&#10;                q.push(rightNode);&#10;            }&#10;        }&#10;        return root;&#10;    }&#10;};</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">48</td>
+      <td rowspan="1">Tree 47 Morris Inorder Traversal<br><br></b> <a href='https://leetcode.com/problems/binary-tree-inorder-traversal/' target='_blank'>LeetCode 94</a></td>
+      <td rowspan="1"><b>Example 1:</b> Threaded Binary Tree.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If left child is null, process current node, move to right. Else, find predecessor (rightmost node in left subtree). If predecessor's right is null, make it point to current (thread), move to left. If predecessor's right is current, remove thread, process current, move to right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; inorderTraversal(TreeNode* root) {&#10;    vector&lt;int&gt; inorder;&#10;    TreeNode* curr = root;&#10;    while(curr != NULL) {&#10;        if(curr-&gt;left == NULL) {&#10;            inorder.push_back(curr-&gt;val);&#10;            curr = curr-&gt;right;&#10;        } else {&#10;            TreeNode* prev = curr-&gt;left;&#10;            while(prev-&gt;right &amp;&amp; prev-&gt;right != curr) {&#10;                prev = prev-&gt;right;&#10;            }&#10;            if(prev-&gt;right == NULL) {&#10;                prev-&gt;right = curr;&#10;                curr = curr-&gt;left;&#10;            } else {&#10;                prev-&gt;right = NULL;&#10;                inorder.push_back(curr-&gt;val);&#10;                curr = curr-&gt;right;&#10;            }&#10;        }&#10;    }&#10;    return inorder;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">49</td>
+      <td rowspan="1">Tree 48 Morris Preorder Traversal<br><br></b> <a href='https://leetcode.com/problems/binary-tree-preorder-traversal/' target='_blank'>LeetCode 144</a></td>
+      <td rowspan="1"><b>Example 1:</b> Threaded Binary Tree.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Similar to Morris Inorder. If left child is null, process current, move right. Else, find predecessor. If predecessor's right is null, process current, make thread, move left. If predecessor's right is current, remove thread, move right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; preorderTraversal(TreeNode* root) {&#10;    vector&lt;int&gt; preorder;&#10;    TreeNode* curr = root;&#10;    while(curr != NULL) {&#10;        if(curr-&gt;left == NULL) {&#10;            preorder.push_back(curr-&gt;val);&#10;            curr = curr-&gt;right;&#10;        } else {&#10;            TreeNode* prev = curr-&gt;left;&#10;            while(prev-&gt;right &amp;&amp; prev-&gt;right != curr) {&#10;                prev = prev-&gt;right;&#10;            }&#10;            if(prev-&gt;right == NULL) {&#10;                prev-&gt;right = curr;&#10;                preorder.push_back(curr-&gt;val);&#10;                curr = curr-&gt;left;&#10;            } else {&#10;                prev-&gt;right = NULL;&#10;                curr = curr-&gt;right;&#10;            }&#10;        }&#10;    }&#10;    return preorder;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">50</td>
+      <td rowspan="1">Tree 49 Flatten Binary Tree To Linked List<br><br></b> <a href='https://leetcode.com/problems/flatten-binary-tree-to-linked-list/' target='_blank'>LeetCode 114</a></td>
+      <td rowspan="1"><b>Example 1:</b> Reverse Postorder / Stack / Morris.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Morris-like approach (O(1) space): If node has a left child, find the rightmost node in the left subtree. Connect it to the current node's right child. Move the left child to the right child, and set the left child to null. Move to the next right node.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void flatten(TreeNode* root) {&#10;    TreeNode* curr = root;&#10;    while(curr != NULL) {&#10;        if(curr-&gt;left != NULL) {&#10;            TreeNode* prev = curr-&gt;left;&#10;            while(prev-&gt;right) {&#10;                prev = prev-&gt;right;&#10;            }&#10;            prev-&gt;right = curr-&gt;right;&#10;            curr-&gt;right = curr-&gt;left;&#10;            curr-&gt;left = NULL;&#10;        }&#10;        curr = curr-&gt;right;&#10;    }&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">51</td>
+      <td rowspan="1">Tree 50 Search In A Binary Search Tree<br><br></b> <a href='https://leetcode.com/problems/search-in-a-binary-search-tree/' target='_blank'>LeetCode 700</a></td>
+      <td rowspan="1"><b>Example 1:</b> Iterative or Recursive.</td>
+      <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Start at root. If root is null or its value is `val`, return root. If `val < root.val`, go left. Else go right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* searchBST(TreeNode* root, int val) {&#10;    while(root != NULL &amp;&amp; root-&gt;val != val) {&#10;        root = val &lt; root-&gt;val ? root-&gt;left : root-&gt;right;&#10;    }&#10;    return root;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">52</td>
+      <td rowspan="1">Tree 51 Find Minimum In Binary Search Tree<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-element-in-bst/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Leftmost node.</td>
+      <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Traverse the left children until a node with no left child is reached. That node contains the minimum value.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minValue(TreeNode* root) {&#10;    if(root == NULL) return -1;&#10;    while(root-&gt;left != NULL) {&#10;        root = root-&gt;left;&#10;    }&#10;    return root-&gt;val;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">53</td>
+      <td rowspan="1">Tree 52 Insert Into A Binary Search Tree<br><br></b> <a href='https://leetcode.com/problems/insert-into-a-binary-search-tree/' target='_blank'>LeetCode 701</a></td>
+      <td rowspan="1"><b>Example 1:</b> Iterative search and insert.</td>
+      <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Traverse the tree. If `val < current.val`, go left. If left is null, insert here. If `val > current.val`, go right. If right is null, insert here.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* insertIntoBST(TreeNode* root, int val) {&#10;    if(root == NULL) return new TreeNode(val);&#10;    TreeNode* curr = root;&#10;    while(true) {&#10;        if(curr-&gt;val &lt;= val) {&#10;            if(curr-&gt;right != NULL) curr = curr-&gt;right;&#10;            else {&#10;                curr-&gt;right = new TreeNode(val);&#10;                break;&#10;            }&#10;        } else {&#10;            if(curr-&gt;left != NULL) curr = curr-&gt;left;&#10;            else {&#10;                curr-&gt;left = new TreeNode(val);&#10;                break;&#10;            }&#10;        }&#10;    }&#10;    return root;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">54</td>
+      <td rowspan="1">Tree 53 Delete Node In A Bst<br><br></b> <a href='https://leetcode.com/problems/delete-node-in-a-bst/' target='_blank'>LeetCode 450</a></td>
+      <td rowspan="1"><b>Example 1:</b> Find and Replace.</td>
+      <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Search for the node. If found, there are 3 cases: Node is a leaf (just remove), Node has 1 child (replace with child), Node has 2 children (find inorder successor, i.e., min in right subtree, copy value, delete successor from right subtree). Alternatively, connect the left subtree to the leftmost node of the right subtree.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* helper(TreeNode* root) {&#10;    if(root-&gt;left == NULL) return root-&gt;right;&#10;    if(root-&gt;right == NULL) return root-&gt;left;&#10;    TreeNode* rightChild = root-&gt;right;&#10;    TreeNode* lastRight = root-&gt;left;&#10;    while(lastRight-&gt;right != NULL) lastRight = lastRight-&gt;right;&#10;    lastRight-&gt;right = rightChild;&#10;    return root-&gt;left;&#10;}&#10;TreeNode* deleteNode(TreeNode* root, int key) {&#10;    if(root == NULL) return NULL;&#10;    if(root-&gt;val == key) return helper(root);&#10;    TreeNode* dummy = root;&#10;    while(root != NULL) {&#10;        if(root-&gt;val &gt; key) {&#10;            if(root-&gt;left != NULL &amp;&amp; root-&gt;left-&gt;val == key) {&#10;                root-&gt;left = helper(root-&gt;left);&#10;                break;&#10;            } else {&#10;                root = root-&gt;left;&#10;            }&#10;        } else {&#10;            if(root-&gt;right != NULL &amp;&amp; root-&gt;right-&gt;val == key) {&#10;                root-&gt;right = helper(root-&gt;right);&#10;                break;&#10;            } else {&#10;                root = root-&gt;right;&#10;            }&#10;        }&#10;    }&#10;    return dummy;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">55</td>
+      <td rowspan="1">Tree 54 Kth Smallest Element In A Bst<br><br></b> <a href='https://leetcode.com/problems/kth-smallest-element-in-a-bst/' target='_blank'>LeetCode 230</a></td>
+      <td rowspan="1"><b>Example 1:</b> Inorder traversal.</td>
+      <td><b>Time:</b> O(K) or O(N)<br><b>Space:</b> O(H) or O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Perform an inorder traversal (Recursive or Iterative/Morris) and keep track of count. When count reaches `k`, return the node's value.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int kthSmallest(TreeNode* root, int k) {&#10;    int count = 0, ans = -1;&#10;    TreeNode* curr = root;&#10;    while(curr != NULL) {&#10;        if(curr-&gt;left == NULL) {&#10;            count++;&#10;            if(count == k) ans = curr-&gt;val;&#10;            curr = curr-&gt;right;&#10;        } else {&#10;            TreeNode* prev = curr-&gt;left;&#10;            while(prev-&gt;right &amp;&amp; prev-&gt;right != curr) prev = prev-&gt;right;&#10;            if(prev-&gt;right == NULL) {&#10;                prev-&gt;right = curr;&#10;                curr = curr-&gt;left;&#10;            } else {&#10;                prev-&gt;right = NULL;&#10;                count++;&#10;                if(count == k) ans = curr-&gt;val;&#10;                curr = curr-&gt;right;&#10;            }&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">56</td>
+      <td rowspan="1">Tree 55 Validate Binary Search Tree<br><br></b> <a href='https://leetcode.com/problems/validate-binary-search-tree/' target='_blank'>LeetCode 98</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive with Range.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Pass a valid range `(min_val, max_val)` for each node. For the root, it's `(-infinity, infinity)`. If node value is outside range, return false. Recursively check left subtree with range `(min_val, node.val)` and right subtree with `(node.val, max_val)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isValidBST(TreeNode* root, long minVal, long maxVal) {&#10;    if(root == NULL) return true;&#10;    if(root-&gt;val &gt;= maxVal || root-&gt;val &lt;= minVal) return false;&#10;    return isValidBST(root-&gt;left, minVal, root-&gt;val) &amp;&amp; isValidBST(root-&gt;right, root-&gt;val, maxVal);&#10;}&#10;bool isValidBST(TreeNode* root) {&#10;    return isValidBST(root, LONG_MIN, LONG_MAX);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">57</td>
+      <td rowspan="1">Tree 56 Lowest Common Ancestor Of A Binary Search Tree<br><br></b> <a href='https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/' target='_blank'>LeetCode 235</a></td>
+      <td rowspan="1"><b>Example 1:</b> Iterative Traversal based on BST property.</td>
+      <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Start at root. If both `p` and `q` are less than root, move left. If both are greater, move right. Otherwise, the current node is the LCA.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {&#10;    while(root != NULL) {&#10;        if(p-&gt;val &lt; root-&gt;val &amp;&amp; q-&gt;val &lt; root-&gt;val) {&#10;            root = root-&gt;left;&#10;        } else if(p-&gt;val &gt; root-&gt;val &amp;&amp; q-&gt;val &gt; root-&gt;val) {&#10;            root = root-&gt;right;&#10;        } else {&#10;            return root;&#10;        }&#10;    }&#10;    return NULL;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">58</td>
+      <td rowspan="1">Tree 57 Construct Binary Search Tree From Preorder Traversal<br><br></b> <a href='https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/' target='_blank'>LeetCode 1008</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive with upper bound.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Keep track of an index for the `preorder` array and a maximum valid bound. To build the left subtree, the upper bound is the current node's value. To build the right subtree, the bound remains the parent's bound. If the current value is greater than the bound, return NULL.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* build(vector&lt;int&gt;&amp; preorder, int&amp; i, int bound) {&#10;    if(i == preorder.size() || preorder[i] &gt; bound) return NULL;&#10;    TreeNode* root = new TreeNode(preorder[i++]);&#10;    root-&gt;left = build(preorder, i, root-&gt;val);&#10;    root-&gt;right = build(preorder, i, bound);&#10;    return root;&#10;}&#10;TreeNode* bstFromPreorder(vector&lt;int&gt;&amp; preorder) {&#10;    int i = 0;&#10;    return build(preorder, i, INT_MAX);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">59</td>
+      <td rowspan="1">Tree 58 Inorder Successor In Bst<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/populate-inorder-successor-for-all-nodes/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Iterative search.</td>
+      <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Start from root. If `p.val >= root.val`, the successor must be in the right subtree (`root = root.right`). If `p.val < root.val`, the current root could be the successor, so record it and search the left subtree for a closer successor (`successor = root; root = root.left`).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p) {&#10;    TreeNode* successor = NULL;&#10;    while(root != NULL) {&#10;        if(p-&gt;val &gt;= root-&gt;val) {&#10;            root = root-&gt;right;&#10;        } else {&#10;            successor = root;&#10;            root = root-&gt;left;&#10;        }&#10;    }&#10;    return successor;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">60</td>
+      <td rowspan="1">Tree 59 Binary Search Tree Iterator<br><br></b> <a href='https://leetcode.com/problems/binary-search-tree-iterator/' target='_blank'>LeetCode 173</a></td>
+      <td rowspan="1"><b>Example 1:</b> Stack based partial traversal.</td>
+      <td><b>Time:</b> O(1) amortized for next/hasNext<br><b>Space:</b> O(H)</td>
+      <td><code>#include <stack></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a stack to simulate inorder traversal. In constructor, push all left children of root to stack. For `next()`, pop the top node, push all left children of its right child, and return the popped node's value. `hasNext()` checks if stack is not empty.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class BSTIterator {&#10;    stack&lt;TreeNode*&gt; st;&#10;    void pushAll(TreeNode* node) {&#10;        for(; node != NULL; st.push(node), node = node-&gt;left);&#10;    }&#10;public:&#10;    BSTIterator(TreeNode* root) {&#10;        pushAll(root);&#10;    }&#10;    int next() {&#10;        TreeNode* tmpNode = st.top();&#10;        st.pop();&#10;        pushAll(tmpNode-&gt;right);&#10;        return tmpNode-&gt;val;&#10;    }&#10;    bool hasNext() {&#10;        return !st.empty();&#10;    }&#10;};</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">61</td>
+      <td rowspan="1">Tree 60 Two Sum Iv Input Is A Bst<br><br></b> <a href='https://leetcode.com/problems/two-sum-iv-input-is-a-bst/' target='_blank'>LeetCode 653</a></td>
+      <td rowspan="1"><b>Example 1:</b> Two Pointers using dual BST Iterators.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td><code>#include <stack></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Implement two BST iterators: one for normal inorder (next) and one for reverse inorder (before). Set `i = next()` and `j = before()`. While `i < j`, if `i + j == k` return true, if `i + j < k` increment `i`, else decrement `j`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class BSTIterator {&#10;    stack&lt;TreeNode*&gt; st;&#10;    bool reverse = true;&#10;    void pushAll(TreeNode* node) {&#10;        while(node) {&#10;            st.push(node);&#10;            node = reverse ? node-&gt;right : node-&gt;left;&#10;        }&#10;    }&#10;public:&#10;    BSTIterator(TreeNode* root, bool isReverse) {&#10;        reverse = isReverse;&#10;        pushAll(root);&#10;    }&#10;    int next() {&#10;        TreeNode* tmp = st.top(); st.pop();&#10;        pushAll(reverse ? tmp-&gt;left : tmp-&gt;right);&#10;        return tmp-&gt;val;&#10;    }&#10;};&#10;bool findTarget(TreeNode* root, int k) {&#10;    if(!root) return false;&#10;    BSTIterator l(root, false);&#10;    BSTIterator r(root, true);&#10;    int i = l.next();&#10;    int j = r.next();&#10;    while(i &lt; j) {&#10;        if(i + j == k) return true;&#10;        else if(i + j &lt; k) i = l.next();&#10;        else j = r.next();&#10;    }&#10;    return false;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">62</td>
+      <td rowspan="1">Tree 61 Recover Binary Search Tree<br><br></b> <a href='https://leetcode.com/problems/recover-binary-search-tree/' target='_blank'>LeetCode 99</a></td>
+      <td rowspan="1"><b>Example 1:</b> Inorder Traversal looking for violations.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H) or O(1) with Morris</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain `prev`, `first`, `middle`, and `last` pointers during inorder traversal. If `prev.val > root.val`, a violation occurred. The first violation points to `first=prev` and `middle=root`. A second violation (if any) points to `last=root`. Finally, swap values of `first` and `last` (or `first` and `middle` if adjacent).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* first; TreeNode* prev; TreeNode* middle; TreeNode* last;&#10;void inorder(TreeNode* root) {&#10;    if(!root) return;&#10;    inorder(root-&gt;left);&#10;    if(prev &amp;&amp; root-&gt;val &lt; prev-&gt;val) {&#10;        if(!first) {&#10;            first = prev;&#10;            middle = root;&#10;        } else {&#10;            last = root;&#10;        }&#10;    }&#10;    prev = root;&#10;    inorder(root-&gt;right);&#10;}&#10;void recoverTree(TreeNode* root) {&#10;    first = middle = last = NULL;&#10;    prev = new TreeNode(INT_MIN);&#10;    inorder(root);&#10;    if(first &amp;&amp; last) swap(first-&gt;val, last-&gt;val);&#10;    else if(first &amp;&amp; middle) swap(first-&gt;val, middle-&gt;val);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">63</td>
+      <td rowspan="1">Tree 62 Largest Bst<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/largest-bst/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Postorder Traversal returning a custom tuple.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Return a struct `[minNode, maxNode, maxSize]`. For any node, if `left.maxNode < node.val < right.minNode`, it's a BST. Then `size = left.maxSize + right.maxSize + 1`. Return `[min(left.min, node.val), max(right.max, node.val), size]`. If not a BST, return `[-inf, inf, max(left.size, right.size)]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class NodeValue {&#10;public:&#10;    int minNode, maxNode, maxSize;&#10;    NodeValue(int minNode, int maxNode, int maxSize) {&#10;        this-&gt;minNode = minNode;&#10;        this-&gt;maxNode = maxNode;&#10;        this-&gt;maxSize = maxSize;&#10;    }&#10;};&#10;NodeValue largestBSTSubtreeHelper(TreeNode* root) {&#10;    if(!root) return NodeValue(INT_MAX, INT_MIN, 0);&#10;    auto left = largestBSTSubtreeHelper(root-&gt;left);&#10;    auto right = largestBSTSubtreeHelper(root-&gt;right);&#10;    if(left.maxNode &lt; root-&gt;val &amp;&amp; root-&gt;val &lt; right.minNode) {&#10;        return NodeValue(min(root-&gt;val, left.minNode), max(root-&gt;val, right.maxNode), left.maxSize + right.maxSize + 1);&#10;    }&#10;    return NodeValue(INT_MIN, INT_MAX, max(left.maxSize, right.maxSize));&#10;}&#10;int largestBst(TreeNode *root) {&#10;    return largestBSTSubtreeHelper(root).maxSize;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

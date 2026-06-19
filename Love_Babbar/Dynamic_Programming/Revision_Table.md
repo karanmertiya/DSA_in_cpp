@@ -322,5 +322,185 @@
       <td><b>Integer Overflow:</b> Use double or long long, or cast to unsigned int.</td>
       <td><b>Explanation:</b> If characters match, `dp[i][j] = dp[i-1][j-1] + dp[i-1][j]`. If they don't, `dp[i][j] = dp[i-1][j]`. Optimize to 1D array.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int numDistinct(string s, string t) {&#10;    int n = s.length(), m = t.length();&#10;    vector&lt;double&gt; dp(m + 1, 0);&#10;    dp[0] = 1;&#10;    for(int i=1; i&lt;=n; i++) {&#10;        for(int j=m; j&gt;=1; j--) {&#10;            if(s[i-1] == t[j-1]) {&#10;                dp[j] = dp[j-1] + dp[j];&#10;            }&#10;        }&#10;    }&#10;    return (int)dp[m];&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">35</td>
+      <td rowspan="1">Dp 34 Wildcard Matching<br><br></b> <a href='https://leetcode.com/problems/wildcard-matching/' target='_blank'>LeetCode 44</a></td>
+      <td rowspan="1"><b>Example 1:</b> 2D DP.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M) or O(M)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a 2D DP array where `dp[i][j]` means if `s[0..i-1]` matches `p[0..j-1]`. If `p[j-1] == '?'` or `s[i-1] == p[j-1]`, `dp[i][j] = dp[i-1][j-1]`. If `p[j-1] == '*'`, it can match empty (`dp[i][j-1]`) or match one character (`dp[i-1][j]`).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isMatch(string s, string p) {&#10;    int n = s.length(), m = p.length();&#10;    vector&lt;vector&lt;bool&gt;&gt; dp(n + 1, vector&lt;bool&gt;(m + 1, false));&#10;    dp[0][0] = true;&#10;    for(int j = 1; j &lt;= m; j++) {&#10;        if(p[j-1] == &#x27;*&#x27;) dp[0][j] = dp[0][j-1];&#10;    }&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        for(int j = 1; j &lt;= m; j++) {&#10;            if(p[j-1] == s[i-1] || p[j-1] == &#x27;?&#x27;) {&#10;                dp[i][j] = dp[i-1][j-1];&#10;            } else if(p[j-1] == &#x27;*&#x27;) {&#10;                dp[i][j] = dp[i-1][j] || dp[i][j-1];&#10;            }&#10;        }&#10;    }&#10;    return dp[n][m];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">36</td>
+      <td rowspan="1">Dp 35 Best Time To Buy And Sell Stock Ii<br><br></b> <a href='https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/' target='_blank'>LeetCode 122</a></td>
+      <td rowspan="1"><b>Example 1:</b> Valley Peak approach.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Add the profit whenever the price is higher than the previous day. This is equivalent to capturing every upward slope.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxProfit(vector&lt;int&gt;&amp; prices) {&#10;    int profit = 0;&#10;    for(int i = 1; i &lt; prices.size(); i++) {&#10;        if(prices[i] &gt; prices[i-1]) {&#10;            profit += prices[i] - prices[i-1];&#10;        }&#10;    }&#10;    return profit;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">37</td>
+      <td rowspan="1">Dp 36 Best Time To Buy And Sell Stock Iii<br><br></b> <a href='https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/' target='_blank'>LeetCode 123</a></td>
+      <td rowspan="1"><b>Example 1:</b> 3D DP / State Machine.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain four variables representing the max profit after first buy, first sell, second buy, and second sell. Update them iteratively.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxProfit(vector&lt;int&gt;&amp; prices) {&#10;    int buy1 = INT_MIN, sell1 = 0, buy2 = INT_MIN, sell2 = 0;&#10;    for(int price : prices) {&#10;        buy1 = max(buy1, -price);&#10;        sell1 = max(sell1, buy1 + price);&#10;        buy2 = max(buy2, sell1 - price);&#10;        sell2 = max(sell2, buy2 + price);&#10;    }&#10;    return sell2;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">38</td>
+      <td rowspan="1">Dp 37 Best Time To Buy And Sell Stock Iv<br><br></b> <a href='https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/' target='_blank'>LeetCode 188</a></td>
+      <td rowspan="1"><b>Example 1:</b> DP with transactions.</td>
+      <td><b>Time:</b> O(N * K)<br><b>Space:</b> O(N * K) or O(K)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If `k >= n/2`, it's equivalent to infinite transactions (Stock II). Else, use a DP array `dp[k][n]` where `dp[i][j]` is max profit using `i` transactions up to day `j`. Optimize inner loop by tracking `maxDiff = max(maxDiff, dp[i-1][j-1] - prices[j-1])`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxProfit(int k, vector&lt;int&gt;&amp; prices) {&#10;    int n = prices.size();&#10;    if(n &lt;= 1) return 0;&#10;    if(k &gt;= n / 2) {&#10;        int profit = 0;&#10;        for(int i = 1; i &lt; n; i++) {&#10;            if(prices[i] &gt; prices[i-1]) profit += prices[i] - prices[i-1];&#10;        }&#10;        return profit;&#10;    }&#10;    vector&lt;int&gt; buy(k + 1, INT_MIN), sell(k + 1, 0);&#10;    for(int price : prices) {&#10;        for(int i = 1; i &lt;= k; i++) {&#10;            buy[i] = max(buy[i], sell[i-1] - price);&#10;            sell[i] = max(sell[i], buy[i] + price);&#10;        }&#10;    }&#10;    return sell[k];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">39</td>
+      <td rowspan="1">Dp 38 Best Time To Buy And Sell Stock With Cooldown<br><br></b> <a href='https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/' target='_blank'>LeetCode 309</a></td>
+      <td rowspan="1"><b>Example 1:</b> State Machine DP.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain 3 states: `hold` (holding a stock), `sold` (just sold, entering cooldown next), `rest` (not holding, not in cooldown). Transitions: `hold = max(hold, rest - price)`, `sold = hold + price`, `rest = max(rest, sold_prev)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxProfit(vector&lt;int&gt;&amp; prices) {&#10;    int hold = INT_MIN, sold = 0, rest = 0;&#10;    for(int price : prices) {&#10;        int prev_sold = sold;&#10;        sold = hold + price;&#10;        hold = max(hold, rest - price);&#10;        rest = max(rest, prev_sold);&#10;    }&#10;    return max(rest, sold);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">40</td>
+      <td rowspan="1">Dp 39 Best Time To Buy And Sell Stock With Transaction Fee<br><br></b> <a href='https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/' target='_blank'>LeetCode 714</a></td>
+      <td rowspan="1"><b>Example 1:</b> DP State Machine.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Similar to Stock II, but subtract `fee` when selling. Maintain `cash` (max profit not holding stock) and `hold` (max profit holding stock). `cash = max(cash, hold + price - fee)`, `hold = max(hold, cash - price)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxProfit(vector&lt;int&gt;&amp; prices, int fee) {&#10;    int cash = 0, hold = -prices[0];&#10;    for(int i = 1; i &lt; prices.size(); i++) {&#10;        cash = max(cash, hold + prices[i] - fee);&#10;        hold = max(hold, cash - prices[i]);&#10;    }&#10;    return cash;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">41</td>
+      <td rowspan="1">Dp 40 Longest Increasing Subsequence<br><br></b> <a href='https://leetcode.com/problems/longest-increasing-subsequence/' target='_blank'>LeetCode 300</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary Search with tails array.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain an array `tails` where `tails[i]` stores the smallest tail of all increasing subsequences of length `i+1`. Use binary search (`lower_bound`) to find the position to replace or append.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int lengthOfLIS(vector&lt;int&gt;&amp; nums) {&#10;    vector&lt;int&gt; tails;&#10;    for(int num : nums) {&#10;        auto it = lower_bound(tails.begin(), tails.end(), num);&#10;        if(it == tails.end()) tails.push_back(num);&#10;        else *it = num;&#10;    }&#10;    return tails.size();&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">42</td>
+      <td rowspan="1">Dp 41 Largest Divisible Subset<br><br></b> <a href='https://leetcode.com/problems/largest-divisible-subset/' target='_blank'>LeetCode 368</a></td>
+      <td rowspan="1"><b>Example 1:</b> Sort and LIS variant.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort the array. Then use LIS logic: `dp[i]` is max subset ending at `i`. If `nums[i] % nums[j] == 0`, `dp[i] = max(dp[i], dp[j] + 1)`. Also keep a `parent` array to reconstruct the subset.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; largestDivisibleSubset(vector&lt;int&gt;&amp; nums) {&#10;    if(nums.empty()) return {};&#10;    sort(nums.begin(), nums.end());&#10;    int n = nums.size(), max_len = 1, max_idx = 0;&#10;    vector&lt;int&gt; dp(n, 1), parent(n, -1);&#10;    for(int i = 1; i &lt; n; i++) {&#10;        for(int j = 0; j &lt; i; j++) {&#10;            if(nums[i] % nums[j] == 0 &amp;&amp; dp[i] &lt; dp[j] + 1) {&#10;                dp[i] = dp[j] + 1;&#10;                parent[i] = j;&#10;            }&#10;        }&#10;        if(dp[i] &gt; max_len) {&#10;            max_len = dp[i];&#10;            max_idx = i;&#10;        }&#10;    }&#10;    vector&lt;int&gt; res;&#10;    while(max_idx != -1) {&#10;        res.push_back(nums[max_idx]);&#10;        max_idx = parent[max_idx];&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">43</td>
+      <td rowspan="1">Dp 42 Longest String Chain<br><br></b> <a href='https://leetcode.com/problems/longest-string-chain/' target='_blank'>LeetCode 1048</a></td>
+      <td rowspan="1"><b>Example 1:</b> Sort by length and use hash map.</td>
+      <td><b>Time:</b> O(N log N + N * L^2) where L is max word length<br><b>Space:</b> O(N * L)</td>
+      <td><code>#include <unordered_map></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort words by length. Use a hash map `dp` to store the longest chain ending at `word`. For each word, try removing one character at a time to form `prev_word`. `dp[word] = max(dp[word], dp[prev_word] + 1)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int longestStrChain(vector&lt;string&gt;&amp; words) {&#10;    sort(words.begin(), words.end(), [](const string&amp; a, const string&amp; b) {&#10;        return a.length() &lt; b.length();&#10;    });&#10;    unordered_map&lt;string, int&gt; dp;&#10;    int max_len = 1;&#10;    for(const string&amp; word : words) {&#10;        dp[word] = 1;&#10;        for(int i = 0; i &lt; word.length(); i++) {&#10;            string prev = word.substr(0, i) + word.substr(i + 1);&#10;            if(dp.find(prev) != dp.end()) {&#10;                dp[word] = max(dp[word], dp[prev] + 1);&#10;            }&#10;        }&#10;        max_len = max(max_len, dp[word]);&#10;    }&#10;    return max_len;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">44</td>
+      <td rowspan="1">Dp 43 Longest Bitonic Subsequence<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> LIS from left + LIS from right.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Compute LIS ending at `i` from left to right (`inc[i]`). Compute LIS starting at `i` from right to left (`dec[i]`). The max bitonic subsequence length is `max(inc[i] + dec[i] - 1)` for all `i`. Sometimes pure increasing or pure decreasing is also bitonic depending on definition, adjust if necessary.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int LongestBitonicSequence(vector&lt;int&gt; nums) {&#10;    int n = nums.size();&#10;    vector&lt;int&gt; inc(n, 1), dec(n, 1);&#10;    for(int i = 1; i &lt; n; i++) {&#10;        for(int j = 0; j &lt; i; j++) {&#10;            if(nums[i] &gt; nums[j]) inc[i] = max(inc[i], inc[j] + 1);&#10;        }&#10;    }&#10;    for(int i = n - 2; i &gt;= 0; i--) {&#10;        for(int j = n - 1; j &gt; i; j--) {&#10;            if(nums[i] &gt; nums[j]) dec[i] = max(dec[i], dec[j] + 1);&#10;        }&#10;    }&#10;    int max_len = 0;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        // Depending on problem variant, might require both to be &gt; 1 to be valid peak&#10;        max_len = max(max_len, inc[i] + dec[i] - 1);&#10;    }&#10;    return max_len;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">45</td>
+      <td rowspan="1">Dp 44 Number Of Longest Increasing Subsequence<br><br></b> <a href='https://leetcode.com/problems/number-of-longest-increasing-subsequence/' target='_blank'>LeetCode 673</a></td>
+      <td rowspan="1"><b>Example 1:</b> Two DP arrays (Length and Count).</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain `lengths[i]` (length of LIS ending at i) and `counts[i]` (number of LIS ending at i). If `nums[i] > nums[j]`: if `lengths[j] + 1 > lengths[i]`, then `lengths[i] = lengths[j] + 1` and `counts[i] = counts[j]`. Else if `lengths[j] + 1 == lengths[i]`, then `counts[i] += counts[j]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findNumberOfLIS(vector&lt;int&gt;&amp; nums) {&#10;    int n = nums.size(), max_len = 0, res = 0;&#10;    vector&lt;int&gt; len(n, 1), count(n, 1);&#10;    for(int i = 0; i &lt; n; i++) {&#10;        for(int j = 0; j &lt; i; j++) {&#10;            if(nums[i] &gt; nums[j]) {&#10;                if(len[j] + 1 &gt; len[i]) {&#10;                    len[i] = len[j] + 1;&#10;                    count[i] = count[j];&#10;                } else if(len[j] + 1 == len[i]) {&#10;                    count[i] += count[j];&#10;                }&#10;            }&#10;        }&#10;        if(len[i] &gt; max_len) {&#10;            max_len = len[i];&#10;            res = count[i];&#10;        } else if(len[i] == max_len) {&#10;            res += count[i];&#10;        }&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">46</td>
+      <td rowspan="1">Dp 45 Matrix Chain Multiplication<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Interval DP.</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use DP where `dp[i][j]` is min cost to multiply matrices from `i` to `j`. `dp[i][j] = min(dp[i][k] + dp[k+1][j] + arr[i-1]*arr[k]*arr[j])` for all `i <= k < j`. Solve for subproblem lengths 2 to N.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int matrixMultiplication(int N, int arr[]) {&#10;    vector&lt;vector&lt;int&gt;&gt; dp(N, vector&lt;int&gt;(N, 0));&#10;    for(int len = 2; len &lt; N; len++) {&#10;        for(int i = 1; i &lt; N - len + 1; i++) {&#10;            int j = i + len - 1;&#10;            dp[i][j] = INT_MAX;&#10;            for(int k = i; k &lt; j; k++) {&#10;                int cost = dp[i][k] + dp[k+1][j] + arr[i-1] * arr[k] * arr[j];&#10;                dp[i][j] = min(dp[i][j], cost);&#10;            }&#10;        }&#10;    }&#10;    return dp[1][N-1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">47</td>
+      <td rowspan="1">Dp 46 Minimum Cost To Cut A Stick<br><br></b> <a href='https://leetcode.com/problems/minimum-cost-to-cut-a-stick/' target='_blank'>LeetCode 1547</a></td>
+      <td rowspan="1"><b>Example 1:</b> Interval DP like Matrix Chain Multiplication.</td>
+      <td><b>Time:</b> O(C^3) where C is number of cuts<br><b>Space:</b> O(C^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Add 0 and `n` to `cuts`, then sort. `dp[i][j]` is min cost to cut the sub-stick between `cuts[i]` and `cuts[j]`. Try all possible cuts `k` between `i` and `j`. `dp[i][j] = min(dp[i][k] + dp[k][j]) + cuts[j] - cuts[i]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minCost(int n, vector&lt;int&gt;&amp; cuts) {&#10;    cuts.push_back(0);&#10;    cuts.push_back(n);&#10;    sort(cuts.begin(), cuts.end());&#10;    int c = cuts.size();&#10;    vector&lt;vector&lt;int&gt;&gt; dp(c, vector&lt;int&gt;(c, 0));&#10;    for(int len = 2; len &lt; c; len++) {&#10;        for(int i = 0; i &lt; c - len; i++) {&#10;            int j = i + len;&#10;            dp[i][j] = INT_MAX;&#10;            for(int k = i + 1; k &lt; j; k++) {&#10;                dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j] + cuts[j] - cuts[i]);&#10;            }&#10;        }&#10;    }&#10;    return dp[0][c-1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">48</td>
+      <td rowspan="1">Dp 47 Burst Balloons<br><br></b> <a href='https://leetcode.com/problems/burst-balloons/' target='_blank'>LeetCode 312</a></td>
+      <td rowspan="1"><b>Example 1:</b> Interval DP (Thinking backwards).</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Add 1 to both ends of `nums`. `dp[i][j]` is max coins from bursting balloons strictly between `i` and `j`. Guess which balloon `k` (between `i` and `j`) is the LAST one to burst. Coins gained = `nums[i] * nums[k] * nums[j]`. Total = `dp[i][k] + dp[k][j] + coins`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxCoins(vector&lt;int&gt;&amp; nums) {&#10;    vector&lt;int&gt; a = {1};&#10;    for(int num : nums) a.push_back(num);&#10;    a.push_back(1);&#10;    int n = a.size();&#10;    vector&lt;vector&lt;int&gt;&gt; dp(n, vector&lt;int&gt;(n, 0));&#10;    for(int len = 2; len &lt; n; len++) {&#10;        for(int i = 0; i &lt; n - len; i++) {&#10;            int j = i + len;&#10;            for(int k = i + 1; k &lt; j; k++) {&#10;                dp[i][j] = max(dp[i][j], dp[i][k] + dp[k][j] + a[i] * a[k] * a[j]);&#10;            }&#10;        }&#10;    }&#10;    return dp[0][n-1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">49</td>
+      <td rowspan="1">Dp 48 Evaluate Boolean Expression To True<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/boolean-parenthesization5610/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> 3D Interval DP.</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2 * 2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> `dp[i][j][isTrue]` is number of ways to evaluate substring `i..j` to boolean `isTrue`. Iterate `k` from `i+1` to `j-1` with step 2 (k is operator). Combine left (`i..k-1`) and right (`k+1..j`) results based on the operator.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countWays(int n, string s){&#10;    vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt; dp(n, vector&lt;vector&lt;int&gt;&gt;(n, vector&lt;int&gt;(2, 0)));&#10;    for(int i=0; i&lt;n; i+=2) {&#10;        if(s[i] == &#x27;T&#x27;) dp[i][i][1] = 1;&#10;        else dp[i][i][0] = 1;&#10;    }&#10;    for(int len=3; len&lt;=n; len+=2) {&#10;        for(int i=0; i&lt;=n-len; i+=2) {&#10;            int j = i + len - 1;&#10;            for(int k=i+1; k&lt;j; k+=2) {&#10;                long long lT = dp[i][k-1][1], lF = dp[i][k-1][0];&#10;                long long rT = dp[k+1][j][1], rF = dp[k+1][j][0];&#10;                if(s[k] == &#x27;&amp;&#x27;) {&#10;                    dp[i][j][1] = (dp[i][j][1] + lT * rT) % 1003;&#10;                    dp[i][j][0] = (dp[i][j][0] + lF * rT + lT * rF + lF * rF) % 1003;&#10;                } else if(s[k] == &#x27;|&#x27;) {&#10;                    dp[i][j][1] = (dp[i][j][1] + lT * rT + lF * rT + lT * rF) % 1003;&#10;                    dp[i][j][0] = (dp[i][j][0] + lF * rF) % 1003;&#10;                } else if(s[k] == &#x27;^&#x27;) {&#10;                    dp[i][j][1] = (dp[i][j][1] + lT * rF + lF * rT) % 1003;&#10;                    dp[i][j][0] = (dp[i][j][0] + lT * rT + lF * rF) % 1003;&#10;                }&#10;            }&#10;        }&#10;    }&#10;    return dp[0][n-1][1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">50</td>
+      <td rowspan="1">Dp 49 Palindrome Partitioning Ii<br><br></b> <a href='https://leetcode.com/problems/palindrome-partitioning-ii/' target='_blank'>LeetCode 132</a></td>
+      <td rowspan="1"><b>Example 1:</b> 1D DP using Precomputed Palindrome Table.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Precompute a 2D boolean array `isPal` indicating if `s[i..j]` is palindrome. Then use 1D DP `cuts[i]` indicating min cuts for `s[0..i]`. `cuts[i] = min(cuts[i], cuts[j-1] + 1)` for all `j <= i` where `isPal[j][i]` is true. If `isPal[0][i]` is true, `cuts[i] = 0`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minCut(string s) {&#10;    int n = s.length();&#10;    vector&lt;vector&lt;bool&gt;&gt; isPal(n, vector&lt;bool&gt;(n, false));&#10;    for(int i = n - 1; i &gt;= 0; i--) {&#10;        for(int j = i; j &lt; n; j++) {&#10;            if(s[i] == s[j] &amp;&amp; (j - i &lt;= 2 || isPal[i+1][j-1])) {&#10;                isPal[i][j] = true;&#10;            }&#10;        }&#10;    }&#10;    vector&lt;int&gt; cuts(n, 0);&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(isPal[0][i]) cuts[i] = 0;&#10;        else {&#10;            cuts[i] = i;&#10;            for(int j = 1; j &lt;= i; j++) {&#10;                if(isPal[j][i]) cuts[i] = min(cuts[i], cuts[j-1] + 1);&#10;            }&#10;        }&#10;    }&#10;    return cuts[n-1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">51</td>
+      <td rowspan="1">Dp 50 Partition Array For Maximum Sum<br><br></b> <a href='https://leetcode.com/problems/partition-array-for-maximum-sum/' target='_blank'>LeetCode 1043</a></td>
+      <td rowspan="1"><b>Example 1:</b> 1D DP.</td>
+      <td><b>Time:</b> O(N * K)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> `dp[i]` is max sum for prefix of length `i`. To find `dp[i]`, try all partition lengths `j` from 1 to `k`. Keep track of `max_val` in the last `j` elements. `dp[i] = max(dp[i], dp[i-j] + max_val * j)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxSumAfterPartitioning(vector&lt;int&gt;&amp; arr, int k) {&#10;    int n = arr.size();&#10;    vector&lt;int&gt; dp(n + 1, 0);&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        int max_val = 0;&#10;        for(int j = 1; j &lt;= k &amp;&amp; i - j &gt;= 0; j++) {&#10;            max_val = max(max_val, arr[i - j]);&#10;            dp[i] = max(dp[i], dp[i - j] + max_val * j);&#10;        }&#10;    }&#10;    return dp[n];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">52</td>
+      <td rowspan="1">Dp 51 Maximal Rectangle<br><br></b> <a href='https://leetcode.com/problems/maximal-rectangle/' target='_blank'>LeetCode 85</a></td>
+      <td rowspan="1"><b>Example 1:</b> DP to convert to Largest Rectangle in Histogram.</td>
+      <td><b>Time:</b> O(R * C)<br><b>Space:</b> O(C)</td>
+      <td><code>#include <stack></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Treat each row as the base of a histogram. Calculate heights for each row (`heights[j]++` if `matrix[i][j]=='1'`, else `0`). Then compute Largest Rectangle in Histogram for each row and take the maximum.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maximalRectangle(vector&lt;vector&lt;char&gt;&gt;&amp; matrix) {&#10;    if(matrix.empty()) return 0;&#10;    int r = matrix.size(), c = matrix[0].size();&#10;    vector&lt;int&gt; heights(c, 0);&#10;    int maxArea = 0;&#10;    for(int i = 0; i &lt; r; i++) {&#10;        for(int j = 0; j &lt; c; j++) {&#10;            heights[j] = matrix[i][j] == &#x27;1&#x27; ? heights[j] + 1 : 0;&#10;        }&#10;        stack&lt;int&gt; st;&#10;        for(int j = 0; j &lt;= c; j++) {&#10;            int h = (j == c) ? 0 : heights[j];&#10;            while(!st.empty() &amp;&amp; h &lt; heights[st.top()]) {&#10;                int height = heights[st.top()]; st.pop();&#10;                int width = st.empty() ? j : j - st.top() - 1;&#10;                maxArea = max(maxArea, height * width);&#10;            }&#10;            st.push(j);&#10;        }&#10;    }&#10;    return maxArea;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">53</td>
+      <td rowspan="1">Dp 52 Count Square Submatrices With All Ones<br><br></b> <a href='https://leetcode.com/problems/count-square-submatrices-with-all-ones/' target='_blank'>LeetCode 1277</a></td>
+      <td rowspan="1"><b>Example 1:</b> 2D DP.</td>
+      <td><b>Time:</b> O(R * C)<br><b>Space:</b> O(R * C) or O(C) optimized</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> `dp[i][j]` represents the side length of the maximum square whose bottom-right corner is at `(i, j)`. If `matrix[i][j] == 1`, `dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1`. The number of squares ending here is exactly `dp[i][j]`. Sum all `dp[i][j]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countSquares(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) {&#10;    int r = matrix.size(), c = matrix[0].size();&#10;    vector&lt;vector&lt;int&gt;&gt; dp(r, vector&lt;int&gt;(c, 0));&#10;    int ans = 0;&#10;    for(int i = 0; i &lt; r; i++) {&#10;        for(int j = 0; j &lt; c; j++) {&#10;            if(matrix[i][j] == 1) {&#10;                if(i == 0 || j == 0) dp[i][j] = 1;&#10;                else dp[i][j] = min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]}) + 1;&#10;                ans += dp[i][j];&#10;            }&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">54</td>
+      <td rowspan="1">Dp 53 Word Break<br><br></b> <a href='https://leetcode.com/problems/word-break/' target='_blank'>LeetCode 139</a></td>
+      <td rowspan="1"><b>Example 1:</b> 1D DP.</td>
+      <td><b>Time:</b> O(N * M * L) or O(N^2)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <unordered_set></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> `dp[i]` is true if `s[0..i-1]` can be segmented. For each `i` from 1 to `N`, try each word in dictionary. If `s[i-len(word)..i-1] == word` and `dp[i-len(word)]` is true, then `dp[i] = true`. Or iterate `j` from 0 to `i` and check if `dp[j]` is true and `s[j..i-1]` is in dict.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool wordBreak(string s, vector&lt;string&gt;&amp; wordDict) {&#10;    unordered_set&lt;string&gt; dict(wordDict.begin(), wordDict.end());&#10;    vector&lt;bool&gt; dp(s.length() + 1, false);&#10;    dp[0] = true;&#10;    for(int i = 1; i &lt;= s.length(); i++) {&#10;        for(int j = 0; j &lt; i; j++) {&#10;            if(dp[j] &amp;&amp; dict.find(s.substr(j, i - j)) != dict.end()) {&#10;                dp[i] = true;&#10;                break;&#10;            }&#10;        }&#10;    }&#10;    return dp[s.length()];&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
