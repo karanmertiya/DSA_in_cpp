@@ -583,5 +583,59 @@
       <td>-</td>
       <td><b>Explanation:</b> Return a struct `[minNode, maxNode, maxSize]`. For any node, if `left.maxNode < node.val < right.minNode`, it's a BST. Then `size = left.maxSize + right.maxSize + 1`. Return `[min(left.min, node.val), max(right.max, node.val), size]`. If not a BST, return `[-inf, inf, max(left.size, right.size)]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class NodeValue {&#10;public:&#10;    int minNode, maxNode, maxSize;&#10;    NodeValue(int minNode, int maxNode, int maxSize) {&#10;        this-&gt;minNode = minNode;&#10;        this-&gt;maxNode = maxNode;&#10;        this-&gt;maxSize = maxSize;&#10;    }&#10;};&#10;NodeValue largestBSTSubtreeHelper(TreeNode* root) {&#10;    if(!root) return NodeValue(INT_MAX, INT_MIN, 0);&#10;    auto left = largestBSTSubtreeHelper(root-&gt;left);&#10;    auto right = largestBSTSubtreeHelper(root-&gt;right);&#10;    if(left.maxNode &lt; root-&gt;val &amp;&amp; root-&gt;val &lt; right.minNode) {&#10;        return NodeValue(min(root-&gt;val, left.minNode), max(root-&gt;val, right.maxNode), left.maxSize + right.maxSize + 1);&#10;    }&#10;    return NodeValue(INT_MIN, INT_MAX, max(left.maxSize, right.maxSize));&#10;}&#10;int largestBst(TreeNode *root) {&#10;    return largestBSTSubtreeHelper(root).maxSize;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>64</td>
+      <td>Tree 16 Zigzag Tree Traversal<br><br></b> <a href='https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/' target='_blank'>LeetCode 103</a></td>
+      <td><b>Example 1:</b> Level order with alternating flag.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Queue</td>
+      <td>Empty tree</td>
+      <td><b>Explanation:</b> Use a queue for level order traversal. Maintain a `leftToRight` boolean flag. At each level, collect the nodes and reverse the list if `leftToRight` is false. Toggle the flag after each level.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; zigzagLevelOrder(TreeNode* root) {&#10;    vector&lt;vector&lt;int&gt;&gt; res;&#10;    if(!root) return res;&#10;    queue&lt;TreeNode*&gt; q;&#10;    q.push(root);&#10;    bool leftToRight = true;&#10;    while(!q.empty()) {&#10;        int size = q.size();&#10;        vector&lt;int&gt; row(size);&#10;        for(int i = 0; i &lt; size; i++) {&#10;            TreeNode* node = q.front();&#10;            q.pop();&#10;            int index = leftToRight ? i : (size - 1 - i);&#10;            row[index] = node-&gt;val;&#10;            if(node-&gt;left) q.push(node-&gt;left);&#10;            if(node-&gt;right) q.push(node-&gt;right);&#10;        }&#10;        leftToRight = !leftToRight;&#10;        res.push_back(row);&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>Tree 17 Check If A Binary Tree Is Balanced<br><br></b> <a href='https://leetcode.com/problems/balanced-binary-tree/' target='_blank'>LeetCode 110</a></td>
+      <td><b>Example 1:</b> DFS post-order.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N) recursion stack</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Modify the `maxDepth` function to return -1 if the tree is not balanced. If `abs(left - right) > 1` or either subtree returns -1, return -1. Otherwise, return `max(left, right) + 1`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int checkHeight(TreeNode* root) {&#10;    if(root == NULL) return 0;&#10;    int leftHeight = checkHeight(root-&gt;left);&#10;    if(leftHeight == -1) return -1;&#10;    int rightHeight = checkHeight(root-&gt;right);&#10;    if(rightHeight == -1) return -1;&#10;    if(abs(leftHeight - rightHeight) &gt; 1) return -1;&#10;    return max(leftHeight, rightHeight) + 1;&#10;}&#10;bool isBalanced(TreeNode* root) {&#10;    return checkHeight(root) != -1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>66</td>
+      <td>Tree 19 Boundary Traversal Of Binary Tree<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Left boundary, then leaves, then right boundary.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> 1. If root is not leaf, add root. 2. Get left boundary (excluding leaves). 3. Get all leaves. 4. Get right boundary (excluding leaves) and reverse it.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isLeaf(Node* root) {&#10;    return !root-&gt;left &amp;&amp; !root-&gt;right;&#10;}&#10;void addLeftBoundary(Node* root, vector&lt;int&gt;&amp; res) {&#10;    Node* curr = root-&gt;left;&#10;    while(curr) {&#10;        if(!isLeaf(curr)) res.push_back(curr-&gt;data);&#10;        if(curr-&gt;left) curr = curr-&gt;left;&#10;        else curr = curr-&gt;right;&#10;    }&#10;}&#10;void addLeaves(Node* root, vector&lt;int&gt;&amp; res) {&#10;    if(isLeaf(root)) {&#10;        res.push_back(root-&gt;data);&#10;        return;&#10;    }&#10;    if(root-&gt;left) addLeaves(root-&gt;left, res);&#10;    if(root-&gt;right) addLeaves(root-&gt;right, res);&#10;}&#10;void addRightBoundary(Node* root, vector&lt;int&gt;&amp; res) {&#10;    Node* curr = root-&gt;right;&#10;    vector&lt;int&gt; temp;&#10;    while(curr) {&#10;        if(!isLeaf(curr)) temp.push_back(curr-&gt;data);&#10;        if(curr-&gt;right) curr = curr-&gt;right;&#10;        else curr = curr-&gt;left;&#10;    }&#10;    for(int i = temp.size() - 1; i &gt;= 0; --i) res.push_back(temp[i]);&#10;}&#10;vector &lt;int&gt; boundary(Node *root) {&#10;    vector&lt;int&gt; res;&#10;    if(!root) return res;&#10;    if(!isLeaf(root)) res.push_back(root-&gt;data);&#10;    addLeftBoundary(root, res);&#10;    addLeaves(root, res);&#10;    addRightBoundary(root, res);&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>67</td>
+      <td>Tree 21 Convert Binary Tree Into Doubly Linked List<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/binary-tree-to-dll/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DFS Inorder, maintaining a `prev` pointer.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Perform Inorder traversal. Maintain a `prev` pointer (initially null). At each node: if `prev == null`, this node is the head of DLL. Else, `prev->right = node` and `node->left = prev`. Update `prev = node`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void bToDLLHelper(Node* root, Node*&amp; head, Node*&amp; prev) {&#10;    if(!root) return;&#10;    bToDLLHelper(root-&gt;left, head, prev);&#10;    if(prev == NULL) {&#10;        head = root;&#10;    } else {&#10;        root-&gt;left = prev;&#10;        prev-&gt;right = root;&#10;    }&#10;    prev = root;&#10;    bToDLLHelper(root-&gt;right, head, prev);&#10;}&#10;Node *bToDLL(Node *root) {&#10;    Node* head = NULL;&#10;    Node* prev = NULL;&#10;    bToDLLHelper(root, head, prev);&#10;    return head;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>Tree 22 Construct Tree From Inorder And Preorder V2<br><br></b> <a href='https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/' target='_blank'>LeetCode 105</a></td>
+      <td><b>Example 1:</b> Map Inorder indices.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Hash Map</td>
+      <td>-</td>
+      <td><b>Explanation:</b> The first element of preorder is the root. Find its index in inorder array using a hash map. The left part of inorder is the left subtree, right part is right subtree. Recurse.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* buildTree(vector&lt;int&gt;&amp; preorder, int preStart, int preEnd, vector&lt;int&gt;&amp; inorder, int inStart, int inEnd, unordered_map&lt;int, int&gt;&amp; inMap) {&#10;    if(preStart &gt; preEnd || inStart &gt; inEnd) return NULL;&#10;    TreeNode* root = new TreeNode(preorder[preStart]);&#10;    int inRoot = inMap[root-&gt;val];&#10;    int numsLeft = inRoot - inStart;&#10;    root-&gt;left = buildTree(preorder, preStart + 1, preStart + numsLeft, inorder, inStart, inRoot - 1, inMap);&#10;    root-&gt;right = buildTree(preorder, preStart + numsLeft + 1, preEnd, inorder, inRoot + 1, inEnd, inMap);&#10;    return root;&#10;}&#10;TreeNode* buildTree(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder) {&#10;    unordered_map&lt;int, int&gt; inMap;&#10;    for(int i = 0; i &lt; inorder.size(); i++) inMap[inorder[i]] = i;&#10;    return buildTree(preorder, 0, preorder.size() - 1, inorder, 0, inorder.size() - 1, inMap);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>69</td>
+      <td>Tree 24 Lowest Common Ancestor In A Binary Tree<br><br></b> <a href='https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/' target='_blank'>LeetCode 236</a></td>
+      <td><b>Example 1:</b> DFS.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If root is null or root matches n1 or n2, return root. Recurse for left and right. If both return non-null, root is LCA. If one returns non-null, return that one.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {&#10;    if(root == NULL || root == p || root == q) return root;&#10;    TreeNode* left = lowestCommonAncestor(root-&gt;left, p, q);&#10;    TreeNode* right = lowestCommonAncestor(root-&gt;right, p, q);&#10;    if(left == NULL) return right;&#10;    else if(right == NULL) return left;&#10;    else return root;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

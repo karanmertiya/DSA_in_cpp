@@ -592,5 +592,95 @@
       <td>-</td>
       <td><b>Explanation:</b> `dp[i]` represents number of ways to reach score `i`. Init `dp[0] = 1`. For each score option (3, 5, 10), iterate from option to `n`, `dp[i] += dp[i - option]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long int count(long long int n) {&#10;    vector&lt;long long int&gt; dp(n + 1, 0);&#10;    dp[0] = 1;&#10;    vector&lt;int&gt; scores = {3, 5, 10};&#10;    for(int s : scores) {&#10;        for(int i = s; i &lt;= n; i++) {&#10;            dp[i] += dp[i - s];&#10;        }&#10;    }&#10;    return dp[n];&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>65</td>
+      <td>Dp 14 Coin Change Minimum Coins<br><br></b> <a href='https://leetcode.com/problems/coin-change/' target='_blank'>LeetCode 322</a></td>
+      <td><b>Example 1:</b> 1D Tabulation.</td>
+      <td><b>Time:</b> O(amount * N)<br><b>Space:</b> O(amount)</td>
+      <td>-</td>
+      <td>Amount is 0</td>
+      <td><b>Explanation:</b> Create an array `dp` of size `amount + 1` initialized to `amount + 1` (acting as infinity). `dp[0] = 0`. For each amount from 1 to `amount`, for each coin, if `i - coin >= 0`, `dp[i] = min(dp[i], dp[i - coin] + 1)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int coinChange(vector&lt;int&gt;&amp; coins, int amount) {&#10;    vector&lt;int&gt; dp(amount + 1, amount + 1);&#10;    dp[0] = 0;&#10;    for(int i = 1; i &lt;= amount; i++) {&#10;        for(int coin : coins) {&#10;            if(i - coin &gt;= 0) {&#10;                dp[i] = min(dp[i], dp[i - coin] + 1);&#10;            }&#10;        }&#10;    }&#10;    return dp[amount] &gt; amount ? -1 : dp[amount];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>66</td>
+      <td>Dp 15 Coin Change Maximum Ways<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/coin-change2448/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> 1D Tabulation.</td>
+      <td><b>Time:</b> O(M * N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a `dp` array of size `N + 1` initialized to 0. `dp[0] = 1`. For each coin, iterate through all amounts from `coin` to `N` and update `dp[j] += dp[j - coin]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long int count(int coins[], int N, int sum) {&#10;    vector&lt;long long int&gt; dp(sum + 1, 0);&#10;    dp[0] = 1;&#10;    for(int i = 0; i &lt; N; i++) {&#10;        for(int j = coins[i]; j &lt;= sum; j++) {&#10;            dp[j] += dp[j - coins[i]];&#10;        }&#10;    }&#10;    return dp[sum];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>67</td>
+      <td>Dp 16 Longest Common Subsequence<br><br></b> <a href='https://leetcode.com/problems/longest-common-subsequence/' target='_blank'>LeetCode 1143</a></td>
+      <td><b>Example 1:</b> 2D Tabulation.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a 2D `dp` array. If `text1[i-1] == text2[j-1]`, then `dp[i][j] = 1 + dp[i-1][j-1]`. Else, `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int longestCommonSubsequence(string text1, string text2) {&#10;    int n = text1.length(), m = text2.length();&#10;    vector&lt;vector&lt;int&gt;&gt; dp(n + 1, vector&lt;int&gt;(m + 1, 0));&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        for(int j = 1; j &lt;= m; j++) {&#10;            if(text1[i-1] == text2[j-1]) {&#10;                dp[i][j] = 1 + dp[i-1][j-1];&#10;            } else {&#10;                dp[i][j] = max(dp[i-1][j], dp[i][j-1]);&#10;            }&#10;        }&#10;    }&#10;    return dp[n][m];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>Dp 17 Edit Distance<br><br></b> <a href='https://leetcode.com/problems/edit-distance/' target='_blank'>LeetCode 72</a></td>
+      <td><b>Example 1:</b> 2D Tabulation.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a 2D `dp` array. If `word1[i-1] == word2[j-1]`, then `dp[i][j] = dp[i-1][j-1]`. Else, `dp[i][j] = 1 + min(dp[i-1][j] (delete), min(dp[i][j-1] (insert), dp[i-1][j-1] (replace)))`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minDistance(string word1, string word2) {&#10;    int n = word1.length(), m = word2.length();&#10;    vector&lt;vector&lt;int&gt;&gt; dp(n + 1, vector&lt;int&gt;(m + 1, 0));&#10;    for(int i = 0; i &lt;= n; i++) dp[i][0] = i;&#10;    for(int j = 0; j &lt;= m; j++) dp[0][j] = j;&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        for(int j = 1; j &lt;= m; j++) {&#10;            if(word1[i-1] == word2[j-1]) {&#10;                dp[i][j] = dp[i-1][j-1];&#10;            } else {&#10;                dp[i][j] = 1 + min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]});&#10;            }&#10;        }&#10;    }&#10;    return dp[n][m];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>69</td>
+      <td>Dp 18 Longest Increasing Subsequence<br><br></b> <a href='https://leetcode.com/problems/longest-increasing-subsequence/' target='_blank'>LeetCode 300</a></td>
+      <td><b>Example 1:</b> O(N^2) Tabulation.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a `dp` array of size `n` initialized to 1. For each `i` from 1 to `n-1`, check all `j` from 0 to `i-1`. If `nums[i] > nums[j]`, update `dp[i] = max(dp[i], dp[j] + 1)`. The result is the max in `dp`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int lengthOfLIS(vector&lt;int&gt;&amp; nums) {&#10;    int n = nums.size();&#10;    vector&lt;int&gt; dp(n, 1);&#10;    int ans = 1;&#10;    for(int i = 1; i &lt; n; i++) {&#10;        for(int j = 0; j &lt; i; j++) {&#10;            if(nums[i] &gt; nums[j]) {&#10;                dp[i] = max(dp[i], dp[j] + 1);&#10;            }&#10;        }&#10;        ans = max(ans, dp[i]);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>Dp 19 0 1 Knapsack Problem<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> 1D Space Optimized DP.</td>
+      <td><b>Time:</b> O(N * W)<br><b>Space:</b> O(W)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a 1D `dp` array of size `W + 1`. For each item, iterate backwards from `W` to `weight[i]`. `dp[w] = max(dp[w], val[i] + dp[w - weight[i]])`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int knapSack(int W, int wt[], int val[], int n) {&#10;    vector&lt;int&gt; dp(W + 1, 0);&#10;    for(int i = 0; i &lt; n; i++) {&#10;        for(int w = W; w &gt;= wt[i]; w--) {&#10;            dp[w] = max(dp[w], val[i] + dp[w - wt[i]]);&#10;        }&#10;    }&#10;    return dp[W];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>71</td>
+      <td>Dp 20 Maximum Product Subarray<br><br></b> <a href='https://leetcode.com/problems/maximum-product-subarray/' target='_blank'>LeetCode 152</a></td>
+      <td><b>Example 1:</b> Keep track of max and min.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>Array containing zeros</td>
+      <td><b>Explanation:</b> Iterate through the array while maintaining a `currMax` and `currMin`. If `nums[i] < 0`, swap `currMax` and `currMin`. `currMax = max(nums[i], currMax * nums[i])`. `currMin = min(nums[i], currMin * nums[i])`. Update `globalMax`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxProduct(vector&lt;int&gt;&amp; nums) {&#10;    if(nums.empty()) return 0;&#10;    int currMax = nums[0];&#10;    int currMin = nums[0];&#10;    int ans = nums[0];&#10;    for(int i = 1; i &lt; nums.size(); i++) {&#10;        if(nums[i] &lt; 0) swap(currMax, currMin);&#10;        currMax = max(nums[i], currMax * nums[i]);&#10;        currMin = min(nums[i], currMin * nums[i]);&#10;        ans = max(ans, currMax);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>Dp 21 Palindromic Partitioning<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/palindromic-patitioning4845/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> 1D DP.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a `dp` array where `dp[i]` is min cuts for `str[0..i]`. Also use a 2D boolean DP to check if `str[j..i]` is a palindrome. If it is, `dp[i] = min(dp[i], dp[j-1] + 1)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int palindromicPartition(string str) {&#10;    int n = str.length();&#10;    vector&lt;vector&lt;bool&gt;&gt; isPal(n, vector&lt;bool&gt;(n, false));&#10;    vector&lt;int&gt; dp(n, 0);&#10;    for(int i = 0; i &lt; n; i++) {&#10;        int minCut = i;&#10;        for(int j = 0; j &lt;= i; j++) {&#10;            if(str[i] == str[j] &amp;&amp; (i - j &lt; 2 || isPal[j+1][i-1])) {&#10;                isPal[j][i] = true;&#10;                if(j == 0) minCut = 0;&#10;                else minCut = min(minCut, dp[j-1] + 1);&#10;            }&#10;        }&#10;        dp[i] = minCut;&#10;    }&#10;    return dp[n-1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>73</td>
+      <td>Dp 22 Partition Equal Subset Sum V2<br><br></b> <a href='https://leetcode.com/problems/partition-equal-subset-sum/' target='_blank'>LeetCode 416</a></td>
+      <td><b>Example 1:</b> Target sum = Total / 2.</td>
+      <td><b>Time:</b> O(N * Target)<br><b>Space:</b> O(Target)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If total sum is odd, it's impossible. Otherwise, target is `sum / 2`. The problem reduces to subset sum. Use a boolean `dp` array of size `target + 1`. `dp[j] = dp[j] || dp[j - num]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool canPartition(vector&lt;int&gt;&amp; nums) {&#10;    int sum = 0;&#10;    for(int num : nums) sum += num;&#10;    if(sum % 2 != 0) return false;&#10;    int target = sum / 2;&#10;    vector&lt;bool&gt; dp(target + 1, false);&#10;    dp[0] = true;&#10;    for(int num : nums) {&#10;        for(int j = target; j &gt;= num; j--) {&#10;            dp[j] = dp[j] || dp[j - num];&#10;        }&#10;    }&#10;    return dp[target];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>74</td>
+      <td>Dp 23 Minimum Number Of Jumps<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Greedy (often grouped in DP).</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a greedy approach. Maintain `maxReach`, `step`, and `jump`. If `i == n - 1`, return `jump`. If `arr[0] == 0`, return -1. Otherwise, decrement `step`. If `step == 0`, `jump++`, `step = maxReach - i`. If `i >= maxReach`, it's impossible.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minJumps(int arr[], int n){&#10;    if(n &lt;= 1) return 0;&#10;    if(arr[0] == 0) return -1;&#10;    int maxReach = arr[0], step = arr[0], jump = 1;&#10;    for(int i = 1; i &lt; n; i++) {&#10;        if(i == n - 1) return jump;&#10;        maxReach = max(maxReach, i + arr[i]);&#10;        step--;&#10;        if(step == 0) {&#10;            jump++;&#10;            if(i &gt;= maxReach) return -1;&#10;            step = maxReach - i;&#10;        }&#10;    }&#10;    return -1;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

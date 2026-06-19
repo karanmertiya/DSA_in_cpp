@@ -295,5 +295,41 @@
       <td><b>Integer Overflow:</b> Use long long when doubling nums[j].</td>
       <td><b>Explanation:</b> Modified Merge Sort. Before merging, loop through left and right halves. If left[i] > 2 * right[j], increment j. Number of pairs is (j - (mid+1)).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void merge(vector&lt;int&gt;&amp; arr, int low, int mid, int high) {&#10;    vector&lt;int&gt; temp;&#10;    int left = low, right = mid + 1;&#10;    while(left &lt;= mid &amp;&amp; right &lt;= high) {&#10;        if(arr[left] &lt;= arr[right]) temp.push_back(arr[left++]);&#10;        else temp.push_back(arr[right++]);&#10;    }&#10;    while(left &lt;= mid) temp.push_back(arr[left++]);&#10;    while(right &lt;= high) temp.push_back(arr[right++]);&#10;    for(int i=low; i&lt;=high; i++) arr[i] = temp[i - low];&#10;}&#10;int countPairs(vector&lt;int&gt;&amp; arr, int low, int mid, int high) {&#10;    int right = mid + 1, cnt = 0;&#10;    for(int i = low; i &lt;= mid; i++) {&#10;        while(right &lt;= high &amp;&amp; arr[i] &gt; 2LL * arr[right]) right++;&#10;        cnt += (right - (mid + 1));&#10;    }&#10;    return cnt;&#10;}&#10;int mergeSort(vector&lt;int&gt;&amp; arr, int low, int high) {&#10;    int cnt = 0;&#10;    if(low &gt;= high) return cnt;&#10;    int mid = (low + high) / 2;&#10;    cnt += mergeSort(arr, low, mid);&#10;    cnt += mergeSort(arr, mid + 1, high);&#10;    cnt += countPairs(arr, low, mid, high);&#10;    merge(arr, low, mid, high);&#10;    return cnt;&#10;}&#10;int reversePairs(vector&lt;int&gt;&amp; nums) {&#10;    return mergeSort(nums, 0, nums.size() - 1);&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>32</td>
+      <td>Arr 36 Rearrange Array Alternately<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/rearrange-array-alternately-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Math-based encoding O(1) space.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> To achieve O(1) space, encode two values into one using `arr[i] += (arr[max_idx] % max_elem) * max_elem`. Iterate with two pointers `max_idx` and `min_idx`. At the end, divide every element by `max_elem`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void rearrange(long long *arr, int n) {&#10;    int min_idx = 0, max_idx = n - 1;&#10;    long long max_elem = arr[n - 1] + 1;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(i % 2 == 0) {&#10;            arr[i] += (arr[max_idx] % max_elem) * max_elem;&#10;            max_idx--;&#10;        } else {&#10;            arr[i] += (arr[min_idx] % max_elem) * max_elem;&#10;            min_idx++;&#10;        }&#10;    }&#10;    for(int i = 0; i &lt; n; i++) {&#10;        arr[i] = arr[i] / max_elem;&#10;    }&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>Arr 37 Count Inversions<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Modified Merge Sort.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Merge Sort. During the merge step, if `arr[i] > arr[j]`, then there are `(mid - i + 1)` inversions because the left array is sorted, so all elements after `i` in the left array will also be greater than `arr[j]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long merge(long long arr[], long long temp[], int left, int mid, int right) {&#10;    int i = left, j = mid, k = left;&#10;    long long inv_count = 0;&#10;    while((i &lt;= mid - 1) &amp;&amp; (j &lt;= right)) {&#10;        if(arr[i] &lt;= arr[j]) {&#10;            temp[k++] = arr[i++];&#10;        } else {&#10;            temp[k++] = arr[j++];&#10;            inv_count += (mid - i);&#10;        }&#10;    }&#10;    while(i &lt;= mid - 1) temp[k++] = arr[i++];&#10;    while(j &lt;= right) temp[k++] = arr[j++];&#10;    for(i = left; i &lt;= right; i++) arr[i] = temp[i];&#10;    return inv_count;&#10;}&#10;long long mergeSort(long long arr[], long long temp[], int left, int right) {&#10;    long long mid, inv_count = 0;&#10;    if(right &gt; left) {&#10;        mid = (right + left) / 2;&#10;        inv_count += mergeSort(arr, temp, left, mid);&#10;        inv_count += mergeSort(arr, temp, mid + 1, right);&#10;        inv_count += merge(arr, temp, left, mid + 1, right);&#10;    }&#10;    return inv_count;&#10;}&#10;long long int inversionCount(long long arr[], long long N) {&#10;    long long temp[N];&#10;    return mergeSort(arr, temp, 0, N - 1);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>Arr 43 Maximum Product Subarray<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/maximum-product-subarray3604/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Prefix and Suffix iteration.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>Zero elements</td>
+      <td><b>Explanation:</b> Iterate from left to right calculating prefix product, and right to left calculating suffix product. If either is 0, reset it to 1. The max product will be the max of all prefix and suffix products.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long maxProduct(vector&lt;int&gt; arr, int n) {&#10;    long long max_prod = INT_MIN;&#10;    long long pref = 1, suff = 1;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(pref == 0) pref = 1;&#10;        if(suff == 0) suff = 1;&#10;        pref *= arr[i];&#10;        suff *= arr[n - i - 1];&#10;        max_prod = max({max_prod, pref, suff});&#10;    }&#10;    return max_prod;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>Arr 44 Longest Consecutive Subsequence<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/longest-consecutive-subsequence2449/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Hash Set.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Hash Set</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Insert all elements into a hash set. For each element, check if `element - 1` exists. If not, it's the start of a sequence. Then increment to find consecutive elements.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findLongestConseqSubseq(int arr[], int N) {&#10;    unordered_set&lt;int&gt; s;&#10;    for(int i = 0; i &lt; N; i++) s.insert(arr[i]);&#10;    int longest = 0;&#10;    for(int num : s) {&#10;        if(s.find(num - 1) == s.end()) {&#10;            int curr = num;&#10;            int count = 1;&#10;            while(s.find(curr + 1) != s.end()) {&#10;                curr++;&#10;                count++;&#10;            }&#10;            longest = max(longest, count);&#10;        }&#10;    }&#10;    return longest;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

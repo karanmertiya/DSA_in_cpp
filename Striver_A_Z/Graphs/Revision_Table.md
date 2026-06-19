@@ -493,5 +493,86 @@
       <td>-</td>
       <td><b>Explanation:</b> Use a priority queue to always process the cell with the minimum maximum-elevation so far. `pq` stores `(max_elev_in_path, r, c)`. Push `(grid[0][0], 0, 0)`. While pq is not empty, pop the minimum. If we reach `(n-1, n-1)`, return the `max_elev`. For each neighbor, the new max elevation is `max(max_elev, grid[nr][nc])`. Push to pq if not visited.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int swimInWater(vector&lt;vector&lt;int&gt;&gt;&amp; grid) {&#10;    int n = grid.size();&#10;    priority_queue&lt;pair&lt;int, pair&lt;int, int&gt;&gt;, vector&lt;pair&lt;int, pair&lt;int, int&gt;&gt;&gt;, greater&lt;pair&lt;int, pair&lt;int, int&gt;&gt;&gt;&gt; pq;&#10;    vector&lt;vector&lt;int&gt;&gt; vis(n, vector&lt;int&gt;(n, 0));&#10;    pq.push({grid[0][0], {0, 0}});&#10;    vis[0][0] = 1;&#10;    int dr[] = {-1, 0, 1, 0}, dc[] = {0, 1, 0, -1};&#10;    while(!pq.empty()) {&#10;        auto it = pq.top(); pq.pop();&#10;        int t = it.first, r = it.second.first, c = it.second.second;&#10;        if(r == n - 1 &amp;&amp; c == n - 1) return t;&#10;        for(int i=0; i&lt;4; i++) {&#10;            int nr = r + dr[i], nc = c + dc[i];&#10;            if(nr &gt;= 0 &amp;&amp; nr &lt; n &amp;&amp; nc &gt;= 0 &amp;&amp; nc &lt; n &amp;&amp; !vis[nr][nc]) {&#10;                vis[nr][nc] = 1;&#10;                pq.push({max(t, grid[nr][nc]), {nr, nc}});&#10;            }&#10;        }&#10;    }&#10;    return 0;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>54</td>
+      <td>Graph 14 Detect Cycle In A Directed Graph<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DFS with pathVisited.</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
+      <td>-</td>
+      <td>Multiple disconnected components</td>
+      <td><b>Explanation:</b> Use DFS. Maintain a `visited` array and a `pathVisited` array. Mark both as true for the current node. Recurse for adjacent nodes. If an adjacent node is `visited` AND `pathVisited`, a cycle exists.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool dfsCheck(int node, vector&lt;int&gt; adj[], int vis[], int pathVis[]) {&#10;    vis[node] = 1;&#10;    pathVis[node] = 1;&#10;    for(auto it : adj[node]) {&#10;        if(!vis[it]) {&#10;            if(dfsCheck(it, adj, vis, pathVis)) return true;&#10;        } else if(pathVis[it]) {&#10;            return true;&#10;        }&#10;    }&#10;    pathVis[node] = 0;&#10;    return false;&#10;}&#10;bool isCyclic(int V, vector&lt;int&gt; adj[]) {&#10;    int vis[V] = {0};&#10;    int pathVis[V] = {0};&#10;    for(int i = 0; i &lt; V; i++) {&#10;        if(!vis[i]) {&#10;            if(dfsCheck(i, adj, vis, pathVis)) return true;&#10;        }&#10;    }&#10;    return false;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>Graph 15 Topological Sort Bfs Kahn<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/topological-sort/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Indegree based BFS.</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
+      <td>Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Calculate indegree for all nodes. Push all nodes with indegree 0 to a queue. While queue is not empty, pop a node, add it to result, and decrement indegree of all its adjacent nodes. If indegree becomes 0, push to queue.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; topoSort(int V, vector&lt;int&gt; adj[]) {&#10;    int indegree[V] = {0};&#10;    for(int i = 0; i &lt; V; i++) {&#10;        for(auto it : adj[i]) indegree[it]++;&#10;    }&#10;    queue&lt;int&gt; q;&#10;    for(int i = 0; i &lt; V; i++) {&#10;        if(indegree[i] == 0) q.push(i);&#10;    }&#10;    vector&lt;int&gt; topo;&#10;    while(!q.empty()) {&#10;        int node = q.front();&#10;        q.pop();&#10;        topo.push_back(node);&#10;        for(auto it : adj[node]) {&#10;            indegree[it]--;&#10;            if(indegree[it] == 0) q.push(it);&#10;        }&#10;    }&#10;    return topo;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>Graph 16 Topological Sort Dfs<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/topological-sort/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DFS + Stack.</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
+      <td>Stack</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use standard DFS. When returning from the DFS call of a node (meaning all its descendants are visited), push the node to a stack. The stack will contain the topological sort.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void dfs(int node, int vis[], stack&lt;int&gt;&amp; st, vector&lt;int&gt; adj[]) {&#10;    vis[node] = 1;&#10;    for(auto it : adj[node]) {&#10;        if(!vis[it]) dfs(it, vis, st, adj);&#10;    }&#10;    st.push(node);&#10;}&#10;vector&lt;int&gt; topoSort(int V, vector&lt;int&gt; adj[]) {&#10;    int vis[V] = {0};&#10;    stack&lt;int&gt; st;&#10;    for(int i = 0; i &lt; V; i++) {&#10;        if(!vis[i]) dfs(i, vis, st, adj);&#10;    }&#10;    vector&lt;int&gt; ans;&#10;    while(!st.empty()) {&#10;        ans.push_back(st.top());&#10;        st.pop();&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>Graph 18 Find Whether It Is Possible To Finish All Tasks Or Not From Given Dependencies<br><br></b> <a href='https://leetcode.com/problems/course-schedule/' target='_blank'>LeetCode 207</a></td>
+      <td><b>Example 1:</b> Detect cycle using Kahn's algorithm.</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> This is equivalent to detecting a cycle in a directed graph. If a cycle exists, it's impossible. Use Kahn's algorithm: if the number of elements in the topological sort is not equal to `N`, then a cycle exists.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool canFinish(int numCourses, vector&lt;vector&lt;int&gt;&gt;&amp; prerequisites) {&#10;    vector&lt;int&gt; adj[numCourses];&#10;    for(auto it : prerequisites) {&#10;        adj[it[1]].push_back(it[0]);&#10;    }&#10;    int indegree[numCourses] = {0};&#10;    for(int i = 0; i &lt; numCourses; i++) {&#10;        for(auto it : adj[i]) indegree[it]++;&#10;    }&#10;    queue&lt;int&gt; q;&#10;    for(int i = 0; i &lt; numCourses; i++) {&#10;        if(indegree[i] == 0) q.push(i);&#10;    }&#10;    int cnt = 0;&#10;    while(!q.empty()) {&#10;        int node = q.front();&#10;        q.pop();&#10;        cnt++;&#10;        for(auto it : adj[node]) {&#10;            indegree[it]--;&#10;            if(indegree[it] == 0) q.push(it);&#10;        }&#10;    }&#10;    return cnt == numCourses;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>Graph 19 Find The Number Of Islands<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-the-number-of-islands/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DFS or BFS.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M) worst case stack</td>
+      <td>-</td>
+      <td>Empty grid</td>
+      <td><b>Explanation:</b> Traverse the grid. When a '1' is found, increment island count and use DFS/BFS to mark all its 8-connected neighbors as '0' (or visited) to avoid recounting.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void dfs(int r, int c, vector&lt;vector&lt;char&gt;&gt;&amp; grid) {&#10;    int n = grid.size(), m = grid[0].size();&#10;    grid[r][c] = &#x27;0&#x27;;&#10;    for(int delrow = -1; delrow &lt;= 1; delrow++) {&#10;        for(int delcol = -1; delcol &lt;= 1; delcol++) {&#10;            int nrow = r + delrow;&#10;            int ncol = c + delcol;&#10;            if(nrow &gt;= 0 &amp;&amp; nrow &lt; n &amp;&amp; ncol &gt;= 0 &amp;&amp; ncol &lt; m &amp;&amp; grid[nrow][ncol] == &#x27;1&#x27;) {&#10;                dfs(nrow, ncol, grid);&#10;            }&#10;        }&#10;    }&#10;}&#10;int numIslands(vector&lt;vector&lt;char&gt;&gt;&amp; grid) {&#10;    int n = grid.size();&#10;    if(n == 0) return 0;&#10;    int m = grid[0].size();&#10;    int count = 0;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        for(int j = 0; j &lt; m; j++) {&#10;            if(grid[i][j] == &#x27;1&#x27;) {&#10;                count++;&#10;                dfs(i, j, grid);&#10;            }&#10;        }&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>Graph 20 Alien Dictionary<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/alien-dictionary/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Topological Sort on Characters.</td>
+      <td><b>Time:</b> O(N * length of words + K)<br><b>Space:</b> O(K)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Compare adjacent words. The first mismatching character defines a directed edge `char1 -> char2`. Create an adjacency list of these edges. Then perform a topological sort to get the valid character order.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string findOrder(string dict[], int N, int K) {&#10;    vector&lt;int&gt; adj[K];&#10;    for(int i = 0; i &lt; N - 1; i++) {&#10;        string s1 = dict[i];&#10;        string s2 = dict[i+1];&#10;        int len = min(s1.length(), s2.length());&#10;        for(int ptr = 0; ptr &lt; len; ptr++) {&#10;            if(s1[ptr] != s2[ptr]) {&#10;                adj[s1[ptr] - &#x27;a&#x27;].push_back(s2[ptr] - &#x27;a&#x27;);&#10;                break;&#10;            }&#10;        }&#10;    }&#10;    int indegree[K] = {0};&#10;    for(int i = 0; i &lt; K; i++) {&#10;        for(auto it : adj[i]) indegree[it]++;&#10;    }&#10;    queue&lt;int&gt; q;&#10;    for(int i = 0; i &lt; K; i++) {&#10;        if(indegree[i] == 0) q.push(i);&#10;    }&#10;    string topo = &quot;&quot;;&#10;    while(!q.empty()) {&#10;        int node = q.front();&#10;        q.pop();&#10;        topo += (char)(node + &#x27;a&#x27;);&#10;        for(auto it : adj[node]) {&#10;            indegree[it]--;&#10;            if(indegree[it] == 0) q.push(it);&#10;        }&#10;    }&#10;    return topo;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>Graph 21 Kruskals Algorithm<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Disjoint Set Union.</td>
+      <td><b>Time:</b> O(E log E)<br><b>Space:</b> O(V + E)</td>
+      <td>Disjoint Set</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort all edges by weight. Iterate through sorted edges, if the two vertices do not belong to the same set (using Disjoint Set Union `findParent`), add the edge to MST and `union` the two sets.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class DisjointSet {&#10;    vector&lt;int&gt; parent, size;&#10;public:&#10;    DisjointSet(int n) {&#10;        parent.resize(n + 1);&#10;        size.resize(n + 1, 1);&#10;        for(int i = 0; i &lt;= n; i++) parent[i] = i;&#10;    }&#10;    int findUPar(int node) {&#10;        if(node == parent[node]) return node;&#10;        return parent[node] = findUPar(parent[node]);&#10;    }&#10;    void unionBySize(int u, int v) {&#10;        int ulp_u = findUPar(u);&#10;        int ulp_v = findUPar(v);&#10;        if(ulp_u == ulp_v) return;&#10;        if(size[ulp_u] &lt; size[ulp_v]) {&#10;            parent[ulp_u] = ulp_v;&#10;            size[ulp_v] += size[ulp_u];&#10;        } else {&#10;            parent[ulp_v] = ulp_u;&#10;            size[ulp_u] += size[ulp_v];&#10;        }&#10;    }&#10;};&#10;int spanningTree(int V, vector&lt;vector&lt;int&gt;&gt; adj[]) {&#10;    vector&lt;pair&lt;int, pair&lt;int, int&gt;&gt;&gt; edges;&#10;    for(int i = 0; i &lt; V; i++) {&#10;        for(auto it : adj[i]) {&#10;            int adjNode = it[0], wt = it[1];&#10;            edges.push_back({wt, {i, adjNode}});&#10;        }&#10;    }&#10;    sort(edges.begin(), edges.end());&#10;    DisjointSet ds(V);&#10;    int mstWt = 0;&#10;    for(auto it : edges) {&#10;        int wt = it.first, u = it.second.first, v = it.second.second;&#10;        if(ds.findUPar(u) != ds.findUPar(v)) {&#10;            mstWt += wt;&#10;            ds.unionBySize(u, v);&#10;        }&#10;    }&#10;    return mstWt;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>Graph 22 Dijkstra Algorithm<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Priority Queue / Min Heap.</td>
+      <td><b>Time:</b> O(E log V)<br><b>Space:</b> O(V + E)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a min-heap to always pick the node with the minimum distance. Relax its adjacent edges. If `dist[node] + weight < dist[adjNode]`, update distance and push to priority queue.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; dijkstra(int V, vector&lt;vector&lt;int&gt;&gt; adj[], int S) {&#10;    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt; pq;&#10;    vector&lt;int&gt; dist(V, 1e9);&#10;    dist[S] = 0;&#10;    pq.push({0, S});&#10;    while(!pq.empty()) {&#10;        int dis = pq.top().first;&#10;        int node = pq.top().second;&#10;        pq.pop();&#10;        for(auto it : adj[node]) {&#10;            int edgeWeight = it[1];&#10;            int adjNode = it[0];&#10;            if(dis + edgeWeight &lt; dist[adjNode]) {&#10;                dist[adjNode] = dis + edgeWeight;&#10;                pq.push({dist[adjNode], adjNode});&#10;            }&#10;        }&#10;    }&#10;    return dist;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>Graph 23 Bipartite Graph<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/bipartite-graph/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Graph Coloring (BFS).</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
+      <td>-</td>
+      <td>Multiple disconnected components</td>
+      <td><b>Explanation:</b> Try to color the graph using 2 colors. Use BFS/DFS. For every unvisited node, color it 0. For its neighbors, color them opposite (1). If a neighbor is already colored with the SAME color, it's not bipartite.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool check(int start, int V, vector&lt;int&gt; adj[], int color[]) {&#10;    queue&lt;int&gt; q;&#10;    q.push(start);&#10;    color[start] = 0;&#10;    while(!q.empty()) {&#10;        int node = q.front();&#10;        q.pop();&#10;        for(auto it : adj[node]) {&#10;            if(color[it] == -1) {&#10;                color[it] = !color[node];&#10;                q.push(it);&#10;            } else if(color[it] == color[node]) {&#10;                return false;&#10;            }&#10;        }&#10;    }&#10;    return true;&#10;}&#10;bool isBipartite(int V, vector&lt;int&gt;adj[]) {&#10;    int color[V];&#10;    for(int i = 0; i &lt; V; i++) color[i] = -1;&#10;    for(int i = 0; i &lt; V; i++) {&#10;        if(color[i] == -1) {&#10;            if(check(i, V, adj, color) == false) return false;&#10;        }&#10;    }&#10;    return true;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

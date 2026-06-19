@@ -232,5 +232,68 @@
       <td>-</td>
       <td><b>Explanation:</b> See greedy_38_reorganize_string.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">// Implementation provided in greedy chapter.</code></pre></details></td>
     </tr>
+    <tr>
+      <td>25</td>
+      <td>Heap 06 Kth Largest Element In A Stream<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/kth-largest-element-in-a-stream2220/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Min Heap.</td>
+      <td><b>Time:</b> O(N log K)<br><b>Space:</b> O(K)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain a min-heap of size K. For each element in the stream, push it to the heap. If the heap size exceeds K, pop the top (minimum) element. The top of the heap is the Kth largest element. If the size is less than K, return -1.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; kthLargest(int k, int arr[], int n) {&#10;    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;&#10;    vector&lt;int&gt; res;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        pq.push(arr[i]);&#10;        if(pq.size() &gt; k) pq.pop();&#10;        if(pq.size() &lt; k) res.push_back(-1);&#10;        else res.push_back(pq.top());&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>Heap 07 Merge K Sorted Arrays<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/merge-k-sorted-arrays/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Min Heap.</td>
+      <td><b>Time:</b> O(K^2 log K)<br><b>Space:</b> O(K)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a min-heap that stores a tuple: (value, array_index, element_index). Push the first element of each of the K arrays into the heap. While the heap is not empty, pop the minimum element, add it to the result, and if the array from which it was popped has more elements, push the next element to the heap.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class Element {&#10;public:&#10;    int val, row, col;&#10;    Element(int v, int r, int c) : val(v), row(r), col(c) {}&#10;};&#10;struct Compare {&#10;    bool operator()(Element a, Element b) {&#10;        return a.val &gt; b.val;&#10;    }&#10;};&#10;vector&lt;int&gt; mergeKArrays(vector&lt;vector&lt;int&gt;&gt; arr, int K) {&#10;    priority_queue&lt;Element, vector&lt;Element&gt;, Compare&gt; pq;&#10;    vector&lt;int&gt; res;&#10;    for(int i = 0; i &lt; K; i++) {&#10;        pq.push(Element(arr[i][0], i, 0));&#10;    }&#10;    while(!pq.empty()) {&#10;        Element curr = pq.top();&#10;        pq.pop();&#10;        res.push_back(curr.val);&#10;        if(curr.col + 1 &lt; K) {&#10;            pq.push(Element(arr[curr.row][curr.col + 1], curr.row, curr.col + 1));&#10;        }&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>Heap 08 Reorganize String<br><br></b> <a href='https://leetcode.com/problems/reorganize-string/' target='_blank'>LeetCode 767</a></td>
+      <td><b>Example 1:</b> Max Heap for frequencies.</td>
+      <td><b>Time:</b> O(N log A)<br><b>Space:</b> O(A)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Count character frequencies. Use a max-heap to store (count, char). Pop the top two most frequent characters, append them to the result, decrement their counts, and push them back if count > 0. If one character is left and its count > 1, it's impossible.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string reorganizeString(string s) {&#10;    unordered_map&lt;char, int&gt; count;&#10;    for(char c : s) count[c]++;&#10;    priority_queue&lt;pair&lt;int, char&gt;&gt; pq;&#10;    for(auto it : count) pq.push({it.second, it.first});&#10;    string res = &quot;&quot;;&#10;    while(pq.size() &gt; 1) {&#10;        auto top1 = pq.top(); pq.pop();&#10;        auto top2 = pq.top(); pq.pop();&#10;        res += top1.second;&#10;        res += top2.second;&#10;        if(--top1.first &gt; 0) pq.push(top1);&#10;        if(--top2.first &gt; 0) pq.push(top2);&#10;    }&#10;    if(!pq.empty()) {&#10;        if(pq.top().first &gt; 1) return &quot;&quot;;&#10;        res += pq.top().second;&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>Heap 09 Find Median From Data Stream<br><br></b> <a href='https://leetcode.com/problems/find-median-from-data-stream/' target='_blank'>LeetCode 295</a></td>
+      <td><b>Example 1:</b> Two Heaps.</td>
+      <td><b>Time:</b> O(log N) add, O(1) find<br><b>Space:</b> O(N)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain two heaps: a max-heap for the smaller half of the numbers, and a min-heap for the larger half. Ensure the max-heap has either the same size or one more element than the min-heap. The median is either the top of the max-heap or the average of the tops.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class MedianFinder {&#10;    priority_queue&lt;int&gt; maxHeap;&#10;    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; minHeap;&#10;public:&#10;    MedianFinder() {}&#10;    void addNum(int num) {&#10;        if(maxHeap.empty() || num &lt;= maxHeap.top()) {&#10;            maxHeap.push(num);&#10;        } else {&#10;            minHeap.push(num);&#10;        }&#10;        if(maxHeap.size() &gt; minHeap.size() + 1) {&#10;            minHeap.push(maxHeap.top());&#10;            maxHeap.pop();&#10;        } else if(minHeap.size() &gt; maxHeap.size()) {&#10;            maxHeap.push(minHeap.top());&#10;            minHeap.pop();&#10;        }&#10;    }&#10;    double findMedian() {&#10;        if(maxHeap.size() == minHeap.size()) {&#10;            return (maxHeap.top() + minHeap.top()) / 2.0;&#10;        }&#10;        return maxHeap.top();&#10;    }&#10;};</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>Heap 11 Kth Smallest Element In A Sorted Matrix<br><br></b> <a href='https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/' target='_blank'>LeetCode 378</a></td>
+      <td><b>Example 1:</b> Min Heap.</td>
+      <td><b>Time:</b> O(K log N)<br><b>Space:</b> O(N)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Similar to merging K sorted arrays. Push the first element of each row into a min-heap. Pop the minimum element `K-1` times, pushing the next element from the popped element's row. The Kth popped element is the answer. (Binary Search is also optimal here).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int kthSmallest(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int k) {&#10;    int n = matrix.size();&#10;    priority_queue&lt;vector&lt;int&gt;, vector&lt;vector&lt;int&gt;&gt;, greater&lt;vector&lt;int&gt;&gt;&gt; pq;&#10;    for(int i = 0; i &lt; n; i++) pq.push({matrix[i][0], i, 0});&#10;    for(int i = 0; i &lt; k - 1; i++) {&#10;        auto curr = pq.top(); pq.pop();&#10;        int r = curr[1], c = curr[2];&#10;        if(c + 1 &lt; n) pq.push({matrix[r][c + 1], r, c + 1});&#10;    }&#10;    return pq.top()[0];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>Heap 14 K Largest Elements<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/k-largest-elements4206/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Min Heap.</td>
+      <td><b>Time:</b> O(N log K)<br><b>Space:</b> O(K)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain a min-heap of size K. Iterate through the array. If the heap has < K elements, push. Else if the current element > heap's top, pop the top and push the current element. The heap will contain the K largest elements.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; kLargest(int arr[], int n, int k) {&#10;    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        pq.push(arr[i]);&#10;        if(pq.size() &gt; k) pq.pop();&#10;    }&#10;    vector&lt;int&gt; ans;&#10;    while(!pq.empty()) {&#10;        ans.push_back(pq.top());&#10;        pq.pop();&#10;    }&#10;    reverse(ans.begin(), ans.end());&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>Heap 15 Top K Frequent Elements<br><br></b> <a href='https://leetcode.com/problems/top-k-frequent-elements/' target='_blank'>LeetCode 347</a></td>
+      <td><b>Example 1:</b> Min Heap with Frequencies.</td>
+      <td><b>Time:</b> O(N log K)<br><b>Space:</b> O(N)</td>
+      <td>Priority Queue, Hash Map</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Count frequencies using a hash map. Maintain a min-heap of size K storing `(frequency, element)`. Push each pair into the heap. If size > K, pop. The remaining elements in the heap are the top K frequent.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; topKFrequent(vector&lt;int&gt;&amp; nums, int k) {&#10;    unordered_map&lt;int, int&gt; count;&#10;    for(int num : nums) count[num]++;&#10;    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt; pq;&#10;    for(auto it : count) {&#10;        pq.push({it.second, it.first});&#10;        if(pq.size() &gt; k) pq.pop();&#10;    }&#10;    vector&lt;int&gt; ans;&#10;    while(!pq.empty()) {&#10;        ans.push_back(pq.top().second);&#10;        pq.pop();&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

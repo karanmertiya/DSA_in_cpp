@@ -475,5 +475,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Use three pointers `i`, `j`, `k` for the three arrays. If `A[i] == B[j] == C[k]`, it's a common element, add it to the result (handling duplicates), and increment all three pointers. Else, increment the pointer that points to the smallest value.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; commonElements (int A[], int B[], int C[], int n1, int n2, int n3) {&#10;    vector&lt;int&gt; res;&#10;    int i = 0, j = 0, k = 0;&#10;    while(i &lt; n1 &amp;&amp; j &lt; n2 &amp;&amp; k &lt; n3) {&#10;        if(A[i] == B[j] &amp;&amp; B[j] == C[k]) {&#10;            if(res.empty() || res.back() != A[i]) res.push_back(A[i]);&#10;            i++; j++; k++;&#10;        } else if(A[i] &lt;= B[j] &amp;&amp; A[i] &lt;= C[k]) i++;&#10;        else if(B[j] &lt;= A[i] &amp;&amp; B[j] &lt;= C[k]) j++;&#10;        else k++;&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>52</td>
+      <td>Arr 36 Rearrange Array Alternately<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/rearrange-array-alternately-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Math-based encoding O(1) space.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> To achieve O(1) space, encode two values into one using `arr[i] += (arr[max_idx] % max_elem) * max_elem`. Iterate with two pointers `max_idx` and `min_idx`. At the end, divide every element by `max_elem`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void rearrange(long long *arr, int n) {&#10;    int min_idx = 0, max_idx = n - 1;&#10;    long long max_elem = arr[n - 1] + 1;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(i % 2 == 0) {&#10;            arr[i] += (arr[max_idx] % max_elem) * max_elem;&#10;            max_idx--;&#10;        } else {&#10;            arr[i] += (arr[min_idx] % max_elem) * max_elem;&#10;            min_idx++;&#10;        }&#10;    }&#10;    for(int i = 0; i &lt; n; i++) {&#10;        arr[i] = arr[i] / max_elem;&#10;    }&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>Arr 37 Count Inversions<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Modified Merge Sort.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Merge Sort. During the merge step, if `arr[i] > arr[j]`, then there are `(mid - i + 1)` inversions because the left array is sorted, so all elements after `i` in the left array will also be greater than `arr[j]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long merge(long long arr[], long long temp[], int left, int mid, int right) {&#10;    int i = left, j = mid, k = left;&#10;    long long inv_count = 0;&#10;    while((i &lt;= mid - 1) &amp;&amp; (j &lt;= right)) {&#10;        if(arr[i] &lt;= arr[j]) {&#10;            temp[k++] = arr[i++];&#10;        } else {&#10;            temp[k++] = arr[j++];&#10;            inv_count += (mid - i);&#10;        }&#10;    }&#10;    while(i &lt;= mid - 1) temp[k++] = arr[i++];&#10;    while(j &lt;= right) temp[k++] = arr[j++];&#10;    for(i = left; i &lt;= right; i++) arr[i] = temp[i];&#10;    return inv_count;&#10;}&#10;long long mergeSort(long long arr[], long long temp[], int left, int right) {&#10;    long long mid, inv_count = 0;&#10;    if(right &gt; left) {&#10;        mid = (right + left) / 2;&#10;        inv_count += mergeSort(arr, temp, left, mid);&#10;        inv_count += mergeSort(arr, temp, mid + 1, right);&#10;        inv_count += merge(arr, temp, left, mid + 1, right);&#10;    }&#10;    return inv_count;&#10;}&#10;long long int inversionCount(long long arr[], long long N) {&#10;    long long temp[N];&#10;    return mergeSort(arr, temp, 0, N - 1);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>Arr 38 Find All Pairs On Integer Array Whose Sum Is Equal To Given Number<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Frequency Map.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Hash Map</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a hash map to store frequencies. For each element `num`, check if `K - num` exists in the map. If so, add its frequency to the count. Then increment the frequency of `num` in the map.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int getPairsCount(int arr[], int n, int k) {&#10;    unordered_map&lt;int, int&gt; m;&#10;    int count = 0;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(m.find(k - arr[i]) != m.end()) {&#10;            count += m[k - arr[i]];&#10;        }&#10;        m[arr[i]]++;&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>Arr 39 Find Common Elements In Three Sorted Arrays<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/common-elements1132/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> 3 Pointers.</td>
+      <td><b>Time:</b> O(N1 + N2 + N3)<br><b>Space:</b> O(1) extra space</td>
+      <td>-</td>
+      <td>Duplicates in arrays</td>
+      <td><b>Explanation:</b> Maintain three pointers `i`, `j`, `k` for the three arrays. If `A[i] == B[j] == C[k]`, add to result and increment all three. Otherwise, increment the pointer of the smallest element. Skip duplicates.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector &lt;int&gt; commonElements (int A[], int B[], int C[], int n1, int n2, int n3) {&#10;    int i = 0, j = 0, k = 0;&#10;    vector&lt;int&gt; res;&#10;    while(i &lt; n1 &amp;&amp; j &lt; n2 &amp;&amp; k &lt; n3) {&#10;        if(A[i] == B[j] &amp;&amp; B[j] == C[k]) {&#10;            if(res.empty() || res.back() != A[i]) res.push_back(A[i]);&#10;            i++; j++; k++;&#10;        } else if(A[i] &lt; B[j]) i++;&#10;        else if(B[j] &lt; C[k]) j++;&#10;        else k++;&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>Arr 40 Rearrange Array In Alternating Positive And Negative Items<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/array-of-alternate-ve-and--ve-nos1401/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Extra Space Array.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>Unequal count of positive and negative</td>
+      <td><b>Explanation:</b> Collect all positive numbers in one array and all negative numbers in another. Overwrite the original array by picking elements alternatively from the two arrays.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void rearrange(int arr[], int n) {&#10;    vector&lt;int&gt; pos, neg;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(arr[i] &gt;= 0) pos.push_back(arr[i]);&#10;        else neg.push_back(arr[i]);&#10;    }&#10;    int i = 0, j = 0, k = 0;&#10;    while(i &lt; pos.size() &amp;&amp; j &lt; neg.size()) {&#10;        arr[k++] = pos[i++];&#10;        arr[k++] = neg[j++];&#10;    }&#10;    while(i &lt; pos.size()) arr[k++] = pos[i++];&#10;    while(j &lt; neg.size()) arr[k++] = neg[j++];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>Arr 41 Subarray With 0 Sum<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Prefix Sum with HashSet.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Hash Set</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through the array and calculate the prefix sum. If the prefix sum is 0 or it already exists in a hash set, it means a subarray with sum 0 exists.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool subArrayExists(int arr[], int n) {&#10;    unordered_set&lt;int&gt; sumSet;&#10;    int sum = 0;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        sum += arr[i];&#10;        if(sum == 0 || sumSet.find(sum) != sumSet.end()) return true;&#10;        sumSet.insert(sum);&#10;    }&#10;    return false;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>Arr 42 Factorial Of A Large Number<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/factorials-of-large-numbers2508/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Array based multiplication.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N log(N!))</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use an array to store the result. Initially, it holds 1. Multiply the array by numbers from 2 to N. The multiplication is done school-style by carrying over remainders to the next index.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; factorial(int N) {&#10;    vector&lt;int&gt; res;&#10;    res.push_back(1);&#10;    for(int x = 2; x &lt;= N; x++) {&#10;        int carry = 0;&#10;        for(int i = 0; i &lt; res.size(); i++) {&#10;            int prod = res[i] * x + carry;&#10;            res[i] = prod % 10;&#10;            carry = prod / 10;&#10;        }&#10;        while(carry) {&#10;            res.push_back(carry % 10);&#10;            carry /= 10;&#10;        }&#10;    }&#10;    reverse(res.begin(), res.end());&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>Arr 43 Maximum Product Subarray<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/maximum-product-subarray3604/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Prefix and Suffix iteration.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>Zero elements</td>
+      <td><b>Explanation:</b> Iterate from left to right calculating prefix product, and right to left calculating suffix product. If either is 0, reset it to 1. The max product will be the max of all prefix and suffix products.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long maxProduct(vector&lt;int&gt; arr, int n) {&#10;    long long max_prod = INT_MIN;&#10;    long long pref = 1, suff = 1;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(pref == 0) pref = 1;&#10;        if(suff == 0) suff = 1;&#10;        pref *= arr[i];&#10;        suff *= arr[n - i - 1];&#10;        max_prod = max({max_prod, pref, suff});&#10;    }&#10;    return max_prod;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>Arr 44 Longest Consecutive Subsequence<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/longest-consecutive-subsequence2449/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Hash Set.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Hash Set</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Insert all elements into a hash set. For each element, check if `element - 1` exists. If not, it's the start of a sequence. Then increment to find consecutive elements.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findLongestConseqSubseq(int arr[], int N) {&#10;    unordered_set&lt;int&gt; s;&#10;    for(int i = 0; i &lt; N; i++) s.insert(arr[i]);&#10;    int longest = 0;&#10;    for(int num : s) {&#10;        if(s.find(num - 1) == s.end()) {&#10;            int curr = num;&#10;            int count = 1;&#10;            while(s.find(curr + 1) != s.end()) {&#10;                curr++;&#10;                count++;&#10;            }&#10;            longest = max(longest, count);&#10;        }&#10;    }&#10;    return longest;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>Arr 45 Minimum Swaps And K Together<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-swaps-required-to-bring-all-elements-less-than-or-equal-to-k-together4847/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sliding Window.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> First count all elements <= k (let's say `cnt`). This will be the window size. Find elements > k in the first window. Then slide the window, updating the number of elements > k. The minimum among all windows is the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minSwap(int arr[], int n, int k) {&#10;    int cnt = 0;&#10;    for(int i = 0; i &lt; n; i++) if(arr[i] &lt;= k) cnt++;&#10;    int bad = 0;&#10;    for(int i = 0; i &lt; cnt; i++) if(arr[i] &gt; k) bad++;&#10;    int ans = bad;&#10;    for(int i = 0, j = cnt; j &lt; n; i++, j++) {&#10;        if(arr[i] &gt; k) bad--;&#10;        if(arr[j] &gt; k) bad++;&#10;        ans = min(ans, bad);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
