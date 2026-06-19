@@ -52,5 +52,23 @@
       <td>-</td>
       <td><b>Explanation:</b> Monotonic Deque. Store indices in a double-ended queue. Maintain elements in strictly decreasing order. Pop front if it's out of window bounds. Add nums[dq.front()] to answer once window reaches size k.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) {&#10;    deque&lt;int&gt; dq;&#10;    vector&lt;int&gt; ans;&#10;    for(int i=0; i&lt;nums.size(); i++) {&#10;        if(!dq.empty() &amp;&amp; dq.front() == i-k) dq.pop_front();&#10;        while(!dq.empty() &amp;&amp; nums[dq.back()] &lt;= nums[i]) dq.pop_back();&#10;        dq.push_back(i);&#10;        if(i &gt;= k-1) ans.push_back(nums[dq.front()]);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">5</td>
+      <td rowspan="1">Sq 05 Lru Cache<br><br></b> <a href='https://leetcode.com/problems/lru-cache/' target='_blank'>LeetCode 146</a></td>
+      <td rowspan="1"><b>Example 1:</b> Design question.</td>
+      <td><b>Time:</b> O(1) per operation<br><b>Space:</b> O(Capacity)</td>
+      <td><code>#include <unordered_map></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a Hash Map and a Doubly Linked List. The Map stores `key -> Node*`. The DLL maintains recency (head is most recent, tail is least recent). Update DLL pointers on access/insert.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class LRUCache {&#10;    struct Node {&#10;        int key, val;&#10;        Node *prev, *next;&#10;        Node(int k, int v): key(k), val(v), prev(NULL), next(NULL) {}&#10;    };&#10;    Node *head = new Node(-1, -1), *tail = new Node(-1, -1);&#10;    int cap;&#10;    unordered_map&lt;int, Node*&gt; m;&#10;    void addNode(Node* newnode) {&#10;        Node* temp = head-&gt;next;&#10;        newnode-&gt;next = temp; newnode-&gt;prev = head;&#10;        head-&gt;next = newnode; temp-&gt;prev = newnode;&#10;    }&#10;    void deleteNode(Node* delnode) {&#10;        Node* delprev = delnode-&gt;prev, *delnext = delnode-&gt;next;&#10;        delprev-&gt;next = delnext; delnext-&gt;prev = delprev;&#10;    }&#10;public:&#10;    LRUCache(int capacity) {&#10;        cap = capacity; head-&gt;next = tail; tail-&gt;prev = head;&#10;    }&#10;    int get(int key) {&#10;        if(m.find(key) != m.end()) {&#10;            Node* resnode = m[key];&#10;            int res = resnode-&gt;val;&#10;            m.erase(key); deleteNode(resnode); addNode(resnode);&#10;            m[key] = head-&gt;next;&#10;            return res;&#10;        }&#10;        return -1;&#10;    }&#10;    void put(int key, int value) {&#10;        if(m.find(key) != m.end()) {&#10;            Node* existing = m[key];&#10;            m.erase(key); deleteNode(existing);&#10;        }&#10;        if(m.size() == cap) {&#10;            m.erase(tail-&gt;prev-&gt;key); deleteNode(tail-&gt;prev);&#10;        }&#10;        addNode(new Node(key, value));&#10;        m[key] = head-&gt;next;&#10;    }&#10;};</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">6</td>
+      <td rowspan="1">Sq 06 Largest Rectangle In Histogram<br><br></b> <a href='https://leetcode.com/problems/largest-rectangle-in-histogram/' target='_blank'>LeetCode 84</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: heights = [2,1,5,6,2,3], Output: 10</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <stack></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Monotonic Stack. Find the next smaller element on the left and right for each bar. Area for bar `i` is `heights[i] * (right[i] - left[i] + 1)`. Alternatively, do it in a single pass stack loop.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int largestRectangleArea(vector&lt;int&gt;&amp; heights) {&#10;    int n = heights.size(), maxArea = 0;&#10;    stack&lt;int&gt; st;&#10;    for(int i=0; i&lt;=n; i++) {&#10;        while(!st.empty() &amp;&amp; (i == n || heights[st.top()] &gt;= heights[i])) {&#10;            int height = heights[st.top()]; st.pop();&#10;            int width = st.empty() ? i : i - st.top() - 1;&#10;            maxArea = max(maxArea, width * height);&#10;        }&#10;        st.push(i);&#10;    }&#10;    return maxArea;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
