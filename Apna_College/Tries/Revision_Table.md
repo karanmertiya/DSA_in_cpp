@@ -17,9 +17,9 @@
   </thead>
   <tbody>
     <tr>
-      <td rowspan="1">1</td>
-      <td rowspan="1">Tries 02 Implement Trie Ii<br><br></b> <a href='https://www.codingninjas.com/studio/problems/implement-trie_1387095' target='_blank'>Coding Ninjas</a></td>
-      <td rowspan="1"><b>Example 1:</b> Specialized Trie functions.</td>
+      <td>1</td>
+      <td>Tries 02 Implement Trie Ii<br><br></b> <a href='https://www.codingninjas.com/studio/problems/implement-trie_1387095' target='_blank'>Coding Ninjas</a></td>
+      <td><b>Example 1:</b> Specialized Trie functions.</td>
       <td><b>Time:</b> O(len) per operation<br><b>Space:</b> O(N * len)</td>
       <td>-</td>
       <td>-</td>

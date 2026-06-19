@@ -17,9 +17,9 @@
   </thead>
   <tbody>
     <tr>
-      <td rowspan="1">1</td>
-      <td rowspan="1">Heaps 04 Merge K Sorted Lists<br><br></b> <a href='https://leetcode.com/problems/merge-k-sorted-lists/' target='_blank'>LeetCode 23</a></td>
-      <td rowspan="1"><b>Example 1:</b> Input: lists=[[1,4,5],[1,3,4],[2,6]], Output: [1,1,2,3,4,4,5,6]</td>
+      <td>1</td>
+      <td>Heaps 04 Merge K Sorted Lists<br><br></b> <a href='https://leetcode.com/problems/merge-k-sorted-lists/' target='_blank'>LeetCode 23</a></td>
+      <td><b>Example 1:</b> Input: lists=[[1,4,5],[1,3,4],[2,6]], Output: [1,1,2,3,4,4,5,6]</td>
       <td><b>Time:</b> O(N log K)<br><b>Space:</b> O(K)</td>
       <td><code>#include <queue></code></td>
       <td><b>Custom Comparator:</b> In C++, define a struct to compare ListNode* values.</td>

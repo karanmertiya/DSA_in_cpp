@@ -17,99 +17,99 @@
   </thead>
   <tbody>
     <tr>
-      <td rowspan="1">1</td>
-      <td rowspan="1">Trie 01 Implement Trie Prefix Tree<br><br></b> <a href='https://leetcode.com/problems/implement-trie-prefix-tree/' target='_blank'>LeetCode 208</a></td>
-      <td rowspan="1"><b>Example 1:</b> `insert("apple")`, `search("apple")` -> true, `search("app")` -> false, `startsWith("app")` -> true.<br><br><b>Note (Constraint):</b> 1 &le; word.length &le; 2000, lowercase English letters.</td>
+      <td>1</td>
+      <td>Trie 01 Implement Trie Prefix Tree<br><br></b> <a href='https://leetcode.com/problems/implement-trie-prefix-tree/' target='_blank'>LeetCode 208</a></td>
+      <td><b>Example 1:</b> `insert("apple")`, `search("apple")` -> true, `search("app")` -> false, `startsWith("app")` -> true.<br><br><b>Note (Constraint):</b> 1 &le; word.length &le; 2000, lowercase English letters.</td>
       <td><b>Time:</b> O(Length of word) (Constraint)<br><b>Space:</b> O(Length * 26) per word</td>
       <td>Custom Node Struct/Class</td>
       <td><b>startsWith vs search:</b> `startsWith` returns true simply if the traversal succeeds without hitting NULL. `search` requires the final node's `isEnd` flag to be true.</td>
       <td><b>Explanation:</b> Use a Tree where each node contains an array of 26 pointers (for 'a'-'z') and a boolean flag `isEnd`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    Node* links[26];&#10;    bool flag = false;&#10;    bool containsKey(char ch) { return (links[ch - &#x27;a&#x27;] != nullptr); }&#10;    void put(char ch, Node* node) { links[ch - &#x27;a&#x27;] = node; }&#10;    Node* get(char ch) { return links[ch - &#x27;a&#x27;]; }&#10;    void setEnd() { flag = true; }&#10;    bool isEnd() { return flag; }&#10;};&#10;&#10;class Trie {&#10;private:&#10;    Node* root;&#10;public:&#10;    Trie() { root = new Node(); }&#10;    &#10;    void insert(std::string word) {&#10;        Node* node = root;&#10;        for (char ch : word) {&#10;            if (!node-&gt;containsKey(ch)) {&#10;                node-&gt;put(ch, new Node());&#10;            }&#10;            node = node-&gt;get(ch);&#10;        }&#10;        node-&gt;setEnd();&#10;    }&#10;    &#10;    bool search(std::string word) {&#10;        Node* node = root;&#10;        for (char ch : word) {&#10;            if (!node-&gt;containsKey(ch)) return false;&#10;            node = node-&gt;get(ch);&#10;        }&#10;        return node-&gt;isEnd();&#10;    }&#10;    &#10;    bool startsWith(std::string prefix) {&#10;        Node* node = root;&#10;        for (char ch : prefix) {&#10;            if (!node-&gt;containsKey(ch)) return false;&#10;            node = node-&gt;get(ch);&#10;        }&#10;        return true;&#10;    }&#10;};</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">2</td>
-      <td rowspan="1">Tries 02 Implement Trie Ii<br><br></b> <a href='https://www.codingninjas.com/studio/problems/implement-trie_1387095' target='_blank'>Coding Ninjas</a></td>
-      <td rowspan="1"><b>Example 1:</b> Specialized Trie functions.</td>
+      <td>2</td>
+      <td>Tries 02 Implement Trie Ii<br><br></b> <a href='https://www.codingninjas.com/studio/problems/implement-trie_1387095' target='_blank'>Coding Ninjas</a></td>
+      <td><b>Example 1:</b> Specialized Trie functions.</td>
       <td><b>Time:</b> O(len) per operation<br><b>Space:</b> O(N * len)</td>
       <td>-</td>
       <td>-</td>
       <td><b>Explanation:</b> Trie Nodes have a `cntEndWith` and `cntPrefix` integers. Increment `cntPrefix` dynamically as you insert, and `cntEndWith` at the final node. Decrement them during erase.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    Node* links[26];&#10;    int cntEndWith = 0;&#10;    int cntPrefix = 0;&#10;    bool containsKey(char ch) { return links[ch - &#x27;a&#x27;] != NULL; }&#10;    Node* get(char ch) { return links[ch - &#x27;a&#x27;]; }&#10;    void put(char ch, Node* node) { links[ch - &#x27;a&#x27;] = node; }&#10;    void increaseEnd() { cntEndWith++; }&#10;    void increasePrefix() { cntPrefix++; }&#10;    void deleteEnd() { cntEndWith--; }&#10;    void reducePrefix() { cntPrefix--; }&#10;};&#10;class Trie {&#10;private: Node* root;&#10;public:&#10;    Trie() { root = new Node(); }&#10;    void insert(string word) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;word.length(); i++) {&#10;            if(!node-&gt;containsKey(word[i])) node-&gt;put(word[i], new Node());&#10;            node = node-&gt;get(word[i]);&#10;            node-&gt;increasePrefix();&#10;        }&#10;        node-&gt;increaseEnd();&#10;    }&#10;    int countWordsEqualTo(string word) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;word.length(); i++) {&#10;            if(node-&gt;containsKey(word[i])) node = node-&gt;get(word[i]);&#10;            else return 0;&#10;        }&#10;        return node-&gt;cntEndWith;&#10;    }&#10;};</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">3</td>
-      <td rowspan="1">Trie 22 Implement Trie Prefix Tree<br><br></b> <a href='https://leetcode.com/problems/implement-trie-prefix-tree/' target='_blank'>LeetCode 208</a></td>
-      <td rowspan="1"><b>Example 1:</b> Standard Trie with 26 links.</td>
+      <td>3</td>
+      <td>Trie 22 Implement Trie Prefix Tree<br><br></b> <a href='https://leetcode.com/problems/implement-trie-prefix-tree/' target='_blank'>LeetCode 208</a></td>
+      <td><b>Example 1:</b> Standard Trie with 26 links.</td>
       <td><b>Time:</b> O(length of word) for all operations<br><b>Space:</b> O(total characters inserted * 26)</td>
       <td>-</td>
       <td>-</td>
       <td><b>Explanation:</b> Create a Node struct with an array of 26 Node pointers and a boolean `flag`. Insert: Traverse characters, create new nodes if missing, mark last node's `flag = true`. Search: Traverse characters, return false if missing link, else return `flag` of last node. StartsWith: Similar to Search but return true at the end without checking `flag`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    Node *links[26];&#10;    bool flag = false;&#10;    bool containsKey(char ch) { return links[ch - &#x27;a&#x27;] != NULL; }&#10;    void put(char ch, Node* node) { links[ch - &#x27;a&#x27;] = node; }&#10;    Node* get(char ch) { return links[ch - &#x27;a&#x27;]; }&#10;    void setEnd() { flag = true; }&#10;    bool isEnd() { return flag; }&#10;};&#10;class Trie {&#10;    Node* root;&#10;public:&#10;    Trie() { root = new Node(); }&#10;    void insert(string word) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;word.length(); i++) {&#10;            if(!node-&gt;containsKey(word[i])) node-&gt;put(word[i], new Node());&#10;            node = node-&gt;get(word[i]);&#10;        }&#10;        node-&gt;setEnd();&#10;    }&#10;    bool search(string word) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;word.length(); i++) {&#10;            if(!node-&gt;containsKey(word[i])) return false;&#10;            node = node-&gt;get(word[i]);&#10;        }&#10;        return node-&gt;isEnd();&#10;    }&#10;    bool startsWith(string prefix) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;prefix.length(); i++) {&#10;            if(!node-&gt;containsKey(prefix[i])) return false;&#10;            node = node-&gt;get(prefix[i]);&#10;        }&#10;        return true;&#10;    }&#10;};</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">4</td>
-      <td rowspan="1">Trie 23 Implement Trie Ii<br><br></b> <a href='https://www.codingninjas.com/codestudio/problems/implement-trie_1387095' target='_blank'>Coding Ninjas</a></td>
-      <td rowspan="1"><b>Example 1:</b> Trie with counts.</td>
+      <td>4</td>
+      <td>Trie 23 Implement Trie Ii<br><br></b> <a href='https://www.codingninjas.com/codestudio/problems/implement-trie_1387095' target='_blank'>Coding Ninjas</a></td>
+      <td><b>Example 1:</b> Trie with counts.</td>
       <td><b>Time:</b> O(length of word)<br><b>Space:</b> O(total characters * 26)</td>
       <td>-</td>
       <td>-</td>
       <td><b>Explanation:</b> Modify Node to store `countEndsWith` and `countPrefix`. Increment `countPrefix` while traversing during insertion, and `countEndsWith` at the end. For erase, decrement these counts.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    Node *links[26];&#10;    int cntEndWith = 0;&#10;    int cntPrefix = 0;&#10;    bool containsKey(char ch) { return links[ch - &#x27;a&#x27;] != NULL; }&#10;    void put(char ch, Node* node) { links[ch - &#x27;a&#x27;] = node; }&#10;    Node* get(char ch) { return links[ch - &#x27;a&#x27;]; }&#10;    void increaseEnd() { cntEndWith++; }&#10;    void increasePrefix() { cntPrefix++; }&#10;    void deleteEnd() { cntEndWith--; }&#10;    void reducePrefix() { cntPrefix--; }&#10;    int getEnd() { return cntEndWith; }&#10;    int getPrefix() { return cntPrefix; }&#10;};&#10;class Trie {&#10;    Node* root;&#10;public:&#10;    Trie() { root = new Node(); }&#10;    void insert(string word) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;word.length(); i++) {&#10;            if(!node-&gt;containsKey(word[i])) node-&gt;put(word[i], new Node());&#10;            node = node-&gt;get(word[i]);&#10;            node-&gt;increasePrefix();&#10;        }&#10;        node-&gt;increaseEnd();&#10;    }&#10;    int countWordsEqualTo(string word) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;word.length(); i++) {&#10;            if(!node-&gt;containsKey(word[i])) return 0;&#10;            node = node-&gt;get(word[i]);&#10;        }&#10;        return node-&gt;getEnd();&#10;    }&#10;    int countWordsStartingWith(string word) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;word.length(); i++) {&#10;            if(!node-&gt;containsKey(word[i])) return 0;&#10;            node = node-&gt;get(word[i]);&#10;        }&#10;        return node-&gt;getPrefix();&#10;    }&#10;    void erase(string word) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;word.length(); i++) {&#10;            if(node-&gt;containsKey(word[i])) {&#10;                node = node-&gt;get(word[i]);&#10;                node-&gt;reducePrefix();&#10;            } else return;&#10;        }&#10;        node-&gt;deleteEnd();&#10;    }&#10;};</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">5</td>
-      <td rowspan="1">Trie 24 Longest String With All Prefixes<br><br></b> <a href='https://www.codingninjas.com/codestudio/problems/complete-string_2687860' target='_blank'>Coding Ninjas</a></td>
-      <td rowspan="1"><b>Example 1:</b> Insert all, check each word.</td>
+      <td>5</td>
+      <td>Trie 24 Longest String With All Prefixes<br><br></b> <a href='https://www.codingninjas.com/codestudio/problems/complete-string_2687860' target='_blank'>Coding Ninjas</a></td>
+      <td><b>Example 1:</b> Insert all, check each word.</td>
       <td><b>Time:</b> O(N * max_len)<br><b>Space:</b> O(N * max_len)</td>
       <td>-</td>
       <td>-</td>
       <td><b>Explanation:</b> Insert all words into a Trie. For each word, check if every prefix exists (i.e., every node from root to end has `isEnd == true`). Keep track of the longest valid word. Resolve ties lexicographically.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    Node *links[26];&#10;    bool flag = false;&#10;    bool containsKey(char ch) { return links[ch - &#x27;a&#x27;] != NULL; }&#10;    void put(char ch, Node* node) { links[ch - &#x27;a&#x27;] = node; }&#10;    Node* get(char ch) { return links[ch - &#x27;a&#x27;]; }&#10;    void setEnd() { flag = true; }&#10;    bool isEnd() { return flag; }&#10;};&#10;class Trie {&#10;    Node* root;&#10;public:&#10;    Trie() { root = new Node(); }&#10;    void insert(string word) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;word.length(); i++) {&#10;            if(!node-&gt;containsKey(word[i])) node-&gt;put(word[i], new Node());&#10;            node = node-&gt;get(word[i]);&#10;        }&#10;        node-&gt;setEnd();&#10;    }&#10;    bool checkIfPrefixExists(string word) {&#10;        Node* node = root;&#10;        for(int i=0; i&lt;word.length(); i++) {&#10;            if(node-&gt;containsKey(word[i])) {&#10;                node = node-&gt;get(word[i]);&#10;                if(!node-&gt;isEnd()) return false;&#10;            } else return false;&#10;        }&#10;        return true;&#10;    }&#10;};&#10;string completeString(int n, vector&lt;string&gt; &amp;a){&#10;    Trie trie;&#10;    for(auto &amp;word : a) trie.insert(word);&#10;    string longest = &quot;&quot;;&#10;    for(auto &amp;word : a) {&#10;        if(trie.checkIfPrefixExists(word)) {&#10;            if(word.length() &gt; longest.length()) {&#10;                longest = word;&#10;            } else if(word.length() == longest.length() &amp;&amp; word &lt; longest) {&#10;                longest = word;&#10;            }&#10;        }&#10;    }&#10;    if(longest == &quot;&quot;) return &quot;None&quot;;&#10;    return longest;&#10;}</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">6</td>
-      <td rowspan="1">Trie 25 Number Of Distinct Substrings In A String<br><br></b> <a href='https://www.codingninjas.com/codestudio/problems/count-distinct-substrings_985292' target='_blank'>Coding Ninjas</a></td>
-      <td rowspan="1"><b>Example 1:</b> Insert all suffixes.</td>
+      <td>6</td>
+      <td>Trie 25 Number Of Distinct Substrings In A String<br><br></b> <a href='https://www.codingninjas.com/codestudio/problems/count-distinct-substrings_985292' target='_blank'>Coding Ninjas</a></td>
+      <td><b>Example 1:</b> Insert all suffixes.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
       <td>-</td>
       <td>-</td>
       <td><b>Explanation:</b> To find all substrings, iterate `i` from 0 to N-1, and `j` from `i` to N-1. Each sequence `s[i...j]` is a substring. Insert it into the Trie. Every time we create a new node, it corresponds to a new distinct substring. Increment count. Add 1 for the empty substring.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    Node *links[26];&#10;    bool containsKey(char ch) { return links[ch - &#x27;a&#x27;] != NULL; }&#10;    void put(char ch, Node* node) { links[ch - &#x27;a&#x27;] = node; }&#10;    Node* get(char ch) { return links[ch - &#x27;a&#x27;]; }&#10;};&#10;int countDistinctSubstrings(string s) {&#10;    Node* root = new Node();&#10;    int count = 0;&#10;    for(int i=0; i&lt;s.length(); i++) {&#10;        Node* node = root;&#10;        for(int j=i; j&lt;s.length(); j++) {&#10;            if(!node-&gt;containsKey(s[j])) {&#10;                node-&gt;put(s[j], new Node());&#10;                count++;&#10;            }&#10;            node = node-&gt;get(s[j]);&#10;        }&#10;    }&#10;    return count + 1;&#10;}</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">7</td>
-      <td rowspan="1">Trie 26 Maximum Xor Of Two Numbers In An Array<br><br></b> <a href='https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/' target='_blank'>LeetCode 421</a></td>
-      <td rowspan="1"><b>Example 1:</b> Bit Trie.</td>
+      <td>7</td>
+      <td>Trie 26 Maximum Xor Of Two Numbers In An Array<br><br></b> <a href='https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/' target='_blank'>LeetCode 421</a></td>
+      <td><b>Example 1:</b> Bit Trie.</td>
       <td><b>Time:</b> O(N * 32)<br><b>Space:</b> O(N * 32)</td>
       <td>-</td>
       <td>-</td>
       <td><b>Explanation:</b> Insert binary representation of each number (from MSB to LSB, 31 to 0) into a Trie. To find max XOR for `x`, traverse the Trie aiming for opposite bits (1 for 0, 0 for 1). If opposite bit exists, go that way and add `1 << i` to result. Else go same way.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    Node *links[2];&#10;    bool containsKey(int bit) { return links[bit] != NULL; }&#10;    void put(int bit, Node* node) { links[bit] = node; }&#10;    Node* get(int bit) { return links[bit]; }&#10;};&#10;class Trie {&#10;    Node* root;&#10;public:&#10;    Trie() { root = new Node(); }&#10;    void insert(int num) {&#10;        Node* node = root;&#10;        for(int i=31; i&gt;=0; i--) {&#10;            int bit = (num &gt;&gt; i) &amp; 1;&#10;            if(!node-&gt;containsKey(bit)) {&#10;                node-&gt;put(bit, new Node());&#10;            }&#10;            node = node-&gt;get(bit);&#10;        }&#10;    }&#10;    int getMax(int num) {&#10;        Node* node = root;&#10;        int maxNum = 0;&#10;        for(int i=31; i&gt;=0; i--) {&#10;            int bit = (num &gt;&gt; i) &amp; 1;&#10;            if(node-&gt;containsKey(1 - bit)) {&#10;                maxNum = maxNum | (1 &lt;&lt; i);&#10;                node = node-&gt;get(1 - bit);&#10;            } else {&#10;                node = node-&gt;get(bit);&#10;            }&#10;        }&#10;        return maxNum;&#10;    }&#10;};&#10;int findMaximumXOR(vector&lt;int&gt;&amp; nums) {&#10;    Trie trie;&#10;    for(auto &amp;it : nums) trie.insert(it);&#10;    int maxi = 0;&#10;    for(auto &amp;it : nums) {&#10;        maxi = max(maxi, trie.getMax(it));&#10;    }&#10;    return maxi;&#10;}</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">8</td>
-      <td rowspan="1">Trie 27 Maximum Xor With An Element From Array<br><br></b> <a href='https://leetcode.com/problems/maximum-xor-with-an-element-from-array/' target='_blank'>LeetCode 1707</a></td>
-      <td rowspan="1"><b>Example 1:</b> Offline Queries.</td>
+      <td>8</td>
+      <td>Trie 27 Maximum Xor With An Element From Array<br><br></b> <a href='https://leetcode.com/problems/maximum-xor-with-an-element-from-array/' target='_blank'>LeetCode 1707</a></td>
+      <td><b>Example 1:</b> Offline Queries.</td>
       <td><b>Time:</b> O(N log N + Q log Q + Q * 32 + N * 32)<br><b>Space:</b> O(N * 32 + Q)</td>
       <td>-</td>
       <td>-</td>
       <td><b>Explanation:</b> Sort `nums` array. Store queries as `{m, x, index}` and sort them by `m`. Iterate through queries. While `nums[i] <= m`, insert `nums[i]` into Trie. If Trie is empty, answer is -1. Else, query Trie for max XOR with `x`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    Node *links[2];&#10;    bool containsKey(int bit) { return links[bit] != NULL; }&#10;    void put(int bit, Node* node) { links[bit] = node; }&#10;    Node* get(int bit) { return links[bit]; }&#10;};&#10;class Trie {&#10;    Node* root;&#10;public:&#10;    Trie() { root = new Node(); }&#10;    void insert(int num) {&#10;        Node* node = root;&#10;        for(int i=31; i&gt;=0; i--) {&#10;            int bit = (num &gt;&gt; i) &amp; 1;&#10;            if(!node-&gt;containsKey(bit)) node-&gt;put(bit, new Node());&#10;            node = node-&gt;get(bit);&#10;        }&#10;    }&#10;    int getMax(int num) {&#10;        Node* node = root;&#10;        int maxNum = 0;&#10;        for(int i=31; i&gt;=0; i--) {&#10;            int bit = (num &gt;&gt; i) &amp; 1;&#10;            if(node-&gt;containsKey(1 - bit)) {&#10;                maxNum = maxNum | (1 &lt;&lt; i);&#10;                node = node-&gt;get(1 - bit);&#10;            } else {&#10;                node = node-&gt;get(bit);&#10;            }&#10;        }&#10;        return maxNum;&#10;    }&#10;};&#10;vector&lt;int&gt; maximizeXor(vector&lt;int&gt;&amp; nums, vector&lt;vector&lt;int&gt;&gt;&amp; queries) {&#10;    sort(nums.begin(), nums.end());&#10;    vector&lt;pair&lt;int, pair&lt;int, int&gt;&gt;&gt; oQ;&#10;    for(int i=0; i&lt;queries.size(); i++) {&#10;        oQ.push_back({queries[i][1], {queries[i][0], i}});&#10;    }&#10;    sort(oQ.begin(), oQ.end());&#10;    vector&lt;int&gt; ans(queries.size(), 0);&#10;    int ind = 0;&#10;    int n = nums.size();&#10;    Trie trie;&#10;    for(int i=0; i&lt;oQ.size(); i++) {&#10;        int m = oQ[i].first, x = oQ[i].second.first, qInd = oQ[i].second.second;&#10;        while(ind &lt; n &amp;&amp; nums[ind] &lt;= m) {&#10;            trie.insert(nums[ind]);&#10;            ind++;&#10;        }&#10;        if(ind == 0) ans[qInd] = -1;&#10;        else ans[qInd] = trie.getMax(x);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">9</td>
-      <td rowspan="1">Trie 28 Word Break Trie<br><br></b> <a href='https://leetcode.com/problems/word-break/' target='_blank'>LeetCode 139</a></td>
-      <td rowspan="1"><b>Example 1:</b> DP with Trie search.</td>
+      <td>9</td>
+      <td>Trie 28 Word Break Trie<br><br></b> <a href='https://leetcode.com/problems/word-break/' target='_blank'>LeetCode 139</a></td>
+      <td><b>Example 1:</b> DP with Trie search.</td>
       <td><b>Time:</b> O(N^2 + sum(word_len))<br><b>Space:</b> O(N + sum(word_len))</td>
       <td>-</td>
       <td>-</td>
       <td><b>Explanation:</b> Insert all dictionary words into a Trie. Use DP where `dp[i]` is true if `s[0...i-1]` is valid. For index `i`, start a Trie search. If we find a valid word ending at `j`, then `dp[j+1]` becomes true (if `dp[i]` was true).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    Node *links[26];&#10;    bool isEnd = false;&#10;};&#10;class Trie {&#10;public:&#10;    Node* root = new Node();&#10;    void insert(string word) {&#10;        Node* node = root;&#10;        for(char c : word) {&#10;            if(!node-&gt;links[c-&#x27;a&#x27;]) node-&gt;links[c-&#x27;a&#x27;] = new Node();&#10;            node = node-&gt;links[c-&#x27;a&#x27;];&#10;        }&#10;        node-&gt;isEnd = true;&#10;    }&#10;};&#10;bool wordBreak(string s, vector&lt;string&gt;&amp; wordDict) {&#10;    Trie t;&#10;    for(string w : wordDict) t.insert(w);&#10;    vector&lt;bool&gt; dp(s.length() + 1, false);&#10;    dp[0] = true;&#10;    for(int i=0; i&lt;s.length(); i++) {&#10;        if(!dp[i]) continue;&#10;        Node* node = t.root;&#10;        for(int j=i; j&lt;s.length(); j++) {&#10;            if(!node-&gt;links[s[j]-&#x27;a&#x27;]) break;&#10;            node = node-&gt;links[s[j]-&#x27;a&#x27;];&#10;            if(node-&gt;isEnd) dp[j+1] = true;&#10;        }&#10;    }&#10;    return dp[s.length()];&#10;}</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">10</td>
-      <td rowspan="1">Trie 29 Word Search Ii<br><br></b> <a href='https://leetcode.com/problems/word-search-ii/' target='_blank'>LeetCode 212</a></td>
-      <td rowspan="1"><b>Example 1:</b> DFS + Trie.</td>
+      <td>10</td>
+      <td>Trie 29 Word Search Ii<br><br></b> <a href='https://leetcode.com/problems/word-search-ii/' target='_blank'>LeetCode 212</a></td>
+      <td><b>Example 1:</b> DFS + Trie.</td>
       <td><b>Time:</b> O(M * N * 4^L)<br><b>Space:</b> O(sum(L))</td>
       <td>-</td>
       <td>-</td>
       <td><b>Explanation:</b> Insert all words into a Trie. Store the actual word at the `isEnd` node for easy retrieval. Do DFS from each cell. During DFS, traverse the Trie simultaneously. If a Trie node has a word, add it to results and remove the word from the node to avoid duplicates.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Node {&#10;    Node* links[26];&#10;    string word = &quot;&quot;;&#10;};&#10;class Trie {&#10;public:&#10;    Node* root = new Node();&#10;    void insert(string&amp; w) {&#10;        Node* node = root;&#10;        for(char c : w) {&#10;            if(!node-&gt;links[c-&#x27;a&#x27;]) node-&gt;links[c-&#x27;a&#x27;] = new Node();&#10;            node = node-&gt;links[c-&#x27;a&#x27;];&#10;        }&#10;        node-&gt;word = w;&#10;    }&#10;};&#10;void dfs(vector&lt;vector&lt;char&gt;&gt;&amp; board, int i, int j, Node* p, vector&lt;string&gt;&amp; res) {&#10;    char c = board[i][j];&#10;    if(c == &#x27;#&#x27; || !p-&gt;links[c-&#x27;a&#x27;]) return;&#10;    p = p-&gt;links[c-&#x27;a&#x27;];&#10;    if(p-&gt;word != &quot;&quot;) {&#10;        res.push_back(p-&gt;word);&#10;        p-&gt;word = &quot;&quot;;&#10;    }&#10;    board[i][j] = &#x27;#&#x27;;&#10;    if(i &gt; 0) dfs(board, i-1, j, p, res);&#10;    if(j &gt; 0) dfs(board, i, j-1, p, res);&#10;    if(i &lt; board.size()-1) dfs(board, i+1, j, p, res);&#10;    if(j &lt; board[0].size()-1) dfs(board, i, j+1, p, res);&#10;    board[i][j] = c;&#10;}&#10;vector&lt;string&gt; findWords(vector&lt;vector&lt;char&gt;&gt;&amp; board, vector&lt;string&gt;&amp; words) {&#10;    Trie t;&#10;    for(string w : words) t.insert(w);&#10;    vector&lt;string&gt; res;&#10;    for(int i=0; i&lt;board.size(); i++) {&#10;        for(int j=0; j&lt;board[0].size(); j++) {&#10;            dfs(board, i, j, t.root, res);&#10;        }&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">11</td>
-      <td rowspan="1">Trie 30 Palindrome Pairs<br><br></b> <a href='https://leetcode.com/problems/palindrome-pairs/' target='_blank'>LeetCode 336</a></td>
-      <td rowspan="1"><b>Example 1:</b> Trie of reversed words.</td>
+      <td>11</td>
+      <td>Trie 30 Palindrome Pairs<br><br></b> <a href='https://leetcode.com/problems/palindrome-pairs/' target='_blank'>LeetCode 336</a></td>
+      <td><b>Example 1:</b> Trie of reversed words.</td>
       <td><b>Time:</b> O(N * L^2)<br><b>Space:</b> O(N * L)</td>
       <td>-</td>
       <td>-</td>
