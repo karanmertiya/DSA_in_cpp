@@ -169,5 +169,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Create a DAG based on mismatching characters between adjacent words. Use Kahn's algorithm (Topological Sort BFS) to find the character order.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string findOrder(string dict[], int N, int K) {&#10;    vector&lt;int&gt; adj[K];&#10;    for(int i=0; i&lt;N-1; i++) {&#10;        string s1 = dict[i], s2 = dict[i+1];&#10;        int len = min(s1.size(), s2.size());&#10;        for(int ptr=0; ptr&lt;len; ptr++) {&#10;            if(s1[ptr] != s2[ptr]) {&#10;                adj[s1[ptr] - &#x27;a&#x27;].push_back(s2[ptr] - &#x27;a&#x27;);&#10;                break;&#10;            }&#10;        }&#10;    }&#10;    vector&lt;int&gt; indegree(K, 0);&#10;    for(int i=0; i&lt;K; i++) {&#10;        for(auto it: adj[i]) indegree[it]++;&#10;    }&#10;    queue&lt;int&gt; q;&#10;    for(int i=0; i&lt;K; i++) if(indegree[i] == 0) q.push(i);&#10;    string topo = &quot;&quot;;&#10;    while(!q.empty()) {&#10;        int node = q.front(); q.pop();&#10;        topo += char(node + &#x27;a&#x27;);&#10;        for(auto it: adj[node]) {&#10;            indegree[it]--;&#10;            if(indegree[it] == 0) q.push(it);&#10;        }&#10;    }&#10;    return topo;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">18</td>
+      <td rowspan="1">Graph 19 Shortest Path In Directed Acyclic Graph<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Topo Sort.</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Perform Topological Sort. Then iterate through the topologically sorted vertices. For each vertex `u`, relax its neighbors: `dist[v] = min(dist[v], dist[u] + weight)`. Return `dist` array.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void topoSort(int node, vector&lt;pair&lt;int, int&gt;&gt; adj[], vector&lt;int&gt;&amp; vis, stack&lt;int&gt;&amp; st) {&#10;    vis[node] = 1;&#10;    for(auto it : adj[node]) {&#10;        int v = it.first;&#10;        if(!vis[v]) topoSort(v, adj, vis, st);&#10;    }&#10;    st.push(node);&#10;}&#10;vector&lt;int&gt; shortestPath(int N, int M, vector&lt;vector&lt;int&gt;&gt;&amp; edges) {&#10;    vector&lt;pair&lt;int, int&gt;&gt; adj[N];&#10;    for(int i=0; i&lt;M; i++) {&#10;        int u = edges[i][0], v = edges[i][1], wt = edges[i][2];&#10;        adj[u].push_back({v, wt});&#10;    }&#10;    vector&lt;int&gt; vis(N, 0);&#10;    stack&lt;int&gt; st;&#10;    for(int i=0; i&lt;N; i++) {&#10;        if(!vis[i]) topoSort(i, adj, vis, st);&#10;    }&#10;    vector&lt;int&gt; dist(N, 1e9);&#10;    dist[0] = 0;&#10;    while(!st.empty()) {&#10;        int node = st.top();&#10;        st.pop();&#10;        if(dist[node] != 1e9) {&#10;            for(auto it : adj[node]) {&#10;                int v = it.first, wt = it.second;&#10;                if(dist[node] + wt &lt; dist[v]) {&#10;                    dist[v] = dist[node] + wt;&#10;                }&#10;            }&#10;        }&#10;    }&#10;    for(int i=0; i&lt;N; i++) if(dist[i] == 1e9) dist[i] = -1;&#10;    return dist;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">19</td>
+      <td rowspan="1">Graph 20 Shortest Path In Undirected Graph With Unit Distance<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> BFS approach.</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
+      <td><code>#include <queue></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Standard BFS starting from source. Distance of neighbors is `dist[u] + 1`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; shortestPath(vector&lt;vector&lt;int&gt;&gt;&amp; edges, int N, int M, int src){&#10;    vector&lt;int&gt; adj[N];&#10;    for(int i=0; i&lt;M; i++) {&#10;        adj[edges[i][0]].push_back(edges[i][1]);&#10;        adj[edges[i][1]].push_back(edges[i][0]);&#10;    }&#10;    vector&lt;int&gt; dist(N, 1e9);&#10;    dist[src] = 0;&#10;    queue&lt;int&gt; q;&#10;    q.push(src);&#10;    while(!q.empty()) {&#10;        int node = q.front(); q.pop();&#10;        for(int it : adj[node]) {&#10;            if(dist[node] + 1 &lt; dist[it]) {&#10;                dist[it] = dist[node] + 1;&#10;                q.push(it);&#10;            }&#10;        }&#10;    }&#10;    for(int i=0; i&lt;N; i++) if(dist[i] == 1e9) dist[i] = -1;&#10;    return dist;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">20</td>
+      <td rowspan="1">Graph 21 Dijkstras Algorithm<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> PQ based Dijkstra.</td>
+      <td><b>Time:</b> O(E log V)<br><b>Space:</b> O(V)</td>
+      <td><code>#include <queue></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a Min-Heap. `dist` array initialized to infinity. Push `{0, src}` to PQ. Pop `node`. If `dist[node] + weight < dist[adjNode]`, update `dist[adjNode]` and push `{dist[adjNode], adjNode}` to PQ.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; dijkstra(int V, vector&lt;vector&lt;int&gt;&gt; adj[], int S) {&#10;    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt; pq;&#10;    vector&lt;int&gt; dist(V, 1e9);&#10;    dist[S] = 0;&#10;    pq.push({0, S});&#10;    while(!pq.empty()) {&#10;        int dis = pq.top().first;&#10;        int node = pq.top().second;&#10;        pq.pop();&#10;        for(auto it : adj[node]) {&#10;            int edgeWeight = it[1];&#10;            int adjNode = it[0];&#10;            if(dis + edgeWeight &lt; dist[adjNode]) {&#10;                dist[adjNode] = dis + edgeWeight;&#10;                pq.push({dist[adjNode], adjNode});&#10;            }&#10;        }&#10;    }&#10;    return dist;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">21</td>
+      <td rowspan="1">Graph 22 Bellman Ford Algorithm<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/0' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Detect negative cycle.</td>
+      <td><b>Time:</b> O(V * E)<br><b>Space:</b> O(V)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Relax all E edges V-1 times. If any edge can still be relaxed in the Vth iteration, then there's a negative cycle.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; bellman_ford(int V, vector&lt;vector&lt;int&gt;&gt;&amp; edges, int S) {&#10;    vector&lt;int&gt; dist(V, 1e8);&#10;    dist[S] = 0;&#10;    for(int i=0; i&lt;V-1; i++) {&#10;        for(auto it : edges) {&#10;            int u = it[0], v = it[1], wt = it[2];&#10;            if(dist[u] != 1e8 &amp;&amp; dist[u] + wt &lt; dist[v]) {&#10;                dist[v] = dist[u] + wt;&#10;            }&#10;        }&#10;    }&#10;    for(auto it : edges) {&#10;        int u = it[0], v = it[1], wt = it[2];&#10;        if(dist[u] != 1e8 &amp;&amp; dist[u] + wt &lt; dist[v]) return {-1};&#10;    }&#10;    return dist;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">22</td>
+      <td rowspan="1">Graph 23 Floyd Warshall Algorithm<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> All pairs shortest path.</td>
+      <td><b>Time:</b> O(V^3)<br><b>Space:</b> O(V^2) or O(1) if in-place</td>
+      <td>-</td>
+      <td><b>Unreachable:</b> Replace -1 with infinity before loop, revert back to -1 after.</td>
+      <td><b>Explanation:</b> Iterate `k` (via node) from 0 to V-1. Iterate `i` and `j`. `matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j])`. If `matrix[i][i] < 0`, negative cycle exists.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void shortest_distance(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) {&#10;    int n = matrix.size();&#10;    for(int i=0; i&lt;n; i++) {&#10;        for(int j=0; j&lt;n; j++) {&#10;            if(matrix[i][j] == -1) matrix[i][j] = 1e9;&#10;            if(i == j) matrix[i][j] = 0;&#10;        }&#10;    }&#10;    for(int k=0; k&lt;n; k++) {&#10;        for(int i=0; i&lt;n; i++) {&#10;            for(int j=0; j&lt;n; j++) {&#10;                matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]);&#10;            }&#10;        }&#10;    }&#10;    for(int i=0; i&lt;n; i++) {&#10;        for(int j=0; j&lt;n; j++) {&#10;            if(matrix[i][j] == 1e9) matrix[i][j] = -1;&#10;        }&#10;    }&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">23</td>
+      <td rowspan="1">Graph 24 Minimum Spanning Tree<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Kruskal or Prim's.</td>
+      <td><b>Time:</b> O(E log V)<br><b>Space:</b> O(V)</td>
+      <td><code>#include <queue></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Prim's Algorithm. Push `{0, 0}` to Min-Heap. If node is visited, continue. Mark visited, add weight to sum. Push all adjacent unvisited nodes to Heap.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int spanningTree(int V, vector&lt;vector&lt;int&gt;&gt; adj[]) {&#10;    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt; pq;&#10;    vector&lt;int&gt; vis(V, 0);&#10;    pq.push({0, 0});&#10;    int sum = 0;&#10;    while(!pq.empty()) {&#10;        auto it = pq.top(); pq.pop();&#10;        int wt = it.first, node = it.second;&#10;        if(vis[node]) continue;&#10;        vis[node] = 1;&#10;        sum += wt;&#10;        for(auto vec : adj[node]) {&#10;            int adjNode = vec[0], edW = vec[1];&#10;            if(!vis[adjNode]) {&#10;                pq.push({edW, adjNode});&#10;            }&#10;        }&#10;    }&#10;    return sum;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">24</td>
+      <td rowspan="1">Graph 25 Prims Algorithm<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> MST.</td>
+      <td><b>Time:</b> O(E log V)<br><b>Space:</b> O(V)</td>
+      <td><code>#include <queue></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Same as previous. Min Heap of `{weight, node}`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int spanningTree(int V, vector&lt;vector&lt;int&gt;&gt; adj[]) {&#10;    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt; pq;&#10;    vector&lt;int&gt; vis(V, 0);&#10;    pq.push({0, 0});&#10;    int sum = 0;&#10;    while(!pq.empty()) {&#10;        auto it = pq.top(); pq.pop();&#10;        int wt = it.first, node = it.second;&#10;        if(vis[node]) continue;&#10;        vis[node] = 1;&#10;        sum += wt;&#10;        for(auto vec : adj[node]) {&#10;            int adjNode = vec[0], edW = vec[1];&#10;            if(!vis[adjNode]) {&#10;                pq.push({edW, adjNode});&#10;            }&#10;        }&#10;    }&#10;    return sum;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">25</td>
+      <td rowspan="1">Graph 26 Kruskals Algorithm<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> DSU approach.</td>
+      <td><b>Time:</b> O(E log E + E * alpha)<br><b>Space:</b> O(V + E)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort all edges by weight. Iterate through sorted edges. Use Disjoint Set Union (DSU) to check if adding the edge forms a cycle. If not, add edge to MST and union the sets.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class DisjointSet {&#10;    vector&lt;int&gt; rank, parent, size;&#10;public:&#10;    DisjointSet(int n) {&#10;        rank.resize(n + 1, 0);&#10;        parent.resize(n + 1);&#10;        size.resize(n + 1);&#10;        for(int i=0; i&lt;=n; i++) {&#10;            parent[i] = i;&#10;            size[i] = 1;&#10;        }&#10;    }&#10;    int findUPar(int node) {&#10;        if(node == parent[node]) return node;&#10;        return parent[node] = findUPar(parent[node]);&#10;    }&#10;    void unionBySize(int u, int v) {&#10;        int ulp_u = findUPar(u);&#10;        int ulp_v = findUPar(v);&#10;        if(ulp_u == ulp_v) return;&#10;        if(size[ulp_u] &lt; size[ulp_v]) {&#10;            parent[ulp_u] = ulp_v;&#10;            size[ulp_v] += size[ulp_u];&#10;        } else {&#10;            parent[ulp_v] = ulp_u;&#10;            size[ulp_u] += size[ulp_v];&#10;        }&#10;    }&#10;};&#10;int spanningTree(int V, vector&lt;vector&lt;int&gt;&gt; adj[]) {&#10;    vector&lt;pair&lt;int, pair&lt;int, int&gt;&gt;&gt; edges;&#10;    for(int i=0; i&lt;V; i++) {&#10;        for(auto it : adj[i]) {&#10;            int adjNode = it[0], wt = it[1];&#10;            int node = i;&#10;            edges.push_back({wt, {node, adjNode}});&#10;        }&#10;    }&#10;    sort(edges.begin(), edges.end());&#10;    DisjointSet ds(V);&#10;    int sum = 0;&#10;    for(auto it : edges) {&#10;        int wt = it.first, u = it.second.first, v = it.second.second;&#10;        if(ds.findUPar(u) != ds.findUPar(v)) {&#10;            sum += wt;&#10;            ds.unionBySize(u, v);&#10;        }&#10;    }&#10;    return sum;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">26</td>
+      <td rowspan="1">Graph 27 Strongly Connected Components Kosarajus Algorithm<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Reverse graph.</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Kosaraju's Algorithm. 1. Topo sort the graph to get finish times (push to stack on completion). 2. Reverse all edges. 3. Pop from stack and run DFS on the reversed graph. Each successful DFS from stack gives one SCC.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void dfs(int node, vector&lt;int&gt; adj[], vector&lt;int&gt;&amp; vis, stack&lt;int&gt;&amp; st) {&#10;    vis[node] = 1;&#10;    for(auto it : adj[node]) if(!vis[it]) dfs(it, adj, vis, st);&#10;    st.push(node);&#10;}&#10;void dfs2(int node, vector&lt;int&gt; adjT[], vector&lt;int&gt;&amp; vis) {&#10;    vis[node] = 1;&#10;    for(auto it : adjT[node]) if(!vis[it]) dfs2(it, adjT, vis);&#10;}&#10;int kosaraju(int V, vector&lt;int&gt; adj[]) {&#10;    vector&lt;int&gt; vis(V, 0);&#10;    stack&lt;int&gt; st;&#10;    for(int i=0; i&lt;V; i++) {&#10;        if(!vis[i]) dfs(i, adj, vis, st);&#10;    }&#10;    vector&lt;int&gt; adjT[V];&#10;    for(int i=0; i&lt;V; i++) {&#10;        vis[i] = 0;&#10;        for(auto it : adj[i]) adjT[it].push_back(i);&#10;    }&#10;    int scc = 0;&#10;    while(!st.empty()) {&#10;        int node = st.top(); st.pop();&#10;        if(!vis[node]) {&#10;            scc++;&#10;            dfs2(node, adjT, vis);&#10;        }&#10;    }&#10;    return scc;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">27</td>
+      <td rowspan="1">Graph 28 Bridges In Graph<br><br></b> <a href='https://leetcode.com/problems/critical-connections-in-a-network/' target='_blank'>LeetCode 1192</a></td>
+      <td rowspan="1"><b>Example 1:</b> Tarjan's algorithm.</td>
+      <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Tarjan's algorithm. Maintain `tin` (time of insertion) and `low` (lowest time reachable). If `low[neighbor] > tin[node]`, the edge `(node, neighbor)` is a bridge. Update `low[node] = min(low[node], low[neighbor])`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int timer = 1;&#10;void dfs(int node, int parent, vector&lt;int&gt;&amp; vis, vector&lt;int&gt; adj[], int tin[], int low[], vector&lt;vector&lt;int&gt;&gt;&amp; bridges) {&#10;    vis[node] = 1;&#10;    tin[node] = low[node] = timer++;&#10;    for(auto it : adj[node]) {&#10;        if(it == parent) continue;&#10;        if(vis[it] == 0) {&#10;            dfs(it, node, vis, adj, tin, low, bridges);&#10;            low[node] = min(low[node], low[it]);&#10;            if(low[it] &gt; tin[node]) bridges.push_back({node, it});&#10;        } else {&#10;            low[node] = min(low[node], low[it]);&#10;        }&#10;    }&#10;}&#10;vector&lt;vector&lt;int&gt;&gt; criticalConnections(int n, vector&lt;vector&lt;int&gt;&gt;&amp; connections) {&#10;    vector&lt;int&gt; adj[n];&#10;    for(auto it : connections) {&#10;        adj[it[0]].push_back(it[1]);&#10;        adj[it[1]].push_back(it[0]);&#10;    }&#10;    vector&lt;int&gt; vis(n, 0);&#10;    int tin[n];&#10;    int low[n];&#10;    vector&lt;vector&lt;int&gt;&gt; bridges;&#10;    dfs(0, -1, vis, adj, tin, low, bridges);&#10;    return bridges;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

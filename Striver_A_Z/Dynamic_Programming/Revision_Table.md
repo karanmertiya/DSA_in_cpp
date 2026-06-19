@@ -232,5 +232,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Subset sum variation. `S1 - S2 = target`, `S1 + S2 = totalSum`. So, `S1 = (target + totalSum) / 2`. Find subsets with this target sum.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findTargetSumWays(vector&lt;int&gt;&amp; nums, int target) {&#10;    int sum = 0; for(int n : nums) sum += n;&#10;    if(sum - target &lt; 0 || (sum - target) % 2 == 1) return 0;&#10;    int s2 = (sum - target) / 2;&#10;    vector&lt;int&gt; prev(s2 + 1, 0);&#10;    if(nums[0] == 0) prev[0] = 2;&#10;    else prev[0] = 1;&#10;    if(nums[0] != 0 &amp;&amp; nums[0] &lt;= s2) prev[nums[0]] = 1;&#10;    for(int ind=1; ind&lt;nums.size(); ind++) {&#10;        vector&lt;int&gt; cur(s2 + 1, 0);&#10;        for(int t=0; t&lt;=s2; t++) {&#10;            int notTaken = prev[t];&#10;            int taken = 0;&#10;            if(nums[ind] &lt;= t) taken = prev[t - nums[ind]];&#10;            cur[t] = notTaken + taken;&#10;        }&#10;        prev = cur;&#10;    }&#10;    return prev[s2];&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">25</td>
+      <td rowspan="1">Dp 24 Burst Balloons<br><br></b> <a href='https://leetcode.com/problems/burst-balloons/' target='_blank'>LeetCode 312</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: nums = [3,1,5,8], Output: 167</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> MCM Pattern. Add 1 at the beginning and end. Loop lengths from 1 to N. Iterate start `i` and end `j`. Then iterate `k` from `i` to `j`, meaning balloon `k` is the LAST one to burst in the range `[i, j]`. The coins collected are `nums[i-1] * nums[k] * nums[j+1] + dp[i][k-1] + dp[k+1][j]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxCoins(vector&lt;int&gt;&amp; nums) {&#10;    int n = nums.size();&#10;    nums.insert(nums.begin(), 1);&#10;    nums.push_back(1);&#10;    vector&lt;vector&lt;int&gt;&gt; dp(n + 2, vector&lt;int&gt;(n + 2, 0));&#10;    for(int i=n; i&gt;=1; i--) {&#10;        for(int j=1; j&lt;=n; j++) {&#10;            if(i &gt; j) continue;&#10;            int maxi = INT_MIN;&#10;            for(int k=i; k&lt;=j; k++) {&#10;                int cost = nums[i-1]*nums[k]*nums[j+1] + dp[i][k-1] + dp[k+1][j];&#10;                maxi = max(maxi, cost);&#10;            }&#10;            dp[i][j] = maxi;&#10;        }&#10;    }&#10;    return dp[1][n];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">26</td>
+      <td rowspan="1">Dp 25 Palindrome Partitioning Ii<br><br></b> <a href='https://leetcode.com/problems/palindrome-partitioning-ii/' target='_blank'>LeetCode 132</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: s = 'aab', Output: 1</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Front Partitioning. `dp[i]` is the minimum cuts for `s[i...n-1]`. To compute `dp[i]`, iterate `j` from `i` to `n-1`. If `s[i...j]` is a palindrome, then `cost = 1 + dp[j+1]`. `dp[i]` is the minimum of these costs. Return `dp[0] - 1`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPalindrome(string&amp; s, int i, int j) {&#10;    while(i &lt; j) if(s[i++] != s[j--]) return false;&#10;    return true;&#10;}&#10;int minCut(string s) {&#10;    int n = s.length();&#10;    vector&lt;int&gt; dp(n + 1, 0);&#10;    for(int i=n-1; i&gt;=0; i--) {&#10;        int minCuts = INT_MAX;&#10;        for(int j=i; j&lt;n; j++) {&#10;            if(isPalindrome(s, i, j)) {&#10;                int cost = 1 + dp[j+1];&#10;                minCuts = min(minCuts, cost);&#10;            }&#10;        }&#10;        dp[i] = minCuts;&#10;    }&#10;    return dp[0] - 1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">27</td>
+      <td rowspan="1">Dp 26 Evaluate Boolean Expression To True<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/boolean-parenthesization5610/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> MCM DP pattern.</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> MCM DP. `dp[i][j][isTrue]` stores the number of ways to evaluate `S[i..j]` to boolean `isTrue`. Iterate length, start, and partition `k`. Calculate T/F ways based on the operator at `k`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countWays(int N, string S){&#10;    int mod = 1003;&#10;    vector&lt;vector&lt;vector&lt;long long&gt;&gt;&gt; dp(N, vector&lt;vector&lt;long long&gt;&gt;(N, vector&lt;long long&gt;(2, 0)));&#10;    for(int i=N-1; i&gt;=0; i-=2) {&#10;        for(int j=i; j&lt;N; j+=2) {&#10;            if(i == j) {&#10;                dp[i][j][1] = (S[i] == &#x27;T&#x27;);&#10;                dp[i][j][0] = (S[i] == &#x27;F&#x27;);&#10;                continue;&#10;            }&#10;            long long waysT = 0, waysF = 0;&#10;            for(int k=i+1; k&lt;=j-1; k+=2) {&#10;                long long lT = dp[i][k-1][1], lF = dp[i][k-1][0];&#10;                long long rT = dp[k+1][j][1], rF = dp[k+1][j][0];&#10;                if(S[k] == &#x27;&amp;&#x27;) {&#10;                    waysT = (waysT + (lT * rT) % mod) % mod;&#10;                    waysF = (waysF + (lT * rF) % mod + (lF * rT) % mod + (lF * rF) % mod) % mod;&#10;                } else if(S[k] == &#x27;|&#x27;) {&#10;                    waysT = (waysT + (lT * rT) % mod + (lT * rF) % mod + (lF * rT) % mod) % mod;&#10;                    waysF = (waysF + (lF * rF) % mod) % mod;&#10;                } else if(S[k] == &#x27;^&#x27;) {&#10;                    waysT = (waysT + (lT * rF) % mod + (lF * rT) % mod) % mod;&#10;                    waysF = (waysF + (lT * rT) % mod + (lF * rF) % mod) % mod;&#10;                }&#10;            }&#10;            dp[i][j][1] = waysT;&#10;            dp[i][j][0] = waysF;&#10;        }&#10;    }&#10;    return dp[0][N-1][1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">28</td>
+      <td rowspan="1">Dp 27 Maximum Rectangle Area With All 1S<br><br></b> <a href='https://leetcode.com/problems/maximal-rectangle/' target='_blank'>LeetCode 85</a></td>
+      <td rowspan="1"><b>Example 1:</b> Calculate largest area.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(M)</td>
+      <td><code>#include <stack></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain a histogram for each row. The height of the histogram is the consecutive 1s ending at that cell. For each row's histogram, use the 'Largest Rectangle in Histogram' stack algorithm.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int largestRectangleArea(vector&lt;int&gt;&amp; heights) {&#10;    int n = heights.size();&#10;    stack&lt;int&gt; st;&#10;    int maxA = 0;&#10;    for(int i=0; i&lt;=n; i++) {&#10;        while(!st.empty() &amp;&amp; (i == n || heights[st.top()] &gt;= heights[i])) {&#10;            int h = heights[st.top()]; st.pop();&#10;            int w = st.empty() ? i : i - st.top() - 1;&#10;            maxA = max(maxA, h * w);&#10;        }&#10;        st.push(i);&#10;    }&#10;    return maxA;&#10;}&#10;int maximalRectangle(vector&lt;vector&lt;char&gt;&gt;&amp; matrix) {&#10;    if(matrix.empty()) return 0;&#10;    int maxArea = 0;&#10;    vector&lt;int&gt; heights(matrix[0].size(), 0);&#10;    for(int i=0; i&lt;matrix.size(); i++) {&#10;        for(int j=0; j&lt;matrix[0].size(); j++) {&#10;            if(matrix[i][j] == &#x27;1&#x27;) heights[j]++;&#10;            else heights[j] = 0;&#10;        }&#10;        maxArea = max(maxArea, largestRectangleArea(heights));&#10;    }&#10;    return maxArea;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">29</td>
+      <td rowspan="1">Dp 28 Count Square Submatrices With All Ones<br><br></b> <a href='https://leetcode.com/problems/count-square-submatrices-with-all-ones/' target='_blank'>LeetCode 1277</a></td>
+      <td rowspan="1"><b>Example 1:</b> Return total count.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> `dp[i][j]` is the size of the largest square ending at `(i, j)`. It also represents the number of squares ending at `(i, j)`. `dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1` if `matrix[i][j] == 1`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countSquares(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) {&#10;    int n = matrix.size(), m = matrix[0].size();&#10;    vector&lt;vector&lt;int&gt;&gt; dp(n, vector&lt;int&gt;(m, 0));&#10;    int sum = 0;&#10;    for(int i=0; i&lt;n; i++) {&#10;        for(int j=0; j&lt;m; j++) {&#10;            if(matrix[i][j] == 1) {&#10;                if(i == 0 || j == 0) dp[i][j] = 1;&#10;                else dp[i][j] = min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]}) + 1;&#10;                sum += dp[i][j];&#10;            }&#10;        }&#10;    }&#10;    return sum;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">30</td>
+      <td rowspan="1">Dp 29 Word Break Dp<br><br></b> <a href='https://leetcode.com/problems/word-break/' target='_blank'>LeetCode 139</a></td>
+      <td rowspan="1"><b>Example 1:</b> `s = "leetcode"`. Output: `true`.</td>
+      <td><b>Time:</b> O(N^2 * max_word_length)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <unordered_set></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> `dp[i]` is true if `s[0..i-1]` can be segmented. For each `i`, iterate `j` from 0 to `i-1`. If `dp[j]` is true and `s[j..i-1]` is in dict, then `dp[i] = true`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool wordBreak(string s, vector&lt;string&gt;&amp; wordDict) {&#10;    unordered_set&lt;string&gt; dict(wordDict.begin(), wordDict.end());&#10;    int n = s.length();&#10;    vector&lt;bool&gt; dp(n + 1, false);&#10;    dp[0] = true;&#10;    for(int i=1; i&lt;=n; i++) {&#10;        for(int j=i-1; j&gt;=0; j--) {&#10;            if(dp[j] &amp;&amp; dict.count(s.substr(j, i - j))) {&#10;                dp[i] = true;&#10;                break;&#10;            }&#10;        }&#10;    }&#10;    return dp[n];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">31</td>
+      <td rowspan="1">Dp 30 Matrix Chain Multiplication<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Minimize scalar multiplications.</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Standard MCM DP. `dp[i][j]` is min cost to multiply matrices from `i` to `j`. Iterate length of chain, start `i`, and partition `k`. `dp[i][j] = min(dp[i][k] + dp[k+1][j] + arr[i-1]*arr[k]*arr[j])`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int matrixMultiplication(int N, int arr[]) {&#10;    vector&lt;vector&lt;int&gt;&gt; dp(N, vector&lt;int&gt;(N, 0));&#10;    for(int i=N-1; i&gt;=1; i--) {&#10;        for(int j=i+1; j&lt;N; j++) {&#10;            int mini = 1e9;&#10;            for(int k=i; k&lt;j; k++) {&#10;                int cost = dp[i][k] + dp[k+1][j] + arr[i-1]*arr[k]*arr[j];&#10;                mini = min(mini, cost);&#10;            }&#10;            dp[i][j] = mini;&#10;        }&#10;    }&#10;    return dp[1][N-1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">32</td>
+      <td rowspan="1">Dp 31 Minimum Cost To Cut A Stick<br><br></b> <a href='https://leetcode.com/problems/minimum-cost-to-cut-a-stick/' target='_blank'>LeetCode 1547</a></td>
+      <td rowspan="1"><b>Example 1:</b> Cost depends on current stick length.</td>
+      <td><b>Time:</b> O(C^3) where C is number of cuts<br><b>Space:</b> O(C^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort cuts array and prepend 0, append `n`. Use MCM pattern. `dp[i][j]` is the minimum cost to cut the stick between cuts `i` and `j`. `dp[i][j] = min(cost + cuts[j+1] - cuts[i-1])`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minCost(int n, vector&lt;int&gt;&amp; cuts) {&#10;    cuts.push_back(0);&#10;    cuts.push_back(n);&#10;    sort(cuts.begin(), cuts.end());&#10;    int c = cuts.size() - 2;&#10;    vector&lt;vector&lt;int&gt;&gt; dp(c + 2, vector&lt;int&gt;(c + 2, 0));&#10;    for(int i=c; i&gt;=1; i--) {&#10;        for(int j=1; j&lt;=c; j++) {&#10;            if(i &gt; j) continue;&#10;            int mini = INT_MAX;&#10;            for(int k=i; k&lt;=j; k++) {&#10;                int cost = cuts[j+1] - cuts[i-1] + dp[i][k-1] + dp[k+1][j];&#10;                mini = min(mini, cost);&#10;            }&#10;            dp[i][j] = mini;&#10;        }&#10;    }&#10;    return dp[1][c];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">33</td>
+      <td rowspan="1">Dp 32 Partition Array For Maximum Sum<br><br></b> <a href='https://leetcode.com/problems/partition-array-for-maximum-sum/' target='_blank'>LeetCode 1043</a></td>
+      <td rowspan="1"><b>Example 1:</b> Front partitioning DP.</td>
+      <td><b>Time:</b> O(N * K)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Front partitioning. `dp[i]` is max sum for `arr[i..n-1]`. For each `i`, iterate `j` up to `i+k-1`. Find `maxi` element in this window, and add `maxi * length + dp[j+1]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxSumAfterPartitioning(vector&lt;int&gt;&amp; arr, int k) {&#10;    int n = arr.size();&#10;    vector&lt;int&gt; dp(n + 1, 0);&#10;    for(int i=n-1; i&gt;=0; i--) {&#10;        int max_val = 0;&#10;        int max_ans = 0;&#10;        int len = 0;&#10;        for(int j=i; j&lt;min(n, i + k); j++) {&#10;            len++;&#10;            max_val = max(max_val, arr[j]);&#10;            int sum = max_val * len + dp[j+1];&#10;            max_ans = max(max_ans, sum);&#10;        }&#10;        dp[i] = max_ans;&#10;    }&#10;    return dp[0];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">34</td>
+      <td rowspan="1">Dp 33 Distinct Subsequences<br><br></b> <a href='https://leetcode.com/problems/distinct-subsequences/' target='_blank'>LeetCode 115</a></td>
+      <td rowspan="1"><b>Example 1:</b> Subsequence match count.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(M)</td>
+      <td>-</td>
+      <td><b>Integer Overflow:</b> Use double or long long, or cast to unsigned int.</td>
+      <td><b>Explanation:</b> If characters match, `dp[i][j] = dp[i-1][j-1] + dp[i-1][j]`. If they don't, `dp[i][j] = dp[i-1][j]`. Optimize to 1D array.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int numDistinct(string s, string t) {&#10;    int n = s.length(), m = t.length();&#10;    vector&lt;double&gt; dp(m + 1, 0);&#10;    dp[0] = 1;&#10;    for(int i=1; i&lt;=n; i++) {&#10;        for(int j=m; j&gt;=1; j--) {&#10;            if(s[i-1] == t[j-1]) {&#10;                dp[j] = dp[j-1] + dp[j];&#10;            }&#10;        }&#10;    }&#10;    return (int)dp[m];&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
