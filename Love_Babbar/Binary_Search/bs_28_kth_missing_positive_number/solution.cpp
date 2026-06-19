@@ -1,0 +1,15 @@
+// Time Complexity: O(log N)
+// Space Complexity: O(1)
+// Explanation: Binary search. At index `mid`, the number of missing elements before `arr[mid]` is `arr[mid] - (mid + 1)`. If this is < `k`, search right `low = mid + 1`. Else search left `high = mid - 1`. Ans is `high + 1 + k` or `low + k`.
+
+int findKthPositive(vector<int>& arr, int k) {
+    int low = 0, high = arr.size() - 1;
+    while(low <= high) {
+        int mid = low + (high - low) / 2;
+        int missing = arr[mid] - (mid + 1);
+        if(missing < k) low = mid + 1;
+        else high = mid - 1;
+    }
+    return low + k;
+}
+
