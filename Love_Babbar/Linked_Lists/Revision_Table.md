@@ -466,5 +466,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Reverse the first `k` nodes of the linked list iteratively. After reversing, the `head` pointer will be the end of the reversed group, and `curr` will point to the next node. Recursively call the function for `curr` and set `head->next` to the result.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct node *reverse (struct node *head, int k) {&#10;    if(!head) return NULL;&#10;    struct node* curr = head, *prev = NULL, *next = NULL;&#10;    int count = 0;&#10;    while(curr &amp;&amp; count &lt; k) {&#10;        next = curr-&gt;next;&#10;        curr-&gt;next = prev;&#10;        prev = curr;&#10;        curr = next;&#10;        count++;&#10;    }&#10;    if(next) head-&gt;next = reverse(next, k);&#10;    return prev;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>51</td>
+      <td>Ll 19 Split A Circular Linked List Into Two Halves<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/split-a-circular-linked-list-into-two-halves/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Slow and Fast Pointer.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use slow and fast pointers to find the mid of the circular linked list. The slow pointer will point to the mid. Then break the list into two and make both circular.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void splitList(Node *head, Node **head1_ref, Node **head2_ref) {&#10;    Node *slow = head, *fast = head;&#10;    if(head == NULL) return;&#10;    while(fast-&gt;next != head &amp;&amp; fast-&gt;next-&gt;next != head) {&#10;        slow = slow-&gt;next;&#10;        fast = fast-&gt;next-&gt;next;&#10;    }&#10;    if(fast-&gt;next-&gt;next == head) fast = fast-&gt;next;&#10;    *head1_ref = head;&#10;    if(head-&gt;next != head) *head2_ref = slow-&gt;next;&#10;    fast-&gt;next = slow-&gt;next;&#10;    slow-&gt;next = head;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>Ll 20 Check If Circular Linked List<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/circular-linked-list/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Traverse to head.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>Empty list</td>
+      <td><b>Explanation:</b> Traverse the linked list starting from head. If we reach NULL, it's not circular. If we reach head again, it is circular.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isCircular(Node *head) {&#10;    if(!head) return true;&#10;    Node *temp = head-&gt;next;&#10;    while(temp != NULL &amp;&amp; temp != head) {&#10;        temp = temp-&gt;next;&#10;    }&#10;    return (temp == head);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>Ll 21 Count Triplets In A Sorted Doubly Linked List Whose Sum Is Equal To Given Value X<br><br></b> <a href='https://www.geeksforgeeks.org/count-triplets-sorted-doubly-linked-list-whose-sum-equal-given-value-x/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Two Pointers.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through the list. For each node, use two pointers (left and right) on the remaining list to find pairs that sum to `x - node.data`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countTriplets(Node* head, int x) {&#10;    if(!head) return 0;&#10;    Node* curr, *first, *last;&#10;    int count = 0;&#10;    last = head;&#10;    while(last-&gt;next != NULL) last = last-&gt;next;&#10;    for(curr = head; curr != NULL; curr = curr-&gt;next) {&#10;        first = curr-&gt;next;&#10;        Node* right = last;&#10;        while(first != NULL &amp;&amp; right != NULL &amp;&amp; first != right &amp;&amp; right-&gt;next != first) {&#10;            if((curr-&gt;data + first-&gt;data + right-&gt;data) == x) {&#10;                count++;&#10;                first = first-&gt;next;&#10;                right = right-&gt;prev;&#10;            } else if((curr-&gt;data + first-&gt;data + right-&gt;data) &lt; x) {&#10;                first = first-&gt;next;&#10;            } else {&#10;                right = right-&gt;prev;&#10;            }&#10;        }&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>Ll 22 Sort A K Sorted Doubly Linked List<br><br></b> <a href='https://www.geeksforgeeks.org/sort-k-sorted-doubly-linked-list/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Min Heap.</td>
+      <td><b>Time:</b> O(N log K)<br><b>Space:</b> O(K)</td>
+      <td>Priority Queue</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a Min Heap of size k+1. Insert the first k+1 elements into the heap. Then, pop the minimum element, place it in the sorted list, and push the next element from the original list into the heap.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct compare {&#10;    bool operator()(Node* p1, Node* p2) {&#10;        return p1-&gt;data &gt; p2-&gt;data;&#10;    }&#10;};&#10;Node* sortAKSortedDLL(Node* head, int k) {&#10;    if(head == NULL) return head;&#10;    priority_queue&lt;Node*, vector&lt;Node*&gt;, compare&gt; pq;&#10;    Node* newHead = NULL, *last = NULL;&#10;    for(int i = 0; head != NULL &amp;&amp; i &lt;= k; i++) {&#10;        pq.push(head);&#10;        head = head-&gt;next;&#10;    }&#10;    while(!pq.empty()) {&#10;        if(newHead == NULL) {&#10;            newHead = pq.top();&#10;            newHead-&gt;prev = NULL;&#10;            last = newHead;&#10;        } else {&#10;            last-&gt;next = pq.top();&#10;            pq.top()-&gt;prev = last;&#10;            last = pq.top();&#10;        }&#10;        pq.pop();&#10;        if(head != NULL) {&#10;            pq.push(head);&#10;            head = head-&gt;next;&#10;        }&#10;    }&#10;    last-&gt;next = NULL;&#10;    return newHead;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>Ll 23 Rotate Doubly Linked List By N Nodes<br><br></b> <a href='https://www.geeksforgeeks.org/rotate-doubly-linked-list-n-nodes/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Traverse and link.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>N == 0</td>
+      <td><b>Explanation:</b> Traverse to the Nth node. This will be the new tail. Its next will be the new head. Traverse to the end of the list and link it to the original head.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node *rotateDLL(Node *start, int N) {&#10;    if (N == 0) return start;&#10;    Node* current = start;&#10;    int count = 1;&#10;    while(count &lt; N &amp;&amp; current != NULL) {&#10;        current = current-&gt;next;&#10;        count++;&#10;    }&#10;    if (current == NULL) return start;&#10;    Node* nthNode = current;&#10;    while (current-&gt;next != NULL) current = current-&gt;next;&#10;    current-&gt;next = start;&#10;    start-&gt;prev = current;&#10;    start = nthNode-&gt;next;&#10;    start-&gt;prev = NULL;&#10;    nthNode-&gt;next = NULL;&#10;    return start;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>Ll 24 Reverse A Doubly Linked List In Groups Of Given Size<br><br></b> <a href='https://www.geeksforgeeks.org/reverse-doubly-linked-list-groups-given-size/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Recursion.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N/K) recursion stack</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Similar to reversing singly linked list in groups of k. Keep track of prev, next, and current. Reverse k nodes, then recursively call for the rest of the list.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* revListInGroupOfGivenSize(Node* head, int k) {&#10;    if(!head) return NULL;&#10;    Node *current = head, *next = NULL, *newHead = NULL;&#10;    int count = 0;&#10;    while(current != NULL &amp;&amp; count &lt; k) {&#10;        next = current-&gt;next;&#10;        current-&gt;prev = next;&#10;        current-&gt;next = newHead;&#10;        if(newHead != NULL) newHead-&gt;prev = current;&#10;        newHead = current;&#10;        current = next;&#10;        count++;&#10;    }&#10;    if(next != NULL) {&#10;        head-&gt;next = revListInGroupOfGivenSize(next, k);&#10;        head-&gt;next-&gt;prev = head;&#10;    }&#10;    return newHead;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>Ll 25 Can We Reverse A Linked List In Less Than On<br><br></b> N/A</td>
+      <td><b>Example 1:</b> Theoretical Question.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> No, it is not possible. To reverse a linked list, we must visit every single node at least once to change its pointer. Therefore, the minimum time complexity required is strictly O(N), where N is the number of nodes in the linked list.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">// It is not possible to reverse in less than O(n).</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>Ll 26 Find The First Node Of Loop In Linked List<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Floyd's Cycle Detection.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Floyd's Cycle Detection to find if a cycle exists (slow and fast pointers meet). Then, move slow back to head, and advance both slow and fast by one step until they meet. The meeting point is the start of the loop.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findFirstNode(Node* head) {&#10;    Node *slow = head, *fast = head;&#10;    while(fast != NULL &amp;&amp; fast-&gt;next != NULL) {&#10;        slow = slow-&gt;next;&#10;        fast = fast-&gt;next-&gt;next;&#10;        if(slow == fast) {&#10;            slow = head;&#10;            while(slow != fast) {&#10;                slow = slow-&gt;next;&#10;                fast = fast-&gt;next;&#10;            }&#10;            return slow-&gt;data;&#10;        }&#10;    }&#10;    return -1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>Ll 27 Multiply Two Linked Lists<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/multiply-two-linked-lists/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Form numbers.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Traverse both linked lists to form the respective numbers modulo a given large number (e.g., 10^9+7). Then multiply the two formed numbers and return the result modulo the same large number.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long multiplyTwoLists(Node *l1, Node *l2) {&#10;    long long N = 1000000007;&#10;    long long num1 = 0, num2 = 0;&#10;    while(l1 || l2) {&#10;        if(l1) {&#10;            num1 = (num1 * 10)%N + l1-&gt;data;&#10;            l1 = l1-&gt;next;&#10;        }&#10;        if(l2) {&#10;            num2 = (num2 * 10)%N + l2-&gt;data;&#10;            l2 = l2-&gt;next;&#10;        }&#10;    }&#10;    return (num1 * num2) % N;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>Ll 28 Delete Nodes Having Greater Value On Right<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/delete-nodes-having-greater-value-on-right/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Reverse and filter.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Reverse the linked list. Keep track of the max node seen so far. If a node is less than the max node, delete it. Else, update max node. Finally, reverse the list back.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node *reverse(Node *head) {&#10;    Node *prev = NULL, *curr = head, *next = NULL;&#10;    while(curr) {&#10;        next = curr-&gt;next;&#10;        curr-&gt;next = prev;&#10;        prev = curr;&#10;        curr = next;&#10;    }&#10;    return prev;&#10;}&#10;Node *compute(Node *head) {&#10;    head = reverse(head);&#10;    Node *curr = head;&#10;    Node *maxNode = head;&#10;    while(curr != NULL &amp;&amp; curr-&gt;next != NULL) {&#10;        if(curr-&gt;next-&gt;data &lt; maxNode-&gt;data) {&#10;            Node *temp = curr-&gt;next;&#10;            curr-&gt;next = temp-&gt;next;&#10;            delete temp;&#10;        } else {&#10;            curr = curr-&gt;next;&#10;            maxNode = curr;&#10;        }&#10;    }&#10;    return reverse(head);&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

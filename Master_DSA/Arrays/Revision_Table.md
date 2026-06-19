@@ -565,5 +565,95 @@
       <td>-</td>
       <td><b>Explanation:</b> First count all elements <= k (let's say `cnt`). This will be the window size. Find elements > k in the first window. Then slide the window, updating the number of elements > k. The minimum among all windows is the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minSwap(int arr[], int n, int k) {&#10;    int cnt = 0;&#10;    for(int i = 0; i &lt; n; i++) if(arr[i] &lt;= k) cnt++;&#10;    int bad = 0;&#10;    for(int i = 0; i &lt; cnt; i++) if(arr[i] &gt; k) bad++;&#10;    int ans = bad;&#10;    for(int i = 0, j = cnt; j &lt; n; i++, j++) {&#10;        if(arr[i] &gt; k) bad--;&#10;        if(arr[j] &gt; k) bad++;&#10;        ans = min(ans, bad);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>62</td>
+      <td>Greedy 05 Fractional Knapsack<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sort by value/weight ratio.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort items in descending order of value/weight ratio. Greedily pick items with the highest ratio first. If an item cannot fit completely, take the fraction that fits.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Item { int value; int weight; };&#10;bool static comp(Item a, Item b) {&#10;    double r1 = (double)a.value / (double)a.weight;&#10;    double r2 = (double)b.value / (double)b.weight;&#10;    return r1 &gt; r2;&#10;}&#10;double fractionalKnapsack(int W, Item arr[], int n) {&#10;    sort(arr, arr + n, comp);&#10;    double currWeight = 0, finalValue = 0.0;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(currWeight + arr[i].weight &lt;= W) {&#10;            currWeight += arr[i].weight;&#10;            finalValue += arr[i].value;&#10;        } else {&#10;            double remain = W - currWeight;&#10;            finalValue += (arr[i].value / (double)arr[i].weight) * remain;&#10;            break;&#10;        }&#10;    }&#10;    return finalValue;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>63</td>
+      <td>Greedy 06 Choose And Swap<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/choose-and-swap0531/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Track first occurrences.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Store the first occurrence index of all characters. Iterate the string, for each character check if there is a lexicographically smaller character that appears later in the string. If so, swap them and break.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string chooseandswap(string a) {&#10;    set&lt;char&gt; s;&#10;    for(char c : a) s.insert(c);&#10;    for(int i = 0; i &lt; a.length(); i++) {&#10;        s.erase(a[i]);&#10;        if(s.empty()) break;&#10;        char ch = *s.begin();&#10;        if(ch &lt; a[i]) {&#10;            char ch1 = a[i], ch2 = ch;&#10;            for(int j = 0; j &lt; a.length(); j++) {&#10;                if(a[j] == ch1) a[j] = ch2;&#10;                else if(a[j] == ch2) a[j] = ch1;&#10;            }&#10;            break;&#10;        }&#10;    }&#10;    return a;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>Greedy 07 Maximum Trains For Which Stoppage Can Be Provided<br><br></b> <a href='https://www.geeksforgeeks.org/maximum-trains-stoppage-can-provided/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Activity Selection on each platform.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Group trains by platform. For each platform, this reduces to the Activity Selection Problem. Sort the trains by departure time and greedily pick non-overlapping trains.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Train { int arr, dep, plat; };&#10;bool comp(Train a, Train b) { return a.dep &lt; b.dep; }&#10;int maxStop(vector&lt;Train&gt;&amp; trains, int n, int m) {&#10;    vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; platforms(m + 1);&#10;    for(int i = 0; i &lt; n; i++) {&#10;        platforms[trains[i].plat].push_back({trains[i].dep, trains[i].arr});&#10;    }&#10;    int count = 0;&#10;    for(int i = 1; i &lt;= m; i++) {&#10;        if(platforms[i].size() == 0) continue;&#10;        sort(platforms[i].begin(), platforms[i].end());&#10;        count++;&#10;        int lastDep = platforms[i][0].first;&#10;        for(int j = 1; j &lt; platforms[i].size(); j++) {&#10;            if(platforms[i][j].second &gt;= lastDep) {&#10;                count++;&#10;                lastDep = platforms[i][j].first;&#10;            }&#10;        }&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>Greedy 08 Minimum Platforms<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sort arrival and departure times separately.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort arrival and departure arrays separately. Use two pointers, one for arrival and one for departure. If arrival < departure, a platform is needed, so increment count. If arrival >= departure, a platform is freed, so decrement count. Track the maximum count.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findPlatform(int arr[], int dep[], int n) {&#10;    sort(arr, arr + n);&#10;    sort(dep, dep + n);&#10;    int plat_needed = 1, result = 1;&#10;    int i = 1, j = 0;&#10;    while(i &lt; n &amp;&amp; j &lt; n) {&#10;        if(arr[i] &lt;= dep[j]) {&#10;            plat_needed++;&#10;            i++;&#10;        } else if(arr[i] &gt; dep[j]) {&#10;            plat_needed--;&#10;            j++;&#10;        }&#10;        if(plat_needed &gt; result) result = plat_needed;&#10;    }&#10;    return result;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>66</td>
+      <td>Greedy 09 Buy Maximum Stocks If I Stocks Can Be Bought On I Th Day<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/buy-maximum-stocks-if-i-stocks-can-be-bought-on-i-th-day/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sort by price.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Store pairs of (price, day). Sort by price. Greedily buy as many stocks as possible on the day with the lowest price, bounded by the maximum allowed on that day (which is 'day') and the remaining money.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int buyMaximumProducts(int n, int k, int price[]) {&#10;    vector&lt;pair&lt;int, int&gt;&gt; v;&#10;    for(int i = 0; i &lt; n; i++) v.push_back({price[i], i + 1});&#10;    sort(v.begin(), v.end());&#10;    int ans = 0;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        int amount = min(v[i].second, k / v[i].first);&#10;        ans += amount;&#10;        k -= amount * v[i].first;&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>67</td>
+      <td>Greedy 10 Shop In Candy Store<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/shop-in-candy-store1145/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sort and pick from ends.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort the candies by price. For minimum cost, buy the cheapest and take K most expensive for free. For maximum cost, buy the most expensive and take K cheapest for free.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; candyStore(int candies[], int N, int K) {&#10;    sort(candies, candies + N);&#10;    int minCost = 0, maxCost = 0;&#10;    int i = 0, j = N - 1;&#10;    while(i &lt;= j) {&#10;        minCost += candies[i];&#10;        i++; j -= K;&#10;    }&#10;    i = N - 1; j = 0;&#10;    while(j &lt;= i) {&#10;        maxCost += candies[i];&#10;        i--; j += K;&#10;    }&#10;    return {minCost, maxCost};&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>Greedy 11 Minimize Cash Flow Among A Given Set Of Friends Who Have Borrowed Money From Each Other<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimize-cash-flow/0' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Net amounts.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Calculate the net amount for each person by subtracting incoming debts from outgoing debts. Find the person with maximum net credit and maximum net debit. Settle their amounts, and repeat recursively or iteratively until all net amounts are zero.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int getMin(int arr[], int n) {&#10;    int minInd = 0;&#10;    for(int i = 1; i &lt; n; i++) if(arr[i] &lt; arr[minInd]) minInd = i;&#10;    return minInd;&#10;}&#10;int getMax(int arr[], int n) {&#10;    int maxInd = 0;&#10;    for(int i = 1; i &lt; n; i++) if(arr[i] &gt; arr[maxInd]) maxInd = i;&#10;    return maxInd;&#10;}&#10;void minCashFlowRec(int amount[], int n, vector&lt;vector&lt;int&gt;&gt;&amp; ans) {&#10;    int mxCredit = getMax(amount, n), mxDebit = getMin(amount, n);&#10;    if(amount[mxCredit] == 0 &amp;&amp; amount[mxDebit] == 0) return;&#10;    int minVal = min(-amount[mxDebit], amount[mxCredit]);&#10;    amount[mxCredit] -= minVal;&#10;    amount[mxDebit] += minVal;&#10;    ans[mxDebit][mxCredit] = minVal;&#10;    minCashFlowRec(amount, n, ans);&#10;}&#10;vector&lt;vector&lt;int&gt;&gt; minCashFlow(vector&lt;vector&lt;int&gt;&gt;&amp; graph, int n) {&#10;    int amount[n] = {0};&#10;    for(int p = 0; p &lt; n; p++) {&#10;        for(int i = 0; i &lt; n; i++) {&#10;            amount[p] += (graph[i][p] - graph[p][i]);&#10;        }&#10;    }&#10;    vector&lt;vector&lt;int&gt;&gt; ans(n, vector&lt;int&gt;(n, 0));&#10;    minCashFlowRec(amount, n, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>69</td>
+      <td>Greedy 12 Minimum Cost To Cut A Board Into Squares<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-cost-to-cut-a-board-into-squares/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sort costs.</td>
+      <td><b>Time:</b> O(M log M + N log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort all vertical and horizontal cuts in descending order. Maintain counts of horizontal and vertical pieces. Greedily pick the cut with the highest cost. If a horizontal cut is made, its total cost is `cut_cost * vertical_pieces`. Update the counts.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minimumCostOfBreaking(vector&lt;int&gt; X, vector&lt;int&gt; Y, int M, int N) {&#10;    sort(X.begin(), X.end(), greater&lt;int&gt;());&#10;    sort(Y.begin(), Y.end(), greater&lt;int&gt;());&#10;    int hzntl = 1, vert = 1;&#10;    int i = 0, j = 0, res = 0;&#10;    while(i &lt; M - 1 &amp;&amp; j &lt; N - 1) {&#10;        if(X[i] &gt; Y[j]) {&#10;            res += X[i] * vert;&#10;            hzntl++; i++;&#10;        } else {&#10;            res += Y[j] * hzntl;&#10;            vert++; j++;&#10;        }&#10;    }&#10;    int total = 0;&#10;    while(i &lt; M - 1) total += X[i++];&#10;    res += total * vert;&#10;    total = 0;&#10;    while(j &lt; N - 1) total += Y[j++];&#10;    res += total * hzntl;&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>Greedy 13 Survival On Island<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/check-if-it-is-possible-to-survive-on-island4922/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Math.</td>
+      <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If total required food > max food you can buy in S days excluding Sundays, return -1. Else, total required food is `S * M`. Minimum days = `ceil((S * M) / N)`. Also handle the edge case where `N < M` or if survival > 6 days and `(N * 6) < (M * 7)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minimumDays(int S, int N, int M) {&#10;    if(M &gt; N) return -1;&#10;    if(S &gt; 6 &amp;&amp; (N * 6) &lt; (M * 7)) return -1;&#10;    int total = S * M;&#10;    return ceil((double)total / N);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>71</td>
+      <td>Greedy 14 Maximum Meetings In One Room<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/maximum-meetings-in-one-room/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Activity Selection.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Store `(start, end, index)`. Sort by end time. Pick the first meeting. For subsequent meetings, if `start > last_picked_end`, pick it and update `last_picked_end`. Return sorted indices.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct Meeting { int s, e, pos; };&#10;bool comp(Meeting a, Meeting b) {&#10;    if(a.e == b.e) return a.pos &lt; b.pos;&#10;    return a.e &lt; b.e;&#10;}&#10;vector&lt;int&gt; maxMeetings(int N, vector&lt;int&gt;&amp; S, vector&lt;int&gt;&amp; F) {&#10;    vector&lt;Meeting&gt; m(N);&#10;    for(int i = 0; i &lt; N; i++) { m[i].s = S[i]; m[i].e = F[i]; m[i].pos = i + 1; }&#10;    sort(m.begin(), m.end(), comp);&#10;    vector&lt;int&gt; ans;&#10;    ans.push_back(m[0].pos);&#10;    int last_e = m[0].e;&#10;    for(int i = 1; i &lt; N; i++) {&#10;        if(m[i].s &gt; last_e) {&#10;            ans.push_back(m[i].pos);&#10;            last_e = m[i].e;&#10;        }&#10;    }&#10;    sort(ans.begin(), ans.end());&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

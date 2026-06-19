@@ -439,5 +439,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Use a global `max_dist` or pass it by reference. In `solve(r, c, dist)`, if `(r, c) == (dest_r, dest_c)`, `max_dist = max(max_dist, dist)` and return. Mark `(r, c)` as visited. Explore 4 directions. Unmark `(r, c)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxDist;&#10;void solve(vector&lt;vector&lt;int&gt;&gt;&amp; mat, int r, int c, int dr, int dc, int dist) {&#10;    if(r == dr &amp;&amp; c == dc) {&#10;        maxDist = max(maxDist, dist);&#10;        return;&#10;    }&#10;    mat[r][c] = 0; // mark visited&#10;    int dRow[] = {-1, 1, 0, 0};&#10;    int dCol[] = {0, 0, -1, 1};&#10;    for(int i = 0; i &lt; 4; i++) {&#10;        int nr = r + dRow[i];&#10;        int nc = c + dCol[i];&#10;        if(nr &gt;= 0 &amp;&amp; nr &lt; mat.size() &amp;&amp; nc &gt;= 0 &amp;&amp; nc &lt; mat[0].size() &amp;&amp; mat[nr][nc] == 1) {&#10;            solve(mat, nr, nc, dr, dc, dist + 1);&#10;        }&#10;    }&#10;    mat[r][c] = 1; // unmark&#10;}&#10;int longestPath(vector&lt;vector&lt;int&gt;&gt; mat, int xs, int ys, int xd, int yd) {&#10;    if(mat[xs][ys] == 0 || mat[xd][yd] == 0) return -1;&#10;    maxDist = -1;&#10;    solve(mat, xs, ys, xd, yd, 0);&#10;    return maxDist;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>48</td>
+      <td>Backtracking 09 Find Shortest Safe Route In A Path With Landmines<br><br></b> <a href='https://www.geeksforgeeks.org/find-shortest-safe-route-in-a-path-with-landmines/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> BFS or Backtracking.</td>
+      <td><b>Time:</b> O(R * C)<br><b>Space:</b> O(R * C)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> First, mark all adjacent cells of landmines as unsafe. Then start from each cell in the first column and use BFS or Backtracking to find the shortest path to the last column, avoiding unsafe cells.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findShortestPath(vector&lt;vector&lt;int&gt;&gt; &amp;mat) {&#10;    int R = mat.size(), C = mat[0].size();&#10;    vector&lt;vector&lt;int&gt;&gt; grid(R, vector&lt;int&gt;(C, 1));&#10;    int dr[] = {-1, 1, 0, 0}, dc[] = {0, 0, -1, 1};&#10;    for(int i = 0; i &lt; R; i++) {&#10;        for(int j = 0; j &lt; C; j++) {&#10;            if(mat[i][j] == 0) {&#10;                grid[i][j] = 0;&#10;                for(int k = 0; k &lt; 4; k++) {&#10;                    int nr = i + dr[k], nc = j + dc[k];&#10;                    if(nr &gt;= 0 &amp;&amp; nr &lt; R &amp;&amp; nc &gt;= 0 &amp;&amp; nc &lt; C) grid[nr][nc] = 0;&#10;                }&#10;            }&#10;        }&#10;    }&#10;    queue&lt;pair&lt;pair&lt;int, int&gt;, int&gt;&gt; q;&#10;    vector&lt;vector&lt;bool&gt;&gt; vis(R, vector&lt;bool&gt;(C, false));&#10;    for(int i = 0; i &lt; R; i++) {&#10;        if(grid[i][0] == 1) {&#10;            q.push({{i, 0}, 1});&#10;            vis[i][0] = true;&#10;        }&#10;    }&#10;    while(!q.empty()) {&#10;        auto curr = q.front(); q.pop();&#10;        int r = curr.first.first, c = curr.first.second, dist = curr.second;&#10;        if(c == C - 1) return dist;&#10;        for(int k = 0; k &lt; 4; k++) {&#10;            int nr = r + dr[k], nc = c + dc[k];&#10;            if(nr &gt;= 0 &amp;&amp; nr &lt; R &amp;&amp; nc &gt;= 0 &amp;&amp; nc &lt; C &amp;&amp; grid[nr][nc] == 1 &amp;&amp; !vis[nr][nc]) {&#10;                vis[nr][nc] = true;&#10;                q.push({{nr, nc}, dist + 1});&#10;            }&#10;        }&#10;    }&#10;    return -1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>Backtracking 10 Combinational Sum<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/combination-sum-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Backtracking.</td>
+      <td><b>Time:</b> O(2^N * K)<br><b>Space:</b> O(K * X)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort the array and remove duplicates. Use backtracking. At each step, either include the current element (and stay at the current element to allow unlimited picks) or move to the next element. Backtrack when sum < 0 or we reach the end.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(vector&lt;int&gt;&amp; arr, int sum, int idx, vector&lt;int&gt;&amp; curr, vector&lt;vector&lt;int&gt;&gt;&amp; ans) {&#10;    if(sum == 0) {&#10;        ans.push_back(curr);&#10;        return;&#10;    }&#10;    if(sum &lt; 0 || idx == arr.size()) return;&#10;    curr.push_back(arr[idx]);&#10;    solve(arr, sum - arr[idx], idx, curr, ans);&#10;    curr.pop_back();&#10;    solve(arr, sum, idx + 1, curr, ans);&#10;}&#10;vector&lt;vector&lt;int&gt;&gt; combinationSum(vector&lt;int&gt; &amp;A, int B) {&#10;    sort(A.begin(), A.end());&#10;    A.erase(unique(A.begin(), A.end()), A.end());&#10;    vector&lt;vector&lt;int&gt;&gt; ans;&#10;    vector&lt;int&gt; curr;&#10;    solve(A, B, 0, curr, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>Backtracking 11 Find Maximum Number Possible By Doing At Most K Swaps<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/largest-number-in-k-swaps-1587115620/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Backtracking.</td>
+      <td><b>Time:</b> O(N! / (N-K)!)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use backtracking to try swapping each digit with every digit that appears after it and is greater than it. Keep track of the maximum string seen so far. Prune if swaps == 0.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(string str, int k, string&amp; maxStr, int idx) {&#10;    if(k == 0 || idx == str.length() - 1) return;&#10;    char maxChar = str[idx];&#10;    for(int i = idx + 1; i &lt; str.length(); i++) {&#10;        if(maxChar &lt; str[i]) maxChar = str[i];&#10;    }&#10;    if(maxChar != str[idx]) k--;&#10;    for(int i = str.length() - 1; i &gt;= idx; i--) {&#10;        if(str[i] == maxChar) {&#10;            swap(str[idx], str[i]);&#10;            if(str &gt; maxStr) maxStr = str;&#10;            solve(str, k, maxStr, idx + 1);&#10;            swap(str[idx], str[i]);&#10;        }&#10;    }&#10;}&#10;string findMaximumNum(string str, int k) {&#10;    string maxStr = str;&#10;    solve(str, k, maxStr, 0);&#10;    return maxStr;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>Backtracking 12 Print All Permutations Of A String<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Swap based backtracking.</td>
+      <td><b>Time:</b> O(N! * N)<br><b>Space:</b> O(N!)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate from index `i` to `n-1`. Swap `str[i]` with `str[j]`, then recursively call for the next index. After returning, swap back to backtrack. Store permutations in a set or sort the array to handle duplicates and lexicographical order.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(string S, int idx, set&lt;string&gt;&amp; st) {&#10;    if(idx == S.length()) {&#10;        st.insert(S);&#10;        return;&#10;    }&#10;    for(int i = idx; i &lt; S.length(); i++) {&#10;        swap(S[idx], S[i]);&#10;        solve(S, idx + 1, st);&#10;        swap(S[idx], S[i]);&#10;    }&#10;}&#10;vector&lt;string&gt; find_permutation(string S) {&#10;    set&lt;string&gt; st;&#10;    solve(S, 0, st);&#10;    vector&lt;string&gt; ans(st.begin(), st.end());&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>Backtracking 13 Find If There Is A Path Of More Than K Length From A Source<br><br></b> <a href='https://www.geeksforgeeks.org/find-if-there-is-a-path-of-more-than-k-length-from-a-source/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DFS Backtracking.</td>
+      <td><b>Time:</b> O(V!)<br><b>Space:</b> O(V)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Backtracking to perform DFS traversal from the source. Mark the current vertex as visited, subtract the edge weight from `k`, and recursively call for all adjacent unvisited vertices. If `k <= 0`, return true. Backtrack by unmarking the vertex.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool pathMoreThanK(int src, int k, vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt;&amp; adj, vector&lt;bool&gt;&amp; vis) {&#10;    if(k &lt;= 0) return true;&#10;    vis[src] = true;&#10;    for(auto i : adj[src]) {&#10;        int v = i.first, w = i.second;&#10;        if(!vis[v]) {&#10;            if(pathMoreThanK(v, k - w, adj, vis)) return true;&#10;        }&#10;    }&#10;    vis[src] = false;&#10;    return false;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>Backtracking 14 Longest Possible Route In A Matrix With Hurdles<br><br></b> <a href='https://www.geeksforgeeks.org/longest-possible-route-in-a-matrix-with-hurdles/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Backtracking.</td>
+      <td><b>Time:</b> O(4^(M*N))<br><b>Space:</b> O(M*N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Backtracking. Start from the source, mark it as visited, recursively find the longest path from all valid unvisited adjacent cells, add 1 to the maximum among them. Unmark the cell after returning.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void findLongestPath(vector&lt;vector&lt;int&gt;&gt;&amp; mat, int i, int j, int di, int dj, int curr, int&amp; max_dist, vector&lt;vector&lt;bool&gt;&gt;&amp; vis) {&#10;    if(i == di &amp;&amp; j == dj) {&#10;        max_dist = max(max_dist, curr);&#10;        return;&#10;    }&#10;    vis[i][j] = true;&#10;    int dr[] = {-1, 1, 0, 0}, dc[] = {0, 0, -1, 1};&#10;    for(int k = 0; k &lt; 4; k++) {&#10;        int nr = i + dr[k], nc = j + dc[k];&#10;        if(nr &gt;= 0 &amp;&amp; nr &lt; mat.size() &amp;&amp; nc &gt;= 0 &amp;&amp; nc &lt; mat[0].size() &amp;&amp; mat[nr][nc] == 1 &amp;&amp; !vis[nr][nc]) {&#10;            findLongestPath(mat, nr, nc, di, dj, curr + 1, max_dist, vis);&#10;        }&#10;    }&#10;    vis[i][j] = false;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>Backtracking 15 Print All Possible Paths From Top Left To Bottom Right Of A Mxn Matrix<br><br></b> <a href='https://www.geeksforgeeks.org/print-all-possible-paths-from-top-left-to-bottom-right-of-a-mxn-matrix/' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DFS.</td>
+      <td><b>Time:</b> O(2^(M+N))<br><b>Space:</b> O(M+N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use simple DFS from top-left. From cell (i, j), we can move to (i+1, j) or (i, j+1). Keep track of the path elements in an array/list. When reaching bottom-right, print/save the path.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void findPaths(vector&lt;vector&lt;int&gt;&gt;&amp; mat, int i, int j, vector&lt;int&gt;&amp; path, vector&lt;vector&lt;int&gt;&gt;&amp; ans) {&#10;    if(i == mat.size() - 1 &amp;&amp; j == mat[0].size() - 1) {&#10;        path.push_back(mat[i][j]);&#10;        ans.push_back(path);&#10;        path.pop_back();&#10;        return;&#10;    }&#10;    path.push_back(mat[i][j]);&#10;    if(i + 1 &lt; mat.size()) findPaths(mat, i + 1, j, path, ans);&#10;    if(j + 1 &lt; mat[0].size()) findPaths(mat, i, j + 1, path, ans);&#10;    path.pop_back();&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>Backtracking 16 Partition Of A Set Into K Subsets With Equal Sum<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/partition-array-to-k-subsets/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Backtracking with tracking subset sum.</td>
+      <td><b>Time:</b> O(K^N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If total sum is not divisible by K, return false. Create an array of K subset sums. Backtrack to assign each element to one of the K subsets, ensuring no subset sum exceeds total_sum / K. To optimize, sort array descending.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool solve(int a[], int n, int k, int target, vector&lt;int&gt;&amp; subsetSum, int idx) {&#10;    if(idx == n) {&#10;        for(int i = 0; i &lt; k; i++) if(subsetSum[i] != target) return false;&#10;        return true;&#10;    }&#10;    for(int i = 0; i &lt; k; i++) {&#10;        if(subsetSum[i] + a[idx] &lt;= target) {&#10;            subsetSum[i] += a[idx];&#10;            if(solve(a, n, k, target, subsetSum, idx + 1)) return true;&#10;            subsetSum[i] -= a[idx];&#10;        }&#10;        if(subsetSum[i] == 0) break; // Optimization&#10;    }&#10;    return false;&#10;}&#10;bool isKPartitionPossible(int a[], int n, int k) {&#10;    int sum = 0;&#10;    for(int i = 0; i &lt; n; i++) sum += a[i];&#10;    if(sum % k != 0) return false;&#10;    sort(a, a + n, greater&lt;int&gt;());&#10;    vector&lt;int&gt; subsetSum(k, 0);&#10;    return solve(a, n, k, sum / k, subsetSum, 0);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>Backtracking 17 Find All Possible Palindromic Partitions Of A String<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-all-possible-palindromic-partitions-of-a-string/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Backtracking.</td>
+      <td><b>Time:</b> O(2^N * N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate over the string to pick substrings. Check if the picked substring is a palindrome. If yes, add it to current partition and recur for the remaining string. Backtrack by removing it.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPalindrome(string&amp; s, int l, int r) {&#10;    while(l &lt; r) {&#10;        if(s[l++] != s[r--]) return false;&#10;    }&#10;    return true;&#10;}&#10;void solve(string&amp; S, int idx, vector&lt;string&gt;&amp; curr, vector&lt;vector&lt;string&gt;&gt;&amp; ans) {&#10;    if(idx == S.length()) {&#10;        ans.push_back(curr);&#10;        return;&#10;    }&#10;    for(int i = idx; i &lt; S.length(); i++) {&#10;        if(isPalindrome(S, idx, i)) {&#10;            curr.push_back(S.substr(idx, i - idx + 1));&#10;            solve(S, i + 1, curr, ans);&#10;            curr.pop_back();&#10;        }&#10;    }&#10;}&#10;vector&lt;vector&lt;string&gt;&gt; allPalindromicPerms(string S) {&#10;    vector&lt;vector&lt;string&gt;&gt; ans;&#10;    vector&lt;string&gt; curr;&#10;    solve(S, 0, curr, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>Backtracking 18 Word Break Problem Using Backtracking<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/word-break-part-23249/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Backtracking.</td>
+      <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate from current index. For each prefix, if it is in the dictionary, add it to the current sentence string, add a space, and recur for the suffix. If we reach the end of the string, add the current sentence to the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(string&amp; s, int idx, string curr, unordered_set&lt;string&gt;&amp; dict, vector&lt;string&gt;&amp; ans) {&#10;    if(idx == s.length()) {&#10;        curr.pop_back(); // Remove last space&#10;        ans.push_back(curr);&#10;        return;&#10;    }&#10;    for(int i = idx; i &lt; s.length(); i++) {&#10;        string word = s.substr(idx, i - idx + 1);&#10;        if(dict.find(word) != dict.end()) {&#10;            solve(s, i + 1, curr + word + &quot; &quot;, dict, ans);&#10;        }&#10;    }&#10;}&#10;vector&lt;string&gt; wordBreak(int n, vector&lt;string&gt;&amp; dict, string s) {&#10;    unordered_set&lt;string&gt; st(dict.begin(), dict.end());&#10;    vector&lt;string&gt; ans;&#10;    solve(s, 0, &quot;&quot;, st, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

@@ -349,5 +349,23 @@
       <td>-</td>
       <td><b>Explanation:</b> Use an array to track visited numbers. Iterate from index 1 to n. For the current index, try placing an unvisited number. Check if the condition `(num % idx == 0 || idx % num == 0)` is met. If so, mark as visited, recurse to `idx + 1`, then backtrack.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countArrangement(int n) {&#10;    int count = 0;&#10;    vector&lt;int&gt; visited(n + 1, 0);&#10;    function&lt;void(int)&gt; solve = [&amp;](int idx) {&#10;        if(idx &gt; n) {&#10;            count++;&#10;            return;&#10;        }&#10;        for(int i = 1; i &lt;= n; i++) {&#10;            if(!visited[i] &amp;&amp; (i % idx == 0 || idx % i == 0)) {&#10;                visited[i] = 1;&#10;                solve(idx + 1);&#10;                visited[i] = 0;&#10;            }&#10;        }&#10;    };&#10;    solve(1);&#10;    return count;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>38</td>
+      <td>Backtracking 12 Print All Permutations Of A String<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Swap based backtracking.</td>
+      <td><b>Time:</b> O(N! * N)<br><b>Space:</b> O(N!)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate from index `i` to `n-1`. Swap `str[i]` with `str[j]`, then recursively call for the next index. After returning, swap back to backtrack. Store permutations in a set or sort the array to handle duplicates and lexicographical order.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(string S, int idx, set&lt;string&gt;&amp; st) {&#10;    if(idx == S.length()) {&#10;        st.insert(S);&#10;        return;&#10;    }&#10;    for(int i = idx; i &lt; S.length(); i++) {&#10;        swap(S[idx], S[i]);&#10;        solve(S, idx + 1, st);&#10;        swap(S[idx], S[i]);&#10;    }&#10;}&#10;vector&lt;string&gt; find_permutation(string S) {&#10;    set&lt;string&gt; st;&#10;    solve(S, 0, st);&#10;    vector&lt;string&gt; ans(st.begin(), st.end());&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>Backtracking 17 Find All Possible Palindromic Partitions Of A String<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-all-possible-palindromic-partitions-of-a-string/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Backtracking.</td>
+      <td><b>Time:</b> O(2^N * N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate over the string to pick substrings. Check if the picked substring is a palindrome. If yes, add it to current partition and recur for the remaining string. Backtrack by removing it.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPalindrome(string&amp; s, int l, int r) {&#10;    while(l &lt; r) {&#10;        if(s[l++] != s[r--]) return false;&#10;    }&#10;    return true;&#10;}&#10;void solve(string&amp; S, int idx, vector&lt;string&gt;&amp; curr, vector&lt;vector&lt;string&gt;&gt;&amp; ans) {&#10;    if(idx == S.length()) {&#10;        ans.push_back(curr);&#10;        return;&#10;    }&#10;    for(int i = idx; i &lt; S.length(); i++) {&#10;        if(isPalindrome(S, idx, i)) {&#10;            curr.push_back(S.substr(idx, i - idx + 1));&#10;            solve(S, i + 1, curr, ans);&#10;            curr.pop_back();&#10;        }&#10;    }&#10;}&#10;vector&lt;vector&lt;string&gt;&gt; allPalindromicPerms(string S) {&#10;    vector&lt;vector&lt;string&gt;&gt; ans;&#10;    vector&lt;string&gt; curr;&#10;    solve(S, 0, curr, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

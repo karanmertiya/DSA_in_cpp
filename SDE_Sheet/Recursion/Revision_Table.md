@@ -61,5 +61,14 @@
       <td><b>Backtracking necessity:</b> Without the second swap (backtrack), the array remains mutated for subsequent sibling recursion branches.</td>
       <td><b>Explanation:</b> Backtracking. Swap elements to generate permutations. For index `i`, swap it with every index from `i` to `n-1`, recurse, then backtrack (swap back).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;void solve(int idx, std::vector&lt;int&gt;&amp; nums, std::vector&lt;std::vector&lt;int&gt;&gt;&amp; ans) {&#10;    if(idx == nums.size()) {&#10;        ans.push_back(nums);&#10;        return;&#10;    }&#10;    for(int i = idx; i &lt; nums.size(); i++) {&#10;        std::swap(nums[idx], nums[i]);&#10;        solve(idx + 1, nums, ans);&#10;        std::swap(nums[idx], nums[i]);&#10;    }&#10;}&#10;std::vector&lt;std::vector&lt;int&gt;&gt; permute(std::vector&lt;int&gt;&amp; nums) {&#10;    std::vector&lt;std::vector&lt;int&gt;&gt; ans;&#10;    solve(0, nums, ans);&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>6</td>
+      <td>Backtracking 12 Print All Permutations Of A String<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Swap based backtracking.</td>
+      <td><b>Time:</b> O(N! * N)<br><b>Space:</b> O(N!)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate from index `i` to `n-1`. Swap `str[i]` with `str[j]`, then recursively call for the next index. After returning, swap back to backtrack. Store permutations in a set or sort the array to handle duplicates and lexicographical order.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(string S, int idx, set&lt;string&gt;&amp; st) {&#10;    if(idx == S.length()) {&#10;        st.insert(S);&#10;        return;&#10;    }&#10;    for(int i = idx; i &lt; S.length(); i++) {&#10;        swap(S[idx], S[i]);&#10;        solve(S, idx + 1, st);&#10;        swap(S[idx], S[i]);&#10;    }&#10;}&#10;vector&lt;string&gt; find_permutation(string S) {&#10;    set&lt;string&gt; st;&#10;    solve(S, 0, st);&#10;    vector&lt;string&gt; ans(st.begin(), st.end());&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

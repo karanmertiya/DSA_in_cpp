@@ -178,5 +178,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Use recursion. At each character, you have two choices: either include it in the current subsequence or exclude it. When you reach the end of the string, print/store the formed subsequence.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(string s, string curr, int i, vector&lt;string&gt;&amp; res) {&#10;    if(i == s.length()) {&#10;        if(curr != &quot;&quot;) res.push_back(curr);&#10;        return;&#10;    }&#10;    solve(s, curr, i + 1, res);&#10;    solve(s, curr + s[i], i + 1, res);&#10;}&#10;vector&lt;string&gt; allSubsequences(string s) {&#10;    vector&lt;string&gt; res;&#10;    solve(s, &quot;&quot;, 0, res);&#10;    return res;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>19</td>
+      <td>Str 11 Split The Binary String Into Substrings With Equal Number Of 0S And 1S<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/split-the-binary-string-into-substrings-with-equal-number-of-0s-and-1s/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Counter logic.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through the string, maintain a count that increments for '0' and decrements for '1' (or vice versa). Whenever the count becomes 0, it means we have found a balanced substring, so increment the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxSubStr(string str) {&#10;    int count0 = 0, count1 = 0, ans = 0;&#10;    for(char c : str) {&#10;        if(c == &#x27;0&#x27;) count0++;&#10;        else count1++;&#10;        if(count0 == count1) ans++;&#10;    }&#10;    if(count0 != count1) return -1;&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Str 12 Word Wrap<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/word-wrap1646/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP approach.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Dynamic Programming. `dp[i]` represents the minimum cost to wrap words from index `i` to the end. Iterate backward and try placing different numbers of words on the current line.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int solveWordWrap(vector&lt;int&gt;nums, int k) {&#10;    int n = nums.size();&#10;    vector&lt;int&gt; dp(n, 0);&#10;    dp[n - 1] = 0;&#10;    for(int i = n - 2; i &gt;= 0; i--) {&#10;        int currlen = -1;&#10;        dp[i] = INT_MAX;&#10;        for(int j = i; j &lt; n; j++) {&#10;            currlen += (nums[j] + 1);&#10;            if(currlen &gt; k) break;&#10;            if(j == n - 1) dp[i] = 0;&#10;            else {&#10;                int cost = (k - currlen) * (k - currlen) + dp[j + 1];&#10;                dp[i] = min(dp[i], cost);&#10;            }&#10;        }&#10;    }&#10;    return dp[0];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Str 13 Edit Distance<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/edit-distance3702/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP Table.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M)</td>
+      <td>DP</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Create a 2D DP array. If characters match, `dp[i][j] = dp[i-1][j-1]`. If not, `dp[i][j] = 1 + min(replace, insert, delete)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int editDistance(string s, string t) {&#10;    int n = s.length(), m = t.length();&#10;    vector&lt;vector&lt;int&gt;&gt; dp(n + 1, vector&lt;int&gt;(m + 1, 0));&#10;    for(int i = 0; i &lt;= n; i++) dp[i][0] = i;&#10;    for(int j = 0; j &lt;= m; j++) dp[0][j] = j;&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        for(int j = 1; j &lt;= m; j++) {&#10;            if(s[i - 1] == t[j - 1]) dp[i][j] = dp[i - 1][j - 1];&#10;            else dp[i][j] = 1 + min({dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]});&#10;        }&#10;    }&#10;    return dp[n][m];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Str 14 Next Permutation<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/next-permutation5226/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Swap and Reverse.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Traverse from right to find the first element smaller than the element to its right. Then, find the smallest element to its right that is greater than it. Swap them, and reverse the subarray after the first element's index.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; nextPermutation(int N, vector&lt;int&gt; arr){&#10;    int i = N - 2;&#10;    while(i &gt;= 0 &amp;&amp; arr[i] &gt;= arr[i + 1]) i--;&#10;    if(i &gt;= 0) {&#10;        int j = N - 1;&#10;        while(arr[j] &lt;= arr[i]) j--;&#10;        swap(arr[i], arr[j]);&#10;    }&#10;    reverse(arr.begin() + i + 1, arr.end());&#10;    return arr;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>Str 15 Parenthesis Checker<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/parenthesis-checker2744/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Stack approach.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Stack</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a stack to keep track of opening brackets. If a closing bracket is encountered, check if it matches the top of the stack.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool ispar(string x) {&#10;    stack&lt;char&gt; s;&#10;    for(char c : x) {&#10;        if(c == &#x27;(&#x27; || c == &#x27;{&#x27; || c == &#x27;[&#x27;) s.push(c);&#10;        else {&#10;            if(s.empty()) return false;&#10;            if(c == &#x27;)&#x27; &amp;&amp; s.top() != &#x27;(&#x27;) return false;&#10;            if(c == &#x27;}&#x27; &amp;&amp; s.top() != &#x27;{&#x27;) return false;&#10;            if(c == &#x27;]&#x27; &amp;&amp; s.top() != &#x27;[&#x27;) return false;&#10;            s.pop();&#10;        }&#10;    }&#10;    return s.empty();&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>Str 16 Word Break<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/word-break1352/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>DP, Hash Set</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use `dp[i]` to indicate if `A[0..i]` can be segmented. For each `i`, check all prefixes `A[0..j]`. If `dp[j]` is true and `A[j..i]` is in the dictionary, then `dp[i]` is true.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int wordBreak(string A, vector&lt;string&gt; &amp;B) {&#10;    unordered_set&lt;string&gt; dict(B.begin(), B.end());&#10;    int n = A.length();&#10;    vector&lt;bool&gt; dp(n + 1, false);&#10;    dp[0] = true;&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        for(int j = 0; j &lt; i; j++) {&#10;            if(dp[j] &amp;&amp; dict.find(A.substr(j, i - j)) != dict.end()) {&#10;                dp[i] = true;&#10;                break;&#10;            }&#10;        }&#10;    }&#10;    return dp[n] ? 1 : 0;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>Str 17 Rabin Karp Algorithm<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/31272eef104840f7430ad9fd1d43b434a4b9596b/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Rolling Hash.</td>
+      <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>Collisions in Hash</td>
+      <td><b>Explanation:</b> Compute the hash for the pattern and for the first window of text. Slide the window by removing the leading character's hash and adding the trailing character's hash. If hashes match, check the characters one by one.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; search(string pat, string txt) {&#10;    int d = 256, q = 101;&#10;    int M = pat.length(), N = txt.length();&#10;    int i, j, p = 0, t = 0, h = 1;&#10;    vector&lt;int&gt; res;&#10;    for (i = 0; i &lt; M - 1; i++) h = (h * d) % q;&#10;    for (i = 0; i &lt; M; i++) {&#10;        p = (d * p + pat[i]) % q;&#10;        t = (d * t + txt[i]) % q;&#10;    }&#10;    for (i = 0; i &lt;= N - M; i++) {&#10;        if (p == t) {&#10;            for (j = 0; j &lt; M; j++) {&#10;                if (txt[i + j] != pat[j]) break;&#10;            }&#10;            if (j == M) res.push_back(i + 1);&#10;        }&#10;        if (i &lt; N - M) {&#10;            t = (d * (t - txt[i] * h) + txt[i + M]) % q;&#10;            if (t &lt; 0) t = (t + q);&#10;        }&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>Str 18 Kmp Algorithm<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/search-pattern0205/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> LPS Array.</td>
+      <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(M)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Construct an LPS (Longest Proper Prefix which is also Suffix) array for the pattern. Use it to skip unnecessary comparisons while traversing the text.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void computeLPS(string pat, int M, int* lps) {&#10;    int len = 0, i = 1;&#10;    lps[0] = 0;&#10;    while(i &lt; M) {&#10;        if(pat[i] == pat[len]) {&#10;            len++; lps[i] = len; i++;&#10;        } else {&#10;            if(len != 0) len = lps[len - 1];&#10;            else { lps[i] = 0; i++; }&#10;        }&#10;    }&#10;}&#10;vector&lt;int&gt; search(string pat, string txt) {&#10;    int M = pat.length(), N = txt.length();&#10;    int lps[M];&#10;    computeLPS(pat, M, lps);&#10;    int i = 0, j = 0;&#10;    vector&lt;int&gt; res;&#10;    while((N - i) &gt;= (M - j)) {&#10;        if(pat[j] == txt[i]) { j++; i++; }&#10;        if(j == M) {&#10;            res.push_back(i - j + 1);&#10;            j = lps[j - 1];&#10;        } else if(i &lt; N &amp;&amp; pat[j] != txt[i]) {&#10;            if(j != 0) j = lps[j - 1];&#10;            else i++;&#10;        }&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>Str 19 Convert A Sentence Into Its Equivalent Mobile Numeric Keypad Sequence<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/convert-a-sentence-into-its-equivalent-mobile-numeric-keypad-sequence0547/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Dictionary Mapping.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>Spaces</td>
+      <td><b>Explanation:</b> Store the sequence for every character in an array from A to Z, and for space. For each character in the input string, append its corresponding sequence to the result.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string printSequence(string S) {&#10;    string str[] = {&quot;2&quot;, &quot;22&quot;, &quot;222&quot;, &quot;3&quot;, &quot;33&quot;, &quot;333&quot;, &quot;4&quot;, &quot;44&quot;, &quot;444&quot;, &quot;5&quot;, &quot;55&quot;, &quot;555&quot;, &quot;6&quot;, &quot;66&quot;, &quot;666&quot;, &quot;7&quot;, &quot;77&quot;, &quot;777&quot;, &quot;7777&quot;, &quot;8&quot;, &quot;88&quot;, &quot;888&quot;, &quot;9&quot;, &quot;99&quot;, &quot;999&quot;, &quot;9999&quot;};&#10;    string output = &quot;&quot;;&#10;    for(int i = 0; i &lt; S.length(); i++) {&#10;        if(S[i] == &#x27; &#x27;) output += &quot;0&quot;;&#10;        else output += str[S[i] - &#x27;A&#x27;];&#10;    }&#10;    return output;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>Str 20 Count The Reversals<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/count-the-reversals0401/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Stack approach.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Stack</td>
+      <td>Odd length string</td>
+      <td><b>Explanation:</b> Remove all balanced brackets using a stack. The remaining string will be of the form `}}...{{...`. The required reversals will be `ceil(open_count/2) + ceil(close_count/2)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countRev(string s) {&#10;    if(s.length() % 2 != 0) return -1;&#10;    stack&lt;char&gt; st;&#10;    for(char c : s) {&#10;        if(c == &#x27;{&#x27;) st.push(c);&#10;        else {&#10;            if(!st.empty() &amp;&amp; st.top() == &#x27;{&#x27;) st.pop();&#10;            else st.push(c);&#10;        }&#10;    }&#10;    int open = 0, close = 0;&#10;    while(!st.empty()) {&#10;        if(st.top() == &#x27;{&#x27;) open++;&#10;        else close++;&#10;        st.pop();&#10;    }&#10;    return ceil(open / 2.0) + ceil(close / 2.0);&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

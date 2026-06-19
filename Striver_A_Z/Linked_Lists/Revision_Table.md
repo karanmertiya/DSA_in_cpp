@@ -385,5 +385,23 @@
       <td>-</td>
       <td><b>Explanation:</b> Iterate through the list. When a node has a child, find the tail of the child list. Connect the tail to `node->next`, and `node->next` to the child. Update `prev` pointers. Set `node->child` to `nullptr`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">/*&#10;// Definition for a Node.&#10;class Node {&#10;public:&#10;    int val;&#10;    Node* prev;&#10;    Node* next;&#10;    Node* child;&#10;};&#10;*/&#10;Node* flatten(Node* head) {&#10;    if(!head) return nullptr;&#10;    Node* curr = head;&#10;    while(curr) {&#10;        if(curr-&gt;child) {&#10;            Node* tail = curr-&gt;child;&#10;            while(tail-&gt;next) tail = tail-&gt;next;&#10;            tail-&gt;next = curr-&gt;next;&#10;            if(curr-&gt;next) curr-&gt;next-&gt;prev = tail;&#10;            curr-&gt;next = curr-&gt;child;&#10;            curr-&gt;child-&gt;prev = curr;&#10;            curr-&gt;child = nullptr;&#10;        }&#10;        curr = curr-&gt;next;&#10;    }&#10;    return head;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>42</td>
+      <td>Ll 26 Find The First Node Of Loop In Linked List<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Floyd's Cycle Detection.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use Floyd's Cycle Detection to find if a cycle exists (slow and fast pointers meet). Then, move slow back to head, and advance both slow and fast by one step until they meet. The meeting point is the start of the loop.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findFirstNode(Node* head) {&#10;    Node *slow = head, *fast = head;&#10;    while(fast != NULL &amp;&amp; fast-&gt;next != NULL) {&#10;        slow = slow-&gt;next;&#10;        fast = fast-&gt;next-&gt;next;&#10;        if(slow == fast) {&#10;            slow = head;&#10;            while(slow != fast) {&#10;                slow = slow-&gt;next;&#10;                fast = fast-&gt;next;&#10;            }&#10;            return slow-&gt;data;&#10;        }&#10;    }&#10;    return -1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>Ll 28 Delete Nodes Having Greater Value On Right<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/delete-nodes-having-greater-value-on-right/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Reverse and filter.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Reverse the linked list. Keep track of the max node seen so far. If a node is less than the max node, delete it. Else, update max node. Finally, reverse the list back.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node *reverse(Node *head) {&#10;    Node *prev = NULL, *curr = head, *next = NULL;&#10;    while(curr) {&#10;        next = curr-&gt;next;&#10;        curr-&gt;next = prev;&#10;        prev = curr;&#10;        curr = next;&#10;    }&#10;    return prev;&#10;}&#10;Node *compute(Node *head) {&#10;    head = reverse(head);&#10;    Node *curr = head;&#10;    Node *maxNode = head;&#10;    while(curr != NULL &amp;&amp; curr-&gt;next != NULL) {&#10;        if(curr-&gt;next-&gt;data &lt; maxNode-&gt;data) {&#10;            Node *temp = curr-&gt;next;&#10;            curr-&gt;next = temp-&gt;next;&#10;            delete temp;&#10;        } else {&#10;            curr = curr-&gt;next;&#10;            maxNode = curr;&#10;        }&#10;    }&#10;    return reverse(head);&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
