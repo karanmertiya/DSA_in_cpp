@@ -70,5 +70,23 @@
       <td><b>Zero Element:</b> A zero resets the contiguous product segment. We restart the prefix/suffix product from `1`.</td>
       <td><b>Explanation:</b> Prefix and Suffix product approach. Calculate product from left to right and right to left. Reset product to 1 when a zero is encountered.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxProduct(std::vector&lt;int&gt;&amp; nums) {&#10;    int max_prod = INT_MIN, n = nums.size();&#10;    int pref = 1, suff = 1;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(pref == 0) pref = 1;&#10;        if(suff == 0) suff = 1;&#10;        pref *= nums[i];&#10;        suff *= nums[n - 1 - i];&#10;        max_prod = std::max({max_prod, pref, suff});&#10;    }&#10;    return max_prod;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">7</td>
+      <td rowspan="1">Dp 06 Longest Increasing Subsequence<br><br></b> <a href='https://leetcode.com/problems/longest-increasing-subsequence/' target='_blank'>LeetCode 300</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: nums = [10,9,2,5,3,7,101,18], Output: 4 (LIS is [2,3,7,101])</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td><b>Empty Array:</b> Handled appropriately.</td>
+      <td><b>Explanation:</b> Create a dp array where dp[i] is the length of LIS ending at index i. For each i, check all j < i to see if nums[i] > nums[j] and update dp[i] = max(dp[i], dp[j] + 1). O(N log N) patience sorting approach is better but standard DP is O(N^2).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int lengthOfLIS(vector&lt;int&gt;&amp; nums) {&#10;    if(nums.empty()) return 0;&#10;    vector&lt;int&gt; dp(nums.size(), 1);&#10;    int res = 1;&#10;    for(int i = 1; i &lt; nums.size(); ++i) {&#10;        for(int j = 0; j &lt; i; ++j) {&#10;            if(nums[i] &gt; nums[j]) dp[i] = std::max(dp[i], dp[j] + 1);&#10;        }&#10;        res = std::max(res, dp[i]);&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">8</td>
+      <td rowspan="1">Dp 07 Coin Change<br><br></b> <a href='https://leetcode.com/problems/coin-change/' target='_blank'>LeetCode 322</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: coins = [1,2,5], amount = 11, Output: 3 (5+5+1)</td>
+      <td><b>Time:</b> O(amount * N)<br><b>Space:</b> O(amount)</td>
+      <td>-</td>
+      <td><b>Cannot make amount:</b> Check if dp[amount] > amount, return -1.</td>
+      <td><b>Explanation:</b> Bottom-up DP. dp[i] = min coins for amount i. Initialize dp array with amount + 1. dp[i] = min(dp[i], dp[i - coin] + 1).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int coinChange(vector&lt;int&gt;&amp; coins, int amount) {&#10;    vector&lt;int&gt; dp(amount + 1, amount + 1);&#10;    dp[0] = 0;&#10;    for(int i = 1; i &lt;= amount; ++i) {&#10;        for(int coin : coins) {&#10;            if(i - coin &gt;= 0) dp[i] = std::min(dp[i], dp[i - coin] + 1);&#10;        }&#10;    }&#10;    return dp[amount] &gt; amount ? -1 : dp[amount];&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

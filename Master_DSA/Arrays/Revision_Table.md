@@ -187,5 +187,23 @@
       <td><b>Subsumed Intervals:</b> `[1,4]` and `[2,3]` -> using `max()` prevents shrinking the end time to `3`.</td>
       <td><b>Explanation:</b> Sort the intervals based on the start time. Iterate and merge: if current start <= previous end, update previous end to `max(prev_end, curr_end)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;&#10;std::vector&lt;std::vector&lt;int&gt;&gt; merge(std::vector&lt;std::vector&lt;int&gt;&gt;&amp; intervals) {&#10;    if (intervals.empty()) return {};&#10;    std::sort(intervals.begin(), intervals.end());&#10;    std::vector&lt;std::vector&lt;int&gt;&gt; merged;&#10;    merged.push_back(intervals[0]);&#10;    for (int i = 1; i &lt; intervals.size(); i++) {&#10;        if (intervals[i][0] &lt;= merged.back()[1]) {&#10;            merged.back()[1] = std::max(merged.back()[1], intervals[i][1]);&#10;        } else {&#10;            merged.push_back(intervals[i]);&#10;        }&#10;    }&#10;    return merged;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">20</td>
+      <td rowspan="1">Array 11 Merge Intervals<br><br></b> <a href='https://leetcode.com/problems/merge-intervals/' target='_blank'>LeetCode 56</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: [[1,3],[2,6],[8,10],[15,18]], Output: [[1,6],[8,10],[15,18]]</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td><code>#include &lt;algorithm&gt;</code></td>
+      <td><b>Empty List:</b> Return empty list immediately.</td>
+      <td><b>Explanation:</b> Sort the intervals based on the starting time. Then iterate and merge if the current interval's start is <= the last merged interval's end.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) {&#10;    if(intervals.empty()) return {};&#10;    sort(intervals.begin(), intervals.end());&#10;    vector&lt;vector&lt;int&gt;&gt; merged;&#10;    merged.push_back(intervals[0]);&#10;    for(int i = 1; i &lt; intervals.size(); ++i) {&#10;        if(merged.back()[1] &gt;= intervals[i][0]) {&#10;            merged.back()[1] = std::max(merged.back()[1], intervals[i][1]);&#10;        } else {&#10;            merged.push_back(intervals[i]);&#10;        }&#10;    }&#10;    return merged;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">21</td>
+      <td rowspan="1">Array 12 Next Permutation<br><br></b> <a href='https://leetcode.com/problems/next-permutation/' target='_blank'>LeetCode 31</a></td>
+      <td rowspan="1"><b>Example 1:</b> Input: nums = [1,2,3], Output: [1,3,2]</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td><code>#include &lt;algorithm&gt;</code></td>
+      <td><b>Last Permutation:</b> Dip not found, reverse the whole array.</td>
+      <td><b>Explanation:</b> Find first dip from right (i). Find element just larger than nums[i] from right (j). Swap them and reverse the array from i+1 to end.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void nextPermutation(vector&lt;int&gt;&amp; nums) {&#10;    int n = nums.size(), k, l;&#10;    for(k = n - 2; k &gt;= 0; k--) if(nums[k] &lt; nums[k+1]) break;&#10;    if(k &lt; 0) {&#10;        reverse(nums.begin(), nums.end());&#10;    } else {&#10;        for(l = n - 1; l &gt; k; l--) if(nums[l] &gt; nums[k]) break;&#10;        swap(nums[k], nums[l]);&#10;        reverse(nums.begin() + k + 1, nums.end());&#10;    }&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
