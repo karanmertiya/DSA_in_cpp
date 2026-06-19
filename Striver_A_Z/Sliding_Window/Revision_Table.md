@@ -133,5 +133,41 @@
       <td>-</td>
       <td><b>Explanation:</b> Create frequency arrays for `p` and a window of size `p.length()` in `s`. Slide the window across `s`, updating the window frequencies. If the arrays match, add the window's start index to the result.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; findAnagrams(string s, string p) {&#10;    vector&lt;int&gt; ans;&#10;    if(p.length() &gt; s.length()) return ans;&#10;    vector&lt;int&gt; countP(26, 0), countS(26, 0);&#10;    for(int i = 0; i &lt; p.length(); i++) {&#10;        countP[p[i] - &#x27;a&#x27;]++;&#10;        countS[s[i] - &#x27;a&#x27;]++;&#10;    }&#10;    if(countP == countS) ans.push_back(0);&#10;    for(int i = p.length(); i &lt; s.length(); i++) {&#10;        countS[s[i] - &#x27;a&#x27;]++;&#10;        countS[s[i - p.length()] - &#x27;a&#x27;]--;&#10;        if(countP == countS) ans.push_back(i - p.length() + 1);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>14</td>
+      <td>Sw 18 Longest K Unique Characters Substring<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sliding Window + Hash Map.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(K)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a sliding window `[left, right]` and a hash map to count characters. If map size > K, shrink window from `left` until map size == K. If map size == K, update max length.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int longestKSubstr(string s, int k) {&#10;    unordered_map&lt;char, int&gt; m;&#10;    int left = 0, right = 0, maxLen = -1;&#10;    while(right &lt; s.length()) {&#10;        m[s[right]]++;&#10;        if(m.size() == k) maxLen = max(maxLen, right - left + 1);&#10;        else if(m.size() &gt; k) {&#10;            while(m.size() &gt; k) {&#10;                m[s[left]]--;&#10;                if(m[s[left]] == 0) m.erase(s[left]);&#10;                left++;&#10;            }&#10;        }&#10;        right++;&#10;    }&#10;    return maxLen;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Sw 20 Sliding Window Maximum<br><br></b> <a href='https://leetcode.com/problems/sliding-window-maximum/' target='_blank'>LeetCode 239</a></td>
+      <td><b>Example 1:</b> Deque.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(K)</td>
+      <td>Deque</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a double-ended queue (deque) to store indices. Maintain indices in the deque such that the elements they correspond to are in decreasing order. The front of the deque will always be the maximum for the current window. Remove indices from the front if they are out of the window (`i - k`).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) {&#10;    deque&lt;int&gt; dq;&#10;    vector&lt;int&gt; ans;&#10;    for(int i = 0; i &lt; nums.size(); i++) {&#10;        if(!dq.empty() &amp;&amp; dq.front() == i - k) dq.pop_front();&#10;        while(!dq.empty() &amp;&amp; nums[dq.back()] &lt; nums[i]) dq.pop_back();&#10;        dq.push_back(i);&#10;        if(i &gt;= k - 1) ans.push_back(nums[dq.front()]);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Sw 26 Longest Substring With At Most K Distinct Characters<br><br></b> <a href='https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/' target='_blank'>LeetCode 340</a></td>
+      <td><b>Example 1:</b> Sliding Window.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(K)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sliding window with hash map to count characters. While map size > k, shrink window from left.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int lengthOfLongestSubstringKDistinct(string s, int k) {&#10;    unordered_map&lt;char, int&gt; m;&#10;    int left = 0, right = 0, maxLen = 0;&#10;    while(right &lt; s.length()) {&#10;        m[s[right]]++;&#10;        while(m.size() &gt; k) {&#10;            m[s[left]]--;&#10;            if(m[s[left]] == 0) m.erase(s[left]);&#10;            left++;&#10;        }&#10;        maxLen = max(maxLen, right - left + 1);&#10;        right++;&#10;    }&#10;    return maxLen;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Sw 27 Subarrays With K Different Integers<br><br></b> <a href='https://leetcode.com/problems/subarrays-with-k-different-integers/' target='_blank'>LeetCode 992</a></td>
+      <td><b>Example 1:</b> At Most K - At Most K-1.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Exact K = At Most K - At Most K-1. Use a helper function `atMost(nums, k)` that uses a sliding window to count subarrays with at most `k` distinct integers.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int atMost(vector&lt;int&gt;&amp; nums, int k) {&#10;    unordered_map&lt;int, int&gt; m;&#10;    int left = 0, count = 0;&#10;    for(int right = 0; right &lt; nums.size(); right++) {&#10;        if(m[nums[right]] == 0) k--;&#10;        m[nums[right]]++;&#10;        while(k &lt; 0) {&#10;            m[nums[left]]--;&#10;            if(m[nums[left]] == 0) k++;&#10;            left++;&#10;        }&#10;        count += right - left + 1;&#10;    }&#10;    return count;&#10;}&#10;int subarraysWithKDistinct(vector&lt;int&gt;&amp; nums, int k) {&#10;    return atMost(nums, k) - atMost(nums, k - 1);&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
