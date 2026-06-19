@@ -781,5 +781,32 @@
       <td>-</td>
       <td><b>Explanation:</b> Use DFS. Keep track of the maximum length and the maximum sum. At each node, check if the current length is greater than max length. If so, update max length and max sum. If lengths are equal, update max sum if current sum is greater.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(Node* root, int sum, int&amp; maxSum, int len, int&amp; maxLen) {&#10;    if(!root) {&#10;        if(len &gt; maxLen) {&#10;            maxLen = len;&#10;            maxSum = sum;&#10;        } else if(len == maxLen) {&#10;            maxSum = max(sum, maxSum);&#10;        }&#10;        return;&#10;    }&#10;    sum = sum + root-&gt;data;&#10;    solve(root-&gt;left, sum, maxSum, len + 1, maxLen);&#10;    solve(root-&gt;right, sum, maxSum, len + 1, maxLen);&#10;}&#10;int sumOfLongRootToLeafPath(Node *root) {&#10;    int len = 0, maxLen = 0;&#10;    int sum = 0, maxSum = INT_MIN;&#10;    solve(root, sum, maxSum, len, maxLen);&#10;    return maxSum;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>86</td>
+      <td>Tree 36 Minimum Distance Between Two Given Nodes Of A Binary Tree<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/min-distance-between-two-given-nodes-of-a-binary-tree/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> LCA + Distance calculation.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Find the Lowest Common Ancestor (LCA) of the two nodes. Then find the distance from LCA to the first node and the distance from LCA to the second node. The total distance is the sum of these two distances.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* lca(Node* root, int n1, int n2) {&#10;    if(!root || root-&gt;data == n1 || root-&gt;data == n2) return root;&#10;    Node* left = lca(root-&gt;left, n1, n2);&#10;    Node* right = lca(root-&gt;right, n1, n2);&#10;    if(left &amp;&amp; right) return root;&#10;    return left ? left : right;&#10;}&#10;int findDist(Node* root, int val, int dist) {&#10;    if(!root) return -1;&#10;    if(root-&gt;data == val) return dist;&#10;    int left = findDist(root-&gt;left, val, dist + 1);&#10;    if(left != -1) return left;&#10;    return findDist(root-&gt;right, val, dist + 1);&#10;}&#10;int findDist(Node* root, int a, int b) {&#10;    Node* lca_node = lca(root, a, b);&#10;    return findDist(lca_node, a, 0) + findDist(lca_node, b, 0);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>87</td>
+      <td>Tree 37 Kth Ancestor In A Tree<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/kth-ancestor-in-a-tree/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Recursive backtracking.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
+      <td>-</td>
+      <td>k > depth</td>
+      <td><b>Explanation:</b> Use a recursive function. If the target node is found, return it. As you return back up the call stack, decrement `k`. When `k` becomes 0, the current node is the kth ancestor.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* solve(Node* root, int&amp; k, int node) {&#10;    if(!root) return NULL;&#10;    if(root-&gt;data == node) return root;&#10;    Node* left = solve(root-&gt;left, k, node);&#10;    Node* right = solve(root-&gt;right, k, node);&#10;    if(left || right) {&#10;        k--;&#10;        if(k == 0) {&#10;            k = INT_MAX;&#10;            return root;&#10;        }&#10;        return left ? left : right;&#10;    }&#10;    return NULL;&#10;}&#10;int kthAncestor(Node *root, int k, int node) {&#10;    Node* ans = solve(root, k, node);&#10;    if(!ans || ans-&gt;data == node) return -1;&#10;    return ans-&gt;data;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>88</td>
+      <td>Tree 38 Find All Duplicate Subtrees In A Binary Tree<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/duplicate-subtrees/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Serialization + Hash Map.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
+      <td>Hash Map</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Serialize each subtree into a string (e.g., using preorder traversal). Use a hash map to count the frequencies of these serialized strings. If a string appears exactly twice, add the root of that subtree to the result list.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string solve(Node* root, unordered_map&lt;string, int&gt;&amp; m, vector&lt;Node*&gt;&amp; ans) {&#10;    if(!root) return &quot;N&quot;;&#10;    string s = to_string(root-&gt;data) + &quot;,&quot; + solve(root-&gt;left, m, ans) + &quot;,&quot; + solve(root-&gt;right, m, ans);&#10;    m[s]++;&#10;    if(m[s] == 2) ans.push_back(root);&#10;    return s;&#10;}&#10;vector&lt;Node*&gt; printAllDups(Node* root) {&#10;    unordered_map&lt;string, int&gt; m;&#10;    vector&lt;Node*&gt; ans;&#10;    solve(root, m, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

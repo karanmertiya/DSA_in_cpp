@@ -475,5 +475,95 @@
       <td>Zero in array</td>
       <td><b>Explanation:</b> Iterate from left to right calculating prefix product, and from right to left calculating suffix product. If either is 0, reset it to 1. Track the max across all steps.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long maxProduct(vector&lt;int&gt; arr, int n) {&#10;    long long max_prod = INT_MIN;&#10;    long long pref = 1, suff = 1;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(pref == 0) pref = 1;&#10;        if(suff == 0) suff = 1;&#10;        pref *= arr[i];&#10;        suff *= arr[n - i - 1];&#10;        max_prod = max({max_prod, pref, suff});&#10;    }&#10;    return max_prod;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>52</td>
+      <td>Arr 56 Find The Missing Number<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/missing-number-in-array1416/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sum formula.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Calculate the sum of first N natural numbers using `N*(N+1)/2`. Subtract the sum of all elements in the array from it. The result is the missing number.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int missingNumber(vector&lt;int&gt;&amp; array, int n) {&#10;    long long sum = 0;&#10;    for(int i = 0; i &lt; n - 1; i++) sum += array[i];&#10;    long long expectedSum = (long long)n * (n + 1) / 2;&#10;    return expectedSum - sum;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>Arr 57 Max Sum In Sub Arrays<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/max-sum-in-sub-arrays0824/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Adjacent pairs sum.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> The maximum sum of two smallest elements in any subarray will always be the maximum sum of adjacent elements. So, just iterate and find the max of `arr[i] + arr[i+1]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long pairWithMaxSum(long long arr[], long long N) {&#10;    long long maxi = 0;&#10;    for(long long i = 0; i &lt; N - 1; i++) {&#10;        maxi = max(maxi, arr[i] + arr[i+1]);&#10;    }&#10;    return maxi;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>Arr 58 Longest Subarray With Sum K Positives<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Sliding Window / Two Pointers.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Since all elements are positive, use two pointers (sliding window). Expand `right` and add to sum. If sum > K, shrink `left` and subtract from sum. If sum == K, update max length.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int lenOfLongSubarr(int A[],  int N, int K) {&#10;    int left = 0, right = 0;&#10;    long long sum = 0;&#10;    int maxLen = 0;&#10;    while(right &lt; N) {&#10;        sum += A[right];&#10;        while(sum &gt; K &amp;&amp; left &lt;= right) {&#10;            sum -= A[left];&#10;            left++;&#10;        }&#10;        if(sum == K) maxLen = max(maxLen, right - left + 1);&#10;        right++;&#10;    }&#10;    return maxLen;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>Arr 59 Longest Subarray With Sum K Positives And Negatives<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> Hash Map.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Hash Map</td>
+      <td>Zeroes and negatives</td>
+      <td><b>Explanation:</b> Use a hash map to store the first occurrence of each prefix sum. While iterating, if `current_sum == K`, max length is `i+1`. If `current_sum - K` exists in the hash map, update max length with `i - map[current_sum - K]`. If `current_sum` is not in map, insert it.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int lenOfLongSubarr(int A[],  int N, int K) {&#10;    unordered_map&lt;long long, int&gt; preSumMap;&#10;    long long sum = 0;&#10;    int maxLen = 0;&#10;    for(int i = 0; i &lt; N; i++) {&#10;        sum += A[i];&#10;        if(sum == K) maxLen = max(maxLen, i + 1);&#10;        long long rem = sum - K;&#10;        if(preSumMap.find(rem) != preSumMap.end()) {&#10;            maxLen = max(maxLen, i - preSumMap[rem]);&#10;        }&#10;        if(preSumMap.find(sum) == preSumMap.end()) {&#10;            preSumMap[sum] = i;&#10;        }&#10;    }&#10;    return maxLen;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>Arr 60 Majority Element Ii<br><br></b> <a href='https://leetcode.com/problems/majority-element-ii/' target='_blank'>LeetCode 229</a></td>
+      <td><b>Example 1:</b> Extended Boyer Moore's Voting Algorithm.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Since at most two elements can appear more than n/3 times, maintain two potential candidates (`num1`, `num2`) and their counts. Iterate through the array updating candidates and counts. After finding the candidates, iterate again to count their actual occurrences and check if they exceed n/3.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; majorityElement(vector&lt;int&gt;&amp; nums) {&#10;    int num1 = -1, num2 = -1, c1 = 0, c2 = 0;&#10;    for(int x : nums) {&#10;        if(x == num1) c1++;&#10;        else if(x == num2) c2++;&#10;        else if(c1 == 0) { num1 = x; c1 = 1; }&#10;        else if(c2 == 0) { num2 = x; c2 = 1; }&#10;        else { c1--; c2--; }&#10;    }&#10;    vector&lt;int&gt; ans;&#10;    c1 = 0; c2 = 0;&#10;    for(int x : nums) {&#10;        if(x == num1) c1++;&#10;        else if(x == num2) c2++;&#10;    }&#10;    if(c1 &gt; nums.size() / 3) ans.push_back(num1);&#10;    if(c2 &gt; nums.size() / 3) ans.push_back(num2);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>Arr 61 3Sum<br><br></b> <a href='https://leetcode.com/problems/3sum/' target='_blank'>LeetCode 15</a></td>
+      <td><b>Example 1:</b> Sort + Two Pointers.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(1) excluding output</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort the array. Fix the first element `nums[i]`. Use two pointers (`left = i+1`, `right = n-1`) to find the remaining two elements that sum to `-nums[i]`. Skip duplicates for `i`, `left`, and `right` to ensure unique triplets.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) {&#10;    vector&lt;vector&lt;int&gt;&gt; ans;&#10;    sort(nums.begin(), nums.end());&#10;    int n = nums.size();&#10;    for(int i = 0; i &lt; n - 2; i++) {&#10;        if(i == 0 || (i &gt; 0 &amp;&amp; nums[i] != nums[i-1])) {&#10;            int low = i + 1, high = n - 1, sum = 0 - nums[i];&#10;            while(low &lt; high) {&#10;                if(nums[low] + nums[high] == sum) {&#10;                    ans.push_back({nums[i], nums[low], nums[high]});&#10;                    while(low &lt; high &amp;&amp; nums[low] == nums[low+1]) low++;&#10;                    while(low &lt; high &amp;&amp; nums[high] == nums[high-1]) high--;&#10;                    low++; high--;&#10;                } else if(nums[low] + nums[high] &lt; sum) low++;&#10;                else high--;&#10;            }&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>Arr 62 4Sum<br><br></b> <a href='https://leetcode.com/problems/4sum/' target='_blank'>LeetCode 18</a></td>
+      <td><b>Example 1:</b> Sort + Two Pointers.</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(1) excluding output</td>
+      <td>-</td>
+      <td>Integer overflow during sum</td>
+      <td><b>Explanation:</b> Sort the array. Fix the first two elements using nested loops (`i` and `j`). Then use two pointers (`left` and `right`) to find the remaining two elements that sum up to `target - nums[i] - nums[j]`. Skip duplicates for all 4 variables.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; fourSum(vector&lt;int&gt;&amp; nums, int target) {&#10;    vector&lt;vector&lt;int&gt;&gt; ans;&#10;    sort(nums.begin(), nums.end());&#10;    int n = nums.size();&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(i &gt; 0 &amp;&amp; nums[i] == nums[i-1]) continue;&#10;        for(int j = i + 1; j &lt; n; j++) {&#10;            if(j &gt; i + 1 &amp;&amp; nums[j] == nums[j-1]) continue;&#10;            int low = j + 1, high = n - 1;&#10;            while(low &lt; high) {&#10;                long long sum = (long long)nums[i] + nums[j] + nums[low] + nums[high];&#10;                if(sum == target) {&#10;                    ans.push_back({nums[i], nums[j], nums[low], nums[high]});&#10;                    while(low &lt; high &amp;&amp; nums[low] == nums[low+1]) low++;&#10;                    while(low &lt; high &amp;&amp; nums[high] == nums[high-1]) high--;&#10;                    low++; high--;&#10;                } else if(sum &lt; target) low++;&#10;                else high--;&#10;            }&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>Arr 63 Subarray With Given Xor<br><br></b> <a href='https://www.interviewbit.com/problems/subarray-with-given-xor/' target='_blank'>InterviewBit</a></td>
+      <td><b>Example 1:</b> Hash Map.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>Hash Map</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain the prefix XOR. Use a hash map to store the frequency of each prefix XOR. If current prefix XOR is `xr`, we want to find if there was a previous prefix XOR `xr ^ B`. If so, add its frequency to the count. Then add the current `xr` to the map.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int solve(vector&lt;int&gt; &amp;A, int B) {&#10;    unordered_map&lt;int, int&gt; freq;&#10;    int count = 0, xr = 0;&#10;    for(int i = 0; i &lt; A.size(); i++) {&#10;        xr = xr ^ A[i];&#10;        if(xr == B) count++;&#10;        if(freq.find(xr ^ B) != freq.end()) {&#10;            count += freq[xr ^ B];&#10;        }&#10;        freq[xr]++;&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>Arr 64 Merge Intervals<br><br></b> <a href='https://leetcode.com/problems/merge-intervals/' target='_blank'>LeetCode 56</a></td>
+      <td><b>Example 1:</b> Sort and Merge.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort the intervals by their start times. Iterate through them. If the result list is empty or the current interval's start is > the last interval's end, append it. Otherwise, update the last interval's end to the maximum of its end and current end.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; merge(vector&lt;vector&lt;int&gt;&gt;&amp; intervals) {&#10;    sort(intervals.begin(), intervals.end());&#10;    vector&lt;vector&lt;int&gt;&gt; merged;&#10;    for(auto interval : intervals) {&#10;        if(merged.empty() || merged.back()[1] &lt; interval[0]) {&#10;            merged.push_back(interval);&#10;        } else {&#10;            merged.back()[1] = max(merged.back()[1], interval[1]);&#10;        }&#10;    }&#10;    return merged;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>Arr 65 Merge Sorted Array Without Extra Space<br><br></b> <a href='https://leetcode.com/problems/merge-sorted-array/' target='_blank'>LeetCode 88</a></td>
+      <td><b>Example 1:</b> Two pointers from end.</td>
+      <td><b>Time:</b> O(M + N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Since `nums1` has enough space at the end, use three pointers: `p1` at the end of valid elements in `nums1` (m-1), `p2` at the end of `nums2` (n-1), and `p` at the very end of `nums1` (m+n-1). Compare elements at `p1` and `p2`, put the larger one at `p`, and decrement pointers.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void merge(vector&lt;int&gt;&amp; nums1, int m, vector&lt;int&gt;&amp; nums2, int n) {&#10;    int p1 = m - 1, p2 = n - 1, p = m + n - 1;&#10;    while(p1 &gt;= 0 &amp;&amp; p2 &gt;= 0) {&#10;        if(nums1[p1] &gt; nums2[p2]) nums1[p--] = nums1[p1--];&#10;        else nums1[p--] = nums2[p2--];&#10;    }&#10;    while(p2 &gt;= 0) nums1[p--] = nums2[p2--];&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

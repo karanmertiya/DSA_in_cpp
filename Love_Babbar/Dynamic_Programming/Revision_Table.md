@@ -772,5 +772,77 @@
       <td>-</td>
       <td><b>Explanation:</b> Use a 3D DP array `dp[i][j][isTrue]` representing the number of ways to evaluate the substring from `i` to `j` to `isTrue`. Iterate over all possible split points `k` with an operator. Combine the True and False counts from left and right halves based on the operator.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countWays(int N, string S) {&#10;    vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt; dp(N, vector&lt;vector&lt;int&gt;&gt;(N, vector&lt;int&gt;(2, 0)));&#10;    for(int i = 0; i &lt; N; i += 2) {&#10;        dp[i][i][1] = (S[i] == &#x27;T&#x27;);&#10;        dp[i][i][0] = (S[i] == &#x27;F&#x27;);&#10;    }&#10;    for(int len = 3; len &lt;= N; len += 2) {&#10;        for(int i = 0; i &lt;= N - len; i += 2) {&#10;            int j = i + len - 1;&#10;            for(int k = i + 1; k &lt; j; k += 2) {&#10;                int lt = dp[i][k-1][1], lf = dp[i][k-1][0];&#10;                int rt = dp[k+1][j][1], rf = dp[k+1][j][0];&#10;                if(S[k] == &#x27;&amp;&#x27;) {&#10;                    dp[i][j][1] = (dp[i][j][1] + (lt * rt) % 1003) % 1003;&#10;                    dp[i][j][0] = (dp[i][j][0] + (lt * rf) % 1003 + (lf * rt) % 1003 + (lf * rf) % 1003) % 1003;&#10;                } else if(S[k] == &#x27;|&#x27;) {&#10;                    dp[i][j][1] = (dp[i][j][1] + (lt * rt) % 1003 + (lt * rf) % 1003 + (lf * rt) % 1003) % 1003;&#10;                    dp[i][j][0] = (dp[i][j][0] + (lf * rf) % 1003) % 1003;&#10;                } else if(S[k] == &#x27;^&#x27;) {&#10;                    dp[i][j][1] = (dp[i][j][1] + (lt * rf) % 1003 + (lf * rt) % 1003) % 1003;&#10;                    dp[i][j][0] = (dp[i][j][0] + (lt * rt) % 1003 + (lf * rf) % 1003) % 1003;&#10;                }&#10;            }&#10;        }&#10;    }&#10;    return dp[0][N-1][1];&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td>85</td>
+      <td>Dp 35 Longest Increasing Subsequence<br><br></b> <a href='https://leetcode.com/problems/longest-increasing-subsequence/' target='_blank'>LeetCode 300</a></td>
+      <td><b>Example 1:</b> Binary Search approach.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain an array `temp` storing the smallest tail of all increasing subsequences of length i+1 in `temp[i]`. For each num, use binary search to find its position in `temp`. If num is larger than all, append it. Otherwise, replace the element.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int lengthOfLIS(vector&lt;int&gt;&amp; nums) {&#10;    vector&lt;int&gt; temp;&#10;    for(int num : nums) {&#10;        auto it = lower_bound(temp.begin(), temp.end(), num);&#10;        if(it == temp.end()) temp.push_back(num);&#10;        else *it = num;&#10;    }&#10;    return temp.size();&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>86</td>
+      <td>Dp 36 Minimum Insertions To Make String Palindrome<br><br></b> <a href='https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/' target='_blank'>LeetCode 1312</a></td>
+      <td><b>Example 1:</b> Longest Palindromic Subsequence.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Find the Longest Palindromic Subsequence (LPS). The minimum insertions required will be `string_length - LPS_length`. LPS is just LCS(s, reverse(s)).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minInsertions(string s) {&#10;    int n = s.length();&#10;    string t = s;&#10;    reverse(t.begin(), t.end());&#10;    vector&lt;vector&lt;int&gt;&gt; dp(n + 1, vector&lt;int&gt;(n + 1, 0));&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        for(int j = 1; j &lt;= n; j++) {&#10;            if(s[i-1] == t[j-1]) dp[i][j] = 1 + dp[i-1][j-1];&#10;            else dp[i][j] = max(dp[i-1][j], dp[i][j-1]);&#10;        }&#10;    }&#10;    return n - dp[n][n];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>87</td>
+      <td>Dp 38 Wildcard Matching<br><br></b> <a href='https://leetcode.com/problems/wildcard-matching/' target='_blank'>LeetCode 44</a></td>
+      <td><b>Example 1:</b> 2D DP.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> DP state `dp[i][j]` is true if `s[0..i-1]` matches `p[0..j-1]`. Base cases: empty pattern only matches empty string. `p[0..j-1]` can match empty string if all chars are '*'. Transitions: If `s[i-1] == p[j-1]` or `p[j-1] == '?'`, `dp[i][j] = dp[i-1][j-1]`. If `p[j-1] == '*'`, it can match empty string (`dp[i][j-1]`) or one/more characters (`dp[i-1][j]`).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isMatch(string s, string p) {&#10;    int m = s.length(), n = p.length();&#10;    vector&lt;vector&lt;bool&gt;&gt; dp(m + 1, vector&lt;bool&gt;(n + 1, false));&#10;    dp[0][0] = true;&#10;    for(int j = 1; j &lt;= n; j++) {&#10;        if(p[j-1] == &#x27;*&#x27;) dp[0][j] = dp[0][j-1];&#10;    }&#10;    for(int i = 1; i &lt;= m; i++) {&#10;        for(int j = 1; j &lt;= n; j++) {&#10;            if(p[j-1] == &#x27;?&#x27; || s[i-1] == p[j-1]) dp[i][j] = dp[i-1][j-1];&#10;            else if(p[j-1] == &#x27;*&#x27;) dp[i][j] = dp[i-1][j] || dp[i][j-1];&#10;        }&#10;    }&#10;    return dp[m][n];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>88</td>
+      <td>Dp 39 Burst Balloons<br><br></b> <a href='https://leetcode.com/problems/burst-balloons/' target='_blank'>LeetCode 312</a></td>
+      <td><b>Example 1:</b> MCM DP pattern.</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Add 1 to both ends of the array. Let `dp[i][j]` be the max coins collected by bursting balloons in `nums[i..j]`. Iterate length `L` from 1 to N. For each window `[i, j]`, try every `k` from `i` to `j` as the LAST balloon to burst in this window. Cost is `nums[i-1] * nums[k] * nums[j+1] + dp[i][k-1] + dp[k+1][j]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxCoins(vector&lt;int&gt;&amp; nums) {&#10;    int n = nums.size();&#10;    vector&lt;int&gt; arr(n + 2, 1);&#10;    for(int i = 0; i &lt; n; i++) arr[i+1] = nums[i];&#10;    vector&lt;vector&lt;int&gt;&gt; dp(n + 2, vector&lt;int&gt;(n + 2, 0));&#10;    for(int L = 1; L &lt;= n; L++) {&#10;        for(int i = 1; i &lt;= n - L + 1; i++) {&#10;            int j = i + L - 1;&#10;            for(int k = i; k &lt;= j; k++) {&#10;                int cost = arr[i-1] * arr[k] * arr[j+1] + dp[i][k-1] + dp[k+1][j];&#10;                dp[i][j] = max(dp[i][j], cost);&#10;            }&#10;        }&#10;    }&#10;    return dp[1][n];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>89</td>
+      <td>Dp 40 Evaluate Boolean Expression To True<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/boolean-parenthesization5610/1' target='_blank'>GFG</a></td>
+      <td><b>Example 1:</b> DP Partitioning.</td>
+      <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2 * 2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> MCM variant. `dp[i][j][isTrue]` stores the number of ways to evaluate the expression from `i` to `j` to `isTrue`. Partition at every operator `k`. Calculate `leftTrue`, `leftFalse`, `rightTrue`, `rightFalse`. Combine these based on the operator `S[k]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int solve(string S, int i, int j, int isTrue, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; dp) {&#10;    if(i &gt; j) return 0;&#10;    if(i == j) {&#10;        if(isTrue == 1) return S[i] == &#x27;T&#x27;;&#10;        else return S[i] == &#x27;F&#x27;;&#10;    }&#10;    if(dp[i][j][isTrue] != -1) return dp[i][j][isTrue];&#10;    long long ways = 0;&#10;    int mod = 1003;&#10;    for(int k = i + 1; k &lt;= j - 1; k += 2) {&#10;        long long lT = solve(S, i, k - 1, 1, dp);&#10;        long long lF = solve(S, i, k - 1, 0, dp);&#10;        long long rT = solve(S, k + 1, j, 1, dp);&#10;        long long rF = solve(S, k + 1, j, 0, dp);&#10;        if(S[k] == &#x27;&amp;&#x27;) {&#10;            if(isTrue) ways = (ways + (lT * rT) % mod) % mod;&#10;            else ways = (ways + (lT * rF) % mod + (lF * rT) % mod + (lF * rF) % mod) % mod;&#10;        } else if(S[k] == &#x27;|&#x27;) {&#10;            if(isTrue) ways = (ways + (lT * rT) % mod + (lT * rF) % mod + (lF * rT) % mod) % mod;&#10;            else ways = (ways + (lF * rF) % mod) % mod;&#10;        } else if(S[k] == &#x27;^&#x27;) {&#10;            if(isTrue) ways = (ways + (lT * rF) % mod + (lF * rT) % mod) % mod;&#10;            else ways = (ways + (lT * rT) % mod + (lF * rF) % mod) % mod;&#10;        }&#10;    }&#10;    return dp[i][j][isTrue] = ways;&#10;}&#10;int countWays(int N, string S) {&#10;    vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt; dp(N, vector&lt;vector&lt;int&gt;&gt;(N, vector&lt;int&gt;(2, -1)));&#10;    return solve(S, 0, N - 1, 1, dp);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>Dp 41 Palindrome Partitioning Ii<br><br></b> <a href='https://leetcode.com/problems/palindrome-partitioning-ii/' target='_blank'>LeetCode 132</a></td>
+      <td><b>Example 1:</b> Precompute palindromes + 1D DP.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> First, precompute a 2D boolean array `isPal[i][j]` to quickly check if `s[i..j]` is a palindrome. Then, use a 1D DP array where `dp[i]` represents the minimum cuts for `s[0..i]`. For each `i`, iterate `j` from `0` to `i`. If `s[j..i]` is a palindrome, then `dp[i] = min(dp[i], dp[j-1] + 1)`. If `s[0..i]` is a palindrome, `dp[i] = 0`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minCut(string s) {&#10;    int n = s.length();&#10;    vector&lt;vector&lt;bool&gt;&gt; isPal(n, vector&lt;bool&gt;(n, false));&#10;    for(int i = 0; i &lt; n; i++) {&#10;        isPal[i][i] = true;&#10;        if(i &lt; n - 1 &amp;&amp; s[i] == s[i+1]) isPal[i][i+1] = true;&#10;    }&#10;    for(int len = 3; len &lt;= n; len++) {&#10;        for(int i = 0; i &lt;= n - len; i++) {&#10;            int j = i + len - 1;&#10;            if(s[i] == s[j] &amp;&amp; isPal[i+1][j-1]) isPal[i][j] = true;&#10;        }&#10;    }&#10;    vector&lt;int&gt; dp(n, 0);&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(isPal[0][i]) { dp[i] = 0; continue; }&#10;        int minCuts = i;&#10;        for(int j = 1; j &lt;= i; j++) {&#10;            if(isPal[j][i]) minCuts = min(minCuts, dp[j-1] + 1);&#10;        }&#10;        dp[i] = minCuts;&#10;    }&#10;    return dp[n-1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>91</td>
+      <td>Dp 43 Maximum Rectangle With All 1S<br><br></b> <a href='https://leetcode.com/problems/maximal-rectangle/' target='_blank'>LeetCode 85</a></td>
+      <td><b>Example 1:</b> Histogram method.</td>
+      <td><b>Time:</b> O(R * C)<br><b>Space:</b> O(C)</td>
+      <td>Stack</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Treat each row as the base of a histogram. The height is the number of consecutive 1s going upwards. If a cell is 0, height is 0. For each row, after updating the heights, find the Largest Rectangle in Histogram (using a stack) and keep track of the maximum area overall.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int largestRectangleArea(vector&lt;int&gt;&amp; heights) {&#10;    int n = heights.size();&#10;    stack&lt;int&gt; st;&#10;    int maxArea = 0;&#10;    for(int i = 0; i &lt;= n; i++) {&#10;        while(!st.empty() &amp;&amp; (i == n || heights[st.top()] &gt;= heights[i])) {&#10;            int h = heights[st.top()]; st.pop();&#10;            int w = st.empty() ? i : i - st.top() - 1;&#10;            maxArea = max(maxArea, h * w);&#10;        }&#10;        st.push(i);&#10;    }&#10;    return maxArea;&#10;}&#10;int maximalRectangle(vector&lt;vector&lt;char&gt;&gt;&amp; matrix) {&#10;    if(matrix.empty()) return 0;&#10;    int r = matrix.size(), c = matrix[0].size();&#10;    vector&lt;int&gt; heights(c, 0);&#10;    int maxArea = 0;&#10;    for(int i = 0; i &lt; r; i++) {&#10;        for(int j = 0; j &lt; c; j++) {&#10;            if(matrix[i][j] == &#x27;1&#x27;) heights[j]++;&#10;            else heights[j] = 0;&#10;        }&#10;        maxArea = max(maxArea, largestRectangleArea(heights));&#10;    }&#10;    return maxArea;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td>92</td>
+      <td>Dp 44 Count Square Submatrices With All Ones<br><br></b> <a href='https://leetcode.com/problems/count-square-submatrices-with-all-ones/' target='_blank'>LeetCode 1277</a></td>
+      <td><b>Example 1:</b> 2D DP.</td>
+      <td><b>Time:</b> O(R * C)<br><b>Space:</b> O(R * C)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Let `dp[i][j]` be the size of the largest square ending at `(i, j)`. If `matrix[i][j] == 1`, then `dp[i][j] = 1 + min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]})`. The total number of squares is the sum of all elements in the `dp` matrix.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countSquares(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) {&#10;    int r = matrix.size(), c = matrix[0].size();&#10;    vector&lt;vector&lt;int&gt;&gt; dp(r, vector&lt;int&gt;(c, 0));&#10;    int ans = 0;&#10;    for(int i = 0; i &lt; r; i++) {&#10;        for(int j = 0; j &lt; c; j++) {&#10;            if(matrix[i][j] == 1) {&#10;                if(i == 0 || j == 0) dp[i][j] = 1;&#10;                else dp[i][j] = 1 + min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]});&#10;                ans += dp[i][j];&#10;            }&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
