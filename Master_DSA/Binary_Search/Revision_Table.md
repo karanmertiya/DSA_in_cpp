@@ -376,5 +376,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Binary search on capacity `[max(weights), sum(weights)]`. For a `mid` capacity, greedily load packages. If a package makes sum > capacity, increment days and start new load. If `days <= D`, search left. Else search right.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int shipWithinDays(vector&lt;int&gt;&amp; weights, int days) {&#10;    int low = *max_element(weights.begin(), weights.end());&#10;    int high = 0;&#10;    for(int w : weights) high += w;&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        int d = 1, load = 0;&#10;        for(int w : weights) {&#10;            if(load + w &gt; mid) {&#10;                d++;&#10;                load = w;&#10;            } else {&#10;                load += w;&#10;            }&#10;        }&#10;        if(d &lt;= days) high = mid - 1;&#10;        else low = mid + 1;&#10;    }&#10;    return low;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">41</td>
+      <td rowspan="1">Bs 41 Book Allocation Problem<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary Search on Answer.</td>
+      <td><b>Time:</b> O(N log(sum - max))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Search space for max pages is `max(arr)` to `sum(arr)`. Use binary search. For a `mid` value, count how many students are needed. If `students > M`, we need to increase max pages (`low = mid + 1`), else we can try to decrease (`high = mid - 1`).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPossible(int A[], int N, int M, long long mid) {&#10;    int students = 1;&#10;    long long sum = 0;&#10;    for(int i = 0; i &lt; N; i++) {&#10;        if(sum + A[i] &gt; mid) {&#10;            students++;&#10;            sum = A[i];&#10;            if(students &gt; M || A[i] &gt; mid) return false;&#10;        } else {&#10;            sum += A[i];&#10;        }&#10;    }&#10;    return true;&#10;}&#10;int findPages(int A[], int N, int M) {&#10;    if(M &gt; N) return -1;&#10;    long long sum = 0, mx = 0;&#10;    for(int i = 0; i &lt; N; i++) {&#10;        sum += A[i];&#10;        mx = max(mx, 1LL * A[i]);&#10;    }&#10;    long long low = mx, high = sum, ans = -1;&#10;    while(low &lt;= high) {&#10;        long long mid = low + (high - low) / 2;&#10;        if(isPossible(A, N, M, mid)) {&#10;            ans = mid;&#10;            high = mid - 1;&#10;        } else {&#10;            low = mid + 1;&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">42</td>
+      <td rowspan="1">Bs 42 Painters Partition Problem<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/the-painters-partition-problem1535/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary Search on Answer.</td>
+      <td><b>Time:</b> O(N log(sum - max))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Similar to Book Allocation. Find if it's possible to paint all boards within `mid` time using at most `K` painters. Search space from `max(arr)` to `sum(arr)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPossible(int arr[], int n, int k, long long mid) {&#10;    int painters = 1;&#10;    long long sum = 0;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        if(sum + arr[i] &gt; mid) {&#10;            painters++;&#10;            sum = arr[i];&#10;            if(painters &gt; k || arr[i] &gt; mid) return false;&#10;        } else {&#10;            sum += arr[i];&#10;        }&#10;    }&#10;    return true;&#10;}&#10;long long minTime(int arr[], int n, int k) {&#10;    long long low = 0, high = 0, ans = -1;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        low = max(low, 1LL * arr[i]);&#10;        high += arr[i];&#10;    }&#10;    while(low &lt;= high) {&#10;        long long mid = low + (high - low) / 2;&#10;        if(isPossible(arr, n, k, mid)) {&#10;            ans = mid;&#10;            high = mid - 1;&#10;        } else {&#10;            low = mid + 1;&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">43</td>
+      <td rowspan="1">Bs 43 Aggressive Cows<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/aggressive-cows/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary Search on Answer.</td>
+      <td><b>Time:</b> O(N log N + N log(max_val))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort array. Maximize the minimum distance. Search space from `1` to `max(arr) - min(arr)`. Function `isPossible(mid)` checks if we can place `K` cows such that distance between any two is at least `mid`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPossible(int stalls[], int n, int k, int mid) {&#10;    int cows = 1, lastPos = stalls[0];&#10;    for(int i = 1; i &lt; n; i++) {&#10;        if(stalls[i] - lastPos &gt;= mid) {&#10;            cows++;&#10;            lastPos = stalls[i];&#10;            if(cows == k) return true;&#10;        }&#10;    }&#10;    return false;&#10;}&#10;int solve(int n, int k, vector&lt;int&gt;&amp; stalls) {&#10;    sort(stalls.begin(), stalls.end());&#10;    int low = 1, high = stalls[n-1] - stalls[0], ans = -1;&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(isPossible(&amp;stalls[0], n, k, mid)) {&#10;            ans = mid;&#10;            low = mid + 1;&#10;        } else {&#10;            high = mid - 1;&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">44</td>
+      <td rowspan="1">Bs 44 Roti Prata Spoj<br><br></b> <a href='https://www.spoj.com/problems/PRATA/' target='_blank'>SPOJ</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary Search on Answer.</td>
+      <td><b>Time:</b> O(L * log(max_time))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Search space is `0` to `max_time`, where `max_time` is the time taken by the fastest cook to make all `P` pratas alone. `isPossible(mid)` checks if the total pratas made by all cooks in `mid` time is at least `P`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPossible(vector&lt;int&gt;&amp; rank, int p, int mid) {&#10;    int count = 0;&#10;    for(int r : rank) {&#10;        int time = 0, j = 1;&#10;        while(time + r * j &lt;= mid) {&#10;            count++;&#10;            time += r * j;&#10;            j++;&#10;        }&#10;        if(count &gt;= p) return true;&#10;    }&#10;    return count &gt;= p;&#10;}&#10;int minTime(int p, vector&lt;int&gt;&amp; rank) {&#10;    int low = 0, high = 1e8, ans = -1; // high could be rank[0] * P * (P+1) / 2&#10;    while(low &lt;= high) {&#10;        int mid = low + (high - low) / 2;&#10;        if(isPossible(rank, p, mid)) {&#10;            ans = mid;&#10;            high = mid - 1;&#10;        } else {&#10;            low = mid + 1;&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">45</td>
+      <td rowspan="1">Bs 45 Double Helix Spoj<br><br></b> <a href='https://www.spoj.com/problems/ANARC05B/' target='_blank'>SPOJ</a></td>
+      <td rowspan="1"><b>Example 1:</b> Two Pointers / Binary Search.</td>
+      <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use two pointers to traverse both sorted arrays simultaneously. Accumulate sums `sum1` and `sum2`. When elements match (intersection), add `max(sum1, sum2) + element` to the total answer and reset `sum1` and `sum2`. After the loop, add the remaining max sum.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long maxPathSum(vector&lt;int&gt;&amp; arr1, vector&lt;int&gt;&amp; arr2) {&#10;    long long sum1 = 0, sum2 = 0, ans = 0;&#10;    int i = 0, j = 0, n = arr1.size(), m = arr2.size();&#10;    while(i &lt; n &amp;&amp; j &lt; m) {&#10;        if(arr1[i] &lt; arr2[j]) sum1 += arr1[i++];&#10;        else if(arr1[i] &gt; arr2[j]) sum2 += arr2[j++];&#10;        else {&#10;            ans += max(sum1, sum2) + arr1[i];&#10;            sum1 = 0; sum2 = 0;&#10;            i++; j++;&#10;        }&#10;    }&#10;    while(i &lt; n) sum1 += arr1[i++];&#10;    while(j &lt; m) sum2 += arr2[j++];&#10;    ans += max(sum1, sum2);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">46</td>
+      <td rowspan="1">Bs 46 Subset Sums Spoj<br><br></b> <a href='https://www.spoj.com/problems/SUBSUMS/' target='_blank'>SPOJ</a></td>
+      <td rowspan="1"><b>Example 1:</b> Meet in the Middle.</td>
+      <td><b>Time:</b> O(2^(N/2) * log(2^(N/2)))<br><b>Space:</b> O(2^(N/2))</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Divide the array into two halves. Find all possible subset sums for both halves (`sum1` and `sum2`). Sort `sum2`. For each sum in `sum1`, we need to find the number of elements in `sum2` that satisfy `A - sum <= x <= B - sum`. This can be done using Binary Search (`upper_bound` - `lower_bound`).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void getSubsetSums(vector&lt;int&gt;&amp; arr, int st, int end, long long sum, vector&lt;long long&gt;&amp; res) {&#10;    if(st &gt; end) {&#10;        res.push_back(sum);&#10;        return;&#10;    }&#10;    getSubsetSums(arr, st + 1, end, sum + arr[st], res);&#10;    getSubsetSums(arr, st + 1, end, sum, res);&#10;}&#10;long long solve(vector&lt;int&gt;&amp; arr, long long A, long long B) {&#10;    int n = arr.size();&#10;    vector&lt;long long&gt; left, right;&#10;    getSubsetSums(arr, 0, n / 2 - 1, 0, left);&#10;    getSubsetSums(arr, n / 2, n - 1, 0, right);&#10;    sort(right.begin(), right.end());&#10;    long long count = 0;&#10;    for(long long x : left) {&#10;        auto low = lower_bound(right.begin(), right.end(), A - x);&#10;        auto high = upper_bound(right.begin(), right.end(), B - x);&#10;        count += (high - low);&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">47</td>
+      <td rowspan="1">Bs 47 Inversion Count<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Merge Sort.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Modify Merge Sort. While merging two sorted halves, if `left[i] > right[j]`, then there are `mid - i + 1` inversions.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long merge(long long arr[], long long temp[], int left, int mid, int right) {&#10;    long long inv_count = 0;&#10;    int i = left, j = mid, k = left;&#10;    while(i &lt;= mid - 1 &amp;&amp; j &lt;= right) {&#10;        if(arr[i] &lt;= arr[j]) temp[k++] = arr[i++];&#10;        else {&#10;            temp[k++] = arr[j++];&#10;            inv_count = inv_count + (mid - i);&#10;        }&#10;    }&#10;    while(i &lt;= mid - 1) temp[k++] = arr[i++];&#10;    while(j &lt;= right) temp[k++] = arr[j++];&#10;    for(i = left; i &lt;= right; i++) arr[i] = temp[i];&#10;    return inv_count;&#10;}&#10;long long mergeSort(long long arr[], long long temp[], int left, int right) {&#10;    long long inv_count = 0;&#10;    if(right &gt; left) {&#10;        int mid = (right + left) / 2;&#10;        inv_count += mergeSort(arr, temp, left, mid);&#10;        inv_count += mergeSort(arr, temp, mid + 1, right);&#10;        inv_count += merge(arr, temp, left, mid + 1, right);&#10;    }&#10;    return inv_count;&#10;}&#10;long long int inversionCount(long long arr[], long long N) {&#10;    long long temp[N];&#10;    return mergeSort(arr, temp, 0, N - 1);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">48</td>
+      <td rowspan="1">Bs 48 Allocate Minimum Number Of Pages<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary Search on Answer.</td>
+      <td><b>Time:</b> O(N log(sum - max))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Search space for max pages is `max(arr)` to `sum(arr)`. Use binary search. For a `mid` value, count how many students are needed. If `students > M`, we need to increase max pages (`low = mid + 1`), else we can try to decrease (`high = mid - 1`).<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPossible(int A[], int N, int M, long long mid) {&#10;    int students = 1;&#10;    long long sum = 0;&#10;    for(int i = 0; i &lt; N; i++) {&#10;        if(sum + A[i] &gt; mid) {&#10;            students++;&#10;            sum = A[i];&#10;            if(students &gt; M || A[i] &gt; mid) return false;&#10;        } else {&#10;            sum += A[i];&#10;        }&#10;    }&#10;    return true;&#10;}&#10;int findPages(int A[], int N, int M) {&#10;    if(M &gt; N) return -1;&#10;    long long sum = 0, mx = 0;&#10;    for(int i = 0; i &lt; N; i++) {&#10;        sum += A[i];&#10;        mx = max(mx, 1LL * A[i]);&#10;    }&#10;    long long low = mx, high = sum, ans = -1;&#10;    while(low &lt;= high) {&#10;        long long mid = low + (high - low) / 2;&#10;        if(isPossible(A, N, M, mid)) {&#10;            ans = mid;&#10;            high = mid - 1;&#10;        } else {&#10;            low = mid + 1;&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">49</td>
+      <td rowspan="1">Bs 49 Smallest Factorial Number<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/smallest-factorial-number5929/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary Search.</td>
+      <td><b>Time:</b> O(log_5(N) * log(5*N))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Trailing zeros depend on number of 5s. Find count of 5s in `mid!`. Use binary search on the number. Low = 0, high = 5*N. If `check(mid) >= n`, `ans = mid` and `high = mid - 1`. Else `low = mid + 1`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool check(int p, int n) {&#10;    int count = 0, temp = p, f = 5;&#10;    while(f &lt;= temp) {&#10;        count += temp / f;&#10;        f *= 5;&#10;    }&#10;    return count &gt;= n;&#10;}&#10;int findNum(int n) {&#10;    if(n == 1) return 5;&#10;    int low = 0, high = 5 * n;&#10;    int ans = 0;&#10;    while(low &lt;= high) {&#10;        int mid = (low + high) / 2;&#10;        if(check(mid, n)) {&#10;            ans = mid;&#10;            high = mid - 1;&#10;        } else {&#10;            low = mid + 1;&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">50</td>
+      <td rowspan="1">Bs 50 K Th Element Of Two Sorted Arrays<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Binary Search.</td>
+      <td><b>Time:</b> O(log(min(N, M)))<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Ensure arr1 is smaller. Binary search on arr1. `cut1` is between `max(0, k-m)` and `min(k, n)`. `cut2 = k - cut1`. Compare `l1 <= r2` and `l2 <= r1`. If so, return `max(l1, l2)`. Else adjust `low` and `high`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int kthElement(int arr1[], int arr2[], int n, int m, int k) {&#10;    if(n &gt; m) return kthElement(arr2, arr1, m, n, k);&#10;    int low = max(0, k - m), high = min(k, n);&#10;    while(low &lt;= high) {&#10;        int cut1 = (low + high) / 2;&#10;        int cut2 = k - cut1;&#10;        int l1 = cut1 == 0 ? INT_MIN : arr1[cut1 - 1];&#10;        int l2 = cut2 == 0 ? INT_MIN : arr2[cut2 - 1];&#10;        int r1 = cut1 == n ? INT_MAX : arr1[cut1];&#10;        int r2 = cut2 == m ? INT_MAX : arr2[cut2];&#10;        if(l1 &lt;= r2 &amp;&amp; l2 &lt;= r1) return max(l1, l2);&#10;        else if(l1 &gt; r2) high = cut1 - 1;&#10;        else low = cut1 + 1;&#10;    }&#10;    return 1;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

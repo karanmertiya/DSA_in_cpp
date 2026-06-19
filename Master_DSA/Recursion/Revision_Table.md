@@ -349,5 +349,95 @@
       <td>-</td>
       <td><b>Explanation:</b> Use an array to track visited numbers. Iterate from index 1 to n. For the current index, try placing an unvisited number. Check if the condition `(num % idx == 0 || idx % num == 0)` is met. If so, mark as visited, recurse to `idx + 1`, then backtrack.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countArrangement(int n) {&#10;    int count = 0;&#10;    vector&lt;int&gt; visited(n + 1, 0);&#10;    function&lt;void(int)&gt; solve = [&amp;](int idx) {&#10;        if(idx &gt; n) {&#10;            count++;&#10;            return;&#10;        }&#10;        for(int i = 1; i &lt;= n; i++) {&#10;            if(!visited[i] &amp;&amp; (i % idx == 0 || idx % i == 0)) {&#10;                visited[i] = 1;&#10;                solve(idx + 1);&#10;                visited[i] = 0;&#10;            }&#10;        }&#10;    };&#10;    solve(1);&#10;    return count;&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">38</td>
+      <td rowspan="1">Rec 38 Print All Permutations Of A String<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive Backtracking.</td>
+      <td><b>Time:</b> O(N! * N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Convert string to char array and sort it. Use backtracking: pass a boolean visited array and a temporary string. If temporary string length equals original length, add to answer. Else, iterate through characters. To avoid duplicates, if `i > 0` and `s[i] == s[i-1]` and `!vis[i-1]`, skip. Otherwise, mark visited, append, recurse, unmark, pop.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(string&amp; S, vector&lt;bool&gt;&amp; vis, string&amp; curr, vector&lt;string&gt;&amp; ans) {&#10;    if(curr.length() == S.length()) {&#10;        ans.push_back(curr);&#10;        return;&#10;    }&#10;    for(int i = 0; i &lt; S.length(); i++) {&#10;        if(vis[i] || (i &gt; 0 &amp;&amp; S[i] == S[i-1] &amp;&amp; !vis[i-1])) continue;&#10;        vis[i] = true;&#10;        curr.push_back(S[i]);&#10;        solve(S, vis, curr, ans);&#10;        curr.pop_back();&#10;        vis[i] = false;&#10;    }&#10;}&#10;vector&lt;string&gt; find_permutation(string S) {&#10;    sort(S.begin(), S.end());&#10;    vector&lt;string&gt; ans;&#10;    string curr = &quot;&quot;;&#10;    vector&lt;bool&gt; vis(S.length(), false);&#10;    solve(S, vis, curr, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">39</td>
+      <td rowspan="1">Rec 39 Word Break Problem<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/word-break1352/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive with Memoization.</td>
+      <td><b>Time:</b> O(N^2 * L)<br><b>Space:</b> O(N)</td>
+      <td><code>#include <unordered_set></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a helper function `solve(index)` that returns true if substring `s[index...]` can be segmented. Try all possible prefixes from `index`. If `s[index...i]` is in dict, recursively call `solve(i+1)`. Use memoization.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int solve(int ind, string&amp; A, unordered_set&lt;string&gt;&amp; dict, vector&lt;int&gt;&amp; memo) {&#10;    if(ind == A.length()) return 1;&#10;    if(memo[ind] != -1) return memo[ind];&#10;    for(int i = ind; i &lt; A.length(); i++) {&#10;        string prefix = A.substr(ind, i - ind + 1);&#10;        if(dict.find(prefix) != dict.end()) {&#10;            if(solve(i + 1, A, dict, memo)) return memo[ind] = 1;&#10;        }&#10;    }&#10;    return memo[ind] = 0;&#10;}&#10;int wordBreak(string A, vector&lt;string&gt; &amp;B) {&#10;    unordered_set&lt;string&gt; dict(B.begin(), B.end());&#10;    vector&lt;int&gt; memo(A.length(), -1);&#10;    return solve(0, A, dict, memo);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">40</td>
+      <td rowspan="1">Rec 40 Remove Invalid Parentheses<br><br></b> <a href='https://leetcode.com/problems/remove-invalid-parentheses/' target='_blank'>LeetCode 301</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursion and Backtracking.</td>
+      <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> First find the number of misplaced left (`rm_l`) and right (`rm_r`) parentheses. Then use backtracking to try removing `rm_l` and `rm_r` parentheses. To avoid duplicates, skip identical adjacent characters. Finally, check if the resulting string is valid.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isValid(string&amp; s) {&#10;    int count = 0;&#10;    for(char c : s) {&#10;        if(c == &#x27;(&#x27;) count++;&#10;        else if(c == &#x27;)&#x27;) count--;&#10;        if(count &lt; 0) return false;&#10;    }&#10;    return count == 0;&#10;}&#10;void solve(string s, int start, int rm_l, int rm_r, vector&lt;string&gt;&amp; ans) {&#10;    if(rm_l == 0 &amp;&amp; rm_r == 0) {&#10;        if(isValid(s)) ans.push_back(s);&#10;        return;&#10;    }&#10;    for(int i = start; i &lt; s.length(); i++) {&#10;        if(i != start &amp;&amp; s[i] == s[i-1]) continue;&#10;        if(s[i] == &#x27;(&#x27; &amp;&amp; rm_l &gt; 0) {&#10;            solve(s.substr(0, i) + s.substr(i + 1), i, rm_l - 1, rm_r, ans);&#10;        }&#10;        else if(s[i] == &#x27;)&#x27; &amp;&amp; rm_r &gt; 0) {&#10;            solve(s.substr(0, i) + s.substr(i + 1), i, rm_l, rm_r - 1, ans);&#10;        }&#10;    }&#10;}&#10;vector&lt;string&gt; removeInvalidParentheses(string s) {&#10;    int rm_l = 0, rm_r = 0;&#10;    for(char c : s) {&#10;        if(c == &#x27;(&#x27;) rm_l++;&#10;        else if(c == &#x27;)&#x27;) {&#10;            if(rm_l &gt; 0) rm_l--;&#10;            else rm_r++;&#10;        }&#10;    }&#10;    vector&lt;string&gt; ans;&#10;    solve(s, 0, rm_l, rm_r, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">41</td>
+      <td rowspan="1">Rec 41 Matchsticks To Square<br><br></b> <a href='https://leetcode.com/problems/matchsticks-to-square/' target='_blank'>LeetCode 473</a></td>
+      <td rowspan="1"><b>Example 1:</b> Backtracking to 4 subsets.</td>
+      <td><b>Time:</b> O(4^N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Calculate sum. If sum % 4 != 0, return false. Target side length is sum / 4. Sort matchsticks in descending order to optimize. Create an array `sides` of size 4. For each matchstick, try adding it to one of the 4 sides. If a side equals the target or is less, recurse.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool solve(vector&lt;int&gt;&amp; arr, vector&lt;int&gt;&amp; sides, int target, int ind) {&#10;    if(ind == arr.size()) {&#10;        return sides[0] == target &amp;&amp; sides[1] == target &amp;&amp; sides[2] == target;&#10;    }&#10;    for(int i = 0; i &lt; 4; i++) {&#10;        if(sides[i] + arr[ind] &lt;= target) {&#10;            sides[i] += arr[ind];&#10;            if(solve(arr, sides, target, ind + 1)) return true;&#10;            sides[i] -= arr[ind];&#10;        }&#10;        if(sides[i] == 0) break;&#10;    }&#10;    return false;&#10;}&#10;bool makesquare(vector&lt;int&gt;&amp; matchsticks) {&#10;    long long sum = 0;&#10;    for(int m : matchsticks) sum += m;&#10;    if(sum % 4 != 0 || matchsticks.size() &lt; 4) return false;&#10;    sort(matchsticks.rbegin(), matchsticks.rend());&#10;    vector&lt;int&gt; sides(4, 0);&#10;    return solve(matchsticks, sides, sum / 4, 0);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">42</td>
+      <td rowspan="1">Rec 42 Tug Of War<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/tug-of-war/0' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive Backtracking.</td>
+      <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Keep track of the number of elements included in subset 1 and their sum. Recurse by including the current element in subset 1 or subset 2. Base case: if we reach end, check if subset 1 has `n/2` elements. If so, compute difference and update global minimum.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minDiff;&#10;void solve(vector&lt;int&gt;&amp; arr, int ind, int cnt, int sum1, int totalSum, int n) {&#10;    if(ind == n) {&#10;        if(cnt == n / 2) {&#10;            int sum2 = totalSum - sum1;&#10;            minDiff = min(minDiff, abs(sum1 - sum2));&#10;        }&#10;        return;&#10;    }&#10;    if(cnt &lt; n / 2) solve(arr, ind + 1, cnt + 1, sum1 + arr[ind], totalSum, n);&#10;    solve(arr, ind + 1, cnt, sum1, totalSum, n);&#10;}&#10;int tugOfWar(vector&lt;int&gt;&amp; arr) {&#10;    int totalSum = 0;&#10;    for(int x : arr) totalSum += x;&#10;    minDiff = INT_MAX;&#10;    solve(arr, 0, 0, 0, totalSum, arr.size());&#10;    return minDiff;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">43</td>
+      <td rowspan="1">Rec 43 Find Paths From Corner Cell To Middle Cell<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/paths-from-corner-to-middle/0' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> BFS / DFS for path finding.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
+      <td><code>#include <queue></code></td>
+      <td>-</td>
+      <td><b>Explanation:</b> Perform BFS or DFS starting from all 4 corners simultaneously or individually. At each cell `(r, c)`, the jump size is `val = grid[r][c]`. We can move to `(r+val, c)`, `(r-val, c)`, `(r, c+val)`, `(r, c-val)`. Target is `(N/2, N/2)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void solve(vector&lt;vector&lt;int&gt;&gt;&amp; grid) {&#10;    int n = grid.size();&#10;    queue&lt;pair&lt;int, int&gt;&gt; q;&#10;    vector&lt;vector&lt;bool&gt;&gt; vis(n, vector&lt;bool&gt;(n, false));&#10;    auto add = [&amp;](int r, int c) { q.push({r, c}); vis[r][c] = true; };&#10;    add(0, 0); add(0, n-1); add(n-1, 0); add(n-1, n-1);&#10;    int dr[] = {-1, 1, 0, 0}, dc[] = {0, 0, -1, 1};&#10;    while(!q.empty()) {&#10;        auto [r, c] = q.front(); q.pop();&#10;        if(r == n/2 &amp;&amp; c == n/2) { /* found path */ }&#10;        int val = grid[r][c];&#10;        for(int i=0; i&lt;4; i++) {&#10;            int nr = r + dr[i] * val, nc = c + dc[i] * val;&#10;            if(nr &gt;= 0 &amp;&amp; nr &lt; n &amp;&amp; nc &gt;= 0 &amp;&amp; nc &lt; n &amp;&amp; !vis[nr][nc]) {&#10;                vis[nr][nc] = true;&#10;                q.push({nr, nc});&#10;            }&#10;        }&#10;    }&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">44</td>
+      <td rowspan="1">Rec 44 Arithmetic Expressions<br><br></b> <a href='https://www.hackerrank.com/challenges/arithmetic-expressions/problem' target='_blank'>HackerRank</a></td>
+      <td rowspan="1"><b>Example 1:</b> DP with path reconstruction.</td>
+      <td><b>Time:</b> O(N * 101)<br><b>Space:</b> O(N * 101)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a DP table `dp[i][mod]` to store the operator used to reach remainder `mod` at index `i`. Iterate through the array, for each reachable mod from previous step, try `(mod + arr[i]) % 101`, `(mod - arr[i]) % 101`, `(mod * arr[i]) % 101`. Then backtrack from `dp[N-1][0]` to find the operators.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string arithmeticExpressions(vector&lt;int&gt; arr) {&#10;    int n = arr.size();&#10;    vector&lt;vector&lt;char&gt;&gt; dp(n, vector&lt;char&gt;(101, 0));&#10;    dp[0][arr[0] % 101] = &#x27; &#x27;;&#10;    for(int i = 1; i &lt; n; i++) {&#10;        for(int j = 0; j &lt; 101; j++) {&#10;            if(dp[i-1][j]) {&#10;                dp[i][(j + arr[i]) % 101] = &#x27;+&#x27;;&#10;                dp[i][(j - arr[i] % 101 + 101) % 101] = &#x27;-&#x27;;&#10;                dp[i][(j * arr[i]) % 101] = &#x27;*&#x27;;&#10;            }&#10;        }&#10;    }&#10;    string res = &quot;&quot;;&#10;    int curr = 0;&#10;    for(int i = n - 1; i &gt; 0; i--) {&#10;        char op = dp[i][curr];&#10;        res = op + to_string(arr[i]) + res;&#10;        for(int j = 0; j &lt; 101; j++) {&#10;            if(dp[i-1][j]) {&#10;                if(op == &#x27;+&#x27; &amp;&amp; (j + arr[i]) % 101 == curr) { curr = j; break; }&#10;                if(op == &#x27;-&#x27; &amp;&amp; (j - arr[i] % 101 + 101) % 101 == curr) { curr = j; break; }&#10;                if(op == &#x27;*&#x27; &amp;&amp; (j * arr[i]) % 101 == curr) { curr = j; break; }&#10;            }&#10;        }&#10;    }&#10;    return to_string(arr[0]) + res;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">45</td>
+      <td rowspan="1">Rec 45 Find All Possible Palindromic Partitions Of A String<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/find-all-possible-palindromic-partitions-of-a-string/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive Backtracking.</td>
+      <td><b>Time:</b> O(N * 2^N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Iterate through the string. Extract substring `S[ind..i]`. If it is a palindrome, add it to the current partition list and recursively call for `i+1`. When `ind == length`, push the partition list to the answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPal(string&amp; s) {&#10;    int i = 0, j = s.length() - 1;&#10;    while(i &lt; j) if(s[i++] != s[j--]) return false;&#10;    return true;&#10;}&#10;void solve(string&amp; S, int ind, vector&lt;string&gt;&amp; curr, vector&lt;vector&lt;string&gt;&gt;&amp; ans) {&#10;    if(ind == S.length()) {&#10;        ans.push_back(curr);&#10;        return;&#10;    }&#10;    for(int i = ind; i &lt; S.length(); i++) {&#10;        string sub = S.substr(ind, i - ind + 1);&#10;        if(isPal(sub)) {&#10;            curr.push_back(sub);&#10;            solve(S, i + 1, curr, ans);&#10;            curr.pop_back();&#10;        }&#10;    }&#10;}&#10;vector&lt;vector&lt;string&gt;&gt; allPalindromicPerms(string S) {&#10;    vector&lt;vector&lt;string&gt;&gt; ans;&#10;    vector&lt;string&gt; curr;&#10;    solve(S, 0, curr, ans);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">46</td>
+      <td rowspan="1">Rec 46 Partition Array To K Subsets<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/partition-array-to-k-subsets/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive Backtracking.</td>
+      <td><b>Time:</b> O(K * 2^N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If total sum is not divisible by K, return false. Sort array in descending order. Use a boolean array `vis`. Helper function `solve(ind, currentSum, k)`: if `k == 1` return true. If `currentSum == target`, `solve(0, 0, k-1)`. Otherwise, iterate from `ind` to `N`, if `!vis[i]` and `currentSum + arr[i] <= target`, mark `vis[i] = true`, recurse, unmark.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool solve(int a[], int n, int k, int target, int currSum, int ind, vector&lt;bool&gt;&amp; vis) {&#10;    if(k == 1) return true;&#10;    if(currSum == target) return solve(a, n, k - 1, target, 0, 0, vis);&#10;    for(int i = ind; i &lt; n; i++) {&#10;        if(!vis[i] &amp;&amp; currSum + a[i] &lt;= target) {&#10;            vis[i] = true;&#10;            if(solve(a, n, k, target, currSum + a[i], i + 1, vis)) return true;&#10;            vis[i] = false;&#10;        }&#10;    }&#10;    return false;&#10;}&#10;bool isKPartitionPossible(int a[], int n, int k) {&#10;    int sum = 0;&#10;    for(int i = 0; i &lt; n; i++) sum += a[i];&#10;    if(sum % k != 0 || n &lt; k) return false;&#10;    vector&lt;bool&gt; vis(n, false);&#10;    return solve(a, n, k, sum / k, 0, 0, vis);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">47</td>
+      <td rowspan="1">Rec 47 Longest Possible Route In A Matrix With Hurdles<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/longest-possible-route-in-a-matrix-with-hurdles/0' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Recursive Backtracking.</td>
+      <td><b>Time:</b> O(4^(N*M))<br><b>Space:</b> O(N*M)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Use a global `max_dist` or pass it by reference. In `solve(r, c, dist)`, if `(r, c) == (dest_r, dest_c)`, `max_dist = max(max_dist, dist)` and return. Mark `(r, c)` as visited. Explore 4 directions. Unmark `(r, c)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxDist;&#10;void solve(vector&lt;vector&lt;int&gt;&gt;&amp; mat, int r, int c, int dr, int dc, int dist) {&#10;    if(r == dr &amp;&amp; c == dc) {&#10;        maxDist = max(maxDist, dist);&#10;        return;&#10;    }&#10;    mat[r][c] = 0; // mark visited&#10;    int dRow[] = {-1, 1, 0, 0};&#10;    int dCol[] = {0, 0, -1, 1};&#10;    for(int i = 0; i &lt; 4; i++) {&#10;        int nr = r + dRow[i];&#10;        int nc = c + dCol[i];&#10;        if(nr &gt;= 0 &amp;&amp; nr &lt; mat.size() &amp;&amp; nc &gt;= 0 &amp;&amp; nc &lt; mat[0].size() &amp;&amp; mat[nr][nc] == 1) {&#10;            solve(mat, nr, nc, dr, dc, dist + 1);&#10;        }&#10;    }&#10;    mat[r][c] = 1; // unmark&#10;}&#10;int longestPath(vector&lt;vector&lt;int&gt;&gt; mat, int xs, int ys, int xd, int yd) {&#10;    if(mat[xs][ys] == 0 || mat[xd][yd] == 0) return -1;&#10;    maxDist = -1;&#10;    solve(mat, xs, ys, xd, yd, 0);&#10;    return maxDist;&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>

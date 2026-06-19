@@ -502,5 +502,95 @@
       <td>-</td>
       <td><b>Explanation:</b> `dp[i]` is true if `s[0..i-1]` can be segmented. For each `i` from 1 to `N`, try each word in dictionary. If `s[i-len(word)..i-1] == word` and `dp[i-len(word)]` is true, then `dp[i] = true`. Or iterate `j` from 0 to `i` and check if `dp[j]` is true and `s[j..i-1]` is in dict.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool wordBreak(string s, vector&lt;string&gt;&amp; wordDict) {&#10;    unordered_set&lt;string&gt; dict(wordDict.begin(), wordDict.end());&#10;    vector&lt;bool&gt; dp(s.length() + 1, false);&#10;    dp[0] = true;&#10;    for(int i = 1; i &lt;= s.length(); i++) {&#10;        for(int j = 0; j &lt; i; j++) {&#10;            if(dp[j] &amp;&amp; dict.find(s.substr(j, i - j)) != dict.end()) {&#10;                dp[i] = true;&#10;                break;&#10;            }&#10;        }&#10;    }&#10;    return dp[s.length()];&#10;}</code></pre></details></td>
     </tr>
+    <tr>
+      <td rowspan="1">55</td>
+      <td rowspan="1">Dp 54 Count Palindromic Subsequences<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/count-palindromic-subsequences/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> 2D Interval DP.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> If `s[i] == s[j]`, `dp[i][j] = dp[i+1][j] + dp[i][j-1] + 1`. If `s[i] != s[j]`, `dp[i][j] = dp[i+1][j] + dp[i][j-1] - dp[i+1][j-1]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long int countPS(string str) {&#10;    int n = str.length();&#10;    long long int mod = 1e9 + 7;&#10;    vector&lt;vector&lt;long long int&gt;&gt; dp(n, vector&lt;long long int&gt;(n, 0));&#10;    for(int i = 0; i &lt; n; i++) dp[i][i] = 1;&#10;    for(int len = 2; len &lt;= n; len++) {&#10;        for(int i = 0; i &lt;= n - len; i++) {&#10;            int j = i + len - 1;&#10;            if(str[i] == str[j]) {&#10;                dp[i][j] = (dp[i+1][j] + dp[i][j-1] + 1) % mod;&#10;            } else {&#10;                dp[i][j] = (dp[i+1][j] + dp[i][j-1] - dp[i+1][j-1] + mod) % mod;&#10;            }&#10;        }&#10;    }&#10;    return dp[0][n-1];&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">56</td>
+      <td rowspan="1">Dp 55 Longest Alternating Subsequence<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/longest-alternating-subsequence5951/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Two state DP.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain two lengths: `up` (ending with ascending) and `down` (ending with descending). Iterate array: if `arr[i] > arr[i-1]`, `up = down + 1`. If `arr[i] < arr[i-1]`, `down = up + 1`. Return `max(up, down)`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int AlternatingaMaxLength(vector&lt;int&gt;&amp; nums) {&#10;    if(nums.empty()) return 0;&#10;    int up = 1, down = 1;&#10;    for(int i = 1; i &lt; nums.size(); i++) {&#10;        if(nums[i] &gt; nums[i-1]) up = down + 1;&#10;        else if(nums[i] &lt; nums[i-1]) down = up + 1;&#10;    }&#10;    return max(up, down);&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">57</td>
+      <td rowspan="1">Dp 56 Largest Square Formed In A Matrix<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/largest-square-formed-in-a-matrix0806/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Bottom-up DP.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M) or O(M)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> `dp[i][j]` is side of max square ending at `(i, j)`. If `mat[i][j] == 1`, `dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1`. Result is max over all `dp[i][j]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxSquare(int n, int m, vector&lt;vector&lt;int&gt;&gt; mat) {&#10;    vector&lt;vector&lt;int&gt;&gt; dp(n, vector&lt;int&gt;(m, 0));&#10;    int ans = 0;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        for(int j = 0; j &lt; m; j++) {&#10;            if(mat[i][j] == 1) {&#10;                if(i == 0 || j == 0) dp[i][j] = 1;&#10;                else dp[i][j] = min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]}) + 1;&#10;                ans = max(ans, dp[i][j]);&#10;            }&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">58</td>
+      <td rowspan="1">Dp 57 Pairs With Specific Difference<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/pairs-with-specific-difference1533/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Sort and DP or Greedy.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort array. Iterate from end. If `arr[i] - arr[i-1] < K`, we pair them, add sum to answer, and `i -= 2`. Else, `i -= 1`. Greedy approach works because pairing larger numbers gives a larger sum.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxSumPairWithDifferenceLessThanK(int arr[], int N, int K) {&#10;    sort(arr, arr + N);&#10;    int ans = 0;&#10;    for(int i = N - 1; i &gt; 0; ) {&#10;        if(arr[i] - arr[i-1] &lt; K) {&#10;            ans += arr[i] + arr[i-1];&#10;            i -= 2;&#10;        } else {&#10;            i--;&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">59</td>
+      <td rowspan="1">Dp 58 Maximum Path Sum In Matrix<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/path-in-matrix3805/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> 2D DP.</td>
+      <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Start from bottom row up. `dp[i][j] = matrix[i][j] + max(dp[i+1][j], dp[i+1][j-1], dp[i+1][j+1])`. The answer is max value in `dp[0]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maximumPath(int N, vector&lt;vector&lt;int&gt;&gt; Matrix) {&#10;    vector&lt;int&gt; prev(N, 0), curr(N, 0);&#10;    for(int j = 0; j &lt; N; j++) prev[j] = Matrix[N-1][j];&#10;    for(int i = N - 2; i &gt;= 0; i--) {&#10;        for(int j = 0; j &lt; N; j++) {&#10;            int up = Matrix[i][j] + prev[j];&#10;            int ld = Matrix[i][j] + (j &gt; 0 ? prev[j-1] : 0);&#10;            int rd = Matrix[i][j] + (j &lt; N - 1 ? prev[j+1] : 0);&#10;            curr[j] = max({up, ld, rd});&#10;        }&#10;        prev = curr;&#10;    }&#10;    int ans = 0;&#10;    for(int j = 0; j &lt; N; j++) ans = max(ans, prev[j]);&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">60</td>
+      <td rowspan="1">Dp 59 Maximum Difference Of Zeros And Ones In Binary String<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/maximum-difference-of-zeros-and-ones-in-binary-string4111/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Kadane's Algorithm.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Convert '0' to 1 and '1' to -1. Find the maximum subarray sum using Kadane's algorithm. If max sum is negative, it means string has all 1s, return -1.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int maxSubstring(string S) {&#10;    int mx = INT_MIN, curr = 0;&#10;    for(char c : S) {&#10;        int val = c == &#x27;0&#x27; ? 1 : -1;&#10;        curr = max(val, curr + val);&#10;        mx = max(mx, curr);&#10;    }&#10;    return mx;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">61</td>
+      <td rowspan="1">Dp 60 Minimum Number Of Jumps<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Greedy tracking bounds.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Maintain `maxReach`, `steps`, and `jumps`. At each step `i`, `maxReach = max(maxReach, i + arr[i])`. Decrement `steps`. If `steps == 0`, `jumps++` and `steps = maxReach - i`. If `i >= maxReach`, return -1.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int minJumps(int arr[], int n) {&#10;    if(n &lt;= 1) return 0;&#10;    if(arr[0] == 0) return -1;&#10;    int maxReach = arr[0], steps = arr[0], jumps = 1;&#10;    for(int i = 1; i &lt; n; i++) {&#10;        if(i == n - 1) return jumps;&#10;        maxReach = max(maxReach, i + arr[i]);&#10;        steps--;&#10;        if(steps == 0) {&#10;            jumps++;&#10;            if(i &gt;= maxReach) return -1;&#10;            steps = maxReach - i;&#10;        }&#10;    }&#10;    return -1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">62</td>
+      <td rowspan="1">Dp 61 Minimum Removals From Array To Make Max Min K<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/minimum-removals3851/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> DP after sorting.</td>
+      <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> Sort array. We want to find the longest subarray `arr[i..j]` such that `arr[j] - arr[i] <= K`. `dp[i]` could store the max `j` for index `i`. Or use Binary Search (`upper_bound`) for each `i` to find the valid `j`, maximizing `j - i + 1`. Total removed = `N - max_length`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int removals(vector&lt;int&gt;&amp; arr, int k) {&#10;    int n = arr.size();&#10;    sort(arr.begin(), arr.end());&#10;    int maxLen = 0;&#10;    for(int i = 0; i &lt; n; i++) {&#10;        int j = upper_bound(arr.begin(), arr.end(), arr[i] + k) - arr.begin() - 1;&#10;        maxLen = max(maxLen, j - i + 1);&#10;    }&#10;    return n - maxLen;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">63</td>
+      <td rowspan="1">Dp 62 Longest Common Substring<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/longest-common-substring1452/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> 2D DP.</td>
+      <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(M)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> `dp[i][j]` is the length of longest common suffix of `S1[0..i-1]` and `S2[0..j-1]`. If `S1[i-1] == S2[j-1]`, `dp[i][j] = dp[i-1][j-1] + 1`. Else, `dp[i][j] = 0`. Max value in `dp` table is answer.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int longestCommonSubstr(string S1, string S2, int n, int m) {&#10;    vector&lt;int&gt; prev(m + 1, 0), curr(m + 1, 0);&#10;    int ans = 0;&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        for(int j = 1; j &lt;= m; j++) {&#10;            if(S1[i-1] == S2[j-1]) {&#10;                curr[j] = prev[j-1] + 1;&#10;                ans = max(ans, curr[j]);&#10;            } else {&#10;                curr[j] = 0;&#10;            }&#10;        }&#10;        prev = curr;&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
+      <td rowspan="1">64</td>
+      <td rowspan="1">Dp 63 Reach A Given Score<br><br></b> <a href='https://practice.geeksforgeeks.org/problems/reach-a-given-score-1587115621/1' target='_blank'>GFG</a></td>
+      <td rowspan="1"><b>Example 1:</b> Unbounded Knapsack.</td>
+      <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
+      <td>-</td>
+      <td>-</td>
+      <td><b>Explanation:</b> `dp[i]` represents number of ways to reach score `i`. Init `dp[0] = 1`. For each score option (3, 5, 10), iterate from option to `n`, `dp[i] += dp[i - option]`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">long long int count(long long int n) {&#10;    vector&lt;long long int&gt; dp(n + 1, 0);&#10;    dp[0] = 1;&#10;    vector&lt;int&gt; scores = {3, 5, 10};&#10;    for(int s : scores) {&#10;        for(int i = s; i &lt;= n; i++) {&#10;            dp[i] += dp[i - s];&#10;        }&#10;    }&#10;    return dp[n];&#10;}</code></pre></details></td>
+    </tr>
   </tbody>
 </table>
