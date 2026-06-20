@@ -9,5 +9,5 @@ Given the root of a binary tree, flatten the tree into a 'linked list'. The righ
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

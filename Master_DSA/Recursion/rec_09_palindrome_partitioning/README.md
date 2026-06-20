@@ -9,5 +9,5 @@ Given a string s, partition s such that every substring of the partition is a pa
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

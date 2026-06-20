@@ -9,6 +9,6 @@ Given two sorted arrays array1 and array2 of size m and n respectively. Find the
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
+- SDE_Sheet

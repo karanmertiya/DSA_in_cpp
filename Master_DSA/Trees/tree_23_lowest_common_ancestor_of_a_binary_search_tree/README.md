@@ -9,5 +9,5 @@ Given a binary search tree (BST), find the lowest common ancestor (LCA) node of 
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

@@ -12,11 +12,17 @@ No advanced libraries needed. You just need to understand basic console printing
 using namespace std;
 
 int main() {
-    // Print without newline
-    cout << "* ";
+    // Basic For Loop
+    int sum = 0;
+    for(int i = 1; i <= 5; i++) {
+        sum += i; // Adding a number iteratively
+        cout << "* "; // Print without newline
+    }
+    cout << endl; // Print with newline
     
-    // Print with newline
-    cout << endl;
+    // Optimal Formula (O(1)) vs Loop (O(N))
+    int n = 5;
+    int optimal_sum = (n * (n + 1)) / 2;
 }
 ```
 </details>
@@ -24,11 +30,17 @@ int main() {
 <details><summary><b>Python Syntax & Setup</b></summary>
 
 ```python
-# Print without newline (Crucial for patterns!)
-print("* ", end="")
+# Basic For Loop
+total_sum = 0
+for i in range(1, 6):
+    total_sum += i # Adding a number iteratively
+    print("* ", end="") # Print without newline (Crucial for patterns!)
 
-# Print with newline
-print()
+print() # Print with newline
+
+# Optimal Formula (O(1)) vs Loop (O(N))
+n = 5
+optimal_sum = (n * (n + 1)) // 2
 
 # String multiplication (Python specific trick!)
 print("* " * 5) # Prints "* * * * * "

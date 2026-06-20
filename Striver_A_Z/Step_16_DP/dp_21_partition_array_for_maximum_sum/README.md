@@ -9,5 +9,5 @@ Given an integer array arr, partition the array into contiguous subarrays of len
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

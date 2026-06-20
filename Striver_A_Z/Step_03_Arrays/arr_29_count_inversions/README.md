@@ -9,6 +9,6 @@ For an array, inversion count indicates how far the array is from being sorted. 
 ```
 
 ## Tags
+- Love_Babbar
 - Striver_A_Z
 - SDE_Sheet
-- Love_Babbar

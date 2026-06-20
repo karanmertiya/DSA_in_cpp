@@ -9,5 +9,5 @@ Given a string s, sort it in decreasing order based on the frequency of the char
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

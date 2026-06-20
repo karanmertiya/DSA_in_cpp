@@ -9,6 +9,6 @@ Given an integer x, return true if x is palindrome integer.<br><br><b>🔗 Pract
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
+- SDE_Sheet

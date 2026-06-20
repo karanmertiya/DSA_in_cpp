@@ -9,5 +9,5 @@ Given a non-negative integer N. The task is to check if N is a power of 2. More 
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

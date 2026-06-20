@@ -9,7 +9,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ```
 
 ## Tags
+- Striver_A_Z
+- Love_Babbar
 - Apna_College
 - SDE_Sheet
-- Love_Babbar
-- Striver_A_Z

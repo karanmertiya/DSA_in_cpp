@@ -9,5 +9,5 @@ Given an integer n, return the number of trailing zeroes in n!.<br><br><b>🔗 P
 ```
 
 ## Tags
-- SDE_Sheet
 - Love_Babbar
+- SDE_Sheet

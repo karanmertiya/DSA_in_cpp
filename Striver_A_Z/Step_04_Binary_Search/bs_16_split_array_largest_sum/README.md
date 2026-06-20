@@ -9,5 +9,5 @@ Given an integer array nums and an integer k, split nums into k non-empty subarr
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

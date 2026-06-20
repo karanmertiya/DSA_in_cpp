@@ -9,6 +9,6 @@ Merge two sorted arrays arr1 and arr2 into arr1 without using extra space. (We p
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
+- SDE_Sheet

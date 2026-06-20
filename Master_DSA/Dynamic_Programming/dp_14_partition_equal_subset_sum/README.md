@@ -9,5 +9,5 @@ Given an integer array nums, return true if you can partition the array into two
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

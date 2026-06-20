@@ -9,5 +9,5 @@ Given an array of integers A of size N and an integer M. A[i] denotes the number
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

@@ -10,6 +10,6 @@ Given a string s and a dictionary of strings wordDict, return true if s can be s
 
 ## Tags
 - Apna_College
-- SDE_Sheet
 - Love_Babbar
 - Striver_A_Z
+- SDE_Sheet

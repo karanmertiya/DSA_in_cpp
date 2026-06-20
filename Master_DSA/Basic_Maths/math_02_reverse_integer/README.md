@@ -9,6 +9,6 @@ Given a signed 32-bit integer x, return x with its digits reversed.<br><br><b>ğŸ
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
+- SDE_Sheet

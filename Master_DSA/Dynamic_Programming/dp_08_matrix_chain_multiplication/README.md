@@ -10,6 +10,6 @@ Given a sequence of matrices, find the most efficient way to multiply these matr
 
 ## Tags
 - Apna_College
-- SDE_Sheet
 - Love_Babbar
 - Striver_A_Z
+- SDE_Sheet

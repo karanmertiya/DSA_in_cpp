@@ -9,5 +9,5 @@ Given a string S, check if it is palindrome or not.<br><br><b>🔗 Practice:</b>
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

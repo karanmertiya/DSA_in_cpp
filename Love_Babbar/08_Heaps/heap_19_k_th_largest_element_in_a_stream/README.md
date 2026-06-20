@@ -9,5 +9,5 @@ Given an input stream arr[] of n integers. Find the Kth largest element for each
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

@@ -9,5 +9,5 @@ Given the root of a binary search tree, and an integer k, return the kth smalles
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

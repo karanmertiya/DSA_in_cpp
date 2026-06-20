@@ -9,6 +9,6 @@ Given an array of strings strs, group the anagrams together. You can return the 
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
+- SDE_Sheet

@@ -9,5 +9,5 @@ Given an integer n, return the number of prime numbers that are strictly less th
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

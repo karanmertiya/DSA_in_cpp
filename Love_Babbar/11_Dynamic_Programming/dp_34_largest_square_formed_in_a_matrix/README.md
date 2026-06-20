@@ -9,5 +9,5 @@ Given a binary matrix mat of size n * m, find out the maximum size square sub-ma
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

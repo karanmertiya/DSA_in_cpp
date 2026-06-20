@@ -9,5 +9,5 @@ Given an undirected graph and a number m, determine if the graph can be colored 
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

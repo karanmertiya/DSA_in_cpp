@@ -9,6 +9,6 @@ Given two sorted arrays arr1 and arr2 of size N and M respectively and an elemen
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
+- SDE_Sheet

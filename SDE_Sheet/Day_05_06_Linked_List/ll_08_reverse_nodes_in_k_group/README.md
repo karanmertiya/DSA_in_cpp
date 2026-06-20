@@ -10,6 +10,6 @@ Given the head of a linked list, reverse the nodes of the list k at a time, and 
 
 ## Tags
 - Apna_College
-- SDE_Sheet
 - Love_Babbar
 - Striver_A_Z
+- SDE_Sheet
