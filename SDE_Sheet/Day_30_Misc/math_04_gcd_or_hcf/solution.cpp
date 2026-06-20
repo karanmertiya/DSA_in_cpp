@@ -10,15 +10,18 @@ int gcd(int a, int b) {
     return ans;
 }
 
-// Time Complexity: O(log(min(a,b)))
+// Time Complexity: O(log(min(a, b)))
 // Space Complexity: O(1)
-// Explanation: Optimal: Euclidean Algorithm. gcd(a, b) = gcd(b, a % b).
+// Explanation: Euclidean Algorithm (Optimal): Repeatedly replace max(a,b) with max(a,b) % min(a,b). The final non-zero value is the GCD. Note: LCM can be found in O(1) extra time using formula: LCM(a,b) = (a*b) / GCD(a,b)
 
-long long gcd(long long a, long long b) {
-    while (a > 0 && b > 0) {
-        if (a > b) a = a % b;
-        else b = b % a;
+int calcGCD(int n, int m){
+    while(n > 0 && m > 0) {
+        if(n > m) n = n % m;
+        else m = m % n;
     }
-    return a == 0 ? b : a;
+    return (n == 0) ? m : n;
+    
+    // LCM Calculation
+    // int lcm = (n * m) / calcGCD(n, m);
 }
 

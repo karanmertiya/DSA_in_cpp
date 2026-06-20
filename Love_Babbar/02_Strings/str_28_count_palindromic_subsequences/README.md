@@ -4,9 +4,16 @@
 Given a string str of length N, you have to find number of palindromic subsequence (need not necessarily be distinct) which could be formed from the string str.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/count-palindromic-subsequences/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Dynamic Programming.
-```
+**Example 1:** Dynamic Programming.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

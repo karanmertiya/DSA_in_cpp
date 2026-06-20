@@ -4,11 +4,18 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/quick-sort/1' target='_blank'>GeeksforGeeks</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: N = 5, arr[] = {4, 1, 3, 9, 7}, Output: 1 3 4 7 9
-```
+**Example 1:** Input: N = 5, arr[] = {4, 1, 3, 9, 7}, Output: 1 3 4 7 9
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

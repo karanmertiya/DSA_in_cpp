@@ -4,10 +4,17 @@
 Given a Directed Graph, check whether it contains any cycle or not using Kahn's Algorithm.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Return true if cycle exists.
-```
+**Example 1:** Return true if cycle exists.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,12 +4,19 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/longest-palindromic-substring/' target='_blank'>LeetCode 5</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: s = "babad", Output: "bab"
-```
+**Example 1:** Input: s = "babad", Output: "bab"
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Apna_College
+- Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

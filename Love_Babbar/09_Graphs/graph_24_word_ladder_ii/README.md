@@ -4,10 +4,17 @@
 Find all the shortest transformation sequences from beginWord to endWord.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/word-ladder-ii/' target='_blank'>LeetCode 126</a>
 
 ## Examples
-```text
-<b>Example 1:</b> BFS for distance, DFS for paths.
-```
+**Example 1:** BFS for distance, DFS for paths.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

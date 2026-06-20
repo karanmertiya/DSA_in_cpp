@@ -4,7 +4,6 @@
 Given an integer N, print a right-angled triangle pattern where each row i contains the number i, i times.
 
 ## Examples
-```text
 Example 1:
 Input: N = 3
 Output:
@@ -20,5 +19,10 @@ Output:
 3 3 3
 4 4 4 4
 5 5 5 5 5
-```
 
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

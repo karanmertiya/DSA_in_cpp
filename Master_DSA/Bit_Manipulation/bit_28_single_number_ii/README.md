@@ -4,9 +4,16 @@
 Given an integer array nums where every element appears three times except for one, which appears exactly once. Find the single element and return it. You must implement a solution with a linear runtime complexity and use only constant extra space.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/single-number-ii/' target='_blank'>LeetCode 137</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Ones and Twos.
-```
+**Example 1:** Ones and Twos.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

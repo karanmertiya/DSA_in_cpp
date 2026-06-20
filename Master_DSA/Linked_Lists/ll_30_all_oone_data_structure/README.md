@@ -4,10 +4,17 @@
 Design a data structure to store the strings' count with the ability to return the strings with minimum and maximum counts.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/all-oone-data-structure/' target='_blank'>LeetCode 432</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Doubly linked list of frequency buckets.
-```
+**Example 1:** Doubly linked list of frequency buckets.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

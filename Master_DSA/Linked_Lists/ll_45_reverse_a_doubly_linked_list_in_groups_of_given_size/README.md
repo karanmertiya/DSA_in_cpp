@@ -4,9 +4,16 @@
 Given a doubly linked list containing N nodes. The problem is to reverse every group of k nodes in the list.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/reverse-doubly-linked-list-groups-given-size/' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Recursion.
-```
+**Example 1:** Recursion.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

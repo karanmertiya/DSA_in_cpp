@@ -4,10 +4,17 @@
 Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties: Integers in each row are sorted in ascending from left to right. Integers in each column are sorted in ascending from top to bottom.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/search-a-2d-matrix-ii/' target='_blank'>LeetCode 240</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Start from top right.
-```
+**Example 1:** Start from top right.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,9 +4,16 @@
 Given an array arr[] of N integers, calculate the median.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/find-the-median0527/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Sort array.
-```
+**Example 1:** Sort array.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

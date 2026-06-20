@@ -4,11 +4,18 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/climbing-stairs/' target='_blank'>LeetCode 70</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: n = 3, Output: 3 (1+1+1, 1+2, 2+1)
-```
+**Example 1:** Input: n = 3, Output: 3 (1+1+1, 1+2, 2+1)
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

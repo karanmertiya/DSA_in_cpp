@@ -4,10 +4,17 @@
 On a 2D plane, we place n stones at some integer coordinate points. Each coordinate point may have at most one stone. A stone can be removed if it shares either the same row or the same column as another stone that has not been removed. Return the largest possible number of stones that can be removed.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/' target='_blank'>LeetCode 947</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Treat rows and columns as nodes.
-```
+**Example 1:** Treat rows and columns as nodes.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

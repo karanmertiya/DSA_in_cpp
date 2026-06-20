@@ -4,10 +4,17 @@
 You are given the root of a binary tree with unique values, and an integer start. At minute 0, an infection starts from the node with value start. Return the number of minutes needed for the entire tree to be infected.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/' target='_blank'>LeetCode 2385</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Parent pointers and BFS.
-```
+**Example 1:** Parent pointers and BFS.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

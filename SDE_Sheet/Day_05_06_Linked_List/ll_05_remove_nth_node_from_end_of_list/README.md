@@ -4,11 +4,18 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/remove-nth-node-from-end-of-list/' target='_blank'>LeetCode 19</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: head = [1,2,3,4,5], n = 2, Output: [1,2,3,5]
-```
+**Example 1:** Input: head = [1,2,3,4,5], n = 2, Output: [1,2,3,5]
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

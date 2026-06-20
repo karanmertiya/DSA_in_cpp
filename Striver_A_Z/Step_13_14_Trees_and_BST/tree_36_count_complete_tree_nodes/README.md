@@ -4,10 +4,17 @@
 Given the root of a complete binary tree, return the number of the nodes in the tree. According to Wikipedia, every level, except possibly the last, is completely filled in a complete binary tree, and all nodes in the last level are as far left as possible. It can have between 1 and 2^h nodes inclusive at the last level h.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/count-complete-tree-nodes/' target='_blank'>LeetCode 222</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Recursive with Height check.
-```
+**Example 1:** Recursive with Height check.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

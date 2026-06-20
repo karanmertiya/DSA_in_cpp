@@ -4,9 +4,16 @@
 IEEE is having its AGM next week and the president wants to serve cheese prata after the meeting. The caterer needs to know the minimum time needed to make P pratas by L cooks.<br><br><b>🔗 Practice:</b> <a href='https://www.spoj.com/problems/PRATA/' target='_blank'>SPOJ</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Binary Search on Answer.
-```
+**Example 1:** Binary Search on Answer.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,10 +4,17 @@
 Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*' where: '?' Matches any single character. '*' Matches any sequence of characters (including the empty sequence).<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/wildcard-matching/' target='_blank'>LeetCode 44</a>
 
 ## Examples
-```text
-<b>Example 1:</b> 2D DP.
-```
+**Example 1:** 2D DP.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,9 +4,16 @@
 Given an array Arr[] of size L and a number N, you need to write a program to find if there exists a pair of elements in the array whose difference is N.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/find-pair-given-difference1559/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Sort and two pointers.
-```
+**Example 1:** Sort and two pointers.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

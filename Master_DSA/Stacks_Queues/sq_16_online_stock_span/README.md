@@ -4,10 +4,17 @@
 Design an algorithm that collects daily price quotes for some stock and returns the span of that stock's price for the current day.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/online-stock-span/' target='_blank'>LeetCode 901</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Monotonic Stack.
-```
+**Example 1:** Monotonic Stack.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,9 +4,16 @@
 Given a sorted doubly linked list of distinct nodes and a value x. Count triplets in the list that sum up to given value x.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/count-triplets-sorted-doubly-linked-list-whose-sum-equal-given-value-x/' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Two Pointers.
-```
+**Example 1:** Two Pointers.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

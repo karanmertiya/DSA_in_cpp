@@ -4,9 +4,16 @@
 Given two strings s1 and s2. The task is to check if s2 is a rotated version of the string s1. The characters in the strings are in lowercase.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/check-if-strings-are-rotations-of-each-other-or-not-1587115620/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Concatenate and find.
-```
+**Example 1:** Concatenate and find.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

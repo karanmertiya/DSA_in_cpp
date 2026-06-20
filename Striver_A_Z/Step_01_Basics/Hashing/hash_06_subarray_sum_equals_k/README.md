@@ -4,11 +4,18 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/subarray-sum-equals-k/' target='_blank'>LeetCode 560</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: nums = [1,1,1], k = 2, Output: 2<br><br><b>Note (Constraint):</b> Negative numbers allowed, preventing pure Sliding Window approaches.
-```
+**Example 1:** Input: nums = [1,1,1], k = 2, Output: 2<br><br>**Note (Constraint):** Negative numbers allowed, preventing pure Sliding Window approaches.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

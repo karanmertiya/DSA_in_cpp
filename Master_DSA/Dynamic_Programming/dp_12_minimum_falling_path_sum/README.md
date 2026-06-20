@@ -4,10 +4,17 @@
 Given an n x n array of integers matrix, return the minimum sum of any falling path through matrix.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/minimum-falling-path-sum/' target='_blank'>LeetCode 931</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Output: 13
-```
+**Example 1:** Output: 13
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

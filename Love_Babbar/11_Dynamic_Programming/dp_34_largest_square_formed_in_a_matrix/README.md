@@ -4,10 +4,17 @@
 Given a binary matrix mat of size n * m, find out the maximum size square sub-matrix with all 1s.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/largest-square-formed-in-a-matrix0806/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Bottom-up DP.
-```
+**Example 1:** Bottom-up DP.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

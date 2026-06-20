@@ -4,10 +4,17 @@
 Design a simplified version of Twitter where users can post tweets, follow/unfollow another user, and is able to see the 10 most recent tweets in the user's news feed.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/design-twitter/' target='_blank'>LeetCode 355</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Object oriented design.
-```
+**Example 1:** Object oriented design.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

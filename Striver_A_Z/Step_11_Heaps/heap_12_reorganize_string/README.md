@@ -4,10 +4,17 @@
 Given a string s, rearrange the characters of s so that any two adjacent characters are not the same. Return any possible rearrangement of s or return "" if not possible.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/reorganize-string/' target='_blank'>LeetCode 767</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Duplicate logic entry. See Greedy chapter.
-```
+**Example 1:** Duplicate logic entry. See Greedy chapter.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

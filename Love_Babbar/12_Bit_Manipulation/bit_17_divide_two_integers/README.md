@@ -4,10 +4,17 @@
 Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/divide-two-integers/' target='_blank'>LeetCode 29</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Bit shifting.
-```
+**Example 1:** Bit shifting.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

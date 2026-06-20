@@ -4,11 +4,18 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/implement-trie-prefix-tree/' target='_blank'>LeetCode 208</a>
 
 ## Examples
-```text
-<b>Example 1:</b> `insert("apple")`, `search("apple")` -> true, `search("app")` -> false, `startsWith("app")` -> true.<br><br><b>Note (Constraint):</b> 1 &le; word.length &le; 2000, lowercase English letters.
-```
+**Example 1:** `insert("apple")`, `search("apple")` -> true, `search("app")` -> false, `startsWith("app")` -> true.<br><br>**Note (Constraint):** 1 &le; word.length &le; 2000, lowercase English letters.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,9 +4,16 @@
 Given an integer num, repeatedly add all its digits until the result has only one digit, and return it.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/add-digits/' target='_blank'>LeetCode 258</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Digital Root.
-```
+**Example 1:** Digital Root.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

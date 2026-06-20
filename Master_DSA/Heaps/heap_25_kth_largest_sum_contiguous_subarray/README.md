@@ -4,9 +4,16 @@
 Given an array of integers. Write a program to find the K-th largest sum of contiguous subarray within the array of numbers which has negative and positive numbers.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/k-th-largest-sum-contiguous-subarray/' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Prefix sum + Min Heap.
-```
+**Example 1:** Prefix sum + Min Heap.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,9 +4,16 @@
 Given two strings S and P. Find the smallest window in the string S consisting of all the characters(including duplicates) of the string P.  Return "-1" in case there is no such window present.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/smallest-window-in-a-string-containing-all-the-characters-of-another-string-1587115621/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Sliding Window.
-```
+**Example 1:** Sliding Window.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

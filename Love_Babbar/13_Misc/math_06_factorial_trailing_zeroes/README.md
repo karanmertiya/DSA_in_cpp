@@ -4,9 +4,16 @@
 Given an integer n, return the number of trailing zeroes in n!.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/factorial-trailing-zeroes/' target='_blank'>LeetCode 172</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Counting 5s.
-```
+**Example 1:** Counting 5s.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

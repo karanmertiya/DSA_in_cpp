@@ -4,10 +4,17 @@
 Given a singly linked list, remove all the nodes which have a greater value on their right side.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/delete-nodes-having-greater-value-on-right/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Reverse, filter, reverse.
-```
+**Example 1:** Reverse, filter, reverse.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

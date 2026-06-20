@@ -4,10 +4,17 @@
 Given an array of strings words, find the longest string in words such that every prefix of it is also in words.<br><br><b>🔗 Practice:</b> <a href='https://www.codingninjas.com/codestudio/problems/complete-string_2687860' target='_blank'>Coding Ninjas</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Insert all, check each word.
-```
+**Example 1:** Insert all, check each word.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

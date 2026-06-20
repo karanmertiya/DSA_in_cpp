@@ -4,9 +4,16 @@
 Given an integer n, return true if it is a power of four. Otherwise, return false. An integer n is a power of four, if there exists an integer x such that n == 4^x.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/power-of-four/' target='_blank'>LeetCode 342</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Bit Manipulation.
-```
+**Example 1:** Bit Manipulation.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

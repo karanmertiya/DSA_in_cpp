@@ -4,11 +4,18 @@
 Find shortest paths from the source to all vertices in the given graph.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Source = 0, Output: distances array.
-```
+**Example 1:** Source = 0, Output: distances array.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

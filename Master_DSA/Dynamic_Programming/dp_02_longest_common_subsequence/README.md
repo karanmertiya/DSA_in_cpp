@@ -4,11 +4,18 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/longest-common-subsequence/' target='_blank'>LeetCode 1143</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: text1 = "abcde", text2 = "ace", Output: 3 ("ace")
-```
+**Example 1:** Input: text1 = "abcde", text2 = "ace", Output: 3 ("ace")
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

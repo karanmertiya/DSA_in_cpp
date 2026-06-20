@@ -4,10 +4,17 @@
 You have a browser of one tab where you start on the homepage. You can visit another url, get back in the history number of steps or move forward in the history number of steps.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/design-browser-history/' target='_blank'>LeetCode 1472</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Doubly Linked List.
-```
+**Example 1:** Doubly Linked List.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

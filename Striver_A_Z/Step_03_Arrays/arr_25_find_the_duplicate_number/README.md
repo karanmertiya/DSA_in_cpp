@@ -4,11 +4,18 @@
 Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive. There is only one repeated number in nums, return this repeated number.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/find-the-duplicate-number/' target='_blank'>LeetCode 287</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: nums = [1,3,4,2,2], Output: 2
-```
+**Example 1:** Input: nums = [1,3,4,2,2], Output: 2
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

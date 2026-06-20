@@ -4,9 +4,16 @@
 The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/fibonacci-number/' target='_blank'>LeetCode 509</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Base Case.
-```
+**Example 1:** Base Case.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

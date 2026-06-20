@@ -4,9 +4,16 @@
 Given an array of integers, put + or - or * between the elements so that the result of the expression evaluates to a multiple of 101.<br><br><b>🔗 Practice:</b> <a href='https://www.hackerrank.com/challenges/arithmetic-expressions/problem' target='_blank'>HackerRank</a>
 
 ## Examples
-```text
-<b>Example 1:</b> DP with path reconstruction.
-```
+**Example 1:** DP with path reconstruction.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

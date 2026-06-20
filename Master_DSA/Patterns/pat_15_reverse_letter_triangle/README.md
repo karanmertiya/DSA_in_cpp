@@ -4,12 +4,16 @@
 Given an integer N, print a reverse letter triangle.
 
 ## Examples
-```text
 Example 1:
 Input: N = 3
 Output:
 A B C
 A B
 A
-```
 
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

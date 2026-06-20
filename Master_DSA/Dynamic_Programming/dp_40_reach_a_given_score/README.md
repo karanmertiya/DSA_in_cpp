@@ -4,9 +4,16 @@
 Consider a game where a player can score 3 or 5 or 10 points in a move. Given a total score n, find number of distinct combinations to reach the given score.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/reach-a-given-score-1587115621/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Unbounded Knapsack.
-```
+**Example 1:** Unbounded Knapsack.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

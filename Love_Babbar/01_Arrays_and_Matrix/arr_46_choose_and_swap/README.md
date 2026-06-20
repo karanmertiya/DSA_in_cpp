@@ -4,9 +4,16 @@
 You are given a string s of lower case english alphabets. You can choose any two characters in the string and replace all the occurences of the first character with the second character and replace all the occurences of the second character with the first character. Your aim is to find the lexicographically smallest string that can be obtained by doing this operation at most once.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/choose-and-swap0531/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Track first occurrences.
-```
+**Example 1:** Track first occurrences.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

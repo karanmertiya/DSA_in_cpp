@@ -4,10 +4,17 @@
 Given a string s and a dictionary of strings wordDict, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences in any order.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/word-break-ii/' target='_blank'>LeetCode 140</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Return list of sentences.
-```
+**Example 1:** Return list of sentences.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

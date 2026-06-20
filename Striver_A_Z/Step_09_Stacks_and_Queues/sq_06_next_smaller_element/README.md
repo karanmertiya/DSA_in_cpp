@@ -4,10 +4,17 @@
 Given an array, find the next smaller element for each element. The next smaller element for an element x is the first smaller element on the right side of x in the array. Elements for which no smaller element exist, consider the next smaller element as -1.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/fab3281cefac7140ca15e21505beddf7e4323e08/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Monotonic Stack.
-```
+**Example 1:** Monotonic Stack.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
 - Striver_A_Z
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

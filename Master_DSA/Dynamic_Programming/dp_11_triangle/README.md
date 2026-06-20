@@ -4,10 +4,17 @@
 Given a triangle array, return the minimum path sum from top to bottom. For each step, you may move to an adjacent number of the row below.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/triangle/' target='_blank'>LeetCode 120</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Output: 11
-```
+**Example 1:** Output: 11
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,10 +4,17 @@
 Given two strings s and t, return the number of distinct subsequences of s which equals t.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/distinct-subsequences/' target='_blank'>LeetCode 115</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Subsequence match count.
-```
+**Example 1:** Subsequence match count.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

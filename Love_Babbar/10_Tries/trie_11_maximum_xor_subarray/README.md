@@ -4,9 +4,16 @@
 Given an array, find the subarray with maximum XOR value.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/maximum-xor-subarray/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Trie + Prefix XOR.
-```
+**Example 1:** Trie + Prefix XOR.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

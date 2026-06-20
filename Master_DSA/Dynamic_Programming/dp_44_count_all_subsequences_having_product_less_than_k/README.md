@@ -4,9 +4,16 @@
 Given a positive array, find the number of subsequences having product smaller than K.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/count-subsequences-product-less-k/' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> DP.
-```
+**Example 1:** DP.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

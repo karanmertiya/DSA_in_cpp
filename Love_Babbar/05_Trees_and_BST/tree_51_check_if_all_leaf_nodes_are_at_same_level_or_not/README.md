@@ -4,9 +4,16 @@
 Given a Binary Tree, check if all leaves are at same level or not.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/leaf-at-same-level/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Recursive check with global variable.
-```
+**Example 1:** Recursive check with global variable.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

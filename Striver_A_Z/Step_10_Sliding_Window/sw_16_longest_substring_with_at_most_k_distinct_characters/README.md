@@ -4,9 +4,16 @@
 Given a string s and an integer k, return the length of the longest substring of s that contains at most k distinct characters.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/' target='_blank'>LeetCode 340</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Sliding Window.
-```
+**Example 1:** Sliding Window.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

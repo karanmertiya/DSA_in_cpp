@@ -4,10 +4,17 @@
 Given the head of a singly linked list, sort the list using insertion sort, and return the sorted list's head.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/insertion-sort-list/' target='_blank'>LeetCode 147</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Dummy head.
-```
+**Example 1:** Dummy head.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

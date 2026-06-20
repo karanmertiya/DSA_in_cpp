@@ -4,11 +4,18 @@
 Find the minimum number of operations to convert word1 to word2.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/edit-distance/' target='_blank'>LeetCode 72</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: word1 = 'horse', word2 = 'ros', Output: 3
-```
+**Example 1:** Input: word1 = 'horse', word2 = 'ros', Output: 3
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

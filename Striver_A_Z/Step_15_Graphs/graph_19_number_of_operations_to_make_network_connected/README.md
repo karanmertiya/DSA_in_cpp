@@ -4,10 +4,17 @@
 There are n computers numbered from 0 to n - 1 connected by ethernet cables connections forming a network where connections[i] = [ai, bi]. You can extract certain cables between two directly connected computers, and place them between any pair of disconnected computers. Return the minimum number of times you need to do this in order to make all the computers connected. If it's not possible, return -1.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/number-of-operations-to-make-network-connected/' target='_blank'>LeetCode 1319</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Extra edges and connected components.
-```
+**Example 1:** Extra edges and connected components.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

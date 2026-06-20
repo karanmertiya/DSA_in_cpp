@@ -4,10 +4,17 @@
 Given an integer array nums that may contain duplicates, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/subsets-ii/' target='_blank'>LeetCode 90</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
-```
+**Example 1:** Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

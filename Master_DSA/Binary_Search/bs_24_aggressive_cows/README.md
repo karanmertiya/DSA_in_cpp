@@ -4,9 +4,16 @@
 Given an array of length N, where each element denotes the coordinate of a stall, and an integer K denoting the number of aggressive cows, assign the stalls to the cows such that the minimum distance between any two of them is as large as possible.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/aggressive-cows/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Binary Search on Answer.
-```
+**Example 1:** Binary Search on Answer.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

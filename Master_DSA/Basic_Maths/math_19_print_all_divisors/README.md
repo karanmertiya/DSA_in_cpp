@@ -4,9 +4,16 @@
 Given an integer N, print all the divisors of N in ascending order.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/print-all-divisors-of-a-number/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Iterate up to sqrt(N).
-```
+**Example 1:** Iterate up to sqrt(N).
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

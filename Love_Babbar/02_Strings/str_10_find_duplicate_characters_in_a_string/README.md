@@ -4,9 +4,16 @@
 Write an efficient program to print all the duplicates and their counts in the input string.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/find-duplicate-characters-in-a-string/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Frequency array or Hash Map.
-```
+**Example 1:** Frequency array or Hash Map.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

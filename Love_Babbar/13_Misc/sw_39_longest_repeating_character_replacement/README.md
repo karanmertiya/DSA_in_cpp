@@ -4,10 +4,17 @@
 You are given a string s and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times. Return the length of the longest substring containing the same letter you can get after performing the above operations.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/longest-repeating-character-replacement/' target='_blank'>LeetCode 424</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Sliding Window + Max Freq.
-```
+**Example 1:** Sliding Window + Max Freq.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
 - Striver_A_Z
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

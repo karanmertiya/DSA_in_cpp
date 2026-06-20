@@ -4,7 +4,6 @@
 Given an integer N, print the number pattern.
 
 ## Examples
-```text
 Example 1:
 Input: N = 3
 Output:
@@ -13,5 +12,10 @@ Output:
 3 2 1 2 3
 3 2 2 2 3
 3 3 3 3 3
-```
 
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

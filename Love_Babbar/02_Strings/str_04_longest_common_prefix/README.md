@@ -4,12 +4,19 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/longest-common-prefix/' target='_blank'>LeetCode 14</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: strs = ["flower","flow","flight"], Output: "fl"
-```
+**Example 1:** Input: strs = ["flower","flow","flight"], Output: "fl"
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
-- Apna_College
+- Love_Babbar
 - SDE_Sheet
+- Apna_College
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

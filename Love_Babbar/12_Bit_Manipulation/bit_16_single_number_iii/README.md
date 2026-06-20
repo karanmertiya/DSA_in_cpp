@@ -4,10 +4,17 @@
 Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/single-number-iii/' target='_blank'>LeetCode 260</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Grouping by rightmost set bit.
-```
+**Example 1:** Grouping by rightmost set bit.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

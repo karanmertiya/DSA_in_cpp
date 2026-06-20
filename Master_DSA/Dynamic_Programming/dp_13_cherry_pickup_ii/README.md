@@ -4,10 +4,17 @@
 You are given a rows x cols matrix grid representing a field of cherries. Two robots start at top corners. Return max cherries they can collect without overlapping collections.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/cherry-pickup-ii/' target='_blank'>LeetCode 1463</a>
 
 ## Examples
-```text
-<b>Example 1:</b> 3D DP.
-```
+**Example 1:** 3D DP.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,9 +4,16 @@
 Given a linked list of N nodes such that it may contain a loop. Remove the loop from the linked list, if it is present, i.e. unlink the last node which is forming the loop.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/remove-loop-in-linked-list/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Floyd's Cycle Detection + Loop removal.
-```
+**Example 1:** Floyd's Cycle Detection + Loop removal.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

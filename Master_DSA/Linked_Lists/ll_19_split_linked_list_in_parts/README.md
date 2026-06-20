@@ -4,10 +4,17 @@
 Given the head of a singly linked list and an integer k, split the linked list into k consecutive linked list parts. The length of each part should be as equal as possible.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/split-linked-list-in-parts/' target='_blank'>LeetCode 725</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Distribution math.
-```
+**Example 1:** Distribution math.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

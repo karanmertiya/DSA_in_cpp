@@ -4,11 +4,18 @@
 Given an input string s, reverse the order of the words. A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space. Return a string of the words in reverse order concatenated by a single space.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/reverse-words-in-a-string/' target='_blank'>LeetCode 151</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Two Pointers.
-```
+**Example 1:** Two Pointers.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
 - Striver_A_Z
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

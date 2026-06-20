@@ -4,11 +4,18 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/sort-colors/' target='_blank'>LeetCode 75</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: nums = [2,0,2,1,1,0], Output: [0,0,1,1,2,2]<br><br><b>Note (Constraint):</b> Do not use library sort. Use single pass.
-```
+**Example 1:** Input: nums = [2,0,2,1,1,0], Output: [0,0,1,1,2,2]<br><br>**Note (Constraint):** Do not use library sort. Use single pass.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,10 +4,17 @@
 Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/letter-combinations-of-a-phone-number/' target='_blank'>LeetCode 17</a>
 
 ## Examples
-```text
-<b>Example 1:</b> String combinations.
-```
+**Example 1:** String combinations.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

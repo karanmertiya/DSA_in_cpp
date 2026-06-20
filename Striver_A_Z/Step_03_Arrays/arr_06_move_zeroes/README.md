@@ -4,11 +4,18 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/move-zeroes/' target='_blank'>LeetCode 283</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Input: nums = [0,1,0,3,12], Output: [1,3,12,0,0]
-```
+**Example 1:** Input: nums = [0,1,0,3,12], Output: [1,3,12,0,0]
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

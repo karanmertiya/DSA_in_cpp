@@ -4,12 +4,19 @@
 Given a weighted, undirected and connected graph of V vertices and E edges. Find the sum of weights of the edges of the Minimum Spanning Tree.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Return the scalar sum of the MST.
-```
+**Example 1:** Return the scalar sum of the MST.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
-- Apna_College
+- Love_Babbar
 - SDE_Sheet
+- Apna_College
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

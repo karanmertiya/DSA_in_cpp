@@ -4,9 +4,16 @@
 You are given a positive integer n representing n cities numbered from 1 to n. You are also given a 2D array roads where roads[i] = [ai, bi, distancei] indicates that there is a bidirectional road between cities ai and bi with a distance equal to distancei. Return the minimum score of a path between city 1 and city n.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/' target='_blank'>LeetCode 2492</a>
 
 ## Examples
-```text
-<b>Example 1:</b> BFS / DSU to find min edge in component.
-```
+**Example 1:** BFS / DSU to find min edge in component.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

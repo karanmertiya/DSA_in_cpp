@@ -4,12 +4,16 @@
 Given an integer N, print an alpha-triangle pattern.
 
 ## Examples
-```text
 Example 1:
 Input: N = 3
 Output:
 C
 C B
 C B A
-```
 
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,9 +4,16 @@
 Given a binary tree, find all duplicate subtrees. For each kind of duplicate subtrees, you only need to return the root node of any one of them.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/duplicate-subtrees/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Serialization + Hash Map.
-```
+**Example 1:** Serialization + Hash Map.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

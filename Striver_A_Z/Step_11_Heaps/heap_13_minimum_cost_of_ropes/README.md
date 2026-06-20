@@ -4,10 +4,17 @@
 There are given N ropes of different lengths, we need to connect these ropes into one rope. The cost to connect two ropes is equal to sum of their lengths. The task is to connect the ropes with minimum cost.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Min-Heap Greedy.
-```
+**Example 1:** Min-Heap Greedy.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

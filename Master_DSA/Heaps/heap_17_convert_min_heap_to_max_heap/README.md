@@ -4,9 +4,16 @@
 Given an array representation of a Min Heap, convert it into a Max Heap in O(N) time.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/convert-min-heap-to-max-heap-1666738710/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Heapify.
-```
+**Example 1:** Heapify.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

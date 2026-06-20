@@ -4,10 +4,17 @@
 Given an integer array nums, return the number of longest increasing subsequences. Notice that the sequence has to be strictly increasing.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/number-of-longest-increasing-subsequence/' target='_blank'>LeetCode 673</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Two DP arrays (Length and Count).
-```
+**Example 1:** Two DP arrays (Length and Count).
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

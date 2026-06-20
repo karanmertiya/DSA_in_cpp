@@ -4,11 +4,18 @@
 You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively. Merge nums1 and nums2 into a single array sorted in non-decreasing order. nums1 has size m + n.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/merge-sorted-array/' target='_blank'>LeetCode 88</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Two pointers from end.
-```
+**Example 1:** Two pointers from end.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
 - Striver_A_Z
 - SDE_Sheet
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

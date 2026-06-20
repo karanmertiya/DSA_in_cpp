@@ -4,9 +4,16 @@
 Can we reverse a linked list in less than O(n)?<br><br><b>🔗 Practice:</b> N/A
 
 ## Examples
-```text
-<b>Example 1:</b> Theoretical Question.
-```
+**Example 1:** Theoretical Question.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

@@ -4,10 +4,17 @@
 You are given a sorted integer array stations representing the positions of gas stations on an X-axis. You are also given an integer k. You should add k new gas stations. Return the smallest possible value of the maximum distance between adjacent gas stations.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/minimize-max-distance-to-gas-station/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Double binary search.
-```
+**Example 1:** Double binary search.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

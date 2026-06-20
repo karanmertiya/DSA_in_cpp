@@ -4,9 +4,16 @@
 Understand why Strings are immutable in Java and the benefits it provides.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/java-string-is-immutable-what-exactly-is-the-meaning/' target='_blank'>Article</a>
 
 ## Examples
-```text
-<b>Example 1:</b> String Pool, Security, Thread Safety.
-```
+**Example 1:** String Pool, Security, Thread Safety.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

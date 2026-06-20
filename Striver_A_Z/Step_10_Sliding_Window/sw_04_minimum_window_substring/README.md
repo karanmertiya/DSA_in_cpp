@@ -4,10 +4,17 @@
 Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/minimum-window-substring/' target='_blank'>LeetCode 76</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Variable sliding window.
-```
+**Example 1:** Variable sliding window.
 
-## Tags
-- Love_Babbar
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
+- Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

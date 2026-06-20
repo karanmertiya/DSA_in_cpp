@@ -4,10 +4,17 @@
 Given a BST, and a reference to a Node x in the BST. Find the Inorder Successor of the given node in the BST. If there is no successor, return null.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/inorder-successor-in-bst/1' target='_blank'>GFG</a>
 
 ## Examples
-```text
-<b>Example 1:</b> Find next greater.
-```
+**Example 1:** Find next greater.
 
-## Tags
+<details><summary>🏷️ Tags</summary>
+
 - Striver_A_Z
 - Love_Babbar
+
+</details>
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>

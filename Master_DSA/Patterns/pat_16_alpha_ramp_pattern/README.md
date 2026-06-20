@@ -4,12 +4,16 @@
 Given an integer N, print an alpha-ramp pattern.
 
 ## Examples
-```text
 Example 1:
 Input: N = 3
 Output:
 A
 B B
 C C C
-```
 
+
+<details><summary>🧠 Context & Variants</summary>
+
+*Variants and similar questions to be added later.*
+
+</details>
