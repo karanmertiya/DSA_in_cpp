@@ -1,14 +1,11 @@
-// Time Complexity: O(1) (Constraint)
+// Time Complexity: O(1)
 // Space Complexity: O(1)
 // Explanation: Use OR (`|`) to set, AND with NOT (`& ~`) to clear, and XOR (`^`) to toggle.
 
-#include <vector>
-#include <iostream>
-
-std::vector<long long> bitOperations(long long n, int i) {
-    long long setBit = n | (1LL << i);
-    long long clearBit = n & ~(1LL << i);
-    long long toggleBit = n ^ (1LL << i);
+vector<int> bitOperations(int n, int i) {
+    int setBit = n | (1LL << i);
+    int clearBit = n & ~(1LL << i);
+    int toggleBit = n ^ (1LL << i);
     return {setBit, clearBit, toggleBit};
 }
 

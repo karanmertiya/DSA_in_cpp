@@ -6,5 +6,5 @@ Design a simplified version of Twitter where users can post tweets, follow/unfol
 ## Examples
 **Example 1:** Object oriented design.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

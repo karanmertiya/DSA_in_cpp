@@ -6,5 +6,5 @@ Given the head of a linked list, reverse the nodes of the list k at a time, and 
 ## Examples
 **Example 1:** Input: head = [1,2,3,4,5], k = 2, Output: [2,1,4,3,5]
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
+**Tags:** Love Babbar, Striver A Z, SDE Sheet, Apna College
 

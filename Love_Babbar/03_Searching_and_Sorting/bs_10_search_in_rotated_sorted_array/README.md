@@ -6,5 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: nums = [4,5,6,7,0,1,2], target = 0, Output: 4
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
+**Tags:** Love Babbar, SDE Sheet, Striver A Z
 

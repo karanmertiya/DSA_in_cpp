@@ -6,5 +6,5 @@ Given a m * n matrix of ones and zeros, return how many square submatrices have 
 ## Examples
 **Example 1:** Return total count.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

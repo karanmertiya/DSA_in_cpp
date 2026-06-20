@@ -6,5 +6,5 @@ Given the root of a binary tree, return the zigzag level order traversal of its 
 ## Examples
 **Example 1:** Input: root = [3,9,20,null,null,15,7], Output: [[3],[20,9],[15,7]]
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
+**Tags:** Love Babbar, SDE Sheet, Striver A Z
 

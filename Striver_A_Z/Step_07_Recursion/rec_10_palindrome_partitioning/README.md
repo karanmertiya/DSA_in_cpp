@@ -6,5 +6,5 @@ Given a string s, partition s such that every substring of the partition is a pa
 ## Examples
 **Example 1:** Input: s = 'aab', Output: [['a','a','b'],['aa','b']]
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

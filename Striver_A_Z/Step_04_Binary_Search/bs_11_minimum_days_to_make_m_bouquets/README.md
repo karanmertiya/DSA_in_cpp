@@ -6,5 +6,5 @@ You are given an integer array bloomDay, an integer m and an integer k. Return t
 ## Examples
 **Example 1:** Find day threshold.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

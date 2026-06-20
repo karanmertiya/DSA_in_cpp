@@ -6,5 +6,5 @@ A peak element is an element that is strictly greater than its neighbors. Given 
 ## Examples
 **Example 1:** Input: nums = [1,2,3,1], Output: 2
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
+**Tags:** Apna College, Love Babbar, SDE Sheet, Striver A Z
 

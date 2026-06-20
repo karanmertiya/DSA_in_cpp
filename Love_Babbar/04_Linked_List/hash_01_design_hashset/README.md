@@ -6,5 +6,5 @@ Design a HashSet without using any built-in hash table libraries.<br><br><b>🔗
 ## Examples
 **Example 1:** Array of Linked Lists (Chaining).
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

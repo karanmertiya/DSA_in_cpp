@@ -6,5 +6,5 @@ You are given an array of integers nums, there is a sliding window of size k whi
 ## Examples
 **Example 1:** Deque.
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
+**Tags:** Love Babbar, Striver A Z, SDE Sheet, Apna College
 

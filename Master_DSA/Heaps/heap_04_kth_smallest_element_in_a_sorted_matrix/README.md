@@ -6,5 +6,5 @@ Given an n x n matrix where each of the rows and columns is sorted in ascending 
 ## Examples
 **Example 1:** Binary search on range.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

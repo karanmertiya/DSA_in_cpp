@@ -6,5 +6,5 @@ You are given a network of n nodes, labeled from 1 to n. You are also given time
 ## Examples
 **Example 1:** Dijkstra's to find max shortest path.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

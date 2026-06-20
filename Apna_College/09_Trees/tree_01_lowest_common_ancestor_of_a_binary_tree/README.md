@@ -6,5 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1, Output: 3
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
+**Tags:** Apna College, Love Babbar, SDE Sheet, Striver A Z
 

@@ -6,5 +6,5 @@ Given an integer array nums, return true if you can partition the array into two
 ## Examples
 **Example 1:** Output: True.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

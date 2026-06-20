@@ -6,5 +6,5 @@ Design a data structure that follows the constraints of a Least Recently Used (L
 ## Examples
 **Example 1:** Duplicate logic entry to ensure coverage.
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
+**Tags:** Love Babbar, SDE Sheet, Striver A Z
 

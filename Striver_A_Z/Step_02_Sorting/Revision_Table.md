@@ -48,7 +48,7 @@
     </tr>
     <tr>
       <td>6</td>
-      <td>Sort 06 Merge Sort<br><br></b> <a href="https://leetcode.com/problems/sort-an-array/" target="_blank">LeetCode 912</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, Apna College</details></td>
+      <td>Sort 06 Merge Sort<br><br></b> <a href="https://leetcode.com/problems/sort-an-array/" target="_blank">LeetCode 912</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Apna College, Love Babbar, Striver A Z</details></td>
       <td>**Example 1:** Input: nums = [5,2,3,1], Output: [1,2,3,5]</td>
       <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
       <td><b>Explanation:</b> Divide and Conquer. Split array into halves until size 1. Merge sorted halves using a temporary array.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void merge(std::vector&lt;int&gt;&amp; arr, int low, int mid, int high) {&#10;    std::vector&lt;int&gt; temp;&#10;    int left = low, right = mid + 1;&#10;    while(left &lt;= mid &amp;&amp; right &lt;= high) {&#10;        if(arr[left] &lt;= arr[right]) temp.push_back(arr[left++]);&#10;        else temp.push_back(arr[right++]);&#10;    }&#10;    while(left &lt;= mid) temp.push_back(arr[left++]);&#10;    while(right &lt;= high) temp.push_back(arr[right++]);&#10;    for(int i = low; i &lt;= high; i++) arr[i] = temp[i - low];&#10;}&#10;void mergeSort(std::vector&lt;int&gt;&amp; arr, int low, int high) {&#10;    if(low &gt;= high) return;&#10;    int mid = low + (high - low) / 2;&#10;    mergeSort(arr, low, mid);&#10;    mergeSort(arr, mid + 1, high);&#10;    merge(arr, low, mid, high);&#10;}</code></pre></details></td>

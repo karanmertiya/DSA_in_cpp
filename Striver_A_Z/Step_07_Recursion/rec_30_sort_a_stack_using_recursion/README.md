@@ -6,5 +6,5 @@ Given a stack, the task is to sort it such that the top of the stack has the gre
 ## Examples
 **Example 1:** Recursive sort and insert.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

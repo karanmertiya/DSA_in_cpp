@@ -6,5 +6,5 @@ Given an array containing N integers and an integer K, Your task is to find the 
 ## Examples
 **Example 1:** Sliding Window / Two Pointers.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

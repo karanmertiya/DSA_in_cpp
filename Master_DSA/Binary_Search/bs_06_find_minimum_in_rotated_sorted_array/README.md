@@ -6,5 +6,5 @@ Suppose an array of length n sorted in ascending order is rotated between 1 and 
 ## Examples
 **Example 1:** Input: nums = [3,4,5,1,2], Output: 1
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
+**Tags:** Apna College, Love Babbar, SDE Sheet, Striver A Z
 

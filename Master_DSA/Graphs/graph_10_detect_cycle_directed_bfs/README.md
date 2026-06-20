@@ -6,5 +6,5 @@ Given a Directed Graph, check whether it contains any cycle or not using Kahn's 
 ## Examples
 **Example 1:** Return true if cycle exists.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

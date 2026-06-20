@@ -6,5 +6,5 @@ Given a string num that contains only digits and an integer target, return all p
 ## Examples
 **Example 1:** Return expressions.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

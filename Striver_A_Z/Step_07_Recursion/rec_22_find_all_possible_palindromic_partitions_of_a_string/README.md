@@ -6,5 +6,5 @@ Given a string S, Find all possible palindromic partitions of the given string.<
 ## Examples
 **Example 1:** Recursive Backtracking.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

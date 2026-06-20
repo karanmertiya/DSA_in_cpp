@@ -6,5 +6,5 @@ A linked list of length n is given such that each node contains an additional ra
 ## Examples
 **Example 1:** Return a deep copy.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

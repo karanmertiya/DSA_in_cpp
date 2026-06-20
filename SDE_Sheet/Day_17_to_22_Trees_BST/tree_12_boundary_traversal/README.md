@@ -6,5 +6,5 @@ Given a Binary Tree, find its Boundary Traversal. The traversal should be in the
 ## Examples
 **Example 1:** Return array of boundary nodes.
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
+**Tags:** Apna College, Love Babbar, SDE Sheet, Striver A Z
 

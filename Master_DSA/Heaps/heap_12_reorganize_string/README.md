@@ -6,5 +6,5 @@ Given a string s, rearrange the characters of s so that any two adjacent charact
 ## Examples
 **Example 1:** Duplicate logic entry. See Greedy chapter.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

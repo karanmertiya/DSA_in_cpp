@@ -6,5 +6,5 @@ Given a singly linked list, find the first node of the loop if a loop is present
 ## Examples
 **Example 1:** Floyd's Cycle Detection.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

@@ -6,5 +6,5 @@ Merge two sorted arrays arr1 and arr2 into arr1 without using extra space. (We p
 ## Examples
 **Example 1:** arr1=[1,3,5,7], arr2=[0,2,6,8,9], Output: arr1=[0,1,2,3], arr2=[5,6,7,8,9]
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
+**Tags:** Love Babbar, SDE Sheet, Striver A Z
 

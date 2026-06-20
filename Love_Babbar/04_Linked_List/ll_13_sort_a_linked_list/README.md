@@ -6,5 +6,5 @@ Given the head of a linked list, return the list after sorting it in ascending o
 ## Examples
 **Example 1:** Input: head = [4,2,1,3], Output: [1,2,3,4]
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

@@ -6,5 +6,5 @@ You are given the root node of a binary search tree (BST) and a value to insert 
 ## Examples
 **Example 1:** Traverse and insert.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

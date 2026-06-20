@@ -6,5 +6,5 @@ Given a string s, sort it in decreasing order based on the frequency of the char
 ## Examples
 **Example 1:** Hash Map + Priority Queue / Sorting.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

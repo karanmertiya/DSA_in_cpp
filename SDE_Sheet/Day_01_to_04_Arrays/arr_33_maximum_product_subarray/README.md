@@ -6,5 +6,5 @@ Given an array Arr[] that contains N integers (may be positive, negative or zero
 ## Examples
 **Example 1:** Prefix and Suffix iteration.
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
+**Tags:** Love Babbar, SDE Sheet, Striver A Z
 

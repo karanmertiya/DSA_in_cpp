@@ -6,5 +6,5 @@ There are n cities. Some of them are connected, while some are not. If city a is
 ## Examples
 **Example 1:** Connect elements, count unique parents.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

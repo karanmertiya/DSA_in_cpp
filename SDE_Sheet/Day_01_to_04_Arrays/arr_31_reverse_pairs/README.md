@@ -6,5 +6,5 @@ Given an integer array nums, return the number of reverse pairs. A reverse pair 
 ## Examples
 **Example 1:** Input: nums = [1,3,2,3,1], Output: 2
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
+**Tags:** Love Babbar, SDE Sheet, Striver A Z
 

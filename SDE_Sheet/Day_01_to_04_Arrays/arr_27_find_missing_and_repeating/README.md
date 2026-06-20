@@ -6,5 +6,5 @@ Given an unsorted array Arr of size N of positive integers. One number 'A' from 
 ## Examples
 **Example 1:** Input: N = 2, Arr[] = {2, 2}, Output: 2 1
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
+**Tags:** Love Babbar, SDE Sheet, Striver A Z
 

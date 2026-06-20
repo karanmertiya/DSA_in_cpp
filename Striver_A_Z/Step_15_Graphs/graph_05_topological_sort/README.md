@@ -6,5 +6,5 @@ Return the topological sorting of a DAG.<br><br><b>🔗 Practice:</b> <a href='h
 ## Examples
 **Example 1:** Input: V = 4, adj = [[], [0], [0], [0]], Output: valid topological sort.
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
+**Tags:** Love Babbar, SDE Sheet, Striver A Z
 

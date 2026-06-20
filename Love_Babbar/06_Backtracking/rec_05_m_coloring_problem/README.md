@@ -6,5 +6,5 @@ Given an undirected graph and a number m, determine if the graph can be colored 
 ## Examples
 **Example 1:** Return true if possible.
 
-**Tags:** Striver A Z, Love Babbar
+**Tags:** Love Babbar, Striver A Z
 

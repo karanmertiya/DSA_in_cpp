@@ -6,5 +6,5 @@ You are given an m x n grid where each cell can have one of three values: 0 repr
 ## Examples
 **Example 1:** BFS.
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
+**Tags:** Love Babbar, SDE Sheet, Striver A Z
 

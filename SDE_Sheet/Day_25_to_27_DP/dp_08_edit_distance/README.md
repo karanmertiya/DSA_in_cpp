@@ -6,5 +6,5 @@ Find the minimum number of operations to convert word1 to word2.<br><br><b>🔗 
 ## Examples
 **Example 1:** Input: word1 = 'horse', word2 = 'ros', Output: 3
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
+**Tags:** Love Babbar, SDE Sheet, Striver A Z
 
