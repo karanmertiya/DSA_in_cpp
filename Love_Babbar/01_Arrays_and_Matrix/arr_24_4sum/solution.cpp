@@ -1,6 +1,34 @@
+// Time Complexity: O(N^2) or worse
+// Space Complexity: O(N) or O(1)
+// Explanation: Brute Force: Standard unoptimized approach. (TODO: Implement specific logic)
+
+// TODO: Implement Brute Force
+vector<vector<int>> fourSum(vector<int>& nums, int target) {
+    vector<vector<int>> ans;
+    int n = nums.size(); sort(nums.begin(), nums.end());
+    for(int i=0; i<n; i++) {
+        if(i>0 && nums[i]==nums[i-1]) continue;
+        for(int j=i+1; j<n; j++) {
+            if(j>i+1 && nums[j]==nums[j-1]) continue;
+            int k = j+1, l = n-1;
+            while(k < l) {
+                long long sum = nums[i] + nums[j]; sum += nums[k]; sum += nums[l];
+                if(sum == target) {
+                    ans.push_back({nums[i], nums[j], nums[k], nums[l]});
+                    k++; l--;
+                    while(k<l && nums[k]==nums[k-1]) k++;
+                    while(k<l && nums[l]==nums[l+1]) l--;
+                } else if(sum < target) k++;
+                else l--;
+            }
+        }
+    }
+    return ans;
+}
+
 // Time Complexity: O(N^3)
 // Space Complexity: O(1) auxiliary
-// Explanation: Sort array. Use 2 nested loops (i, j) for the first two numbers, and Two Pointers (k, l) for the remaining two. Skip duplicates carefully.
+// Explanation: Optimal: Sort array. Use 2 nested loops (i, j) for the first two numbers, and Two Pointers (k, l) for the remaining two. Skip duplicates carefully.
 
 vector<vector<int>> fourSum(vector<int>& nums, int target) {
     vector<vector<int>> ans;
