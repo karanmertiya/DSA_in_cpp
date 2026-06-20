@@ -6,5 +6,3 @@ Given a boolean expression with following symbols: T (True), F (False) and opera
 ## Examples
 **Example 1:** MCM DP pattern.
 
-**Tags:** Love Babbar, Striver A Z
-

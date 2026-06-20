@@ -6,5 +6,3 @@ Given a Binary Tree (BT), convert it to a Doubly Linked List(DLL) In-Place. The 
 ## Examples
 **Example 1:** DFS Inorder, maintaining a `prev` pointer.
 
-**Tags:** Love Babbar, Striver A Z
-

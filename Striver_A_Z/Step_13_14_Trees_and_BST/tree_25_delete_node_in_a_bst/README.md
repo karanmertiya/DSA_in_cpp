@@ -6,5 +6,3 @@ Given a root node reference of a BST and a key, delete the node with the given k
 ## Examples
 **Example 1:** Locate and delete.
 
-**Tags:** Love Babbar, Striver A Z
-

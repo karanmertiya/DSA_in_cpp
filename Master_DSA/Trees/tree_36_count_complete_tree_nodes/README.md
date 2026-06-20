@@ -6,5 +6,3 @@ Given the root of a complete binary tree, return the number of the nodes in the 
 ## Examples
 **Example 1:** Recursive with Height check.
 
-**Tags:** Striver A Z, Love Babbar
-

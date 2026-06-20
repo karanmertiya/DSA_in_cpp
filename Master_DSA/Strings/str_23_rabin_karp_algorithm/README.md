@@ -6,5 +6,3 @@ Given two strings, one is a text string and other is a pattern string. The task 
 ## Examples
 **Example 1:** Rolling Hash.
 
-**Tags:** Love Babbar, Striver A Z, SDE Sheet
-

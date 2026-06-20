@@ -6,5 +6,3 @@ Given a doubly linked list containing N nodes, where each node is at most k away
 ## Examples
 **Example 1:** Min Heap.
 
-**Tags:** Love Babbar
-

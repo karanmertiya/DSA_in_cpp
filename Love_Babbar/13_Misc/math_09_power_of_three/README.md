@@ -6,5 +6,3 @@ Given an integer n, return true if it is a power of three. Otherwise, return fal
 ## Examples
 **Example 1:** Modulo with largest power.
 
-**Tags:** Love Babbar
-

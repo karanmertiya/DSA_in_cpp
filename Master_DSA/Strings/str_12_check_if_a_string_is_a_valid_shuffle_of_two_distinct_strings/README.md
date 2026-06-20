@@ -6,5 +6,3 @@ Given strings str1 and str2. The task is to find if str3 is a valid shuffle of s
 ## Examples
 **Example 1:** Three pointers.
 
-**Tags:** Love Babbar
-

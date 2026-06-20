@@ -6,5 +6,3 @@ You are given a sorted integer array stations representing the positions of gas 
 ## Examples
 **Example 1:** Double binary search.
 
-**Tags:** Striver A Z, Love Babbar
-

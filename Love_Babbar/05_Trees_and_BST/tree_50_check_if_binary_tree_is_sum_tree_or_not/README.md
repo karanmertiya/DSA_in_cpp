@@ -6,5 +6,3 @@ Write a function that returns true if the given Binary Tree is SumTree else fals
 ## Examples
 **Example 1:** Recursive check.
 
-**Tags:** Love Babbar
-

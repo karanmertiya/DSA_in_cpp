@@ -6,5 +6,3 @@ Given a binary string, that is it contains only 0s and 1s. We need to make this 
 ## Examples
 **Example 1:** Two target strings.
 
-**Tags:** Love Babbar
-

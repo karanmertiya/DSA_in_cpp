@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: nums = [10,9,2,5,3,7,101,18], Output: 4 ([2,3,7,101])
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

@@ -8,5 +8,3 @@ Given a number N having only one '1' and all other '0's in its binary representa
 Input: N = 2
 Output: 2
 
-**Tags:** Love Babbar
-

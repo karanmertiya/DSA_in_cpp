@@ -6,5 +6,3 @@ Design and implement a data structure for a Least Frequently Used (LFU) cache (u
 ## Examples
 **Example 1:** Duplicate logic entry to ensure coverage.
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

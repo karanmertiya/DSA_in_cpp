@@ -6,5 +6,3 @@ Given a number N. Find its unique prime factors in increasing order.<br><br><b>ð
 ## Examples
 **Example 1:** Iterative division.
 
-**Tags:** Striver A Z
-

@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: grid = [["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]], Output: 3
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

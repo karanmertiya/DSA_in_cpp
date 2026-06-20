@@ -6,5 +6,3 @@ Given an array arr[] and an integer K where K is smaller than size of array, the
 ## Examples
 **Example 1:** Max Heap.
 
-**Tags:** Love Babbar
-

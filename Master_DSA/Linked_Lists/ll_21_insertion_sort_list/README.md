@@ -6,5 +6,3 @@ Given the head of a singly linked list, sort the list using insertion sort, and 
 ## Examples
 **Example 1:** Dummy head.
 
-**Tags:** Striver A Z, Love Babbar
-

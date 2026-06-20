@@ -6,5 +6,3 @@ Given a number N, calculate the prime numbers up to N using Sieve of Eratosthene
 ## Examples
 **Example 1:** Classic implementation.
 
-**Tags:** Love Babbar, Striver A Z
-

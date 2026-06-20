@@ -6,5 +6,3 @@ Given a number n. The task is to find the smallest number whose factorial contai
 ## Examples
 **Example 1:** Binary Search.
 
-**Tags:** Love Babbar
-

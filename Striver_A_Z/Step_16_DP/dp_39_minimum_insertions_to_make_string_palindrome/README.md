@@ -6,5 +6,3 @@ Given a string s. In one step you can insert any character at any index of the s
 ## Examples
 **Example 1:** Longest Palindromic Subsequence.
 
-**Tags:** Love Babbar, Striver A Z
-

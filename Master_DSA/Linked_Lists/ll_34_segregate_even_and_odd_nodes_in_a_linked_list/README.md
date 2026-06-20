@@ -6,5 +6,3 @@ Given a link list of size N, modify the list such that all the even numbers appe
 ## Examples
 **Example 1:** Two pointers for even and odd.
 
-**Tags:** Love Babbar
-

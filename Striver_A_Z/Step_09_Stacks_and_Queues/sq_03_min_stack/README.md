@@ -6,5 +6,3 @@ Design a stack that supports push, pop, top, and retrieving the minimum element 
 ## Examples
 **Example 1:** MinStack minStack = new MinStack(); minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.getMin(); // return -3
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
-

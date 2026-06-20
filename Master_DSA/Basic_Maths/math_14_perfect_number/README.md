@@ -6,5 +6,3 @@ A perfect number is a positive integer that is equal to the sum of its positive 
 ## Examples
 **Example 1:** Sum of divisors.
 
-**Tags:** Love Babbar
-

@@ -6,5 +6,3 @@ Given an array of integers arr and an integer sum, find all unique combinations 
 ## Examples
 **Example 1:** Backtracking.
 
-**Tags:** Love Babbar
-

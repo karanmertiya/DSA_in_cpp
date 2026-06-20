@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: root = [1,2,3,4,5], Output: 3 (Path is [4,2,1,3] or [5,2,1,3])
 
-**Tags:** Apna College, Love Babbar, SDE Sheet, Striver A Z
-

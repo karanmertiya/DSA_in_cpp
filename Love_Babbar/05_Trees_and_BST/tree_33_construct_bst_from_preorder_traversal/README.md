@@ -6,5 +6,3 @@ Given an array of integers preorder, which represents the preorder traversal of 
 ## Examples
 **Example 1:** Upper bound tracking.
 
-**Tags:** Love Babbar, Striver A Z
-

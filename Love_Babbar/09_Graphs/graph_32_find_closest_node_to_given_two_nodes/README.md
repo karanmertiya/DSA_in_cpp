@@ -6,5 +6,3 @@ You are given a directed graph of n nodes numbered from 0 to n - 1, where each n
 ## Examples
 **Example 1:** Two BFS traversals.
 
-**Tags:** Love Babbar
-

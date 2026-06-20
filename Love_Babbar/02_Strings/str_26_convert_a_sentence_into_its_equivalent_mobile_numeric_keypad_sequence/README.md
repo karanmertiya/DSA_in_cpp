@@ -6,5 +6,3 @@ Given a sentence in the form of a string, convert it into its equivalent mobile 
 ## Examples
 **Example 1:** Dictionary Mapping.
 
-**Tags:** Love Babbar
-

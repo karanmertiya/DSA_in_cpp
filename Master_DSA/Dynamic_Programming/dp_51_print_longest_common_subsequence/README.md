@@ -6,5 +6,3 @@ Given two sequences, print the longest common subsequence. If there are multiple
 ## Examples
 **Example 1:** DP table backtracking.
 
-**Tags:** Striver A Z
-

@@ -6,5 +6,3 @@ Given two binary max heaps as arrays, merge the given heaps to form a new max he
 ## Examples
 **Example 1:** Append and Heapify.
 
-**Tags:** Love Babbar
-

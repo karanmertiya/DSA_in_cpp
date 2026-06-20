@@ -6,5 +6,3 @@ Given a Graph of V vertices and E edges and another edge(c - d), the task is to 
 ## Examples
 **Example 1:** Tarjan's Algorithm / DFS.
 
-**Tags:** Love Babbar, Striver A Z
-

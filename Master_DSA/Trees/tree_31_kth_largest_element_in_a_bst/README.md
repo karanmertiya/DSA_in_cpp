@@ -6,5 +6,3 @@ Given the root of a binary search tree (BST) and an integer k, return the kth la
 ## Examples
 **Example 1:** Reverse inorder traversal.
 
-**Tags:** Striver A Z, Love Babbar
-

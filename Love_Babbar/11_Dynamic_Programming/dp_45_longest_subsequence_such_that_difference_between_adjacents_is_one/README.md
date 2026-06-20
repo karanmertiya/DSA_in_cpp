@@ -6,5 +6,3 @@ Given an array A[] of size N, find the longest subsequence such that difference 
 ## Examples
 **Example 1:** DP (LIS variant).
 
-**Tags:** Love Babbar
-

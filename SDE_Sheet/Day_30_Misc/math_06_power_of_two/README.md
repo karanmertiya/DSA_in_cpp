@@ -6,5 +6,3 @@ Given an integer n, return true if it is a power of two. Otherwise, return false
 ## Examples
 **Example 1:** Bit Manipulation.
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

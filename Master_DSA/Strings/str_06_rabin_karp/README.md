@@ -6,5 +6,3 @@ Given a text and a pattern, find all occurrences of the pattern in the text usin
 ## Examples
 **Example 1:** Return array of starting indices.
 
-**Tags:** Striver A Z, Love Babbar
-

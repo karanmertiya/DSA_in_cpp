@@ -6,5 +6,3 @@ Given an array of positive integers nums and a positive integer target, return t
 ## Examples
 **Example 1:** Variable sliding window.
 
-**Tags:** Love Babbar
-

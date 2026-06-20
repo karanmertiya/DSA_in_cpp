@@ -6,5 +6,3 @@ Given a string S, find the longest palindromic substring in S. Substring of stri
 ## Examples
 **Example 1:** Expand around center.
 
-**Tags:** Love Babbar
-

@@ -6,5 +6,3 @@ Given an array Arr of N positive integers. Your task is to find the elements who
 ## Examples
 **Example 1:** Linear scan.
 
-**Tags:** Love Babbar
-

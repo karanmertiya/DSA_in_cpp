@@ -6,5 +6,3 @@ Given an integer n, return the number of trailing zeroes in n!.<br><br><b>🔗 P
 ## Examples
 **Example 1:** Counting 5s.
 
-**Tags:** Love Babbar
-

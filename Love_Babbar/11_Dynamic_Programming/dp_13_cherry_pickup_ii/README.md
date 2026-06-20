@@ -6,5 +6,3 @@ You are given a rows x cols matrix grid representing a field of cherries. Two ro
 ## Examples
 **Example 1:** 3D DP.
 
-**Tags:** Striver A Z, Love Babbar
-

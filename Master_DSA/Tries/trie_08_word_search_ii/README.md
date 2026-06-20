@@ -6,5 +6,3 @@ Given an m x n board of characters and a list of strings words, return all words
 ## Examples
 **Example 1:** DFS + Trie.
 
-**Tags:** Striver A Z, Love Babbar
-

@@ -6,5 +6,3 @@ Given an expression string x. Examine whether the pairs and the orders of "{", "
 ## Examples
 **Example 1:** Stack approach.
 
-**Tags:** Love Babbar, Striver A Z, SDE Sheet
-

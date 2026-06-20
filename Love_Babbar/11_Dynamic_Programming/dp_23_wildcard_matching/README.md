@@ -6,5 +6,3 @@ Given an input string (s) and a pattern (p), implement wildcard pattern matching
 ## Examples
 **Example 1:** 2D DP.
 
-**Tags:** Love Babbar, Striver A Z
-

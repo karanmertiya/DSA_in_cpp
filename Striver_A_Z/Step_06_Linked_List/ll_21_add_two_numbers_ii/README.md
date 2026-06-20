@@ -6,5 +6,3 @@ You are given two non-empty linked lists representing two non-negative integers.
 ## Examples
 **Example 1:** Stack or reverse.
 
-**Tags:** Striver A Z, Love Babbar
-

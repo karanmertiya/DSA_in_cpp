@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: s = "babad", Output: "bab"
 
-**Tags:** Apna College, Love Babbar, SDE Sheet, Striver A Z
-

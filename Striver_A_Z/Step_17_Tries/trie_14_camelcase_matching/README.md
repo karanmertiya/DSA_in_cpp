@@ -6,5 +6,3 @@ Given an array of strings queries and a string pattern, return a boolean array a
 ## Examples
 **Example 1:** Trie matching.
 
-**Tags:** Striver A Z
-

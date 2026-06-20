@@ -6,5 +6,3 @@ Given an array representation of a Min Heap, convert it into a Max Heap in O(N) 
 ## Examples
 **Example 1:** Heapify.
 
-**Tags:** Love Babbar
-

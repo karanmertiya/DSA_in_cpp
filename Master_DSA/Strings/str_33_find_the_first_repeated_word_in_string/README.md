@@ -6,5 +6,3 @@ Given a string, Find the 1st repeated word in a string.<br><br><b>🔗 Practice:
 ## Examples
 **Example 1:** HashSet.
 
-**Tags:** Love Babbar
-

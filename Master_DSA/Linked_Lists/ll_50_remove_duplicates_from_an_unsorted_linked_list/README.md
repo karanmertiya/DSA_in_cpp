@@ -6,5 +6,3 @@ Given an unsorted linked list of N nodes. The task is to remove duplicate elemen
 ## Examples
 **Example 1:** Hash set.
 
-**Tags:** Love Babbar
-

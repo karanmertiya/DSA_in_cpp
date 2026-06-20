@@ -6,5 +6,3 @@ Given an array of integers nums and an integer k. A continuous subarray is calle
 ## Examples
 **Example 1:** atMost(k) - atMost(k - 1).
 
-**Tags:** Love Babbar, Striver A Z
-

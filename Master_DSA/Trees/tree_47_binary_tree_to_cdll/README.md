@@ -6,5 +6,3 @@ Given a Binary Tree of N edges. The task is to convert this to a Circular Doubly
 ## Examples
 **Example 1:** Inorder traversal.
 
-**Tags:** Love Babbar
-

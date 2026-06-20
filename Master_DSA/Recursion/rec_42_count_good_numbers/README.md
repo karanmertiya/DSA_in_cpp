@@ -6,5 +6,3 @@ A digit string is good if the digits (0-indexed) at even indices are even and th
 ## Examples
 **Example 1:** Modular Exponentiation.
 
-**Tags:** Striver A Z
-

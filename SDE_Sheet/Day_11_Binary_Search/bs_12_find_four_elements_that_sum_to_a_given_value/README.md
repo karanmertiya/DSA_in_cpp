@@ -6,5 +6,3 @@ Given an array of integers and another number. Find all the unique quadruple fro
 ## Examples
 **Example 1:** Two loops and two pointers.
 
-**Tags:** Love Babbar, Striver A Z, SDE Sheet
-

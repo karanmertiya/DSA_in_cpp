@@ -6,5 +6,3 @@ You are given a string s and an integer k. You can choose any character of the s
 ## Examples
 **Example 1:** Sliding Window + Max Freq.
 
-**Tags:** Love Babbar, Striver A Z
-

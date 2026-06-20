@@ -6,5 +6,3 @@ Given a binary tree, print the bottom view from left to right. A node is include
 ## Examples
 **Example 1:** Return list of values.
 
-**Tags:** Striver A Z, Love Babbar
-

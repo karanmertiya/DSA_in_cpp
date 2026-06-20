@@ -6,5 +6,3 @@ Given the root of a binary search tree and a node p in it, return the in-order s
 ## Examples
 **Example 1:** Iterative search.
 
-**Tags:** Striver A Z, Love Babbar
-

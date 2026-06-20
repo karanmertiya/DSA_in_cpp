@@ -6,5 +6,3 @@ Implement a Trie data structure that supports insert, countWordsEqualTo, countWo
 ## Examples
 **Example 1:** Trie with counts.
 
-**Tags:** Striver A Z, Love Babbar
-

@@ -6,5 +6,3 @@ Given a Binary Tree A and an integer B, find the path from Root to the given nod
 ## Examples
 **Example 1:** Recursive backtracking.
 
-**Tags:** Striver A Z
-

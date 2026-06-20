@@ -6,5 +6,3 @@ Given an array of positive integers. Find the maximum length of Bitonic subseque
 ## Examples
 **Example 1:** LIS from left + LIS from right.
 
-**Tags:** Striver A Z, Love Babbar
-

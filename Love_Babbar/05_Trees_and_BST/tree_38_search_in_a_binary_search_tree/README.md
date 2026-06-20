@@ -6,5 +6,3 @@ You are given the root of a binary search tree (BST) and an integer val. Find th
 ## Examples
 **Example 1:** Iterative or Recursive.
 
-**Tags:** Striver A Z, Love Babbar
-

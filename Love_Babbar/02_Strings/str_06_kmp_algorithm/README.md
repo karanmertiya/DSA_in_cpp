@@ -6,5 +6,3 @@ Given two strings needle and haystack, return the index of the first occurrence 
 ## Examples
 **Example 1:** Input: haystack = 'sadbutsad', needle = 'sad', Output: 0
 
-**Tags:** Striver A Z, Love Babbar
-

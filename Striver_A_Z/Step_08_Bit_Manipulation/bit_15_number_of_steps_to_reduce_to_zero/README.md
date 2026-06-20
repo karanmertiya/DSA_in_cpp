@@ -8,5 +8,3 @@ Given an integer num, return the number of steps to reduce it to zero. In one st
 Input: num = 14
 Output: 6
 
-**Tags:** Striver A Z, Love Babbar
-

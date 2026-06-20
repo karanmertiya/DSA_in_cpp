@@ -6,5 +6,3 @@ Given a boolean 2D array of n x m dimensions where each row is sorted. Find the 
 ## Examples
 **Example 1:** Lower Bound per row.
 
-**Tags:** Love Babbar, Striver A Z
-

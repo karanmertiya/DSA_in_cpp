@@ -6,5 +6,3 @@ You are given an n x n binary matrix grid. You are allowed to change at most one
 ## Examples
 **Example 1:** Component sizes with DSU.
 
-**Tags:** Love Babbar, Striver A Z
-

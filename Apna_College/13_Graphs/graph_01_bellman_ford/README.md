@@ -6,5 +6,3 @@ Given a weighted, directed and connected graph of V vertices and E edges, Find t
 ## Examples
 **Example 1:** Input: V=3, S=0, Edges=[[0,1,5],[1,2,-2],[2,1,-3]], Output: [-1]
 
-**Tags:** Apna College, Love Babbar, SDE Sheet, Striver A Z
-

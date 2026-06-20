@@ -6,5 +6,3 @@ Given two strings s and t, determine if they are isomorphic. Two strings s and t
 ## Examples
 **Example 1:** Hash Maps.
 
-**Tags:** Love Babbar, Striver A Z
-

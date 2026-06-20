@@ -6,5 +6,3 @@ Given a matrix of integers A of size N x M in which each row is sorted. Find an 
 ## Examples
 **Example 1:** Binary search on answer range.
 
-**Tags:** Striver A Z, Love Babbar
-

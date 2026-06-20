@@ -6,5 +6,3 @@ The problem is to print all the possible paths from top left to bottom right of 
 ## Examples
 **Example 1:** DFS.
 
-**Tags:** Love Babbar
-

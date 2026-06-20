@@ -6,5 +6,3 @@ Given the head of a linked list and a value x, partition it such that all nodes 
 ## Examples
 **Example 1:** Two lists then join.
 
-**Tags:** Striver A Z, Love Babbar
-

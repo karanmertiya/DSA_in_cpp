@@ -6,5 +6,3 @@ Find all valid combinations of k numbers that sum up to n such that only numbers
 ## Examples
 **Example 1:** Return combinations.
 
-**Tags:** Striver A Z, Love Babbar
-

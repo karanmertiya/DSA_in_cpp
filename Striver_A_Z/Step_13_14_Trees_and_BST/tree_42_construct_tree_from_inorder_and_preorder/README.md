@@ -6,5 +6,3 @@ Given 2 Arrays of Inorder and preorder traversal. Construct a tree and print the
 ## Examples
 **Example 1:** Hash map for fast search.
 
-**Tags:** Love Babbar, Striver A Z
-

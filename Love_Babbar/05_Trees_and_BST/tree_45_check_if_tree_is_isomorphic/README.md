@@ -6,5 +6,3 @@ Given two Binary Trees. Check whether they are Isomorphic or not.<br><br><b>🔗
 ## Examples
 **Example 1:** Check swapped and unswapped subtrees.
 
-**Tags:** Love Babbar
-

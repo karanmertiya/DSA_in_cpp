@@ -6,5 +6,3 @@ You have a browser of one tab where you start on the homepage. You can visit ano
 ## Examples
 **Example 1:** Doubly Linked List.
 
-**Tags:** Striver A Z, Love Babbar
-

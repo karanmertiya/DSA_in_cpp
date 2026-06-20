@@ -6,5 +6,3 @@ Given an integer array nums and an integer k, return the k most frequent element
 ## Examples
 **Example 1:** Input: nums = [1,1,1,2,2,3], k = 2, Output: [1,2]
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

@@ -6,5 +6,3 @@ Given a binary tree of size N, a node, and a positive integer k. Your task is to
 ## Examples
 **Example 1:** Recursive backtracking.
 
-**Tags:** Love Babbar
-

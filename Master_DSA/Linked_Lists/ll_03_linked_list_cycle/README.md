@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: head = [3,2,0,-4], pos = 1, Output: true
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

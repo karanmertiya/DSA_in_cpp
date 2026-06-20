@@ -6,5 +6,3 @@ You are given a positive integer n representing n cities numbered from 1 to n. Y
 ## Examples
 **Example 1:** BFS / DSU to find min edge in component.
 
-**Tags:** Love Babbar
-

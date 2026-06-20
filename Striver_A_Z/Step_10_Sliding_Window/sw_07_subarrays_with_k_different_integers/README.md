@@ -6,5 +6,3 @@ Given an integer array nums and an integer k, return the number of good subarray
 ## Examples
 **Example 1:** Exact K = atMost(K) - atMost(K-1).
 
-**Tags:** Love Babbar, Striver A Z
-

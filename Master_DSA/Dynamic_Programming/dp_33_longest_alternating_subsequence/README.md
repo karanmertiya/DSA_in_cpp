@@ -6,5 +6,3 @@ A sequence {x1, x2, .. xn} is alternating sequence if its elements satisfy one o
 ## Examples
 **Example 1:** Two state DP.
 
-**Tags:** Love Babbar
-

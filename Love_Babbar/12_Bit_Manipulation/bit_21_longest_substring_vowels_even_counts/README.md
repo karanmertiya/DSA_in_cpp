@@ -8,5 +8,3 @@ Given the string s, return the size of the longest substring containing each vow
 Input: s = "eleetminicoworoep"
 Output: 13
 
-**Tags:** Striver A Z, Love Babbar
-

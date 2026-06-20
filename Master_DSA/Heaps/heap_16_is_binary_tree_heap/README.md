@@ -6,5 +6,3 @@ Given a binary tree, check if it has heap property or not. A binary tree is a ma
 ## Examples
 **Example 1:** Tree Traversal.
 
-**Tags:** Love Babbar
-

@@ -6,5 +6,3 @@ Given two singly linked lists of size N and M, write a program to get the point 
 ## Examples
 **Example 1:** Two Pointers.
 
-**Tags:** Love Babbar, Striver A Z, SDE Sheet
-

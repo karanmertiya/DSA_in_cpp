@@ -6,5 +6,3 @@ Given an array Arr[] of size L and a number N, you need to write a program to fi
 ## Examples
 **Example 1:** Sort and two pointers.
 
-**Tags:** Love Babbar
-

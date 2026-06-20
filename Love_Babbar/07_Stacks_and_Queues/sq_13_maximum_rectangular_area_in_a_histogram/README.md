@@ -6,5 +6,3 @@ Find the largest rectangular area possible in a given histogram where the larges
 ## Examples
 **Example 1:** Next Smaller Element on left and right.
 
-**Tags:** Love Babbar
-

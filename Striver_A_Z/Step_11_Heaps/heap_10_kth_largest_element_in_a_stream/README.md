@@ -6,5 +6,3 @@ Design a class to find the kth largest element in a stream. Note that it is the 
 ## Examples
 **Example 1:** Min-heap of size K.
 
-**Tags:** Striver A Z, Love Babbar
-

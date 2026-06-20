@@ -6,5 +6,3 @@ Given K sorted lists of integers, KSortedArray[] of size N each. The task is to 
 ## Examples
 **Example 1:** Min-Heap.
 
-**Tags:** Love Babbar
-

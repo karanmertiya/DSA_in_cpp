@@ -6,5 +6,3 @@ Implement the myAtoi(string s) function, which converts a string to a 32-bit sig
 ## Examples
 **Example 1:** Step-by-step parsing.
 
-**Tags:** Love Babbar, Striver A Z, SDE Sheet
-

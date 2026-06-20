@@ -6,5 +6,3 @@ Given a 2-Dimensional character array and a string, we need to find the given st
 ## Examples
 **Example 1:** DFS.
 
-**Tags:** Love Babbar
-

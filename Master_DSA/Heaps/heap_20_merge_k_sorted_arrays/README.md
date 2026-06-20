@@ -6,5 +6,3 @@ Given K sorted arrays arranged in the form of a matrix of size K*K. The task is 
 ## Examples
 **Example 1:** Min Heap.
 
-**Tags:** Love Babbar, Striver A Z
-

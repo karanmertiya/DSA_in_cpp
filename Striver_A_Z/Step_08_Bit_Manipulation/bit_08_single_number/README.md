@@ -8,5 +8,3 @@ Given a non-empty array of integers nums, every element appears twice except for
 Input: nums = [4,1,2,1,2]
 Output: 4
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

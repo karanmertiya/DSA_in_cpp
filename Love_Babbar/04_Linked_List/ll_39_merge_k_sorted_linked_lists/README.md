@@ -6,5 +6,3 @@ Given K sorted linked lists of different sizes. The task is to merge them in suc
 ## Examples
 **Example 1:** Min-Heap.
 
-**Tags:** Love Babbar
-

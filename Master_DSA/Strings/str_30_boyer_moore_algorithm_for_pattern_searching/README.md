@@ -6,5 +6,3 @@ Given a text txt[0..N-1] and a pattern pat[0..M-1], write a function search(char
 ## Examples
 **Example 1:** Bad Character Heuristic.
 
-**Tags:** Love Babbar
-

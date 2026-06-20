@@ -6,5 +6,3 @@ Construct a binary tree from a string consisting of parenthesis and integers. Th
 ## Examples
 **Example 1:** Stack approach.
 
-**Tags:** Love Babbar
-

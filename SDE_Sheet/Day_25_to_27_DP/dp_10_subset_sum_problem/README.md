@@ -6,5 +6,3 @@ Given an array of non-negative integers, and a value sum, determine if there is 
 ## Examples
 **Example 1:** Input: set=[3,34,4,12,5,2], sum=9, Output: True
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
-

@@ -6,5 +6,3 @@ There are n computers numbered from 0 to n - 1 connected by ethernet cables conn
 ## Examples
 **Example 1:** Extra edges and connected components.
 
-**Tags:** Love Babbar, Striver A Z
-

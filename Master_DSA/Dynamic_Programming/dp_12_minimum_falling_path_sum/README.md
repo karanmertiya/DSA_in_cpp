@@ -6,5 +6,3 @@ Given an n x n array of integers matrix, return the minimum sum of any falling p
 ## Examples
 **Example 1:** Output: 13
 
-**Tags:** Striver A Z, Love Babbar
-

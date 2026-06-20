@@ -6,5 +6,3 @@ Write an efficient algorithm that searches for a value target in an m x n intege
 ## Examples
 **Example 1:** Start from top right.
 
-**Tags:** Striver A Z, Love Babbar
-

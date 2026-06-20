@@ -9,5 +9,3 @@ N=70, i=3 -> Set:78, Clear:62, Toggle:78
 
 **Note (Constraint):** 1 &le; N &le; 10<sup>9</sup>
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

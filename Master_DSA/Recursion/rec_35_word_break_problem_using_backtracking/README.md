@@ -6,5 +6,3 @@ Given a string s and a dictionary of words dict of length n, add spaces in s to 
 ## Examples
 **Example 1:** Backtracking.
 
-**Tags:** Love Babbar
-

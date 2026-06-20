@@ -6,5 +6,3 @@ Given a linked list consisting of L nodes and given a number N. The task is to f
 ## Examples
 **Example 1:** Two pointers.
 
-**Tags:** Love Babbar
-

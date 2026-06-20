@@ -8,5 +8,3 @@ Given an integer array nums of unique elements, return all possible subsets (the
 Input: nums = [1,2,3]
 Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

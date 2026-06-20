@@ -6,5 +6,3 @@ Given an input string s, reverse the order of the words. A word is defined as a 
 ## Examples
 **Example 1:** Two Pointers.
 
-**Tags:** Love Babbar, Striver A Z, SDE Sheet
-

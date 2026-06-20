@@ -6,5 +6,3 @@ Given a rows x cols binary matrix filled with 0's and 1's, find the largest rect
 ## Examples
 **Example 1:** Largest Rectangle in Histogram reduction.
 
-**Tags:** Love Babbar, Striver A Z
-

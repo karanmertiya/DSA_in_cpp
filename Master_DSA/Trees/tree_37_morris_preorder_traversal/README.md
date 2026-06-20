@@ -6,5 +6,3 @@ Given the root of a binary tree, return the preorder traversal of its nodes' val
 ## Examples
 **Example 1:** Threaded Binary Tree.
 
-**Tags:** Striver A Z, Love Babbar
-

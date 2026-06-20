@@ -8,5 +8,3 @@ Given 3 positives numbers a, b and c. Return the minimum flips required in some 
 Input: a=2, b=6, c=5
 Output: 3
 
-**Tags:** Striver A Z, Love Babbar
-

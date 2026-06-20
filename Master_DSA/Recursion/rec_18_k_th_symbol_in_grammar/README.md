@@ -6,5 +6,3 @@ We build a table of n rows (1-indexed). We start by writing 0 in the 1st row. No
 ## Examples
 **Example 1:** Recursive division.
 
-**Tags:** Striver A Z, Love Babbar
-

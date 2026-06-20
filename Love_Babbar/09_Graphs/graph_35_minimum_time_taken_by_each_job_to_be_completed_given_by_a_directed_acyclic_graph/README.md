@@ -6,5 +6,3 @@ Given a Directed Acyclic Graph having V vertices and E edges, where each edge {U
 ## Examples
 **Example 1:** Modified Kahn's Algorithm.
 
-**Tags:** Love Babbar
-

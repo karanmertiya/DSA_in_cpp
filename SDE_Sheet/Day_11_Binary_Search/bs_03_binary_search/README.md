@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: nums = [-1,0,3,5,9,12], target = 9, Output: 4
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

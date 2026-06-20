@@ -6,5 +6,3 @@ Given a string S. The task is to print all permutations of a given string in lex
 ## Examples
 **Example 1:** Recursive Backtracking.
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

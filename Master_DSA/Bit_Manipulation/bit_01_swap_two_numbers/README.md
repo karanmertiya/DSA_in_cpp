@@ -10,5 +10,3 @@ Output: a=7, b=5
 
 **Note (Constraint):** 1 &le; a, b &le; 10<sup>9</sup>
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

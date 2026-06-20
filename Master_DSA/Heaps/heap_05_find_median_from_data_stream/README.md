@@ -6,5 +6,3 @@ Implement the MedianFinder class to add numbers from a data stream and find the 
 ## Examples
 **Example 1:** Two heaps.
 
-**Tags:** Love Babbar, Striver A Z
-

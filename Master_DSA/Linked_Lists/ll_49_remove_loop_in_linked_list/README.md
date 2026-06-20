@@ -6,5 +6,3 @@ Given a linked list of N nodes such that it may contain a loop. Remove the loop 
 ## Examples
 **Example 1:** Floyd's Cycle Detection + Loop removal.
 
-**Tags:** Love Babbar
-

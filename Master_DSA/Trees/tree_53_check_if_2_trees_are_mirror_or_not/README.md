@@ -6,5 +6,3 @@ Given two n-ary trees. Check if they are mirror images of each other or not. You
 ## Examples
 **Example 1:** Stack and Queue.
 
-**Tags:** Love Babbar
-

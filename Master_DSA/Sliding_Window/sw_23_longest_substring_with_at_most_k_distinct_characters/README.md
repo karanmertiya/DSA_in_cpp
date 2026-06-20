@@ -6,5 +6,3 @@ Given a string s and an integer k, return the length of the longest substring of
 ## Examples
 **Example 1:** Sliding Window.
 
-**Tags:** Striver A Z
-

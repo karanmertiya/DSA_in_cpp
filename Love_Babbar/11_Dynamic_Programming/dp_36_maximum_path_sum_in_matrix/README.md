@@ -6,5 +6,3 @@ Given a NxN matrix of positive integers. There are only three possible moves fro
 ## Examples
 **Example 1:** 2D DP.
 
-**Tags:** Love Babbar
-

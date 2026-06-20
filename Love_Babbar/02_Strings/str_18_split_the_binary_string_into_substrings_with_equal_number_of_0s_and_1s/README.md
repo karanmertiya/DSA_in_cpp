@@ -6,5 +6,3 @@ Given a binary string str of length N, the task is to find the maximum count of 
 ## Examples
 **Example 1:** Counter logic.
 
-**Tags:** Love Babbar
-

@@ -6,5 +6,3 @@ Given a string str of length N, you have to find number of palindromic subsequen
 ## Examples
 **Example 1:** Dynamic Programming.
 
-**Tags:** Love Babbar
-

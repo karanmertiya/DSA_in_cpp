@@ -6,5 +6,3 @@ You are given an array nums consisting of non-negative integers. You are also gi
 ## Examples
 **Example 1:** Offline Queries.
 
-**Tags:** Striver A Z, Love Babbar
-

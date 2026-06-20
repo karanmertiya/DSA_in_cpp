@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: s = "anagram", t = "nagaram", Output: true
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

@@ -6,5 +6,3 @@ Given a string s and a dictionary of strings wordDict, return true if s can be s
 ## Examples
 **Example 1:** Input: s = 'leetcode', wordDict = ['leet','code'], Output: true
 
-**Tags:** Apna College, Love Babbar, SDE Sheet, Striver A Z
-

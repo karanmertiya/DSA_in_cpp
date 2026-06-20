@@ -6,5 +6,3 @@ Design a data-structure SpecialStack that supports all the stack operations like
 ## Examples
 **Example 1:** Formula approach.
 
-**Tags:** Love Babbar
-

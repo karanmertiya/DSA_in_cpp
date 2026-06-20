@@ -6,5 +6,3 @@ You are given a string S, the task is to reverse the string using stack.<br><br>
 ## Examples
 **Example 1:** Push and pop.
 
-**Tags:** Love Babbar
-

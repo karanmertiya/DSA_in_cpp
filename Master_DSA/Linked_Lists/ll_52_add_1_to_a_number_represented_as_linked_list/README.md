@@ -6,5 +6,3 @@ A number N is represented in Linked List such that each digit corresponds to a n
 ## Examples
 **Example 1:** Reverse, Add, Reverse.
 
-**Tags:** Love Babbar
-

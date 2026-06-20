@@ -6,5 +6,3 @@ Given an integer n, return the number of prime numbers that are strictly less th
 ## Examples
 **Example 1:** Sieve of Eratosthenes.
 
-**Tags:** Love Babbar
-

@@ -8,5 +8,3 @@ Given two integers dividend and divisor, divide two integers without using multi
 Input: dividend = 10, divisor = 3
 Output: 3
 
-**Tags:** Striver A Z, Love Babbar
-

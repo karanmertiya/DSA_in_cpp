@@ -6,5 +6,3 @@ Given a linked list of N nodes. The task is to check if the linked list has a lo
 ## Examples
 **Example 1:** Floyd's Cycle Detection.
 
-**Tags:** Love Babbar, Striver A Z, SDE Sheet
-

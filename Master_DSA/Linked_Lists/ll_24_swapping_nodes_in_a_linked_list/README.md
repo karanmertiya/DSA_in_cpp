@@ -6,5 +6,3 @@ You are given the head of a linked list, and an integer k. Return the head of th
 ## Examples
 **Example 1:** Two passes or three pointers.
 
-**Tags:** Striver A Z, Love Babbar
-

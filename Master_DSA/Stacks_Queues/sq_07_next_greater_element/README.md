@@ -6,5 +6,3 @@ Given an array arr[ ] of size N having elements, the task is to find the next gr
 ## Examples
 **Example 1:** Decreasing stack.
 
-**Tags:** Love Babbar
-

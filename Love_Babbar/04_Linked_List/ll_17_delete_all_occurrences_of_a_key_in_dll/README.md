@@ -6,5 +6,3 @@ Given a doubly linked list and a key x. The problem is to delete all occurrences
 ## Examples
 **Example 1:** Update links.
 
-**Tags:** Striver A Z, Love Babbar
-

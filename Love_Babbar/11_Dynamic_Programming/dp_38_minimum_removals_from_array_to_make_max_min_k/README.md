@@ -6,5 +6,3 @@ Given an array arr[] of size N and an integer K. The task is to find the minimum
 ## Examples
 **Example 1:** DP after sorting.
 
-**Tags:** Love Babbar
-

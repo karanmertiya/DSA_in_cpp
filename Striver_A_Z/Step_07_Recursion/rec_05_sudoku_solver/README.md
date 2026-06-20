@@ -6,5 +6,3 @@ Write a program to solve a Sudoku puzzle by filling the empty cells.<br><br><b>ð
 ## Examples
 **Example 1:** Input: board with '.' for empty cells. Solve in-place.
 
-**Tags:** Love Babbar, Striver A Z
-

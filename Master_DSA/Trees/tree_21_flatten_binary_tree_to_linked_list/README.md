@@ -6,5 +6,3 @@ Given the root of a binary tree, flatten the tree into a 'linked list'. The righ
 ## Examples
 **Example 1:** In-place flatten.
 
-**Tags:** Love Babbar, Striver A Z
-

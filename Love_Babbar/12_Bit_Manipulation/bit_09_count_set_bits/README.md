@@ -8,5 +8,3 @@ Write a function that takes the binary representation of a positive integer and 
 Input: N=11 (1011)
 Output: 3
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

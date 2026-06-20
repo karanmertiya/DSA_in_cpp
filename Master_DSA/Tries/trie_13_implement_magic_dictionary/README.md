@@ -6,5 +6,3 @@ Design a data structure that is initialized with a list of different words. Prov
 ## Examples
 **Example 1:** Recursive Trie Search.
 
-**Tags:** Striver A Z
-

@@ -6,5 +6,3 @@ The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonac
 ## Examples
 **Example 1:** Base Case.
 
-**Tags:** Striver A Z
-

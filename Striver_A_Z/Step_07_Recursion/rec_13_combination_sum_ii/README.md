@@ -6,5 +6,3 @@ Given a collection of candidate numbers (candidates) and a target number (target
 ## Examples
 **Example 1:** Return unique combinations.
 
-**Tags:** Love Babbar, Striver A Z
-

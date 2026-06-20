@@ -8,5 +8,3 @@ A bit flip of a number x is choosing a bit in the binary representation of x and
 Input: start=10 (1010), goal=7 (0111)
 Output: 3 flips
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

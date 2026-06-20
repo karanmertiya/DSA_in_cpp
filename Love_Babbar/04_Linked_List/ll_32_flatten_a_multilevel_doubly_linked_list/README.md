@@ -6,5 +6,3 @@ You are given a doubly linked list, which contains nodes that have a next pointe
 ## Examples
 **Example 1:** DFS / Recursion.
 
-**Tags:** Striver A Z, Love Babbar
-

@@ -6,5 +6,3 @@ Given an array arr[] of size N and an integer K. Find the maximum for each and e
 ## Examples
 **Example 1:** Deque.
 
-**Tags:** Love Babbar
-

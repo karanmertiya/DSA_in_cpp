@@ -6,5 +6,3 @@ Given a string s consisting only of characters a, b and c. Return the number of 
 ## Examples
 **Example 1:** Store last seen indices.
 
-**Tags:** Love Babbar, Striver A Z
-

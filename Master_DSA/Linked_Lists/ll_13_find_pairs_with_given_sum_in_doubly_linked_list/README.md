@@ -6,5 +6,3 @@ Given a sorted doubly linked list of positive distinct elements, the task is to 
 ## Examples
 **Example 1:** Two pointer approach.
 
-**Tags:** Striver A Z, Love Babbar
-

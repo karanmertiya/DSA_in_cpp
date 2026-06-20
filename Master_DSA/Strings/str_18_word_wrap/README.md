@@ -6,5 +6,3 @@ Given an array nums[] of size n, where nums[i] denotes the number of characters 
 ## Examples
 **Example 1:** DP approach.
 
-**Tags:** Love Babbar
-

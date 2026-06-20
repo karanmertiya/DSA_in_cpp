@@ -6,5 +6,3 @@ Given three distinct numbers A, B and C. Find the number with value in middle.<b
 ## Examples
 **Example 1:** Simple if-else.
 
-**Tags:** Love Babbar
-

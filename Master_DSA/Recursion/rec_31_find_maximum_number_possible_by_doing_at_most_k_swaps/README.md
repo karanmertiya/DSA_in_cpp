@@ -6,5 +6,3 @@ Given a string str of digits and an integer K, find the maximum integer possible
 ## Examples
 **Example 1:** Backtracking.
 
-**Tags:** Love Babbar
-

@@ -6,5 +6,3 @@ Given a binary tree, find out whether it contains a duplicate sub-tree of size t
 ## Examples
 **Example 1:** String serialization.
 
-**Tags:** Love Babbar
-

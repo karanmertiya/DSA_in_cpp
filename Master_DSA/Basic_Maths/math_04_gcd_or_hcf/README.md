@@ -6,5 +6,3 @@ Find the GCD of two numbers.<br><br><b>🔗 Practice:</b> <a href='https://pract
 ## Examples
 **Example 1:** Input: A = 4, B = 8, Output: 4
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

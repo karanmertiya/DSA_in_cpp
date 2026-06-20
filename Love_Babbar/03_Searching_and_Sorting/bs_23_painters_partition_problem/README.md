@@ -6,5 +6,3 @@ Given an array representing the lengths of boards, and an integer k representing
 ## Examples
 **Example 1:** Minimax identical to book allocation.
 
-**Tags:** Love Babbar, Striver A Z
-

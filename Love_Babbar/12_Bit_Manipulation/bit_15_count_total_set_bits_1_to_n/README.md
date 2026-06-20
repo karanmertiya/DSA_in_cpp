@@ -9,5 +9,3 @@ Input: N=4
 Output: 5
 Explanation: 1(01) + 2(10) + 3(11) + 4(100) -> 1+1+2+1 = 5
 
-**Tags:** Love Babbar
-

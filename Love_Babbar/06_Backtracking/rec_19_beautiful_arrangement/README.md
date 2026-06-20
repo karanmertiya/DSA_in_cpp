@@ -6,5 +6,3 @@ Suppose you have n integers labeled 1 through n. A permutation of those n intege
 ## Examples
 **Example 1:** Backtracking.
 
-**Tags:** Striver A Z, Love Babbar
-

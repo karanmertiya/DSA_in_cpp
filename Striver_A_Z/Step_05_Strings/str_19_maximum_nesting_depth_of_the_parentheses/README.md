@@ -6,5 +6,3 @@ A string is a valid parentheses string (denoted VPS) if it meets one of the foll
 ## Examples
 **Example 1:** Counter tracking.
 
-**Tags:** Striver A Z
-

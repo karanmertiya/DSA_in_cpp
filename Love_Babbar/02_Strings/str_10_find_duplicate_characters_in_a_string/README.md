@@ -6,5 +6,3 @@ Write an efficient program to print all the duplicates and their counts in the i
 ## Examples
 **Example 1:** Frequency array or Hash Map.
 
-**Tags:** Love Babbar
-

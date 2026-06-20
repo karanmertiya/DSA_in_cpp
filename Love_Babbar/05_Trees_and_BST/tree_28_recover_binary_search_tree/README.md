@@ -6,5 +6,3 @@ You are given the root of a binary search tree (BST), where the values of exactl
 ## Examples
 **Example 1:** Inorder traversal tracking anomalies.
 
-**Tags:** Love Babbar, Striver A Z
-

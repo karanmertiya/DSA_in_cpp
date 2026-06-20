@@ -8,5 +8,3 @@ There is a hidden integer array arr that consists of n non-negative integers. It
 Input: encoded=[1,2,3], first=1
 Output: [1,0,2,1]
 
-**Tags:** Striver A Z, Love Babbar
-

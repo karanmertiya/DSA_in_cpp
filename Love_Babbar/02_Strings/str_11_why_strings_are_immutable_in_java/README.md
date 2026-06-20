@@ -6,5 +6,3 @@ Understand why Strings are immutable in Java and the benefits it provides.<br><b
 ## Examples
 **Example 1:** String Pool, Security, Thread Safety.
 
-**Tags:** Love Babbar
-

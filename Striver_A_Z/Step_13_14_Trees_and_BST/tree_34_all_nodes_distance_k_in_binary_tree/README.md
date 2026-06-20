@@ -6,5 +6,3 @@ Given the root of a binary tree, the value of a target node target, and an integ
 ## Examples
 **Example 1:** Convert to graph or use parent pointers.
 
-**Tags:** Striver A Z, Love Babbar
-

@@ -6,5 +6,3 @@ Given a string S consisting of only opening and closing curly brackets '{' and '
 ## Examples
 **Example 1:** Stack approach.
 
-**Tags:** Love Babbar
-

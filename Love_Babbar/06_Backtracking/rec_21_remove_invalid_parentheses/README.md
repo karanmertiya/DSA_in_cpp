@@ -6,5 +6,3 @@ Given a string s that contains parentheses and letters, remove the minimum numbe
 ## Examples
 **Example 1:** Recursion and Backtracking.
 
-**Tags:** Love Babbar
-

@@ -6,5 +6,3 @@ Given a singly linked list, remove all the nodes which have a greater value on t
 ## Examples
 **Example 1:** Reverse, filter, reverse.
 
-**Tags:** Love Babbar, Striver A Z
-

@@ -6,5 +6,3 @@ Given a sorted doubly linked list of distinct nodes and a value x. Count triplet
 ## Examples
 **Example 1:** Two Pointers.
 
-**Tags:** Love Babbar
-

@@ -6,5 +6,3 @@ Given start, end and an array arr of n numbers. At each step, start is multiplie
 ## Examples
 **Example 1:** BFS / Dijkstra's with unit weights.
 
-**Tags:** Striver A Z, Love Babbar
-

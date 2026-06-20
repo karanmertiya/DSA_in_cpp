@@ -6,5 +6,3 @@ Given a 2D matrix of characters and a dictionary of words, find all words from t
 ## Examples
 **Example 1:** Trie + DFS.
 
-**Tags:** Love Babbar, Striver A Z
-

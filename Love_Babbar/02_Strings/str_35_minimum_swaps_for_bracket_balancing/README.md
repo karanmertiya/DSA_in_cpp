@@ -6,5 +6,3 @@ You are given a string S of 2N characters consisting of N ‘[‘ brackets and N
 ## Examples
 **Example 1:** Track balance.
 
-**Tags:** Love Babbar
-

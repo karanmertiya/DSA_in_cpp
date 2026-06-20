@@ -6,5 +6,3 @@ Given a string A and a dictionary of n words B, find out if A can be segmented i
 ## Examples
 **Example 1:** DP.
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

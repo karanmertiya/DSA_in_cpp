@@ -6,5 +6,3 @@ Given string S representing a postfix expression, the task is to evaluate the ex
 ## Examples
 **Example 1:** Stack of operands.
 
-**Tags:** Love Babbar
-

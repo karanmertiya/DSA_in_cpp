@@ -6,5 +6,3 @@ Given an array of integers A of size N and an integer M. A[i] denotes the number
 ## Examples
 **Example 1:** Input: N=4, A=[12,34,67,90], M=2, Output: 113
 
-**Tags:** Love Babbar, Striver A Z
-

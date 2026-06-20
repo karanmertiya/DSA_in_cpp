@@ -6,5 +6,3 @@ Evaluate a given arithmetic expression. The expression contains integer operands
 ## Examples
 **Example 1:** Two stacks (operands and operators).
 
-**Tags:** Love Babbar
-

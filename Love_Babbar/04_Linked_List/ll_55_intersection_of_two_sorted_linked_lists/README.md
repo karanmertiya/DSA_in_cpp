@@ -6,5 +6,3 @@ Given two lists sorted in increasing order, create a new list representing the i
 ## Examples
 **Example 1:** Two Pointers.
 
-**Tags:** Love Babbar
-

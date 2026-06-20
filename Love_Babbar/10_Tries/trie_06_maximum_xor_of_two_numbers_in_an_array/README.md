@@ -6,5 +6,3 @@ Given an integer array nums, return the maximum result of nums[i] XOR nums[j], w
 ## Examples
 **Example 1:** Bit Trie.
 
-**Tags:** Striver A Z, Love Babbar
-

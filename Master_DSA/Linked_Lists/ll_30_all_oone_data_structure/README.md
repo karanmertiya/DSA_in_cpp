@@ -6,5 +6,3 @@ Design a data structure to store the strings' count with the ability to return t
 ## Examples
 **Example 1:** Doubly linked list of frequency buckets.
 
-**Tags:** Striver A Z, Love Babbar
-

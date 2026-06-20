@@ -6,5 +6,3 @@ Given a set of distinct positive integers nums, return the largest subset answer
 ## Examples
 **Example 1:** Sort and LIS variant.
 
-**Tags:** Striver A Z, Love Babbar
-

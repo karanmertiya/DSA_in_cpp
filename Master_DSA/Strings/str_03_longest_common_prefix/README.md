@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: strs = ["flower","flow","flight"], Output: "fl"
 
-**Tags:** Love Babbar, Striver A Z, SDE Sheet, Apna College
-

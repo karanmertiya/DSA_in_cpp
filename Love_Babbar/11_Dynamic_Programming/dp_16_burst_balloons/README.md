@@ -6,5 +6,3 @@ You are given n balloons, indexed from 0 to n - 1. Each balloon is painted with 
 ## Examples
 **Example 1:** Input: nums = [3,1,5,8], Output: 167
 
-**Tags:** Love Babbar, Striver A Z
-

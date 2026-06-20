@@ -6,5 +6,3 @@ Given an m x n grid of characters board and a string word, return true if word e
 ## Examples
 **Example 1:** Backtracking DFS.
 
-**Tags:** Striver A Z, Love Babbar
-

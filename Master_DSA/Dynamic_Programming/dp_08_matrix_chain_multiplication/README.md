@@ -6,5 +6,3 @@ Given a sequence of matrices, find the most efficient way to multiply these matr
 ## Examples
 **Example 1:** Input: N=5, arr=[40, 20, 30, 10, 30], Output: 26000
 
-**Tags:** Love Babbar, Striver A Z, SDE Sheet, Apna College
-

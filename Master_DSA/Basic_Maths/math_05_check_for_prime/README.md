@@ -6,5 +6,3 @@ Given a number N, check if it is prime.<br><br><b>🔗 Practice:</b> <a href='ht
 ## Examples
 **Example 1:** Input: N = 5, Output: 1
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

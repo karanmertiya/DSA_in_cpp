@@ -6,5 +6,3 @@ The problem is to find the shortest distances between every pair of vertices in 
 ## Examples
 **Example 1:** Output: Shortest paths for all pairs (i, j).
 
-**Tags:** Apna College, Love Babbar, SDE Sheet, Striver A Z
-

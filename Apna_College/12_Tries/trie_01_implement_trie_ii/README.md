@@ -6,5 +6,3 @@ Implement a Trie with insert, countWordsEqualTo, countWordsStartingWith, and era
 ## Examples
 **Example 1:** Specialized Trie functions.
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
-

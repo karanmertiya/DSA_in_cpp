@@ -6,5 +6,3 @@ Given an N x M matrix, with a few hurdles arbitrarily placed, calculate the leng
 ## Examples
 **Example 1:** Recursive Backtracking.
 
-**Tags:** Love Babbar
-

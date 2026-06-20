@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** `insert("apple")`, `search("apple")` -> true, `search("app")` -> false, `startsWith("app")` -> true.<br><br>**Note (Constraint):** 1 &le; word.length &le; 2000, lowercase English letters.
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

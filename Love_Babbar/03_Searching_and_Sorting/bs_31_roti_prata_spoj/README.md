@@ -6,5 +6,3 @@ IEEE is having its AGM next week and the president wants to serve cheese prata a
 ## Examples
 **Example 1:** Binary Search on Answer.
 
-**Tags:** Love Babbar
-

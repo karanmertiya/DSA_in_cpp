@@ -6,5 +6,3 @@ Given two strings s and t, return the number of distinct subsequences of s which
 ## Examples
 **Example 1:** Subsequence match count.
 
-**Tags:** Striver A Z, Love Babbar
-

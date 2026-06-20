@@ -6,5 +6,3 @@ Given an array of strings words representing an English Dictionary, return the l
 ## Examples
 **Example 1:** Trie + DFS.
 
-**Tags:** Striver A Z
-

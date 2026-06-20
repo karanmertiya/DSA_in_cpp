@@ -6,5 +6,3 @@ There are several cards arranged in a row, and each card has an associated numbe
 ## Examples
 **Example 1:** Sliding Window on remaining cards.
 
-**Tags:** Love Babbar, Striver A Z
-

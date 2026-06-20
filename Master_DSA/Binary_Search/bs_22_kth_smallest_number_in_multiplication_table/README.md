@@ -6,5 +6,3 @@ Nearly everyone has used the Multiplication Table. The multiplication table of s
 ## Examples
 **Example 1:** Binary Search on answer.
 
-**Tags:** Striver A Z, Love Babbar
-

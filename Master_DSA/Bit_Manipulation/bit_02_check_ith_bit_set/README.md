@@ -10,5 +10,3 @@ Output: true
 
 **Note (Constraint):** 1 &le; N &le; 10<sup>9</sup>, 0 &le; i &le; 31
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

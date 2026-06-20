@@ -6,5 +6,3 @@ Given an array of integers. Write a program to find the K-th largest sum of cont
 ## Examples
 **Example 1:** Prefix sum + Min Heap.
 
-**Tags:** Love Babbar
-

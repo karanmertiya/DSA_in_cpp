@@ -6,5 +6,3 @@ Given a string str, find length of the longest repeating subsequence such that t
 ## Examples
 **Example 1:** Modified LCS.
 
-**Tags:** Love Babbar
-

@@ -6,5 +6,3 @@ Given two strings. The task is to find the length of the longest common substrin
 ## Examples
 **Example 1:** 2D DP.
 
-**Tags:** Love Babbar
-

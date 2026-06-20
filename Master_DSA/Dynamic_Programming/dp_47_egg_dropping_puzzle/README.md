@@ -6,5 +6,3 @@ You are given N identical eggs and you have access to a K-floored building from 
 ## Examples
 **Example 1:** DP + Binary Search / Math.
 
-**Tags:** Love Babbar, Striver A Z
-

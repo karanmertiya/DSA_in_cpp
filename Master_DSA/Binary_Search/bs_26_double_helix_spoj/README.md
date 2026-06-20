@@ -6,5 +6,3 @@ Two sequences of integers, sorted in strictly increasing order, are given. Find 
 ## Examples
 **Example 1:** Two Pointers / Binary Search.
 
-**Tags:** Love Babbar
-

@@ -6,5 +6,3 @@ Given a binary search tree which is also a complete binary tree. The problem is 
 ## Examples
 **Example 1:** Inorder + Preorder.
 
-**Tags:** Love Babbar
-

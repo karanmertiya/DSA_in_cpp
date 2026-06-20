@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: nums = [1,2,3,1], Output: 4 (Rob house 1 and 3)
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

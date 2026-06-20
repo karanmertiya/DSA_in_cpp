@@ -6,5 +6,3 @@ Consider a sample space S consisting of all perfect squares starting from 1, 4, 
 ## Examples
 **Example 1:** Square root.
 
-**Tags:** Love Babbar
-

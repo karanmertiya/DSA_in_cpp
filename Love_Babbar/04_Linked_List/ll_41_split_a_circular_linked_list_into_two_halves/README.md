@@ -6,5 +6,3 @@ Given a Cirular Linked List of size N, split it into two halves circular lists. 
 ## Examples
 **Example 1:** Slow and Fast Pointer.
 
-**Tags:** Love Babbar
-

@@ -6,5 +6,3 @@ Given an array of integers nums and an integer threshold, we will choose a posit
 ## Examples
 **Example 1:** Summing ceils.
 
-**Tags:** Love Babbar, Striver A Z
-

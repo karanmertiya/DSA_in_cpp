@@ -6,5 +6,3 @@ Given a Binary Tree of size N , where each node can have positive or negative va
 ## Examples
 **Example 1:** Postorder Traversal.
 
-**Tags:** Love Babbar
-

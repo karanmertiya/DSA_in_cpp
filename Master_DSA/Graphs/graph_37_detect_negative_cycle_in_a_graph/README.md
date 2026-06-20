@@ -6,5 +6,3 @@ Given a directed graph with edge weights, check if it contains a negative weight
 ## Examples
 **Example 1:** Bellman Ford variant.
 
-**Tags:** Love Babbar
-

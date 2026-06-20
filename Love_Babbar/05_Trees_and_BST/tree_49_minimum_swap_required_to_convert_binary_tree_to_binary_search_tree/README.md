@@ -6,5 +6,3 @@ Given an array A[] which represents a Complete Binary Tree i.e, if index i is th
 ## Examples
 **Example 1:** Graph cycle detection on Inorder.
 
-**Tags:** Love Babbar
-

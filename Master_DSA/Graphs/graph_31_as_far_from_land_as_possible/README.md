@@ -6,5 +6,3 @@ Given an n x n grid containing only values 0 and 1, where 0 represents water and
 ## Examples
 **Example 1:** Multi-source BFS.
 
-**Tags:** Love Babbar
-

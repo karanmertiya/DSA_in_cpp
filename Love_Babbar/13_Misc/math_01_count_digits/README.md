@@ -6,5 +6,3 @@ Given an integer N, return the number of digits in N.<br><br><b>🔗 Practice:</
 ## Examples
 **Example 1:** Input: N = 12345, Output: 5
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet
-

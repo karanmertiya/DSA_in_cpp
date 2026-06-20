@@ -6,5 +6,3 @@ Given an array of strings, return all groups of strings that are anagrams. The g
 ## Examples
 **Example 1:** Trie with sorted string.
 
-**Tags:** Love Babbar
-

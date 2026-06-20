@@ -6,5 +6,3 @@ Write a function that moves the last element to the front in a given Singly Link
 ## Examples
 **Example 1:** Two Pointers.
 
-**Tags:** Love Babbar
-

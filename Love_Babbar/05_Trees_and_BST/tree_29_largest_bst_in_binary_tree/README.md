@@ -6,5 +6,3 @@ Given a binary tree. Find the size of its largest subtree that is a Binary Searc
 ## Examples
 **Example 1:** Bottom-up verification.
 
-**Tags:** Love Babbar, Striver A Z
-

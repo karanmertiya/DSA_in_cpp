@@ -3,8 +3,3 @@
 ## Description
 Given an array of positive integers. Find the length of the longest sub-sequence such that elements in the subsequence are consecutive integers, the consecutive numbers can be in any order.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/longest-consecutive-subsequence2449/1' target='_blank'>GFG</a>
 
-## Examples
-**Example 1:** Hash Set.
-
-**Tags:** Love Babbar, Striver A Z, SDE Sheet
-

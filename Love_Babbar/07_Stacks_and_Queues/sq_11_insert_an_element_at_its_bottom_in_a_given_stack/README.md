@@ -6,5 +6,3 @@ Given a stack, insert an element at the bottom of the stack without using any ot
 ## Examples
 **Example 1:** Recursive push.
 
-**Tags:** Love Babbar
-

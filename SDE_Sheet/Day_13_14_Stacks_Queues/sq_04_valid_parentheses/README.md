@@ -6,5 +6,3 @@ Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
 ## Examples
 **Example 1:** Input: s = "()[]{}", Output: true
 
-**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
-

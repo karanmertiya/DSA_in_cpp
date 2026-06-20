@@ -6,5 +6,3 @@ Find shortest paths from the source to all vertices in the given graph.<br><br><
 ## Examples
 **Example 1:** Source = 0, Output: distances array.
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

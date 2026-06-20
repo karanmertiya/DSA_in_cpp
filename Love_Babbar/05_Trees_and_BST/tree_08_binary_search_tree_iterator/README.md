@@ -6,5 +6,3 @@ Implement the BSTIterator class that represents an iterator over the in-order tr
 ## Examples
 **Example 1:** next() returns smallest element.
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

@@ -6,5 +6,3 @@ Given an array of length N and an integer C. The task is to assign the cows to t
 ## Examples
 **Example 1:** Minimax binary search.
 
-**Tags:** Striver A Z, Love Babbar
-

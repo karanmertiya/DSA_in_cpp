@@ -6,5 +6,3 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: text1 = "abcde", text2 = "ace", Output: 3 ("ace")
 
-**Tags:** Love Babbar, SDE Sheet, Striver A Z
-

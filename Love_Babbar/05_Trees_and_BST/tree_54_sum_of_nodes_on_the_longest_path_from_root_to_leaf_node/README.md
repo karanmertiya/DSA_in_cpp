@@ -6,5 +6,3 @@ Given a binary tree of size N. Your task is to complete the function sumOfLongRo
 ## Examples
 **Example 1:** DFS.
 
-**Tags:** Love Babbar
-
