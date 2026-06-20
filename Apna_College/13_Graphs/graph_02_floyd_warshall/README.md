@@ -6,17 +6,11 @@ The problem is to find the shortest distances between every pair of vertices in 
 ## Examples
 **Example 1:** Output: Shortest paths for all pairs (i, j).
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
+- SDE_Sheet
 - Apna_College
 - Love_Babbar
-- SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

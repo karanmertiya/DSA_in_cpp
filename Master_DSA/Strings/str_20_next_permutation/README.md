@@ -6,16 +6,10 @@ Implement the next permutation, which rearranges the list of numbers into Lexico
 ## Examples
 **Example 1:** Swap and Reverse.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

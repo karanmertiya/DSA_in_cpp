@@ -6,15 +6,9 @@ Given an n x n array of integers matrix, return the minimum sum of any falling p
 ## Examples
 **Example 1:** Output: 13
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

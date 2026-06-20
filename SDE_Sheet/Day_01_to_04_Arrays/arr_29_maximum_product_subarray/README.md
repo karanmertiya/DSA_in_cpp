@@ -6,16 +6,10 @@ Given an integer array nums, find a subarray that has the largest product, and r
 ## Examples
 **Example 1:** Input: nums = [2,3,-2,4], Output: 6
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
-- Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Love_Babbar
+- Striver_A_Z
 
 </details>

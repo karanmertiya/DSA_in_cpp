@@ -6,14 +6,8 @@ Given a string str of digits and an integer K, find the maximum integer possible
 ## Examples
 **Example 1:** Backtracking.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

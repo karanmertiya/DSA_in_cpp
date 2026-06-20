@@ -6,15 +6,9 @@ There are given N ropes of different lengths, we need to connect these ropes int
 ## Examples
 **Example 1:** Min-Heap Greedy.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

@@ -6,15 +6,9 @@ You are given an Undirected Graph having unit weight of the edges, find the shor
 ## Examples
 **Example 1:** BFS approach.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

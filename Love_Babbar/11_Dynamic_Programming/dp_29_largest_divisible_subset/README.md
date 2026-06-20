@@ -6,15 +6,9 @@ Given a set of distinct positive integers nums, return the largest subset answer
 ## Examples
 **Example 1:** Sort and LIS variant.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -20,9 +20,3 @@ Output:
 1 2 3 4
 1 2 3 4 5
 
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
-
-</details>

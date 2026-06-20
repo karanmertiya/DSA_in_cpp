@@ -6,14 +6,8 @@ Write a function that reverses a string. The input string is given as an array o
 ## Examples
 **Example 1:** Two pointers swap.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

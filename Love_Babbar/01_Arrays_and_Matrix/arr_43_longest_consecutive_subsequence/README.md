@@ -6,16 +6,10 @@ Given an array of positive integers. Find the length of the longest sub-sequence
 ## Examples
 **Example 1:** Hash Set.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

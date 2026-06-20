@@ -6,14 +6,8 @@ Given a number N. Find its unique prime factors in increasing order.<br><br><b>�
 ## Examples
 **Example 1:** Iterative division.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

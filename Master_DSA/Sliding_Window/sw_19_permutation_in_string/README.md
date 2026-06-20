@@ -6,14 +6,8 @@ Given two strings s1 and s2, return true if s2 contains a permutation of s1, or 
 ## Examples
 **Example 1:** Sliding Window + Frequency Array.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

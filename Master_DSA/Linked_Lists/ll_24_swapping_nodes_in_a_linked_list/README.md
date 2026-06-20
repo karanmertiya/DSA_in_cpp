@@ -6,15 +6,9 @@ You are given the head of a linked list, and an integer k. Return the head of th
 ## Examples
 **Example 1:** Two passes or three pointers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

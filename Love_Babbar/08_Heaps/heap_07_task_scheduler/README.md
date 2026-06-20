@@ -6,15 +6,9 @@ Given a characters array tasks, representing the tasks a CPU needs to do, and a 
 ## Examples
 **Example 1:** Greedy placement.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

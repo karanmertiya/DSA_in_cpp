@@ -6,16 +6,10 @@ Given the root of a binary tree, return the zigzag level order traversal of its 
 ## Examples
 **Example 1:** Input: root = [3,9,20,null,null,15,7], Output: [[3],[20,9],[15,7]]
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
-- Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Love_Babbar
+- Striver_A_Z
 
 </details>

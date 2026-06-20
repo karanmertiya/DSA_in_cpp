@@ -6,14 +6,8 @@ Given a 2-Dimensional character array and a string, we need to find the given st
 ## Examples
 **Example 1:** DFS.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

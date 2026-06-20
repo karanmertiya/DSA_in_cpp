@@ -6,14 +6,8 @@ Given a 2D grid of n*m of characters and a word, find all occurrences of given w
 ## Examples
 **Example 1:** 8 Directions Loop.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

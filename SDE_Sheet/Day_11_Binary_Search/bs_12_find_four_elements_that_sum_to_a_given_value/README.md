@@ -6,16 +6,10 @@ Given an array of integers and another number. Find all the unique quadruple fro
 ## Examples
 **Example 1:** Two loops and two pointers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

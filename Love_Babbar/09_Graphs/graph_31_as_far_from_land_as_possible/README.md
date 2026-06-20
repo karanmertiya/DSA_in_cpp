@@ -6,14 +6,8 @@ Given an n x n grid containing only values 0 and 1, where 0 represents water and
 ## Examples
 **Example 1:** Multi-source BFS.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

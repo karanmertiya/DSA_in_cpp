@@ -6,15 +6,9 @@ There is a hidden integer array arr that consists of n non-negative integers. It
 ## Examples
 **Example 1:** Sequential XOR.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

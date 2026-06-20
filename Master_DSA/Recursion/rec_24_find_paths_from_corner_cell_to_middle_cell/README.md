@@ -6,14 +6,8 @@ Given a square matrix of size N x N. The task is to find all paths from corner c
 ## Examples
 **Example 1:** BFS / DFS for path finding.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

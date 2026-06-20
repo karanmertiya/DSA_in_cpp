@@ -6,15 +6,9 @@ Given a singly linked list, find the first node of the loop if a loop is present
 ## Examples
 **Example 1:** Floyd's Cycle Detection.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

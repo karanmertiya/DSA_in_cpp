@@ -6,15 +6,9 @@ Given a list arr of N integers, print sums of all subsets in it.<br><br><b>🔗 
 ## Examples
 **Example 1:** Take / Not Take.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ Given a list of unique words, return all the pairs of the distinct indices (i, j
 ## Examples
 **Example 1:** Trie of reversed words.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

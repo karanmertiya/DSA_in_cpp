@@ -6,15 +6,9 @@ You are given 2 numbers (n , m); the task is to find n√m (nth root of m). If t
 ## Examples
 **Example 1:** Binary Search.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

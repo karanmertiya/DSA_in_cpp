@@ -6,14 +6,8 @@ Write an efficient program to print all the duplicates and their counts in the i
 ## Examples
 **Example 1:** Frequency array or Hash Map.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

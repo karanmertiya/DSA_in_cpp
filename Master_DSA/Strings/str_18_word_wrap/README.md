@@ -6,14 +6,8 @@ Given an array nums[] of size n, where nums[i] denotes the number of characters 
 ## Examples
 **Example 1:** DP approach.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

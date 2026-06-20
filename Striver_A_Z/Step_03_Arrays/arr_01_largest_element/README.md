@@ -6,16 +6,10 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksfo
 ## Examples
 **Example 1:** Input: A = [1, 8, 7, 56, 90], Output: 90
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -11,9 +11,3 @@ Output:
 12  21
 123321
 
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
-
-</details>

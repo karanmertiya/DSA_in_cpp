@@ -6,14 +6,8 @@ A perfect number is a positive integer that is equal to the sum of its positive 
 ## Examples
 **Example 1:** Sum of divisors.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,16 +6,10 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeek
 ## Examples
 **Example 1:** Input: arr = [4, 2, -3, 1, 6], Output: true (2, -3, 1)<br><br>**Note (Constraint):** Array contains positive and negative integers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

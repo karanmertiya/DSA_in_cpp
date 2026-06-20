@@ -6,16 +6,10 @@ Given an unsorted array Arr of size N of positive integers. One number 'A' from 
 ## Examples
 **Example 1:** Input: N = 2, Arr[] = {2, 2}, Output: 2 1
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
-- Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Love_Babbar
+- Striver_A_Z
 
 </details>

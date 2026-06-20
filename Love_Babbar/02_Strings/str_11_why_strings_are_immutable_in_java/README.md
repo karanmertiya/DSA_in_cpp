@@ -6,14 +6,8 @@ Understand why Strings are immutable in Java and the benefits it provides.<br><b
 ## Examples
 **Example 1:** String Pool, Security, Thread Safety.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

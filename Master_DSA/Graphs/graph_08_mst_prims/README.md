@@ -6,17 +6,11 @@ Given a weighted, undirected and connected graph of V vertices and E edges. Find
 ## Examples
 **Example 1:** Return the scalar sum of the MST.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
+- Apna_College
 - Love_Babbar
 - SDE_Sheet
-- Apna_College
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

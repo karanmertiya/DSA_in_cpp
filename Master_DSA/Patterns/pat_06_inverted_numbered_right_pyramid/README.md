@@ -20,9 +20,3 @@ Output:
 1 2
 1
 
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
-
-</details>

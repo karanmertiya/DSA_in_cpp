@@ -6,15 +6,9 @@ You are visiting a farm that has a single row of fruit trees arranged from left 
 ## Examples
 **Example 1:** Longest subarray with at most 2 distinct elements.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

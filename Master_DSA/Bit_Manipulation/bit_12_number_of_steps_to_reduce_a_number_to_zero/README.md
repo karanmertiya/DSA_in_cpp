@@ -6,15 +6,9 @@ Given an integer num, return the number of steps to reduce it to zero. In one st
 ## Examples
 **Example 1:** Simulation.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ Given an undirected connected graph with V vertices and E edges, return all the 
 ## Examples
 **Example 1:** Tarjan's algorithm with discovery times.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

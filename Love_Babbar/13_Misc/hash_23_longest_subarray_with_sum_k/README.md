@@ -6,16 +6,10 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeek
 ## Examples
 **Example 1:** Input: arr = [10, 5, 2, 7, 1, 9], k = 15, Output: 4<br><br>**Note (Constraint):** 1 &le; N &le; 10<sup>5</sup>
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ Given two strings s and t, determine if they are isomorphic. Two strings s and t
 ## Examples
 **Example 1:** Hash Maps.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

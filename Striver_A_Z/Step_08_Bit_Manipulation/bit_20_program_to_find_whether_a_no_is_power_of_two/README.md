@@ -6,15 +6,9 @@ Given a non-negative integer N. The task is to check if N is a power of 2. More 
 ## Examples
 **Example 1:** Bitwise AND.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

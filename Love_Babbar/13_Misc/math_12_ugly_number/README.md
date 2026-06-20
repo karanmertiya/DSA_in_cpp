@@ -6,14 +6,8 @@ An ugly number is a positive integer whose prime factors are limited to 2, 3, an
 ## Examples
 **Example 1:** Division.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

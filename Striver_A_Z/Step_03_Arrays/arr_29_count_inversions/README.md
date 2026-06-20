@@ -6,16 +6,10 @@ For an array, inversion count indicates how far the array is from being sorted. 
 ## Examples
 **Example 1:** Input: N = 5, arr[] = {2, 4, 1, 3, 5}, Output: 3
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

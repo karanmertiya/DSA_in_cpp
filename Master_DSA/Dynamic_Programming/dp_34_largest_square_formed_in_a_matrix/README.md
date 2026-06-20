@@ -6,15 +6,9 @@ Given a binary matrix mat of size n * m, find out the maximum size square sub-ma
 ## Examples
 **Example 1:** Bottom-up DP.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

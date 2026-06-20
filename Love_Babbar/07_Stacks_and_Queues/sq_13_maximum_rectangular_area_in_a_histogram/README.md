@@ -6,14 +6,8 @@ Find the largest rectangular area possible in a given histogram where the larges
 ## Examples
 **Example 1:** Next Smaller Element on left and right.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

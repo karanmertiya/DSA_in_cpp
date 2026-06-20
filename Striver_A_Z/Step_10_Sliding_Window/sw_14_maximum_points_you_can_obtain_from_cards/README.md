@@ -6,15 +6,9 @@ There are several cards arranged in a row, and each card has an associated numbe
 ## Examples
 **Example 1:** Sliding Window on remaining cards.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

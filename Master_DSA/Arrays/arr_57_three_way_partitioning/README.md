@@ -6,14 +6,8 @@ Given an array of size n and a range [a, b]. The task is to partition the array 
 ## Examples
 **Example 1:** Dutch National Flag algorithm.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ There is a robot on an m x n grid. The robot is initially located at the top-lef
 ## Examples
 **Example 1:** Input: m = 3, n = 7, Output: 28
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

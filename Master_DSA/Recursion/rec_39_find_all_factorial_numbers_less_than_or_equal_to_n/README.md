@@ -6,14 +6,8 @@ A number N is called a factorial number if it is the factorial of a positive int
 ## Examples
 **Example 1:** Recursion.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

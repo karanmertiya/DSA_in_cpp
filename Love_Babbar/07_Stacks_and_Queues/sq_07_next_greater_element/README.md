@@ -6,14 +6,8 @@ Given an array arr[ ] of size N having elements, the task is to find the next gr
 ## Examples
 **Example 1:** Decreasing stack.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

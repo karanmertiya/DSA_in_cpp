@@ -6,15 +6,9 @@ Given a sorted doubly linked list of positive distinct elements, the task is to 
 ## Examples
 **Example 1:** Two pointer approach.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

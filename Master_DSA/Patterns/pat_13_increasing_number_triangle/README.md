@@ -11,9 +11,3 @@ Output:
 2 3
 4 5 6
 
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
-
-</details>

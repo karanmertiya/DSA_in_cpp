@@ -6,14 +6,8 @@ A sequence {x1, x2, .. xn} is alternating sequence if its elements satisfy one o
 ## Examples
 **Example 1:** Two state DP.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

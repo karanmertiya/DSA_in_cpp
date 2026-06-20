@@ -6,15 +6,9 @@ Given an integer array nums, return true if you can partition the array into two
 ## Examples
 **Example 1:** Output: True.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

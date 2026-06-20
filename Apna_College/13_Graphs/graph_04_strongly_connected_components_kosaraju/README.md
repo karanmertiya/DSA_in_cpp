@@ -6,17 +6,11 @@ Given a Directed Graph with V vertices and E edges, Find the number of strongly 
 ## Examples
 **Example 1:** Return an integer count.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
+- Apna_College
 - Love_Babbar
 - SDE_Sheet
-- Apna_College
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

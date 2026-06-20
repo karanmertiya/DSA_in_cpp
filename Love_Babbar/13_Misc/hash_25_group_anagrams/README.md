@@ -6,16 +6,10 @@ Given an array of strings strs, group the anagrams together. You can return the 
 ## Examples
 **Example 1:** Input: strs = ["eat","tea","tan","ate","nat","bat"], Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
-- Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Love_Babbar
+- Striver_A_Z
 
 </details>

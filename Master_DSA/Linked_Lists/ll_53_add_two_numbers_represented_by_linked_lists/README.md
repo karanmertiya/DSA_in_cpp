@@ -6,16 +6,10 @@ Given two numbers represented by two linked lists of size N and M. The task is t
 ## Examples
 **Example 1:** Reverse, Add, Reverse.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

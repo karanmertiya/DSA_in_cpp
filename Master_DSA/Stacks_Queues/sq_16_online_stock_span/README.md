@@ -6,15 +6,9 @@ Design an algorithm that collects daily price quotes for some stock and returns 
 ## Examples
 **Example 1:** Monotonic Stack.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

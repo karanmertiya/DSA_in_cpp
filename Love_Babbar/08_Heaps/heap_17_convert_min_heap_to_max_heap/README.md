@@ -6,14 +6,8 @@ Given an array representation of a Min Heap, convert it into a Max Heap in O(N) 
 ## Examples
 **Example 1:** Heapify.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

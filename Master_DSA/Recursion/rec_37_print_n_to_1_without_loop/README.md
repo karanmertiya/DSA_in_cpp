@@ -6,14 +6,8 @@ Print numbers from N to 1 without the help of loops.<br><br><b>🔗 Practice:</b
 ## Examples
 **Example 1:** Recursion.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

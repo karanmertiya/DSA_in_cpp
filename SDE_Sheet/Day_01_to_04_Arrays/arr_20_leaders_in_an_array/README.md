@@ -6,16 +6,10 @@ Given an array, print all the elements which are leaders. A Leader is an element
 ## Examples
 **Example 1:** Input: A = [16,17,4,3,5,2], Output: [17,5,2]
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,16 +6,10 @@ Given two sorted arrays arr1 and arr2 of size N and M respectively and an elemen
 ## Examples
 **Example 1:** Input: arr1 = [2, 3, 6, 7, 9], arr2 = [1, 4, 8, 10], k = 5, Output: 6
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
-- Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Love_Babbar
+- Striver_A_Z
 
 </details>

@@ -6,15 +6,9 @@ A linked list of length n is given such that each node contains an additional ra
 ## Examples
 **Example 1:** Return a deep copy.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

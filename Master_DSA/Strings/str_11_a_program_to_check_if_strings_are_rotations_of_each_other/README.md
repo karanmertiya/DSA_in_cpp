@@ -6,14 +6,8 @@ Given two strings s1 and s2. The task is to check if s2 is a rotated version of 
 ## Examples
 **Example 1:** Concatenate and find.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ Given a sorted dictionary of an alien language having N words and k starting alp
 ## Examples
 **Example 1:** words = ['baa', 'abcd', 'abca', 'cab', 'cad'], K = 4, Output: 'bdac'
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

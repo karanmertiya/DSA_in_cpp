@@ -6,14 +6,8 @@ Given an input stream A of n characters consisting only of lower case alphabets.
 ## Examples
 **Example 1:** Queue and frequency array.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

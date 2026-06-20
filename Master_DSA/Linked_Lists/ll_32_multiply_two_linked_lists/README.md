@@ -6,14 +6,8 @@ Given elements as nodes of the two linked lists. The task is to multiply these t
 ## Examples
 **Example 1:** Traverse and compute numbers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

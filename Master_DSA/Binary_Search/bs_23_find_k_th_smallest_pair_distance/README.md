@@ -6,15 +6,9 @@ The distance of a pair of integers a and b is defined as the absolute difference
 ## Examples
 **Example 1:** Sort and binary search on distance.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

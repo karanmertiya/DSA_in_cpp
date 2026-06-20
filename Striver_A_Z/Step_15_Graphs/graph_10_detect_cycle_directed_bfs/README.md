@@ -6,15 +6,9 @@ Given a Directed Graph, check whether it contains any cycle or not using Kahn's 
 ## Examples
 **Example 1:** Return true if cycle exists.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

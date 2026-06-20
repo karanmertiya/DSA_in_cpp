@@ -6,14 +6,8 @@ Given two n-ary trees. Check if they are mirror images of each other or not. You
 ## Examples
 **Example 1:** Stack and Queue.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

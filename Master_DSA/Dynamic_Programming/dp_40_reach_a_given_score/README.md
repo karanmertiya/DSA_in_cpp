@@ -6,14 +6,8 @@ Consider a game where a player can score 3 or 5 or 10 points in a move. Given a 
 ## Examples
 **Example 1:** Unbounded Knapsack.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

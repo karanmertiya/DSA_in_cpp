@@ -6,14 +6,8 @@ Write a program to reverse a stack using recursion. You are not allowed to use l
 ## Examples
 **Example 1:** Recursive pop and insertAtBottom.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

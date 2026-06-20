@@ -6,15 +6,9 @@ Given a grid of size n*m (n is the number of rows and m is the number of columns
 ## Examples
 **Example 1:** DFS or BFS.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

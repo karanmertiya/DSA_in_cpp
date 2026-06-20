@@ -6,15 +6,9 @@ A celebrity is a person who is known to all but does not know anyone at a party.
 ## Examples
 **Example 1:** Two pointers or Stack.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

@@ -6,14 +6,8 @@ Given a Binary Tree of N edges. The task is to convert this to a Circular Doubly
 ## Examples
 **Example 1:** Inorder traversal.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

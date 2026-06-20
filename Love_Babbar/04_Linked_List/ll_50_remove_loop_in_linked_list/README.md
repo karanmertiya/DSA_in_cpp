@@ -6,14 +6,8 @@ Given a linked list of N nodes such that it may contain a loop. Remove the loop 
 ## Examples
 **Example 1:** Floyd's Cycle Detection + Loop removal.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

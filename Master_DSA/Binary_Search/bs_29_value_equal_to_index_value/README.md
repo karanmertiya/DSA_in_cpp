@@ -6,14 +6,8 @@ Given an array Arr of N positive integers. Your task is to find the elements who
 ## Examples
 **Example 1:** Linear scan.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

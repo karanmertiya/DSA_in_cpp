@@ -6,14 +6,8 @@ A step array is an array of integers where each element has a difference of at m
 ## Examples
 **Example 1:** Jump Search.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

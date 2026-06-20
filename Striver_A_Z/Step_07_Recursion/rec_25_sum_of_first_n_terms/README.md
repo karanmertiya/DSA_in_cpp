@@ -6,14 +6,8 @@ Given an integer n, calculate the sum of series 1^3 + 2^3 + 3^3 + 4^3 + ... till
 ## Examples
 **Example 1:** Math or Recursion.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

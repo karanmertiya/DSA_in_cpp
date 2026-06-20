@@ -6,15 +6,9 @@ You are given an array nums consisting of non-negative integers. You are also gi
 ## Examples
 **Example 1:** Offline Queries.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,14 +6,8 @@ Given a binary tree of size N, a node, and a positive integer k. Your task is to
 ## Examples
 **Example 1:** Recursive backtracking.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

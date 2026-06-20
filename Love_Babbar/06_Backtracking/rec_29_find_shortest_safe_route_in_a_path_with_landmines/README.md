@@ -6,14 +6,8 @@ Given a path in the form of a rectangular matrix having few landmines arbitraril
 ## Examples
 **Example 1:** BFS or Backtracking.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

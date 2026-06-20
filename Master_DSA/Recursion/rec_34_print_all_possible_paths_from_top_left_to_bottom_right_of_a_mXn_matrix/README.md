@@ -6,14 +6,8 @@ The problem is to print all the possible paths from top left to bottom right of 
 ## Examples
 **Example 1:** DFS.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

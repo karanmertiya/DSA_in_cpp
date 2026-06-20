@@ -6,14 +6,8 @@ You are a poor person in an island. There is only one shop in this island, this 
 ## Examples
 **Example 1:** Math.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

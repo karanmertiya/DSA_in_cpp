@@ -6,14 +6,8 @@ Given a sequence of positive numbers, find the maximum sum that can be formed wh
 ## Examples
 **Example 1:** DP.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ Given a string you need to print the size of the longest possible substring that
 ## Examples
 **Example 1:** Variable window and hash map.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

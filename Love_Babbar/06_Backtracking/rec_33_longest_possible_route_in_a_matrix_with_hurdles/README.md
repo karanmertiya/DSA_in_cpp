@@ -6,14 +6,8 @@ Given an M x N matrix, with a few hurdles(denoted by 0) arbitrarily placed, calc
 ## Examples
 **Example 1:** Backtracking.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

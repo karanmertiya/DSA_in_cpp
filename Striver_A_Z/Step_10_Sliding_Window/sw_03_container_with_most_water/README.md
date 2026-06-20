@@ -6,15 +6,9 @@ Find two lines that together with the x-axis form a container, such that the con
 ## Examples
 **Example 1:** Input: height = [1,8,6,2,5,4,8,3,7], Output: 49
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

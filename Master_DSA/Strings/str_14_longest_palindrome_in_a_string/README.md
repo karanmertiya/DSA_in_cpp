@@ -6,14 +6,8 @@ Given a string S, find the longest palindromic substring in S. Substring of stri
 ## Examples
 **Example 1:** Expand around center.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

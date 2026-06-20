@@ -6,15 +6,9 @@ Design a class to find the kth largest element in a stream. Note that it is the 
 ## Examples
 **Example 1:** Min-heap of size K.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,14 +6,8 @@ IEEE is having its AGM next week and the president wants to serve cheese prata a
 ## Examples
 **Example 1:** Binary Search on Answer.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

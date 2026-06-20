@@ -6,15 +6,9 @@ Given two strings s and goal, return true if and only if s can become goal after
 ## Examples
 **Example 1:** String Concatenation.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

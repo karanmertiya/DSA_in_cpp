@@ -6,15 +6,9 @@ Given an array arr[] of size N and an element k. The task is to find all element
 ## Examples
 **Example 1:** HashMap.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

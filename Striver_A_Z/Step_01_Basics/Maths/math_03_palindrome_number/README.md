@@ -6,16 +6,10 @@ Given an integer x, return true if x is palindrome integer.<br><br><b>🔗 Pract
 ## Examples
 **Example 1:** Input: x = 121, Output: true
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

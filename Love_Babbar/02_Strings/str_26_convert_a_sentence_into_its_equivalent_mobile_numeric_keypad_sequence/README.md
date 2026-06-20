@@ -6,14 +6,8 @@ Given a sentence in the form of a string, convert it into its equivalent mobile 
 ## Examples
 **Example 1:** Dictionary Mapping.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

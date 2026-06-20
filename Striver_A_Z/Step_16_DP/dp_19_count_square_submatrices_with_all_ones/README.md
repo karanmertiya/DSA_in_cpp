@@ -6,15 +6,9 @@ Given a m * n matrix of ones and zeros, return how many square submatrices have 
 ## Examples
 **Example 1:** Return total count.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

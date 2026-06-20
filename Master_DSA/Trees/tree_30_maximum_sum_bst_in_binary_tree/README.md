@@ -6,15 +6,9 @@ Given a binary tree root, return the maximum sum of all keys of any sub-tree whi
 ## Examples
 **Example 1:** Similar to largest BST.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

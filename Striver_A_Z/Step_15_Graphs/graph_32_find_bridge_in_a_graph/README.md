@@ -6,15 +6,9 @@ Given a Graph of V vertices and E edges and another edge(c - d), the task is to 
 ## Examples
 **Example 1:** Tarjan's Algorithm / DFS.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ You are given the head of a linked list, which contains a series of integers sep
 ## Examples
 **Example 1:** Accumulate and connect.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

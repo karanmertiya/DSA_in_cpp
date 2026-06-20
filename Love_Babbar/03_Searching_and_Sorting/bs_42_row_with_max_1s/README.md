@@ -6,15 +6,9 @@ Given a boolean 2D array of n x m dimensions where each row is sorted. Find the 
 ## Examples
 **Example 1:** Lower Bound per row.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

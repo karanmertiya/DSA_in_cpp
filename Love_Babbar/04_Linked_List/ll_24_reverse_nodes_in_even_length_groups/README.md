@@ -6,15 +6,9 @@ You are given the head of a linked list. The nodes in the linked list are sequen
 ## Examples
 **Example 1:** Group tracking.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

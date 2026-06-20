@@ -6,16 +6,10 @@ You are given two integer arrays nums1 and nums2, sorted in non-decreasing order
 ## Examples
 **Example 1:** Two pointers from end.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,16 +6,10 @@ Given a linked list of size N. The task is to reverse every k nodes (where k is 
 ## Examples
 **Example 1:** Recursive grouping.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
-- Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Love_Babbar
+- Striver_A_Z
 
 </details>

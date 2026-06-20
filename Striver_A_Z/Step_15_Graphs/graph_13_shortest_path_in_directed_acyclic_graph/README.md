@@ -6,15 +6,9 @@ Given a Directed Acyclic Graph of N vertices from 0 to N-1 and a 2D Integer arra
 ## Examples
 **Example 1:** Topo Sort.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

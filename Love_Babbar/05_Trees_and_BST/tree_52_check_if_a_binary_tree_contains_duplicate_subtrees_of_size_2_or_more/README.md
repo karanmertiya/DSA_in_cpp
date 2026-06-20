@@ -6,14 +6,8 @@ Given a binary tree, find out whether it contains a duplicate sub-tree of size t
 ## Examples
 **Example 1:** String serialization.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

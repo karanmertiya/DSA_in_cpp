@@ -6,14 +6,8 @@ A number N is represented in Linked List such that each digit corresponds to a n
 ## Examples
 **Example 1:** Reverse, Add, Reverse.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

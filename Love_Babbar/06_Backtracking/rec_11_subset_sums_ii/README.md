@@ -6,15 +6,9 @@ Given an integer array nums that may contain duplicates, return all possible sub
 ## Examples
 **Example 1:** Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

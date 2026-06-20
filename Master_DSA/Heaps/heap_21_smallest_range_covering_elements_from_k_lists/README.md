@@ -6,14 +6,8 @@ You have k lists of sorted integers in non-decreasing order. Find the smallest r
 ## Examples
 **Example 1:** Min Heap.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

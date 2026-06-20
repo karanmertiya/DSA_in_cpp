@@ -6,15 +6,9 @@ Given a m x n grid filled with non-negative numbers, find a path from top left t
 ## Examples
 **Example 1:** Input: grid = [[1,3,1],[1,5,1],[4,2,1]], Output: 7
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

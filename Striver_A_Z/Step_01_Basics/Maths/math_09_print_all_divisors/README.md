@@ -6,14 +6,8 @@ Given an integer N, print all the divisors of N in ascending order.<br><br><b>�
 ## Examples
 **Example 1:** Iterate up to sqrt(N).
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

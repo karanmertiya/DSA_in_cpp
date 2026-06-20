@@ -6,16 +6,10 @@ Find the GCD of two numbers.<br><br><b>🔗 Practice:</b> <a href='https://pract
 ## Examples
 **Example 1:** Input: A = 4, B = 8, Output: 4
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

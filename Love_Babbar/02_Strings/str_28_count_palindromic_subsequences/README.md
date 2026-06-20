@@ -6,14 +6,8 @@ Given a string str of length N, you have to find number of palindromic subsequen
 ## Examples
 **Example 1:** Dynamic Programming.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

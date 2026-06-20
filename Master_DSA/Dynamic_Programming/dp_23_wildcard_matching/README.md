@@ -6,15 +6,9 @@ Given an input string (s) and a pattern (p), implement wildcard pattern matching
 ## Examples
 **Example 1:** 2D DP.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

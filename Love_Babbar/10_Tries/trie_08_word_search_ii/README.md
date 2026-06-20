@@ -6,15 +6,9 @@ Given an m x n board of characters and a list of strings words, return all words
 ## Examples
 **Example 1:** DFS + Trie.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

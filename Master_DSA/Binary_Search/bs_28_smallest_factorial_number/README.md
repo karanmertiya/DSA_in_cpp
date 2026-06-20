@@ -6,14 +6,8 @@ Given a number n. The task is to find the smallest number whose factorial contai
 ## Examples
 **Example 1:** Binary Search.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

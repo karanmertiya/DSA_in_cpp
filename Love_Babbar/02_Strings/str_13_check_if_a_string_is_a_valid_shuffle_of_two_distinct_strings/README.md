@@ -6,14 +6,8 @@ Given strings str1 and str2. The task is to find if str3 is a valid shuffle of s
 ## Examples
 **Example 1:** Three pointers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

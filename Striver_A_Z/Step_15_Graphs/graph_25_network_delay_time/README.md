@@ -6,15 +6,9 @@ You are given a network of n nodes, labeled from 1 to n. You are also given time
 ## Examples
 **Example 1:** Dijkstra's to find max shortest path.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

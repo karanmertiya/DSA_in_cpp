@@ -6,14 +6,8 @@ Design a data structure that is initialized with a list of different words. Prov
 ## Examples
 **Example 1:** Recursive Trie Search.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

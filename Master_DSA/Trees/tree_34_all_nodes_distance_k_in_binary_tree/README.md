@@ -6,15 +6,9 @@ Given the root of a binary tree, the value of a target node target, and an integ
 ## Examples
 **Example 1:** Convert to graph or use parent pointers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

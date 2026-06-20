@@ -6,14 +6,8 @@ Given two binary max heaps as arrays, merge the given heaps to form a new max he
 ## Examples
 **Example 1:** Append and Heapify.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

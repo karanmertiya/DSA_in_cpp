@@ -6,14 +6,8 @@ Given an array A[] of size N, find the longest subsequence such that difference 
 ## Examples
 **Example 1:** DP (LIS variant).
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

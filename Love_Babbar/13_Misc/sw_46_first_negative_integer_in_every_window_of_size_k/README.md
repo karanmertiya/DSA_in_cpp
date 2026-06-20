@@ -6,14 +6,8 @@ Given an array A[] of size N and a positive integer K, find the first negative i
 ## Examples
 **Example 1:** Queue.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,14 +6,8 @@ Given an array of integers. Write a program to find the K-th largest sum of cont
 ## Examples
 **Example 1:** Min-Heap.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

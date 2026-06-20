@@ -6,14 +6,8 @@ Given an array arr[] and an integer K where K is smaller than size of array, the
 ## Examples
 **Example 1:** Max Heap.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

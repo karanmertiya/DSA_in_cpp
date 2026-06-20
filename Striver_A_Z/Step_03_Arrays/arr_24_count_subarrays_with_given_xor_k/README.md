@@ -6,16 +6,10 @@ Given an array of integers A and an integer B. Find the total number of subarray
 ## Examples
 **Example 1:** Input: A = [4, 2, 2, 6, 4], B = 6, Output: 4
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

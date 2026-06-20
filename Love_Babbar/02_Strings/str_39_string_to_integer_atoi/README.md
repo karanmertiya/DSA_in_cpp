@@ -6,16 +6,10 @@ Implement the myAtoi(string s) function, which converts a string to a 32-bit sig
 ## Examples
 **Example 1:** Step-by-step parsing.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

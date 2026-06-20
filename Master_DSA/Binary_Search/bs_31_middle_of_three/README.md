@@ -6,14 +6,8 @@ Given three distinct numbers A, B and C. Find the number with value in middle.<b
 ## Examples
 **Example 1:** Simple if-else.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

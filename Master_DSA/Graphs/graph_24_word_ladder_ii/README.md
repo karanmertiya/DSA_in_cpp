@@ -6,15 +6,9 @@ Find all the shortest transformation sequences from beginWord to endWord.<br><br
 ## Examples
 **Example 1:** BFS for distance, DFS for paths.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

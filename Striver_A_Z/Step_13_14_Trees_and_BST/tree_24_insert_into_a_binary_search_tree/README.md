@@ -6,15 +6,9 @@ You are given the root node of a binary search tree (BST) and a value to insert 
 ## Examples
 **Example 1:** Traverse and insert.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

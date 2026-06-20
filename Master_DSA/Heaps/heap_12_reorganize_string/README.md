@@ -6,15 +6,9 @@ Given a string s, rearrange the characters of s so that any two adjacent charact
 ## Examples
 **Example 1:** Duplicate logic entry. See Greedy chapter.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

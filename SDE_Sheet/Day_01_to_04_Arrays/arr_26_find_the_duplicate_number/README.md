@@ -6,16 +6,10 @@ Given an array of integers nums containing n + 1 integers where each integer is 
 ## Examples
 **Example 1:** Input: nums = [1,3,4,2,2], Output: 2
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

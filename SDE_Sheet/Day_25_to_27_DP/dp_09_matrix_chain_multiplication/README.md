@@ -6,17 +6,11 @@ Given a sequence of matrices, find the most efficient way to multiply these matr
 ## Examples
 **Example 1:** Input: N=5, arr=[40, 20, 30, 10, 30], Output: 26000
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
+- Apna_College
 - Love_Babbar
 - SDE_Sheet
-- Apna_College
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

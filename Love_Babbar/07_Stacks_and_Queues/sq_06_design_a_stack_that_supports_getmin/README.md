@@ -6,14 +6,8 @@ Design a data-structure SpecialStack that supports all the stack operations like
 ## Examples
 **Example 1:** Formula approach.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

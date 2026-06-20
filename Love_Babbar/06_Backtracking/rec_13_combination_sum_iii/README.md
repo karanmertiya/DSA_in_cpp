@@ -6,15 +6,9 @@ Find all valid combinations of k numbers that sum up to n such that only numbers
 ## Examples
 **Example 1:** Return combinations.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

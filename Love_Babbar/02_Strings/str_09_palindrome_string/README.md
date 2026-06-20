@@ -6,15 +6,9 @@ Given a string S, check if it is palindrome or not.<br><br><b>🔗 Practice:</b>
 ## Examples
 **Example 1:** Two pointers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

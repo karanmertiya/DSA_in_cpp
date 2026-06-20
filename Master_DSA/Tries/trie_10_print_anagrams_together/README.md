@@ -6,14 +6,8 @@ Given an array of strings, return all groups of strings that are anagrams. The g
 ## Examples
 **Example 1:** Trie with sorted string.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

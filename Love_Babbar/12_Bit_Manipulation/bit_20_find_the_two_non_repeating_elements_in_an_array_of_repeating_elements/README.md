@@ -6,14 +6,8 @@ Given an array in which all numbers except two are repeated once. (i.e. we have 
 ## Examples
 **Example 1:** XOR and rightmost set bit.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

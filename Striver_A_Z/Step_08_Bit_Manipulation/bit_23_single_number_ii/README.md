@@ -6,14 +6,8 @@ Given an integer array nums where every element appears three times except for o
 ## Examples
 **Example 1:** Ones and Twos.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

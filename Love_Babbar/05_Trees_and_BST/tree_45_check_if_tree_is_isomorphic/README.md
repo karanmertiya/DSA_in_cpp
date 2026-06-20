@@ -6,14 +6,8 @@ Given two Binary Trees. Check whether they are Isomorphic or not.<br><br><b>🔗
 ## Examples
 **Example 1:** Check swapped and unswapped subtrees.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

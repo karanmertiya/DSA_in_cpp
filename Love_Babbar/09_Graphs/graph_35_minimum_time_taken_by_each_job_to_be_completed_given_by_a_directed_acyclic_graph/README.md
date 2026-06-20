@@ -6,14 +6,8 @@ Given a Directed Acyclic Graph having V vertices and E edges, where each edge {U
 ## Examples
 **Example 1:** Modified Kahn's Algorithm.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

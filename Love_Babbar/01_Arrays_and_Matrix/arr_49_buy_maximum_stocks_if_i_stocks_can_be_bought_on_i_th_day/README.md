@@ -6,14 +6,8 @@ In a stock market, there is a product with its infinite stocks. The stock prices
 ## Examples
 **Example 1:** Sort by price.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

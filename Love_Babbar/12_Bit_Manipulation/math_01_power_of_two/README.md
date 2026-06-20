@@ -6,16 +6,10 @@ Given an integer n, return true if it is a power of two. Otherwise, return false
 ## Examples
 **Example 1:** Bit Manipulation.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
-- Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Love_Babbar
+- Striver_A_Z
 
 </details>

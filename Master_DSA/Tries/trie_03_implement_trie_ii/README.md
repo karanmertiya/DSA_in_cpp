@@ -6,15 +6,9 @@ Implement a Trie data structure that supports insert, countWordsEqualTo, countWo
 ## Examples
 **Example 1:** Trie with counts.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

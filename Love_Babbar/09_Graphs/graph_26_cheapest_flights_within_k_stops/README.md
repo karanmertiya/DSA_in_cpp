@@ -6,15 +6,9 @@ There are n cities connected by some number of flights. You are given an array f
 ## Examples
 **Example 1:** Dijkstra's with Stops / BFS.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

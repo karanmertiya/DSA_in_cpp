@@ -6,14 +6,8 @@ Given a string, Find the 1st repeated word in a string.<br><br><b>🔗 Practice:
 ## Examples
 **Example 1:** HashSet.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

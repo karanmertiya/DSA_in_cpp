@@ -6,15 +6,9 @@ Given a BST, and a reference to a Node x in the BST. Find the Inorder Successor 
 ## Examples
 **Example 1:** Find next greater.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

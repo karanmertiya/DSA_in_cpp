@@ -6,15 +6,9 @@ You are given an integer array pref of size n. Find and return the array arr of 
 ## Examples
 **Example 1:** `pref = [5,2,0,3,1]`. Output: `[5,7,2,3,2]`.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

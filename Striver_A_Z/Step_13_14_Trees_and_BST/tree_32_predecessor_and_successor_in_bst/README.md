@@ -6,15 +6,9 @@ There is BST given with the root node with the key part as an integer only. You 
 ## Examples
 **Example 1:** Search down the tree.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

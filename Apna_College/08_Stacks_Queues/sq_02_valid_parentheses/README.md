@@ -6,17 +6,11 @@ Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
 ## Examples
 **Example 1:** Input: s = "()[]{}", Output: true
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
 - SDE_Sheet
 - Apna_College
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

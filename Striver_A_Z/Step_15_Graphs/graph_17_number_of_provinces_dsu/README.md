@@ -6,15 +6,9 @@ There are n cities. Some of them are connected, while some are not. If city a is
 ## Examples
 **Example 1:** Connect elements, count unique parents.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

@@ -6,15 +6,9 @@ Given an undirected graph and a number m, determine if the graph can be colored 
 ## Examples
 **Example 1:** Return true if possible.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

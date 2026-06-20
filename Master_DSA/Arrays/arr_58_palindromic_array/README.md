@@ -6,14 +6,8 @@ Given a Integer array A[] of n elements. Your task is to complete the function P
 ## Examples
 **Example 1:** Check individual numbers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

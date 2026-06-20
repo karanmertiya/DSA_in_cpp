@@ -6,15 +6,9 @@ Given an array in which all numbers appear exactly twice except two numbers that
 ## Examples
 **Example 1:** Input: Arr = {4, 2, 4, 5, 2, 3, 3, 1}, Output: {5, 1}
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

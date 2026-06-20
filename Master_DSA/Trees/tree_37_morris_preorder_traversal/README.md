@@ -6,15 +6,9 @@ Given the root of a binary tree, return the preorder traversal of its nodes' val
 ## Examples
 **Example 1:** Threaded Binary Tree.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

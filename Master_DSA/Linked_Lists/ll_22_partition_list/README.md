@@ -6,15 +6,9 @@ Given the head of a linked list and a value x, partition it such that all nodes 
 ## Examples
 **Example 1:** Two lists then join.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

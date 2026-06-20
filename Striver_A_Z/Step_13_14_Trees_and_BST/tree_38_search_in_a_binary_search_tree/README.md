@@ -6,15 +6,9 @@ You are given the root of a binary search tree (BST) and an integer val. Find th
 ## Examples
 **Example 1:** Iterative or Recursive.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ Given a text and a pattern, find all occurrences of the pattern in the text usin
 ## Examples
 **Example 1:** Return array of starting indices.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ Design a HashMap without using any built-in hash table libraries.<br><br><b>🔗
 ## Examples
 **Example 1:** Array of Linked Lists with Key-Value pairs.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

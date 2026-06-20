@@ -6,14 +6,8 @@ Given a binary search tree which is also a complete binary tree. The problem is 
 ## Examples
 **Example 1:** Inorder + Preorder.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

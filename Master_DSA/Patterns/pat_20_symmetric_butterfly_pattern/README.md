@@ -13,9 +13,3 @@ Output:
 **  **
 *    *
 
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
-
-</details>

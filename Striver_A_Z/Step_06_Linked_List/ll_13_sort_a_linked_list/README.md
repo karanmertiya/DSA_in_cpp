@@ -6,15 +6,9 @@ Given the head of a linked list, return the list after sorting it in ascending o
 ## Examples
 **Example 1:** Input: head = [4,2,1,3], Output: [1,2,3,4]
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

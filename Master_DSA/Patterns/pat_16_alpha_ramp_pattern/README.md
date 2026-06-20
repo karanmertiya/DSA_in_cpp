@@ -11,9 +11,3 @@ A
 B B
 C C C
 
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
-
-</details>

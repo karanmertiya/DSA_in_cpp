@@ -6,15 +6,9 @@ Given a linked list, swap every two adjacent nodes and return its head. You must
 ## Examples
 **Example 1:** Input: head = [1,2,3,4], Output: [2,1,4,3]
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

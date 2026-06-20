@@ -6,17 +6,11 @@ A peak element is an element that is strictly greater than its neighbors. Given 
 ## Examples
 **Example 1:** Input: nums = [1,2,3,1], Output: 2
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
+- SDE_Sheet
 - Apna_College
 - Love_Babbar
-- SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

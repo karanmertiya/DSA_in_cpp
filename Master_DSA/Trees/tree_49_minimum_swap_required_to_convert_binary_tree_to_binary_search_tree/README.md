@@ -6,14 +6,8 @@ Given an array A[] which represents a Complete Binary Tree i.e, if index i is th
 ## Examples
 **Example 1:** Graph cycle detection on Inorder.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

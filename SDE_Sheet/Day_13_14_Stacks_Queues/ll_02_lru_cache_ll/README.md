@@ -6,16 +6,10 @@ Design a data structure that follows the constraints of a Least Recently Used (L
 ## Examples
 **Example 1:** Duplicate logic entry to ensure coverage.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
-- Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Love_Babbar
+- Striver_A_Z
 
 </details>

@@ -6,16 +6,10 @@ Given an input string s, reverse the order of the words. A word is defined as a 
 ## Examples
 **Example 1:** Two Pointers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

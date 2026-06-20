@@ -6,14 +6,8 @@ Given two sequences, print the longest common subsequence. If there are multiple
 ## Examples
 **Example 1:** DP table backtracking.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

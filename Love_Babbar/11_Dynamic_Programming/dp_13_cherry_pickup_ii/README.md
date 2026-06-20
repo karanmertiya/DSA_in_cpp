@@ -6,15 +6,9 @@ You are given a rows x cols matrix grid representing a field of cherries. Two ro
 ## Examples
 **Example 1:** 3D DP.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

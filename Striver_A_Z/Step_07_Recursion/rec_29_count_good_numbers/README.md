@@ -6,14 +6,8 @@ A digit string is good if the digits (0-indexed) at even indices are even and th
 ## Examples
 **Example 1:** Modular Exponentiation.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

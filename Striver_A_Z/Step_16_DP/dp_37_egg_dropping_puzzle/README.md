@@ -6,15 +6,9 @@ You are given N identical eggs and you have access to a K-floored building from 
 ## Examples
 **Example 1:** DP + Binary Search / Math.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

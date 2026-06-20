@@ -6,14 +6,8 @@ Given an integer columnNumber, return its corresponding column title as it appea
 ## Examples
 **Example 1:** Base 26 conversion.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

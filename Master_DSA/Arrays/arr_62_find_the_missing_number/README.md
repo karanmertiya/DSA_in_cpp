@@ -6,15 +6,9 @@ Given an array of size N-1 such that it only contains distinct integers in the r
 ## Examples
 **Example 1:** Sum formula.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,17 +6,11 @@ Suppose an array of length n sorted in ascending order is rotated between 1 and 
 ## Examples
 **Example 1:** Input: nums = [3,4,5,1,2], Output: 1
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
+- SDE_Sheet
 - Apna_College
 - Love_Babbar
-- SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

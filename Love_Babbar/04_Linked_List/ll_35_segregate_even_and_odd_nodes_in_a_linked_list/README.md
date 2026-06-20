@@ -6,14 +6,8 @@ Given a link list of size N, modify the list such that all the even numbers appe
 ## Examples
 **Example 1:** Two pointers for even and odd.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

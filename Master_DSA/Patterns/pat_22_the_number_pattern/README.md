@@ -13,9 +13,3 @@ Output:
 3 2 2 2 3
 3 3 3 3 3
 
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
-
-</details>

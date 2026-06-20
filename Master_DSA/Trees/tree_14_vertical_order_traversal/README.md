@@ -6,15 +6,9 @@ Given the root of a binary tree, calculate the vertical order traversal of the b
 ## Examples
 **Example 1:** Output: [[9],[3,15],[20],[7]]
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

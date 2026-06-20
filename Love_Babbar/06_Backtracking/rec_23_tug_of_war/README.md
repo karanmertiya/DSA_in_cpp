@@ -6,14 +6,8 @@ Given a set of n integers, divide the set in two subsets of n/2 sizes each such 
 ## Examples
 **Example 1:** Recursive Backtracking.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

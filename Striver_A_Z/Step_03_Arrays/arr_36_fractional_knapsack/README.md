@@ -6,15 +6,9 @@ Given weights and values of N items, we need to put these items in a knapsack of
 ## Examples
 **Example 1:** Sort by value/weight ratio.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

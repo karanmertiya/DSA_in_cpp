@@ -6,15 +6,9 @@ Given a string s consisting only of characters a, b and c. Return the number of 
 ## Examples
 **Example 1:** Store last seen indices.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

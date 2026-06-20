@@ -6,15 +6,9 @@ Given a list of accounts where each element accounts[i] is a list of strings, wh
 ## Examples
 **Example 1:** DSU on accounts using emails.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

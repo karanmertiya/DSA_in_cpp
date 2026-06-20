@@ -6,15 +6,9 @@ You are given a string s and an integer k. You can choose any character of the s
 ## Examples
 **Example 1:** Sliding Window + Max Freq.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

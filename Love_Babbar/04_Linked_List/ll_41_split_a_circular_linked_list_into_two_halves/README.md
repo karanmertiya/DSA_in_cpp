@@ -6,14 +6,8 @@ Given a Cirular Linked List of size N, split it into two halves circular lists. 
 ## Examples
 **Example 1:** Slow and Fast Pointer.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

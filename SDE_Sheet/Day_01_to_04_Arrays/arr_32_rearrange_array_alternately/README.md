@@ -6,15 +6,9 @@ Given a sorted array of positive integers. Your task is to rearrange the array e
 ## Examples
 **Example 1:** Math-based encoding O(1) space.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,14 +6,8 @@ Given a string s and an integer k, return the length of the longest substring of
 ## Examples
 **Example 1:** Sliding Window.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

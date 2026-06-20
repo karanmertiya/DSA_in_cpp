@@ -6,17 +6,11 @@ Given a string s and a dictionary of strings wordDict, return true if s can be s
 ## Examples
 **Example 1:** Input: s = 'leetcode', wordDict = ['leet','code'], Output: true
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
+- SDE_Sheet
 - Apna_College
 - Love_Babbar
-- SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

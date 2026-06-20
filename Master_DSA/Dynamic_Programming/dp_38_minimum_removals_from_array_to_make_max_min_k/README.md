@@ -6,14 +6,8 @@ Given an array arr[] of size N and an integer K. The task is to find the minimum
 ## Examples
 **Example 1:** DP after sorting.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

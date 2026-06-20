@@ -6,14 +6,8 @@ Given a binary tree, check if it has heap property or not. A binary tree is a ma
 ## Examples
 **Example 1:** Tree Traversal.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

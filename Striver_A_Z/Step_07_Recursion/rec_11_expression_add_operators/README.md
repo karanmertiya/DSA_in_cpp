@@ -6,15 +6,9 @@ Given a string num that contains only digits and an integer target, return all p
 ## Examples
 **Example 1:** Return expressions.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

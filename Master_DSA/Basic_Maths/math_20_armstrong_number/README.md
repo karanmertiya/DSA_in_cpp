@@ -6,14 +6,8 @@ For a given 3 digit number, find whether it is an Armstrong number or not.<br><b
 ## Examples
 **Example 1:** Math.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

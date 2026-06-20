@@ -6,14 +6,8 @@ Given two lists sorted in increasing order, create a new list representing the i
 ## Examples
 **Example 1:** Two Pointers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ Given a 2D matrix of characters and a dictionary of words, find all words from t
 ## Examples
 **Example 1:** Trie + DFS.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

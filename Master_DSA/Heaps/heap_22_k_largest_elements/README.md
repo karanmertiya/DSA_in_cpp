@@ -6,15 +6,9 @@ Given an array of N positive integers, print k largest elements from the array.<
 ## Examples
 **Example 1:** Min Heap.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

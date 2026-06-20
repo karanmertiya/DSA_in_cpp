@@ -6,15 +6,9 @@ Given an array containing N integers and an integer K, Your task is to find the 
 ## Examples
 **Example 1:** Sliding Window / Two Pointers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

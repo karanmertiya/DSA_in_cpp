@@ -6,14 +6,8 @@ Given an array Arr[] of size L and a number N, you need to write a program to fi
 ## Examples
 **Example 1:** Sort and two pointers.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

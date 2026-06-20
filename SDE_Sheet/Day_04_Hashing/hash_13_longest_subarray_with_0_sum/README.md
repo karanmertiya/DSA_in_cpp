@@ -6,15 +6,9 @@ Given an array having both positive and negative integers. The task is to comput
 ## Examples
 **Example 1:** Hash Map.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,14 +6,8 @@ Given an array, find the subarray with maximum XOR value.<br><br><b>🔗 Practic
 ## Examples
 **Example 1:** Trie + Prefix XOR.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

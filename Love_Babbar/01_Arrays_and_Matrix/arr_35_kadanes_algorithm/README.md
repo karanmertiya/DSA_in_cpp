@@ -6,14 +6,8 @@ Given an array Arr[] of N integers. Find the contiguous sub-array(containing at 
 ## Examples
 **Example 1:** Keep tracking current sum.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

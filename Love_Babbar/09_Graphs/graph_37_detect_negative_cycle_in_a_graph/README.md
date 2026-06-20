@@ -6,14 +6,8 @@ Given a directed graph with edge weights, check if it contains a negative weight
 ## Examples
 **Example 1:** Bellman Ford variant.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

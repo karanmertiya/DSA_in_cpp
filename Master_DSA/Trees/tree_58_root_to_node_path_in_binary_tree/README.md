@@ -6,14 +6,8 @@ Given a Binary Tree A and an integer B, find the path from Root to the given nod
 ## Examples
 **Example 1:** Recursive backtracking.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

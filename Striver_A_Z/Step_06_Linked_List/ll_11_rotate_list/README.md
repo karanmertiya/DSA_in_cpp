@@ -6,15 +6,9 @@ Given the head of a linked list, rotate the list to the right by k places.<br><b
 ## Examples
 **Example 1:** Input: head = [1,2,3,4,5], k = 2, Output: [4,5,1,2,3]
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

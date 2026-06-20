@@ -6,15 +6,9 @@ Given a doubly linked list of n nodes sorted by values, the task is to remove du
 ## Examples
 **Example 1:** Skip duplicates.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

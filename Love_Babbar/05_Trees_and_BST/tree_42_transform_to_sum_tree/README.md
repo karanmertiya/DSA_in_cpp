@@ -6,14 +6,8 @@ Given a Binary Tree of size N , where each node can have positive or negative va
 ## Examples
 **Example 1:** Postorder Traversal.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

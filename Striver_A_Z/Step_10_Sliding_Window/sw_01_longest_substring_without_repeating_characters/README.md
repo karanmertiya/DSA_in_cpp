@@ -6,16 +6,10 @@ Given a string s, find the length of the longest substring without repeating cha
 ## Examples
 **Example 1:** Input: s = "abcabcbb", Output: 3 ("abc")
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
-- SDE_Sheet
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- SDE_Sheet
+- Striver_A_Z
 
 </details>

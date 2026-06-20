@@ -6,14 +6,8 @@ In English, we have a concept called root, which can be followed by some other w
 ## Examples
 **Example 1:** Trie matching.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

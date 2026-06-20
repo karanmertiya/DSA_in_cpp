@@ -6,14 +6,8 @@ Given a set of numbers, find the number of subsets whose sum lies between A and 
 ## Examples
 **Example 1:** Meet in the Middle.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

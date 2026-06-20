@@ -6,17 +6,11 @@ Given the head of a linked list, reverse the nodes of the list k at a time, and 
 ## Examples
 **Example 1:** Input: head = [1,2,3,4,5], k = 2, Output: [2,1,4,3,5]
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
+- Apna_College
 - Love_Babbar
 - SDE_Sheet
-- Apna_College
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

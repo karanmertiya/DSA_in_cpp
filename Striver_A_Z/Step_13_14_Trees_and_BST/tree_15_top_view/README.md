@@ -6,15 +6,9 @@ Given below is a binary tree. The task is to print the top view of binary tree. 
 ## Examples
 **Example 1:** Return list of values.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

@@ -6,15 +6,9 @@ You are given an array prices where prices[i] is the price of a given stock on t
 ## Examples
 **Example 1:** State Machine DP.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

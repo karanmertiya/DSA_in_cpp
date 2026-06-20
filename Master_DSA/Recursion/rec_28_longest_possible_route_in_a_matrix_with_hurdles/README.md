@@ -6,14 +6,8 @@ Given an N x M matrix, with a few hurdles arbitrarily placed, calculate the leng
 ## Examples
 **Example 1:** Recursive Backtracking.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

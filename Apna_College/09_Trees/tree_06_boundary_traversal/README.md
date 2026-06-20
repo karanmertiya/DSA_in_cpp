@@ -6,17 +6,11 @@ Given a Binary Tree, find its Boundary Traversal. The traversal should be in the
 ## Examples
 **Example 1:** Return array of boundary nodes.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
-- Striver_A_Z
+- SDE_Sheet
 - Apna_College
 - Love_Babbar
-- SDE_Sheet
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
+- Striver_A_Z
 
 </details>

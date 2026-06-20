@@ -6,14 +6,8 @@ Given an array of integers and a number K. Find the count of distinct elements i
 ## Examples
 **Example 1:** Sliding Window + Hash Map.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

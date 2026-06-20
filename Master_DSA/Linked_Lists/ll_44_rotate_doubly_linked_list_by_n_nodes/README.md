@@ -6,14 +6,8 @@ Given a doubly linked list, rotate the linked list counter-clockwise by N nodes.
 ## Examples
 **Example 1:** Traverse and link.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

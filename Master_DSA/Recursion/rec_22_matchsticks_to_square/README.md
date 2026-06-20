@@ -6,14 +6,8 @@ You are given an integer array matchsticks where matchsticks[i] is the length of
 ## Examples
 **Example 1:** Backtracking to 4 subsets.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

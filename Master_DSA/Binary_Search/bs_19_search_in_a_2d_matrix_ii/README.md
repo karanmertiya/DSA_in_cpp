@@ -6,15 +6,9 @@ Write an efficient algorithm that searches for a value target in an m x n intege
 ## Examples
 **Example 1:** Start from top right.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Striver_A_Z
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

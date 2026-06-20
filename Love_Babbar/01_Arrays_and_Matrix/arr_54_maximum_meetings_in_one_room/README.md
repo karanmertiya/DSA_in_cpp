@@ -6,14 +6,8 @@ There is one meeting room in a firm. There are N meetings in the form of (start[
 ## Examples
 **Example 1:** Activity Selection.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

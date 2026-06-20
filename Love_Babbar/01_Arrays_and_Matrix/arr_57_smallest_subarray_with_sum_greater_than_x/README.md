@@ -6,14 +6,8 @@ Given an array of integers (A[])  and a number x, find the smallest subarray wit
 ## Examples
 **Example 1:** Sliding Window.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

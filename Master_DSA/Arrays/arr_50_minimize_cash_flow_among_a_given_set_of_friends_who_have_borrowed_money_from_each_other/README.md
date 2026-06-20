@@ -6,14 +6,8 @@ Given a number of friends who have to give or take some amount of money from one
 ## Examples
 **Example 1:** Net amounts.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>

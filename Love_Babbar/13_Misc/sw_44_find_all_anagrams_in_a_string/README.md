@@ -6,15 +6,9 @@ Given two strings s and p, return an array of all the start indices of p's anagr
 ## Examples
 **Example 1:** Fixed Window + Hash Map.
 
-<details><summary>🏷️ Tags</summary>
+<details><summary>ℹ️</summary>
 
 - Love_Babbar
 - Striver_A_Z
-
-</details>
-
-<details><summary>🧠 Context & Variants</summary>
-
-*Variants and similar questions to be added later.*
 
 </details>
