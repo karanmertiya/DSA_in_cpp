@@ -1,6 +1,14 @@
+// Time Complexity: O(N log N)
+// Space Complexity: O(N)
+// Explanation: Brute Force: Use any standard sorting algorithm like Merge Sort.
+
+void sortColors(vector<int>& nums) {
+    sort(nums.begin(), nums.end());
+}
+
 // Time Complexity: O(N) (Constraint)
 // Space Complexity: O(1) (Constraint)
-// Explanation: Dutch National Flag Algorithm (3 pointers). `low` tracks 0s, `mid` scans array, `high` tracks 2s. Swap elements to maintain sections.
+// Explanation: Optimal: Dutch National Flag Algorithm (3 pointers). `low` tracks 0s, `mid` scans array, `high` tracks 2s. Swap elements to maintain sections.
 
 #include <vector>
 #include <algorithm>
