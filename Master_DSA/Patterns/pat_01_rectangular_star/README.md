@@ -5,18 +5,18 @@ Given an integer N, print a rectangular pattern of N rows and N columns consisti
 
 ## Examples
 Example 1:
-Input: N = 3
-Output:
-***
+
+**Input:** N = 3
+**Output:** *
 ***
 ***
 
 Example 2:
-Input: N = 5
-Output:
-*****
-*****
-*****
-*****
+
+**Input:** N = 5
+**Output:** ***
+***
+***
+***
 *****
 

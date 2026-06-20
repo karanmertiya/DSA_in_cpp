@@ -5,9 +5,9 @@ Given an integer N, print an alpha-hill pattern.
 
 ## Examples
 Example 1:
-Input: N = 3
-Output:
-  A
+
+**Input:** N = 3
+**Output:** A
  ABA
 ABCBA
 

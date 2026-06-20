@@ -5,8 +5,9 @@ Given a number N and a bit number K, check if Kth index bit of N is set or not. 
 
 ## Examples
 **Example 1:**
-Input: N=4 (100 in binary), i=2
-Output: true
+
+**Input:** N=4 (100 in binary), i=2
+**Output:** true
 
 **Note (Constraint):** 1 &le; N &le; 10<sup>9</sup>, 0 &le; i &le; 31
 

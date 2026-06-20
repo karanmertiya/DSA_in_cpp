@@ -6,5 +6,5 @@ Given two numbers X and Y, and a range [L, R] where 1 <= L <= R <= 31. You have 
 ## Examples
 **Example 1:**
 X=44, Y=3, L=1, R=5
-Output: 47
+**Output:** 47
 

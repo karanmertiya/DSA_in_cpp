@@ -5,6 +5,7 @@ Given the array arr of positive integers and the array queries where queries[i] 
 
 ## Examples
 **Example 1:**
-Input: arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
-Output: [2,7,14,8]
+
+**Input:** arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]
+**Output:** [2,7,14,8]
 

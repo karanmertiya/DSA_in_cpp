@@ -5,6 +5,7 @@ Given an integer n, calculate the square of a number without using *, / and pow(
 
 ## Examples
 **Example 1:**
-Input: n = 5
-Output: 25
+
+**Input:** n = 5
+**Output:** 25
 

@@ -5,6 +5,7 @@ Given two integers dividend and divisor, divide two integers without using multi
 
 ## Examples
 **Example 1:**
-Input: dividend = 10, divisor = 3
-Output: 3
+
+**Input:** dividend = 10, divisor = 3
+**Output:** 3
 

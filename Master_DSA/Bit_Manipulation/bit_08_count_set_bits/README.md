@@ -5,6 +5,7 @@ Write a function that takes the binary representation of a positive integer and 
 
 ## Examples
 **Example 1:**
-Input: N=11 (1011)
-Output: 3
+
+**Input:** N=11 (1011)
+**Output:** 3
 

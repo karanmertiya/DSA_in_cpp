@@ -5,6 +5,7 @@ There is a hidden integer array arr that consists of n non-negative integers. It
 
 ## Examples
 **Example 1:**
-Input: encoded=[1,2,3], first=1
-Output: [1,0,2,1]
+
+**Input:** encoded=[1,2,3], first=1
+**Output:** [1,0,2,1]
 

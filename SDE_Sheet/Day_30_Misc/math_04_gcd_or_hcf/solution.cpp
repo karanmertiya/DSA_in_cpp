@@ -2,12 +2,13 @@
 // Space Complexity: O(1)
 // Explanation: Brute Force: Iterate from 1 to min(a, b) and find the highest number that divides both.
 
-int gcd(int a, int b) {
-    int ans = 1;
+vector<int> lcmAndGcd(int a, int b) {
+    int gcd = 1;
     for(int i = 1; i <= min(a, b); i++) {
-        if(a % i == 0 && b % i == 0) ans = i;
+        if(a % i == 0 && b % i == 0) gcd = i;
     }
-    return ans;
+    int lcm = (a * b) / gcd;
+    return {lcm, gcd};
 }
 
 // Time Complexity: O(log(min(a, b)))

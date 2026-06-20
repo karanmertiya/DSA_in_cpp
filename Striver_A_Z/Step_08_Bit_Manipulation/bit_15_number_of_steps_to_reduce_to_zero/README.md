@@ -5,6 +5,7 @@ Given an integer num, return the number of steps to reduce it to zero. In one st
 
 ## Examples
 **Example 1:**
-Input: num = 14
-Output: 6
+
+**Input:** num = 14
+**Output:** 6
 

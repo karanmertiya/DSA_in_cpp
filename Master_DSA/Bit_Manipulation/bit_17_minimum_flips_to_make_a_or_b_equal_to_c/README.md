@@ -5,6 +5,7 @@ Given 3 positives numbers a, b and c. Return the minimum flips required in some 
 
 ## Examples
 **Example 1:**
-Input: a=2, b=6, c=5
-Output: 3
+
+**Input:** a=2, b=6, c=5
+**Output:** 3
 

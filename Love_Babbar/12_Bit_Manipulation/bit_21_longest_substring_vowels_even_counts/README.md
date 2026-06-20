@@ -5,6 +5,7 @@ Given the string s, return the size of the longest substring containing each vow
 
 ## Examples
 **Example 1:**
-Input: s = "eleetminicoworoep"
-Output: 13
+
+**Input:** s = "eleetminicoworoep"
+**Output:** 13
 

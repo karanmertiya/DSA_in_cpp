@@ -5,9 +5,9 @@ Given an integer N, print a reverse letter triangle.
 
 ## Examples
 Example 1:
-Input: N = 3
-Output:
-A B C
+
+**Input:** N = 3
+**Output:** A B C
 A B
 A
 

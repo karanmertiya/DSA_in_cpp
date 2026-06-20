@@ -5,8 +5,9 @@ Given two numbers a and b. Swap the two numbers without using a third variable.<
 
 ## Examples
 **Example 1:**
-Input: a=5, b=7
-Output: a=7, b=5
+
+**Input:** a=5, b=7
+**Output:** a=7, b=5
 
 **Note (Constraint):** 1 &le; a, b &le; 10<sup>9</sup>
 

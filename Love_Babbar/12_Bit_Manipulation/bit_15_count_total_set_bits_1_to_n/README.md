@@ -5,7 +5,8 @@ You are given a number N. Find the total count of set bits for all numbers from 
 
 ## Examples
 **Example 1:**
-Input: N=4
-Output: 5
+
+**Input:** N=4
+**Output:** 5
 Explanation: 1(01) + 2(10) + 3(11) + 4(100) -> 1+1+2+1 = 5
 

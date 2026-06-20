@@ -5,6 +5,7 @@ Given an integer array nums where every element appears three times except for o
 
 ## Examples
 **Example 1:**
-Input: nums = [2,2,3,2]
-Output: 3
+
+**Input:** nums = [2,2,3,2]
+**Output:** 3
 

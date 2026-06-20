@@ -5,6 +5,7 @@ Given a number N having only one '1' and all other '0's in its binary representa
 
 ## Examples
 **Example 1:**
-Input: N = 2
-Output: 2
+
+**Input:** N = 2
+**Output:** 2
 

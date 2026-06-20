@@ -5,9 +5,9 @@ Given an integer N, print the number pattern.
 
 ## Examples
 Example 1:
-Input: N = 3
-Output:
-3 3 3 3 3
+
+**Input:** N = 3
+**Output:** 3 3 3 3 3
 3 2 2 2 3
 3 2 1 2 3
 3 2 2 2 3

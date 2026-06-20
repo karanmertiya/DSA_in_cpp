@@ -5,9 +5,9 @@ Given an integer N, print a number crown pattern.
 
 ## Examples
 Example 1:
-Input: N = 3
-Output:
-1    1
+
+**Input:** N = 3
+**Output:** 1    1
 12  21
 123321
 

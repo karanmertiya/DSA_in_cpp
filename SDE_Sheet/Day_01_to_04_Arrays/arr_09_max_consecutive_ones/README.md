@@ -4,5 +4,7 @@
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/max-consecutive-ones/' target='_blank'>LeetCode 485</a>
 
 ## Examples
-**Example 1:** Input: nums = [1,1,0,1,1,1], Output: 3
+**Example 1:** 
+**Input:** nums = [1,1,0,1,1,1]
+**Output:** 3
 
