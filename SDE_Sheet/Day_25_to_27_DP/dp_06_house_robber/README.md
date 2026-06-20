@@ -1,4 +1,4 @@
-# Dp 06 House Robber
+# DP 06 House Robber
 
 ## Description
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/house-robber/' target='_blank'>LeetCode 198</a>

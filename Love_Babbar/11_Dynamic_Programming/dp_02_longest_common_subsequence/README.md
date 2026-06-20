@@ -1,4 +1,4 @@
-# Dp 02 Longest Common Subsequence
+# DP 02 Longest Common Subsequence
 
 ## Description
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/longest-common-subsequence/' target='_blank'>LeetCode 1143</a>

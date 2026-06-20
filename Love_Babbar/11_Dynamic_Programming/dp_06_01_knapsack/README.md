@@ -1,4 +1,4 @@
-# Dp 06 01 Knapsack
+# DP 06 01 Knapsack
 
 ## Description
 0-1 Knapsack problem.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1' target='_blank'>GFG</a>

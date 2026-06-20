@@ -1,4 +1,4 @@
-# Dp 05 Longest Increasing Subsequence
+# DP 05 Longest Increasing Subsequence
 
 ## Description
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/longest-increasing-subsequence/' target='_blank'>LeetCode 300</a>

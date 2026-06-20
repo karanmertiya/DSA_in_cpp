@@ -1,25 +1,3 @@
-// Time Complexity: O(N^2) or worse
-// Space Complexity: O(N) or O(1)
-// Explanation: Brute Force: Standard unoptimized approach. (TODO: Implement specific logic)
-
-// TODO: Implement Brute Force
-#include <vector>
-
-int lowerBound(std::vector<int> arr, int n, int x) {
-    int low = 0, high = n - 1;
-    int ans = n;
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-        if (arr[mid] >= x) {
-            ans = mid;
-            high = mid - 1;
-        } else {
-            low = mid + 1;
-        }
-    }
-    return ans;
-}
-
 // Time Complexity: O(log N) (Constraint)
 // Space Complexity: O(1) (Constraint)
 // Explanation: Optimal: When `nums[mid] >= target`, it is a potential answer. Store it and search left (`high = mid - 1`) for smaller potentials.

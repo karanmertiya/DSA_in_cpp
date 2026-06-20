@@ -1,4 +1,4 @@
-# Graph 24 Word Ladder Ii
+# Graph 24 Word Ladder II
 
 ## Description
 Find all the shortest transformation sequences from beginWord to endWord.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/word-ladder-ii/' target='_blank'>LeetCode 126</a>

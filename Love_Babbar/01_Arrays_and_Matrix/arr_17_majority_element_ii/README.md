@@ -1,4 +1,4 @@
-# Arr 17 Majority Element Ii
+# Arr 17 Majority Element II
 
 ## Description
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/majority-element-ii/' target='_blank'>LeetCode 229</a>

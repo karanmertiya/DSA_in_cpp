@@ -1,4 +1,4 @@
-# Dp 04 Coin Change
+# DP 04 Coin Change
 
 ## Description
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/coin-change/' target='_blank'>LeetCode 322</a>

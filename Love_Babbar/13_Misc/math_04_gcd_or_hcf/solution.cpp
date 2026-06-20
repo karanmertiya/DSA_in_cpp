@@ -2,12 +2,12 @@
 // Space Complexity: O(1)
 // Explanation: Brute Force: Iterate from 1 to min(a, b) and find the highest number that divides both.
 
-vector<int> lcmAndGcd(int a, int b) {
-    int gcd = 1;
-    for(int i = 1; i <= min(a, b); i++) {
+vector<long long> lcmAndGcd(long long a, long long b) {
+    long long gcd = 1;
+    for(long long i = 1; i <= min(a, b); i++) {
         if(a % i == 0 && b % i == 0) gcd = i;
     }
-    int lcm = (a * b) / gcd;
+    long long lcm = (a / gcd) * b; // Divide first to prevent overflow
     return {lcm, gcd};
 }
 
@@ -15,14 +15,15 @@ vector<int> lcmAndGcd(int a, int b) {
 // Space Complexity: O(1)
 // Explanation: Euclidean Algorithm (Optimal): Repeatedly replace max(a,b) with max(a,b) % min(a,b). The final non-zero value is the GCD. Note: LCM can be found in O(1) extra time using formula: LCM(a,b) = (a*b) / GCD(a,b)
 
-int calcGCD(int n, int m){
-    while(n > 0 && m > 0) {
-        if(n > m) n = n % m;
-        else m = m % n;
+vector<long long> lcmAndGcd(long long a, long long b) {
+    long long original_a = a, original_b = b;
+    while(a > 0 && b > 0) {
+        if(a > b) a = a % b;
+        else b = b % a;
     }
-    return (n == 0) ? m : n;
-    
-    // LCM Calculation
-    // int lcm = (n * m) / calcGCD(n, m);
+    // return (a == 0) ? b : a; can be replaced by a + b since one is always 0
+    long long gcd = a + b; 
+    long long lcm = (original_a / gcd) * original_b; // Divide first to prevent overflow
+    return {lcm, gcd};
 }
 
