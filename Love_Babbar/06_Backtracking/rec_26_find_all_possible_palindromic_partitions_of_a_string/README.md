@@ -9,5 +9,5 @@ Given a string S, Find all possible palindromic partitions of the given string.<
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

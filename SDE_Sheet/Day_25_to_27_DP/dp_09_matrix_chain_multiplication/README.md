@@ -9,7 +9,7 @@ Given a sequence of matrices, find the most efficient way to multiply these matr
 ```
 
 ## Tags
-- Apna_College
-- Love_Babbar
-- Striver_A_Z
 - SDE_Sheet
+- Striver_A_Z
+- Love_Babbar
+- Apna_College

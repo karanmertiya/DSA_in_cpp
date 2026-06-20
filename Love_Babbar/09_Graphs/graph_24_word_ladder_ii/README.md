@@ -9,5 +9,5 @@ Find all the shortest transformation sequences from beginWord to endWord.<br><br
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

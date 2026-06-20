@@ -9,5 +9,5 @@ You are given an array prices where prices[i] is the price of a given stock on t
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

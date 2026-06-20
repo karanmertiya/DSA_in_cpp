@@ -9,5 +9,5 @@ Given an array arr of positive integers sorted in a strictly increasing order, a
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

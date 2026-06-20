@@ -9,5 +9,5 @@ You are given n balloons, indexed from 0 to n - 1. Each balloon is painted with 
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

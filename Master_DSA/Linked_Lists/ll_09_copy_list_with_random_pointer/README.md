@@ -9,5 +9,5 @@ A linked list of length n is given such that each node contains an additional ra
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

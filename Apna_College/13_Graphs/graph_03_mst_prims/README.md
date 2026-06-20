@@ -9,7 +9,7 @@ Given a weighted, undirected and connected graph of V vertices and E edges. Find
 ```
 
 ## Tags
-- Apna_College
-- Love_Babbar
-- Striver_A_Z
 - SDE_Sheet
+- Striver_A_Z
+- Love_Babbar
+- Apna_College

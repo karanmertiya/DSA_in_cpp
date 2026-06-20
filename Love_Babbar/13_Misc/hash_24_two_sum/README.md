@@ -9,6 +9,6 @@ Given an array of integers nums and an integer target, return indices of the two
 ```
 
 ## Tags
-- Love_Babbar
-- Striver_A_Z
 - SDE_Sheet
+- Striver_A_Z
+- Love_Babbar

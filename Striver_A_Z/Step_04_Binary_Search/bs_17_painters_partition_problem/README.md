@@ -9,5 +9,5 @@ Given an array representing the lengths of boards, and an integer k representing
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

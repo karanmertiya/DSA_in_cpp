@@ -9,5 +9,5 @@ Given a sorted dictionary of an alien language having N words and k starting alp
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

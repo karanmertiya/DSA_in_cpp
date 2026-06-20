@@ -9,5 +9,5 @@ A celebrity is a person who is known to all but does not know anyone at a party.
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

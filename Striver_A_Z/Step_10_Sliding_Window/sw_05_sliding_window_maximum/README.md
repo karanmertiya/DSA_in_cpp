@@ -9,7 +9,7 @@ You are given an array of integers nums, there is a sliding window of size k whi
 ```
 
 ## Tags
+- SDE_Sheet
 - Striver_A_Z
 - Love_Babbar
 - Apna_College
-- SDE_Sheet

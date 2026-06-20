@@ -1,6 +1,20 @@
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+// Explanation: Brute Force: Loop n times and multiply ans by x.
+
+double myPow(double x, int n) {
+    double ans = 1.0;
+    long long nn = n;
+    if(nn < 0) nn = -1 * nn;
+    for(int i = 0; i < nn; i++) {
+        ans *= x;
+    }
+    return n < 0 ? 1.0 / ans : ans;
+}
+
 // Time Complexity: O(log N)
 // Space Complexity: O(1)
-// Explanation: Use binary exponentiation. Initialize `ans = 1.0`. Keep a copy of `n` as a long long `nn`. If `nn < 0`, make it positive. While `nn > 0`, if `nn % 2 == 1`, multiply `ans` by `x` and decrement `nn`. Otherwise, square `x` and halve `nn`. If original `n < 0`, return `1.0 / ans`.
+// Explanation: Optimal: Binary Exponentiation. If n is even, x = x*x, n = n/2. If odd, ans = ans*x, n = n-1.
 
 double myPow(double x, int n) {
     double ans = 1.0;

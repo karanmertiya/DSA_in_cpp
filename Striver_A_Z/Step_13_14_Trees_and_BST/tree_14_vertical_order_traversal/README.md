@@ -9,5 +9,5 @@ Given the root of a binary tree, calculate the vertical order traversal of the b
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

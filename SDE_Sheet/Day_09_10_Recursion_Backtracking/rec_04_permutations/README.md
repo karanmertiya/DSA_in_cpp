@@ -9,6 +9,6 @@ Given an array nums of distinct integers, return all the possible permutations.<
 ```
 
 ## Tags
-- Love_Babbar
-- Striver_A_Z
 - SDE_Sheet
+- Striver_A_Z
+- Love_Babbar

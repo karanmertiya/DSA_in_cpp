@@ -9,5 +9,5 @@ The count-and-say sequence is a sequence of digit strings defined by the recursi
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

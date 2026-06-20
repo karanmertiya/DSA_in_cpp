@@ -9,5 +9,5 @@ On a 2D plane, we place n stones at some integer coordinate points. Each coordin
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

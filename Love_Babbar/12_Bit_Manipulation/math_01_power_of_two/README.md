@@ -9,6 +9,6 @@ Given an integer n, return true if it is a power of two. Otherwise, return false
 ```
 
 ## Tags
-- Love_Babbar
-- Striver_A_Z
 - SDE_Sheet
+- Striver_A_Z
+- Love_Babbar

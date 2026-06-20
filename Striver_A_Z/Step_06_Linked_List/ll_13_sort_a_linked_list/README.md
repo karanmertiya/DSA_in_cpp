@@ -9,5 +9,5 @@ Given the head of a linked list, return the list after sorting it in ascending o
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

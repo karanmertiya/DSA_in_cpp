@@ -9,5 +9,5 @@ Given a boolean expression with following symbols: T (True), F (False) and opera
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

@@ -9,6 +9,6 @@ Given an adjacency list of a graph adj of V no. of vertices. Check whether the g
 ```
 
 ## Tags
-- Love_Babbar
-- Striver_A_Z
 - SDE_Sheet
+- Striver_A_Z
+- Love_Babbar

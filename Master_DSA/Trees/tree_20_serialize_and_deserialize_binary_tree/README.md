@@ -9,5 +9,5 @@ Design an algorithm to serialize and deserialize a binary tree. Serialization co
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

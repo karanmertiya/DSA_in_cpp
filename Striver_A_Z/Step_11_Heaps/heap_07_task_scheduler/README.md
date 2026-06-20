@@ -9,5 +9,5 @@ Given a characters array tasks, representing the tasks a CPU needs to do, and a 
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

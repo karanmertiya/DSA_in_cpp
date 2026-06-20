@@ -9,6 +9,6 @@ Given a string A and a dictionary of n words B, find out if A can be segmented i
 ```
 
 ## Tags
-- Love_Babbar
-- Striver_A_Z
 - SDE_Sheet
+- Striver_A_Z
+- Love_Babbar

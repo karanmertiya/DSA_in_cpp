@@ -9,5 +9,5 @@ Given the root of a Binary Search Tree and a target number k, return true if the
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

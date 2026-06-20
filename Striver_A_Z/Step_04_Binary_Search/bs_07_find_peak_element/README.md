@@ -9,7 +9,7 @@ A peak element is an element that is strictly greater than its neighbors. Given 
 ```
 
 ## Tags
-- Love_Babbar
-- Striver_A_Z
-- Apna_College
 - SDE_Sheet
+- Striver_A_Z
+- Love_Babbar
+- Apna_College

@@ -9,5 +9,5 @@ Given a singly linked list, remove all the nodes which have a greater value on t
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

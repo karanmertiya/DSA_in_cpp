@@ -9,5 +9,5 @@ Consider a rat placed at (0, 0) in a square matrix m[][] of order n and has to r
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

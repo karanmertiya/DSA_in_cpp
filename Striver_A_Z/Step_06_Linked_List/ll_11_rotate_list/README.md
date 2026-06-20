@@ -9,5 +9,5 @@ Given the head of a linked list, rotate the list to the right by k places.<br><b
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

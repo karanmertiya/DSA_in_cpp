@@ -9,5 +9,5 @@ Given a root node reference of a BST and a key, delete the node with the given k
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

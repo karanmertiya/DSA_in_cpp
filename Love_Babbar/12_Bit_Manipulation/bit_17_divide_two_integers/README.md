@@ -9,5 +9,5 @@ Given two integers dividend and divisor, divide two integers without using multi
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

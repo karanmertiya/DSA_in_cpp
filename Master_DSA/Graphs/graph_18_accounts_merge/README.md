@@ -9,5 +9,5 @@ Given a list of accounts where each element accounts[i] is a list of strings, wh
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

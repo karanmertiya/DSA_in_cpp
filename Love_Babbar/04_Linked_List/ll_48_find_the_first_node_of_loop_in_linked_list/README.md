@@ -9,5 +9,5 @@ Given a singly linked list, find the first node of the loop if a loop is present
 ```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

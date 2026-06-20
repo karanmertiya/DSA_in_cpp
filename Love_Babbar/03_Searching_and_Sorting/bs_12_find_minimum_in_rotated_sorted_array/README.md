@@ -9,7 +9,7 @@ Suppose an array of length n sorted in ascending order is rotated between 1 and 
 ```
 
 ## Tags
-- Love_Babbar
-- Striver_A_Z
-- Apna_College
 - SDE_Sheet
+- Striver_A_Z
+- Love_Babbar
+- Apna_College

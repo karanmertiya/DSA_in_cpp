@@ -10,4 +10,3 @@ Given an integer n, return the number of trailing zeroes in n!.<br><br><b>🔗 P
 
 ## Tags
 - Love_Babbar
-- SDE_Sheet
