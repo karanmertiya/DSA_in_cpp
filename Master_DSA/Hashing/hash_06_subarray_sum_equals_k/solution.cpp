@@ -1,6 +1,22 @@
+// Time Complexity: O(N^2)
+// Space Complexity: O(1)
+// Explanation: Brute Force: Generate all possible subarrays and compute their sums.
+
+int subarraySum(vector<int>& nums, int k) {
+    int count = 0;
+    for(int i=0; i<nums.size(); i++) {
+        int sum = 0;
+        for(int j=i; j<nums.size(); j++) {
+            sum += nums[j];
+            if(sum == k) count++;
+        }
+    }
+    return count;
+}
+
 // Time Complexity: O(N) (Constraint)
 // Space Complexity: O(N) (Trade-off)
-// Explanation: Maintain a Hash Map of `prefix_sum` -> `frequency`. If `curr_sum - k` exists in the map, add its frequency to the count.
+// Explanation: Optimal: Maintain a Hash Map of `prefix_sum` -> `frequency`. If `curr_sum - k` exists in the map, add its frequency to the count.
 
 #include <vector>
 #include <unordered_map>

@@ -1,6 +1,25 @@
+// Time Complexity: O(N log N)
+// Space Complexity: O(1)
+// Explanation: Brute Force: Sort the array first, then count consecutive elements linearly.
+
+int longestConsecutive(vector<int>& nums) {
+    if(nums.empty()) return 0;
+    sort(nums.begin(), nums.end());
+    int longest = 1, current = 1;
+    for(int i=1; i<nums.size(); i++) {
+        if(nums[i] == nums[i-1]) continue;
+        if(nums[i] == nums[i-1] + 1) current++;
+        else {
+            longest = max(longest, current);
+            current = 1;
+        }
+    }
+    return max(longest, current);
+}
+
 // Time Complexity: O(N) (Constraint)
 // Space Complexity: O(N)
-// Explanation: Insert all elements into a Hash Set. Iterate through elements. If `num - 1` is NOT in the set, it's the start of a sequence. Count forwards.
+// Explanation: Optimal: Insert all elements into a Hash Set. Iterate through elements. If `num - 1` is NOT in the set, it's the start of a sequence. Count forwards.
 
 #include <vector>
 #include <unordered_set>
