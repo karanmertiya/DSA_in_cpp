@@ -4,10 +4,12 @@
 Given an integer N, print a hollow rectangle pattern.
 
 ## Examples
+```text
 Example 1:
 Input: N = 3
 Output:
 ***
 * *
 ***
+```
 

@@ -4,6 +4,7 @@
 Given an integer N, print a right-angled triangle pattern of '*' with N rows.
 
 ## Examples
+```text
 Example 1:
 Input: N = 3
 Output:
@@ -19,4 +20,5 @@ Output:
 ***
 ****
 *****
+```
 

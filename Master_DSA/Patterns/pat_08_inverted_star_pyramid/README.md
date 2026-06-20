@@ -4,6 +4,7 @@
 Given an integer N, print an inverted full pyramid pattern of '*'.
 
 ## Examples
+```text
 Example 1:
 Input: N = 3
 Output:
@@ -19,4 +20,5 @@ Output:
   *****
    ***
     *
+```
 

@@ -4,7 +4,9 @@
 Given a binary tree root, return the maximum sum of all keys of any sub-tree which is also a Binary Search Tree (BST).<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/' target='_blank'>LeetCode 1373</a>
 
 ## Examples
+```text
 <b>Example 1:</b> Similar to largest BST.
+```
 
 ## Tags
 - Striver_A_Z

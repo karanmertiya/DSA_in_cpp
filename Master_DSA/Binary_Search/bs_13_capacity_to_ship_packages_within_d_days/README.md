@@ -4,8 +4,10 @@
 A conveyor belt has packages that must be shipped from one port to another within days days. Return the least weight capacity of the ship.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/' target='_blank'>LeetCode 1011</a>
 
 ## Examples
+```text
 <b>Example 1:</b> Find ship capacity.
+```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

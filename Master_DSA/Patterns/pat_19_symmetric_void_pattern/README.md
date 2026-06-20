@@ -4,6 +4,7 @@
 Given an integer N, print a symmetric-void pattern.
 
 ## Examples
+```text
 Example 1:
 Input: N = 3
 Output:
@@ -13,4 +14,5 @@ Output:
 *    *
 **  **
 ******
+```
 

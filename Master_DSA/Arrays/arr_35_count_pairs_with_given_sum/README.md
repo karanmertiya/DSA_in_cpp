@@ -4,7 +4,9 @@
 Given an array of N integers, and an integer K, find the number of pairs of elements in the array whose sum is equal to K.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1' target='_blank'>GFG</a>
 
 ## Examples
+```text
 <b>Example 1:</b> Hash Map.
+```
 
 ## Tags
 - Love_Babbar

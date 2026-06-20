@@ -4,8 +4,10 @@
 You are given an array prices where prices[i] is the price of a given stock on the ith day. Find the maximum profit you can achieve. You may complete at most two transactions. Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/' target='_blank'>LeetCode 123</a>
 
 ## Examples
+```text
 <b>Example 1:</b> 3D DP / State Machine.
+```
 
 ## Tags
-- Love_Babbar
 - Striver_A_Z
+- Love_Babbar

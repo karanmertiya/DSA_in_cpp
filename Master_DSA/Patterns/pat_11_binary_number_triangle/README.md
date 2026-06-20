@@ -4,6 +4,7 @@
 Given an integer N, print a binary number triangle.
 
 ## Examples
+```text
 Example 1:
 Input: N = 3
 Output:
@@ -11,4 +12,5 @@ Output:
 0 1
 1 0 1
 
+```
 

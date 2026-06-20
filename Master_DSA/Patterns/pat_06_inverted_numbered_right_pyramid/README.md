@@ -4,6 +4,7 @@
 Given an integer N, print an inverted right-angled triangle pattern of numbers.
 
 ## Examples
+```text
 Example 1:
 Input: N = 3
 Output:
@@ -19,4 +20,5 @@ Output:
 1 2 3
 1 2
 1
+```
 
