@@ -1,0 +1,10 @@
+# Bs 31 Middle Of Three
+
+## Description
+Given three distinct numbers A, B and C. Find the number with value in middle.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/middle-of-three2926/1' target='_blank'>GFG</a>
+
+## Examples
+<b>Example 1:</b> Simple if-else.
+
+## Tags
+- Love_Babbar

@@ -1,0 +1,12 @@
+# Str 21 Parenthesis Checker
+
+## Description
+Given an expression string x. Examine whether the pairs and the orders of "{", "}", "(", ")", "[", "]" are correct in exp.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/parenthesis-checker2744/1' target='_blank'>GFG</a>
+
+## Examples
+<b>Example 1:</b> Stack approach.
+
+## Tags
+- Love_Babbar
+- Striver_A_Z
+- SDE_Sheet

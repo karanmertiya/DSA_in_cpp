@@ -1,3 +1,0 @@
-# bs_03_find_first_and_last_position_of_element
-
-Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/' target='_blank'>LeetCode 34</a>

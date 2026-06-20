@@ -1,3 +1,3 @@
 # DSA_in_cpp
 
-Automated DSA repository mapped step-by-step. 17 Modules Fully Deployed.
+Automated DSA repository mapped step-by-step. Mappings properly resolved.

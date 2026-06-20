@@ -18,7 +18,7 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td>Pattern 1 Rectangular Star</td>
+      <td>Pat 01 Rectangular Star</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;***&#10;***&#10;***&#10;&#10;Example 2:&#10;Input: N = 5&#10;Output:&#10;*****&#10;*****&#10;*****&#10;*****&#10;*****</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <td>2</td>
-      <td>Pattern 2 Right Angled Triangle</td>
+      <td>Pat 02 Right Angled Triangle</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;*&#10;**&#10;***&#10;&#10;Example 2:&#10;Input: N = 5&#10;Output:&#10;*&#10;**&#10;***&#10;****&#10;*****</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -36,7 +36,7 @@
     </tr>
     <tr>
       <td>3</td>
-      <td>Pattern 3 Right Angled Number Pyramid</td>
+      <td>Pat 03 Right Angled Number Pyramid</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;1&#10;1 2&#10;1 2 3&#10;&#10;Example 2:&#10;Input: N = 5&#10;Output:&#10;1&#10;1 2&#10;1 2 3&#10;1 2 3 4&#10;1 2 3 4 5</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -45,7 +45,7 @@
     </tr>
     <tr>
       <td>4</td>
-      <td>Pattern 4 Right Angled Number Pyramid Ii</td>
+      <td>Pat 04 Right Angled Number Pyramid Ii</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;1&#10;2 2&#10;3 3 3&#10;&#10;Example 2:&#10;Input: N = 5&#10;Output:&#10;1&#10;2 2&#10;3 3 3&#10;4 4 4 4&#10;5 5 5 5 5</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -54,7 +54,7 @@
     </tr>
     <tr>
       <td>5</td>
-      <td>Pattern 5 Inverted Right Pyramid</td>
+      <td>Pat 05 Inverted Right Pyramid</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;* * *&#10;* *&#10;*&#10;&#10;Example 2:&#10;Input: N = 5&#10;Output:&#10;* * * * *&#10;* * * *&#10;* * *&#10;* *&#10;*</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -63,7 +63,7 @@
     </tr>
     <tr>
       <td>6</td>
-      <td>Pattern 6 Inverted Numbered Right Pyramid</td>
+      <td>Pat 06 Inverted Numbered Right Pyramid</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;1 2 3&#10;1 2&#10;1&#10;&#10;Example 2:&#10;Input: N = 5&#10;Output:&#10;1 2 3 4 5&#10;1 2 3 4&#10;1 2 3&#10;1 2&#10;1</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -72,7 +72,7 @@
     </tr>
     <tr>
       <td>7</td>
-      <td>Pattern 7 Star Pyramid</td>
+      <td>Pat 07 Star Pyramid</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;  *&#10; ***&#10;*****&#10;&#10;Example 2:&#10;Input: N = 5&#10;Output:&#10;    *&#10;   ***&#10;  *****&#10; *******&#10;*********</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -81,7 +81,7 @@
     </tr>
     <tr>
       <td>8</td>
-      <td>Pattern 8 Inverted Star Pyramid</td>
+      <td>Pat 08 Inverted Star Pyramid</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;*****&#10; ***&#10;  *&#10;&#10;Example 2:&#10;Input: N = 5&#10;Output:&#10;*********&#10; *******&#10;  *****&#10;   ***&#10;    *</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -90,7 +90,7 @@
     </tr>
     <tr>
       <td>9</td>
-      <td>Pattern 9 Diamond Star Pattern</td>
+      <td>Pat 09 Diamond Star Pattern</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;  *&#10; ***&#10;*****&#10;*****&#10; ***&#10;  *&#10;</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -99,7 +99,7 @@
     </tr>
     <tr>
       <td>10</td>
-      <td>Pattern 10 Half Diamond Star Pattern</td>
+      <td>Pat 10 Half Diamond Star Pattern</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;*&#10;**&#10;***&#10;**&#10;*&#10;</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -108,7 +108,7 @@
     </tr>
     <tr>
       <td>11</td>
-      <td>Pattern 11 Binary Number Triangle</td>
+      <td>Pat 11 Binary Number Triangle</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;1&#10;0 1&#10;1 0 1&#10;</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -117,7 +117,7 @@
     </tr>
     <tr>
       <td>12</td>
-      <td>Pattern 12 Number Crown Pattern</td>
+      <td>Pat 12 Number Crown Pattern</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;1    1&#10;12  21&#10;123321</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -126,7 +126,7 @@
     </tr>
     <tr>
       <td>13</td>
-      <td>Pattern 13 Increasing Number Triangle</td>
+      <td>Pat 13 Increasing Number Triangle</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;1&#10;2 3&#10;4 5 6</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -135,7 +135,7 @@
     </tr>
     <tr>
       <td>14</td>
-      <td>Pattern 14 Increasing Letter Triangle</td>
+      <td>Pat 14 Increasing Letter Triangle</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;A&#10;A B&#10;A B C</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -144,7 +144,7 @@
     </tr>
     <tr>
       <td>15</td>
-      <td>Pattern 15 Reverse Letter Triangle</td>
+      <td>Pat 15 Reverse Letter Triangle</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;A B C&#10;A B&#10;A</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -153,7 +153,7 @@
     </tr>
     <tr>
       <td>16</td>
-      <td>Pattern 16 Alpha Ramp Pattern</td>
+      <td>Pat 16 Alpha Ramp Pattern</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;A&#10;B B&#10;C C C</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -162,7 +162,7 @@
     </tr>
     <tr>
       <td>17</td>
-      <td>Pattern 17 Alpha Hill Pattern</td>
+      <td>Pat 17 Alpha Hill Pattern</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;  A&#10; ABA&#10;ABCBA</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -171,7 +171,7 @@
     </tr>
     <tr>
       <td>18</td>
-      <td>Pattern 18 Alpha Triangle</td>
+      <td>Pat 18 Alpha Triangle</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;C&#10;C B&#10;C B A</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -180,7 +180,7 @@
     </tr>
     <tr>
       <td>19</td>
-      <td>Pattern 19 Symmetric Void Pattern</td>
+      <td>Pat 19 Symmetric Void Pattern</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;******&#10;**  **&#10;*    *&#10;*    *&#10;**  **&#10;******</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -189,7 +189,7 @@
     </tr>
     <tr>
       <td>20</td>
-      <td>Pattern 20 Symmetric Butterfly Pattern</td>
+      <td>Pat 20 Symmetric Butterfly Pattern</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;*    *&#10;**  **&#10;******&#10;**  **&#10;*    *</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -198,7 +198,7 @@
     </tr>
     <tr>
       <td>21</td>
-      <td>Pattern 21 Hollow Rectangle Pattern</td>
+      <td>Pat 21 Hollow Rectangle Pattern</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;***&#10;* *&#10;***</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>
@@ -207,7 +207,7 @@
     </tr>
     <tr>
       <td>22</td>
-      <td>Pattern 22 The Number Pattern</td>
+      <td>Pat 22 The Number Pattern</td>
       <td><pre style="white-space: pre-wrap; word-wrap: break-word;"><code>Example 1:&#10;Input: N = 3&#10;Output:&#10;3 3 3 3 3&#10;3 2 2 2 3&#10;3 2 1 2 3&#10;3 2 2 2 3&#10;3 3 3 3 3</code></pre><br><br><b>Note (Constraint):</b> 1 &le; N &le; 20</td>
       <td><b>Time:</b> O(N<sup>2</sup>)<br><b>Space:</b> O(1)</td>
       <td>-</td>

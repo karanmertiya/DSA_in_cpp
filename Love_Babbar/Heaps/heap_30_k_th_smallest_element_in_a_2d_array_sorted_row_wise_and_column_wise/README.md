@@ -1,3 +1,0 @@
-# heap_30_k_th_smallest_element_in_a_2d_array_sorted_row_wise_and_column_wise
-
-Given an n x n matrix where each of the rows and columns is sorted in ascending order, return the kth smallest element in the matrix.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/' target='_blank'>LeetCode 378</a>
