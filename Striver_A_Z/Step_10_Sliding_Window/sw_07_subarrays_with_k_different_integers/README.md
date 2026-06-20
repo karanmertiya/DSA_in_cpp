@@ -9,5 +9,5 @@ Given an integer array nums and an integer k, return the number of good subarray
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

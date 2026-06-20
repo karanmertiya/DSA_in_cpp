@@ -9,5 +9,5 @@ Given a linked list, swap every two adjacent nodes and return its head. You must
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

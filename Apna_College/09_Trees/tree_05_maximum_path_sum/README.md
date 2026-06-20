@@ -9,7 +9,7 @@ A path in a binary tree is a sequence of nodes where each pair of adjacent nodes
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
 - Apna_College
+- SDE_Sheet

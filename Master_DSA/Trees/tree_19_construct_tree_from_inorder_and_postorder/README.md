@@ -9,5 +9,5 @@ Given two integer arrays inorder and postorder where inorder is the inorder trav
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

@@ -9,5 +9,5 @@ Given a string you need to print the size of the longest possible substring that
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

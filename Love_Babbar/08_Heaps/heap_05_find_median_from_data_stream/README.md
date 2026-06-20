@@ -9,5 +9,5 @@ Implement the MedianFinder class to add numbers from a data stream and find the 
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

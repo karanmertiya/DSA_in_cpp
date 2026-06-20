@@ -9,5 +9,5 @@ There are given N ropes of different lengths, we need to connect these ropes int
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

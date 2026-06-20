@@ -9,5 +9,5 @@ Given an array containing N integers and an integer K, Your task is to find the 
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

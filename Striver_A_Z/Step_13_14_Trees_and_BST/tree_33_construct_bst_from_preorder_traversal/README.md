@@ -9,5 +9,5 @@ Given an array of integers preorder, which represents the preorder traversal of 
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

@@ -9,6 +9,6 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
+- SDE_Sheet

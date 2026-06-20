@@ -9,5 +9,5 @@ Given an array of points where points[i] = [xi, yi] represents a point on the X-
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

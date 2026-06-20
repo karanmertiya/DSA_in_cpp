@@ -9,7 +9,7 @@ Given a Directed Graph with V vertices and E edges, Find the number of strongly 
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
 - Apna_College
+- SDE_Sheet

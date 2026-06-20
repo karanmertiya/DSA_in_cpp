@@ -9,5 +9,5 @@ Given a string num that contains only digits and an integer target, return all p
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

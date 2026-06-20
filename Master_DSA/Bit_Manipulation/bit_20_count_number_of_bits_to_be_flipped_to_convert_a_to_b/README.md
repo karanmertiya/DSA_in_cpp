@@ -9,5 +9,5 @@ Given two numbers A and B. Write a program to count number of bits needed to be 
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

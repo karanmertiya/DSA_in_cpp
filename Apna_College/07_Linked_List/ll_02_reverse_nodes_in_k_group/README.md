@@ -9,7 +9,7 @@ Given the head of a linked list, reverse the nodes of the list k at a time, and 
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
 - Apna_College
+- SDE_Sheet

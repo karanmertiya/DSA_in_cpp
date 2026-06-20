@@ -9,7 +9,7 @@ Given two integer arrays preorder and inorder where preorder is the preorder tra
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
 - Apna_College
+- SDE_Sheet

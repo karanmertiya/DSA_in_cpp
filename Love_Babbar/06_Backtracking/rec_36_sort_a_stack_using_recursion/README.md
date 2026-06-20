@@ -9,5 +9,5 @@ Given a stack, the task is to sort it such that the top of the stack has the gre
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

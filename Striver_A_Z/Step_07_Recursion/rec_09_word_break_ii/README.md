@@ -9,5 +9,5 @@ Given a string s and a dictionary of strings wordDict, add spaces in s to constr
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

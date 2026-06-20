@@ -9,5 +9,5 @@ Write a program to solve a Sudoku puzzle by filling the empty cells.<br><br><b>ð
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

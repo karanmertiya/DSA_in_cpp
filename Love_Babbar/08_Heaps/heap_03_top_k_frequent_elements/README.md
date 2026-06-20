@@ -9,6 +9,6 @@ Given an integer array nums and an integer k, return the k most frequent element
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
+- SDE_Sheet

@@ -9,5 +9,5 @@ Given an integer array nums, in which exactly two elements appear only once and 
 ```
 
 ## Tags
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z

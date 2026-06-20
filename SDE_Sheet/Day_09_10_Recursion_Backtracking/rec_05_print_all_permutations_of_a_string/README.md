@@ -9,6 +9,6 @@ Given a string S. The task is to print all permutations of a given string in lex
 ```
 
 ## Tags
-- SDE_Sheet
-- Striver_A_Z
 - Love_Babbar
+- Striver_A_Z
+- SDE_Sheet
