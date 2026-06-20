@@ -6,9 +6,5 @@ Given an array, find the next smaller element for each element. The next smaller
 ## Examples
 **Example 1:** Monotonic Stack.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

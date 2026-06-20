@@ -6,9 +6,5 @@ On a 2D plane, we place n stones at some integer coordinate points. Each coordin
 ## Examples
 **Example 1:** Treat rows and columns as nodes.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

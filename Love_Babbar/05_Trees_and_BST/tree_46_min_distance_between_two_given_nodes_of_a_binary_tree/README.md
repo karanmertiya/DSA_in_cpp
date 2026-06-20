@@ -6,8 +6,5 @@ Given a binary tree and two node values your task is to find the minimum distanc
 ## Examples
 **Example 1:** Find LCA, then distance from LCA to nodes.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

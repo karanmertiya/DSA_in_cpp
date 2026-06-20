@@ -6,8 +6,5 @@ Given a number N having only one ‘1’ and all other ’0’s in its binary re
 ## Examples
 **Example 1:** Log base 2.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ Given 3 positives numbers a, b and c. Return the minimum flips required in some 
 ## Examples
 **Example 1:** Bit by bit analysis.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

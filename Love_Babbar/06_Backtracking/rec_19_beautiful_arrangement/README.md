@@ -6,9 +6,5 @@ Suppose you have n integers labeled 1 through n. A permutation of those n intege
 ## Examples
 **Example 1:** Backtracking.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

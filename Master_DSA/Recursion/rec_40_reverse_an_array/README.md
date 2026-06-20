@@ -6,8 +6,5 @@ Given an array A of size N, print the reverse of it.<br><br><b>🔗 Practice:</b
 ## Examples
 **Example 1:** Recursion with two pointers.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z
 
-- Striver_A_Z
-
-</details>

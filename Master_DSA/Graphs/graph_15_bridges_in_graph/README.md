@@ -6,9 +6,5 @@ Given an undirected graph, find all the bridges in the graph. A bridge is any ed
 ## Examples
 **Example 1:** Tarjan's algorithm.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

@@ -6,8 +6,5 @@ Given a binary string, that is it contains only 0s and 1s. We need to make this 
 ## Examples
 **Example 1:** Two target strings.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,8 +6,5 @@ Given a positive integer num, return true if num is a perfect square or false ot
 ## Examples
 **Example 1:** Binary Search.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

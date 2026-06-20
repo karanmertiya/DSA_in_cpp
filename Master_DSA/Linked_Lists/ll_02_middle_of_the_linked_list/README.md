@@ -6,10 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: head = [1,2,3,4,5,6], Output: [4,5,6]
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Striver_A_Z
-- Love_Babbar
-- SDE_Sheet
-
-</details>

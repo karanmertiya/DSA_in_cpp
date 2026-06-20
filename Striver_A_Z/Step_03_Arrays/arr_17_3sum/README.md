@@ -6,10 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: nums = [-1,0,1,2,-1,-4], Output: [[-1,-1,2],[-1,0,1]]<br><br>**Note (Constraint):** Solution set must not contain duplicate triplets.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- SDE_Sheet
-- Love_Babbar
-- Striver_A_Z
-
-</details>

@@ -6,9 +6,5 @@ The n-queens puzzle is the problem of placing n queens on an n x n chessboard su
 ## Examples
 **Example 1:** Backtracking with hashing.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ A conveyor belt has packages that must be shipped from one port to another withi
 ## Examples
 **Example 1:** Find ship capacity.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

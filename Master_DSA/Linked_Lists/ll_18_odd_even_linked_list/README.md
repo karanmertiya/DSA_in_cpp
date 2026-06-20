@@ -6,9 +6,5 @@ Given the head of a singly linked list, group all the nodes with odd indices tog
 ## Examples
 **Example 1:** Input: head = [1,2,3,4,5], Output: [1,3,5,2,4]
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

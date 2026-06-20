@@ -6,8 +6,5 @@ Given an array arr of n positive integers and a number k. One can apply a swap o
 ## Examples
 **Example 1:** Sliding Window.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

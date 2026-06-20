@@ -6,8 +6,5 @@ Given an array of integers, put + or - or * between the elements so that the res
 ## Examples
 **Example 1:** DP with path reconstruction.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

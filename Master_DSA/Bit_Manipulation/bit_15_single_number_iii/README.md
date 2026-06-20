@@ -6,9 +6,5 @@ Given an integer array nums, in which exactly two elements appear only once and 
 ## Examples
 **Example 1:** Grouping by rightmost set bit.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

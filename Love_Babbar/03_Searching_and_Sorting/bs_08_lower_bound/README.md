@@ -6,10 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksfo
 ## Examples
 **Example 1:** Input: arr = [1,2,8,10,11,12,19], target = 0, Output: 0
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Striver_A_Z
-- Love_Babbar
-- SDE_Sheet
-
-</details>

@@ -6,9 +6,5 @@ Given the root of a binary tree, check whether it is a mirror of itself (i.e., s
 ## Examples
 **Example 1:** Recursive.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, SDE Sheet
 
-- Striver_A_Z
-- SDE_Sheet
-
-</details>

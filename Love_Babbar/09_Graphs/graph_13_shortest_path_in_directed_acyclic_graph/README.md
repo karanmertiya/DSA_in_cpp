@@ -6,9 +6,5 @@ Given a Directed Acyclic Graph of N vertices from 0 to N-1 and a 2D Integer arra
 ## Examples
 **Example 1:** Topo Sort.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

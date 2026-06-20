@@ -6,11 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: p = [1,2,3], q = [1,2,3], Output: true
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
 
-- SDE_Sheet
-- Apna_College
-- Love_Babbar
-- Striver_A_Z
-
-</details>

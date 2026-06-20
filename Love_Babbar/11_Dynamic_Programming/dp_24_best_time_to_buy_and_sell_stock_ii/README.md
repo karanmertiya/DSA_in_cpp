@@ -6,9 +6,5 @@ You are given an integer array prices where prices[i] is the price of a given st
 ## Examples
 **Example 1:** Valley Peak approach.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

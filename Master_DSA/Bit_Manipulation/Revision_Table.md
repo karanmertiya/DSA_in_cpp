@@ -48,14 +48,14 @@
     </tr>
     <tr>
       <td>6</td>
-      <td>Bit 06 Single Number<br><br></b> <a href="https://leetcode.com/problems/single-number/" target="_blank">LeetCode 136</a><br><br><b>Variants:</b><br>- What if elements are sorted? (Can use Binary Search `O(log N)` Time).<br>- What if elements are strictly positive? (Can use Array mapping if constraints allow).<br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z</details></td>
+      <td>Bit 06 Single Number<br><br></b> <a href="https://leetcode.com/problems/single-number/" target="_blank">LeetCode 136</a><br><br><b>Variants:</b><br>- What if elements are sorted? (Can use Binary Search `O(log N)` Time).<br>- What if elements are strictly positive? (Can use Array mapping if constraints allow).<br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
       <td>**Example 1:** Input: nums = [4,1,2,1,2], Output: 4<br><br>**Note (Constraint):** 1 &le; N &le; 3 * 10<sup>4</sup><br>-3 * 10<sup>4</sup> &le; nums[i] &le; 3 * 10<sup>4</sup></td>
       <td><b>Time:</b> O(N) (Constraint)<br><b>Space:</b> O(N) (Trade-off)</td>
       <td><b>Explanation:</b> Use a Hash Map to count occurrences. Return the element with count 1.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int singleNumber(std::vector&lt;int&gt;&amp; nums) {&#10;    int ans = 0;&#10;    for(int num : nums) {&#10;        ans ^= num;&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td>7</td>
-      <td>Bit 07 Power Set<br><br></b> <a href="https://leetcode.com/problems/subsets/" target="_blank">LeetCode 78</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z</details></td>
+      <td>Bit 07 Power Set<br><br></b> <a href="https://leetcode.com/problems/subsets/" target="_blank">LeetCode 78</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
       <td>**Example 1:** Input: nums = [1,2,3], Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]</td>
       <td><b>Time:</b> O(N * 2^N)<br><b>Space:</b> O(N * 2^N)</td>
       <td><b>Explanation:</b> Bit manipulation technique. For N elements, there are 2^N subsets. Count from 0 to 2^N - 1. For each number, its binary representation indicates which elements to include.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; subsets(vector&lt;int&gt;&amp; nums) {&#10;    int n = nums.size();&#10;    int subsetsCount = 1 &lt;&lt; n;&#10;    vector&lt;vector&lt;int&gt;&gt; ans;&#10;    for(int i=0; i&lt;subsetsCount; i++) {&#10;        vector&lt;int&gt; subset;&#10;        for(int j=0; j&lt;n; j++) {&#10;            if(i &amp; (1 &lt;&lt; j)) subset.push_back(nums[j]);&#10;        }&#10;        ans.push_back(subset);&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
@@ -111,14 +111,14 @@
     </tr>
     <tr>
       <td>15</td>
-      <td>Bit 15 Single Number Iii<br><br></b> <a href="https://leetcode.com/problems/single-number-iii/" target="_blank">LeetCode 260</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Bit 15 Single Number Iii<br><br></b> <a href="https://leetcode.com/problems/single-number-iii/" target="_blank">LeetCode 260</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Grouping by rightmost set bit.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> XOR all elements to get `x ^ y`. Find the rightmost set bit in this XOR result. This bit distinguishes `x` and `y`. Iterate through array again, divide numbers into two groups based on this bit, and XOR each group. The results are `x` and `y`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; singleNumber(vector&lt;int&gt;&amp; nums) {&#10;    long long xor_all = 0;&#10;    for(int n : nums) xor_all ^= n;&#10;    long long rightmost_set_bit = xor_all &amp; -xor_all;&#10;    int x = 0, y = 0;&#10;    for(int n : nums) {&#10;        if(n &amp; rightmost_set_bit) x ^= n;&#10;        else y ^= n;&#10;    }&#10;    return {x, y};&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td>16</td>
-      <td>Bit 16 Divide Two Integers<br><br></b> <a href="https://leetcode.com/problems/divide-two-integers/" target="_blank">LeetCode 29</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Bit 16 Divide Two Integers<br><br></b> <a href="https://leetcode.com/problems/divide-two-integers/" target="_blank">LeetCode 29</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Bit shifting.</td>
       <td><b>Time:</b> O(log^2 N)<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> Use left shift to find the largest multiple of divisor that fits into dividend. Subtract it and add the shifted value to quotient. Repeat until dividend < divisor.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int divide(int dividend, int divisor) {&#10;    if(dividend == INT_MIN &amp;&amp; divisor == -1) return INT_MAX;&#10;    long long n = abs(dividend), d = abs(divisor), quotient = 0;&#10;    bool sign = (dividend &lt; 0) == (divisor &lt; 0);&#10;    while(n &gt;= d) {&#10;        long long temp = d, multiple = 1;&#10;        while(n &gt;= (temp &lt;&lt; 1)) {&#10;            temp &lt;&lt;= 1;&#10;            multiple &lt;&lt;= 1;&#10;        }&#10;        n -= temp;&#10;        quotient += multiple;&#10;    }&#10;    return sign ? quotient : -quotient;&#10;}</code></pre></details></td>
@@ -146,7 +146,7 @@
     </tr>
     <tr>
       <td>20</td>
-      <td>Bit 20 Count Number Of Bits To Be Flipped To Convert A To B<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/bit-difference-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Bit 20 Count Number Of Bits To Be Flipped To Convert A To B<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/bit-difference-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Count set bits in XOR.</td>
       <td><b>Time:</b> O(log(A^B))<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> Take the XOR of A and B (`A ^ B`). The number of set bits in the result is the number of bits that need to be flipped. Use Brian Kernighan's algorithm to count.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int countBitsFlip(int a, int b){&#10;    int n = a ^ b;&#10;    int count = 0;&#10;    while(n &gt; 0) {&#10;        n = n &amp; (n - 1);&#10;        count++;&#10;    }&#10;    return count;&#10;}</code></pre></details></td>
@@ -160,7 +160,7 @@
     </tr>
     <tr>
       <td>22</td>
-      <td>Bit 22 Program To Find Whether A No Is Power Of Two<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/power-of-2-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Bit 22 Program To Find Whether A No Is Power Of Two<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/power-of-2-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Bitwise AND.</td>
       <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> If `N` is a power of 2, it has only 1 set bit. `N & (N - 1)` unsets the rightmost set bit. So if `N` is a power of 2, `N & (N - 1)` will be 0.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPowerofTwo(long long n){&#10;    if(n == 0) return false;&#10;    return (n &amp; (n - 1)) == 0;&#10;}</code></pre></details></td>
@@ -188,7 +188,7 @@
     </tr>
     <tr>
       <td>26</td>
-      <td>Bit 26 Power Set<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/power-set4302/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Bit 26 Power Set<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/power-set4302/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Bit manipulation (0 to 2^N - 1).</td>
       <td><b>Time:</b> O(N * 2^N)<br><b>Space:</b> O(N * 2^N)</td>
       <td><b>Explanation:</b> Iterate from 1 to `(1 << n) - 1`. For each number, its binary representation indicates which characters of the string to include. Example: 011 means include 1st and 2nd char.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;string&gt; AllPossibleStrings(string s){&#10;    int n = s.length();&#10;    vector&lt;string&gt; res;&#10;    for(int i = 1; i &lt; (1 &lt;&lt; n); i++) {&#10;        string sub = &quot;&quot;;&#10;        for(int j = 0; j &lt; n; j++) {&#10;            if(i &amp; (1 &lt;&lt; j)) sub += s[j];&#10;        }&#10;        res.push_back(sub);&#10;    }&#10;    sort(res.begin(), res.end());&#10;    return res;&#10;}</code></pre></details></td>

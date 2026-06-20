@@ -6,10 +6,5 @@ Given an array of integers nums and an integer target, return indices of the two
 ## Examples
 **Example 1:** Input: nums = [2,7,11,15], target = 9, Output: [0,1]
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- SDE_Sheet
-- Love_Babbar
-- Striver_A_Z
-
-</details>

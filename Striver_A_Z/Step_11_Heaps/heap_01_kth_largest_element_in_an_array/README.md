@@ -6,10 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: nums = [3,2,1,5,6,4], k = 2, Output: 5<br><br>**Note (Constraint):** Can you solve it without sorting?
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Love_Babbar
-- SDE_Sheet
-- Striver_A_Z
-
-</details>

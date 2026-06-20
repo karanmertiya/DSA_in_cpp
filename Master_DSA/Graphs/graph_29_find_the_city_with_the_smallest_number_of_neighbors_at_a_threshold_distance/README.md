@@ -6,9 +6,5 @@ There are n cities numbered from 0 to n-1. Given the array edges where edges[i] 
 ## Examples
 **Example 1:** Floyd-Warshall Algorithm.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

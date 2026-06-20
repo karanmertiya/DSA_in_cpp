@@ -6,10 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: nums1 = [1,2,2,1], nums2 = [2,2], Output: [2]<br><br>**Note (Constraint):** 1 &le; N, M &le; 1000
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Striver_A_Z
-- Love_Babbar
-- SDE_Sheet
-
-</details>

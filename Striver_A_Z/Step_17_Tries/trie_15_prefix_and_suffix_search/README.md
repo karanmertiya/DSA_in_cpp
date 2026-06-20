@@ -6,8 +6,5 @@ Design a special dictionary that searches the words in it by a prefix and a suff
 ## Examples
 **Example 1:** Suffix + '{' + Prefix Trie.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z
 
-- Striver_A_Z
-
-</details>

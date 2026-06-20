@@ -6,8 +6,5 @@ Given an integer n, return true if it is a power of four. Otherwise, return fals
 ## Examples
 **Example 1:** Bit Manipulation.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

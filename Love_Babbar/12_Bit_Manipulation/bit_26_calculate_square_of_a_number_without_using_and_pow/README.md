@@ -6,8 +6,5 @@ Given an integer n, calculate the square of a number without using *, / and pow(
 ## Examples
 **Example 1:** Bit shifting and adding.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ Given an integer array arr, partition the array into contiguous subarrays of len
 ## Examples
 **Example 1:** Front partitioning DP.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

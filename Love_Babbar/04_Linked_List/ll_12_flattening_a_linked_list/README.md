@@ -6,9 +6,5 @@ Given a Linked List of size N, where every node represents a sub-linked-list and
 ## Examples
 **Example 1:** Recursively merge.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

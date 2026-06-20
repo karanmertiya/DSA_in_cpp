@@ -6,9 +6,5 @@ Given an integer array nums, return the number of longest increasing subsequence
 ## Examples
 **Example 1:** Two DP arrays (Length and Count).
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

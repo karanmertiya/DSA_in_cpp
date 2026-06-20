@@ -6,11 +6,5 @@ Write an efficient algorithm that searches for a value in an m x n matrix. This 
 ## Examples
 **Example 1:** Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3, Output: true
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
 
-- SDE_Sheet
-- Apna_College
-- Love_Babbar
-- Striver_A_Z
-
-</details>

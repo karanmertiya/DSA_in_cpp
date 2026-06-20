@@ -6,10 +6,5 @@ Given an array of integers heights representing the histogram's bar height where
 ## Examples
 **Example 1:** Input: heights = [2,1,5,6,2,3], Output: 10
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- SDE_Sheet
-- Love_Babbar
-- Striver_A_Z
-
-</details>

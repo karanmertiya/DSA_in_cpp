@@ -6,9 +6,5 @@ Given a string of length N of lowercase alphabet characters. Find the total numb
 ## Examples
 **Example 1:** Insert all suffixes.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

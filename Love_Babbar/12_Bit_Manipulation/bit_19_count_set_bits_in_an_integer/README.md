@@ -6,8 +6,5 @@ Given a positive integer N, print count of set bits in it.<br><br><b>🔗 Practi
 ## Examples
 **Example 1:** Brian Kernighan's algorithm.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

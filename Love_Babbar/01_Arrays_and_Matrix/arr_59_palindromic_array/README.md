@@ -6,8 +6,5 @@ Given a Integer array A[] of n elements. Your task is to complete the function P
 ## Examples
 **Example 1:** Check individual numbers.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,10 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: prices = [7,1,5,3,6,4], Output: 5
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- SDE_Sheet
-- Love_Babbar
-- Striver_A_Z
-
-</details>

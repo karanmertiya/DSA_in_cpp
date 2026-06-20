@@ -6,8 +6,5 @@ Given a doubly linked list containing N nodes. The problem is to reverse every g
 ## Examples
 **Example 1:** Recursion.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ Given two strings s and t. Return the minimum number of operations required to c
 ## Examples
 **Example 1:** DP Table.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

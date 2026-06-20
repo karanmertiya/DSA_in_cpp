@@ -6,10 +6,5 @@ Given an expression string x. Examine whether the pairs and the orders of "{", "
 ## Examples
 **Example 1:** Stack approach.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z, SDE Sheet
 
-- Love_Babbar
-- Striver_A_Z
-- SDE_Sheet
-
-</details>

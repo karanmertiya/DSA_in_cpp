@@ -6,8 +6,5 @@ You are given a string num, representing a large integer. Return the largest-val
 ## Examples
 **Example 1:** Iterate from right.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z
 
-- Striver_A_Z
-
-</details>

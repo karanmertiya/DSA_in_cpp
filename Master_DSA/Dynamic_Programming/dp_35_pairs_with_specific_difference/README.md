@@ -6,8 +6,5 @@ Given an array of integers arr[] and a number K.You can pair two numbers of the 
 ## Examples
 **Example 1:** Sort and DP or Greedy.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

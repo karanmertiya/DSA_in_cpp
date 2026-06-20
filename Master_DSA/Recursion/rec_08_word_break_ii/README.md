@@ -6,9 +6,5 @@ Given a string s and a dictionary of strings wordDict, add spaces in s to constr
 ## Examples
 **Example 1:** Return list of sentences.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

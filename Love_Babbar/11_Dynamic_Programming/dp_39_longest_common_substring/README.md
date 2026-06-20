@@ -6,8 +6,5 @@ Given two strings. The task is to find the length of the longest common substrin
 ## Examples
 **Example 1:** 2D DP.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

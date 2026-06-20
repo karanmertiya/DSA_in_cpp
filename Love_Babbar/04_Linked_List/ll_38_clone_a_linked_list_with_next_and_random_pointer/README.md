@@ -6,8 +6,5 @@ You are given a special linked list with N nodes where each node has a next poin
 ## Examples
 **Example 1:** Interleaving lists.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

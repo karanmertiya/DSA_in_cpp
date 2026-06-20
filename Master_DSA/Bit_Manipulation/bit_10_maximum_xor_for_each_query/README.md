@@ -6,9 +6,5 @@ You are given a sorted array nums of n non-negative integers and an integer maxi
 ## Examples
 **Example 1:** `nums = [0,1,1,3], maximumBit = 2`. Output: `[0,3,2,3]`.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

@@ -6,10 +6,5 @@ Determine if it is a valid BST.<br><br><b>🔗 Practice:</b> <a href='https://le
 ## Examples
 **Example 1:** Input: root = [2,1,3], Output: true
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Love_Babbar
-- SDE_Sheet
-- Striver_A_Z
-
-</details>

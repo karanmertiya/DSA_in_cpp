@@ -6,9 +6,5 @@ Given a grid of size n*m (n is the number of rows and m is the number of columns
 ## Examples
 **Example 1:** DFS or BFS.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

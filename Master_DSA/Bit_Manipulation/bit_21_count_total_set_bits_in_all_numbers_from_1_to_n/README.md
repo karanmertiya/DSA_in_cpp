@@ -6,8 +6,5 @@ You are given a number N. Find the total count of set bits for all numbers from 
 ## Examples
 **Example 1:** Recursive approach based on largest power of 2.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

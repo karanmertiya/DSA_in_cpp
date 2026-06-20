@@ -6,9 +6,5 @@ Given the string s, return the size of the longest substring containing each vow
 ## Examples
 **Example 1:** Bitmask and hashmap.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

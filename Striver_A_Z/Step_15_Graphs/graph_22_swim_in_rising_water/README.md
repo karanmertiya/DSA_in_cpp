@@ -6,9 +6,5 @@ You are given an n x n integer matrix grid where each value grid[i][j] represent
 ## Examples
 **Example 1:** Dijkstra-like or Binary Search + BFS.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

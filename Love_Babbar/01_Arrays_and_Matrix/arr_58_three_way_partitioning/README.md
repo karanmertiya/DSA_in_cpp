@@ -6,8 +6,5 @@ Given an array of size n and a range [a, b]. The task is to partition the array 
 ## Examples
 **Example 1:** Dutch National Flag algorithm.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

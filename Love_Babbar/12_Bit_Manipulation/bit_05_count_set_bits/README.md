@@ -6,10 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 ## Examples
 **Example 1:** Input: N=11 (1011), Output: 3<br><br>**Note (Constraint):** 1 &le; N &le; 2<sup>31</sup> - 1
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Striver_A_Z
-- Love_Babbar
-- SDE_Sheet
-
-</details>

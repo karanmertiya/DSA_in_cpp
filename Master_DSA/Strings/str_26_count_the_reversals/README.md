@@ -6,8 +6,5 @@ Given a string S consisting of only opening and closing curly brackets '{' and '
 ## Examples
 **Example 1:** Stack approach.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

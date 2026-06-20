@@ -6,8 +6,5 @@ Two sequences of integers, sorted in strictly increasing order, are given. Find 
 ## Examples
 **Example 1:** Two Pointers / Binary Search.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

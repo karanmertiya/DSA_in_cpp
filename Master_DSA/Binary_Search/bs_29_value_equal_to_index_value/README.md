@@ -6,8 +6,5 @@ Given an array Arr of N positive integers. Your task is to find the elements who
 ## Examples
 **Example 1:** Linear scan.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

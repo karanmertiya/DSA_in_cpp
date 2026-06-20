@@ -6,9 +6,5 @@ Given two strings s and t of lengths m and n respectively, return the minimum wi
 ## Examples
 **Example 1:** Variable sliding window.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

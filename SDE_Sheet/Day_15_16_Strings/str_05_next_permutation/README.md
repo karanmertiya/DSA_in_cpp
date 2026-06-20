@@ -6,10 +6,5 @@ Implement the next permutation, which rearranges the list of numbers into Lexico
 ## Examples
 **Example 1:** Swap and Reverse.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z, SDE Sheet
 
-- Love_Babbar
-- Striver_A_Z
-- SDE_Sheet
-
-</details>

@@ -6,9 +6,5 @@ Given a string s, partition s such that every substring of the partition is a pa
 ## Examples
 **Example 1:** Input: s = 'aab', Output: 1
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

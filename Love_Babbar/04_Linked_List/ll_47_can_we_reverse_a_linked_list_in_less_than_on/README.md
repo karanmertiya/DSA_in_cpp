@@ -6,8 +6,5 @@ Can we reverse a linked list in less than O(n)?<br><br><b>🔗 Practice:</b> N/A
 ## Examples
 **Example 1:** Theoretical Question.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

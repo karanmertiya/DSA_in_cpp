@@ -6,8 +6,5 @@ Given an array of integers where each element represents the max number of steps
 ## Examples
 **Example 1:** Greedy tracking bounds.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,8 +6,5 @@ Given a binary string str of length N, the task is to find the maximum count of 
 ## Examples
 **Example 1:** Counter logic.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

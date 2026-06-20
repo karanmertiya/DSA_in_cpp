@@ -6,10 +6,5 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeek
 ## Examples
 **Example 1:** N=70, i=3 -> Set:78, Clear:62, Toggle:78<br><br>**Note (Constraint):** 1 &le; N &le; 10<sup>9</sup>
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Striver_A_Z
-- Love_Babbar
-- SDE_Sheet
-
-</details>

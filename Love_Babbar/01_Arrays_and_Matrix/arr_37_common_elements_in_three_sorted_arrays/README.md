@@ -6,8 +6,5 @@ Given three arrays sorted in increasing order. Find the elements that are common
 ## Examples
 **Example 1:** Three pointers.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

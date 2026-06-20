@@ -6,10 +6,5 @@ Given two strings, one is a text string and other is a pattern string. The task 
 ## Examples
 **Example 1:** LPS Array.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z, SDE Sheet
 
-- Love_Babbar
-- Striver_A_Z
-- SDE_Sheet
-
-</details>

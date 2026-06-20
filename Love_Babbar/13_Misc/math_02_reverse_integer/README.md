@@ -6,10 +6,5 @@ Given a signed 32-bit integer x, return x with its digits reversed.<br><br><b>�
 ## Examples
 **Example 1:** Input: x = 123, Output: 321
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Striver_A_Z
-- Love_Babbar
-- SDE_Sheet
-
-</details>

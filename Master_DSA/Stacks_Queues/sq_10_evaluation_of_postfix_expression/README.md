@@ -6,8 +6,5 @@ Given string S representing a postfix expression, the task is to evaluate the ex
 ## Examples
 **Example 1:** Stack of operands.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

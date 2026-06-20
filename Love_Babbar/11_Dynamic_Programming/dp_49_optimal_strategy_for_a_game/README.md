@@ -6,8 +6,5 @@ You are given an array A of size N. The array contains integers and is of even l
 ## Examples
 **Example 1:** DP.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

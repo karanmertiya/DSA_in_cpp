@@ -6,9 +6,5 @@ Given the root of a binary search tree, return the minimum value in the tree.<br
 ## Examples
 **Example 1:** Leftmost node.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

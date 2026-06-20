@@ -6,8 +6,5 @@ Given an array nums[] of size n, where nums[i] denotes the number of characters 
 ## Examples
 **Example 1:** DP approach.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

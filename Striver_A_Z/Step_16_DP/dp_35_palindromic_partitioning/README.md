@@ -6,9 +6,5 @@ Given a string str, a partitioning of the string is a palindrome partitioning if
 ## Examples
 **Example 1:** 1D DP.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

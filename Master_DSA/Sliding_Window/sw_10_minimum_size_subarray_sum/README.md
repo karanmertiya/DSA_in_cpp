@@ -6,8 +6,5 @@ Given an array of positive integers nums and a positive integer target, return t
 ## Examples
 **Example 1:** Variable sliding window.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

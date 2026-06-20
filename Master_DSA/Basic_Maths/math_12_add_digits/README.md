@@ -6,8 +6,5 @@ Given an integer num, repeatedly add all its digits until the result has only on
 ## Examples
 **Example 1:** Digital Root.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,8 +6,5 @@ Given an integer array nums where every element appears three times except for o
 ## Examples
 **Example 1:** Ones and Twos.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z
 
-- Striver_A_Z
-
-</details>

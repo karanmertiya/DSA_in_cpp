@@ -6,8 +6,5 @@ Given an array arr[] of N integers, calculate the median.<br><br><b>🔗 Practic
 ## Examples
 **Example 1:** Sort array.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

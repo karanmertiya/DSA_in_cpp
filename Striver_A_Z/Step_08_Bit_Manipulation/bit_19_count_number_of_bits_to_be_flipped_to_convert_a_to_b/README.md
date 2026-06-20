@@ -6,9 +6,5 @@ Given two numbers A and B. Write a program to count number of bits needed to be 
 ## Examples
 **Example 1:** Count set bits in XOR.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

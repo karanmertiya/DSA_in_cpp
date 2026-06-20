@@ -6,8 +6,5 @@ Given a binary string S consisting of 0s and 1s. The task is to find the maximum
 ## Examples
 **Example 1:** Kadane's Algorithm.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ Given 2 Arrays of Inorder and preorder traversal. Construct a tree and print the
 ## Examples
 **Example 1:** Hash map for fast search.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

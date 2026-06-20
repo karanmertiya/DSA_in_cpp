@@ -6,9 +6,5 @@ The next greater element of some element x in an array is the first greater elem
 ## Examples
 **Example 1:** Input: nums1 = [4,1,2], nums2 = [1,3,4,2], Output: [-1,3,-1]
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, SDE Sheet
 
-- Striver_A_Z
-- SDE_Sheet
-
-</details>

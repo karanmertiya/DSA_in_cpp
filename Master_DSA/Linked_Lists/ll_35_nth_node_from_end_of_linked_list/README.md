@@ -6,8 +6,5 @@ Given a linked list consisting of L nodes and given a number N. The task is to f
 ## Examples
 **Example 1:** Two pointers.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

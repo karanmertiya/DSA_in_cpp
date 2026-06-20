@@ -6,9 +6,5 @@ Given an array having both positive and negative integers. The task is to comput
 ## Examples
 **Example 1:** Hash Map.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, SDE Sheet
 
-- Love_Babbar
-- SDE_Sheet
-
-</details>

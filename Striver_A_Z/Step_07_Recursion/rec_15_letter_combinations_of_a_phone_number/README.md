@@ -6,9 +6,5 @@ Given a string containing digits from 2-9 inclusive, return all possible letter 
 ## Examples
 **Example 1:** String combinations.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

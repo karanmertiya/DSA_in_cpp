@@ -6,9 +6,5 @@ Given the head of a singly linked list and an integer k, split the linked list i
 ## Examples
 **Example 1:** Distribution math.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

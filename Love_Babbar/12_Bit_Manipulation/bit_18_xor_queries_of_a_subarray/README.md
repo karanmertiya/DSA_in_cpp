@@ -6,9 +6,5 @@ Given the array arr of positive integers and the array queries where queries[i] 
 ## Examples
 **Example 1:** Prefix XOR array.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

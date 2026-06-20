@@ -6,9 +6,5 @@ Given the root of a Binary Search Tree and a target number k, return true if the
 ## Examples
 **Example 1:** BST Iterator two pointer.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

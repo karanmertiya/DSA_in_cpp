@@ -6,9 +6,5 @@ You are given an integer array prices and an integer k. Find the maximum profit 
 ## Examples
 **Example 1:** DP with transactions.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

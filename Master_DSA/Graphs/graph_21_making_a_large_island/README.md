@@ -6,9 +6,5 @@ You are given an n x n binary matrix grid. You are allowed to change at most one
 ## Examples
 **Example 1:** Component sizes with DSU.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

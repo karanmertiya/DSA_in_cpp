@@ -6,8 +6,5 @@ Print numbers from 1 to N without the help of loops.<br><br><b>🔗 Practice:</b
 ## Examples
 **Example 1:** Recursion.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z
 
-- Striver_A_Z
-
-</details>

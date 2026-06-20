@@ -6,8 +6,5 @@ Given a number of friends who have to give or take some amount of money from one
 ## Examples
 **Example 1:** Net amounts.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

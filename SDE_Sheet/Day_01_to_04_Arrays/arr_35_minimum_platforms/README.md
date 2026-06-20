@@ -6,10 +6,5 @@ Given arrival and departure times of all trains that reach a railway station. Fi
 ## Examples
 **Example 1:** Sort arrival and departure times separately.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z, SDE Sheet
 
-- Love_Babbar
-- Striver_A_Z
-- SDE_Sheet
-
-</details>

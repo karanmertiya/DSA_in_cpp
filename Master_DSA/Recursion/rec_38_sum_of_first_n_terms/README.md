@@ -6,8 +6,5 @@ Given an integer n, calculate the sum of series 1^3 + 2^3 + 3^3 + 4^3 + ... till
 ## Examples
 **Example 1:** Math or Recursion.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z
 
-- Striver_A_Z
-
-</details>

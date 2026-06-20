@@ -6,8 +6,5 @@ Given a binary tree, find all duplicate subtrees. For each kind of duplicate sub
 ## Examples
 **Example 1:** Serialization + Hash Map.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ You are given two non-empty linked lists representing two non-negative integers.
 ## Examples
 **Example 1:** Stack or reverse.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ The count-and-say sequence is a sequence of digit strings defined by the recursi
 ## Examples
 **Example 1:** Recursive generation.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

@@ -6,9 +6,5 @@ You are in a city that consists of n intersections numbered from 0 to n - 1 with
 ## Examples
 **Example 1:** Dijkstra's with Ways Count.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

@@ -6,8 +6,5 @@ Given a Binary Tree, print the diagonal traversal of the binary tree. Consider l
 ## Examples
 **Example 1:** Queue based.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

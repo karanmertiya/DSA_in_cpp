@@ -6,8 +6,5 @@ Given an array of strings words representing an English Dictionary, return the l
 ## Examples
 **Example 1:** Trie + DFS.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z
 
-- Striver_A_Z
-
-</details>

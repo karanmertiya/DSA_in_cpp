@@ -6,9 +6,5 @@ Given a binary array nums and an integer k, return the maximum number of consecu
 ## Examples
 **Example 1:** Sliding Window.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

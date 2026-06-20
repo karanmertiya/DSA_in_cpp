@@ -6,9 +6,5 @@ Given a string S, check if it is palindrome or not.<br><br><b>🔗 Practice:</b>
 ## Examples
 **Example 1:** Two pointers.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

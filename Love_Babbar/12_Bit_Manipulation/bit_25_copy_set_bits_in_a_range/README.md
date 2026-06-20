@@ -6,8 +6,5 @@ Given two numbers x and y, and a range [l, r] where 1 <= l, r <= 32. The task is
 ## Examples
 **Example 1:** Masking.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ There is BST given with the root node with the key part as an integer only. You 
 ## Examples
 **Example 1:** Search down the tree.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

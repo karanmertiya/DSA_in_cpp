@@ -6,8 +6,5 @@ Design a data structure that supports adding new words and finding if a string m
 ## Examples
 **Example 1:** Backtracking with Trie.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ Given an array of n positive integers. Find the sum of the maximum sum subsequen
 ## Examples
 **Example 1:** DP (LIS variant).
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

@@ -6,9 +6,5 @@ The distance of a pair of integers a and b is defined as the absolute difference
 ## Examples
 **Example 1:** Sort and binary search on distance.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

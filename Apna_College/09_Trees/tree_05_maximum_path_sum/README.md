@@ -6,11 +6,5 @@ A path in a binary tree is a sequence of nodes where each pair of adjacent nodes
 ## Examples
 **Example 1:** Input: root = [-10,9,20,null,null,15,7], Output: 42
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
 
-- SDE_Sheet
-- Apna_College
-- Love_Babbar
-- Striver_A_Z
-
-</details>

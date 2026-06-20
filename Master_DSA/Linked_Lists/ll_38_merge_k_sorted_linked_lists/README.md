@@ -6,8 +6,5 @@ Given K sorted linked lists of different sizes. The task is to merge them in suc
 ## Examples
 **Example 1:** Min-Heap.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

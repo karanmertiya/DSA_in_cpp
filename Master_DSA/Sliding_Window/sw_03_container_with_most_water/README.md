@@ -6,9 +6,5 @@ Find two lines that together with the x-axis form a container, such that the con
 ## Examples
 **Example 1:** Input: height = [1,8,6,2,5,4,8,3,7], Output: 49
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, SDE Sheet
 
-- Striver_A_Z
-- SDE_Sheet
-
-</details>

@@ -6,9 +6,5 @@ You are given an integer array nums and an integer target. Build an expression t
 ## Examples
 **Example 1:** Count Subsets with Diff = target.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

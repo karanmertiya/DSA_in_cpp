@@ -6,8 +6,5 @@ You are given a string s of lower case english alphabets. You can choose any two
 ## Examples
 **Example 1:** Track first occurrences.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

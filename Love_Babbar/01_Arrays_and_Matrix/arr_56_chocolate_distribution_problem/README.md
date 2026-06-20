@@ -6,8 +6,5 @@ Given an array A[ ] of positive integers of size N, where each value represents 
 ## Examples
 **Example 1:** Sort and Slide.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

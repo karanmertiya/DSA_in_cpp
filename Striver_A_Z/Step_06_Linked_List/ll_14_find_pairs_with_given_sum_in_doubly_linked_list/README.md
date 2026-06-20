@@ -6,9 +6,5 @@ Given a sorted doubly linked list of positive distinct elements, the task is to 
 ## Examples
 **Example 1:** Two pointer approach.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

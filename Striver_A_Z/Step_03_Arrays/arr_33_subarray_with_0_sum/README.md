@@ -6,10 +6,5 @@ Given an array of positive and negative numbers. Find if there is a subarray (of
 ## Examples
 **Example 1:** Prefix Sum with HashSet.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- SDE_Sheet
-- Love_Babbar
-- Striver_A_Z
-
-</details>

@@ -6,8 +6,5 @@ In English, we have a concept called root, which can be followed by some other w
 ## Examples
 **Example 1:** Trie matching.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z
 
-- Striver_A_Z
-
-</details>

@@ -6,10 +6,5 @@ Given an integer x, return true if x is palindrome integer.<br><br><b>🔗 Pract
 ## Examples
 **Example 1:** Input: x = 121, Output: true
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Striver_A_Z
-- Love_Babbar
-- SDE_Sheet
-
-</details>

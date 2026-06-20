@@ -6,9 +6,5 @@ Given an n x n matrix where each of the rows and columns is sorted in ascending 
 ## Examples
 **Example 1:** Binary search on range.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

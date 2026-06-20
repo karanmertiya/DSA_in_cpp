@@ -6,11 +6,5 @@ Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
 ## Examples
 **Example 1:** Input: s = "()[]{}", Output: true
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet, Apna College
 
-- Striver_A_Z
-- Love_Babbar
-- SDE_Sheet
-- Apna_College
-
-</details>

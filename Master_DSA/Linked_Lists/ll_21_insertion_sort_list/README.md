@@ -6,9 +6,5 @@ Given the head of a singly linked list, sort the list using insertion sort, and 
 ## Examples
 **Example 1:** Dummy head.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

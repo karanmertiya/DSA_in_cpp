@@ -6,9 +6,5 @@ You are given an array of words where each word consists of lowercase English le
 ## Examples
 **Example 1:** Sort by length and use hash map.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ Given a Binary Tree, return Left view of it. Left view of a Binary Tree is set o
 ## Examples
 **Example 1:** Print left-most node at each level.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

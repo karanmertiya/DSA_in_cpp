@@ -6,8 +6,5 @@ There is one meeting room in a firm. There are N meetings in the form of (start[
 ## Examples
 **Example 1:** Activity Selection.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,8 +6,5 @@ Given two strings S and P. Find the smallest window in the string S consisting o
 ## Examples
 **Example 1:** Sliding Window.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

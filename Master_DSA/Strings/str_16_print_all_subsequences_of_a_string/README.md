@@ -6,8 +6,5 @@ Given a string, find all subsequences of the string.<br><br><b>🔗 Practice:</b
 ## Examples
 **Example 1:** Recursive choice (include/exclude).
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

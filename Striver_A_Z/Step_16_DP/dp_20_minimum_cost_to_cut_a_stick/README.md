@@ -6,9 +6,5 @@ Given a wooden stick of length n units. The stick is labelled from 0 to n. Given
 ## Examples
 **Example 1:** Cost depends on current stick length.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

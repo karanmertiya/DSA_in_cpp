@@ -6,8 +6,5 @@ Given an array of positive and negative numbers. Rearrange the array elements so
 ## Examples
 **Example 1:** Extra Space Array.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

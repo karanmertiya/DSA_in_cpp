@@ -6,9 +6,5 @@ A transformation sequence from word beginWord to word endWord using a dictionary
 ## Examples
 **Example 1:** BFS level by level.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

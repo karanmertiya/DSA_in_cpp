@@ -6,9 +6,5 @@ Consider a rat placed at (0, 0) in a square matrix m[][] of order n and has to r
 ## Examples
 **Example 1:** Lexicographical order paths.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

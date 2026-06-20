@@ -6,8 +6,5 @@ Given a positive array, find the number of subsequences having product smaller t
 ## Examples
 **Example 1:** DP.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,8 +6,5 @@ A board of length M and width N is given. The task is to break this board into M
 ## Examples
 **Example 1:** Sort costs.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

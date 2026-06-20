@@ -6,9 +6,5 @@ Given a value N, find the number of ways to make change for N cents, if we have 
 ## Examples
 **Example 1:** 1D Tabulation.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

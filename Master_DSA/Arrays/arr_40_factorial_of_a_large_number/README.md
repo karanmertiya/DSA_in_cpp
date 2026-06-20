@@ -6,8 +6,5 @@ Given an integer N, find its factorial. Return a list of integers denoting the d
 ## Examples
 **Example 1:** Array based multiplication.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

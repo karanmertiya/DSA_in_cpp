@@ -6,8 +6,5 @@ Given an array of length N, where each element denotes the coordinate of a stall
 ## Examples
 **Example 1:** Binary Search on Answer.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

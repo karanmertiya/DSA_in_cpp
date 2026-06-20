@@ -6,9 +6,5 @@ You are given the root of a binary tree with unique values, and an integer start
 ## Examples
 **Example 1:** Parent pointers and BFS.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

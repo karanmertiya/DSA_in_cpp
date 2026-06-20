@@ -6,9 +6,5 @@ Given an undirected connected graph with V vertices and E edges, return all the 
 ## Examples
 **Example 1:** Tarjan's algorithm with discovery times.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

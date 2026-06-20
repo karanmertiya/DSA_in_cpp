@@ -6,8 +6,5 @@ An ugly number is a positive integer whose prime factors are limited to 2, 3, an
 ## Examples
 **Example 1:** Division.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

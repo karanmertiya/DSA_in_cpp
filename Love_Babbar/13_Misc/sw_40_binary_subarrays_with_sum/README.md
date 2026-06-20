@@ -6,9 +6,5 @@ Given a binary array nums and an integer goal, return the number of non-empty su
 ## Examples
 **Example 1:** atMost(goal) - atMost(goal - 1).
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

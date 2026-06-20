@@ -6,9 +6,5 @@ Design an algorithm to serialize and deserialize a binary tree. Serialization co
 ## Examples
 **Example 1:** Serialization/Deserialization.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

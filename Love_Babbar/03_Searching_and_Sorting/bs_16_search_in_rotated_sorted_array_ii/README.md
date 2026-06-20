@@ -6,9 +6,5 @@ Similar to Search in Rotated Sorted Array, but the array may contain duplicates.
 ## Examples
 **Example 1:** Input: nums = [2,5,6,0,0,1,2], target = 0, Output: true
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

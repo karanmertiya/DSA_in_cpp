@@ -6,9 +6,5 @@ You are given the head of a linked list, which contains a series of integers sep
 ## Examples
 **Example 1:** Accumulate and connect.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ Given an integer array nums and an integer k, split nums into k non-empty subarr
 ## Examples
 **Example 1:** Equivalent to allocate books.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

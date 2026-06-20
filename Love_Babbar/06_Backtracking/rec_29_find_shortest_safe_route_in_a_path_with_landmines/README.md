@@ -6,8 +6,5 @@ Given a path in the form of a rectangular matrix having few landmines arbitraril
 ## Examples
 **Example 1:** BFS or Backtracking.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

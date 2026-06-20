@@ -6,8 +6,5 @@ Given a word pat and a text txt. Return the count of the occurrences of anagrams
 ## Examples
 **Example 1:** Sliding Window + Frequency Map.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

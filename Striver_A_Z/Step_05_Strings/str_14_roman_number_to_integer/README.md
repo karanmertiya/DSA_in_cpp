@@ -6,10 +6,5 @@ Given a string in roman no format (s)  your task is to convert it to an integer.
 ## Examples
 **Example 1:** Value mapping.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z, SDE Sheet
 
-- Love_Babbar
-- Striver_A_Z
-- SDE_Sheet
-
-</details>

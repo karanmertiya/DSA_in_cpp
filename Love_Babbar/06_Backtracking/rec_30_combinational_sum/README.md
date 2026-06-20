@@ -6,8 +6,5 @@ Given an array of integers arr and an integer sum, find all unique combinations 
 ## Examples
 **Example 1:** Backtracking.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

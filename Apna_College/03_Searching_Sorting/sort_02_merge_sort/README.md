@@ -6,10 +6,5 @@ Sort an array of integers in ascending order using the Merge Sort algorithm.<br>
 ## Examples
 **Example 1:** Input: nums = [5,2,3,1], Output: [1,2,3,5]
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, Apna College
 
-- Apna_College
-- Love_Babbar
-- Striver_A_Z
-
-</details>

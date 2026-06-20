@@ -6,8 +6,5 @@ Given an array Arr, with indexes running from 0 to N-1, select any two indexes, 
 ## Examples
 **Example 1:** Adjacent pairs sum.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z
 
-- Striver_A_Z
-
-</details>

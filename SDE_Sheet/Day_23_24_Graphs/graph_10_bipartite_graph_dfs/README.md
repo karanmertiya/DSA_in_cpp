@@ -6,10 +6,5 @@ Given an adjacency list of a graph adj of V no. of vertices. Check whether the g
 ## Examples
 **Example 1:** Return true/false.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- SDE_Sheet
-- Love_Babbar
-- Striver_A_Z
-
-</details>

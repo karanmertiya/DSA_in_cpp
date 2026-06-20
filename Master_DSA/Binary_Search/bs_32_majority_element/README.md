@@ -6,10 +6,5 @@ Given an array A of N elements. Find the majority element in the array. A majori
 ## Examples
 **Example 1:** Moore's Voting Algorithm.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z, SDE Sheet
 
-- Love_Babbar
-- Striver_A_Z
-- SDE_Sheet
-
-</details>

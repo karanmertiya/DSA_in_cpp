@@ -6,9 +6,5 @@ Given a collection of candidate numbers (candidates) and a target number (target
 ## Examples
 **Example 1:** Return unique combinations.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

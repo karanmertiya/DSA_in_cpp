@@ -6,9 +6,5 @@ Given a triangle array, return the minimum path sum from top to bottom. For each
 ## Examples
 **Example 1:** Output: 11
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

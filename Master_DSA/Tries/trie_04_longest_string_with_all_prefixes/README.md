@@ -6,9 +6,5 @@ Given an array of strings words, find the longest string in words such that ever
 ## Examples
 **Example 1:** Insert all, check each word.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ Given a boolean expression with following symbols: T (True), F (False) and opera
 ## Examples
 **Example 1:** MCM DP pattern.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

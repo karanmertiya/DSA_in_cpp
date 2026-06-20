@@ -6,9 +6,5 @@ Given a binary search tree (BST), find the lowest common ancestor (LCA) node of 
 ## Examples
 **Example 1:** Exploit BST property.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

@@ -6,8 +6,5 @@ Given head, the head of a singly linked list, find if the linked list is circula
 ## Examples
 **Example 1:** Traverse to head.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

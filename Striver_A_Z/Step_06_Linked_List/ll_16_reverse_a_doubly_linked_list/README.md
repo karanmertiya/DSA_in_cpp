@@ -6,9 +6,5 @@ Given a doubly linked list of n elements. The task is to reverse the doubly link
 ## Examples
 **Example 1:** Swap prev and next.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

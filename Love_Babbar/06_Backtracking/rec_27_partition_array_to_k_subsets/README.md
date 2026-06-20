@@ -6,8 +6,5 @@ Given an integer array a[ ] of N elements and an integer K, the task is to check
 ## Examples
 **Example 1:** Recursive Backtracking.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

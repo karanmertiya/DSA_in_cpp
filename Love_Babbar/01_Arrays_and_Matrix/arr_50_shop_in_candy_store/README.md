@@ -6,8 +6,5 @@ In a candy store, there are N different types of candies available and the price
 ## Examples
 **Example 1:** Sort and pick from ends.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

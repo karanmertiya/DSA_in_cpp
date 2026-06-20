@@ -6,9 +6,5 @@ Given an array arr of positive integers sorted in a strictly increasing order, a
 ## Examples
 **Example 1:** Calculate missing.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

@@ -6,8 +6,5 @@ Given an array of digits (values are from 0 to 9), find the minimum possible sum
 ## Examples
 **Example 1:** Sort or Min-Heap.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

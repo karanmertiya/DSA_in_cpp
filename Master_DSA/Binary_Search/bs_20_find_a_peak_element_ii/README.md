@@ -6,9 +6,5 @@ A peak element in a 2D grid is an element that is strictly greater than all of i
 ## Examples
 **Example 1:** Binary search on columns.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

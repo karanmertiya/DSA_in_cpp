@@ -6,8 +6,5 @@ Given a Binary Tree, check if all leaves are at same level or not.<br><br><b>�
 ## Examples
 **Example 1:** Recursive check with global variable.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

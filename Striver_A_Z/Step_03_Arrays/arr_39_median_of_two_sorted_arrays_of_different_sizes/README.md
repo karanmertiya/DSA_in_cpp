@@ -6,10 +6,5 @@ Given two sorted arrays array1 and array2 of size m and n respectively. Find the
 ## Examples
 **Example 1:** Binary Search.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- SDE_Sheet
-- Love_Babbar
-- Striver_A_Z
-
-</details>

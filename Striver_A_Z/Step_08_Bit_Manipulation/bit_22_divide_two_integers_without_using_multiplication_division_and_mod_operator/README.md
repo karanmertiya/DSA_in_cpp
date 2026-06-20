@@ -6,9 +6,5 @@ Given two integers dividend and divisor. Find the quotient after dividing divide
 ## Examples
 **Example 1:** Bit shifts.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

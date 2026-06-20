@@ -6,8 +6,5 @@ Consider a sample space S consisting of all perfect squares starting from 1, 4, 
 ## Examples
 **Example 1:** Square root.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

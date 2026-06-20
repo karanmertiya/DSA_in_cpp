@@ -6,9 +6,5 @@ You are given an Undirected Graph having unit weight of the edges, find the shor
 ## Examples
 **Example 1:** BFS approach.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

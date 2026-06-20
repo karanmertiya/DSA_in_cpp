@@ -6,8 +6,5 @@ Given a sequence of positive numbers, find the maximum sum that can be formed wh
 ## Examples
 **Example 1:** DP.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

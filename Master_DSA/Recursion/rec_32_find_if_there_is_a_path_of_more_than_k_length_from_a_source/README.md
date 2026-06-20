@@ -6,8 +6,5 @@ Given a graph, a source vertex and a number k, find if there is a simple path (w
 ## Examples
 **Example 1:** DFS Backtracking.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

@@ -6,9 +6,5 @@ You are given N pairs of numbers. In every pair, the first number is always smal
 ## Examples
 **Example 1:** Sort and Greedy / DP.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

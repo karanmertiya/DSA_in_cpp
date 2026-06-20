@@ -6,9 +6,5 @@ Given a string S, Find all the possible subsequences of the String in lexicograp
 ## Examples
 **Example 1:** Bit manipulation (0 to 2^N - 1).
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Love_Babbar
-- Striver_A_Z
-
-</details>

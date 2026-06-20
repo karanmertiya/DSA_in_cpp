@@ -6,10 +6,5 @@ Given an array arr[] of N non-negative integers representing the height of block
 ## Examples
 **Example 1:** Two Pointers.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar, Striver A Z, SDE Sheet
 
-- Love_Babbar
-- Striver_A_Z
-- SDE_Sheet
-
-</details>

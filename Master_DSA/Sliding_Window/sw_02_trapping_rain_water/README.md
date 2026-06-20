@@ -6,10 +6,5 @@ Given n non-negative integers representing an elevation map where the width of e
 ## Examples
 **Example 1:** Input: height = [0,1,0,2,1,0,1,3,2,1,2,1], Output: 6
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Striver_A_Z
-- Love_Babbar
-- SDE_Sheet
-
-</details>

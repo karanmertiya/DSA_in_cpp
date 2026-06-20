@@ -13,7 +13,7 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td>Hash 01 Design Hashset<br><br></b> <a href="https://leetcode.com/problems/design-hashset/" target="_blank">LeetCode 705</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Hash 01 Design Hashset<br><br></b> <a href="https://leetcode.com/problems/design-hashset/" target="_blank">LeetCode 705</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Array of Linked Lists (Chaining).</td>
       <td><b>Time:</b> O(1) average, O(N) worst case<br><b>Space:</b> O(N)</td>
       <td><b>Explanation:</b> Use a large array (e.g., size 10000) of linked lists or vectors. The hash function maps `key` to `key % 10000`. To add, if not present in the bucket, append it. To remove, find and erase. To contain, iterate through bucket.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">class MyHashSet {&#10;    vector&lt;list&lt;int&gt;&gt; buckets;&#10;    int size = 10000;&#10;public:&#10;    MyHashSet() {&#10;        buckets.resize(size);&#10;    }&#10;    void add(int key) {&#10;        int i = key % size;&#10;        auto it = find(buckets[i].begin(), buckets[i].end(), key);&#10;        if(it == buckets[i].end()) buckets[i].push_back(key);&#10;    }&#10;    void remove(int key) {&#10;        int i = key % size;&#10;        auto it = find(buckets[i].begin(), buckets[i].end(), key);&#10;        if(it != buckets[i].end()) buckets[i].erase(it);&#10;    }&#10;    bool contains(int key) {&#10;        int i = key % size;&#10;        auto it = find(buckets[i].begin(), buckets[i].end(), key);&#10;        return it != buckets[i].end();&#10;    }&#10;};</code></pre></details></td>
@@ -62,42 +62,42 @@
     </tr>
     <tr>
       <td>8</td>
-      <td>Ll 08 Intersection Of Two Linked Lists<br><br></b> <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank">LeetCode 160</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Apna College, Love Babbar, Striver A Z</details></td>
+      <td>Ll 08 Intersection Of Two Linked Lists<br><br></b> <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank">LeetCode 160</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet, Apna College</details></td>
       <td>**Example 1:** Input: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3, Output: Intersected at '8'</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> Two pointers `a` and `b`. Traverse `A` then `B`, and `B` then `A`. They will meet at the intersection node or `NULL`.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {&#10;    ListNode *a = headA, *b = headB;&#10;    while(a != b) {&#10;        a = a ? a-&gt;next : headB;&#10;        b = b ? b-&gt;next : headA;&#10;    }&#10;    return a;&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td>9</td>
-      <td>Ll 09 Reverse Nodes In K Group<br><br></b> <a href="https://leetcode.com/problems/reverse-nodes-in-k-group/" target="_blank">LeetCode 25</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Apna College, Love Babbar, SDE Sheet, Striver A Z</details></td>
+      <td>Ll 09 Reverse Nodes In K Group<br><br></b> <a href="https://leetcode.com/problems/reverse-nodes-in-k-group/" target="_blank">LeetCode 25</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet, Apna College</details></td>
       <td>**Example 1:** Input: head = [1,2,3,4,5], k = 2, Output: [2,1,4,3,5]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> Find length of list. Traverse groups of size k. For each group, perform standard linked list reversal. Link the prev group's tail to the current reversed head.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* reverseKGroup(ListNode* head, int k) {&#10;    if(!head || k==1) return head;&#10;    int count = 0; ListNode* dummy = new ListNode(0); dummy-&gt;next = head;&#10;    ListNode *cur = head, *nex, *pre = dummy;&#10;    while(cur) { count++; cur = cur-&gt;next; }&#10;    while(count &gt;= k) {&#10;        cur = pre-&gt;next;&#10;        nex = cur-&gt;next;&#10;        for(int i=1; i&lt;k; i++) {&#10;            cur-&gt;next = nex-&gt;next;&#10;            nex-&gt;next = pre-&gt;next;&#10;            pre-&gt;next = nex;&#10;            nex = cur-&gt;next;&#10;        }&#10;        pre = cur;&#10;        count -= k;&#10;    }&#10;    return dummy-&gt;next;&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td>10</td>
-      <td>Ll 10 Copy List With Random Pointer<br><br></b> <a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank">LeetCode 138</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Ll 10 Copy List With Random Pointer<br><br></b> <a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank">LeetCode 138</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Return a deep copy.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> 3 Steps O(1) space. 1) Insert copy nodes right after original nodes. 2) Set random pointers for copy nodes: `iter->next->random = iter->random ? iter->random->next : NULL`. 3) Separate the two lists.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* copyRandomList(Node* head) {&#10;    if(!head) return NULL;&#10;    Node* iter = head;&#10;    while(iter) {&#10;        Node* copy = new Node(iter-&gt;val);&#10;        copy-&gt;next = iter-&gt;next;&#10;        iter-&gt;next = copy;&#10;        iter = copy-&gt;next;&#10;    }&#10;    iter = head;&#10;    while(iter) {&#10;        if(iter-&gt;random) iter-&gt;next-&gt;random = iter-&gt;random-&gt;next;&#10;        iter = iter-&gt;next-&gt;next;&#10;    }&#10;    iter = head; Node* pseudoHead = new Node(0);&#10;    Node* copyIter = pseudoHead;&#10;    while(iter) {&#10;        Node* nextIter = iter-&gt;next-&gt;next;&#10;        copyIter-&gt;next = iter-&gt;next;&#10;        iter-&gt;next = nextIter;&#10;        copyIter = copyIter-&gt;next;&#10;        iter = nextIter;&#10;    }&#10;    return pseudoHead-&gt;next;&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td>11</td>
-      <td>Ll 11 Rotate List<br><br></b> <a href="https://leetcode.com/problems/rotate-list/" target="_blank">LeetCode 61</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Ll 11 Rotate List<br><br></b> <a href="https://leetcode.com/problems/rotate-list/" target="_blank">LeetCode 61</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Input: head = [1,2,3,4,5], k = 2, Output: [4,5,1,2,3]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> Compute the length of the list, and make it a circular list by connecting the last node to head. Then find the new break point `(length - k % length)`. Break the circle and return the new head.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* rotateRight(ListNode* head, int k) {&#10;    if(!head || !head-&gt;next || k == 0) return head;&#10;    int len = 1;&#10;    ListNode* cur = head;&#10;    while(cur-&gt;next) {&#10;        len++;&#10;        cur = cur-&gt;next;&#10;    }&#10;    cur-&gt;next = head;&#10;    k = k % len;&#10;    k = len - k;&#10;    while(k--) cur = cur-&gt;next;&#10;    head = cur-&gt;next;&#10;    cur-&gt;next = NULL;&#10;    return head;&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td>12</td>
-      <td>Ll 12 Flattening A Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Ll 12 Flattening A Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Recursively merge.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N)</td>
       <td><b>Explanation:</b> Recursively flatten the `next` list, then merge the current list (`bottom` pointers) with the flattened `next` list, similar to merging two sorted linked lists.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* mergeTwoLists(Node* a, Node* b) {&#10;    Node* temp = new Node(0);&#10;    Node* res = temp;&#10;    while(a != NULL &amp;&amp; b != NULL) {&#10;        if(a-&gt;data &lt; b-&gt;data) { temp-&gt;bottom = a; temp = temp-&gt;bottom; a = a-&gt;bottom; }&#10;        else { temp-&gt;bottom = b; temp = temp-&gt;bottom; b = b-&gt;bottom; }&#10;    }&#10;    if(a) temp-&gt;bottom = a;&#10;    else temp-&gt;bottom = b;&#10;    return res-&gt;bottom;&#10;}&#10;Node *flatten(Node *root) {&#10;    if(root == NULL || root-&gt;next == NULL) return root;&#10;    root-&gt;next = flatten(root-&gt;next);&#10;    root = mergeTwoLists(root, root-&gt;next);&#10;    return root;&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td>13</td>
-      <td>Ll 13 Sort A Linked List<br><br></b> <a href="https://leetcode.com/problems/sort-list/" target="_blank">LeetCode 148</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Ll 13 Sort A Linked List<br><br></b> <a href="https://leetcode.com/problems/sort-list/" target="_blank">LeetCode 148</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Input: head = [4,2,1,3], Output: [1,2,3,4]</td>
       <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(log N)</td>
       <td><b>Explanation:</b> Merge Sort. Use fast/slow pointers to find the middle of the linked list. Split into two halves, recursively sort both halves, then merge the two sorted halves.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {&#10;    ListNode dummy(0);&#10;    ListNode* tail = &amp;dummy;&#10;    while(list1 &amp;&amp; list2) {&#10;        if(list1-&gt;val &lt; list2-&gt;val) { tail-&gt;next = list1; list1 = list1-&gt;next; }&#10;        else { tail-&gt;next = list2; list2 = list2-&gt;next; }&#10;        tail = tail-&gt;next;&#10;    }&#10;    tail-&gt;next = list1 ? list1 : list2;&#10;    return dummy.next;&#10;}&#10;ListNode* sortList(ListNode* head) {&#10;    if(!head || !head-&gt;next) return head;&#10;    ListNode *slow = head, *fast = head-&gt;next;&#10;    while(fast &amp;&amp; fast-&gt;next) {&#10;        slow = slow-&gt;next;&#10;        fast = fast-&gt;next-&gt;next;&#10;    }&#10;    ListNode* mid = slow-&gt;next;&#10;    slow-&gt;next = NULL;&#10;    return mergeTwoLists(sortList(head), sortList(mid));&#10;}</code></pre></details></td>
@@ -132,7 +132,7 @@
     </tr>
     <tr>
       <td>18</td>
-      <td>Ll 18 Swap Nodes In Pairs<br><br></b> <a href="https://leetcode.com/problems/swap-nodes-in-pairs/" target="_blank">LeetCode 24</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Ll 18 Swap Nodes In Pairs<br><br></b> <a href="https://leetcode.com/problems/swap-nodes-in-pairs/" target="_blank">LeetCode 24</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Input: head = [1,2,3,4], Output: [2,1,4,3]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> Use a dummy node. Iteratively swap `curr` and `curr->next`. Keep track of `prev` to link the swapped pairs to the rest of the list.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">ListNode* swapPairs(ListNode* head) {&#10;    ListNode* dummy = new ListNode(0);&#10;    dummy-&gt;next = head;&#10;    ListNode* prev = dummy;&#10;    while(prev-&gt;next != NULL &amp;&amp; prev-&gt;next-&gt;next != NULL) {&#10;        ListNode* first = prev-&gt;next;&#10;        ListNode* second = prev-&gt;next-&gt;next;&#10;        first-&gt;next = second-&gt;next;&#10;        second-&gt;next = first;&#10;        prev-&gt;next = second;&#10;        prev = first;&#10;    }&#10;    return dummy-&gt;next;&#10;}</code></pre></details></td>
@@ -146,7 +146,7 @@
     </tr>
     <tr>
       <td>20</td>
-      <td>Ll 20 Split Linked List In Parts<br><br></b> <a href="https://leetcode.com/problems/split-linked-list-in-parts/" target="_blank">LeetCode 725</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Ll 20 Split Linked List In Parts<br><br></b> <a href="https://leetcode.com/problems/split-linked-list-in-parts/" target="_blank">LeetCode 725</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Distribution math.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(K)</td>
       <td><b>Explanation:</b> First, calculate the length of the list. Then, determine base size `len / k` and extra nodes `len % k`. Iterate through the list, breaking it into parts of appropriate sizes.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;ListNode*&gt; splitListToParts(ListNode* head, int k) {&#10;    int len = 0;&#10;    ListNode* curr = head;&#10;    while(curr) { len++; curr = curr-&gt;next; }&#10;    int partSize = len / k, extra = len % k;&#10;    vector&lt;ListNode*&gt; ans;&#10;    curr = head;&#10;    for(int i=0; i&lt;k; i++) {&#10;        ans.push_back(curr);&#10;        int currentPartSize = partSize + (extra &gt; 0 ? 1 : 0);&#10;        extra--;&#10;        for(int j=0; j&lt;currentPartSize - 1; j++) {&#10;            if(curr) curr = curr-&gt;next;&#10;        }&#10;        if(curr) {&#10;            ListNode* nextPart = curr-&gt;next;&#10;            curr-&gt;next = NULL;&#10;            curr = nextPart;&#10;        }&#10;    }&#10;    return ans;&#10;}</code></pre></details></td>
@@ -209,14 +209,14 @@
     </tr>
     <tr>
       <td>29</td>
-      <td>Ll 29 Lru Cache Ll<br><br></b> <a href="https://leetcode.com/problems/lru-cache/" target="_blank">LeetCode 146</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z</details></td>
+      <td>Ll 29 Lru Cache Ll<br><br></b> <a href="https://leetcode.com/problems/lru-cache/" target="_blank">LeetCode 146</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
       <td>**Example 1:** Duplicate logic entry to ensure coverage.</td>
       <td><b>Time:</b> O(1)<br><b>Space:</b> O(N)</td>
       <td><b>Explanation:</b> Included for chapter coverage completeness. See sq_31_lru_cache.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">// See Stacks and Queues module for full implementation.</code></pre></details></td>
     </tr>
     <tr>
       <td>30</td>
-      <td>Ll 30 Lfu Cache Ll<br><br></b> <a href="https://leetcode.com/problems/lfu-cache/" target="_blank">LeetCode 460</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z</details></td>
+      <td>Ll 30 Lfu Cache Ll<br><br></b> <a href="https://leetcode.com/problems/lfu-cache/" target="_blank">LeetCode 460</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
       <td>**Example 1:** Duplicate logic entry to ensure coverage.</td>
       <td><b>Time:</b> O(1)<br><b>Space:</b> O(N)</td>
       <td><b>Explanation:</b> Included for chapter coverage completeness. See sq_32_lfu_cache.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">// See Stacks and Queues module for full implementation.</code></pre></details></td>
@@ -244,7 +244,7 @@
     </tr>
     <tr>
       <td>34</td>
-      <td>Ll 34 Delete Nodes Having Greater Value On Right<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/delete-nodes-having-greater-value-on-right/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Ll 34 Delete Nodes Having Greater Value On Right<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/delete-nodes-having-greater-value-on-right/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Reverse, filter, reverse.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> Reverse the linked list. Traverse the reversed list and keep track of the maximum value seen so far. If a node's value is less than the maximum, delete it. Otherwise, update the maximum. Finally, reverse the list again.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">Node* reverseList(Node* head) {&#10;    Node* prev = NULL, *curr = head, *next = NULL;&#10;    while(curr) {&#10;        next = curr-&gt;next;&#10;        curr-&gt;next = prev;&#10;        prev = curr;&#10;        curr = next;&#10;    }&#10;    return prev;&#10;}&#10;Node *compute(Node *head) {&#10;    head = reverseList(head);&#10;    Node* curr = head;&#10;    int max_val = head-&gt;data;&#10;    while(curr &amp;&amp; curr-&gt;next) {&#10;        if(curr-&gt;next-&gt;data &lt; max_val) {&#10;            Node* temp = curr-&gt;next;&#10;            curr-&gt;next = temp-&gt;next;&#10;            delete temp;&#10;        } else {&#10;            curr = curr-&gt;next;&#10;            max_val = curr-&gt;data;&#10;        }&#10;    }&#10;    return reverseList(head);&#10;}</code></pre></details></td>
@@ -286,7 +286,7 @@
     </tr>
     <tr>
       <td>40</td>
-      <td>Ll 40 Reverse A Linked List In Groups Of Given Size<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z</details></td>
+      <td>Ll 40 Reverse A Linked List In Groups Of Given Size<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
       <td>**Example 1:** Recursive grouping.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N/K)</td>
       <td><b>Explanation:</b> Reverse the first `k` nodes of the linked list iteratively. After reversing, the `head` pointer will be the end of the reversed group, and `curr` will point to the next node. Recursively call the function for `curr` and set `head->next` to the result.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">struct node *reverse (struct node *head, int k) {&#10;    if(!head) return NULL;&#10;    struct node* curr = head, *prev = NULL, *next = NULL;&#10;    int count = 0;&#10;    while(curr &amp;&amp; count &lt; k) {&#10;        next = curr-&gt;next;&#10;        curr-&gt;next = prev;&#10;        prev = curr;&#10;        curr = next;&#10;        count++;&#10;    }&#10;    if(next) head-&gt;next = reverse(next, k);&#10;    return prev;&#10;}</code></pre></details></td>
@@ -342,7 +342,7 @@
     </tr>
     <tr>
       <td>48</td>
-      <td>Ll 48 Find The First Node Of Loop In Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td>Ll 48 Find The First Node Of Loop In Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td>**Example 1:** Floyd's Cycle Detection.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td><b>Explanation:</b> Use Floyd's Cycle Detection to find if a cycle exists (slow and fast pointers meet). Then, move slow back to head, and advance both slow and fast by one step until they meet. The meeting point is the start of the loop.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int findFirstNode(Node* head) {&#10;    Node *slow = head, *fast = head;&#10;    while(fast != NULL &amp;&amp; fast-&gt;next != NULL) {&#10;        slow = slow-&gt;next;&#10;        fast = fast-&gt;next-&gt;next;&#10;        if(slow == fast) {&#10;            slow = head;&#10;            while(slow != fast) {&#10;                slow = slow-&gt;next;&#10;                fast = fast-&gt;next;&#10;            }&#10;            return slow-&gt;data;&#10;        }&#10;    }&#10;    return -1;&#10;}</code></pre></details></td>

@@ -6,9 +6,5 @@ Given an array of integers, replace each element with its rank. The rank represe
 ## Examples
 **Example 1:** Input: [40,10,20,30], Output: [4,1,2,3]
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

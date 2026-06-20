@@ -6,8 +6,5 @@ You are given an n x n binary matrix grid where 1 represents land and 0 represen
 ## Examples
 **Example 1:** DFS + BFS.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

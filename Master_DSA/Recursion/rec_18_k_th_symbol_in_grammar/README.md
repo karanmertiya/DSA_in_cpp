@@ -6,9 +6,5 @@ We build a table of n rows (1-indexed). We start by writing 0 in the 1st row. No
 ## Examples
 **Example 1:** Recursive division.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

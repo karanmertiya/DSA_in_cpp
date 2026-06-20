@@ -6,8 +6,5 @@ We are given n-trains with their arrival time, departure time and platform numbe
 ## Examples
 **Example 1:** Activity Selection on each platform.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

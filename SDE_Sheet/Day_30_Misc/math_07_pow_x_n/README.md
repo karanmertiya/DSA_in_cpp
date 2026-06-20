@@ -6,10 +6,5 @@ Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).<br><b
 ## Examples
 **Example 1:** Binary Exponentiation.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar, SDE Sheet
 
-- Love_Babbar
-- SDE_Sheet
-- Striver_A_Z
-
-</details>

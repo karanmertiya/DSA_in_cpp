@@ -6,9 +6,5 @@ Alice has a hand of cards. She wants to rearrange the cards into groups so that 
 ## Examples
 **Example 1:** Form consecutive sequences.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>

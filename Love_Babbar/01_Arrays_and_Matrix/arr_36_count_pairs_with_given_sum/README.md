@@ -6,8 +6,5 @@ Given an array of N integers, and an integer K, find the number of pairs of elem
 ## Examples
 **Example 1:** Hash Map.
 
-<details><summary>ℹ️</summary>
+**Tags:** Love Babbar
 
-- Love_Babbar
-
-</details>

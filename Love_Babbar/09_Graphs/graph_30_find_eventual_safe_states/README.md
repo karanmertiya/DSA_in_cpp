@@ -6,9 +6,5 @@ There is a directed graph of n nodes with each node labeled from 0 to n - 1. A n
 ## Examples
 **Example 1:** Topological Sort using Kahn's Algorithm on reversed graph.
 
-<details><summary>ℹ️</summary>
+**Tags:** Striver A Z, Love Babbar
 
-- Striver_A_Z
-- Love_Babbar
-
-</details>
