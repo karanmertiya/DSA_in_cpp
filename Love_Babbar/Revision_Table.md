@@ -3427,8 +3427,8 @@
       <td rowspan="1">Heap 12 Reorganize String<br><br></b> <a href="https://leetcode.com/problems/reorganize-string/" target="_blank">LeetCode 767</a></td>
       <td rowspan="1"><b>Example 1:</b> Duplicate logic entry. See Greedy chapter.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(26)</td>
-      <td>See greedy_38_reorganize_string.</td>
-      <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">// Implementation provided in greedy chapter.</code></pre></details></td>
+      <td>Count frequencies. If max frequency > (len + 1) / 2, it's impossible. Fill the most frequent character at even indices (0, 2, 4...). Then fill the remaining characters alternately at remaining even indices and then odd indices.</td>
+      <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">string reorganizeString(string s) {&#10;    vector&lt;int&gt; counts(26, 0);&#10;    int max_f = 0, letter = 0;&#10;    for(char c : s) {&#10;        counts[c - &#x27;a&#x27;]++;&#10;        if(counts[c - &#x27;a&#x27;] &gt; max_f) {&#10;            max_f = counts[c - &#x27;a&#x27;];&#10;            letter = c - &#x27;a&#x27;;&#10;        }&#10;    }&#10;    if(max_f &gt; (s.length() + 1) / 2) return &quot;&quot;;&#10;    string res = s;&#10;    int idx = 0;&#10;    while(counts[letter] &gt; 0) {&#10;        res[idx] = (char)(letter + &#x27;a&#x27;);&#10;        idx += 2;&#10;        counts[letter]--;&#10;    }&#10;    for(int i = 0; i &lt; 26; i++) {&#10;        while(counts[i] &gt; 0) {&#10;            if(idx &gt;= res.length()) idx = 1;&#10;            res[idx] = (char)(i + &#x27;a&#x27;);&#10;            idx += 2;&#10;            counts[i]--;&#10;        }&#10;    }&#10;    return res;&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td rowspan="1">13</td>
