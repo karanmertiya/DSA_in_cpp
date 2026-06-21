@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Trie 01 Implement Trie II<br><br></b> <a href="https://www.codingninjas.com/studio/problems/implement-trie_1387095" target="_blank">Coding Ninjas</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet, Apna College</details></td>
+      <td rowspan="1">Trie 01 Implement Trie II<br><br></b> <a href="https://www.codingninjas.com/studio/problems/implement-trie_1387095" target="_blank">Coding Ninjas</a></td>
       <td rowspan="1"><b>Example 1:</b> Specialized Trie functions.</td>
       <td><b>Time:</b> O(len) per operation<br><b>Space:</b> O(N * len)</td>
       <td>Trie Nodes have a `cntEndWith` and `cntPrefix` integers. Increment `cntPrefix` dynamically as you insert, and `cntEndWith` at the final node. Decrement them during erase.</td>

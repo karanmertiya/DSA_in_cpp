@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Sq 01 Valid Parentheses<br><br></b> <a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">LeetCode 20</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet, Apna College</details></td>
+      <td rowspan="1">Sq 01 Valid Parentheses<br><br></b> <a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">LeetCode 20</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> s = "()[]{}"<br><b>Output:</b> true</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use a Stack. Push open brackets. If a closed bracket is found, verify it matches the top of the stack and pop.<br><br><b>Dependencies:</b> <code>std::stack</code></td>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td rowspan="1">2</td>
-      <td rowspan="1">Sq 02 Next Greater Element I<br><br></b> <a href="https://leetcode.com/problems/next-greater-element-i/" target="_blank">LeetCode 496</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Sq 02 Next Greater Element I<br><br></b> <a href="https://leetcode.com/problems/next-greater-element-i/" target="_blank">LeetCode 496</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> nums1 = [4,1,2], nums2 = [1,3,4,2]<br><b>Output:</b> [-1,3,-1]</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(N)</td>
       <td>Monotonic Stack traversing `nums2` from right to left. Maintain stack of elements in decreasing order.<br><br><b>Dependencies:</b> <code>std::stack</code>, <code>std::unordered_map</code></td>
@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td rowspan="1">3</td>
-      <td rowspan="1">Sq 03 Min Stack<br><br></b> <a href="https://leetcode.com/problems/min-stack/" target="_blank">LeetCode 155</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet, Apna College</details></td>
+      <td rowspan="1">Sq 03 Min Stack<br><br></b> <a href="https://leetcode.com/problems/min-stack/" target="_blank">LeetCode 155</a></td>
       <td rowspan="1"><b>Example 1:</b> MinStack minStack = new MinStack(); minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.getMin(); // return -3</td>
       <td><b>Time:</b> O(1) per operation<br><b>Space:</b> O(N)</td>
       <td>Store pairs of `(value, current_minimum)` in the stack. Alternatively, use math to encode the difference between the value and the minimum to achieve O(1) space auxiliary, but a stack of pairs is standard.<br><br><b>Dependencies:</b> <code>#include <stack></code></td>
@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td rowspan="1">4</td>
-      <td rowspan="1">Sq 04 Largest Rectangle In Histogram<br><br></b> <a href="https://leetcode.com/problems/largest-rectangle-in-histogram/" target="_blank">LeetCode 84</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Sq 04 Largest Rectangle In Histogram<br><br></b> <a href="https://leetcode.com/problems/largest-rectangle-in-histogram/" target="_blank">LeetCode 84</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> heights = [2,1,5,6,2,3]<br><b>Output:</b> 10</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Monotonic Stack. Find the next smaller element on the left and right for each bar. Area for bar `i` is `heights[i] * (right[i] - left[i] + 1)`. Alternatively, do it in a single pass stack loop.<br><br><b>Dependencies:</b> <code>#include <stack></code></td>
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td rowspan="1">5</td>
-      <td rowspan="1">Sq 05 Reverse A String Using Stack<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-a-string-using-stack/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Sq 05 Reverse A String Using Stack<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-a-string-using-stack/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Push and pop.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Push all characters of the string into a stack. Then pop them out one by one. The popped characters will be in reversed order.<br><br><b>Dependencies:</b> <code>#include <stack></code></td>
@@ -54,7 +54,7 @@
     </tr>
     <tr>
       <td rowspan="1">6</td>
-      <td rowspan="1">Sq 06 Design A Stack That Supports Getmin<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/special-stack/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Sq 06 Design A Stack That Supports Getmin<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/special-stack/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Formula approach.</td>
       <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
       <td>To achieve O(1) space, when pushing `x < minEle`, push `2 * x - minEle` and update `minEle = x`. When popping `y`, if `y < minEle`, then `minEle = 2 * minEle - y`.</td>
@@ -62,7 +62,7 @@
     </tr>
     <tr>
       <td rowspan="1">7</td>
-      <td rowspan="1">Sq 07 Next Greater Element<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/next-larger-element-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Sq 07 Next Greater Element<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/next-larger-element-1587115620/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Decreasing stack.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Iterate from right to left. Use a stack to keep track of elements. Pop from the stack while the top element is less than or equal to the current element. If stack is empty, NGE is -1, else it's the stack top. Push current element.<br><br><b>Dependencies:</b> <code>#include <stack></code></td>
@@ -70,7 +70,7 @@
     </tr>
     <tr>
       <td rowspan="1">8</td>
-      <td rowspan="1">Sq 08 Celebrity Problem<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/the-celebrity-problem/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Sq 08 Celebrity Problem<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/the-celebrity-problem/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two pointers or Stack.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Push all elements (0 to N-1) into a stack. Pop two elements `A` and `B`. If `A` knows `B`, `A` cannot be a celebrity, push `B` back. If `A` does not know `B`, `B` cannot be a celebrity, push `A` back. The remaining element is a potential celebrity. Verify it by checking if everyone knows it and it knows no one.<br><br><b>Dependencies:</b> <code>#include <stack></code></td>
@@ -78,7 +78,7 @@
     </tr>
     <tr>
       <td rowspan="1">9</td>
-      <td rowspan="1">Sq 09 Arithmetic Expression Evaluation<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/arithmetic-expression-evaluation/0" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Sq 09 Arithmetic Expression Evaluation<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/arithmetic-expression-evaluation/0" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two stacks (operands and operators).</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use two stacks: one for numbers and one for operators. Process the expression character by character. If it's a number, push to numbers stack. If it's `(`, push to operators stack. If it's `)`, solve until `(`. If it's an operator, solve while top of operators stack has same or greater precedence, then push.</td>
@@ -86,7 +86,7 @@
     </tr>
     <tr>
       <td rowspan="1">10</td>
-      <td rowspan="1">Sq 10 Evaluation Of Postfix Expression<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/evaluation-of-postfix-expression1735/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Sq 10 Evaluation Of Postfix Expression<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/evaluation-of-postfix-expression1735/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Stack of operands.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Iterate through the string. If it's a number, push it to stack. If it's an operator, pop two numbers from stack, apply the operator, and push the result back to stack.</td>
@@ -94,7 +94,7 @@
     </tr>
     <tr>
       <td rowspan="1">11</td>
-      <td rowspan="1">Sq 11 Insert An Element At Its Bottom In A Given Stack<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/insert-an-element-at-the-bottom-of-a-stack/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Sq 11 Insert An Element At Its Bottom In A Given Stack<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/insert-an-element-at-the-bottom-of-a-stack/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive push.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use recursion. If the stack is empty, push the element. Otherwise, pop the top element, recursively call the function, and then push the popped element back.</td>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td rowspan="1">12</td>
-      <td rowspan="1">Sq 12 Reverse A Stack Using Recursion<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-a-stack/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Sq 12 Reverse A Stack Using Recursion<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-a-stack/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive pop and insertAtBottom.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Recursively pop all elements until the stack is empty. Then, as the recursion unwinds, use another recursive function `insertAtBottom` to push the elements at the bottom.</td>
@@ -110,7 +110,7 @@
     </tr>
     <tr>
       <td rowspan="1">13</td>
-      <td rowspan="1">Sq 13 Maximum Rectangular Area In A Histogram<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/maximum-rectangular-area-in-a-histogram-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Sq 13 Maximum Rectangular Area In A Histogram<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/maximum-rectangular-area-in-a-histogram-1587115620/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Next Smaller Element on left and right.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use a stack to find Next Smaller Element (NSE) and Previous Smaller Element (PSE) for each bar. Then, the width of the rectangle with bar `i` as the minimum height is `NSE[i] - PSE[i] - 1`. The area is `height[i] * width`.</td>
@@ -118,7 +118,7 @@
     </tr>
     <tr>
       <td rowspan="1">14</td>
-      <td rowspan="1">Sq 14 Next Smaller Element<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/fab3281cefac7140ca15e21505beddf7e4323e08/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Sq 14 Next Smaller Element<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/fab3281cefac7140ca15e21505beddf7e4323e08/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Monotonic Stack.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Iterate from right to left. Use a monotonic stack. Pop elements from the stack that are greater than or equal to the current element. The top of the stack is the next smaller element. Push the current element to the stack.<br><br><b>Dependencies:</b> Stack</td>
@@ -126,7 +126,7 @@
     </tr>
     <tr>
       <td rowspan="1">15</td>
-      <td rowspan="1">Sq 15 Maximal Rectangle<br><br></b> <a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank">LeetCode 85</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Sq 15 Maximal Rectangle<br><br></b> <a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank">LeetCode 85</a></td>
       <td rowspan="1"><b>Example 1:</b> Largest Rectangle in Histogram reduction.</td>
       <td><b>Time:</b> O(rows * cols)<br><b>Space:</b> O(cols)</td>
       <td>Treat each row as the base of a histogram. The height of each bar is the number of consecutive 1s above it. Apply the Largest Rectangle in Histogram algorithm for each row and maintain the maximum area.<br><br><b>Dependencies:</b> Stack</td>
@@ -134,7 +134,7 @@
     </tr>
     <tr>
       <td rowspan="1">16</td>
-      <td rowspan="1">Sq 16 Online Stock Span<br><br></b> <a href="https://leetcode.com/problems/online-stock-span/" target="_blank">LeetCode 901</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Sq 16 Online Stock Span<br><br></b> <a href="https://leetcode.com/problems/online-stock-span/" target="_blank">LeetCode 901</a></td>
       <td rowspan="1"><b>Example 1:</b> Monotonic Stack.</td>
       <td><b>Time:</b> O(1) amortized<br><b>Space:</b> O(N)</td>
       <td>Use a stack of pairs `(price, span)`. When a new price comes in, initialize its span to 1. Pop elements from the stack while the top element's price is `<= price`, adding their spans to the current span. Push `(price, span)` to the stack.<br><br><b>Dependencies:</b> Stack</td>
@@ -142,7 +142,7 @@
     </tr>
     <tr>
       <td rowspan="1">17</td>
-      <td rowspan="1">Sq 17 Rotten Oranges<br><br></b> <a href="https://leetcode.com/problems/rotting-oranges/" target="_blank">LeetCode 994</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Sq 17 Rotten Oranges<br><br></b> <a href="https://leetcode.com/problems/rotting-oranges/" target="_blank">LeetCode 994</a></td>
       <td rowspan="1"><b>Example 1:</b> BFS.</td>
       <td><b>Time:</b> O(rows * cols)<br><b>Space:</b> O(rows * cols)</td>
       <td>Use a Queue for BFS. Find all initially rotten oranges and push them into the queue with time 0. Count total fresh oranges. Pop an orange, rot its adjacent fresh oranges, push them to the queue with `time + 1`, and decrement fresh count. Return the max time if fresh count is 0, else -1.<br><br><b>Dependencies:</b> Queue</td>

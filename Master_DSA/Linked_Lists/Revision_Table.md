@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Ll 01 Reverse Linked List<br><br></b> <a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank">LeetCode 206</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Ll 01 Reverse Linked List<br><br></b> <a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank">LeetCode 206</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> head = [1,2,3,4,5]<br><b>Output:</b> [5,4,3,2,1]</td>
       <td><b>Time:</b> O(N) (Constraint)<br><b>Space:</b> O(1) (Constraint)</td>
       <td>Iterative approach: Maintain three pointers (`prev`, `curr`, `next_node`). Re-point `curr->next` to `prev` and slide forward.</td>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td rowspan="1">2</td>
-      <td rowspan="1">Ll 02 Middle Of The Linked List<br><br></b> <a href="https://leetcode.com/problems/middle-of-the-linked-list/" target="_blank">LeetCode 876</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Ll 02 Middle Of The Linked List<br><br></b> <a href="https://leetcode.com/problems/middle-of-the-linked-list/" target="_blank">LeetCode 876</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> head = [1,2,3,4,5,6]<br><b>Output:</b> [4,5,6]</td>
       <td><b>Time:</b> O(N/2) &cong; O(N) (Constraint)<br><b>Space:</b> O(1)</td>
       <td>Use a slow pointer (moves 1 step) and a fast pointer (moves 2 steps). When fast reaches the end, slow is exactly at the middle.</td>
@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td rowspan="1">3</td>
-      <td rowspan="1">Ll 03 Linked List Cycle<br><br></b> <a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank">LeetCode 141</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Ll 03 Linked List Cycle<br><br></b> <a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank">LeetCode 141</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> head = [3,2,0,-4], pos = 1<br><b>Output:</b> true</td>
       <td><b>Time:</b> O(N) (Constraint)<br><b>Space:</b> O(1) (Constraint)</td>
       <td>Tortoise and Hare algorithm. If there is a cycle, the fast pointer will eventually "lap" and collide with the slow pointer.</td>
@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td rowspan="1">4</td>
-      <td rowspan="1">Ll 04 Merge Two Sorted Lists<br><br></b> <a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank">LeetCode 21</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Ll 04 Merge Two Sorted Lists<br><br></b> <a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank">LeetCode 21</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> list1 = [1,2,4], list2 = [1,3,4]<br><b>Output:</b> [1,1,2,3,4,4]</td>
       <td><b>Time:</b> O(N + M) (Constraint)<br><b>Space:</b> O(1) (Constraint)</td>
       <td>Use a dummy node to easily handle the head of the new list. Compare `list1` and `list2`, attaching the smaller node to `tail`.</td>
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td rowspan="1">5</td>
-      <td rowspan="1">Ll 05 Remove Nth Node From End Of List<br><br></b> <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank">LeetCode 19</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Ll 05 Remove Nth Node From End Of List<br><br></b> <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank">LeetCode 19</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> head = [1,2,3,4,5], n = 2<br><b>Output:</b> [1,2,3,5]</td>
       <td><b>Time:</b> O(N) (Constraint)<br><b>Space:</b> O(1) (Constraint)</td>
       <td>Two-pointer approach. Move `fast` pointer `n` steps ahead. Then move both `slow` and `fast` until `fast` reaches the end. `slow` will be right before the target node.</td>
@@ -54,7 +54,7 @@
     </tr>
     <tr>
       <td rowspan="1">6</td>
-      <td rowspan="1">Ll 06 Add Two Numbers<br><br></b> <a href="https://leetcode.com/problems/add-two-numbers/" target="_blank">LeetCode 2</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Ll 06 Add Two Numbers<br><br></b> <a href="https://leetcode.com/problems/add-two-numbers/" target="_blank">LeetCode 2</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> l1 = [2,4,3], l2 = [5,6,4]<br><b>Output:</b> [7,0,8]</td>
       <td><b>Time:</b> O(max(N, M))<br><b>Space:</b> O(max(N, M))</td>
       <td>Iterate through both lists, keeping a `carry`. Create new nodes for the `sum % 10`.</td>
@@ -62,7 +62,7 @@
     </tr>
     <tr>
       <td rowspan="1">7</td>
-      <td rowspan="1">Ll 07 Intersection Of Two Linked Lists<br><br></b> <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank">LeetCode 160</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z, Apna College</details></td>
+      <td rowspan="1">Ll 07 Intersection Of Two Linked Lists<br><br></b> <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank">LeetCode 160</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3<br><b>Output:</b> Intersected at '8'</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
       <td>Two pointers `a` and `b`. Traverse `A` then `B`, and `B` then `A`. They will meet at the intersection node or `NULL`.</td>
@@ -70,7 +70,7 @@
     </tr>
     <tr>
       <td rowspan="1">8</td>
-      <td rowspan="1">Ll 08 Reverse Nodes In K Group<br><br></b> <a href="https://leetcode.com/problems/reverse-nodes-in-k-group/" target="_blank">LeetCode 25</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z, Apna College</details></td>
+      <td rowspan="1">Ll 08 Reverse Nodes In K Group<br><br></b> <a href="https://leetcode.com/problems/reverse-nodes-in-k-group/" target="_blank">LeetCode 25</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> head = [1,2,3,4,5], k = 2<br><b>Output:</b> [2,1,4,3,5]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Find length of list. Traverse groups of size k. For each group, perform standard linked list reversal. Link the prev group's tail to the current reversed head.</td>
@@ -78,7 +78,7 @@
     </tr>
     <tr>
       <td rowspan="1">9</td>
-      <td rowspan="1">Ll 09 Copy List With Random Pointer<br><br></b> <a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank">LeetCode 138</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Ll 09 Copy List With Random Pointer<br><br></b> <a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank">LeetCode 138</a></td>
       <td rowspan="1"><b>Example 1:</b> Return a deep copy.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>3 Steps O(1) space. 1) Insert copy nodes right after original nodes. 2) Set random pointers for copy nodes: `iter->next->random = iter->random ? iter->random->next : NULL`. 3) Separate the two lists.</td>
@@ -86,7 +86,7 @@
     </tr>
     <tr>
       <td rowspan="1">10</td>
-      <td rowspan="1">Ll 10 Rotate List<br><br></b> <a href="https://leetcode.com/problems/rotate-list/" target="_blank">LeetCode 61</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Ll 10 Rotate List<br><br></b> <a href="https://leetcode.com/problems/rotate-list/" target="_blank">LeetCode 61</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> head = [1,2,3,4,5], k = 2<br><b>Output:</b> [4,5,1,2,3]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Compute the length of the list, and make it a circular list by connecting the last node to head. Then find the new break point `(length - k % length)`. Break the circle and return the new head.</td>
@@ -94,7 +94,7 @@
     </tr>
     <tr>
       <td rowspan="1">11</td>
-      <td rowspan="1">Ll 11 Flattening A Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Ll 11 Flattening A Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursively merge.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N)</td>
       <td>Recursively flatten the `next` list, then merge the current list (`bottom` pointers) with the flattened `next` list, similar to merging two sorted linked lists.</td>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td rowspan="1">12</td>
-      <td rowspan="1">Ll 12 Sort A Linked List<br><br></b> <a href="https://leetcode.com/problems/sort-list/" target="_blank">LeetCode 148</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Ll 12 Sort A Linked List<br><br></b> <a href="https://leetcode.com/problems/sort-list/" target="_blank">LeetCode 148</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> head = [4,2,1,3]<br><b>Output:</b> [1,2,3,4]</td>
       <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(log N)</td>
       <td>Merge Sort. Use fast/slow pointers to find the middle of the linked list. Split into two halves, recursively sort both halves, then merge the two sorted halves.</td>
@@ -110,7 +110,7 @@
     </tr>
     <tr>
       <td rowspan="1">13</td>
-      <td rowspan="1">Ll 13 Find Pairs With Given Sum In Doubly Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 13 Find Pairs With Given Sum In Doubly Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two pointer approach.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Since it is a sorted DLL, set one pointer at the head and one at the tail. If sum == x, add to result and move both. If sum < x, move left pointer next. Else, move right pointer prev.</td>
@@ -118,7 +118,7 @@
     </tr>
     <tr>
       <td rowspan="1">14</td>
-      <td rowspan="1">Ll 14 Remove Duplicates From Sorted Doubly Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/remove-duplicates-from-a-sorted-doubly-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 14 Remove Duplicates From Sorted Doubly Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/remove-duplicates-from-a-sorted-doubly-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Skip duplicates.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Traverse the DLL. While `next` node has the same value, bypass it by updating `curr->next` and `curr->next->prev`.</td>
@@ -126,7 +126,7 @@
     </tr>
     <tr>
       <td rowspan="1">15</td>
-      <td rowspan="1">Ll 15 Reverse A Doubly Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-a-doubly-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 15 Reverse A Doubly Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-a-doubly-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Swap prev and next.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Traverse the DLL. For each node, swap its `prev` and `next` pointers. The new head will be the last node processed.</td>
@@ -134,7 +134,7 @@
     </tr>
     <tr>
       <td rowspan="1">16</td>
-      <td rowspan="1">Ll 16 Delete All Occurrences Of A Key In Dll<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 16 Delete All Occurrences Of A Key In Dll<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Update links.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Traverse the list. If `node->data == x`, update the `next` pointer of `node->prev` and `prev` pointer of `node->next`. If the node is head, update head.</td>
@@ -142,7 +142,7 @@
     </tr>
     <tr>
       <td rowspan="1">17</td>
-      <td rowspan="1">Ll 17 Swap Nodes In Pairs<br><br></b> <a href="https://leetcode.com/problems/swap-nodes-in-pairs/" target="_blank">LeetCode 24</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Ll 17 Swap Nodes In Pairs<br><br></b> <a href="https://leetcode.com/problems/swap-nodes-in-pairs/" target="_blank">LeetCode 24</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> head = [1,2,3,4]<br><b>Output:</b> [2,1,4,3]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use a dummy node. Iteratively swap `curr` and `curr->next`. Keep track of `prev` to link the swapped pairs to the rest of the list.</td>
@@ -150,7 +150,7 @@
     </tr>
     <tr>
       <td rowspan="1">18</td>
-      <td rowspan="1">Ll 18 Odd Even Linked List<br><br></b> <a href="https://leetcode.com/problems/odd-even-linked-list/" target="_blank">LeetCode 328</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 18 Odd Even Linked List<br><br></b> <a href="https://leetcode.com/problems/odd-even-linked-list/" target="_blank">LeetCode 328</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> head = [1,2,3,4,5]<br><b>Output:</b> [1,3,5,2,4]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Maintain two pointers `odd` and `even`. Keep the `evenHead`. Loop to link `odd->next = even->next` and `even->next = odd->next`. Finally, link `odd->next = evenHead`.</td>
@@ -158,7 +158,7 @@
     </tr>
     <tr>
       <td rowspan="1">19</td>
-      <td rowspan="1">Ll 19 Split Linked List In Parts<br><br></b> <a href="https://leetcode.com/problems/split-linked-list-in-parts/" target="_blank">LeetCode 725</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Ll 19 Split Linked List In Parts<br><br></b> <a href="https://leetcode.com/problems/split-linked-list-in-parts/" target="_blank">LeetCode 725</a></td>
       <td rowspan="1"><b>Example 1:</b> Distribution math.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(K)</td>
       <td>First, calculate the length of the list. Then, determine base size `len / k` and extra nodes `len % k`. Iterate through the list, breaking it into parts of appropriate sizes.</td>
@@ -166,7 +166,7 @@
     </tr>
     <tr>
       <td rowspan="1">20</td>
-      <td rowspan="1">Ll 20 Add Two Numbers II<br><br></b> <a href="https://leetcode.com/problems/add-two-numbers-ii/" target="_blank">LeetCode 445</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 20 Add Two Numbers II<br><br></b> <a href="https://leetcode.com/problems/add-two-numbers-ii/" target="_blank">LeetCode 445</a></td>
       <td rowspan="1"><b>Example 1:</b> Stack or reverse.</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(N + M)</td>
       <td>Use two stacks to store the digits of the lists. Pop from stacks, add along with carry, and construct the new list by inserting at the head.<br><br><b>Dependencies:</b> <code>#include <stack></code></td>
@@ -174,7 +174,7 @@
     </tr>
     <tr>
       <td rowspan="1">21</td>
-      <td rowspan="1">Ll 21 Insertion Sort List<br><br></b> <a href="https://leetcode.com/problems/insertion-sort-list/" target="_blank">LeetCode 147</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 21 Insertion Sort List<br><br></b> <a href="https://leetcode.com/problems/insertion-sort-list/" target="_blank">LeetCode 147</a></td>
       <td rowspan="1"><b>Example 1:</b> Dummy head.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(1)</td>
       <td>Use a dummy head for the sorted part. For each node in the original list, iterate through the sorted part to find its correct position and insert it.</td>
@@ -182,7 +182,7 @@
     </tr>
     <tr>
       <td rowspan="1">22</td>
-      <td rowspan="1">Ll 22 Partition List<br><br></b> <a href="https://leetcode.com/problems/partition-list/" target="_blank">LeetCode 86</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 22 Partition List<br><br></b> <a href="https://leetcode.com/problems/partition-list/" target="_blank">LeetCode 86</a></td>
       <td rowspan="1"><b>Example 1:</b> Two lists then join.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Maintain two separate linked lists: `before` and `after` with their own dummy heads. Iterate through original list, appending to `before` or `after` based on value. Then link `before` tail to `after` head.</td>
@@ -190,7 +190,7 @@
     </tr>
     <tr>
       <td rowspan="1">23</td>
-      <td rowspan="1">Ll 23 Reverse Nodes In Even Length Groups<br><br></b> <a href="https://leetcode.com/problems/reverse-nodes-in-even-length-groups/" target="_blank">LeetCode 2074</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 23 Reverse Nodes In Even Length Groups<br><br></b> <a href="https://leetcode.com/problems/reverse-nodes-in-even-length-groups/" target="_blank">LeetCode 2074</a></td>
       <td rowspan="1"><b>Example 1:</b> Group tracking.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Traverse the list while tracking the expected group length. First, count the actual number of nodes left in the current group. If the count is even, reverse this sublist and connect it to the previous part. If odd, just skip. Update lengths and pointers.</td>
@@ -198,7 +198,7 @@
     </tr>
     <tr>
       <td rowspan="1">24</td>
-      <td rowspan="1">Ll 24 Swapping Nodes In A Linked List<br><br></b> <a href="https://leetcode.com/problems/swapping-nodes-in-a-linked-list/" target="_blank">LeetCode 1721</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 24 Swapping Nodes In A Linked List<br><br></b> <a href="https://leetcode.com/problems/swapping-nodes-in-a-linked-list/" target="_blank">LeetCode 1721</a></td>
       <td rowspan="1"><b>Example 1:</b> Two passes or three pointers.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use two pointers. Move `fast` pointer `k-1` steps. `first_node` is at `fast`. Initialize `slow = head`. Move both `slow` and `fast` to the end. `slow` will be at `second_node`. Swap values.</td>
@@ -206,7 +206,7 @@
     </tr>
     <tr>
       <td rowspan="1">25</td>
-      <td rowspan="1">Ll 25 Merge Nodes In Between Zeros<br><br></b> <a href="https://leetcode.com/problems/merge-nodes-in-between-zeros/" target="_blank">LeetCode 2181</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 25 Merge Nodes In Between Zeros<br><br></b> <a href="https://leetcode.com/problems/merge-nodes-in-between-zeros/" target="_blank">LeetCode 2181</a></td>
       <td rowspan="1"><b>Example 1:</b> Accumulate and connect.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1) extra space if we modify in-place</td>
       <td>Maintain a dummy node. Traverse the list. Maintain a running sum. When we encounter a 0 (and sum > 0), create a new node with `sum`, attach it to dummy list, reset `sum` to 0.</td>
@@ -214,7 +214,7 @@
     </tr>
     <tr>
       <td rowspan="1">26</td>
-      <td rowspan="1">Ll 26 Design Hashmap<br><br></b> <a href="https://leetcode.com/problems/design-hashmap/" target="_blank">LeetCode 706</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 26 Design Hashmap<br><br></b> <a href="https://leetcode.com/problems/design-hashmap/" target="_blank">LeetCode 706</a></td>
       <td rowspan="1"><b>Example 1:</b> Array of Linked Lists with Key-Value pairs.</td>
       <td><b>Time:</b> O(1) amortized<br><b>Space:</b> O(Number of elements)</td>
       <td>Similar to HashSet, but each node stores a `(key, value)` pair. On Put, if key exists, update value. Else insert new node. On Get, return value if key found, else -1.</td>
@@ -222,7 +222,7 @@
     </tr>
     <tr>
       <td rowspan="1">27</td>
-      <td rowspan="1">Ll 27 Design Browser History<br><br></b> <a href="https://leetcode.com/problems/design-browser-history/" target="_blank">LeetCode 1472</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 27 Design Browser History<br><br></b> <a href="https://leetcode.com/problems/design-browser-history/" target="_blank">LeetCode 1472</a></td>
       <td rowspan="1"><b>Example 1:</b> Doubly Linked List.</td>
       <td><b>Time:</b> O(1) visit, O(steps) back/forward<br><b>Space:</b> O(N) for URLs</td>
       <td>Use a Doubly Linked List. Each visit creates a new node, clearing forward history. Back and forward operations just traverse the pointers up to `steps` times.</td>
@@ -230,7 +230,7 @@
     </tr>
     <tr>
       <td rowspan="1">28</td>
-      <td rowspan="1">Ll 28 Lru Cache Ll<br><br></b> <a href="https://leetcode.com/problems/lru-cache/" target="_blank">LeetCode 146</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Ll 28 Lru Cache Ll<br><br></b> <a href="https://leetcode.com/problems/lru-cache/" target="_blank">LeetCode 146</a></td>
       <td rowspan="1"><b>Example 1:</b> Duplicate logic entry to ensure coverage.</td>
       <td><b>Time:</b> O(1)<br><b>Space:</b> O(N)</td>
       <td>Included for chapter coverage completeness. See sq_31_lru_cache.</td>
@@ -238,7 +238,7 @@
     </tr>
     <tr>
       <td rowspan="1">29</td>
-      <td rowspan="1">Ll 29 Lfu Cache Ll<br><br></b> <a href="https://leetcode.com/problems/lfu-cache/" target="_blank">LeetCode 460</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Ll 29 Lfu Cache Ll<br><br></b> <a href="https://leetcode.com/problems/lfu-cache/" target="_blank">LeetCode 460</a></td>
       <td rowspan="1"><b>Example 1:</b> Duplicate logic entry to ensure coverage.</td>
       <td><b>Time:</b> O(1)<br><b>Space:</b> O(N)</td>
       <td>Included for chapter coverage completeness. See sq_32_lfu_cache.</td>
@@ -246,7 +246,7 @@
     </tr>
     <tr>
       <td rowspan="1">30</td>
-      <td rowspan="1">Ll 30 All Oone Data Structure<br><br></b> <a href="https://leetcode.com/problems/all-oone-data-structure/" target="_blank">LeetCode 432</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 30 All Oone Data Structure<br><br></b> <a href="https://leetcode.com/problems/all-oone-data-structure/" target="_blank">LeetCode 432</a></td>
       <td rowspan="1"><b>Example 1:</b> Doubly linked list of frequency buckets.</td>
       <td><b>Time:</b> O(1) amortized<br><b>Space:</b> O(N)</td>
       <td>Maintain a DLL where each node represents a specific frequency and contains a set of strings. Use a hash map mapping strings to their current bucket. On inc/dec, move the string to the adjacent bucket (create if necessary). Max is tail->prev, Min is head->next.<br><br><b>Dependencies:</b> <code>#include <unordered_set>\n#include <unordered_map></code></td>
@@ -254,7 +254,7 @@
     </tr>
     <tr>
       <td rowspan="1">31</td>
-      <td rowspan="1">Ll 31 Flatten A Multilevel Doubly Linked List<br><br></b> <a href="https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/" target="_blank">LeetCode 430</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Ll 31 Flatten A Multilevel Doubly Linked List<br><br></b> <a href="https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/" target="_blank">LeetCode 430</a></td>
       <td rowspan="1"><b>Example 1:</b> DFS / Recursion.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Iterate through the list. When a node has a child, find the tail of the child list. Connect the tail to `node->next`, and `node->next` to the child. Update `prev` pointers. Set `node->child` to `nullptr`.</td>
@@ -262,7 +262,7 @@
     </tr>
     <tr>
       <td rowspan="1">32</td>
-      <td rowspan="1">Ll 32 Multiply Two Linked Lists<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/multiply-two-linked-lists/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 32 Multiply Two Linked Lists<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/multiply-two-linked-lists/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Traverse and compute numbers.</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
       <td>Traverse the first linked list and compute the number it represents modulo 10^9+7. Do the same for the second linked list. Multiply the two numbers and return the result modulo 10^9+7.</td>
@@ -270,7 +270,7 @@
     </tr>
     <tr>
       <td rowspan="1">33</td>
-      <td rowspan="1">Ll 33 Delete Nodes Having Greater Value On Right<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/delete-nodes-having-greater-value-on-right/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Ll 33 Delete Nodes Having Greater Value On Right<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/delete-nodes-having-greater-value-on-right/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Reverse, filter, reverse.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Reverse the linked list. Traverse the reversed list and keep track of the maximum value seen so far. If a node's value is less than the maximum, delete it. Otherwise, update the maximum. Finally, reverse the list again.</td>
@@ -278,7 +278,7 @@
     </tr>
     <tr>
       <td rowspan="1">34</td>
-      <td rowspan="1">Ll 34 Segregate Even And Odd Nodes In A Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list5035/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 34 Segregate Even And Odd Nodes In A Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list5035/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two pointers for even and odd.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Create two dummy nodes, one for the even list and one for the odd list. Traverse the original list and append even nodes to the even list and odd nodes to the odd list. Finally, connect the end of the even list to the head of the odd list and terminate the odd list with NULL.</td>
@@ -286,7 +286,7 @@
     </tr>
     <tr>
       <td rowspan="1">35</td>
-      <td rowspan="1">Ll 35 Nth Node From End Of Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 35 Nth Node From End Of Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two pointers.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use two pointers, `fast` and `slow`. Move `fast` `N` steps ahead. If `fast` becomes NULL before `N` steps, return -1 (N > length). Then move both `fast` and `slow` one step at a time until `fast` reaches the end. `slow` will be pointing to the Nth node from the end.</td>
@@ -294,7 +294,7 @@
     </tr>
     <tr>
       <td rowspan="1">36</td>
-      <td rowspan="1">Ll 36 First Non Repeating Character In A Stream<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/first-non-repeating-character-in-a-stream1216/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 36 First Non Repeating Character In A Stream<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/first-non-repeating-character-in-a-stream1216/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Queue and frequency array.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use a queue to maintain the order of characters and an array to keep track of their frequencies. For each character, increment its frequency and push it to the queue. Then, while the queue is not empty and the frequency of the front character is greater than 1, pop it. If the queue is empty, append '#', else append the front character.<br><br><b>Dependencies:</b> <code>#include <queue></code></td>
@@ -302,7 +302,7 @@
     </tr>
     <tr>
       <td rowspan="1">37</td>
-      <td rowspan="1">Ll 37 Clone A Linked List With Next And Random Pointer<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 37 Clone A Linked List With Next And Random Pointer<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Interleaving lists.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Create a copy of each node and insert it immediately after the original node. Then, set the random pointers for the copied nodes (`curr->next->arb = curr->arb ? curr->arb->next : NULL`). Finally, separate the original and copied lists.</td>
@@ -310,7 +310,7 @@
     </tr>
     <tr>
       <td rowspan="1">38</td>
-      <td rowspan="1">Ll 38 Merge K Sorted Linked Lists<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/merge-k-sorted-linked-lists/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 38 Merge K Sorted Linked Lists<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/merge-k-sorted-linked-lists/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Min-Heap.</td>
       <td><b>Time:</b> O(N * K * log K)<br><b>Space:</b> O(K)</td>
       <td>Create a min-heap and push the head of each linked list into it. Pop the minimum element, append it to the result list, and if the popped node has a next node, push the next node into the heap. Continue until the heap is empty.<br><br><b>Dependencies:</b> <code>#include <queue></code></td>
@@ -318,7 +318,7 @@
     </tr>
     <tr>
       <td rowspan="1">39</td>
-      <td rowspan="1">Ll 39 Reverse A Linked List In Groups Of Given Size<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Ll 39 Reverse A Linked List In Groups Of Given Size<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive grouping.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N/K)</td>
       <td>Reverse the first `k` nodes of the linked list iteratively. After reversing, the `head` pointer will be the end of the reversed group, and `curr` will point to the next node. Recursively call the function for `curr` and set `head->next` to the result.</td>
@@ -326,7 +326,7 @@
     </tr>
     <tr>
       <td rowspan="1">40</td>
-      <td rowspan="1">Ll 40 Split A Circular Linked List Into Two Halves<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/split-a-circular-linked-list-into-two-halves/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 40 Split A Circular Linked List Into Two Halves<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/split-a-circular-linked-list-into-two-halves/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Slow and Fast Pointer.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use slow and fast pointers to find the mid of the circular linked list. The slow pointer will point to the mid. Then break the list into two and make both circular.</td>
@@ -334,7 +334,7 @@
     </tr>
     <tr>
       <td rowspan="1">41</td>
-      <td rowspan="1">Ll 41 Check If Circular Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/circular-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 41 Check If Circular Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/circular-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Traverse to head.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Traverse the linked list starting from head. If we reach NULL, it's not circular. If we reach head again, it is circular.</td>
@@ -342,7 +342,7 @@
     </tr>
     <tr>
       <td rowspan="1">42</td>
-      <td rowspan="1">Ll 42 Count Triplets In A Sorted Doubly Linked List Whose Sum Is Equal To Given Value X<br><br></b> <a href="https://www.geeksforgeeks.org/count-triplets-sorted-doubly-linked-list-whose-sum-equal-given-value-x/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 42 Count Triplets In A Sorted Doubly Linked List Whose Sum Is Equal To Given Value X<br><br></b> <a href="https://www.geeksforgeeks.org/count-triplets-sorted-doubly-linked-list-whose-sum-equal-given-value-x/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two Pointers.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(1)</td>
       <td>Iterate through the list. For each node, use two pointers (left and right) on the remaining list to find pairs that sum to `x - node.data`.</td>
@@ -350,7 +350,7 @@
     </tr>
     <tr>
       <td rowspan="1">43</td>
-      <td rowspan="1">Ll 43 Sort A K Sorted Doubly Linked List<br><br></b> <a href="https://www.geeksforgeeks.org/sort-k-sorted-doubly-linked-list/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 43 Sort A K Sorted Doubly Linked List<br><br></b> <a href="https://www.geeksforgeeks.org/sort-k-sorted-doubly-linked-list/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Min Heap.</td>
       <td><b>Time:</b> O(N log K)<br><b>Space:</b> O(K)</td>
       <td>Create a Min Heap of size k+1. Insert the first k+1 elements into the heap. Then, pop the minimum element, place it in the sorted list, and push the next element from the original list into the heap.<br><br><b>Dependencies:</b> Priority Queue</td>
@@ -358,7 +358,7 @@
     </tr>
     <tr>
       <td rowspan="1">44</td>
-      <td rowspan="1">Ll 44 Rotate Doubly Linked List By N Nodes<br><br></b> <a href="https://www.geeksforgeeks.org/rotate-doubly-linked-list-n-nodes/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 44 Rotate Doubly Linked List By N Nodes<br><br></b> <a href="https://www.geeksforgeeks.org/rotate-doubly-linked-list-n-nodes/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Traverse and link.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Traverse to the Nth node. This will be the new tail. Its next will be the new head. Traverse to the end of the list and link it to the original head.</td>
@@ -366,7 +366,7 @@
     </tr>
     <tr>
       <td rowspan="1">45</td>
-      <td rowspan="1">Ll 45 Reverse A Doubly Linked List In Groups Of Given Size<br><br></b> <a href="https://www.geeksforgeeks.org/reverse-doubly-linked-list-groups-given-size/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 45 Reverse A Doubly Linked List In Groups Of Given Size<br><br></b> <a href="https://www.geeksforgeeks.org/reverse-doubly-linked-list-groups-given-size/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursion.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N/K) recursion stack</td>
       <td>Similar to reversing singly linked list in groups of k. Keep track of prev, next, and current. Reverse k nodes, then recursively call for the rest of the list.</td>
@@ -374,7 +374,7 @@
     </tr>
     <tr>
       <td rowspan="1">46</td>
-      <td rowspan="1">Ll 46 Can We Reverse A Linked List In Less Than On<br><br></b> N/A<br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 46 Can We Reverse A Linked List In Less Than On<br><br></b> N/A</td>
       <td rowspan="1"><b>Example 1:</b> Theoretical Question.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>No, it is not possible. To reverse a linked list, we must visit every single node at least once to change its pointer. Therefore, the minimum time complexity required is strictly O(N), where N is the number of nodes in the linked list.</td>
@@ -382,7 +382,7 @@
     </tr>
     <tr>
       <td rowspan="1">47</td>
-      <td rowspan="1">Ll 47 Find The First Node Of Loop In Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Ll 47 Find The First Node Of Loop In Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Floyd's Cycle Detection.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use Floyd's Cycle Detection to find if a cycle exists (slow and fast pointers meet). Then, move slow back to head, and advance both slow and fast by one step until they meet. The meeting point is the start of the loop.</td>
@@ -390,7 +390,7 @@
     </tr>
     <tr>
       <td rowspan="1">48</td>
-      <td rowspan="1">Ll 48 Detect Loop In Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Ll 48 Detect Loop In Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Floyd's Cycle Detection.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use Floyd's Cycle Detection algorithm (Tortoise and Hare). Move `slow` by 1 and `fast` by 2. If they meet, a loop exists. If `fast` reaches NULL, there is no loop.</td>
@@ -398,7 +398,7 @@
     </tr>
     <tr>
       <td rowspan="1">49</td>
-      <td rowspan="1">Ll 49 Remove Loop In Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/remove-loop-in-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 49 Remove Loop In Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/remove-loop-in-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Floyd's Cycle Detection + Loop removal.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use Floyd's Cycle Detection. If a loop is found, reset `slow` to head. Move both `slow` and `fast` by 1. The node where they meet is the start of the loop. Keep track of `fast`'s previous node to set its `next` to NULL.</td>
@@ -406,7 +406,7 @@
     </tr>
     <tr>
       <td rowspan="1">50</td>
-      <td rowspan="1">Ll 50 Remove Duplicates From An Unsorted Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/remove-duplicates-from-an-unsorted-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 50 Remove Duplicates From An Unsorted Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/remove-duplicates-from-an-unsorted-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Hash set.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use a hash set to store the seen values. Iterate the list. If a node's value is in the set, skip it by updating the `next` pointer of the `prev` node. Else, add it to the set and update `prev`.<br><br><b>Dependencies:</b> Hash Set</td>
@@ -414,7 +414,7 @@
     </tr>
     <tr>
       <td rowspan="1">51</td>
-      <td rowspan="1">Ll 51 Move Last Element To Front Of A Given Linked List<br><br></b> <a href="https://www.geeksforgeeks.org/move-last-element-to-front-of-a-given-linked-list/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 51 Move Last Element To Front Of A Given Linked List<br><br></b> <a href="https://www.geeksforgeeks.org/move-last-element-to-front-of-a-given-linked-list/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two Pointers.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Traverse the list to find the last node (`tail`) and the second last node (`sec_last`). Make `sec_last->next = NULL`, `tail->next = head`, and update `head = tail`.</td>
@@ -422,7 +422,7 @@
     </tr>
     <tr>
       <td rowspan="1">52</td>
-      <td rowspan="1">Ll 52 Add 1 To A Number Represented As Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 52 Add 1 To A Number Represented As Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Reverse, Add, Reverse.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Reverse the linked list. Add 1 to the first node, and propagate the carry if the value becomes 10. Once done, reverse the list back. If carry still remains at the end, add a new node.</td>
@@ -430,7 +430,7 @@
     </tr>
     <tr>
       <td rowspan="1">53</td>
-      <td rowspan="1">Ll 53 Add Two Numbers Represented By Linked Lists<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Ll 53 Add Two Numbers Represented By Linked Lists<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Reverse, Add, Reverse.</td>
       <td><b>Time:</b> O(max(N, M))<br><b>Space:</b> O(max(N, M))</td>
       <td>Reverse both linked lists. Traverse both lists simultaneously, adding the data values of corresponding nodes along with the carry. Create new nodes for the sum and append them to the result list. Finally, reverse the result list.</td>
@@ -438,7 +438,7 @@
     </tr>
     <tr>
       <td rowspan="1">54</td>
-      <td rowspan="1">Ll 54 Intersection Of Two Sorted Linked Lists<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/intersection-of-two-sorted-linked-lists/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Ll 54 Intersection Of Two Sorted Linked Lists<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/intersection-of-two-sorted-linked-lists/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two Pointers.</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(N + M)</td>
       <td>Use two pointers, `ptr1` for the first list and `ptr2` for the second. If `ptr1->data < ptr2->data`, `ptr1++`. If `ptr2->data < ptr1->data`, `ptr2++`. If they are equal, add to the result list and advance both.</td>
@@ -446,7 +446,7 @@
     </tr>
     <tr>
       <td rowspan="1">55</td>
-      <td rowspan="1">Ll 55 Intersection Point In Y Shaped Linked Lists<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Ll 55 Intersection Point In Y Shaped Linked Lists<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two Pointers.</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
       <td>Use two pointers `a` and `b`. Traverse both lists. When `a` reaches the end, redirect it to `head2`. When `b` reaches the end, redirect it to `head1`. They will meet at the intersection point or both become NULL.</td>

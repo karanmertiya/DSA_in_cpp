@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Hash 01 Sort Characters By Frequency<br><br></b> <a href="https://leetcode.com/problems/sort-characters-by-frequency/" target="_blank">LeetCode 451</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Hash 01 Sort Characters By Frequency<br><br></b> <a href="https://leetcode.com/problems/sort-characters-by-frequency/" target="_blank">LeetCode 451</a></td>
       <td rowspan="1"><b> </b> Hash Map + Priority Queue / Sorting.</td>
       <td><b>Time:</b> O(N log K) where K is unique chars<br><b>Space:</b> O(K)</td>
       <td>Optimal: Count frequencies using a hash map. Add pairs `(freq, char)` to a max heap or vector and sort. Reconstruct string.<br><br><b>Dependencies:</b> Hash Map</td>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td rowspan="1">2</td>
-      <td rowspan="1">Str 02 Valid Palindrome<br><br></b> <a href="https://leetcode.com/problems/valid-palindrome/" target="_blank">LeetCode 125</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z</details></td>
+      <td rowspan="1">Str 02 Valid Palindrome<br><br></b> <a href="https://leetcode.com/problems/valid-palindrome/" target="_blank">LeetCode 125</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> s = "A man, a plan, a canal: Panama"<br><b>Output:</b> true</td>
       <td><b>Time:</b> O(N) (Constraint)<br><b>Space:</b> O(1) (Constraint)</td>
       <td>Two-pointer approach skipping non-alphanumeric characters. Compare characters from both ends.<br><br><b>Dependencies:</b> <code>std::isalnum</code>, <code>std::tolower</code></td>
@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td rowspan="1">3</td>
-      <td rowspan="1">Str 03 Valid Anagram<br><br></b> <a href="https://leetcode.com/problems/valid-anagram/" target="_blank">LeetCode 242</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z</details></td>
+      <td rowspan="1">Str 03 Valid Anagram<br><br></b> <a href="https://leetcode.com/problems/valid-anagram/" target="_blank">LeetCode 242</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> s = "anagram", t = "nagaram"<br><b>Output:</b> true</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use a frequency array of size 26. Increment for `s`, decrement for `t`. Check if all counts are 0.</td>
@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td rowspan="1">4</td>
-      <td rowspan="1">Str 04 Longest Common Prefix<br><br></b> <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank">LeetCode 14</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Apna College, SDE Sheet, Striver A Z</details></td>
+      <td rowspan="1">Str 04 Longest Common Prefix<br><br></b> <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank">LeetCode 14</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> strs = ["flower","flow","flight"]<br><b>Output:</b> "fl"</td>
       <td><b>Time:</b> O(N log N * M) (Constraint)<br><b>Space:</b> O(1) / O(M)</td>
       <td>Sort the array. The common prefix will be constrained by the first and last strings in the sorted array.<br><br><b>Dependencies:</b> <code>std::sort</code></td>
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td rowspan="1">5</td>
-      <td rowspan="1">Str 05 Longest Palindromic Substring<br><br></b> <a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank">LeetCode 5</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Apna College, SDE Sheet, Striver A Z</details></td>
+      <td rowspan="1">Str 05 Longest Palindromic Substring<br><br></b> <a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank">LeetCode 5</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> s = "babad"<br><b>Output:</b> "bab"</td>
       <td><b>Time:</b> O(N<sup>2</sup>) (Constraint)<br><b>Space:</b> O(1)</td>
       <td>Expand Around Center. A palindrome can have an odd (center is 1 char) or even (center is between 2 chars) length. Test both.</td>
@@ -54,7 +54,7 @@
     </tr>
     <tr>
       <td rowspan="1">6</td>
-      <td rowspan="1">Str 06 Kmp Algorithm<br><br></b> <a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/" target="_blank">LeetCode 28</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Str 06 Kmp Algorithm<br><br></b> <a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/" target="_blank">LeetCode 28</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> haystack = 'sadbutsad', needle = 'sad'<br><b>Output:</b> 0</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(M)</td>
       <td>Compute the LPS (Longest Proper Prefix which is also Suffix) array for the needle. Use the LPS array to skip characters while matching with the haystack, reducing time to O(N+M).<br><br><b>Dependencies:</b> <code>#include <vector></code></td>
@@ -62,7 +62,7 @@
     </tr>
     <tr>
       <td rowspan="1">7</td>
-      <td rowspan="1">Str 07 Rabin Karp<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/31272eef104840f7430ad9fd1d43b434a4cea159/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Str 07 Rabin Karp<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/31272eef104840f7430ad9fd1d43b434a4cea159/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Return array of starting indices.</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
       <td>Compute hash for pattern and first window of text. Slide window: subtract leading char's hash contribution, shift, and add trailing char. If hashes match, explicitly check strings to avoid collisions.</td>
@@ -70,7 +70,7 @@
     </tr>
     <tr>
       <td rowspan="1">8</td>
-      <td rowspan="1">Str 08 Reverse A String<br><br></b> <a href="https://leetcode.com/problems/reverse-string/" target="_blank">LeetCode 344</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 08 Reverse A String<br><br></b> <a href="https://leetcode.com/problems/reverse-string/" target="_blank">LeetCode 344</a></td>
       <td rowspan="1"><b>Example 1:</b> Two pointers swap.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use two pointers, `left` at the beginning and `right` at the end of the string. Swap the characters at these pointers and move them towards each other until they meet.</td>
@@ -78,7 +78,7 @@
     </tr>
     <tr>
       <td rowspan="1">9</td>
-      <td rowspan="1">Str 09 Palindrome String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/palindrome-string0817/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Str 09 Palindrome String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/palindrome-string0817/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two pointers.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use two pointers, `left` at the beginning and `right` at the end of the string. Compare the characters at these pointers. If they are different, return 0. Move pointers towards each other. If all characters match, return 1.</td>
@@ -86,7 +86,7 @@
     </tr>
     <tr>
       <td rowspan="1">10</td>
-      <td rowspan="1">Str 10 Find Duplicate Characters In A String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-duplicate-characters-in-a-string/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 10 Find Duplicate Characters In A String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-duplicate-characters-in-a-string/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Frequency array or Hash Map.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use a hash map or frequency array to count occurrences of each character. Then, iterate through the map/array and print characters with a count greater than 1.<br><br><b>Dependencies:</b> <code>#include <unordered_map></code></td>
@@ -94,7 +94,7 @@
     </tr>
     <tr>
       <td rowspan="1">11</td>
-      <td rowspan="1">Str 11 A Program To Check If Strings Are Rotations Of Each Other<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/check-if-strings-are-rotations-of-each-other-or-not-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 11 A Program To Check If Strings Are Rotations Of Each Other<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/check-if-strings-are-rotations-of-each-other-or-not-1587115620/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Concatenate and find.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>If the lengths are different, return false. Otherwise, concatenate `s1` with itself (`s1 + s1`). If `s2` is a rotation of `s1`, it must be a substring of the concatenated string.</td>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td rowspan="1">12</td>
-      <td rowspan="1">Str 12 Check If A String Is A Valid Shuffle Of Two Distinct Strings<br><br></b> <a href="https://www.programiz.com/java-programming/examples/check-valid-shuffle-of-strings" target="_blank">Article</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 12 Check If A String Is A Valid Shuffle Of Two Distinct Strings<br><br></b> <a href="https://www.programiz.com/java-programming/examples/check-valid-shuffle-of-strings" target="_blank">Article</a></td>
       <td rowspan="1"><b>Example 1:</b> Three pointers.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>If lengths don't match, return false. Use three pointers `i`, `j`, `k` for `str1`, `str2`, and `str3`. Traverse `str3`. If `str3[k] == str1[i]`, increment `i` and `k`. Else if `str3[k] == str2[j]`, increment `j` and `k`. Else, it's not a valid shuffle. After the loop, check if both `str1` and `str2` are fully traversed.</td>
@@ -110,7 +110,7 @@
     </tr>
     <tr>
       <td rowspan="1">13</td>
-      <td rowspan="1">Str 13 Count And Say<br><br></b> <a href="https://leetcode.com/problems/count-and-say/" target="_blank">LeetCode 38</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Str 13 Count And Say<br><br></b> <a href="https://leetcode.com/problems/count-and-say/" target="_blank">LeetCode 38</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive generation.</td>
       <td><b>Time:</b> O(N * L) where L is max length of string<br><b>Space:</b> O(L)</td>
       <td>Start with `res = '1'`. For `n-1` times, iterate through `res` and count consecutive identical characters. Append the count and the character to a new string. Replace `res` with the new string.</td>
@@ -118,7 +118,7 @@
     </tr>
     <tr>
       <td rowspan="1">14</td>
-      <td rowspan="1">Str 14 Longest Palindrome In A String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string3411/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 14 Longest Palindrome In A String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string3411/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Expand around center.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(1)</td>
       <td>For each character, treat it as the center of an odd-length palindrome and expand outwards. Also treat it and the next character as the center of an even-length palindrome and expand outwards. Keep track of the longest palindrome found.</td>
@@ -126,7 +126,7 @@
     </tr>
     <tr>
       <td rowspan="1">15</td>
-      <td rowspan="1">Str 15 Find Longest Recurring Subsequence In String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-repeating-subsequence2004/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 15 Find Longest Recurring Subsequence In String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-repeating-subsequence2004/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Modified LCS.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2) or O(N)</td>
       <td>This is a variation of Longest Common Subsequence (LCS). Find LCS of `str` with itself, but with the restriction that when characters match, their indices must not be the same (`i != j`).</td>
@@ -134,7 +134,7 @@
     </tr>
     <tr>
       <td rowspan="1">16</td>
-      <td rowspan="1">Str 16 Print All Subsequences Of A String<br><br></b> <a href="https://www.geeksforgeeks.org/print-subsequences-string/" target="_blank">Article</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 16 Print All Subsequences Of A String<br><br></b> <a href="https://www.geeksforgeeks.org/print-subsequences-string/" target="_blank">Article</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive choice (include/exclude).</td>
       <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(N) recursion stack</td>
       <td>Use recursion. At each character, you have two choices: either include it in the current subsequence or exclude it. When you reach the end of the string, print/store the formed subsequence.</td>
@@ -142,7 +142,7 @@
     </tr>
     <tr>
       <td rowspan="1">17</td>
-      <td rowspan="1">Str 17 Split The Binary String Into Substrings With Equal Number Of 0S And 1S<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/split-the-binary-string-into-substrings-with-equal-number-of-0s-and-1s/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 17 Split The Binary String Into Substrings With Equal Number Of 0S And 1S<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/split-the-binary-string-into-substrings-with-equal-number-of-0s-and-1s/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Counter logic.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Iterate through the string, maintain a count that increments for '0' and decrements for '1' (or vice versa). Whenever the count becomes 0, it means we have found a balanced substring, so increment the answer.</td>
@@ -150,7 +150,7 @@
     </tr>
     <tr>
       <td rowspan="1">18</td>
-      <td rowspan="1">Str 18 Word Wrap<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/word-wrap1646/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 18 Word Wrap<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/word-wrap1646/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DP approach.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Use Dynamic Programming. `dp[i]` represents the minimum cost to wrap words from index `i` to the end. Iterate backward and try placing different numbers of words on the current line.<br><br><b>Dependencies:</b> DP</td>
@@ -158,7 +158,7 @@
     </tr>
     <tr>
       <td rowspan="1">19</td>
-      <td rowspan="1">Str 19 Edit Distance<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/edit-distance3702/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Str 19 Edit Distance<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/edit-distance3702/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DP Table.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M)</td>
       <td>Create a 2D DP array. If characters match, `dp[i][j] = dp[i-1][j-1]`. If not, `dp[i][j] = 1 + min(replace, insert, delete)`.<br><br><b>Dependencies:</b> DP</td>
@@ -166,7 +166,7 @@
     </tr>
     <tr>
       <td rowspan="1">20</td>
-      <td rowspan="1">Str 20 Next Permutation<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/next-permutation5226/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Str 20 Next Permutation<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/next-permutation5226/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Swap and Reverse.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Traverse from right to find the first element smaller than the element to its right. Then, find the smallest element to its right that is greater than it. Swap them, and reverse the subarray after the first element's index.</td>
@@ -174,7 +174,7 @@
     </tr>
     <tr>
       <td rowspan="1">21</td>
-      <td rowspan="1">Str 21 Parenthesis Checker<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/parenthesis-checker2744/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Str 21 Parenthesis Checker<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/parenthesis-checker2744/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Stack approach.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use a stack to keep track of opening brackets. If a closing bracket is encountered, check if it matches the top of the stack.<br><br><b>Dependencies:</b> Stack</td>
@@ -182,7 +182,7 @@
     </tr>
     <tr>
       <td rowspan="1">22</td>
-      <td rowspan="1">Str 22 Word Break<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/word-break1352/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Str 22 Word Break<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/word-break1352/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DP.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Use `dp[i]` to indicate if `A[0..i]` can be segmented. For each `i`, check all prefixes `A[0..j]`. If `dp[j]` is true and `A[j..i]` is in the dictionary, then `dp[i]` is true.<br><br><b>Dependencies:</b> DP, Hash Set</td>
@@ -190,7 +190,7 @@
     </tr>
     <tr>
       <td rowspan="1">23</td>
-      <td rowspan="1">Str 23 Rabin Karp Algorithm<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/31272eef104840f7430ad9fd1d43b434a4b9596b/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Str 23 Rabin Karp Algorithm<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/31272eef104840f7430ad9fd1d43b434a4b9596b/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Rolling Hash.</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(1)</td>
       <td>Compute the hash for the pattern and for the first window of text. Slide the window by removing the leading character's hash and adding the trailing character's hash. If hashes match, check the characters one by one.</td>
@@ -198,7 +198,7 @@
     </tr>
     <tr>
       <td rowspan="1">24</td>
-      <td rowspan="1">Str 24 Kmp Algorithm<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/search-pattern0205/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Str 24 Kmp Algorithm<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/search-pattern0205/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> LPS Array.</td>
       <td><b>Time:</b> O(N + M)<br><b>Space:</b> O(M)</td>
       <td>Construct an LPS (Longest Proper Prefix which is also Suffix) array for the pattern. Use it to skip unnecessary comparisons while traversing the text.</td>
@@ -206,7 +206,7 @@
     </tr>
     <tr>
       <td rowspan="1">25</td>
-      <td rowspan="1">Str 25 Convert A Sentence Into Its Equivalent Mobile Numeric Keypad Sequence<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/convert-a-sentence-into-its-equivalent-mobile-numeric-keypad-sequence0547/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 25 Convert A Sentence Into Its Equivalent Mobile Numeric Keypad Sequence<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/convert-a-sentence-into-its-equivalent-mobile-numeric-keypad-sequence0547/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Dictionary Mapping.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Store the sequence for every character in an array from A to Z, and for space. For each character in the input string, append its corresponding sequence to the result.</td>
@@ -214,7 +214,7 @@
     </tr>
     <tr>
       <td rowspan="1">26</td>
-      <td rowspan="1">Str 26 Count The Reversals<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/count-the-reversals0401/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 26 Count The Reversals<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/count-the-reversals0401/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Stack approach.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Remove all balanced brackets using a stack. The remaining string will be of the form `}}...{{...`. The required reversals will be `ceil(open_count/2) + ceil(close_count/2)`.<br><br><b>Dependencies:</b> Stack</td>
@@ -222,7 +222,7 @@
     </tr>
     <tr>
       <td rowspan="1">27</td>
-      <td rowspan="1">Str 27 Count Palindromic Subsequences<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/count-palindromic-subsequences/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 27 Count Palindromic Subsequences<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/count-palindromic-subsequences/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Dynamic Programming.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
       <td>Use DP. `dp[i][j]` stores the count of palindromic subsequences in `str[i..j]`. If `str[i] == str[j]`, `dp[i][j] = dp[i+1][j] + dp[i][j-1] + 1`. Else, `dp[i][j] = dp[i+1][j] + dp[i][j-1] - dp[i+1][j-1]`.<br><br><b>Dependencies:</b> DP</td>
@@ -230,7 +230,7 @@
     </tr>
     <tr>
       <td rowspan="1">28</td>
-      <td rowspan="1">Str 28 Count Of Number Of Given String In 2D Character Array<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/count-occurences-of-a-given-word-in-a-2-d-array/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 28 Count Of Number Of Given String In 2D Character Array<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/count-occurences-of-a-given-word-in-a-2-d-array/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DFS.</td>
       <td><b>Time:</b> O(R * C * 4^L)<br><b>Space:</b> O(L)</td>
       <td>Use DFS. For each cell, if it matches the first character of the word, start a DFS to look for the rest of the word in all 4 directions. Keep track of visited cells.</td>
@@ -238,7 +238,7 @@
     </tr>
     <tr>
       <td rowspan="1">29</td>
-      <td rowspan="1">Str 29 Search A Word In A 2D Grid Of Characters<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-the-string-in-grid0111/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 29 Search A Word In A 2D Grid Of Characters<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-the-string-in-grid0111/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> 8 Directions Loop.</td>
       <td><b>Time:</b> O(N * M * 8 * L)<br><b>Space:</b> O(1)</td>
       <td>Iterate through the grid. For each matching starting character, check all 8 directions to see if the full word exists in a straight line.</td>
@@ -246,7 +246,7 @@
     </tr>
     <tr>
       <td rowspan="1">30</td>
-      <td rowspan="1">Str 30 Boyer Moore Algorithm For Pattern Searching<br><br></b> <a href="https://www.geeksforgeeks.org/boyer-moore-algorithm-for-pattern-searching/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 30 Boyer Moore Algorithm For Pattern Searching<br><br></b> <a href="https://www.geeksforgeeks.org/boyer-moore-algorithm-for-pattern-searching/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Bad Character Heuristic.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(256)</td>
       <td>Create a Bad Character table for the pattern, which stores the last occurrence of each character. Align pattern with text. Compare from right to left. If mismatch, shift the pattern so that the mismatched character in text aligns with its last occurrence in the pattern. If not present, shift pattern past it.</td>
@@ -254,7 +254,7 @@
     </tr>
     <tr>
       <td rowspan="1">31</td>
-      <td rowspan="1">Str 31 Roman Number To Integer<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/roman-number-to-integer3201/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Str 31 Roman Number To Integer<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/roman-number-to-integer3201/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Value mapping.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Map each Roman numeral to its integer value. Iterate from right to left. If a character is smaller than its right character, subtract its value, else add it.</td>
@@ -262,7 +262,7 @@
     </tr>
     <tr>
       <td rowspan="1">32</td>
-      <td rowspan="1">Str 32 Number Of Flips To Make Binary String Alternate<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/min-number-of-flips3210/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 32 Number Of Flips To Make Binary String Alternate<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/min-number-of-flips3210/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two target strings.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>There are only two possible alternating strings for length N: starting with '0' (`010101...`) and starting with '1' (`101010...`). Count the differences between the given string and both of these. The minimum count is the answer.</td>
@@ -270,7 +270,7 @@
     </tr>
     <tr>
       <td rowspan="1">33</td>
-      <td rowspan="1">Str 33 Find The First Repeated Word In String<br><br></b> <a href="https://www.geeksforgeeks.org/find-first-repeated-word-string/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 33 Find The First Repeated Word In String<br><br></b> <a href="https://www.geeksforgeeks.org/find-first-repeated-word-string/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> HashSet.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Split the string into words. Iterate through the words. If a word is already in the hash set, it is the first repeated word. Return it. Else, add it to the hash set.<br><br><b>Dependencies:</b> Hash Set</td>
@@ -278,7 +278,7 @@
     </tr>
     <tr>
       <td rowspan="1">34</td>
-      <td rowspan="1">Str 34 Minimum Swaps For Bracket Balancing<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/minimum-swaps-for-bracket-balancing2704/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Str 34 Minimum Swaps For Bracket Balancing<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/minimum-swaps-for-bracket-balancing2704/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Track balance.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Keep track of the number of opening and closing brackets, and an `imbalance` counter. When encountering `[`, decrease imbalance. When encountering `]`, increase imbalance. The number of swaps is updated when an imbalance is found and we find the next `[`.</td>
@@ -286,7 +286,7 @@
     </tr>
     <tr>
       <td rowspan="1">35</td>
-      <td rowspan="1">Str 35 Isomorphic Strings<br><br></b> <a href="https://leetcode.com/problems/isomorphic-strings/" target="_blank">LeetCode 205</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Str 35 Isomorphic Strings<br><br></b> <a href="https://leetcode.com/problems/isomorphic-strings/" target="_blank">LeetCode 205</a></td>
       <td rowspan="1"><b>Example 1:</b> Hash Maps.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Use two arrays to map characters from `s` to `t` and `t` to `s`. If `s[i]` is mapped to a character other than `t[i]`, or `t[i]` is mapped to a character other than `s[i]`, return false. Else, create the mappings.</td>
@@ -294,7 +294,7 @@
     </tr>
     <tr>
       <td rowspan="1">36</td>
-      <td rowspan="1">Str 36 Reverse Words In A String<br><br></b> <a href="https://leetcode.com/problems/reverse-words-in-a-string/" target="_blank">LeetCode 151</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Str 36 Reverse Words In A String<br><br></b> <a href="https://leetcode.com/problems/reverse-words-in-a-string/" target="_blank">LeetCode 151</a></td>
       <td rowspan="1"><b>Example 1:</b> Two Pointers.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N) for output string</td>
       <td>Iterate from right to left. Find the end of a word, then the start of a word. Extract the word and append it to the result string along with a space. Finally, remove the trailing space.</td>
@@ -302,7 +302,7 @@
     </tr>
     <tr>
       <td rowspan="1">37</td>
-      <td rowspan="1">Str 37 Rotate String<br><br></b> <a href="https://leetcode.com/problems/rotate-string/" target="_blank">LeetCode 796</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Str 37 Rotate String<br><br></b> <a href="https://leetcode.com/problems/rotate-string/" target="_blank">LeetCode 796</a></td>
       <td rowspan="1"><b>Example 1:</b> String Concatenation.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>If the lengths of `s` and `goal` are not equal, return false. Otherwise, concatenate `s` with itself (`s + s`). If `goal` is a substring of `s + s`, then it's a rotated string.</td>
@@ -310,7 +310,7 @@
     </tr>
     <tr>
       <td rowspan="1">38</td>
-      <td rowspan="1">Str 38 String To Integer Atoi<br><br></b> <a href="https://leetcode.com/problems/string-to-integer-atoi/" target="_blank">LeetCode 8</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Str 38 String To Integer Atoi<br><br></b> <a href="https://leetcode.com/problems/string-to-integer-atoi/" target="_blank">LeetCode 8</a></td>
       <td rowspan="1"><b>Example 1:</b> Step-by-step parsing.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>1. Ignore leading whitespaces. 2. Check for optional '+' or '-'. 3. Read digits until a non-digit or end of string. 4. Build the integer, checking for 32-bit integer overflow/underflow at each step.</td>

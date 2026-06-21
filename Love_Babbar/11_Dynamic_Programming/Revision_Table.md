@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">DP 01 Climbing Stairs<br><br></b> <a href="https://leetcode.com/problems/climbing-stairs/" target="_blank">LeetCode 70</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">DP 01 Climbing Stairs<br><br></b> <a href="https://leetcode.com/problems/climbing-stairs/" target="_blank">LeetCode 70</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> n = 3<br><b>Output:</b> 3 (1+1+1, 1+2, 2+1)</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1) (Constraint)</td>
       <td>Space Optimization (Bottom-Up): Since state `n` only depends on `n-1` and `n-2`, we only need two variables.</td>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td rowspan="1">2</td>
-      <td rowspan="1">DP 02 Longest Common Subsequence<br><br></b> <a href="https://leetcode.com/problems/longest-common-subsequence/" target="_blank">LeetCode 1143</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">DP 02 Longest Common Subsequence<br><br></b> <a href="https://leetcode.com/problems/longest-common-subsequence/" target="_blank">LeetCode 1143</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> text1 = "abcde", text2 = "ace"<br><b>Output:</b> 3 ("ace")</td>
       <td><b>Time:</b> O(M * N) (Constraint)<br><b>Space:</b> O(M * N) (Trade-off)</td>
       <td>Tabulation (Bottom-Up). Use a 2D array where `dp[i][j]` represents the LCS of prefixes of length `i` and `j`.<br><br><b>Dependencies:</b> <code>std::max</code></td>
@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td rowspan="1">3</td>
-      <td rowspan="1">DP 03 Coin Change<br><br></b> <a href="https://leetcode.com/problems/coin-change/" target="_blank">LeetCode 322</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">DP 03 Coin Change<br><br></b> <a href="https://leetcode.com/problems/coin-change/" target="_blank">LeetCode 322</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> coins = [1,2,5], amount = 11<br><b>Output:</b> 3 (5+5+1)</td>
       <td><b>Time:</b> O(Amount * N)<br><b>Space:</b> O(Amount)</td>
       <td>Unbounded Knapsack. State `dp[i]` is the min coins needed to make amount `i`. `dp[i] = min(dp[i], 1 + dp[i - coin])`.<br><br><b>Dependencies:</b> <code>std::min</code></td>
@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td rowspan="1">4</td>
-      <td rowspan="1">DP 04 Longest Increasing Subsequence<br><br></b> <a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank">LeetCode 300</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">DP 04 Longest Increasing Subsequence<br><br></b> <a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank">LeetCode 300</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> nums = [10,9,2,5,3,7,101,18]<br><b>Output:</b> 4 ([2,3,7,101])</td>
       <td><b>Time:</b> O(N log N) (Constraint)<br><b>Space:</b> O(N)</td>
       <td>Binary Search Patience Sorting method. Maintain a `temp` array. If current element is larger than `temp.back()`, append. Else, replace the first element >= current.<br><br><b>Dependencies:</b> <code>std::lower_bound</code> / <code>bisect_left</code></td>
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td rowspan="1">5</td>
-      <td rowspan="1">DP 05 House Robber<br><br></b> <a href="https://leetcode.com/problems/house-robber/" target="_blank">LeetCode 198</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">DP 05 House Robber<br><br></b> <a href="https://leetcode.com/problems/house-robber/" target="_blank">LeetCode 198</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> nums = [1,2,3,1]<br><b>Output:</b> 4 (Rob house 1 and 3)</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Space Optimized DP. Maintain two variables: `prev1` (max up to previous house) and `prev2` (max up to the house before previous). `curr = max(num + prev2, prev1)`.<br><br><b>Dependencies:</b> <code>std::max</code></td>
@@ -54,7 +54,7 @@
     </tr>
     <tr>
       <td rowspan="1">6</td>
-      <td rowspan="1">DP 06 01 Knapsack<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">DP 06 01 Knapsack<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> N=3, W=4, values[]={1,2,3}, weight[]={4,5,1}<br><b>Output:</b> 3</td>
       <td><b>Time:</b> O(N * W)<br><b>Space:</b> O(W)</td>
       <td>2D DP or 1D array space-optimized DP. Check take and not-take scenarios.</td>
@@ -62,7 +62,7 @@
     </tr>
     <tr>
       <td rowspan="1">7</td>
-      <td rowspan="1">DP 07 Edit Distance<br><br></b> <a href="https://leetcode.com/problems/edit-distance/" target="_blank">LeetCode 72</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">DP 07 Edit Distance<br><br></b> <a href="https://leetcode.com/problems/edit-distance/" target="_blank">LeetCode 72</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> word1 = 'horse', word2 = 'ros'<br><b>Output:</b> 3</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(M)</td>
       <td>2D DP. If chars match, dp[i-1][j-1]. Else, 1 + min(insert, delete, replace).</td>
@@ -70,7 +70,7 @@
     </tr>
     <tr>
       <td rowspan="1">8</td>
-      <td rowspan="1">DP 08 Matrix Chain Multiplication<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, Apna College, SDE Sheet</details></td>
+      <td rowspan="1">DP 08 Matrix Chain Multiplication<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> N=5, arr=[40, 20, 30, 10, 30]<br><b>Output:</b> 26000</td>
       <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2)</td>
       <td>Partition DP. Try partitioning the matrices at every possible split `k` between `i` and `j`. Cost is `arr[i-1]*arr[k]*arr[j]`. Take the minimum.<br><br><b>Dependencies:</b> <code>#include <vector></code></td>
@@ -78,7 +78,7 @@
     </tr>
     <tr>
       <td rowspan="1">9</td>
-      <td rowspan="1">DP 09 Subset Sum Problem<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet, Apna College</details></td>
+      <td rowspan="1">DP 09 Subset Sum Problem<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> set=[3,34,4,12,5,2], sum=9<br><b>Output:</b> True</td>
       <td><b>Time:</b> O(N * Sum)<br><b>Space:</b> O(Sum) space optimized</td>
       <td>DP logic like 0/1 Knapsack. DP state is `dp[index][target]`. At each index, you can take or not take the element if `target >= arr[i]`.</td>
@@ -86,7 +86,7 @@
     </tr>
     <tr>
       <td rowspan="1">10</td>
-      <td rowspan="1">DP 10 Minimum Path Sum<br><br></b> <a href="https://leetcode.com/problems/minimum-path-sum/" target="_blank">LeetCode 64</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 10 Minimum Path Sum<br><br></b> <a href="https://leetcode.com/problems/minimum-path-sum/" target="_blank">LeetCode 64</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> grid = [[1,3,1],[1,5,1],[4,2,1]]<br><b>Output:</b> 7</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(M)</td>
       <td>DP on Grids. Space optimize to 1D. `cur[j] = grid[i][j] + min(up, left)`.</td>
@@ -94,7 +94,7 @@
     </tr>
     <tr>
       <td rowspan="1">11</td>
-      <td rowspan="1">DP 11 Triangle<br><br></b> <a href="https://leetcode.com/problems/triangle/" target="_blank">LeetCode 120</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 11 Triangle<br><br></b> <a href="https://leetcode.com/problems/triangle/" target="_blank">LeetCode 120</a></td>
       <td rowspan="1"><b>Example 1:</b><br><b>Output:</b> 11</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Start from bottom row and move upwards. `dp[j] = triangle[i][j] + min(dp[j], dp[j+1])`.</td>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td rowspan="1">12</td>
-      <td rowspan="1">DP 12 Minimum Falling Path Sum<br><br></b> <a href="https://leetcode.com/problems/minimum-falling-path-sum/" target="_blank">LeetCode 931</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 12 Minimum Falling Path Sum<br><br></b> <a href="https://leetcode.com/problems/minimum-falling-path-sum/" target="_blank">LeetCode 931</a></td>
       <td rowspan="1"><b>Example 1:</b><br><b>Output:</b> 13</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Similar to minimum path sum, but we can fall diagonally. Space optimize by using previous row.</td>
@@ -110,7 +110,7 @@
     </tr>
     <tr>
       <td rowspan="1">13</td>
-      <td rowspan="1">DP 13 Cherry Pickup II<br><br></b> <a href="https://leetcode.com/problems/cherry-pickup-ii/" target="_blank">LeetCode 1463</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 13 Cherry Pickup II<br><br></b> <a href="https://leetcode.com/problems/cherry-pickup-ii/" target="_blank">LeetCode 1463</a></td>
       <td rowspan="1"><b>Example 1:</b> 3D DP.</td>
       <td><b>Time:</b> O(N * M * M * 9)<br><b>Space:</b> O(M * M)</td>
       <td>Robots move simultaneously. State is `dp[row][col1][col2]`. Try all 9 combinations of moves for both robots.</td>
@@ -118,7 +118,7 @@
     </tr>
     <tr>
       <td rowspan="1">14</td>
-      <td rowspan="1">DP 14 Partition Equal Subset Sum<br><br></b> <a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank">LeetCode 416</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 14 Partition Equal Subset Sum<br><br></b> <a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank">LeetCode 416</a></td>
       <td rowspan="1"><b>Example 1:</b><br><b>Output:</b> True.</td>
       <td><b>Time:</b> O(N * Target)<br><b>Space:</b> O(Target)</td>
       <td>If total sum is odd, impossible. Else, find if there's a subset with sum `Total/2` using space-optimized DP.</td>
@@ -126,7 +126,7 @@
     </tr>
     <tr>
       <td rowspan="1">15</td>
-      <td rowspan="1">DP 15 Target Sum<br><br></b> <a href="https://leetcode.com/problems/target-sum/" target="_blank">LeetCode 494</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 15 Target Sum<br><br></b> <a href="https://leetcode.com/problems/target-sum/" target="_blank">LeetCode 494</a></td>
       <td rowspan="1"><b>Example 1:</b> Count Subsets with Diff = target.</td>
       <td><b>Time:</b> O(N * Target)<br><b>Space:</b> O(Target)</td>
       <td>Subset sum variation. `S1 - S2 = target`, `S1 + S2 = totalSum`. So, `S1 = (target + totalSum) / 2`. Find subsets with this target sum.</td>
@@ -134,7 +134,7 @@
     </tr>
     <tr>
       <td rowspan="1">16</td>
-      <td rowspan="1">DP 16 Burst Balloons<br><br></b> <a href="https://leetcode.com/problems/burst-balloons/" target="_blank">LeetCode 312</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 16 Burst Balloons<br><br></b> <a href="https://leetcode.com/problems/burst-balloons/" target="_blank">LeetCode 312</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> nums = [3,1,5,8]<br><b>Output:</b> 167</td>
       <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2)</td>
       <td>MCM Pattern. Add 1 at the beginning and end. Loop lengths from 1 to N. Iterate start `i` and end `j`. Then iterate `k` from `i` to `j`, meaning balloon `k` is the LAST one to burst in the range `[i, j]`. The coins collected are `nums[i-1] * nums[k] * nums[j+1] + dp[i][k-1] + dp[k+1][j]`.</td>
@@ -142,7 +142,7 @@
     </tr>
     <tr>
       <td rowspan="1">17</td>
-      <td rowspan="1">DP 17 Palindrome Partitioning II<br><br></b> <a href="https://leetcode.com/problems/palindrome-partitioning-ii/" target="_blank">LeetCode 132</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 17 Palindrome Partitioning II<br><br></b> <a href="https://leetcode.com/problems/palindrome-partitioning-ii/" target="_blank">LeetCode 132</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> s = 'aab'<br><b>Output:</b> 1</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Front Partitioning. `dp[i]` is the minimum cuts for `s[i...n-1]`. To compute `dp[i]`, iterate `j` from `i` to `n-1`. If `s[i...j]` is a palindrome, then `cost = 1 + dp[j+1]`. `dp[i]` is the minimum of these costs. Return `dp[0] - 1`.</td>
@@ -150,7 +150,7 @@
     </tr>
     <tr>
       <td rowspan="1">18</td>
-      <td rowspan="1">DP 18 Evaluate Boolean Expression To True<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/boolean-parenthesization5610/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 18 Evaluate Boolean Expression To True<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/boolean-parenthesization5610/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> MCM DP pattern.</td>
       <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N^2)</td>
       <td>MCM DP. `dp[i][j][isTrue]` stores the number of ways to evaluate `S[i..j]` to boolean `isTrue`. Iterate length, start, and partition `k`. Calculate T/F ways based on the operator at `k`.</td>
@@ -158,7 +158,7 @@
     </tr>
     <tr>
       <td rowspan="1">19</td>
-      <td rowspan="1">DP 19 Count Square Submatrices With All Ones<br><br></b> <a href="https://leetcode.com/problems/count-square-submatrices-with-all-ones/" target="_blank">LeetCode 1277</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 19 Count Square Submatrices With All Ones<br><br></b> <a href="https://leetcode.com/problems/count-square-submatrices-with-all-ones/" target="_blank">LeetCode 1277</a></td>
       <td rowspan="1"><b>Example 1:</b> Return total count.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M)</td>
       <td>`dp[i][j]` is the size of the largest square ending at `(i, j)`. It also represents the number of squares ending at `(i, j)`. `dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1` if `matrix[i][j] == 1`.</td>
@@ -166,7 +166,7 @@
     </tr>
     <tr>
       <td rowspan="1">20</td>
-      <td rowspan="1">DP 20 Minimum Cost To Cut A Stick<br><br></b> <a href="https://leetcode.com/problems/minimum-cost-to-cut-a-stick/" target="_blank">LeetCode 1547</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 20 Minimum Cost To Cut A Stick<br><br></b> <a href="https://leetcode.com/problems/minimum-cost-to-cut-a-stick/" target="_blank">LeetCode 1547</a></td>
       <td rowspan="1"><b>Example 1:</b> Cost depends on current stick length.</td>
       <td><b>Time:</b> O(C^3) where C is number of cuts<br><b>Space:</b> O(C^2)</td>
       <td>Sort cuts array and prepend 0, append `n`. Use MCM pattern. `dp[i][j]` is the minimum cost to cut the stick between cuts `i` and `j`. `dp[i][j] = min(cost + cuts[j+1] - cuts[i-1])`.</td>
@@ -174,7 +174,7 @@
     </tr>
     <tr>
       <td rowspan="1">21</td>
-      <td rowspan="1">DP 21 Partition Array For Maximum Sum<br><br></b> <a href="https://leetcode.com/problems/partition-array-for-maximum-sum/" target="_blank">LeetCode 1043</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 21 Partition Array For Maximum Sum<br><br></b> <a href="https://leetcode.com/problems/partition-array-for-maximum-sum/" target="_blank">LeetCode 1043</a></td>
       <td rowspan="1"><b>Example 1:</b> Front partitioning DP.</td>
       <td><b>Time:</b> O(N * K)<br><b>Space:</b> O(N)</td>
       <td>Front partitioning. `dp[i]` is max sum for `arr[i..n-1]`. For each `i`, iterate `j` up to `i+k-1`. Find `maxi` element in this window, and add `maxi * length + dp[j+1]`.</td>
@@ -182,7 +182,7 @@
     </tr>
     <tr>
       <td rowspan="1">22</td>
-      <td rowspan="1">DP 22 Distinct Subsequences<br><br></b> <a href="https://leetcode.com/problems/distinct-subsequences/" target="_blank">LeetCode 115</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 22 Distinct Subsequences<br><br></b> <a href="https://leetcode.com/problems/distinct-subsequences/" target="_blank">LeetCode 115</a></td>
       <td rowspan="1"><b>Example 1:</b> Subsequence match count.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(M)</td>
       <td>If characters match, `dp[i][j] = dp[i-1][j-1] + dp[i-1][j]`. If they don't, `dp[i][j] = dp[i-1][j]`. Optimize to 1D array.</td>
@@ -190,7 +190,7 @@
     </tr>
     <tr>
       <td rowspan="1">23</td>
-      <td rowspan="1">DP 23 Wildcard Matching<br><br></b> <a href="https://leetcode.com/problems/wildcard-matching/" target="_blank">LeetCode 44</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 23 Wildcard Matching<br><br></b> <a href="https://leetcode.com/problems/wildcard-matching/" target="_blank">LeetCode 44</a></td>
       <td rowspan="1"><b>Example 1:</b> 2D DP.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M) or O(M)</td>
       <td>Use a 2D DP array where `dp[i][j]` means if `s[0..i-1]` matches `p[0..j-1]`. If `p[j-1] == '?'` or `s[i-1] == p[j-1]`, `dp[i][j] = dp[i-1][j-1]`. If `p[j-1] == '*'`, it can match empty (`dp[i][j-1]`) or match one character (`dp[i-1][j]`).</td>
@@ -198,7 +198,7 @@
     </tr>
     <tr>
       <td rowspan="1">24</td>
-      <td rowspan="1">DP 24 Best Time To Buy And Sell Stock II<br><br></b> <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/" target="_blank">LeetCode 122</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 24 Best Time To Buy And Sell Stock II<br><br></b> <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/" target="_blank">LeetCode 122</a></td>
       <td rowspan="1"><b>Example 1:</b> Valley Peak approach.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Add the profit whenever the price is higher than the previous day. This is equivalent to capturing every upward slope.</td>
@@ -206,7 +206,7 @@
     </tr>
     <tr>
       <td rowspan="1">25</td>
-      <td rowspan="1">DP 25 Best Time To Buy And Sell Stock III<br><br></b> <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/" target="_blank">LeetCode 123</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 25 Best Time To Buy And Sell Stock III<br><br></b> <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/" target="_blank">LeetCode 123</a></td>
       <td rowspan="1"><b>Example 1:</b> 3D DP / State Machine.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Maintain four variables representing the max profit after first buy, first sell, second buy, and second sell. Update them iteratively.</td>
@@ -214,7 +214,7 @@
     </tr>
     <tr>
       <td rowspan="1">26</td>
-      <td rowspan="1">DP 26 Best Time To Buy And Sell Stock IV<br><br></b> <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/" target="_blank">LeetCode 188</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 26 Best Time To Buy And Sell Stock IV<br><br></b> <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/" target="_blank">LeetCode 188</a></td>
       <td rowspan="1"><b>Example 1:</b> DP with transactions.</td>
       <td><b>Time:</b> O(N * K)<br><b>Space:</b> O(N * K) or O(K)</td>
       <td>If `k >= n/2`, it's equivalent to infinite transactions (Stock II). Else, use a DP array `dp[k][n]` where `dp[i][j]` is max profit using `i` transactions up to day `j`. Optimize inner loop by tracking `maxDiff = max(maxDiff, dp[i-1][j-1] - prices[j-1])`.</td>
@@ -222,7 +222,7 @@
     </tr>
     <tr>
       <td rowspan="1">27</td>
-      <td rowspan="1">DP 27 Best Time To Buy And Sell Stock With Cooldown<br><br></b> <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank">LeetCode 309</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 27 Best Time To Buy And Sell Stock With Cooldown<br><br></b> <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank">LeetCode 309</a></td>
       <td rowspan="1"><b>Example 1:</b> State Machine DP.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Maintain 3 states: `hold` (holding a stock), `sold` (just sold, entering cooldown next), `rest` (not holding, not in cooldown). Transitions: `hold = max(hold, rest - price)`, `sold = hold + price`, `rest = max(rest, sold_prev)`.</td>
@@ -230,7 +230,7 @@
     </tr>
     <tr>
       <td rowspan="1">28</td>
-      <td rowspan="1">DP 28 Best Time To Buy And Sell Stock With Transaction Fee<br><br></b> <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/" target="_blank">LeetCode 714</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 28 Best Time To Buy And Sell Stock With Transaction Fee<br><br></b> <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/" target="_blank">LeetCode 714</a></td>
       <td rowspan="1"><b>Example 1:</b> DP State Machine.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Similar to Stock II, but subtract `fee` when selling. Maintain `cash` (max profit not holding stock) and `hold` (max profit holding stock). `cash = max(cash, hold + price - fee)`, `hold = max(hold, cash - price)`.</td>
@@ -238,7 +238,7 @@
     </tr>
     <tr>
       <td rowspan="1">29</td>
-      <td rowspan="1">DP 29 Largest Divisible Subset<br><br></b> <a href="https://leetcode.com/problems/largest-divisible-subset/" target="_blank">LeetCode 368</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 29 Largest Divisible Subset<br><br></b> <a href="https://leetcode.com/problems/largest-divisible-subset/" target="_blank">LeetCode 368</a></td>
       <td rowspan="1"><b>Example 1:</b> Sort and LIS variant.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Sort the array. Then use LIS logic: `dp[i]` is max subset ending at `i`. If `nums[i] % nums[j] == 0`, `dp[i] = max(dp[i], dp[j] + 1)`. Also keep a `parent` array to reconstruct the subset.</td>
@@ -246,7 +246,7 @@
     </tr>
     <tr>
       <td rowspan="1">30</td>
-      <td rowspan="1">DP 30 Longest String Chain<br><br></b> <a href="https://leetcode.com/problems/longest-string-chain/" target="_blank">LeetCode 1048</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 30 Longest String Chain<br><br></b> <a href="https://leetcode.com/problems/longest-string-chain/" target="_blank">LeetCode 1048</a></td>
       <td rowspan="1"><b>Example 1:</b> Sort by length and use hash map.</td>
       <td><b>Time:</b> O(N log N + N * L^2) where L is max word length<br><b>Space:</b> O(N * L)</td>
       <td>Sort words by length. Use a hash map `dp` to store the longest chain ending at `word`. For each word, try removing one character at a time to form `prev_word`. `dp[word] = max(dp[word], dp[prev_word] + 1)`.<br><br><b>Dependencies:</b> <code>#include <unordered_map></code></td>
@@ -254,7 +254,7 @@
     </tr>
     <tr>
       <td rowspan="1">31</td>
-      <td rowspan="1">DP 31 Longest Bitonic Subsequence<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 31 Longest Bitonic Subsequence<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> LIS from left + LIS from right.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Compute LIS ending at `i` from left to right (`inc[i]`). Compute LIS starting at `i` from right to left (`dec[i]`). The max bitonic subsequence length is `max(inc[i] + dec[i] - 1)` for all `i`. Sometimes pure increasing or pure decreasing is also bitonic depending on definition, adjust if necessary.</td>
@@ -262,7 +262,7 @@
     </tr>
     <tr>
       <td rowspan="1">32</td>
-      <td rowspan="1">DP 32 Number Of Longest Increasing Subsequence<br><br></b> <a href="https://leetcode.com/problems/number-of-longest-increasing-subsequence/" target="_blank">LeetCode 673</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">DP 32 Number Of Longest Increasing Subsequence<br><br></b> <a href="https://leetcode.com/problems/number-of-longest-increasing-subsequence/" target="_blank">LeetCode 673</a></td>
       <td rowspan="1"><b>Example 1:</b> Two DP arrays (Length and Count).</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Maintain `lengths[i]` (length of LIS ending at i) and `counts[i]` (number of LIS ending at i). If `nums[i] > nums[j]`: if `lengths[j] + 1 > lengths[i]`, then `lengths[i] = lengths[j] + 1` and `counts[i] = counts[j]`. Else if `lengths[j] + 1 == lengths[i]`, then `counts[i] += counts[j]`.</td>
@@ -270,7 +270,7 @@
     </tr>
     <tr>
       <td rowspan="1">33</td>
-      <td rowspan="1">DP 33 Longest Alternating Subsequence<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-alternating-subsequence5951/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 33 Longest Alternating Subsequence<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-alternating-subsequence5951/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Two state DP.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Maintain two lengths: `up` (ending with ascending) and `down` (ending with descending). Iterate array: if `arr[i] > arr[i-1]`, `up = down + 1`. If `arr[i] < arr[i-1]`, `down = up + 1`. Return `max(up, down)`.</td>
@@ -278,7 +278,7 @@
     </tr>
     <tr>
       <td rowspan="1">34</td>
-      <td rowspan="1">DP 34 Largest Square Formed In A Matrix<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/largest-square-formed-in-a-matrix0806/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 34 Largest Square Formed In A Matrix<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/largest-square-formed-in-a-matrix0806/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Bottom-up DP.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M) or O(M)</td>
       <td>`dp[i][j]` is side of max square ending at `(i, j)`. If `mat[i][j] == 1`, `dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1`. Result is max over all `dp[i][j]`.</td>
@@ -286,7 +286,7 @@
     </tr>
     <tr>
       <td rowspan="1">35</td>
-      <td rowspan="1">DP 35 Pairs With Specific Difference<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/pairs-with-specific-difference1533/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 35 Pairs With Specific Difference<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/pairs-with-specific-difference1533/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Sort and DP or Greedy.</td>
       <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
       <td>Sort array. Iterate from end. If `arr[i] - arr[i-1] < K`, we pair them, add sum to answer, and `i -= 2`. Else, `i -= 1`. Greedy approach works because pairing larger numbers gives a larger sum.</td>
@@ -294,7 +294,7 @@
     </tr>
     <tr>
       <td rowspan="1">36</td>
-      <td rowspan="1">DP 36 Maximum Path Sum In Matrix<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/path-in-matrix3805/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 36 Maximum Path Sum In Matrix<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/path-in-matrix3805/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> 2D DP.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Start from bottom row up. `dp[i][j] = matrix[i][j] + max(dp[i+1][j], dp[i+1][j-1], dp[i+1][j+1])`. The answer is max value in `dp[0]`.</td>
@@ -302,7 +302,7 @@
     </tr>
     <tr>
       <td rowspan="1">37</td>
-      <td rowspan="1">DP 37 Maximum Difference Of Zeros And Ones In Binary String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/maximum-difference-of-zeros-and-ones-in-binary-string4111/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 37 Maximum Difference Of Zeros And Ones In Binary String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/maximum-difference-of-zeros-and-ones-in-binary-string4111/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Kadane's Algorithm.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Convert '0' to 1 and '1' to -1. Find the maximum subarray sum using Kadane's algorithm. If max sum is negative, it means string has all 1s, return -1.</td>
@@ -310,7 +310,7 @@
     </tr>
     <tr>
       <td rowspan="1">38</td>
-      <td rowspan="1">DP 38 Minimum Removals From Array To Make Max Min K<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/minimum-removals3851/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 38 Minimum Removals From Array To Make Max Min K<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/minimum-removals3851/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DP after sorting.</td>
       <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
       <td>Sort array. We want to find the longest subarray `arr[i..j]` such that `arr[j] - arr[i] <= K`. `dp[i]` could store the max `j` for index `i`. Or use Binary Search (`upper_bound`) for each `i` to find the valid `j`, maximizing `j - i + 1`. Total removed = `N - max_length`.</td>
@@ -318,7 +318,7 @@
     </tr>
     <tr>
       <td rowspan="1">39</td>
-      <td rowspan="1">DP 39 Longest Common Substring<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-common-substring1452/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 39 Longest Common Substring<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-common-substring1452/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> 2D DP.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(M)</td>
       <td>`dp[i][j]` is the length of longest common suffix of `S1[0..i-1]` and `S2[0..j-1]`. If `S1[i-1] == S2[j-1]`, `dp[i][j] = dp[i-1][j-1] + 1`. Else, `dp[i][j] = 0`. Max value in `dp` table is answer.</td>
@@ -326,7 +326,7 @@
     </tr>
     <tr>
       <td rowspan="1">40</td>
-      <td rowspan="1">DP 40 Reach A Given Score<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reach-a-given-score-1587115621/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 40 Reach A Given Score<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reach-a-given-score-1587115621/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Unbounded Knapsack.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>`dp[i]` represents number of ways to reach score `i`. Init `dp[0] = 1`. For each score option (3, 5, 10), iterate from option to `n`, `dp[i] += dp[i - option]`.</td>
@@ -334,7 +334,7 @@
     </tr>
     <tr>
       <td rowspan="1">41</td>
-      <td rowspan="1">DP 41 Coin Change Maximum Ways<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/coin-change2448/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 41 Coin Change Maximum Ways<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/coin-change2448/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> 1D Tabulation.</td>
       <td><b>Time:</b> O(M * N)<br><b>Space:</b> O(N)</td>
       <td>Create a `dp` array of size `N + 1` initialized to 0. `dp[0] = 1`. For each coin, iterate through all amounts from `coin` to `N` and update `dp[j] += dp[j - coin]`.</td>
@@ -342,7 +342,7 @@
     </tr>
     <tr>
       <td rowspan="1">42</td>
-      <td rowspan="1">DP 42 Palindromic Partitioning<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/palindromic-patitioning4845/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 42 Palindromic Partitioning<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/palindromic-patitioning4845/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> 1D DP.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
       <td>Create a `dp` array where `dp[i]` is min cuts for `str[0..i]`. Also use a 2D boolean DP to check if `str[j..i]` is a palindrome. If it is, `dp[i] = min(dp[i], dp[j-1] + 1)`.</td>
@@ -350,7 +350,7 @@
     </tr>
     <tr>
       <td rowspan="1">43</td>
-      <td rowspan="1">DP 43 Maximum Sum Increasing Subsequence<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-increasing-subsequence4749/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 43 Maximum Sum Increasing Subsequence<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-increasing-subsequence4749/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DP (LIS variant).</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Variation of LIS. Create an array `msis` initialized with the given array values. For each `i` from 1 to `n-1`, for each `j` from 0 to `i-1`, if `arr[i] > arr[j]` and `msis[i] < msis[j] + arr[i]`, update `msis[i]`. The max in `msis` is the answer.<br><br><b>Dependencies:</b> DP</td>
@@ -358,7 +358,7 @@
     </tr>
     <tr>
       <td rowspan="1">44</td>
-      <td rowspan="1">DP 44 Count All Subsequences Having Product Less Than K<br><br></b> <a href="https://www.geeksforgeeks.org/count-subsequences-product-less-k/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 44 Count All Subsequences Having Product Less Than K<br><br></b> <a href="https://www.geeksforgeeks.org/count-subsequences-product-less-k/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DP.</td>
       <td><b>Time:</b> O(N * K)<br><b>Space:</b> O(N * K)</td>
       <td>Use a 2D DP array where `dp[i][j]` is the number of subsequences of first `i` elements with product less than or equal to `j`. `dp[i][j] = dp[i-1][j] + dp[i-1][j/arr[i-1]] + 1`.<br><br><b>Dependencies:</b> DP</td>
@@ -366,7 +366,7 @@
     </tr>
     <tr>
       <td rowspan="1">45</td>
-      <td rowspan="1">DP 45 Longest Subsequence Such That Difference Between Adjacents Is One<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-subsequence-such-that-difference-between-adjacents-is-one4724/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 45 Longest Subsequence Such That Difference Between Adjacents Is One<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-subsequence-such-that-difference-between-adjacents-is-one4724/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DP (LIS variant).</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Use a 1D DP array `dp` where `dp[i]` is the length of the longest subsequence ending at `i`. For each `i`, check all `j < i`. If `abs(A[i] - A[j]) == 1`, update `dp[i] = max(dp[i], dp[j] + 1)`.<br><br><b>Dependencies:</b> DP</td>
@@ -374,7 +374,7 @@
     </tr>
     <tr>
       <td rowspan="1">46</td>
-      <td rowspan="1">DP 46 Maximum Subsequence Sum Such That No Three Are Consecutive<br><br></b> <a href="https://www.geeksforgeeks.org/maximum-subsequence-sum-such-that-no-three-are-consecutive/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 46 Maximum Subsequence Sum Such That No Three Are Consecutive<br><br></b> <a href="https://www.geeksforgeeks.org/maximum-subsequence-sum-such-that-no-three-are-consecutive/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DP.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use a DP array. `dp[i]` is the max sum considering up to index `i`. For `i`, the max sum is `max(dp[i-1] (exclude i), dp[i-2] + arr[i] (exclude i-1), dp[i-3] + arr[i] + arr[i-1] (exclude i-2))`.<br><br><b>Dependencies:</b> DP</td>
@@ -382,7 +382,7 @@
     </tr>
     <tr>
       <td rowspan="1">47</td>
-      <td rowspan="1">DP 47 Egg Dropping Puzzle<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 47 Egg Dropping Puzzle<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DP + Binary Search / Math.</td>
       <td><b>Time:</b> O(N * K log K)<br><b>Space:</b> O(N * K)</td>
       <td>Use DP. `dp[i][j]` is the min attempts with `i` eggs and `j` floors. Try dropping from every floor `x` from 1 to `j`. `res = 1 + max(dp[i-1][x-1] (breaks), dp[i][j-x] (doesn't break))`. Optimize this nested loop using Binary Search or use a different state `dp[m][k]` = floors checked with `m` moves and `k` eggs.<br><br><b>Dependencies:</b> DP</td>
@@ -390,7 +390,7 @@
     </tr>
     <tr>
       <td rowspan="1">48</td>
-      <td rowspan="1">DP 48 Maximum Length Chain Of Pairs<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/max-length-chain/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 48 Maximum Length Chain Of Pairs<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/max-length-chain/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Sort and Greedy / DP.</td>
       <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(1)</td>
       <td>This is exactly the Activity Selection Problem. Sort the pairs by their second element. Iterate through the sorted pairs and keep track of the end of the last selected pair. If the next pair's start is > last end, select it.</td>
@@ -398,7 +398,7 @@
     </tr>
     <tr>
       <td rowspan="1">49</td>
-      <td rowspan="1">DP 49 Optimal Strategy For A Game<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/optimal-strategy-for-a-game-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">DP 49 Optimal Strategy For A Game<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/optimal-strategy-for-a-game-1587115620/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DP.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
       <td>If you pick `i`, opponent picks `i+1` or `j`, leaving you with `(i+2, j)` or `(i+1, j-1)`. Opponent plays optimally to minimize your profit. So you get `A[i] + min(dp(i+2, j), dp(i+1, j-1))`. Similarly for picking `j`. Take the max of these two choices.<br><br><b>Dependencies:</b> DP</td>
@@ -406,7 +406,7 @@
     </tr>
     <tr>
       <td rowspan="1">50</td>
-      <td rowspan="1">DP 50 Minimum Insertions To Make String Palindrome<br><br></b> <a href="https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/" target="_blank">LeetCode 1312</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">DP 50 Minimum Insertions To Make String Palindrome<br><br></b> <a href="https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/" target="_blank">LeetCode 1312</a></td>
       <td rowspan="1"><b>Example 1:</b> Longest Palindromic Subsequence.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
       <td>Find the Longest Palindromic Subsequence (LPS). The minimum insertions required will be `string_length - LPS_length`. LPS is just LCS(s, reverse(s)).</td>

@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Trie 01 Implement Trie Prefix Tree<br><br></b> <a href="https://leetcode.com/problems/implement-trie-prefix-tree/" target="_blank">LeetCode 208</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Trie 01 Implement Trie Prefix Tree<br><br></b> <a href="https://leetcode.com/problems/implement-trie-prefix-tree/" target="_blank">LeetCode 208</a></td>
       <td rowspan="1"><b>Example 1:</b> `insert("apple")`, `search("apple")` -> true, `search("app")` -> false, `startsWith("app")` -> true.<br><br><b>Note (Constraint):</b> 1 &le; word.length &le; 2000, lowercase English letters.</td>
       <td><b>Time:</b> O(Length of word) (Constraint)<br><b>Space:</b> O(Length * 26) per word</td>
       <td>Use a Tree where each node contains an array of 26 pointers (for 'a'-'z') and a boolean flag `isEnd`.<br><br><b>Dependencies:</b> Custom Node Struct/Class</td>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td rowspan="1">2</td>
-      <td rowspan="1">Trie 02 Implement Trie II<br><br></b> <a href="https://www.codingninjas.com/studio/problems/implement-trie_1387095" target="_blank">Coding Ninjas</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet, Apna College</details></td>
+      <td rowspan="1">Trie 02 Implement Trie II<br><br></b> <a href="https://www.codingninjas.com/studio/problems/implement-trie_1387095" target="_blank">Coding Ninjas</a></td>
       <td rowspan="1"><b>Example 1:</b> Specialized Trie functions.</td>
       <td><b>Time:</b> O(len) per operation<br><b>Space:</b> O(N * len)</td>
       <td>Trie Nodes have a `cntEndWith` and `cntPrefix` integers. Increment `cntPrefix` dynamically as you insert, and `cntEndWith` at the final node. Decrement them during erase.</td>
@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td rowspan="1">3</td>
-      <td rowspan="1">Trie 03 Longest String With All Prefixes<br><br></b> <a href="https://www.codingninjas.com/codestudio/problems/complete-string_2687860" target="_blank">Coding Ninjas</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Trie 03 Longest String With All Prefixes<br><br></b> <a href="https://www.codingninjas.com/codestudio/problems/complete-string_2687860" target="_blank">Coding Ninjas</a></td>
       <td rowspan="1"><b>Example 1:</b> Insert all, check each word.</td>
       <td><b>Time:</b> O(N * max_len)<br><b>Space:</b> O(N * max_len)</td>
       <td>Insert all words into a Trie. For each word, check if every prefix exists (i.e., every node from root to end has `isEnd == true`). Keep track of the longest valid word. Resolve ties lexicographically.</td>
@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td rowspan="1">4</td>
-      <td rowspan="1">Trie 04 Number Of Distinct Substrings In A String<br><br></b> <a href="https://www.codingninjas.com/codestudio/problems/count-distinct-substrings_985292" target="_blank">Coding Ninjas</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Trie 04 Number Of Distinct Substrings In A String<br><br></b> <a href="https://www.codingninjas.com/codestudio/problems/count-distinct-substrings_985292" target="_blank">Coding Ninjas</a></td>
       <td rowspan="1"><b>Example 1:</b> Insert all suffixes.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
       <td>To find all substrings, iterate `i` from 0 to N-1, and `j` from `i` to N-1. Each sequence `s[i...j]` is a substring. Insert it into the Trie. Every time we create a new node, it corresponds to a new distinct substring. Increment count. Add 1 for the empty substring.</td>
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td rowspan="1">5</td>
-      <td rowspan="1">Trie 05 Maximum Xor Of Two Numbers In An Array<br><br></b> <a href="https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/" target="_blank">LeetCode 421</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Trie 05 Maximum Xor Of Two Numbers In An Array<br><br></b> <a href="https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/" target="_blank">LeetCode 421</a></td>
       <td rowspan="1"><b>Example 1:</b> Bit Trie.</td>
       <td><b>Time:</b> O(N * 32)<br><b>Space:</b> O(N * 32)</td>
       <td>Insert binary representation of each number (from MSB to LSB, 31 to 0) into a Trie. To find max XOR for `x`, traverse the Trie aiming for opposite bits (1 for 0, 0 for 1). If opposite bit exists, go that way and add `1 << i` to result. Else go same way.</td>
@@ -54,7 +54,7 @@
     </tr>
     <tr>
       <td rowspan="1">6</td>
-      <td rowspan="1">Trie 06 Maximum Xor With An Element From Array<br><br></b> <a href="https://leetcode.com/problems/maximum-xor-with-an-element-from-array/" target="_blank">LeetCode 1707</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Trie 06 Maximum Xor With An Element From Array<br><br></b> <a href="https://leetcode.com/problems/maximum-xor-with-an-element-from-array/" target="_blank">LeetCode 1707</a></td>
       <td rowspan="1"><b>Example 1:</b> Offline Queries.</td>
       <td><b>Time:</b> O(N log N + Q log Q + Q * 32 + N * 32)<br><b>Space:</b> O(N * 32 + Q)</td>
       <td>Sort `nums` array. Store queries as `{m, x, index}` and sort them by `m`. Iterate through queries. While `nums[i] <= m`, insert `nums[i]` into Trie. If Trie is empty, answer is -1. Else, query Trie for max XOR with `x`.</td>
@@ -62,7 +62,7 @@
     </tr>
     <tr>
       <td rowspan="1">7</td>
-      <td rowspan="1">Trie 07 Word Search II<br><br></b> <a href="https://leetcode.com/problems/word-search-ii/" target="_blank">LeetCode 212</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Trie 07 Word Search II<br><br></b> <a href="https://leetcode.com/problems/word-search-ii/" target="_blank">LeetCode 212</a></td>
       <td rowspan="1"><b>Example 1:</b> DFS + Trie.</td>
       <td><b>Time:</b> O(M * N * 4^L)<br><b>Space:</b> O(sum(L))</td>
       <td>Insert all words into a Trie. Store the actual word at the `isEnd` node for easy retrieval. Do DFS from each cell. During DFS, traverse the Trie simultaneously. If a Trie node has a word, add it to results and remove the word from the node to avoid duplicates.</td>
@@ -70,7 +70,7 @@
     </tr>
     <tr>
       <td rowspan="1">8</td>
-      <td rowspan="1">Trie 08 Palindrome Pairs<br><br></b> <a href="https://leetcode.com/problems/palindrome-pairs/" target="_blank">LeetCode 336</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Trie 08 Palindrome Pairs<br><br></b> <a href="https://leetcode.com/problems/palindrome-pairs/" target="_blank">LeetCode 336</a></td>
       <td rowspan="1"><b>Example 1:</b> Trie of reversed words.</td>
       <td><b>Time:</b> O(N * L^2)<br><b>Space:</b> O(N * L)</td>
       <td>Insert the REVERSE of every word into a Trie. Store index of word at node. For each word, search the Trie. Three cases: 1. Trie word is longer (current word exhausted, check if rest of Trie branch is palindrome). 2. Current word is longer (Trie exhausted, check if rest of current word is palindrome). 3. Exact match. Store valid indices.</td>
@@ -78,7 +78,7 @@
     </tr>
     <tr>
       <td rowspan="1">9</td>
-      <td rowspan="1">Trie 09 Implement Magic Dictionary<br><br></b> <a href="https://leetcode.com/problems/implement-magic-dictionary/" target="_blank">LeetCode 676</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Trie 09 Implement Magic Dictionary<br><br></b> <a href="https://leetcode.com/problems/implement-magic-dictionary/" target="_blank">LeetCode 676</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive Trie Search.</td>
       <td><b>Time:</b> O(N) Add, O(N * 26) Search<br><b>Space:</b> O(Total Chars)</td>
       <td>Store dictionary in a Trie. For searching, recursively traverse the Trie. Maintain a `modified` boolean flag. If characters mismatch, set `modified` to true and continue. If we reach the end of the word and `modified` is true, return true.<br><br><b>Dependencies:</b> Trie</td>
@@ -86,7 +86,7 @@
     </tr>
     <tr>
       <td rowspan="1">10</td>
-      <td rowspan="1">Trie 10 Find All Words In A Matrix<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-all-words-in-a-matrix/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Trie 10 Find All Words In A Matrix<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-all-words-in-a-matrix/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Trie + DFS.</td>
       <td><b>Time:</b> O(N * M * 4^L) where L is max word length<br><b>Space:</b> O(Total Chars in Dict)</td>
       <td>Build a Trie from the dictionary. Perform DFS from every cell in the matrix. During DFS, traverse the Trie simultaneously. If `node.word` is found, add it to result and clear `node.word` to prevent duplicates. Mark visited cells to avoid loops.<br><br><b>Dependencies:</b> Trie</td>
@@ -94,7 +94,7 @@
     </tr>
     <tr>
       <td rowspan="1">11</td>
-      <td rowspan="1">Trie 11 Replace Words<br><br></b> <a href="https://leetcode.com/problems/replace-words/" target="_blank">LeetCode 648</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Trie 11 Replace Words<br><br></b> <a href="https://leetcode.com/problems/replace-words/" target="_blank">LeetCode 648</a></td>
       <td rowspan="1"><b>Example 1:</b> Trie matching.</td>
       <td><b>Time:</b> O(N * W)<br><b>Space:</b> O(Total Chars in Dict + Sentence Length)</td>
       <td>Insert all dictionary roots into a Trie. For each word in the sentence, search the Trie. If a prefix matches a root (i.e., `isEnd` becomes true), replace the word with the root. If no root matches, keep the original word.<br><br><b>Dependencies:</b> Trie</td>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td rowspan="1">12</td>
-      <td rowspan="1">Trie 12 Longest Word In Dictionary<br><br></b> <a href="https://leetcode.com/problems/longest-word-in-dictionary/" target="_blank">LeetCode 720</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Trie 12 Longest Word In Dictionary<br><br></b> <a href="https://leetcode.com/problems/longest-word-in-dictionary/" target="_blank">LeetCode 720</a></td>
       <td rowspan="1"><b>Example 1:</b> Trie + DFS.</td>
       <td><b>Time:</b> O(Total Chars)<br><b>Space:</b> O(Total Chars)</td>
       <td>Insert all words into a Trie, marking the end of each word. Perform DFS on the Trie. Only proceed to children that are marked as the end of a word (i.e., `isEnd == true`). Keep track of the longest string found during DFS.<br><br><b>Dependencies:</b> Trie</td>
@@ -110,7 +110,7 @@
     </tr>
     <tr>
       <td rowspan="1">13</td>
-      <td rowspan="1">Trie 13 Camelcase Matching<br><br></b> <a href="https://leetcode.com/problems/camelcase-matching/" target="_blank">LeetCode 1023</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Trie 13 Camelcase Matching<br><br></b> <a href="https://leetcode.com/problems/camelcase-matching/" target="_blank">LeetCode 1023</a></td>
       <td rowspan="1"><b>Example 1:</b> Trie matching.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(1) excluding output</td>
       <td>Build a Trie with the queries (optional, can also be done linearly). Better approach: for each query, match characters with pattern. If characters match, increment pattern index. If characters mismatch and query character is uppercase, it's a mismatch. Finally, check if pattern index reached pattern length.</td>
@@ -118,7 +118,7 @@
     </tr>
     <tr>
       <td rowspan="1">14</td>
-      <td rowspan="1">Trie 14 Prefix And Suffix Search<br><br></b> <a href="https://leetcode.com/problems/prefix-and-suffix-search/" target="_blank">LeetCode 745</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Trie 14 Prefix And Suffix Search<br><br></b> <a href="https://leetcode.com/problems/prefix-and-suffix-search/" target="_blank">LeetCode 745</a></td>
       <td rowspan="1"><b>Example 1:</b> Suffix + '{' + Prefix Trie.</td>
       <td><b>Time:</b> O(N * K^2) Insert, O(K) Search<br><b>Space:</b> O(N * K^2)</td>
       <td>For each word, generate all possible suffixes, append a special character '{', and then append the original word. Insert all these combinations into a Trie along with the index. When querying, search for `suffix + '{' + prefix` in the Trie.<br><br><b>Dependencies:</b> Trie</td>

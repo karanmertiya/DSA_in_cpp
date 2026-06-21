@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Tree 01 Binary Tree Inorder Traversal<br><br></b> <a href="https://leetcode.com/problems/binary-tree-inorder-traversal/" target="_blank">LeetCode 94</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z</details></td>
+      <td rowspan="1">Tree 01 Binary Tree Inorder Traversal<br><br></b> <a href="https://leetcode.com/problems/binary-tree-inorder-traversal/" target="_blank">LeetCode 94</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> root = [1,null,2,3]<br><b>Output:</b> [1,3,2]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Recursive approach. Traverse Left, process Root, then traverse Right.</td>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td rowspan="1">2</td>
-      <td rowspan="1">Tree 02 Maximum Depth Of Binary Tree<br><br></b> <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank">LeetCode 104</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z</details></td>
+      <td rowspan="1">Tree 02 Maximum Depth Of Binary Tree<br><br></b> <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank">LeetCode 104</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> root = [3,9,20,null,null,15,7]<br><b>Output:</b> 3</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H) &cong; O(N)</td>
       <td>Recursively find the max depth of left and right subtrees. The depth is `1 + max(left_depth, right_depth)`.<br><br><b>Dependencies:</b> <code>std::max</code></td>
@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td rowspan="1">3</td>
-      <td rowspan="1">Tree 03 Lowest Common Ancestor Of A Binary Tree<br><br></b> <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/" target="_blank">LeetCode 236</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z, Apna College</details></td>
+      <td rowspan="1">Tree 03 Lowest Common Ancestor Of A Binary Tree<br><br></b> <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/" target="_blank">LeetCode 236</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1<br><b>Output:</b> 3</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>If we find `p` or `q`, return it. If both left and right return non-null, current node is LCA.</td>
@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td rowspan="1">4</td>
-      <td rowspan="1">Tree 04 Same Tree<br><br></b> <a href="https://leetcode.com/problems/same-tree/" target="_blank">LeetCode 100</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z, Apna College</details></td>
+      <td rowspan="1">Tree 04 Same Tree<br><br></b> <a href="https://leetcode.com/problems/same-tree/" target="_blank">LeetCode 100</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> p = [1,2,3], q = [1,2,3]<br><b>Output:</b> true</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Traverse both trees simultaneously. If both nodes are null, true. If one is null or values mismatch, false.</td>
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td rowspan="1">5</td>
-      <td rowspan="1">Tree 05 Invert Binary Tree<br><br></b> <a href="https://leetcode.com/problems/invert-binary-tree/" target="_blank">LeetCode 226</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Tree 05 Invert Binary Tree<br><br></b> <a href="https://leetcode.com/problems/invert-binary-tree/" target="_blank">LeetCode 226</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> root = [4,2,7,1,3,6,9]<br><b>Output:</b> [4,7,2,9,6,3,1]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Recursively swap the left and right children of every node.<br><br><b>Dependencies:</b> <code>std::swap</code></td>
@@ -54,7 +54,7 @@
     </tr>
     <tr>
       <td rowspan="1">6</td>
-      <td rowspan="1">Tree 06 Diameter Of Binary Tree<br><br></b> <a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank">LeetCode 543</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z, Apna College</details></td>
+      <td rowspan="1">Tree 06 Diameter Of Binary Tree<br><br></b> <a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank">LeetCode 543</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> root = [1,2,3,4,5]<br><b>Output:</b> 3 (Path is [4,2,1,3] or [5,2,1,3])</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Modify the Height/Depth algorithm. Calculate `left_depth + right_depth` at every node to find max diameter, while returning standard height.<br><br><b>Dependencies:</b> <code>std::max</code></td>
@@ -62,7 +62,7 @@
     </tr>
     <tr>
       <td rowspan="1">7</td>
-      <td rowspan="1">Tree 07 Balanced Binary Tree<br><br></b> <a href="https://leetcode.com/problems/balanced-binary-tree/" target="_blank">LeetCode 110</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 07 Balanced Binary Tree<br><br></b> <a href="https://leetcode.com/problems/balanced-binary-tree/" target="_blank">LeetCode 110</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> root = [3,9,20,null,null,15,7]<br><b>Output:</b> true</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Modify the Height algorithm. If the difference between `left` and `right` height is > 1, return `-1` to propagate the unbalanced signal.<br><br><b>Dependencies:</b> <code>std::abs</code></td>
@@ -70,7 +70,7 @@
     </tr>
     <tr>
       <td rowspan="1">8</td>
-      <td rowspan="1">Tree 08 Binary Search Tree Iterator<br><br></b> <a href="https://leetcode.com/problems/binary-search-tree-iterator/" target="_blank">LeetCode 173</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 08 Binary Search Tree Iterator<br><br></b> <a href="https://leetcode.com/problems/binary-search-tree-iterator/" target="_blank">LeetCode 173</a></td>
       <td rowspan="1"><b>Example 1:</b> next() returns smallest element.</td>
       <td><b>Time:</b> O(1) amortized<br><b>Space:</b> O(H)</td>
       <td>Use a stack to simulate in-order traversal. Push all left children initially. On next(), pop, return val, and push all left children of popped node's right child.<br><br><b>Dependencies:</b> <code>#include <stack></code></td>
@@ -78,7 +78,7 @@
     </tr>
     <tr>
       <td rowspan="1">9</td>
-      <td rowspan="1">Tree 09 Validate Binary Search Tree<br><br></b> <a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank">LeetCode 98</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 09 Validate Binary Search Tree<br><br></b> <a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank">LeetCode 98</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> root = [2,1,3]<br><b>Output:</b> true</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>Recursive validation with min and max bounds for every node. Long long is used to avoid overflow.<br><br><b>Dependencies:</b> <code>#include <limits.h></code></td>
@@ -86,7 +86,7 @@
     </tr>
     <tr>
       <td rowspan="1">10</td>
-      <td rowspan="1">Tree 10 Construct Tree From Preorder And Inorder<br><br></b> <a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/" target="_blank">LeetCode 105</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z, Apna College</details></td>
+      <td rowspan="1">Tree 10 Construct Tree From Preorder And Inorder<br><br></b> <a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/" target="_blank">LeetCode 105</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]<br><b>Output:</b> [3,9,20,null,null,15,7]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N) for Hash Map</td>
       <td>First element of preorder is the root. Find this element in inorder to split into left and right subtrees. Use a Hash Map to store inorder indices for O(1) lookups.<br><br><b>Dependencies:</b> <code>#include <unordered_map></code></td>
@@ -94,7 +94,7 @@
     </tr>
     <tr>
       <td rowspan="1">11</td>
-      <td rowspan="1">Tree 11 Maximum Path Sum<br><br></b> <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/" target="_blank">LeetCode 124</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z, Apna College</details></td>
+      <td rowspan="1">Tree 11 Maximum Path Sum<br><br></b> <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/" target="_blank">LeetCode 124</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> root = [-10,9,20,null,null,15,7]<br><b>Output:</b> 42</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>DFS returning max path sum down a single branch. At any node, max path = `node.val + max(0, leftPath) + max(0, rightPath)`. Ignore negative branches.<br><br><b>Dependencies:</b> <code>#include <limits.h></code></td>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td rowspan="1">12</td>
-      <td rowspan="1">Tree 12 Boundary Traversal<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z, Apna College</details></td>
+      <td rowspan="1">Tree 12 Boundary Traversal<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Return array of boundary nodes.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>1) Add root if not leaf. 2) Traverse left boundary (excluding leaves). 3) Inorder traverse all leaves. 4) Traverse right boundary, reverse it, then add to answer.</td>
@@ -110,7 +110,7 @@
     </tr>
     <tr>
       <td rowspan="1">13</td>
-      <td rowspan="1">Tree 13 Zigzag Traversal<br><br></b> <a href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/" target="_blank">LeetCode 103</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Tree 13 Zigzag Traversal<br><br></b> <a href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/" target="_blank">LeetCode 103</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> root = [3,9,20,null,null,15,7]<br><b>Output:</b> [[3],[20,9],[15,7]]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Standard BFS Level Order Traversal with a boolean flag `leftToRight`. After finishing a level, if the flag is false, reverse the level array before adding to the result.<br><br><b>Dependencies:</b> <code>#include <queue></code></td>
@@ -118,7 +118,7 @@
     </tr>
     <tr>
       <td rowspan="1">14</td>
-      <td rowspan="1">Tree 14 Vertical Order Traversal<br><br></b> <a href="https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/" target="_blank">LeetCode 987</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 14 Vertical Order Traversal<br><br></b> <a href="https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/" target="_blank">LeetCode 987</a></td>
       <td rowspan="1"><b>Example 1:</b><br><b>Output:</b> [[9],[3,15],[20],[7]]</td>
       <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
       <td>Use a map structure: `map<int, map<int, multiset<int>>>` to store nodes mapped by their horizontal distance and level. BFS traversal ensures levels are processed top-down.<br><br><b>Dependencies:</b> <code>#include <map>\n#include <queue>\n#include <set></code></td>
@@ -126,7 +126,7 @@
     </tr>
     <tr>
       <td rowspan="1">15</td>
-      <td rowspan="1">Tree 15 Top View<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 15 Top View<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Return list of values.</td>
       <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
       <td>BFS traversal maintaining horizontal distance (HD) from root. Use a map `hd -> value`. Only insert into the map if the HD is not already present, ensuring the top-most node is recorded.<br><br><b>Dependencies:</b> <code>#include <map>\n#include <queue></code></td>
@@ -134,7 +134,7 @@
     </tr>
     <tr>
       <td rowspan="1">16</td>
-      <td rowspan="1">Tree 16 Bottom View<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 16 Bottom View<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Return list of values.</td>
       <td><b>Time:</b> O(N log N)<br><b>Space:</b> O(N)</td>
       <td>BFS traversal maintaining horizontal distance (HD). Map `hd -> value`. Always update the map value for a given HD so that the last node encountered (bottom-most) overrides previous ones.<br><br><b>Dependencies:</b> <code>#include <map>\n#include <queue></code></td>
@@ -142,7 +142,7 @@
     </tr>
     <tr>
       <td rowspan="1">17</td>
-      <td rowspan="1">Tree 17 Right View<br><br></b> <a href="https://leetcode.com/problems/binary-tree-right-side-view/" target="_blank">LeetCode 199</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 17 Right View<br><br></b> <a href="https://leetcode.com/problems/binary-tree-right-side-view/" target="_blank">LeetCode 199</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> root = [1,2,3,null,5,null,4]<br><b>Output:</b> [1,3,4]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>DFS Traversing right child before left child. Maintain the current level. If `level == result.size()`, append the node value to the result list.</td>
@@ -150,7 +150,7 @@
     </tr>
     <tr>
       <td rowspan="1">18</td>
-      <td rowspan="1">Tree 18 Left View<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 18 Left View<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Print left-most node at each level.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>DFS Traversing left child before right child. Maintain the current level. If `level == result.size()`, append the node value to the result list.</td>
@@ -158,7 +158,7 @@
     </tr>
     <tr>
       <td rowspan="1">19</td>
-      <td rowspan="1">Tree 19 Construct Tree From Inorder And Postorder<br><br></b> <a href="https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/" target="_blank">LeetCode 106</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 19 Construct Tree From Inorder And Postorder<br><br></b> <a href="https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/" target="_blank">LeetCode 106</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> inorder = [9,3,15,20,7], postorder = [9,15,7,20,3]<br><b>Output:</b> [3,9,20,null,null,15,7]</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Store inorder indices in a HashMap. The last element in postorder is the root. Find this root in inorder map to determine left subtree size. Recursively build left and right subtrees by slicing array indices.<br><br><b>Dependencies:</b> <code>#include <unordered_map></code></td>
@@ -166,7 +166,7 @@
     </tr>
     <tr>
       <td rowspan="1">20</td>
-      <td rowspan="1">Tree 20 Serialize And Deserialize Binary Tree<br><br></b> <a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/" target="_blank">LeetCode 297</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 20 Serialize And Deserialize Binary Tree<br><br></b> <a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/" target="_blank">LeetCode 297</a></td>
       <td rowspan="1"><b>Example 1:</b> Serialization/Deserialization.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use Level Order Traversal (BFS) using a queue. For serialization, append '#' for null nodes. For deserialization, split string by comma and use a queue to reconstruct the tree structure level by level.<br><br><b>Dependencies:</b> <code>#include <queue>\n#include <sstream></code></td>
@@ -174,7 +174,7 @@
     </tr>
     <tr>
       <td rowspan="1">21</td>
-      <td rowspan="1">Tree 21 Flatten Binary Tree To Linked List<br><br></b> <a href="https://leetcode.com/problems/flatten-binary-tree-to-linked-list/" target="_blank">LeetCode 114</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 21 Flatten Binary Tree To Linked List<br><br></b> <a href="https://leetcode.com/problems/flatten-binary-tree-to-linked-list/" target="_blank">LeetCode 114</a></td>
       <td rowspan="1"><b>Example 1:</b> In-place flatten.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Morris Traversal. If node has a left child, find the rightmost node of the left subtree. Point its right to current node's right. Move current node's left to its right, and set left to null. Move to current's right.</td>
@@ -182,7 +182,7 @@
     </tr>
     <tr>
       <td rowspan="1">22</td>
-      <td rowspan="1">Tree 22 Kth Smallest Element In A BST<br><br></b> <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/" target="_blank">LeetCode 230</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 22 Kth Smallest Element In A BST<br><br></b> <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/" target="_blank">LeetCode 230</a></td>
       <td rowspan="1"><b>Example 1:</b> Inorder traversal.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1) using Morris Traversal</td>
       <td>Inorder traversal of BST gives sorted elements. Keep a counter, when it reaches K, store the result. Morris Traversal can do this in O(1) space.</td>
@@ -190,7 +190,7 @@
     </tr>
     <tr>
       <td rowspan="1">23</td>
-      <td rowspan="1">Tree 23 Lowest Common Ancestor Of A Binary Search Tree<br><br></b> <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank">LeetCode 235</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 23 Lowest Common Ancestor Of A Binary Search Tree<br><br></b> <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank">LeetCode 235</a></td>
       <td rowspan="1"><b>Example 1:</b> Exploit BST property.</td>
       <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
       <td>If both `p` and `q` are less than root, LCA is in the left subtree. If both are greater, LCA is in the right subtree. Otherwise, the current node is the LCA.</td>
@@ -198,7 +198,7 @@
     </tr>
     <tr>
       <td rowspan="1">24</td>
-      <td rowspan="1">Tree 24 Insert Into A Binary Search Tree<br><br></b> <a href="https://leetcode.com/problems/insert-into-a-binary-search-tree/" target="_blank">LeetCode 701</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 24 Insert Into A Binary Search Tree<br><br></b> <a href="https://leetcode.com/problems/insert-into-a-binary-search-tree/" target="_blank">LeetCode 701</a></td>
       <td rowspan="1"><b>Example 1:</b> Traverse and insert.</td>
       <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
       <td>Traverse left or right depending on the value. Keep track of parent. Insert as left or right child of parent when a null pointer is reached.</td>
@@ -206,7 +206,7 @@
     </tr>
     <tr>
       <td rowspan="1">25</td>
-      <td rowspan="1">Tree 25 Delete Node In A BST<br><br></b> <a href="https://leetcode.com/problems/delete-node-in-a-bst/" target="_blank">LeetCode 450</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 25 Delete Node In A BST<br><br></b> <a href="https://leetcode.com/problems/delete-node-in-a-bst/" target="_blank">LeetCode 450</a></td>
       <td rowspan="1"><b>Example 1:</b> Locate and delete.</td>
       <td><b>Time:</b> O(H)<br><b>Space:</b> O(H) or O(1)</td>
       <td>Find the node. If it has no left child, return right child. If no right, return left. If both exist, find the right child of the rightmost node in the left subtree, and point it to the node's right child. Return the node's left child.</td>
@@ -214,7 +214,7 @@
     </tr>
     <tr>
       <td rowspan="1">26</td>
-      <td rowspan="1">Tree 26 Inorder Successor In BST<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/inorder-successor-in-bst/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 26 Inorder Successor In BST<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/inorder-successor-in-bst/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Find next greater.</td>
       <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
       <td>Traverse BST. If `curr.val > node.val`, then `curr` is a potential successor, store it and move left to find smaller. Else, move right.</td>
@@ -222,7 +222,7 @@
     </tr>
     <tr>
       <td rowspan="1">27</td>
-      <td rowspan="1">Tree 27 Two Sum IV Input Is A BST<br><br></b> <a href="https://leetcode.com/problems/two-sum-iv-input-is-a-bst/" target="_blank">LeetCode 653</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 27 Two Sum IV Input Is A BST<br><br></b> <a href="https://leetcode.com/problems/two-sum-iv-input-is-a-bst/" target="_blank">LeetCode 653</a></td>
       <td rowspan="1"><b>Example 1:</b> BST Iterator two pointer.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>Use two BST iterators: one for normal inorder (next) and one for reverse inorder (before). Apply two-pointer approach like in a sorted array.</td>
@@ -230,7 +230,7 @@
     </tr>
     <tr>
       <td rowspan="1">28</td>
-      <td rowspan="1">Tree 28 Recover Binary Search Tree<br><br></b> <a href="https://leetcode.com/problems/recover-binary-search-tree/" target="_blank">LeetCode 99</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 28 Recover Binary Search Tree<br><br></b> <a href="https://leetcode.com/problems/recover-binary-search-tree/" target="_blank">LeetCode 99</a></td>
       <td rowspan="1"><b>Example 1:</b> Inorder traversal tracking anomalies.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>Inorder traversal of BST gives sorted array. If two are swapped, there will be 1 or 2 anomalies where `prev->val > curr->val`. First anomaly: `first = prev`, `middle = curr`. Second anomaly: `last = curr`. Swap `first` and `last` (or `first` and `middle` if adjacent).</td>
@@ -238,7 +238,7 @@
     </tr>
     <tr>
       <td rowspan="1">29</td>
-      <td rowspan="1">Tree 29 Largest BST In Binary Tree<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/largest-bst/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 29 Largest BST In Binary Tree<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/largest-bst/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Bottom-up verification.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>Return `[minNode, maxNode, maxSize]` from each subtree. For current node, if `left.max < node.val < right.min`, it's a BST. Return `[min(node.val, left.min), max(node.val, right.max), left.size + right.size + 1]`. Else, it's not a BST, return `[-inf, inf, max(left.size, right.size)]`.</td>
@@ -246,7 +246,7 @@
     </tr>
     <tr>
       <td rowspan="1">30</td>
-      <td rowspan="1">Tree 30 Maximum Sum BST In Binary Tree<br><br></b> <a href="https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/" target="_blank">LeetCode 1373</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 30 Maximum Sum BST In Binary Tree<br><br></b> <a href="https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/" target="_blank">LeetCode 1373</a></td>
       <td rowspan="1"><b>Example 1:</b> Similar to largest BST.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>Bottom-up traversal. Return `[isBST, minNode, maxNode, sum]`. Update global max sum when valid BST is found.</td>
@@ -254,7 +254,7 @@
     </tr>
     <tr>
       <td rowspan="1">31</td>
-      <td rowspan="1">Tree 31 Kth Largest Element In A BST<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/kth-largest-element-in-bst/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 31 Kth Largest Element In A BST<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/kth-largest-element-in-bst/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Reverse inorder traversal.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>Kth largest is Kth element in reverse inorder traversal (Right, Root, Left). Maintain a counter `k`. When visiting a node, decrement `k`. If `k == 0`, current node is the answer.</td>
@@ -262,7 +262,7 @@
     </tr>
     <tr>
       <td rowspan="1">32</td>
-      <td rowspan="1">Tree 32 Predecessor And Successor In BST<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/predecessor-and-successor/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 32 Predecessor And Successor In BST<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/predecessor-and-successor/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Search down the tree.</td>
       <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
       <td>For Successor: search for key. If node->val <= key, go right. If node->val > key, update succ = node, go left. For Predecessor: If node->val >= key, go left. If node->val < key, update pred = node, go right.</td>
@@ -270,7 +270,7 @@
     </tr>
     <tr>
       <td rowspan="1">33</td>
-      <td rowspan="1">Tree 33 Construct BST From Preorder Traversal<br><br></b> <a href="https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/" target="_blank">LeetCode 1008</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 33 Construct BST From Preorder Traversal<br><br></b> <a href="https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/" target="_blank">LeetCode 1008</a></td>
       <td rowspan="1"><b>Example 1:</b> Upper bound tracking.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>Use an upper bound value. `build(preorder, index, bound)`: If index >= len or preorder[index] > bound, return NULL. Create root with preorder[index]. `root->left = build(..., root->val)`. `root->right = build(..., bound)`.</td>
@@ -278,7 +278,7 @@
     </tr>
     <tr>
       <td rowspan="1">34</td>
-      <td rowspan="1">Tree 34 All Nodes Distance K In Binary Tree<br><br></b> <a href="https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/" target="_blank">LeetCode 863</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 34 All Nodes Distance K In Binary Tree<br><br></b> <a href="https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/" target="_blank">LeetCode 863</a></td>
       <td rowspan="1"><b>Example 1:</b> Convert to graph or use parent pointers.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Perform BFS/DFS to map each node to its parent. Then, start a BFS from the target node, visiting left, right, and parent. Track visited nodes. After `k` levels in BFS, the current queue holds the answer.<br><br><b>Dependencies:</b> <code>#include <unordered_map>\n#include <queue>\n#include <unordered_set></code></td>
@@ -286,7 +286,7 @@
     </tr>
     <tr>
       <td rowspan="1">35</td>
-      <td rowspan="1">Tree 35 Amount Of Time For Binary Tree To Be Infected<br><br></b> <a href="https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/" target="_blank">LeetCode 2385</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 35 Amount Of Time For Binary Tree To Be Infected<br><br></b> <a href="https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/" target="_blank">LeetCode 2385</a></td>
       <td rowspan="1"><b>Example 1:</b> Parent pointers and BFS.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Same as 'Distance K' problem. Map parents. Find the start node. Perform BFS from start node. The time taken is the number of levels in BFS until all reachable nodes are visited.</td>
@@ -294,7 +294,7 @@
     </tr>
     <tr>
       <td rowspan="1">36</td>
-      <td rowspan="1">Tree 36 Count Complete Tree Nodes<br><br></b> <a href="https://leetcode.com/problems/count-complete-tree-nodes/" target="_blank">LeetCode 222</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 36 Count Complete Tree Nodes<br><br></b> <a href="https://leetcode.com/problems/count-complete-tree-nodes/" target="_blank">LeetCode 222</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive with Height check.</td>
       <td><b>Time:</b> O(log^2 N)<br><b>Space:</b> O(log N)</td>
       <td>Compute the left height (following left child) and right height (following right child) of the tree. If they are equal, the tree is a full binary tree, and the number of nodes is `2^h - 1`. If they are not equal, recursively count the nodes in the left and right subtrees and add 1 for the root.</td>
@@ -302,7 +302,7 @@
     </tr>
     <tr>
       <td rowspan="1">37</td>
-      <td rowspan="1">Tree 37 Morris Preorder Traversal<br><br></b> <a href="https://leetcode.com/problems/binary-tree-preorder-traversal/" target="_blank">LeetCode 144</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 37 Morris Preorder Traversal<br><br></b> <a href="https://leetcode.com/problems/binary-tree-preorder-traversal/" target="_blank">LeetCode 144</a></td>
       <td rowspan="1"><b>Example 1:</b> Threaded Binary Tree.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td>Similar to Morris Inorder. If left child is null, process current, move right. Else, find predecessor. If predecessor's right is null, process current, make thread, move left. If predecessor's right is current, remove thread, move right.</td>
@@ -310,7 +310,7 @@
     </tr>
     <tr>
       <td rowspan="1">38</td>
-      <td rowspan="1">Tree 38 Search In A Binary Search Tree<br><br></b> <a href="https://leetcode.com/problems/search-in-a-binary-search-tree/" target="_blank">LeetCode 700</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 38 Search In A Binary Search Tree<br><br></b> <a href="https://leetcode.com/problems/search-in-a-binary-search-tree/" target="_blank">LeetCode 700</a></td>
       <td rowspan="1"><b>Example 1:</b> Iterative or Recursive.</td>
       <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
       <td>Start at root. If root is null or its value is `val`, return root. If `val < root.val`, go left. Else go right.</td>
@@ -318,7 +318,7 @@
     </tr>
     <tr>
       <td rowspan="1">39</td>
-      <td rowspan="1">Tree 39 Find Minimum In Binary Search Tree<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/minimum-element-in-bst/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 39 Find Minimum In Binary Search Tree<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/minimum-element-in-bst/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Leftmost node.</td>
       <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
       <td>Traverse the left children until a node with no left child is reached. That node contains the minimum value.</td>
@@ -326,7 +326,7 @@
     </tr>
     <tr>
       <td rowspan="1">40</td>
-      <td rowspan="1">Tree 40 Inorder Successor In BST<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/populate-inorder-successor-for-all-nodes/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Tree 40 Inorder Successor In BST<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/populate-inorder-successor-for-all-nodes/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Iterative search.</td>
       <td><b>Time:</b> O(H)<br><b>Space:</b> O(1)</td>
       <td>Start from root. If `p.val >= root.val`, the successor must be in the right subtree (`root = root.right`). If `p.val < root.val`, the current root could be the successor, so record it and search the left subtree for a closer successor (`successor = root; root = root.left`).</td>
@@ -334,7 +334,7 @@
     </tr>
     <tr>
       <td rowspan="1">41</td>
-      <td rowspan="1">Tree 41 Convert Binary Tree Into Doubly Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/binary-tree-to-dll/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 41 Convert Binary Tree Into Doubly Linked List<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/binary-tree-to-dll/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DFS Inorder, maintaining a `prev` pointer.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>Perform Inorder traversal. Maintain a `prev` pointer (initially null). At each node: if `prev == null`, this node is the head of DLL. Else, `prev->right = node` and `node->left = prev`. Update `prev = node`.</td>
@@ -342,7 +342,7 @@
     </tr>
     <tr>
       <td rowspan="1">42</td>
-      <td rowspan="1">Tree 42 Construct Tree From Inorder And Preorder<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/construct-tree-1/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Tree 42 Construct Tree From Inorder And Preorder<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/construct-tree-1/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Hash map for fast search.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>The first element in preorder is the root. Find this root in inorder using a hash map. Elements to the left in inorder form the left subtree, elements to the right form the right subtree. Recurse.</td>
@@ -350,7 +350,7 @@
     </tr>
     <tr>
       <td rowspan="1">43</td>
-      <td rowspan="1">Tree 43 Symmetric Tree<br><br></b> <a href="https://leetcode.com/problems/symmetric-tree/" target="_blank">LeetCode 101</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Tree 43 Symmetric Tree<br><br></b> <a href="https://leetcode.com/problems/symmetric-tree/" target="_blank">LeetCode 101</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>Use a helper function `isMirror(left, right)`. The tree is symmetric if `root->left` and `root->right` are mirrors. Two trees are mirrors if their roots are equal and `left1->left` is mirror of `right1->right`, and `left1->right` is mirror of `right1->left`.</td>
@@ -358,7 +358,7 @@
     </tr>
     <tr>
       <td rowspan="1">44</td>
-      <td rowspan="1">Tree 44 Root To Node Path In Binary Tree<br><br></b> <a href="https://www.interviewbit.com/problems/path-to-given-node/" target="_blank">InterviewBit</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Tree 44 Root To Node Path In Binary Tree<br><br></b> <a href="https://www.interviewbit.com/problems/path-to-given-node/" target="_blank">InterviewBit</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive backtracking.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(H)</td>
       <td>Use recursion. Push current node to the path array. If it's the target node, return true. Recursively search left and right subtrees. If either returns true, return true. If not found in either, pop the current node from the path array and return false.</td>

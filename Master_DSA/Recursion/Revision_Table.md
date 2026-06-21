@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Rec 01 Combination Sum<br><br></b> <a href="https://leetcode.com/problems/combination-sum/" target="_blank">LeetCode 39</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Rec 01 Combination Sum<br><br></b> <a href="https://leetcode.com/problems/combination-sum/" target="_blank">LeetCode 39</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> candidates = [2,3,6,7], target = 7<br><b>Output:</b> [[2,2,3],[7]]<br><br><b>Note (Constraint):</b> The same number may be chosen unlimited number of times.</td>
       <td><b>Time:</b> O(2<sup>T</sup>) (Trade-off)<br><b>Space:</b> O(T) (Trade-off)</td>
       <td>Pick/Non-Pick but when picking, we *do not* increment the index `i`, allowing the same element to be picked infinitely until `target < 0`.</td>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td rowspan="1">2</td>
-      <td rowspan="1">Rec 02 N Queens<br><br></b> <a href="https://leetcode.com/problems/n-queens/" target="_blank">LeetCode 51</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Rec 02 N Queens<br><br></b> <a href="https://leetcode.com/problems/n-queens/" target="_blank">LeetCode 51</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> n = 4<br><b>Output:</b> [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]<br><br><b>Note (Constraint):</b> 1 &le; n &le; 9</td>
       <td><b>Time:</b> O(N!) (Constraint)<br><b>Space:</b> O(N) (Constraint)</td>
       <td>Backtracking. Try placing a queen in each row of the current column. Use `O(1)` lookups (Hashing logic) via arrays to check if row/diagonals are safe.<br><br><b>Dependencies:</b> Hash Maps/Arrays for safety checks</td>
@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td rowspan="1">3</td>
-      <td rowspan="1">Rec 03 Permutations<br><br></b> <a href="https://leetcode.com/problems/permutations/" target="_blank">LeetCode 46</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Rec 03 Permutations<br><br></b> <a href="https://leetcode.com/problems/permutations/" target="_blank">LeetCode 46</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> nums = [1,2,3]<br><b>Output:</b> [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]</td>
       <td><b>Time:</b> O(N! * N)<br><b>Space:</b> O(N)</td>
       <td>Backtracking. Swap elements to generate permutations. For index `i`, swap it with every index from `i` to `n-1`, recurse, then backtrack (swap back).<br><br><b>Dependencies:</b> <code>std::swap</code></td>
@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td rowspan="1">4</td>
-      <td rowspan="1">Rec 04 Sudoku Solver<br><br></b> <a href="https://leetcode.com/problems/sudoku-solver/" target="_blank">LeetCode 37</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 04 Sudoku Solver<br><br></b> <a href="https://leetcode.com/problems/sudoku-solver/" target="_blank">LeetCode 37</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> board with '.' for empty cells. Solve in-place.</td>
       <td><b>Time:</b> O(9^(n*n))<br><b>Space:</b> O(1) auxiliary</td>
       <td>Backtracking. Find first empty cell, try placing 1-9. Validate row, col, and 3x3 sub-grid. Recursively solve the rest. If it fails, backtrack.</td>
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td rowspan="1">5</td>
-      <td rowspan="1">Rec 05 M Coloring Problem<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 05 M Coloring Problem<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Return true if possible.</td>
       <td><b>Time:</b> O(M^N)<br><b>Space:</b> O(N)</td>
       <td>Backtracking. Try coloring each node with color 1 to m. For a color, check if any adjacent node has the same color. If safe, assign and recurse for next node. If recursion returns false, backtrack.</td>
@@ -54,7 +54,7 @@
     </tr>
     <tr>
       <td rowspan="1">6</td>
-      <td rowspan="1">Rec 06 Rat In A Maze<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 06 Rat In A Maze<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Lexicographical order paths.</td>
       <td><b>Time:</b> O(4^(N*N))<br><b>Space:</b> O(N*N)</td>
       <td>Backtracking. Explore 4 directions (D, L, R, U) in lexicographical order to get sorted paths naturally. Mark cell as visited, recurse, then unmark (backtrack).</td>
@@ -62,7 +62,7 @@
     </tr>
     <tr>
       <td rowspan="1">7</td>
-      <td rowspan="1">Rec 07 Word Break<br><br></b> <a href="https://leetcode.com/problems/word-break/" target="_blank">LeetCode 139</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet, Apna College</details></td>
+      <td rowspan="1">Rec 07 Word Break<br><br></b> <a href="https://leetcode.com/problems/word-break/" target="_blank">LeetCode 139</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> s = 'leetcode', wordDict = ['leet','code']<br><b>Output:</b> true</td>
       <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N)</td>
       <td>Recursion with Memoization (or DP). For each index, try all possible word lengths. If a prefix exists in dict, recurse for the suffix. DP array `dp[i]` stores if `s[0...i-1]` is valid.<br><br><b>Dependencies:</b> <code>#include <unordered_set></code></td>
@@ -70,7 +70,7 @@
     </tr>
     <tr>
       <td rowspan="1">8</td>
-      <td rowspan="1">Rec 08 Word Break II<br><br></b> <a href="https://leetcode.com/problems/word-break-ii/" target="_blank">LeetCode 140</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 08 Word Break II<br><br></b> <a href="https://leetcode.com/problems/word-break-ii/" target="_blank">LeetCode 140</a></td>
       <td rowspan="1"><b>Example 1:</b> Return list of sentences.</td>
       <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(2^N)</td>
       <td>Backtracking. Generate all combinations. At each step, if a prefix is in dict, recursively call for the rest of the string and append the prefix to the result of the recursive call.<br><br><b>Dependencies:</b> <code>#include <unordered_set></code></td>
@@ -78,7 +78,7 @@
     </tr>
     <tr>
       <td rowspan="1">9</td>
-      <td rowspan="1">Rec 09 Palindrome Partitioning<br><br></b> <a href="https://leetcode.com/problems/palindrome-partitioning/" target="_blank">LeetCode 131</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 09 Palindrome Partitioning<br><br></b> <a href="https://leetcode.com/problems/palindrome-partitioning/" target="_blank">LeetCode 131</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> s = 'aab'<br><b>Output:</b> [['a','a','b'],['aa','b']]</td>
       <td><b>Time:</b> O(N * 2^N)<br><b>Space:</b> O(N)</td>
       <td>Backtracking. Try to partition the string at every index. If the prefix `s[start:i]` is a palindrome, add it to current path and recurse for the rest of the string `s[i:end]`.</td>
@@ -86,7 +86,7 @@
     </tr>
     <tr>
       <td rowspan="1">10</td>
-      <td rowspan="1">Rec 10 Expression Add Operators<br><br></b> <a href="https://leetcode.com/problems/expression-add-operators/" target="_blank">LeetCode 282</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 10 Expression Add Operators<br><br></b> <a href="https://leetcode.com/problems/expression-add-operators/" target="_blank">LeetCode 282</a></td>
       <td rowspan="1"><b>Example 1:</b> Return expressions.</td>
       <td><b>Time:</b> O(N * 4^N)<br><b>Space:</b> O(N)</td>
       <td>Backtracking. Keep track of the evaluated sum so far, and the previous operand (for multiplication precedence). For '*', `newSum = sum - prev + prev * curr`. Handle leading zeros.</td>
@@ -94,7 +94,7 @@
     </tr>
     <tr>
       <td rowspan="1">11</td>
-      <td rowspan="1">Rec 11 Subset Sums II<br><br></b> <a href="https://leetcode.com/problems/subsets-ii/" target="_blank">LeetCode 90</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 11 Subset Sums II<br><br></b> <a href="https://leetcode.com/problems/subsets-ii/" target="_blank">LeetCode 90</a></td>
       <td rowspan="1"><b>Example 1:</b><br><b>Output:</b> [[],[1],[1,2],[1,2,2],[2],[2,2]]</td>
       <td><b>Time:</b> O(2^N * N)<br><b>Space:</b> O(2^N * N)</td>
       <td>Sort array first to bring duplicates together. In recursive call, loop from `ind` to `n`. If `i > ind` and `nums[i] == nums[i-1]`, `continue` to skip duplicate recursive branches.</td>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td rowspan="1">12</td>
-      <td rowspan="1">Rec 12 Combination Sum II<br><br></b> <a href="https://leetcode.com/problems/combination-sum-ii/" target="_blank">LeetCode 40</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 12 Combination Sum II<br><br></b> <a href="https://leetcode.com/problems/combination-sum-ii/" target="_blank">LeetCode 40</a></td>
       <td rowspan="1"><b>Example 1:</b> Return unique combinations.</td>
       <td><b>Time:</b> O(2^N * k)<br><b>Space:</b> O(k * x)</td>
       <td>Sort the array. Recursive function iterates from `ind` to `n`. Skip duplicates (`if i > ind and arr[i] == arr[i-1]`). If `arr[i] > target`, break. Else add to path, subtract from target, and recurse.</td>
@@ -110,7 +110,7 @@
     </tr>
     <tr>
       <td rowspan="1">13</td>
-      <td rowspan="1">Rec 13 Combination Sum III<br><br></b> <a href="https://leetcode.com/problems/combination-sum-iii/" target="_blank">LeetCode 216</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 13 Combination Sum III<br><br></b> <a href="https://leetcode.com/problems/combination-sum-iii/" target="_blank">LeetCode 216</a></td>
       <td rowspan="1"><b>Example 1:</b> Return combinations.</td>
       <td><b>Time:</b> O(2^9)<br><b>Space:</b> O(k)</td>
       <td>Backtracking. Start from 1, go up to 9. Add the current number to the path and subtract from target. Stop when path size is `k` and `target` is 0.</td>
@@ -118,7 +118,7 @@
     </tr>
     <tr>
       <td rowspan="1">14</td>
-      <td rowspan="1">Rec 14 Letter Combinations Of A Phone Number<br><br></b> <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/" target="_blank">LeetCode 17</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 14 Letter Combinations Of A Phone Number<br><br></b> <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/" target="_blank">LeetCode 17</a></td>
       <td rowspan="1"><b>Example 1:</b> String combinations.</td>
       <td><b>Time:</b> O(4^N * N)<br><b>Space:</b> O(N)</td>
       <td>Backtracking. Create a mapping of digit to letters. Iterate through digits, for each digit loop through its mapped letters, append to current string, and recurse.</td>
@@ -126,7 +126,7 @@
     </tr>
     <tr>
       <td rowspan="1">15</td>
-      <td rowspan="1">Rec 15 Subset Sum I<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/subset-sums2234/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 15 Subset Sum I<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/subset-sums2234/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Take / Not Take.</td>
       <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(2^N)</td>
       <td>Recursively either include `arr[ind]` in sum, or exclude it. If `ind == N`, add `sum` to result array.</td>
@@ -134,7 +134,7 @@
     </tr>
     <tr>
       <td rowspan="1">16</td>
-      <td rowspan="1">Rec 16 N Queens II<br><br></b> <a href="https://leetcode.com/problems/n-queens-ii/" target="_blank">LeetCode 52</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 16 N Queens II<br><br></b> <a href="https://leetcode.com/problems/n-queens-ii/" target="_blank">LeetCode 52</a></td>
       <td rowspan="1"><b>Example 1:</b> Backtracking with hashing.</td>
       <td><b>Time:</b> O(N!)<br><b>Space:</b> O(N)</td>
       <td>Use backtracking to place queens column by column. Use three hash arrays (or bitmasks) to track attacked rows, upper diagonals, and lower diagonals. If placing a queen is safe, update hashes, recurse for next column, and then backtrack.</td>
@@ -142,7 +142,7 @@
     </tr>
     <tr>
       <td rowspan="1">17</td>
-      <td rowspan="1">Rec 17 Word Search<br><br></b> <a href="https://leetcode.com/problems/word-search/" target="_blank">LeetCode 79</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 17 Word Search<br><br></b> <a href="https://leetcode.com/problems/word-search/" target="_blank">LeetCode 79</a></td>
       <td rowspan="1"><b>Example 1:</b> Backtracking DFS.</td>
       <td><b>Time:</b> O(N * M * 4^L)<br><b>Space:</b> O(L) recursion stack</td>
       <td>Start DFS from each cell that matches the first letter of the word. In DFS, check 4 neighbors. Mark current cell as visited (e.g. change to '#') before moving to neighbors, and unmark (backtrack) after exploring.</td>
@@ -150,7 +150,7 @@
     </tr>
     <tr>
       <td rowspan="1">18</td>
-      <td rowspan="1">Rec 18 K Th Symbol In Grammar<br><br></b> <a href="https://leetcode.com/problems/k-th-symbol-in-grammar/" target="_blank">LeetCode 779</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 18 K Th Symbol In Grammar<br><br></b> <a href="https://leetcode.com/problems/k-th-symbol-in-grammar/" target="_blank">LeetCode 779</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive division.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Row N has length 2^(N-1). The first half of row N is exactly same as row N-1. The second half of row N is the complement of row N-1. If k is in the first half (k <= mid), return solve(N-1, k). If k is in the second half, return !solve(N-1, k - mid).</td>
@@ -158,7 +158,7 @@
     </tr>
     <tr>
       <td rowspan="1">19</td>
-      <td rowspan="1">Rec 19 Beautiful Arrangement<br><br></b> <a href="https://leetcode.com/problems/beautiful-arrangement/" target="_blank">LeetCode 526</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 19 Beautiful Arrangement<br><br></b> <a href="https://leetcode.com/problems/beautiful-arrangement/" target="_blank">LeetCode 526</a></td>
       <td rowspan="1"><b>Example 1:</b> Backtracking.</td>
       <td><b>Time:</b> O(K) where K is number of valid permutations<br><b>Space:</b> O(N)</td>
       <td>Use an array to track visited numbers. Iterate from index 1 to n. For the current index, try placing an unvisited number. Check if the condition `(num % idx == 0 || idx % num == 0)` is met. If so, mark as visited, recurse to `idx + 1`, then backtrack.</td>
@@ -166,7 +166,7 @@
     </tr>
     <tr>
       <td rowspan="1">20</td>
-      <td rowspan="1">Rec 20 Print All Permutations Of A String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Rec 20 Print All Permutations Of A String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive Backtracking.</td>
       <td><b>Time:</b> O(N! * N)<br><b>Space:</b> O(N)</td>
       <td>Convert string to char array and sort it. Use backtracking: pass a boolean visited array and a temporary string. If temporary string length equals original length, add to answer. Else, iterate through characters. To avoid duplicates, if `i > 0` and `s[i] == s[i-1]` and `!vis[i-1]`, skip. Otherwise, mark visited, append, recurse, unmark, pop.</td>
@@ -174,7 +174,7 @@
     </tr>
     <tr>
       <td rowspan="1">21</td>
-      <td rowspan="1">Rec 21 Remove Invalid Parentheses<br><br></b> <a href="https://leetcode.com/problems/remove-invalid-parentheses/" target="_blank">LeetCode 301</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 21 Remove Invalid Parentheses<br><br></b> <a href="https://leetcode.com/problems/remove-invalid-parentheses/" target="_blank">LeetCode 301</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursion and Backtracking.</td>
       <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(N)</td>
       <td>First find the number of misplaced left (`rm_l`) and right (`rm_r`) parentheses. Then use backtracking to try removing `rm_l` and `rm_r` parentheses. To avoid duplicates, skip identical adjacent characters. Finally, check if the resulting string is valid.</td>
@@ -182,7 +182,7 @@
     </tr>
     <tr>
       <td rowspan="1">22</td>
-      <td rowspan="1">Rec 22 Matchsticks To Square<br><br></b> <a href="https://leetcode.com/problems/matchsticks-to-square/" target="_blank">LeetCode 473</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 22 Matchsticks To Square<br><br></b> <a href="https://leetcode.com/problems/matchsticks-to-square/" target="_blank">LeetCode 473</a></td>
       <td rowspan="1"><b>Example 1:</b> Backtracking to 4 subsets.</td>
       <td><b>Time:</b> O(4^N)<br><b>Space:</b> O(N)</td>
       <td>Calculate sum. If sum % 4 != 0, return false. Target side length is sum / 4. Sort matchsticks in descending order to optimize. Create an array `sides` of size 4. For each matchstick, try adding it to one of the 4 sides. If a side equals the target or is less, recurse.</td>
@@ -190,7 +190,7 @@
     </tr>
     <tr>
       <td rowspan="1">23</td>
-      <td rowspan="1">Rec 23 Tug Of War<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/tug-of-war/0" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 23 Tug Of War<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/tug-of-war/0" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive Backtracking.</td>
       <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(N)</td>
       <td>Keep track of the number of elements included in subset 1 and their sum. Recurse by including the current element in subset 1 or subset 2. Base case: if we reach end, check if subset 1 has `n/2` elements. If so, compute difference and update global minimum.</td>
@@ -198,7 +198,7 @@
     </tr>
     <tr>
       <td rowspan="1">24</td>
-      <td rowspan="1">Rec 24 Find Paths From Corner Cell To Middle Cell<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/paths-from-corner-to-middle/0" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 24 Find Paths From Corner Cell To Middle Cell<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/paths-from-corner-to-middle/0" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> BFS / DFS for path finding.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
       <td>Perform BFS or DFS starting from all 4 corners simultaneously or individually. At each cell `(r, c)`, the jump size is `val = grid[r][c]`. We can move to `(r+val, c)`, `(r-val, c)`, `(r, c+val)`, `(r, c-val)`. Target is `(N/2, N/2)`.<br><br><b>Dependencies:</b> <code>#include <queue></code></td>
@@ -206,7 +206,7 @@
     </tr>
     <tr>
       <td rowspan="1">25</td>
-      <td rowspan="1">Rec 25 Arithmetic Expressions<br><br></b> <a href="https://www.hackerrank.com/challenges/arithmetic-expressions/problem" target="_blank">HackerRank</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 25 Arithmetic Expressions<br><br></b> <a href="https://www.hackerrank.com/challenges/arithmetic-expressions/problem" target="_blank">HackerRank</a></td>
       <td rowspan="1"><b>Example 1:</b> DP with path reconstruction.</td>
       <td><b>Time:</b> O(N * 101)<br><b>Space:</b> O(N * 101)</td>
       <td>Use a DP table `dp[i][mod]` to store the operator used to reach remainder `mod` at index `i`. Iterate through the array, for each reachable mod from previous step, try `(mod + arr[i]) % 101`, `(mod - arr[i]) % 101`, `(mod * arr[i]) % 101`. Then backtrack from `dp[N-1][0]` to find the operators.</td>
@@ -214,7 +214,7 @@
     </tr>
     <tr>
       <td rowspan="1">26</td>
-      <td rowspan="1">Rec 26 Find All Possible Palindromic Partitions Of A String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-all-possible-palindromic-partitions-of-a-string/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Rec 26 Find All Possible Palindromic Partitions Of A String<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-all-possible-palindromic-partitions-of-a-string/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive Backtracking.</td>
       <td><b>Time:</b> O(N * 2^N)<br><b>Space:</b> O(N)</td>
       <td>Iterate through the string. Extract substring `S[ind..i]`. If it is a palindrome, add it to the current partition list and recursively call for `i+1`. When `ind == length`, push the partition list to the answer.</td>
@@ -222,7 +222,7 @@
     </tr>
     <tr>
       <td rowspan="1">27</td>
-      <td rowspan="1">Rec 27 Partition Array To K Subsets<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/partition-array-to-k-subsets/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 27 Partition Array To K Subsets<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/partition-array-to-k-subsets/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive Backtracking.</td>
       <td><b>Time:</b> O(K * 2^N)<br><b>Space:</b> O(N)</td>
       <td>If total sum is not divisible by K, return false. Sort array in descending order. Use a boolean array `vis`. Helper function `solve(ind, currentSum, k)`: if `k == 1` return true. If `currentSum == target`, `solve(0, 0, k-1)`. Otherwise, iterate from `ind` to `N`, if `!vis[i]` and `currentSum + arr[i] <= target`, mark `vis[i] = true`, recurse, unmark.</td>
@@ -230,7 +230,7 @@
     </tr>
     <tr>
       <td rowspan="1">28</td>
-      <td rowspan="1">Rec 28 Longest Possible Route In A Matrix With Hurdles<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-possible-route-in-a-matrix-with-hurdles/0" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 28 Longest Possible Route In A Matrix With Hurdles<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/longest-possible-route-in-a-matrix-with-hurdles/0" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive Backtracking.</td>
       <td><b>Time:</b> O(4^(N*M))<br><b>Space:</b> O(N*M)</td>
       <td>Use a global `max_dist` or pass it by reference. In `solve(r, c, dist)`, if `(r, c) == (dest_r, dest_c)`, `max_dist = max(max_dist, dist)` and return. Mark `(r, c)` as visited. Explore 4 directions. Unmark `(r, c)`.</td>
@@ -238,7 +238,7 @@
     </tr>
     <tr>
       <td rowspan="1">29</td>
-      <td rowspan="1">Rec 29 Find Shortest Safe Route In A Path With Landmines<br><br></b> <a href="https://www.geeksforgeeks.org/find-shortest-safe-route-in-a-path-with-landmines/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 29 Find Shortest Safe Route In A Path With Landmines<br><br></b> <a href="https://www.geeksforgeeks.org/find-shortest-safe-route-in-a-path-with-landmines/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> BFS or Backtracking.</td>
       <td><b>Time:</b> O(R * C)<br><b>Space:</b> O(R * C)</td>
       <td>First, mark all adjacent cells of landmines as unsafe. Then start from each cell in the first column and use BFS or Backtracking to find the shortest path to the last column, avoiding unsafe cells.</td>
@@ -246,7 +246,7 @@
     </tr>
     <tr>
       <td rowspan="1">30</td>
-      <td rowspan="1">Rec 30 Combinational Sum<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/combination-sum-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 30 Combinational Sum<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/combination-sum-1587115620/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Backtracking.</td>
       <td><b>Time:</b> O(2^N * K)<br><b>Space:</b> O(K * X)</td>
       <td>Sort the array and remove duplicates. Use backtracking. At each step, either include the current element (and stay at the current element to allow unlimited picks) or move to the next element. Backtrack when sum < 0 or we reach the end.</td>
@@ -254,7 +254,7 @@
     </tr>
     <tr>
       <td rowspan="1">31</td>
-      <td rowspan="1">Rec 31 Find Maximum Number Possible By Doing At Most K Swaps<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/largest-number-in-k-swaps-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 31 Find Maximum Number Possible By Doing At Most K Swaps<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/largest-number-in-k-swaps-1587115620/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Backtracking.</td>
       <td><b>Time:</b> O(N! / (N-K)!)<br><b>Space:</b> O(N)</td>
       <td>Use backtracking to try swapping each digit with every digit that appears after it and is greater than it. Keep track of the maximum string seen so far. Prune if swaps == 0.</td>
@@ -262,7 +262,7 @@
     </tr>
     <tr>
       <td rowspan="1">32</td>
-      <td rowspan="1">Rec 32 Find If There Is A Path Of More Than K Length From A Source<br><br></b> <a href="https://www.geeksforgeeks.org/find-if-there-is-a-path-of-more-than-k-length-from-a-source/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 32 Find If There Is A Path Of More Than K Length From A Source<br><br></b> <a href="https://www.geeksforgeeks.org/find-if-there-is-a-path-of-more-than-k-length-from-a-source/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DFS Backtracking.</td>
       <td><b>Time:</b> O(V!)<br><b>Space:</b> O(V)</td>
       <td>Use Backtracking to perform DFS traversal from the source. Mark the current vertex as visited, subtract the edge weight from `k`, and recursively call for all adjacent unvisited vertices. If `k <= 0`, return true. Backtrack by unmarking the vertex.</td>
@@ -270,7 +270,7 @@
     </tr>
     <tr>
       <td rowspan="1">33</td>
-      <td rowspan="1">Rec 33 Longest Possible Route In A Matrix With Hurdles<br><br></b> <a href="https://www.geeksforgeeks.org/longest-possible-route-in-a-matrix-with-hurdles/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 33 Longest Possible Route In A Matrix With Hurdles<br><br></b> <a href="https://www.geeksforgeeks.org/longest-possible-route-in-a-matrix-with-hurdles/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Backtracking.</td>
       <td><b>Time:</b> O(4^(M*N))<br><b>Space:</b> O(M*N)</td>
       <td>Use Backtracking. Start from the source, mark it as visited, recursively find the longest path from all valid unvisited adjacent cells, add 1 to the maximum among them. Unmark the cell after returning.</td>
@@ -278,7 +278,7 @@
     </tr>
     <tr>
       <td rowspan="1">34</td>
-      <td rowspan="1">Rec 34 Print All Possible Paths From Top Left To Bottom Right Of A Mxn Matrix<br><br></b> <a href="https://www.geeksforgeeks.org/print-all-possible-paths-from-top-left-to-bottom-right-of-a-mxn-matrix/" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 34 Print All Possible Paths From Top Left To Bottom Right Of A Mxn Matrix<br><br></b> <a href="https://www.geeksforgeeks.org/print-all-possible-paths-from-top-left-to-bottom-right-of-a-mxn-matrix/" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DFS.</td>
       <td><b>Time:</b> O(2^(M+N))<br><b>Space:</b> O(M+N)</td>
       <td>Use simple DFS from top-left. From cell (i, j), we can move to (i+1, j) or (i, j+1). Keep track of the path elements in an array/list. When reaching bottom-right, print/save the path.</td>
@@ -286,7 +286,7 @@
     </tr>
     <tr>
       <td rowspan="1">35</td>
-      <td rowspan="1">Rec 35 Word Break Problem Using Backtracking<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/word-break-part-23249/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Rec 35 Word Break Problem Using Backtracking<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/word-break-part-23249/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Backtracking.</td>
       <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(N)</td>
       <td>Iterate from current index. For each prefix, if it is in the dictionary, add it to the current sentence string, add a space, and recur for the suffix. If we reach the end of the string, add the current sentence to the answer.</td>
@@ -294,7 +294,7 @@
     </tr>
     <tr>
       <td rowspan="1">36</td>
-      <td rowspan="1">Rec 36 Print 1 To N Without Loop<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Rec 36 Print 1 To N Without Loop<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursion.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use a recursive function. Call `f(N-1)` first and then print `N`.</td>
@@ -302,7 +302,7 @@
     </tr>
     <tr>
       <td rowspan="1">37</td>
-      <td rowspan="1">Rec 37 Print N To 1 Without Loop<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/print-n-to-1-without-loop/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Rec 37 Print N To 1 Without Loop<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/print-n-to-1-without-loop/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursion.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Use a recursive function. Print `N` first and then call `f(N-1)`.</td>
@@ -310,7 +310,7 @@
     </tr>
     <tr>
       <td rowspan="1">38</td>
-      <td rowspan="1">Rec 38 Sum Of First N Terms<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/sum-of-first-n-terms5843/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Rec 38 Sum Of First N Terms<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/sum-of-first-n-terms5843/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Math or Recursion.</td>
       <td><b>Time:</b> O(1) Math, O(N) Recursion<br><b>Space:</b> O(1) Math, O(N) Recursion</td>
       <td>The mathematical formula for the sum of cubes is `(n * (n + 1) / 2)^2`. Alternatively, use recursion `f(n) = n^3 + f(n-1)`.</td>
@@ -318,7 +318,7 @@
     </tr>
     <tr>
       <td rowspan="1">39</td>
-      <td rowspan="1">Rec 39 Find All Factorial Numbers Less Than Or Equal To N<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Rec 39 Find All Factorial Numbers Less Than Or Equal To N<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursion.</td>
       <td><b>Time:</b> O(K) where K! <= N<br><b>Space:</b> O(K)</td>
       <td>Maintain a current factorial value and an index `i`. At each recursive step, compute the next factorial by multiplying by `i`. If the next factorial is `<= n`, add it to the list and recurse.</td>
@@ -326,7 +326,7 @@
     </tr>
     <tr>
       <td rowspan="1">40</td>
-      <td rowspan="1">Rec 40 Reverse An Array<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Rec 40 Reverse An Array<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursion with two pointers.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N) recursive stack</td>
       <td>Swap `arr[l]` and `arr[r]` and then recursively call `reverse(arr, l+1, r-1)`.</td>
@@ -334,7 +334,7 @@
     </tr>
     <tr>
       <td rowspan="1">41</td>
-      <td rowspan="1">Rec 41 Fibonacci Number<br><br></b> <a href="https://leetcode.com/problems/fibonacci-number/" target="_blank">LeetCode 509</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Rec 41 Fibonacci Number<br><br></b> <a href="https://leetcode.com/problems/fibonacci-number/" target="_blank">LeetCode 509</a></td>
       <td rowspan="1"><b>Example 1:</b> Base Case.</td>
       <td><b>Time:</b> O(2^N)<br><b>Space:</b> O(N)</td>
       <td>Return `fib(n-1) + fib(n-2)` with base cases `fib(0) = 0`, `fib(1) = 1`.</td>
@@ -342,7 +342,7 @@
     </tr>
     <tr>
       <td rowspan="1">42</td>
-      <td rowspan="1">Rec 42 Count Good Numbers<br><br></b> <a href="https://leetcode.com/problems/count-good-numbers/" target="_blank">LeetCode 1922</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1">Rec 42 Count Good Numbers<br><br></b> <a href="https://leetcode.com/problems/count-good-numbers/" target="_blank">LeetCode 1922</a></td>
       <td rowspan="1"><b>Example 1:</b> Modular Exponentiation.</td>
       <td><b>Time:</b> O(log N)<br><b>Space:</b> O(1)</td>
       <td>There are 5 even digits and 4 prime digits. At even indices we have 5 choices. At odd indices we have 4 choices. If `n` is even, we have `n/2` even indices and `n/2` odd indices. So answer is `(5^(n/2) * 4^(n/2)) % mod`. If `n` is odd, we have `n/2 + 1` even indices. So answer is `(5^(n/2 + 1) * 4^(n/2)) % mod`. Use binary exponentiation.</td>
@@ -350,7 +350,7 @@
     </tr>
     <tr>
       <td rowspan="1">43</td>
-      <td rowspan="1">Rec 43 Sort A Stack Using Recursion<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/sort-a-stack/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Rec 43 Sort A Stack Using Recursion<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/sort-a-stack/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Recursive sort and insert.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N)</td>
       <td>Recursively pop elements until the stack is empty. When returning from the recursive call, use another recursive function `sortedInsert` to insert the popped element into its correct sorted position in the stack.<br><br><b>Dependencies:</b> Stack</td>

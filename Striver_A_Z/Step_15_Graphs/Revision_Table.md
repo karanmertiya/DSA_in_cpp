@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Graph 01 Number Of Islands<br><br></b> <a href="https://leetcode.com/problems/number-of-islands/" target="_blank">LeetCode 200</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Graph 01 Number Of Islands<br><br></b> <a href="https://leetcode.com/problems/number-of-islands/" target="_blank">LeetCode 200</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> grid = [["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]]<br><b>Output:</b> 3</td>
       <td><b>Time:</b> O(M * N) (Constraint)<br><b>Space:</b> O(M * N) (Constraint)</td>
       <td>Iterate through the grid. When a '1' is found, increment island count and use DFS to sink the island (turn connected '1's to '0's).</td>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td rowspan="1">2</td>
-      <td rowspan="1">Graph 02 Course Schedule<br><br></b> <a href="https://leetcode.com/problems/course-schedule/" target="_blank">LeetCode 207</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Graph 02 Course Schedule<br><br></b> <a href="https://leetcode.com/problems/course-schedule/" target="_blank">LeetCode 207</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> numCourses = 2, prerequisites = [[1,0]]<br><b>Output:</b> true</td>
       <td><b>Time:</b> O(V + E) (Constraint)<br><b>Space:</b> O(V + E)</td>
       <td>Kahn's Algorithm (BFS). Count in-degrees. Add courses with 0 in-degree to queue. Process queue, reducing in-degrees of neighbors.<br><br><b>Dependencies:</b> <code>std::queue</code></td>
@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td rowspan="1">3</td>
-      <td rowspan="1">Graph 03 Bipartite Graph<br><br></b> <a href="https://leetcode.com/problems/is-graph-bipartite/" target="_blank">LeetCode 785</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1">Graph 03 Bipartite Graph<br><br></b> <a href="https://leetcode.com/problems/is-graph-bipartite/" target="_blank">LeetCode 785</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> graph = [[1,2,3],[0,2],[0,1,3],[0,2]]<br><b>Output:</b> false</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
       <td>BFS/DFS coloring approach. Color adjacent nodes with alternate colors (0 and 1). If an adjacent node has the SAME color, it's not bipartite.<br><br><b>Dependencies:</b> <code>std::queue</code></td>
@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td rowspan="1">4</td>
-      <td rowspan="1">Graph 04 Dijkstras Algorithm<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Graph 04 Dijkstras Algorithm<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Source = 0<br><b>Output:</b> distances array.</td>
       <td><b>Time:</b> O(E log V)<br><b>Space:</b> O(V)</td>
       <td>Min-heap (priority queue) to repeatedly extract the node with the minimum distance and relax its neighbors.<br><br><b>Dependencies:</b> <code>#include &lt;queue&gt;</code></td>
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td rowspan="1">5</td>
-      <td rowspan="1">Graph 05 Topological Sort<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/topological-sort/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Graph 05 Topological Sort<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/topological-sort/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> V = 4, adj = [[], [0], [0], [0]]<br><b>Output:</b> valid topological sort.</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
       <td>Kahn's Algorithm (BFS) using in-degrees. Add nodes with 0 in-degree to a queue. Pop, append to result, and decrement in-degrees of neighbors.<br><br><b>Dependencies:</b> <code>#include &lt;queue&gt;</code></td>
@@ -54,7 +54,7 @@
     </tr>
     <tr>
       <td rowspan="1">6</td>
-      <td rowspan="1">Graph 06 Bellman Ford<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/0" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Apna College, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Graph 06 Bellman Ford<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/0" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> V=3, S=0, Edges=[[0,1,5],[1,2,-2],[2,1,-3]]<br><b>Output:</b> [-1]</td>
       <td><b>Time:</b> O(V * E)<br><b>Space:</b> O(V)</td>
       <td>Relax all edges V-1 times. To detect a negative cycle, relax one more time; if any distance updates, there's a negative cycle.</td>
@@ -62,7 +62,7 @@
     </tr>
     <tr>
       <td rowspan="1">7</td>
-      <td rowspan="1">Graph 07 Floyd Warshall<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Apna College, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Graph 07 Floyd Warshall<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b><br><b>Output:</b> Shortest paths for all pairs (i, j).</td>
       <td><b>Time:</b> O(V^3)<br><b>Space:</b> O(1) in-place</td>
       <td>Multi-source shortest path. Try to go from i to j via every possible vertex k. Update `matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j])`.</td>
@@ -70,7 +70,7 @@
     </tr>
     <tr>
       <td rowspan="1">8</td>
-      <td rowspan="1">Graph 08 Mst Prims<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z, Apna College</details></td>
+      <td rowspan="1">Graph 08 Mst Prims<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Return the scalar sum of the MST.</td>
       <td><b>Time:</b> O(E log V)<br><b>Space:</b> O(E + V)</td>
       <td>Prim's Algorithm. Use a Min-Heap `(weight, node)`. Always pick the smallest available edge connecting the MST to an unvisited node.<br><br><b>Dependencies:</b> <code>#include <queue></code></td>
@@ -78,7 +78,7 @@
     </tr>
     <tr>
       <td rowspan="1">9</td>
-      <td rowspan="1">Graph 09 Strongly Connected Components Kosaraju<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, SDE Sheet, Striver A Z, Apna College</details></td>
+      <td rowspan="1">Graph 09 Strongly Connected Components Kosaraju<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Return an integer count.</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
       <td>Kosaraju's Algo: 1) Sort nodes by finish time (Topo Sort DFS). 2) Transpose the graph (reverse edges). 3) DFS on transposed graph in order of finish time.<br><br><b>Dependencies:</b> <code>#include <stack></code></td>
@@ -86,7 +86,7 @@
     </tr>
     <tr>
       <td rowspan="1">10</td>
-      <td rowspan="1">Graph 10 Detect Cycle Directed BFS<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 10 Detect Cycle Directed BFS<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Return true if cycle exists.</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
       <td>A DAG has a topological sort of exactly V elements. Use Kahn's BFS. If the number of elements pulled from the queue is < V, there's a cycle.</td>
@@ -94,7 +94,7 @@
     </tr>
     <tr>
       <td rowspan="1">11</td>
-      <td rowspan="1">Graph 11 Bipartite Graph DFS<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/bipartite-graph/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
+      <td rowspan="1">Graph 11 Bipartite Graph DFS<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/bipartite-graph/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Return true/false.</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
       <td>DFS. Color nodes with 0 and 1. If an adjacent node is uncolored, assign the opposite color and recurse. If it's colored and has the same color, it's not bipartite.</td>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td rowspan="1">12</td>
-      <td rowspan="1">Graph 12 Alien Dictionary<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/alien-dictionary/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 12 Alien Dictionary<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/alien-dictionary/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> words = ['baa', 'abcd', 'abca', 'cab', 'cad'], K = 4<br><b>Output:</b> 'bdac'</td>
       <td><b>Time:</b> O(N * Len + K + E)<br><b>Space:</b> O(K + E)</td>
       <td>Create a DAG based on mismatching characters between adjacent words. Use Kahn's algorithm (Topological Sort BFS) to find the character order.</td>
@@ -110,7 +110,7 @@
     </tr>
     <tr>
       <td rowspan="1">13</td>
-      <td rowspan="1">Graph 13 Shortest Path In Directed Acyclic Graph<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Graph 13 Shortest Path In Directed Acyclic Graph<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Topo Sort.</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
       <td>Perform Topological Sort. Then iterate through the topologically sorted vertices. For each vertex `u`, relax its neighbors: `dist[v] = min(dist[v], dist[u] + weight)`. Return `dist` array.</td>
@@ -118,7 +118,7 @@
     </tr>
     <tr>
       <td rowspan="1">14</td>
-      <td rowspan="1">Graph 14 Shortest Path In Undirected Graph With Unit Distance<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Graph 14 Shortest Path In Undirected Graph With Unit Distance<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> BFS approach.</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
       <td>Standard BFS starting from source. Distance of neighbors is `dist[u] + 1`.<br><br><b>Dependencies:</b> <code>#include <queue></code></td>
@@ -126,7 +126,7 @@
     </tr>
     <tr>
       <td rowspan="1">15</td>
-      <td rowspan="1">Graph 15 Bridges In Graph<br><br></b> <a href="https://leetcode.com/problems/critical-connections-in-a-network/" target="_blank">LeetCode 1192</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Graph 15 Bridges In Graph<br><br></b> <a href="https://leetcode.com/problems/critical-connections-in-a-network/" target="_blank">LeetCode 1192</a></td>
       <td rowspan="1"><b>Example 1:</b> Tarjan's algorithm.</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
       <td>Tarjan's algorithm. Maintain `tin` (time of insertion) and `low` (lowest time reachable). If `low[neighbor] > tin[node]`, the edge `(node, neighbor)` is a bridge. Update `low[node] = min(low[node], low[neighbor])`.</td>
@@ -134,7 +134,7 @@
     </tr>
     <tr>
       <td rowspan="1">16</td>
-      <td rowspan="1">Graph 16 Articulation Point I<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/articulation-point-1/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Graph 16 Articulation Point I<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/articulation-point-1/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Tarjan's algorithm with discovery times.</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
       <td>Maintain `tin` (insertion time) and `low` (lowest insertion time reachable). A node `u` is an articulation point if `low[v] >= tin[u]` (and it's not root). If root, it's an articulation point if it has >1 children in DFS tree.</td>
@@ -142,7 +142,7 @@
     </tr>
     <tr>
       <td rowspan="1">17</td>
-      <td rowspan="1">Graph 17 Number Of Provinces Dsu<br><br></b> <a href="https://leetcode.com/problems/number-of-provinces/" target="_blank">LeetCode 547</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 17 Number Of Provinces Dsu<br><br></b> <a href="https://leetcode.com/problems/number-of-provinces/" target="_blank">LeetCode 547</a></td>
       <td rowspan="1"><b>Example 1:</b> Connect elements, count unique parents.</td>
       <td><b>Time:</b> O(N^2 * alpha(N))<br><b>Space:</b> O(N)</td>
       <td>Create DSU of size `n`. For every edge in `isConnected`, union the two nodes. The number of provinces is the number of nodes where `find(i) == i`.</td>
@@ -150,7 +150,7 @@
     </tr>
     <tr>
       <td rowspan="1">18</td>
-      <td rowspan="1">Graph 18 Accounts Merge<br><br></b> <a href="https://leetcode.com/problems/accounts-merge/" target="_blank">LeetCode 721</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 18 Accounts Merge<br><br></b> <a href="https://leetcode.com/problems/accounts-merge/" target="_blank">LeetCode 721</a></td>
       <td rowspan="1"><b>Example 1:</b> DSU on accounts using emails.</td>
       <td><b>Time:</b> O(N log N * alpha(N)) where N is total emails<br><b>Space:</b> O(N)</td>
       <td>Map each email to an account index. If an email is seen again, union the current account index with the previously mapped account index. Finally, group emails by their root account index, sort them, and attach the name.</td>
@@ -158,7 +158,7 @@
     </tr>
     <tr>
       <td rowspan="1">19</td>
-      <td rowspan="1">Graph 19 Number Of Operations To Make Network Connected<br><br></b> <a href="https://leetcode.com/problems/number-of-operations-to-make-network-connected/" target="_blank">LeetCode 1319</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 19 Number Of Operations To Make Network Connected<br><br></b> <a href="https://leetcode.com/problems/number-of-operations-to-make-network-connected/" target="_blank">LeetCode 1319</a></td>
       <td rowspan="1"><b>Example 1:</b> Extra edges and connected components.</td>
       <td><b>Time:</b> O(E * alpha(N))<br><b>Space:</b> O(N)</td>
       <td>If total edges < n - 1, impossible. Use DSU to count number of connected components `C` and number of extra edges `E`. An edge is extra if `find(u) == find(v)`. We need `C - 1` edges to connect `C` components. Since total edges >= n - 1, we guaranteed have enough extra edges. Answer is `C - 1`.</td>
@@ -166,7 +166,7 @@
     </tr>
     <tr>
       <td rowspan="1">20</td>
-      <td rowspan="1">Graph 20 Most Stones Removed With Same Row Or Column<br><br></b> <a href="https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/" target="_blank">LeetCode 947</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 20 Most Stones Removed With Same Row Or Column<br><br></b> <a href="https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/" target="_blank">LeetCode 947</a></td>
       <td rowspan="1"><b>Example 1:</b> Treat rows and columns as nodes.</td>
       <td><b>Time:</b> O(N * alpha(N))<br><b>Space:</b> O(N)</td>
       <td>Imagine rows and columns are nodes in a bipartite graph. A stone at `(r, c)` connects row `r` and column `c`. The answer is `total_stones - number_of_connected_components`. We can map cols to `col + 10001` to use a single DSU.</td>
@@ -174,7 +174,7 @@
     </tr>
     <tr>
       <td rowspan="1">21</td>
-      <td rowspan="1">Graph 21 Making A Large Island<br><br></b> <a href="https://leetcode.com/problems/making-a-large-island/" target="_blank">LeetCode 827</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 21 Making A Large Island<br><br></b> <a href="https://leetcode.com/problems/making-a-large-island/" target="_blank">LeetCode 827</a></td>
       <td rowspan="1"><b>Example 1:</b> Component sizes with DSU.</td>
       <td><b>Time:</b> O(N^2)<br><b>Space:</b> O(N^2)</td>
       <td>Step 1: Use DSU to connect all adjacent 1s and calculate the size of each component. Step 2: For each 0, check its 4 neighbors. Find the unique roots of those neighbors. The potential new island size is `1 + sum(size[root])` for each unique root. Find max potential size. Handle case where matrix is all 1s.</td>
@@ -182,7 +182,7 @@
     </tr>
     <tr>
       <td rowspan="1">22</td>
-      <td rowspan="1">Graph 22 Swim In Rising Water<br><br></b> <a href="https://leetcode.com/problems/swim-in-rising-water/" target="_blank">LeetCode 778</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 22 Swim In Rising Water<br><br></b> <a href="https://leetcode.com/problems/swim-in-rising-water/" target="_blank">LeetCode 778</a></td>
       <td rowspan="1"><b>Example 1:</b> Dijkstra-like or Binary Search + BFS.</td>
       <td><b>Time:</b> O(N^2 log N)<br><b>Space:</b> O(N^2)</td>
       <td>Use a priority queue (Dijkstra variant). The cost to reach a cell is `max(cost_of_previous_cell, grid[r][c])`. Extract min cost cell, relax neighbors.</td>
@@ -190,7 +190,7 @@
     </tr>
     <tr>
       <td rowspan="1">23</td>
-      <td rowspan="1">Graph 23 Word Ladder I<br><br></b> <a href="https://leetcode.com/problems/word-ladder/" target="_blank">LeetCode 127</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 23 Word Ladder I<br><br></b> <a href="https://leetcode.com/problems/word-ladder/" target="_blank">LeetCode 127</a></td>
       <td rowspan="1"><b>Example 1:</b> BFS level by level.</td>
       <td><b>Time:</b> O(N * M * 26) where N is words, M is word length<br><b>Space:</b> O(N)</td>
       <td>BFS. Start from `beginWord`. In each step, change one character from 'a' to 'z' and check if new word is in `wordList`. If yes, push to queue, erase from `wordList` to avoid loops, and continue. Track level/steps.</td>
@@ -198,7 +198,7 @@
     </tr>
     <tr>
       <td rowspan="1">24</td>
-      <td rowspan="1">Graph 24 Word Ladder II<br><br></b> <a href="https://leetcode.com/problems/word-ladder-ii/" target="_blank">LeetCode 126</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 24 Word Ladder II<br><br></b> <a href="https://leetcode.com/problems/word-ladder-ii/" target="_blank">LeetCode 126</a></td>
       <td rowspan="1"><b>Example 1:</b> BFS for distance, DFS for paths.</td>
       <td><b>Time:</b> O(V + E + Paths)<br><b>Space:</b> O(V + E)</td>
       <td>BFS to find minimum steps to reach each word. Then DFS starting from `endWord` backwards to `beginWord`, only exploring paths where `dist[next_word] == dist[curr_word] - 1`. Reverse the built paths.</td>
@@ -206,7 +206,7 @@
     </tr>
     <tr>
       <td rowspan="1">25</td>
-      <td rowspan="1">Graph 25 Network Delay Time<br><br></b> <a href="https://leetcode.com/problems/network-delay-time/" target="_blank">LeetCode 743</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 25 Network Delay Time<br><br></b> <a href="https://leetcode.com/problems/network-delay-time/" target="_blank">LeetCode 743</a></td>
       <td rowspan="1"><b>Example 1:</b> Dijkstra's to find max shortest path.</td>
       <td><b>Time:</b> O(E log V)<br><b>Space:</b> O(V + E)</td>
       <td>Standard Dijkstra's shortest path from node `k`. Return the maximum value in the distances array. If any node remains unvisited (dist == inf), return -1.</td>
@@ -214,7 +214,7 @@
     </tr>
     <tr>
       <td rowspan="1">26</td>
-      <td rowspan="1">Graph 26 Cheapest Flights Within K Stops<br><br></b> <a href="https://leetcode.com/problems/cheapest-flights-within-k-stops/" target="_blank">LeetCode 787</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Graph 26 Cheapest Flights Within K Stops<br><br></b> <a href="https://leetcode.com/problems/cheapest-flights-within-k-stops/" target="_blank">LeetCode 787</a></td>
       <td rowspan="1"><b>Example 1:</b> Dijkstra's with Stops / BFS.</td>
       <td><b>Time:</b> O(E)<br><b>Space:</b> O(N + E)</td>
       <td>Use a queue storing `(stops, node, cost)`. We don't need a priority queue because stops increase uniformly by 1. Distance array stores min cost to reach each node. Only push to queue if new cost is cheaper. If `stops > k`, skip.<br><br><b>Dependencies:</b> <code>#include <queue></code></td>
@@ -222,7 +222,7 @@
     </tr>
     <tr>
       <td rowspan="1">27</td>
-      <td rowspan="1">Graph 27 Minimum Multiplications To Reach End<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/minimum-multiplications-to-reach-end/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Graph 27 Minimum Multiplications To Reach End<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/minimum-multiplications-to-reach-end/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> BFS / Dijkstra's with unit weights.</td>
       <td><b>Time:</b> O(100000 * N)<br><b>Space:</b> O(100000)</td>
       <td>Since each multiplication is 1 step, we can use BFS. The 'nodes' are values from 0 to 99999. Use an array `dist` initialized to infinity. Push `start` to queue. For each popped node, multiply by all array elements `% 100000`. If we find a shorter path, push to queue.<br><br><b>Dependencies:</b> <code>#include <queue></code></td>
@@ -230,7 +230,7 @@
     </tr>
     <tr>
       <td rowspan="1">28</td>
-      <td rowspan="1">Graph 28 Number Of Ways To Arrive At Destination<br><br></b> <a href="https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/" target="_blank">LeetCode 1976</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Graph 28 Number Of Ways To Arrive At Destination<br><br></b> <a href="https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/" target="_blank">LeetCode 1976</a></td>
       <td rowspan="1"><b>Example 1:</b> Dijkstra's with Ways Count.</td>
       <td><b>Time:</b> O(E log V)<br><b>Space:</b> O(V + E)</td>
       <td>Modify Dijkstra's. Keep `dist` array and `ways` array. When relaxing an edge: if `curr_dist + weight < dist[neighbor]`, update `dist`, push to PQ, and `ways[neighbor] = ways[curr_node]`. If `curr_dist + weight == dist[neighbor]`, `ways[neighbor] = (ways[neighbor] + ways[curr_node]) % MOD`.<br><br><b>Dependencies:</b> <code>#include <queue></code></td>
@@ -238,7 +238,7 @@
     </tr>
     <tr>
       <td rowspan="1">29</td>
-      <td rowspan="1">Graph 29 Find The City With The Smallest Number Of Neighbors At A Threshold Distance<br><br></b> <a href="https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/" target="_blank">LeetCode 1334</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Graph 29 Find The City With The Smallest Number Of Neighbors At A Threshold Distance<br><br></b> <a href="https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/" target="_blank">LeetCode 1334</a></td>
       <td rowspan="1"><b>Example 1:</b> Floyd-Warshall Algorithm.</td>
       <td><b>Time:</b> O(V^3)<br><b>Space:</b> O(V^2)</td>
       <td>Use Floyd-Warshall to find shortest paths between all pairs of nodes. For each city, count the number of reachable cities within `distanceThreshold`. Return the city with the minimum count (and greatest ID on tie).</td>
@@ -246,7 +246,7 @@
     </tr>
     <tr>
       <td rowspan="1">30</td>
-      <td rowspan="1">Graph 30 Find Eventual Safe States<br><br></b> <a href="https://leetcode.com/problems/find-eventual-safe-states/" target="_blank">LeetCode 802</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
+      <td rowspan="1">Graph 30 Find Eventual Safe States<br><br></b> <a href="https://leetcode.com/problems/find-eventual-safe-states/" target="_blank">LeetCode 802</a></td>
       <td rowspan="1"><b>Example 1:</b> Topological Sort using Kahn's Algorithm on reversed graph.</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V + E)</td>
       <td>Reverse all edges in the graph. Terminal nodes become sources (indegree 0). Run Kahn's algorithm (BFS topological sort). Any node processed is part of a path that only leads to terminal nodes (safe node). Sort the resulting nodes.<br><br><b>Dependencies:</b> <code>#include <queue></code></td>
@@ -254,7 +254,7 @@
     </tr>
     <tr>
       <td rowspan="1">31</td>
-      <td rowspan="1">Graph 31 Find The Number Of Islands<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-the-number-of-islands/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 31 Find The Number Of Islands<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/find-the-number-of-islands/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> DFS or BFS.</td>
       <td><b>Time:</b> O(N * M)<br><b>Space:</b> O(N * M) worst case stack</td>
       <td>Traverse the grid. When a '1' is found, increment island count and use DFS/BFS to mark all its 8-connected neighbors as '0' (or visited) to avoid recounting.</td>
@@ -262,7 +262,7 @@
     </tr>
     <tr>
       <td rowspan="1">32</td>
-      <td rowspan="1">Graph 32 Find Bridge In A Graph<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/bridge-edge-in-graph/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Graph 32 Find Bridge In A Graph<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/bridge-edge-in-graph/1" target="_blank">GFG</a></td>
       <td rowspan="1"><b>Example 1:</b> Tarjan's Algorithm / DFS.</td>
       <td><b>Time:</b> O(V + E)<br><b>Space:</b> O(V)</td>
       <td>Remove the given edge `(c, d)` from the graph. Then run a DFS/BFS from `c`. If `d` is not reachable from `c`, then `(c, d)` was a bridge.</td>
