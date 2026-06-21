@@ -1,5 +1,5 @@
 // Time Complexity: O(log10 N)
-// Space Complexity: O(1)
+// Space Complexity: O(log10 N)
 // Explanation: Convert the absolute value of the number to a string and return its length.
 
 int countDigits(int n) {
