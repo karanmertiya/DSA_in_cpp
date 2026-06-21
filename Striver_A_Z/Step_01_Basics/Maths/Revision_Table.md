@@ -67,21 +67,16 @@
       <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;long long&gt; lcmAndGcd(long long a, long long b) {&#10;    long long original_a = a, original_b = b;&#10;    while(a &gt; 0 &amp;&amp; b &gt; 0) {&#10;        if(a &gt; b) a = a % b;&#10;        else b = b % a;&#10;    }&#10;    // return (a == 0) ? b : a; can be replaced by a + b since one is always 0&#10;    long long gcd = a + b; &#10;    long long lcm = (original_a / gcd) * original_b; // Divide first to prevent overflow&#10;    return {lcm, gcd};&#10;}</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="2">5</td>
-      <td rowspan="2">Math 05 Check For Prime<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/prime-number2314/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
-      <td rowspan="2"><b>Example 1:</b> <br><b>Input:</b> N = 5<br><b>Output:</b> 1</td>
-      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
-      <td><b>Approach 1:</b><br>Brute Force: Iterate from 2 to N-1 and check if N is divisible.</td>
-      <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int isPrime(int N){&#10;    if(N &lt;= 1) return 0;&#10;    for(int i = 2; i &lt; N; i++) {&#10;        if(N % i == 0) return 0;&#10;    }&#10;    return 1;&#10;}</code></pre></details></td>
-    </tr>
-    <tr>
+      <td rowspan="1">5</td>
+      <td rowspan="1">Math 05 Check For Prime<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/prime-number2314/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar, SDE Sheet</details></td>
+      <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> N = 5<br><b>Output:</b> 1</td>
       <td><b>Time:</b> O(sqrt(N))<br><b>Space:</b> O(1)</td>
-      <td><b>Approach 2:</b><br>Optimal: Check divisibility up to sqrt(N). Factors appear in pairs.</td>
+      <td>Check divisibility up to sqrt(N). Iterating up to N (O(N) time) is unnecessary and inefficient since factors always appear in pairs.</td>
       <td><b>Edge Cases:</b> <b>N=1:</b> Not prime.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int isPrime(int N){&#10;    if(N &lt;= 1) return 0;&#10;    for(int i=2; i*i&lt;=N; i++) {&#10;        if(N % i == 0) return 0;&#10;    }&#10;    return 1;&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td rowspan="2">6</td>
-      <td rowspan="2">Math 06 Pow X N<br><br></b> <a href="https://leetcode.com/problems/powx-n/" target="_blank">LeetCode 50</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z</details></td>
+      <td rowspan="2">Math 06 Pow X N<br><br></b> <a href="https://leetcode.com/problems/powx-n/" target="_blank">LeetCode 50</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, SDE Sheet, Love Babbar</details></td>
       <td rowspan="2"><b>Example 1:</b> Binary Exponentiation.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td><b>Approach 1:</b><br>Brute Force: Loop n times and multiply ans by x.</td>
@@ -109,16 +104,11 @@
       <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;int&gt; AllPrimeFactors(int N) {&#10;    vector&lt;int&gt; ans;&#10;    for(int i = 2; i * i &lt;= N; i++) {&#10;        if(N % i == 0) {&#10;            ans.push_back(i);&#10;            while(N % i == 0) N /= i;&#10;        }&#10;    }&#10;    if(N &gt; 1) ans.push_back(N);&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="2">9</td>
-      <td rowspan="2">Math 09 Print All Divisors<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/print-all-divisors-of-a-number/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
-      <td rowspan="2"><b>Example 1:</b> Iterate up to sqrt(N).</td>
-      <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
-      <td><b>Approach 1:</b><br>Brute Force: Iterate from 1 to N and check if N % i == 0.</td>
-      <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void printDivisors(int n) {&#10;    for(int i = 1; i &lt;= n; i++) {&#10;        if(n % i == 0) cout &lt;&lt; i &lt;&lt; &quot; &quot;;&#10;    }&#10;}</code></pre></details></td>
-    </tr>
-    <tr>
+      <td rowspan="1">9</td>
+      <td rowspan="1">Math 09 Print All Divisors<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/print-all-divisors-of-a-number/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z</details></td>
+      <td rowspan="1"><b>Example 1:</b> Iterate up to sqrt(N).</td>
       <td><b>Time:</b> O(sqrt(N) + k log k)<br><b>Space:</b> O(k)</td>
-      <td><b>Approach 2:</b><br>Optimal: Iterate up to sqrt(N). If 'i' divides N, then 'N/i' is also a divisor.</td>
+      <td>Iterate up to sqrt(N). If 'i' divides N, then 'N/i' is also a divisor. Iterating up to N (O(N) time) is unnecessary and inefficient.</td>
       <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">void print_divisors(int n) {&#10;    vector&lt;int&gt; ans;&#10;    for(int i = 1; i * i &lt;= n; i++) {&#10;        if(n % i == 0) {&#10;            ans.push_back(i);&#10;            if(n / i != i) ans.push_back(n / i);&#10;        }&#10;    }&#10;    sort(ans.begin(), ans.end());&#10;    for(int x : ans) cout &lt;&lt; x &lt;&lt; &quot; &quot;;&#10;}</code></pre></details></td>
     </tr>
     <tr>

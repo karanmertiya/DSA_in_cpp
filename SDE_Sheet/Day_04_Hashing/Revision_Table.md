@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Arr 01 Subarray With 0 Sum<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Arr 01 Subarray With 0 Sum<br><br></b> <a href="https://practice.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1" target="_blank">GFG</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, SDE Sheet, Love Babbar</details></td>
       <td rowspan="1"><b> </b> Prefix Sum with HashSet.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(N)</td>
       <td>Optimal: Iterate through the array and calculate the prefix sum. If the prefix sum is 0 or it already exists in a hash set, it means a subarray with sum 0 exists.<br><br><b>Dependencies:</b> Hash Set</td>

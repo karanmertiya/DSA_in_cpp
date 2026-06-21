@@ -14,7 +14,7 @@
   <tbody>
     <tr>
       <td rowspan="1">1</td>
-      <td rowspan="1">Rec 01 Word Break<br><br></b> <a href="https://leetcode.com/problems/word-break/" target="_blank">LeetCode 139</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Striver A Z, Love Babbar, Apna College</details></td>
+      <td rowspan="1">Rec 01 Word Break<br><br></b> <a href="https://leetcode.com/problems/word-break/" target="_blank">LeetCode 139</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Apna College, Striver A Z, SDE Sheet, Love Babbar</details></td>
       <td rowspan="1"><b>Example 1:</b> <br><b>Input:</b> s = 'leetcode', wordDict = ['leet','code']<br><b>Output:</b> true</td>
       <td><b>Time:</b> O(N^3)<br><b>Space:</b> O(N)</td>
       <td>Recursion with Memoization (or DP). For each index, try all possible word lengths. If a prefix exists in dict, recurse for the suffix. DP array `dp[i]` stores if `s[0...i-1]` is valid.<br><br><b>Dependencies:</b> <code>#include <unordered_set></code></td>

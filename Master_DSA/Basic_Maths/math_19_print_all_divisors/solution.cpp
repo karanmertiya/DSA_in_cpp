@@ -1,16 +1,6 @@
-// Time Complexity: O(N)
-// Space Complexity: O(1)
-// Explanation: Brute Force: Iterate from 1 to N and check if N % i == 0.
-
-void printDivisors(int n) {
-    for(int i = 1; i <= n; i++) {
-        if(n % i == 0) cout << i << " ";
-    }
-}
-
 // Time Complexity: O(sqrt(N) + k log k)
 // Space Complexity: O(k)
-// Explanation: Optimal: Iterate up to sqrt(N). If 'i' divides N, then 'N/i' is also a divisor.
+// Explanation: Iterate up to sqrt(N). If 'i' divides N, then 'N/i' is also a divisor. Iterating up to N (O(N) time) is unnecessary and inefficient.
 
 void print_divisors(int n) {
     vector<int> ans;

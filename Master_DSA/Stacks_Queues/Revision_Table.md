@@ -126,7 +126,7 @@
     </tr>
     <tr>
       <td rowspan="1">15</td>
-      <td rowspan="1">Sq 15 Maximal Rectangle<br><br></b> <a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank">LeetCode 85</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Sq 15 Maximal Rectangle<br><br></b> <a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank">LeetCode 85</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, Love Babbar</details></td>
       <td rowspan="1"><b>Example 1:</b> Largest Rectangle in Histogram reduction.</td>
       <td><b>Time:</b> O(rows * cols)<br><b>Space:</b> O(cols)</td>
       <td>Treat each row as the base of a histogram. The height of each bar is the number of consecutive 1s above it. Apply the Largest Rectangle in Histogram algorithm for each row and maintain the maximum area.<br><br><b>Dependencies:</b> Stack</td>
@@ -142,7 +142,7 @@
     </tr>
     <tr>
       <td rowspan="1">17</td>
-      <td rowspan="1">Sq 17 Rotten Oranges<br><br></b> <a href="https://leetcode.com/problems/rotting-oranges/" target="_blank">LeetCode 994</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> SDE Sheet, Love Babbar, Striver A Z</details></td>
+      <td rowspan="1">Sq 17 Rotten Oranges<br><br></b> <a href="https://leetcode.com/problems/rotting-oranges/" target="_blank">LeetCode 994</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, SDE Sheet, Love Babbar</details></td>
       <td rowspan="1"><b>Example 1:</b> BFS.</td>
       <td><b>Time:</b> O(rows * cols)<br><b>Space:</b> O(rows * cols)</td>
       <td>Use a Queue for BFS. Find all initially rotten oranges and push them into the queue with time 0. Count total fresh oranges. Pop an orange, rot its adjacent fresh oranges, push them to the queue with `time + 1`, and decrement fresh count. Return the max time if fresh count is 0, else -1.<br><br><b>Dependencies:</b> Queue</td>
