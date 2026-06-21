@@ -13,18 +13,62 @@ Write an efficient algorithm that searches for a value in an m x n matrix. This 
 
 ---
 
-### [Sort 02 Merge Sort](03_Searching_Sorting/sort_02_merge_sort)
-Sort an array of integers in ascending order using the Merge Sort algorithm.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/sort-an-array/' target='_blank'>LeetCode 912</a>
+### [Sort 02 Selection Sort](03_Searching_Sorting/sort_02_selection_sort)
+Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/selection-sort/1' target='_blank'>GeeksforGeeks</a>
 
 **Examples:**
 **Example 1:** 
-**Input:** nums = [5,2,3,1]
-**Output:** [1,2,3,5]
+**Input:** N = 5, arr[] = {4, 1, 3, 9, 7}
+**Output:** 1 3 4 7 9<br><br>**Note (Constraint):** In-place sorting.
 
 
 ---
 
-### [Bs 03 Find Minimum In Rotated Sorted Array](03_Searching_Sorting/bs_03_find_minimum_in_rotated_sorted_array)
+### [Sort 03 Bubble Sort](03_Searching_Sorting/sort_03_bubble_sort)
+Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/bubble-sort/1' target='_blank'>GeeksforGeeks</a>
+
+**Examples:**
+**Example 1:** 
+**Input:** N = 5, arr[] = {4, 1, 3, 9, 7}
+**Output:** 1 3 4 7 9
+
+
+---
+
+### [Sort 04 Insertion Sort](03_Searching_Sorting/sort_04_insertion_sort)
+Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/insertion-sort/1' target='_blank'>GeeksforGeeks</a>
+
+**Examples:**
+**Example 1:** 
+**Input:** N = 5, arr[] = {4, 1, 3, 9, 7}
+**Output:** 1 3 4 7 9
+
+
+---
+
+### [Sort 05 Merge Sort](03_Searching_Sorting/sort_05_merge_sort)
+Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/merge-sort/1' target='_blank'>GFG</a> | <a href='https://leetcode.com/problems/sort-an-array/' target='_blank'>LC 912</a>
+
+**Examples:**
+**Example 1:** 
+**Input:** N = 5, arr[] = {4, 1, 3, 9, 7}
+**Output:** 1 3 4 7 9
+
+
+---
+
+### [Sort 06 Quick Sort](03_Searching_Sorting/sort_06_quick_sort)
+Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/quick-sort/1' target='_blank'>GeeksforGeeks</a>
+
+**Examples:**
+**Example 1:** 
+**Input:** N = 5, arr[] = {4, 1, 3, 9, 7}
+**Output:** 1 3 4 7 9
+
+
+---
+
+### [Bs 07 Find Minimum In Rotated Sorted Array](03_Searching_Sorting/bs_07_find_minimum_in_rotated_sorted_array)
 Suppose an array of length n sorted in ascending order is rotated between 1 and n times. Given the sorted rotated array nums of unique elements, return the minimum element of this array.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/' target='_blank'>LeetCode 153</a>
 
 **Examples:**
@@ -35,7 +79,7 @@ Suppose an array of length n sorted in ascending order is rotated between 1 and 
 
 ---
 
-### [Bs 04 Find Peak Element](03_Searching_Sorting/bs_04_find_peak_element)
+### [Bs 08 Find Peak Element](03_Searching_Sorting/bs_08_find_peak_element)
 A peak element is an element that is strictly greater than its neighbors. Given an integer array nums, find a peak element, and return its index.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/find-peak-element/' target='_blank'>LeetCode 162</a>
 
 **Examples:**

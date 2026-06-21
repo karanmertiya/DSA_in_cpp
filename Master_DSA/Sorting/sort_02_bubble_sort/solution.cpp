@@ -7,7 +7,7 @@
 
 void bubbleSort(std::vector<int>& arr) {
     int n = arr.size();
-    for (int i = n - 1; i >= 0; i--) {
+    for (int i = n - 1; i >= 1; i--) {
         bool did_swap = false;
         for (int j = 0; j <= i - 1; j++) {
             if (arr[j] > arr[j + 1]) {

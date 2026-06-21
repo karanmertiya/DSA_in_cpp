@@ -1903,7 +1903,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeek
 ---
 
 ### [Sort 04 Merge Sort](Sorting/sort_04_merge_sort)
-Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/merge-sort/1' target='_blank'>GeeksforGeeks</a>
+Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/merge-sort/1' target='_blank'>GFG</a> | <a href='https://leetcode.com/problems/sort-an-array/' target='_blank'>LC 912</a>
 
 **Examples:**
 **Example 1:** 
@@ -1920,17 +1920,6 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeek
 **Example 1:** 
 **Input:** N = 5, arr[] = {4, 1, 3, 9, 7}
 **Output:** 1 3 4 7 9
-
-
----
-
-### [Sort 06 Merge Sort](Sorting/sort_06_merge_sort)
-Sort an array of integers in ascending order using the Merge Sort algorithm.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/sort-an-array/' target='_blank'>LeetCode 912</a>
-
-**Examples:**
-**Example 1:** 
-**Input:** nums = [5,2,3,1]
-**Output:** [1,2,3,5]
 
 
 ---

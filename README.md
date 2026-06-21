@@ -1,15 +1,49 @@
 # DSA_in_cpp
 
-A comprehensive, highly-structured Data Structures and Algorithms repository mapped to top industry sheets (Striver A-Z, Love Babbar, Apna College, SDE Sheet).
+A comprehensive, highly-structured Data Structures and Algorithms repository containing **551+ problems**, perfectly mapped step-by-step to the top industry sheets (Striver A-Z, Love Babbar, Apna College, SDE Sheet).
 
-## Features
+## 🚀 Why This Repo?
+Most DSA repositories are just data dumps of disorganized code. This repository is built as an **elite study and revision system**. It focuses on pedagogy, providing:
+- **The Revision Tables**: Every topic contains an interactive table listing Time/Space complexities, exact examples, brute-force vs optimal approaches, and directly runnable C++ and Python code.
+- **Interactive Walkthroughs**: Jupyter notebooks (`Walkthrough.ipynb`) that let you read problem statements and step through code sequentially.
 - **Dual Language**: Optimal and Brute-force solutions in Python and C++.
-- **Structured Documentation**: Every chapter features a comprehensive `README.md` containing intuitions, complexities, and code patterns.
-- **Revision Tables**: Easy to read HTML tables detailing complexities and example cases for quick revision.
-- **Interactive Walkthroughs**: Jupyter notebooks mapping all problem descriptions and code sequentially for a guided experience.
+- **Pedagogical READMEs**: Every topic folder features a `README.md` summarizing the core intuition, standard algorithms (e.g., Dijkstra vs Bellman-Ford), and code patterns.
 
-## Repository Structure
-Navigate to `Master_DSA` to view all problems grouped by standard concepts (Arrays, DP, Graphs, etc.), or use the mapped folders for specific curriculums.
+## 📚 Problem Coverage by Topic
+The repository contains a unified `Master_DSA` folder organized by standard concepts. Below is the exact coverage:
+
+- **Basic Maths**: 20 problems
+- **Bit Manipulation**: 21 problems
+- **Arrays**: 65 problems
+- **Hashing**: 15 problems
+- **Strings**: 39 problems
+- **Sliding Window**: 23 problems
+- **Sorting**: 5 problems
+- **Binary Search**: 36 problems
+- **Recursion**: 43 problems
+- **Linked Lists**: 55 problems
+- **Stacks Queues**: 17 problems
+- **Trees**: 58 problems
+- **Heaps**: 26 problems
+- **Graphs**: 38 problems
+- **Dynamic Programming**: 51 problems
+- **Tries**: 17 problems
+- **Patterns**: 22 problems
+
+## 🗺️ Curriculum Mapping
+All problems in `Master_DSA` are symbolically linked and re-organized into curriculum folders. If you are following a specific sheet, you can navigate directly to:
+- **Striver A-Z Sheet**
+- **Love Babbar DSA Sheet**
+- **Apna College Sheet**
+- **SDE Sheet**
+
+## 💡 How To Use This For Revision
+1. **Learn a Topic**: Go to a specific folder (e.g., `Master_DSA/Graphs`) and read the `README.md` to understand the standard traversal algorithms and intuitions.
+2. **Study the Implementations**: Open the `Walkthrough.ipynb` to read the problem statements and review the brute-force vs optimal implementations.
+3. **Quick Revision**: Before an interview, open the `Revision_Table.md` to quickly remind yourself of the Time/Space complexities and edge cases for the entire topic.
+
+---
+*Note: This repository is fully automated via Python generation scripts to guarantee structural consistency.*
 
 
 # Master DSA Master README
@@ -1917,7 +1951,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeek
 ---
 
 ### [Sort 04 Merge Sort](Sorting/sort_04_merge_sort)
-Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/merge-sort/1' target='_blank'>GeeksforGeeks</a>
+Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/merge-sort/1' target='_blank'>GFG</a> | <a href='https://leetcode.com/problems/sort-an-array/' target='_blank'>LC 912</a>
 
 **Examples:**
 **Example 1:** 
@@ -1934,17 +1968,6 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeek
 **Example 1:** 
 **Input:** N = 5, arr[] = {4, 1, 3, 9, 7}
 **Output:** 1 3 4 7 9
-
-
----
-
-### [Sort 06 Merge Sort](Sorting/sort_06_merge_sort)
-Sort an array of integers in ascending order using the Merge Sort algorithm.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/sort-an-array/' target='_blank'>LeetCode 912</a>
-
-**Examples:**
-**Example 1:** 
-**Input:** nums = [5,2,3,1]
-**Output:** [1,2,3,5]
 
 
 ---

@@ -212,7 +212,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeek
 ---
 
 ### [Sort 19 Merge Sort](Day_30_Misc/sort_19_merge_sort)
-Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/merge-sort/1' target='_blank'>GeeksforGeeks</a>
+Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/merge-sort/1' target='_blank'>GFG</a> | <a href='https://leetcode.com/problems/sort-an-array/' target='_blank'>LC 912</a>
 
 **Examples:**
 **Example 1:** 

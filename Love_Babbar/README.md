@@ -2481,7 +2481,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeek
 ---
 
 ### [Sort 04 Merge Sort](03_Searching_and_Sorting/sort_04_merge_sort)
-Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/merge-sort/1' target='_blank'>GeeksforGeeks</a>
+Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeeks.org/problems/merge-sort/1' target='_blank'>GFG</a> | <a href='https://leetcode.com/problems/sort-an-array/' target='_blank'>LC 912</a>
 
 **Examples:**
 **Example 1:** 
@@ -2502,18 +2502,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://www.geeksforgeek
 
 ---
 
-### [Sort 06 Merge Sort](03_Searching_and_Sorting/sort_06_merge_sort)
-Sort an array of integers in ascending order using the Merge Sort algorithm.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/sort-an-array/' target='_blank'>LeetCode 912</a>
-
-**Examples:**
-**Example 1:** 
-**Input:** nums = [5,2,3,1]
-**Output:** [1,2,3,5]
-
-
----
-
-### [Bs 07 Binary Search](03_Searching_and_Sorting/bs_07_binary_search)
+### [Bs 06 Binary Search](03_Searching_and_Sorting/bs_06_binary_search)
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/binary-search/' target='_blank'>LeetCode 704</a>
 
 **Examples:**
@@ -2524,7 +2513,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 
 ---
 
-### [Bs 08 Lower Bound](03_Searching_and_Sorting/bs_08_lower_bound)
+### [Bs 07 Lower Bound](03_Searching_and_Sorting/bs_07_lower_bound)
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2535,7 +2524,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksfo
 
 ---
 
-### [Bs 09 Find First And Last Position Of Element](03_Searching_and_Sorting/bs_09_find_first_and_last_position_of_element)
+### [Bs 08 Find First And Last Position Of Element](03_Searching_and_Sorting/bs_08_find_first_and_last_position_of_element)
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/' target='_blank'>LeetCode 34</a>
 
 **Examples:**
@@ -2546,7 +2535,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 
 ---
 
-### [Bs 10 Search In Rotated Sorted Array](03_Searching_and_Sorting/bs_10_search_in_rotated_sorted_array)
+### [Bs 09 Search In Rotated Sorted Array](03_Searching_and_Sorting/bs_09_search_in_rotated_sorted_array)
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/search-in-rotated-sorted-array/' target='_blank'>LeetCode 33</a>
 
 **Examples:**
@@ -2557,7 +2546,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 
 ---
 
-### [Bs 11 Koko Eating Bananas](03_Searching_and_Sorting/bs_11_koko_eating_bananas)
+### [Bs 10 Koko Eating Bananas](03_Searching_and_Sorting/bs_10_koko_eating_bananas)
 Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/koko-eating-bananas/' target='_blank'>LeetCode 875</a>
 
 **Examples:**
@@ -2568,7 +2557,7 @@ Restored problem.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/pro
 
 ---
 
-### [Bs 12 Find Minimum In Rotated Sorted Array](03_Searching_and_Sorting/bs_12_find_minimum_in_rotated_sorted_array)
+### [Bs 11 Find Minimum In Rotated Sorted Array](03_Searching_and_Sorting/bs_11_find_minimum_in_rotated_sorted_array)
 Suppose an array of length n sorted in ascending order is rotated between 1 and n times. Given the sorted rotated array nums of unique elements, return the minimum element of this array.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/' target='_blank'>LeetCode 153</a>
 
 **Examples:**
@@ -2579,7 +2568,7 @@ Suppose an array of length n sorted in ascending order is rotated between 1 and 
 
 ---
 
-### [Bs 13 Find Peak Element](03_Searching_and_Sorting/bs_13_find_peak_element)
+### [Bs 12 Find Peak Element](03_Searching_and_Sorting/bs_12_find_peak_element)
 A peak element is an element that is strictly greater than its neighbors. Given an integer array nums, find a peak element, and return its index.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/find-peak-element/' target='_blank'>LeetCode 162</a>
 
 **Examples:**
@@ -2590,7 +2579,7 @@ A peak element is an element that is strictly greater than its neighbors. Given 
 
 ---
 
-### [Bs 14 Allocate Minimum Number Of Pages](03_Searching_and_Sorting/bs_14_allocate_minimum_number_of_pages)
+### [Bs 13 Allocate Minimum Number Of Pages](03_Searching_and_Sorting/bs_13_allocate_minimum_number_of_pages)
 Given an array of integers A of size N and an integer M. A[i] denotes the number of pages in the ith book. There are M students. The task is to allocate books such that the maximum number of pages allocated to a student is minimum.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2601,7 +2590,7 @@ Given an array of integers A of size N and an integer M. A[i] denotes the number
 
 ---
 
-### [Bs 15 Kth Element Of Two Sorted Arrays](03_Searching_and_Sorting/bs_15_kth_element_of_two_sorted_arrays)
+### [Bs 14 Kth Element Of Two Sorted Arrays](03_Searching_and_Sorting/bs_14_kth_element_of_two_sorted_arrays)
 Given two sorted arrays arr1 and arr2 of size N and M respectively and an element K. The task is to find the element that would be at the k’th position of the final sorted array.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2612,7 +2601,7 @@ Given two sorted arrays arr1 and arr2 of size N and M respectively and an elemen
 
 ---
 
-### [Bs 16 Search In Rotated Sorted Array II](03_Searching_and_Sorting/bs_16_search_in_rotated_sorted_array_ii)
+### [Bs 15 Search In Rotated Sorted Array II](03_Searching_and_Sorting/bs_15_search_in_rotated_sorted_array_ii)
 Similar to Search in Rotated Sorted Array, but the array may contain duplicates. Return true if target is in nums.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/search-in-rotated-sorted-array-ii/' target='_blank'>LeetCode 81</a>
 
 **Examples:**
@@ -2623,7 +2612,7 @@ Similar to Search in Rotated Sorted Array, but the array may contain duplicates.
 
 ---
 
-### [Bs 17 Minimum Days To Make M Bouquets](03_Searching_and_Sorting/bs_17_minimum_days_to_make_m_bouquets)
+### [Bs 16 Minimum Days To Make M Bouquets](03_Searching_and_Sorting/bs_16_minimum_days_to_make_m_bouquets)
 You are given an integer array bloomDay, an integer m and an integer k. Return the minimum number of days you need to wait to be able to make m bouquets from the garden.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/' target='_blank'>LeetCode 1482</a>
 
 **Examples:**
@@ -2632,7 +2621,7 @@ You are given an integer array bloomDay, an integer m and an integer k. Return t
 
 ---
 
-### [Bs 18 Find The Smallest Divisor Given A Threshold](03_Searching_and_Sorting/bs_18_find_the_smallest_divisor_given_a_threshold)
+### [Bs 17 Find The Smallest Divisor Given A Threshold](03_Searching_and_Sorting/bs_17_find_the_smallest_divisor_given_a_threshold)
 Given an array of integers nums and an integer threshold, we will choose a positive integer divisor, divide all the array by it, and sum the division's result. Find the smallest divisor such that the result mentioned above is less than or equal to threshold.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/' target='_blank'>LeetCode 1283</a>
 
 **Examples:**
@@ -2641,7 +2630,7 @@ Given an array of integers nums and an integer threshold, we will choose a posit
 
 ---
 
-### [Bs 19 Capacity To Ship Packages Within D Days](03_Searching_and_Sorting/bs_19_capacity_to_ship_packages_within_d_days)
+### [Bs 18 Capacity To Ship Packages Within D Days](03_Searching_and_Sorting/bs_18_capacity_to_ship_packages_within_d_days)
 A conveyor belt has packages that must be shipped from one port to another within days days. Return the least weight capacity of the ship.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/' target='_blank'>LeetCode 1011</a>
 
 **Examples:**
@@ -2650,7 +2639,7 @@ A conveyor belt has packages that must be shipped from one port to another withi
 
 ---
 
-### [Bs 20 Kth Missing Positive Number](03_Searching_and_Sorting/bs_20_kth_missing_positive_number)
+### [Bs 19 Kth Missing Positive Number](03_Searching_and_Sorting/bs_19_kth_missing_positive_number)
 Given an array arr of positive integers sorted in a strictly increasing order, and an integer k. Return the kth positive integer that is missing from this array.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/kth-missing-positive-number/' target='_blank'>LeetCode 1539</a>
 
 **Examples:**
@@ -2659,7 +2648,7 @@ Given an array arr of positive integers sorted in a strictly increasing order, a
 
 ---
 
-### [Bs 21 Aggressive Cows](03_Searching_and_Sorting/bs_21_aggressive_cows)
+### [Bs 20 Aggressive Cows](03_Searching_and_Sorting/bs_20_aggressive_cows)
 Given an array of length N and an integer C. The task is to assign the cows to the stalls, such that the minimum distance between any two of them is as large as possible. Return the largest minimum distance.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/aggressive-cows/0' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2668,7 +2657,7 @@ Given an array of length N and an integer C. The task is to assign the cows to t
 
 ---
 
-### [Bs 22 Split Array Largest Sum](03_Searching_and_Sorting/bs_22_split_array_largest_sum)
+### [Bs 21 Split Array Largest Sum](03_Searching_and_Sorting/bs_21_split_array_largest_sum)
 Given an integer array nums and an integer k, split nums into k non-empty subarrays such that the largest sum of any subarray is minimized. Return the minimized largest sum of the split.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/split-array-largest-sum/' target='_blank'>LeetCode 410</a>
 
 **Examples:**
@@ -2677,7 +2666,7 @@ Given an integer array nums and an integer k, split nums into k non-empty subarr
 
 ---
 
-### [Bs 23 Painters Partition Problem](03_Searching_and_Sorting/bs_23_painters_partition_problem)
+### [Bs 22 Painters Partition Problem](03_Searching_and_Sorting/bs_22_painters_partition_problem)
 Given an array representing the lengths of boards, and an integer k representing painters. Each painter takes 1 unit of time to paint 1 unit of board. Minimize the maximum time taken by a painter.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/the-painters-partition-problem1535/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2686,7 +2675,7 @@ Given an array representing the lengths of boards, and an integer k representing
 
 ---
 
-### [Bs 24 Minimize Max Distance To Gas Station](03_Searching_and_Sorting/bs_24_minimize_max_distance_to_gas_station)
+### [Bs 23 Minimize Max Distance To Gas Station](03_Searching_and_Sorting/bs_23_minimize_max_distance_to_gas_station)
 You are given a sorted integer array stations representing the positions of gas stations on an X-axis. You are also given an integer k. You should add k new gas stations. Return the smallest possible value of the maximum distance between adjacent gas stations.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/minimize-max-distance-to-gas-station/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2695,7 +2684,7 @@ You are given a sorted integer array stations representing the positions of gas 
 
 ---
 
-### [Bs 25 Search In A 2D Matrix II](03_Searching_and_Sorting/bs_25_search_in_a_2d_matrix_ii)
+### [Bs 24 Search In A 2D Matrix II](03_Searching_and_Sorting/bs_24_search_in_a_2d_matrix_ii)
 Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties: Integers in each row are sorted in ascending from left to right. Integers in each column are sorted in ascending from top to bottom.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/search-a-2d-matrix-ii/' target='_blank'>LeetCode 240</a>
 
 **Examples:**
@@ -2704,7 +2693,7 @@ Write an efficient algorithm that searches for a value target in an m x n intege
 
 ---
 
-### [Bs 26 Find A Peak Element II](03_Searching_and_Sorting/bs_26_find_a_peak_element_ii)
+### [Bs 25 Find A Peak Element II](03_Searching_and_Sorting/bs_25_find_a_peak_element_ii)
 A peak element in a 2D grid is an element that is strictly greater than all of its adjacent neighbors to the left, right, top, and bottom. Given an m x n matrix mat where no two adjacent cells are equal, find any peak element mat[i][j] and return the length 2 array [i,j].<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/find-a-peak-element-ii/' target='_blank'>LeetCode 1901</a>
 
 **Examples:**
@@ -2713,7 +2702,7 @@ A peak element in a 2D grid is an element that is strictly greater than all of i
 
 ---
 
-### [Bs 27 Matrix Median](03_Searching_and_Sorting/bs_27_matrix_median)
+### [Bs 26 Matrix Median](03_Searching_and_Sorting/bs_26_matrix_median)
 Given a matrix of integers A of size N x M in which each row is sorted. Find an return overall median of the matrix. Note: No extra memory is allowed.<br><br><b>🔗 Practice:</b> <a href='https://www.interviewbit.com/problems/matrix-median/' target='_blank'>InterviewBit</a>
 
 **Examples:**
@@ -2722,7 +2711,7 @@ Given a matrix of integers A of size N x M in which each row is sorted. Find an 
 
 ---
 
-### [Bs 28 Kth Smallest Number In Multiplication Table](03_Searching_and_Sorting/bs_28_kth_smallest_number_in_multiplication_table)
+### [Bs 27 Kth Smallest Number In Multiplication Table](03_Searching_and_Sorting/bs_27_kth_smallest_number_in_multiplication_table)
 Nearly everyone has used the Multiplication Table. The multiplication table of size m x n is an integer matrix mat where mat[i][j] == i * j (1-indexed). Given three integers m, n, and k, return the kth smallest element in the m x n multiplication table.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/' target='_blank'>LeetCode 668</a>
 
 **Examples:**
@@ -2731,7 +2720,7 @@ Nearly everyone has used the Multiplication Table. The multiplication table of s
 
 ---
 
-### [Bs 29 Find K Th Smallest Pair Distance](03_Searching_and_Sorting/bs_29_find_k_th_smallest_pair_distance)
+### [Bs 28 Find K Th Smallest Pair Distance](03_Searching_and_Sorting/bs_28_find_k_th_smallest_pair_distance)
 The distance of a pair of integers a and b is defined as the absolute difference between a and b. Given an integer array nums and an integer k, return the kth smallest distance among all the pairs nums[i] and nums[j] where 0 <= i < j < nums.length.<br><br><b>🔗 Practice:</b> <a href='https://leetcode.com/problems/find-k-th-smallest-pair-distance/' target='_blank'>LeetCode 719</a>
 
 **Examples:**
@@ -2740,7 +2729,7 @@ The distance of a pair of integers a and b is defined as the absolute difference
 
 ---
 
-### [Bs 30 Roti Prata Spoj](03_Searching_and_Sorting/bs_30_roti_prata_spoj)
+### [Bs 29 Roti Prata Spoj](03_Searching_and_Sorting/bs_29_roti_prata_spoj)
 IEEE is having its AGM next week and the president wants to serve cheese prata after the meeting. The caterer needs to know the minimum time needed to make P pratas by L cooks.<br><br><b>🔗 Practice:</b> <a href='https://www.spoj.com/problems/PRATA/' target='_blank'>SPOJ</a>
 
 **Examples:**
@@ -2749,7 +2738,7 @@ IEEE is having its AGM next week and the president wants to serve cheese prata a
 
 ---
 
-### [Bs 31 Double Helix Spoj](03_Searching_and_Sorting/bs_31_double_helix_spoj)
+### [Bs 30 Double Helix Spoj](03_Searching_and_Sorting/bs_30_double_helix_spoj)
 Two sequences of integers, sorted in strictly increasing order, are given. Find the maximum possible sum of a path that can start from the first element of either sequence and end at the last element of either sequence, switching at intersection points.<br><br><b>🔗 Practice:</b> <a href='https://www.spoj.com/problems/ANARC05B/' target='_blank'>SPOJ</a>
 
 **Examples:**
@@ -2758,7 +2747,7 @@ Two sequences of integers, sorted in strictly increasing order, are given. Find 
 
 ---
 
-### [Bs 32 Subset Sums Spoj](03_Searching_and_Sorting/bs_32_subset_sums_spoj)
+### [Bs 31 Subset Sums Spoj](03_Searching_and_Sorting/bs_31_subset_sums_spoj)
 Given a set of numbers, find the number of subsets whose sum lies between A and B.<br><br><b>🔗 Practice:</b> <a href='https://www.spoj.com/problems/SUBSUMS/' target='_blank'>SPOJ</a>
 
 **Examples:**
@@ -2767,7 +2756,7 @@ Given a set of numbers, find the number of subsets whose sum lies between A and 
 
 ---
 
-### [Bs 33 Smallest Factorial Number](03_Searching_and_Sorting/bs_33_smallest_factorial_number)
+### [Bs 32 Smallest Factorial Number](03_Searching_and_Sorting/bs_32_smallest_factorial_number)
 Given a number n. The task is to find the smallest number whose factorial contains at least n trailing zeroes.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/smallest-factorial-number5929/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2776,7 +2765,7 @@ Given a number n. The task is to find the smallest number whose factorial contai
 
 ---
 
-### [Bs 34 Value Equal To Index Value](03_Searching_and_Sorting/bs_34_value_equal_to_index_value)
+### [Bs 33 Value Equal To Index Value](03_Searching_and_Sorting/bs_33_value_equal_to_index_value)
 Given an array Arr of N positive integers. Your task is to find the elements whose value is equal to that of its index value ( Consider 1-based indexing ).<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/value-equal-to-index-value1330/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2785,7 +2774,7 @@ Given an array Arr of N positive integers. Your task is to find the elements who
 
 ---
 
-### [Bs 35 Count Squares](03_Searching_and_Sorting/bs_35_count_squares)
+### [Bs 34 Count Squares](03_Searching_and_Sorting/bs_34_count_squares)
 Consider a sample space S consisting of all perfect squares starting from 1, 4, 9 and so on. You are given a number N, you have to output the number of integers less than N in the sample space S.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/count-squares3649/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2794,7 +2783,7 @@ Consider a sample space S consisting of all perfect squares starting from 1, 4, 
 
 ---
 
-### [Bs 36 Middle Of Three](03_Searching_and_Sorting/bs_36_middle_of_three)
+### [Bs 35 Middle Of Three](03_Searching_and_Sorting/bs_35_middle_of_three)
 Given three distinct numbers A, B and C. Find the number with value in middle.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/middle-of-three2926/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2803,7 +2792,7 @@ Given three distinct numbers A, B and C. Find the number with value in middle.<b
 
 ---
 
-### [Bs 37 Majority Element](03_Searching_and_Sorting/bs_37_majority_element)
+### [Bs 36 Majority Element](03_Searching_and_Sorting/bs_36_majority_element)
 Given an array A of N elements. Find the majority element in the array. A majority element in an array A of size N is an element that appears strictly more than N/2 times in the array.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/majority-element-1587115620/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2812,7 +2801,7 @@ Given an array A of N elements. Find the majority element in the array. A majori
 
 ---
 
-### [Bs 38 Searching In An Array Where Adjacent Differ By At Most K](03_Searching_and_Sorting/bs_38_searching_in_an_array_where_adjacent_differ_by_at_most_k)
+### [Bs 37 Searching In An Array Where Adjacent Differ By At Most K](03_Searching_and_Sorting/bs_37_searching_in_an_array_where_adjacent_differ_by_at_most_k)
 A step array is an array of integers where each element has a difference of at most k with its neighbor. Given a key x, we need to find the index value of x if multiple elements are present, return the first occurrence of the key.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/searching-in-an-array-where-adjacent-differ-by-at-most-k0456/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2821,7 +2810,7 @@ A step array is an array of integers where each element has a difference of at m
 
 ---
 
-### [Bs 39 Find A Pair With The Given Difference](03_Searching_and_Sorting/bs_39_find_a_pair_with_the_given_difference)
+### [Bs 38 Find A Pair With The Given Difference](03_Searching_and_Sorting/bs_38_find_a_pair_with_the_given_difference)
 Given an array Arr[] of size L and a number N, you need to write a program to find if there exists a pair of elements in the array whose difference is N.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/find-pair-given-difference1559/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2830,7 +2819,7 @@ Given an array Arr[] of size L and a number N, you need to write a program to fi
 
 ---
 
-### [Bs 40 Find Four Elements That Sum To A Given Value](03_Searching_and_Sorting/bs_40_find_four_elements_that_sum_to_a_given_value)
+### [Bs 39 Find Four Elements That Sum To A Given Value](03_Searching_and_Sorting/bs_39_find_four_elements_that_sum_to_a_given_value)
 Given an array of integers and another number. Find all the unique quadruple from the given array that sums up to the given number.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/find-all-four-sum-numbers1732/1' target='_blank'>GFG</a>
 
 **Examples:**
@@ -2839,7 +2828,7 @@ Given an array of integers and another number. Find all the unique quadruple fro
 
 ---
 
-### [Bs 41 Row With Max 1S](03_Searching_and_Sorting/bs_41_row_with_max_1s)
+### [Bs 40 Row With Max 1S](03_Searching_and_Sorting/bs_40_row_with_max_1s)
 Given a boolean 2D array of n x m dimensions where each row is sorted. Find the 0-based index of the first row that has the maximum number of 1's.<br><br><b>🔗 Practice:</b> <a href='https://practice.geeksforgeeks.org/problems/row-with-max-1s0023/1' target='_blank'>GFG</a>
 
 **Examples:**
