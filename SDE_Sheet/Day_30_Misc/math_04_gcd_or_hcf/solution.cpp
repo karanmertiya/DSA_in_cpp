@@ -21,7 +21,7 @@ vector<long long> lcmAndGcd(long long a, long long b) {
         if(a > b) a = a % b;
         else b = b % a;
     }
-    // return (a == 0) ? b : a; can be replaced by a + b since one is always 0
+    /* The non-zero value is the GCD. Since one of them is 0, we can just return a + b */
     long long gcd = a + b; 
     long long lcm = (original_a / gcd) * original_b; // Divide first to prevent overflow
     return {lcm, gcd};

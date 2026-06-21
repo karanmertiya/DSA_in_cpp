@@ -37,7 +37,7 @@
       <td rowspan="2"><b>Example 1:</b> <br><b>Input:</b> x = 123<br><b>Output:</b> 321</td>
       <td><b>Time:</b> O(log<sub>10</sub> x)<br><b>Space:</b> O(1)</td>
       <td><b>Approach 1:</b><br>Optimal Approach: Use a 64-bit integer to naturally store the reversed number. A variant note explains how to do this strictly with 32-bit integers if long is not allowed.<br><br><b>Dependencies:</b> <code>#include &lt;limits.h&gt;</code></td>
-      <td><b>Edge Cases:</b> <b>Overflow:</b> Checked using 64-bit bounds or 32-bit variants.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int reverse(int x) {&#10;    long long ans = 0;&#10;    while(x != 0) {&#10;        int digit = x % 10;&#10;        /* &#10;         * VARIANT: STRICT 32-BIT OVERFLOW CHECK&#10;         * If 64-bit integers are not allowed, you must check before multiplying by 10.&#10;         * if(ans &gt; INT_MAX/10 || ans &lt; INT_MIN/10) return 0;&#10;         * Note: We don&#x27;t need to check if the last digit will cause an overflow &#10;         * (e.g., ans == INT_MAX/10 &amp;&amp; digit &gt; 7) because the input &#x27;x&#x27; is a valid 32-bit integer. &#10;         * No valid 32-bit integer starts with a digit high enough to cause that specific overflow when reversed.&#10;         */&#10;        ans = ans * 10 + digit;&#10;        x /= 10;&#10;    }&#10;    if(ans &gt; INT_MAX || ans &lt; INT_MIN) return 0;&#10;    return ans;&#10;}</code></pre></details></td>
+      <td><b>Edge Cases:</b> <b>Overflow:</b> Checked using 64-bit bounds or 32-bit variants.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">int reverse(int x) {&#10;    long long ans = 0;&#10;    while(x != 0) {&#10;        int digit = x % 10;&#10;        &#10;        ans = ans * 10 + digit;&#10;        x /= 10;&#10;    }&#10;    /* &#10;     * VARIANT: STRICT 32-BIT OVERFLOW CHECK&#10;     * If 64-bit integers (long long) are strictly forbidden, you must check BEFORE multiplying by 10 inside the loop:&#10;     * if(ans &gt; INT_MAX/10 || ans &lt; INT_MIN/10) return 0;&#10;     * Note: We don&#x27;t need to check the last digit (e.g. ans == INT_MAX/10 &amp;&amp; digit &gt; 7) because the input &#x27;x&#x27; &#10;     * is a valid 32-bit integer, and no valid 32-bit integer reversed will overflow purely on the final digit.&#10;     */&#10;    if(ans &gt; INT_MAX || ans &lt; INT_MIN) return 0;&#10;    return ans;&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td><b>Time:</b> O(log<sub>10</sub> x)<br><b>Space:</b> O(log<sub>10</sub> x)</td>
@@ -64,7 +64,7 @@
     <tr>
       <td><b>Time:</b> O(log(min(a, b)))<br><b>Space:</b> O(1)</td>
       <td><b>Approach 2:</b><br>Euclidean Algorithm (Optimal): Repeatedly replace max(a,b) with max(a,b) % min(a,b). The final non-zero value is the GCD. Note: LCM can be found in O(1) extra time using formula: LCM(a,b) = (a*b) / GCD(a,b)<br><br><b>Dependencies:</b> <code>#include &lt;algorithm&gt;</code></td>
-      <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;long long&gt; lcmAndGcd(long long a, long long b) {&#10;    long long original_a = a, original_b = b;&#10;    while(a &gt; 0 &amp;&amp; b &gt; 0) {&#10;        if(a &gt; b) a = a % b;&#10;        else b = b % a;&#10;    }&#10;    // return (a == 0) ? b : a; can be replaced by a + b since one is always 0&#10;    long long gcd = a + b; &#10;    long long lcm = (original_a / gcd) * original_b; // Divide first to prevent overflow&#10;    return {lcm, gcd};&#10;}</code></pre></details></td>
+      <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">vector&lt;long long&gt; lcmAndGcd(long long a, long long b) {&#10;    long long original_a = a, original_b = b;&#10;    while(a &gt; 0 &amp;&amp; b &gt; 0) {&#10;        if(a &gt; b) a = a % b;&#10;        else b = b % a;&#10;    }&#10;    /* The non-zero value is the GCD. Since one of them is 0, we can just return a + b */&#10;    long long gcd = a + b; &#10;    long long lcm = (original_a / gcd) * original_b; // Divide first to prevent overflow&#10;    return {lcm, gcd};&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td rowspan="1">5</td>
@@ -92,7 +92,7 @@
     </tr>
     <tr>
       <td rowspan="1">8</td>
-      <td rowspan="1">Math 08 Valid Perfect Square<br><br></b> <a href="https://leetcode.com/problems/valid-perfect-square/" target="_blank">LeetCode 367</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Math 08 Valid Perfect Square<br><br></b> <a href="https://leetcode.com/problems/valid-perfect-square/" target="_blank">LeetCode 367</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Binary Search</details></td>
       <td rowspan="1"><b>Example 1:</b> Binary Search.</td>
       <td><b>Time:</b> O(log N)<br><b>Space:</b> O(1)</td>
       <td>Use binary search from `1` to `num/2` or up to `46340` (sqrt of INT_MAX). If `mid * mid == num`, return true. Else if `mid * mid < num`, `low = mid + 1`. Else `high = mid - 1`.</td>
@@ -100,23 +100,28 @@
     </tr>
     <tr>
       <td rowspan="1">9</td>
-      <td rowspan="1">Math 09 Power Of Two<br><br></b> <a href="https://leetcode.com/problems/power-of-two/" target="_blank">LeetCode 231</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, SDE Sheet, Love Babbar</details></td>
+      <td rowspan="1">Math 09 Power Of Two<br><br></b> <a href="https://leetcode.com/problems/power-of-two/" target="_blank">LeetCode 231</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet, Bit Manipulation</details></td>
       <td rowspan="1"><b>Example 1:</b> Bit Manipulation.</td>
       <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
       <td>If a number is a power of two, it has exactly one bit set in its binary representation. The expression `n & (n - 1)` clears the lowest set bit. Thus, if `n > 0` and `(n & (n - 1)) == 0`, it is a power of two.</td>
       <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPowerOfTwo(int n) {&#10;    return n &gt; 0 &amp;&amp; (n &amp; (n - 1)) == 0;&#10;}</code></pre></details></td>
     </tr>
     <tr>
-      <td rowspan="1">10</td>
-      <td rowspan="1">Math 10 Power Of Three<br><br></b> <a href="https://leetcode.com/problems/power-of-three/" target="_blank">LeetCode 326</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
-      <td rowspan="1"><b>Example 1:</b> Modulo with largest power.</td>
+      <td rowspan="2">10</td>
+      <td rowspan="2">Math 10 Power Of Three<br><br></b> <a href="https://leetcode.com/problems/power-of-three/" target="_blank">LeetCode 326</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="2"><b>Example 1:</b> Modulo with largest power.</td>
+      <td><b>Time:</b> O(log_3 N)<br><b>Space:</b> O(1)</td>
+      <td><b>Approach 1:</b><br>General Method: Repeatedly divide the number by 3 as long as it is divisible by 3. If it becomes 1, it's a power of 3.</td>
+      <td><b>Edge Cases:</b> <b>N <= 0:</b> Not a power of 3.<br><br><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPowerOfThree(int n) {&#10;    if (n &lt;= 0) return false;&#10;    while (n % 3 == 0) n /= 3;&#10;    return n == 1;&#10;}</code></pre></details></td>
+    </tr>
+    <tr>
       <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
-      <td>Since `n` is a 32-bit signed integer, the largest power of 3 that fits is `3^19 = 1162261467`. A number `n` is a power of 3 if `n > 0` and `1162261467 % n == 0`.</td>
+      <td><b>Approach 2:</b><br>Since `n` is a 32-bit signed integer, the largest power of 3 that fits is `3^19 = 1162261467`. A number `n` is a power of 3 if `n > 0` and `1162261467 % n == 0`.</td>
       <td><details><summary><b>View Code</b></summary><pre style="white-space: pre-wrap; word-wrap: break-word;"><code class="language-cpp">bool isPowerOfThree(int n) {&#10;    return n &gt; 0 &amp;&amp; 1162261467 % n == 0;&#10;}</code></pre></details></td>
     </tr>
     <tr>
       <td rowspan="1">11</td>
-      <td rowspan="1">Math 11 Power Of Four<br><br></b> <a href="https://leetcode.com/problems/power-of-four/" target="_blank">LeetCode 342</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar</details></td>
+      <td rowspan="1">Math 11 Power Of Four<br><br></b> <a href="https://leetcode.com/problems/power-of-four/" target="_blank">LeetCode 342</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Bit Manipulation</details></td>
       <td rowspan="1"><b>Example 1:</b> Bit Manipulation.</td>
       <td><b>Time:</b> O(1)<br><b>Space:</b> O(1)</td>
       <td>A power of 4 is also a power of 2, so `n > 0 && (n & (n-1)) == 0` must hold. Also, the single set bit must be at an even position (0-indexed). The mask `0x55555555` has 1s at all even positions. So `(n & 0x55555555) != 0`.</td>
@@ -156,7 +161,7 @@
     </tr>
     <tr>
       <td rowspan="2">16</td>
-      <td rowspan="2">Math 16 Pow X N<br><br></b> <a href="https://leetcode.com/problems/powx-n/" target="_blank">LeetCode 50</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Striver A Z, SDE Sheet, Love Babbar</details></td>
+      <td rowspan="2">Math 16 Pow X N<br><br></b> <a href="https://leetcode.com/problems/powx-n/" target="_blank">LeetCode 50</a><br><br><details><summary>ℹ️</summary><b>Tags:</b> Love Babbar, Striver A Z, SDE Sheet</details></td>
       <td rowspan="2"><b>Example 1:</b> Binary Exponentiation.</td>
       <td><b>Time:</b> O(N)<br><b>Space:</b> O(1)</td>
       <td><b>Approach 1:</b><br>Brute Force: Loop n times and multiply ans by x.</td>
