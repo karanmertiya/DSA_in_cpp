@@ -10,13 +10,6 @@ int reverse(int x) {
         ans = ans * 10 + digit;
         x /= 10;
     }
-    /* 
-     * VARIANT: STRICT 32-BIT OVERFLOW CHECK
-     * If 64-bit integers (long long) are strictly forbidden, you must check BEFORE multiplying by 10 inside the loop:
-     * if(ans > INT_MAX/10 || ans < INT_MIN/10) return 0;
-     * Note: We don't need to check the last digit (e.g. ans == INT_MAX/10 && digit > 7) because the input 'x' 
-     * is a valid 32-bit integer, and no valid 32-bit integer reversed will overflow purely on the final digit.
-     */
     if(ans > INT_MAX || ans < INT_MIN) return 0;
     return ans;
 }

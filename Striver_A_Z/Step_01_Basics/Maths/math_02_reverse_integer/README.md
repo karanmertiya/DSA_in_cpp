@@ -8,3 +8,5 @@ Given a signed 32-bit integer x, return x with its digits reversed. If reversing
 **Input:** x = 123
 **Output:** 321
 
+**Variants:** Strict 32-bit limit handling.
+
